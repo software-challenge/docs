@@ -1,0 +1,102 @@
+== Client abgabefertig machen
+
+Damit link:das Wettkampfsystem[das Wettkampfsystem] mit dem
+Computerspieler arbeiten kann, muss er zu einem ausführbaren Programm
+gemacht und in ein ZIP-Archiv gepackt werden.  Diese Anleitung
+beschreibt, wie man für den Java-SimpleClient vorgehen muss.
+
+Hierzu gibt es zwei Möglichkeiten: Die Jar-Datei selbst erstellen und
+die Verwendung eines Ant-Scripts.
+
+[[erste-möglichkeit---jar-erstellen]]
+=== Erste Möglichkeit - JAR erstellen
+
+[[eclipse]]
+==== Eclipse
+
+1.  In Eclipse im Menü auf "File" -> "Export". Dann unter "Java" ->
+"Runnable JAR file" wählen
+2.  Im nächsten Fenster wird die "Run Configuration" ausgewählt (dazu
+muss der SimpleClient mindestens einmal mit Eclipse gestartet worden
+sein). Darunter wird mit "Browse" die Zieldatei (z.B.
+[...]/my_player.jar) ausgewählt. Bei "Library handling" am besten die
+erste Option nehmen. So wird eine einzige JAR Datei erzeugt, in der
+alles nötige drin ist. Mit einem Klick auf Finish wird die JAR-Datei
+erzeugt. Eventuell erhält man einen Hinweis "This operation repacks
+referenced libraries", den man mit "OK" bestätigen muss.
+
+Wenn alles geklappt hat, wurde der Computerspieler in ein auführbares
+Programm überführt. Damit der Wettkampfserver den Client verarbeiten
+kann, muss er noch in ein ZIP-Archiv gepackt werden.
+
+[[netbeans]]
+==== NetBeans
+
+Nach einem Rechtsklick auf das Projekt in der Projektansicht kann man
+"Properties" auswählen. Auf der linken Seite unter "Categories" die
+Kategorie "Run" auswählen und dann rechts unter "Main Class" die Klasse
+"Starter" eintragen.
+
+Nach einem Rechtsklick auf das Projekt in der Projektansicht kann man
+"Clean and Build" auswählen. Danach gibt es den Ordner
+"Pfad/zur/Project/Loacation//dist". In diesem befindet sich eine
+JAR-Datei und eine Kopie des "lib"-Ordners. Beides zusammen muss jetzt
+mit einem beliebigen Archivierungsprogramm in eine ZIP-Datei
+zusammengepackt werden. Dieses Archiv kann dann hochegeladen werden.
+
+[[zweite-möglichkeit---das-ant-script]]
+=== Zweite Möglichkeit - Das ANT Script
+
+Man kann auch das dem SimpleClient beiliegende Ant Buildscript benutzen.
+Dieses kompiliert den SimpleClient und erzeugt automatisch eine JAR
+Datei sowie ein ZIP-Archiv, das man direkt im Websystem hochladen kann.
+
+[[direkt-ausführen]]
+==== Direkt ausführen
+
+Wenn Ant installiert ist, kann man über die Kommandozeile in das
+Verzeichnis des SimpleClients wechseln und mit dem Aufruf "Ant" den
+Build ausführen. Am Ende sollte die Meldung "BUILD SUCCESSFUL"
+erscheinen. Im SimpleClient Ordner findet man dann im Unterordner
+"build" die JAR Datei im Ordner "jar" sowie die fertig gepackte
+ZIP-Datei im Ordner "zipped" die direkt im Wettkampfsystem hochgeladen
+werden kann.
+
+[[eclipse-1]]
+==== Eclipse
+
+Eclipse kann von Haus aus auch mit Ant-Scripten umgehen.
+
+1.  Im Menü "Run" -> "External Tools" -> "External Tools Configuration"
+wählen
+2.  Links in dem neuen Fenster mit einem Rechtsklick auf "Ant Build" ->
+"New" erstellt man eine neue Konfiguration und wählt diese aus
+3.  Auf der rechten Seite muss man nun das Buildfile auswählen. Das geht
+entweder mit "Browse Workspace" oder "Browse File System". Das Buildfile
+heißt "build.xml" und liegt direkt in dem SimpleClient Ordner, den man
+auf der Software Challenge Homepage heruntergeladen hat. Anschließend
+mit "Apply" bestätigen und das Fenster schließen
+4.  Um den Buildprozess zu starten, muss im Menü "Run" -> "External
+Tools" die gerade erstellte Konfiguration ausgewählt werdem. Der Build
+wird dann durchgeführt (dauert i.d.R. wenige Sekunden).
+
+Am Ende erhält man die Meldung "BUILD SUCCESSFUL".
+
+Im SimpleClient-Ordner findet man dann im Unterordner "build" die JAR
+Datei im Ordner "jar" sowie die fertig gepackte ZIP-Datei im Ordner
+"zipped", die direkt ins Wettkampfsystem hochgeladen werden kann.
+
+[[netbeans-1]]
+==== NetBeans
+
+Einmalig die Datei
+"Pfad/zur/Project/Loacation/schaefchen_player/build.xml" mit einem
+beliebigen Texteditor (nicht Word!) öffnen und ganz am Ende direkt vor
+der letzten Zeile "" folgendes hinzufügen:
+
+ +
+`    ` +
+
+Von nun an wird eine abgabfertige Datei
+"Pfad/zur/Project/Loacation//dist/simple_client.zip" bei "Clean and
+Build" erstellt.

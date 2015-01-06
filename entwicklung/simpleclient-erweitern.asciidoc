@@ -1,0 +1,81 @@
+Kategorie:Computerspieler In der Version des Java SimpleClients von der
+Software Challenge Homepage ist bereits eine Strategie implementiert,
+die RandomLogic. Man kann jedoch auch noch beliebig viele eigene
+Strategien hinzufügen.
+
+[[erstellen-einer-neuen-strategie]]
+=== Erstellen einer neuen Strategie
+
+Die einfachste Möglichkeit ist, die RandomLogic zu kopieren und
+umzubenennen (alle Vorkommen von RandomLogic durch den neuen
+Klassennamen ersetzen). Der Vollständigkeit halber hier noch das
+Vorgehen bei einer komplett neuen Klasse:
+
+* Erstellt eine neue Klasse (z.B. MyLogic), die das Interface
+IGameHandler implementiert
+
+`public class MyLogic implements IGameHandler {` +
+`    private Starter starter;` +
+`    private GameState gameState;` +
+`    private Player player;`
+
+* Erstellt einen Konstruktor, der eine Instanz des Starters erhält.
+Diese wird später noch gebraucht
+
+`public MyLogic(Starter starter) {` +
+`    this.starter = starter;` +
+`}`
+
+* Implementiert die 5 Interface-Methoden
+
+`@Override` +
+`public void gameEnded(GameResult result, PlayerColor color, String errorMessage) {` +
+`    // Hier muss nichts getan werden` +
+`}` +
+ +
+`@Override` +
+`public void onUpdate(Player player, Player otherPlayer) {` +
+`    // Der Spieler wurde aktualisiert` +
+`    this.player = player;` +
+`}` +
+ +
+`@Override` +
+`public void onUpdate(GameState gameState) {` +
+`    // Ein neuer Spielstatus, d.h. etwas ist geschehen. Deshalb` +
+`    // alles aktualisieren.` +
+`    this.gameState = gameState;` +
+`    this.player = gameState.getCurrentPlayer();` +
+`}` +
+ +
+`@Override` +
+`public void sendAction(Move move) {` +
+`    // Einen Zug an den Server senden` +
+`    starter.sendMove(move);` +
+`}` +
+ +
+`@Override` +
+`public void onRequestAction() {` +
+`    // Ich soll einen Zug machen` +
+`    Move move;` +
+`    // ... Hier muss die Logik rein, die einen Zug findet.` +
+`    sendAction(move);` +
+`}`
+
+[[die-strategie-benutzen]]
+=== Die Strategie benutzen
+
+Damit die Strategie benutzbar ist, muss sie in der LogicFactory
+eingetragen werden. In dem enum ist bereits die Logik RANDOM
+eingetragen. Mit dem Eintrag DEFAULT lässt sich festlegen, welche Logik
+standardmäßig ausgeführt wird. Hier muss die neue Strategie ebenfalls
+eingetragen werden.
+
+`public enum LogicFactory {` +
+`    MY_LOGIC(MyLogic.class),` +
+`    ...` +
+`} `
+
+Nun kann der Client mit der neuen Strategie spielen, indem man ihn mit
+dem Startparameter "-s MY_LOGIC" startet. Wie man in Eclipse beim
+Programmstart Argumente übergibt, kann
+link:Bedienung_von_Eclipse#Programme_starten[hier] nachgelesen werden.

@@ -1,0 +1,22 @@
+= Software Challenge Endbenutzer-Dokumentation-Dokumentation
+Sven Koschnicke <svk@informatik.uni-kiel.de>
+2015-01-06
+:toc:
+:toc-title: Inhalt
+
+In diesem Repository befindet sich die Endbenutzer-Dokumentation fuer
+die Software Challenge. Zielgruppe sind Schueler und Leherer, die an
+der Software Challenge teilnehmen.
+
+== Konventionen
+
+* Die Hauptdatei ist `index.asciidoc` im Wurzelverzeichnis. Alle
+  anderen Dateien werden per `include`-Anweisung in die Hauptdatei
+  eingebungen.
+* Dateinamen und Verzeichnisnahmen sollten nur die Zeichen `a` bis `z`
+  sowie Bindestriche (`-`) enthalten.
+* Sprache fuer Dateinamen, Verzeichnisnamen sowie Inhalt ist
+  Deutsch. Sprache fuer Attribute und sonstige Interna ist Englisch.
+* Als Endung fuer Asciidoc wird `.asciidoc` benutzt.
+* Es wird des ATX-Format fuer Ueberschriften verwendet (also `=`,
+  `==`, `===` etc.)

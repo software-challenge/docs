@@ -1,0 +1,147 @@
+== Einrichtung der (Java-)Entwicklungsumgebung
+
+Kategorie:Computerspieler Kategorie:Java Die Aufgabe einer
+Entwicklungsumgebung (IDE) ist es, den Programmierer bei seiner Arbeit
+zu unterstützen. Dazu bietet sie neben dem Editor auch viele Tools, die
+das Entwickeln eigener Programme stark erleichtern. Zwei große Vertreter
+an Entwicklungsumgebungen sind Eclipse und NetBeans.
+
+Erfahrungsgemäß bereitet der Umgang mit Eclipse die wenigsten Probleme.
+Wenn also keine Gründe gegen den Einsatz dieser IDE sprechen, sollte
+Eclipse benutzt werden.
+
+*Hinweis:* Bevor man sich um die Einrichtung der Entwicklungsumgebung
+kümmert, muss unbedingt link:Installation von Java[Java installiert]
+sein.
+
+[[simpleclient-beschaffen]]
+=== SimpleClient beschaffen
+
+Den SimpleClient bekommt man im Downloadbereich der Software-Challenge
+(http://www.informatik.uni-kiel.de/software-challenge/2013/download/).
+Man braucht die Version, die auch den Java-Quelltext beinhaltet. Nach
+dem Herunterladen muss die Datei entpackt werden.
+
+[[einrichtung-von-eclipse]]
+=== Einrichtung von Eclipse
+
+[[beschaffung-und-installation-der-software]]
+==== Beschaffung und Installation der Software
+
+Auf der Downloadseite des Eclipse-Projektes
+(http://www.eclipse.org/downloads/) lädt man sich die "Eclipse IDE for
+Java Developers" herunter.
+
+Man kann Eclipse direkt aus dem entpackten Archiv starten, eine
+Installation ist nicht notwendig.
+
+[[simpleclient-in-eclipse-einbinden]]
+==== SimpleClient in Eclipse einbinden
+
+Datei:Eclipse_neues_Projekt_wählen.jpg[miniatur|In Eclipse ein neues
+Projekt erstellen]
+
+1.  Im Workspace-Ordner einen neuen Ordner erstellen und ihm einen
+sinnigen Namen geben (z.B Software-Challenge-Client)
+2.  In diesen Ordner wird der heruntergeladene SimpleClient entpackt
+3.  Eclipse starten (Falls es noch nicht läuft)
+4.  In Eclipse im Menü "File" → "New" → "Project" auswählen. Danach
+"Java Project from Existing Ant Buildfile" markieren und weiter mit
+"Next"
+5.  Im nächsten Fenster neben dem Eingabefeld "Ant buildfile" auf
+"Browse" klicken und die Datei "build.xml" aus dem oben erstellten
+Ordner auswählen. Anschließend auf "Finish" klicken
+6.  Der SimpleClient wurde erfolgreich importiert
+
+Gegebenenfalls ist es notwendig, die mitgelieferte Dokumentation manuell
+hinzuzufügen. Dazu geht man wie folgt vor:
+
+* Im Package Explorer unter "Referenced Libraries" das Plugin zum
+aktuellen Spiel suchen. Bei der Software-Challenge 2013 heißt es
+beispielsweise "cartagena-plugin.jar"
+* Rechtsklick auf das Plugin und "Properties" anklicken
+* Unter "Javadoc Location" lässt sich der "Javadoc location path"
+angeben. Dort den Ordner "doc" des simple Clients eingeben.
+
+[[simpleclient-aus-eclipse-starten]]
+==== SimpleClient aus Eclipse starten
+
+Datei:Eclipse_SimpleClient_starten.jpg[miniatur|Start des Clients aus
+Eclipse] Den SimpleClient kann man starten, indem man im
+Project-Explorer einen Rechtsklick auf die Datei `Starter.java` macht
+und dann "Run As" → "Java Application" auswählt.
+
+*Hinweis:* Damit der SimpleClient erfolgreich startet, muss der
+Spielleiter laufen und auf eine Verbindung warten. +
+
+[[einrichtung-von-netbeans]]
+=== Einrichtung von NetBeans
+
+[[beschaffung-und-installation-von-netbeans]]
+==== Beschaffung und Installation von NetBeans
+
+NetBeans kann unter http://netbeans.org/downloads/index.html
+heruntergeladen werden. Für die Software-Challenge genügt das Paket
+"Java SE", man kann aber auch ein anderes auswählen, solange "Java SE"
+darin enthalten ist.
+
+Durch das Starten der heruntergeladenen Datei wird der
+Installationsassistent ausgeführt, der den Benutzer sicher durch den
+Installationsvorgang leitet.
+
+[[simpleclient-in-netbeans-einbinden]]
+==== SimpleClient in NetBeans einbinden
+
+* NetBeans starten
+* Im Menü "File" → "New Project" auswählen
+* In der linken Liste "Java" und in der rechten "Java Application"
+auswählen und auf "Next >" klicken
+* unter "Project Name" beispielsweise "software-challenge-player"
+eintragen, den Haken vor "Create Main Class" entfernen.
+* Den Ordner unter "Project Location" ggf. ändern und merken. Auf
+"Finish" klicken
+
+NetBeans hat in seinem workspace (normalerweise im Home-Ordner unter
+"NetBeansProjects") einen Ordner mit dem gemerkten Namen erstellt. In
+diesem ist u.A. ein Unterordner "src".
+
+* Aus dem heruntergeladenen SimpleClient die Ordner "lib", "src" und
+"doc" in den Projektordner kopieren
+
+In NetBeans sollten in der Projektansicht bei dem erstellten Projekt
+unter "Source Packages" die Quelldateien des SimpleClients zu sehen
+sein.
+
+* In NetBeans in der Projektansicht einen Rechtsklick auf Libraries
+machen machen und "Add Library..." auswählen und auf "Create..."
+klicken.
+* Einen Namen wählen (z.B. "SC") und auf "OK" klicken
+* Im Tab "Classpath" "Add Jar/Folder..." auswählen und den lib-Ordner
+aus dem Projekt auswählen
+* Alle angezeigten jar-Dateien markieren und auf "OK" klicken
+* Im Tab "Javadoc" "Add Zip/Folder" auswählen und den doc-Ordner aus dem
+Projekt auswählen und hinzufügen
+* Auf "OK" klicken und die neue Library mit "Add Library" dem Projekt
+hinzufügen
+
+[[simpleclient-in-netbeans-starten]]
+==== SimpleClient in NetBeans starten
+
+1.  In der Projektansicht die Datei `Starter.java` suchen
+2.  Rechtsklick auf die Datei
+3.  "Run File" auswählen
+
+*Hinweis:* Der Start ist nur erfolgreich, wenn der Spielleiter auf eine
+Verbindung wartet.
+
+[[einrichtung-von-bluej]]
+=== Einrichtung von BlueJ
+
+1.  TODO
+
+[[weiterführende-links]]
+=== Weiterführende Links
+
+* http://www.eclipse.org Homepage der Eclipse-IDE
+* http://www.netbeans.org Homepage des NetBeans-Projektes
+

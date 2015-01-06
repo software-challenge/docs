@@ -1,0 +1,101 @@
+== Wettkampfmodalitäten
+
+Die Software-Challenge wird in drei Phasen ausgespielt. Da wir noch
+nicht einschätzen können, wie viele Teams letztendlich teilnehmen
+werden, kann sich die folgende Ablaufplanung noch ändern.
+
+[[die-meisterschaftsphase]]
+=== Die Meisterschaftsphase
+
+Für diese erste Phase (Anfang März bis Anfang April) werden wir
+voraussichtlich vier Gruppen mit jeweils ca. 25 Teams bilden. In jeder
+dieser Gruppen wird eine Meisterschaft ausgespielt.
+
+Die Meisterschaft ist in Spieltagen organisiert. An jedem Spieltag hat
+jedes Team eine Begegnung mit einem anderen Team. Bei einer ungeraden
+Teamanzahl in einer der Gruppen setzt an jedem Spieltag eines der Teams
+aus.
+
+Vor Beginn des ersten Spieltages soll jedes Team einen funktionsfähigen
+Client über das Online-Abgabesystem eingeschickt haben. Zwischen den
+Spieltagen besteht die Möglichkeit, Clients ebenfalls über dieses System
+zu aktualisieren. Über das Online-Abgabesystem werden auch die
+Ergebnisse, Ranglisten etc. veröffentlicht.
+
+Eine Begegnung gewinnt derjenige Spieler mit den meisten gewonnen
+Spielen in dieser Begegnung. Bei gleich vielen Siegen endet die
+Begegnung unentschieden. Eine gewonnene Begegnung zählt für die
+Rangliste zwei Punkte, ein Unentschieden einen Punkt, eine verlorene
+Begegnung null Punkte.
+
+In der Rangliste wird als nachrangiges Kriterium ausschließlich die
+Anzahl der Siegpunkte aus den bisherigen Spielen verwendet. Wenn am Ende
+einer Meisterschaft zwei Teams denselben Platz belegen, entscheidet das
+Los.
+
+[[die-champions-league]]
+=== Die Champions-League
+
+In dieser zweiten Phase (Mitte April bis Mitte Mai) kommen die ersten
+acht Teams einer jeden Gruppe aus der ersten Phase. Die Champions-League
+wird nach dem gleichen Schema wie eine Meisterschaft ausgespielt.
+
+[[das-final-eight]]
+=== Das Final Eight
+
+An der dritten Phase, dem Final Eight, das im Juni in Kiel stattfindet,
+nehmen die ersten acht Mannschaften der Rangliste aus der
+Champions-League teil. Viertelfinale, Halbfinale, Kleines Finale (=
+Spiel um den 3. Platz) und Finale werden im KO-System gespielt.
+
+Jede Begegnung besteht aus jeweils sechs Spielen, wobei das Recht des
+ersten Zuges abwechselt. Anders als bei den vorherigen Phasen kann es
+beim Final Eight keine Begegnung geben, die unentschieden endet. Haben
+beide Teams in einer Begegnung gleich viele Siege errungen, wird als
+nachrangiges Kriterium ausschließlich die Anzahl der am Spielende
+erreichten Punkte berücksichtigt, um den Sieger einer Begegnung zu
+ermitteln. In dem unwahrscheinlichen Fall, dass die Begegnung auch
+dadurch nicht entschieden werden kann, entscheidet das Los.
+
+Im Übrigen gelten beim Final Eight die bekannten Regeln der beiden
+vorherigen Phasen. Es wird dabei auch dieselbe Hardware eingesetzt.
+
+[[die-begegnungen]]
+=== Die Begegnungen
+
+Jede Begegnung besteht aus jeweils sechs Spielen, wobei das Recht des
+ersten Zuges abwechselt.
+
+Die Zugzeit ist für jeden Zug auf zwei Sekunden begrenzt. Dabei gilt für
+die Rechenzeit die im Institut verwendete Hardware als Referenz. Jeder
+Client wird dabei auf einer eigenen virtuellen Maschine mit unten
+stehenden Spezifikationen ausgeführt.
+
+Sollte ein Spieler einen ungültigen Zug setzen oder die maximale Zugzeit
+überschreiten, so hat dieser Spieler verloren. In allen anderen Fällen
+wird das Spiel gemäß der Spielregeln zu Ende gespielt und der Gewinner
+ermittelt.
+
+[[die-probespieltage]]
+=== Die Probespieltage
+
+Anfang März, unmittelbar vor der ersten Phase, werden Probespieltage
+stattfinden, die den reibungslosen Ablauf der Meisterschaft
+gewährleisten sollen.
+
+[[die-konkreten-termine]]
+=== Die konkreten Termine
+
+Siehe Terminseite der
+Software-Challengehttp://www.informatik.uni-kiel.de/software-challenge/2013/termine/[1]
+
+[[technische-daten-der-virtuellen-maschine]]
+=== Technische Daten der virtuellen Maschine
+
+[cols="<,",options="header",]
+|==============================
+|Betriebssystem: |Ubuntu 32 Bit
+|Prozessor: |2,27 GHz Xeon
+|Arbeitsspeicher: |1,5 GB
+|==============================
+

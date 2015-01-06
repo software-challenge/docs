@@ -1,8 +1,9 @@
-= Software Challenge Endbenutzer Dokumentation
+= Software Challenge Endbenutzer-Dokumentation
 Sven Koschnicke <svk@informatik.uni-kiel.de>
 2015-01-06
 :imagesdir: ./images
 :toc: right
+:toc-title: Inhalt
 
 Ziel dieser Dokumentation ist es, alle Informationen über die
 Software-Challenge an einer Stelle zu bündeln. Hier können sich Lehrer
@@ -14,3 +15,33 @@ Ablauf des Wettbewerbes benötigt wird.
 include::allgemein/die-software-challenge.asciidoc[]
 
 include::software/server.asciidoc[]
+
+include::software/client.asciidoc[]
+
+include::entwicklung/installation-von-java.asciidoc[]
+
+include::entwicklung/einrichtung-der-entwicklungsumgebung.asciidoc[]
+
+include::entwicklung/bedienung-von-eclipse.asciidoc[]
+
+include::entwicklung/simpleclient-erweitern.asciidoc[]
+
+include::entwicklung/client-abgabefertig-machen.asciidoc[]
+
+include::entwicklung/erste-schritte.asciidoc[]
+
+include::entwicklung/einfuehrung-oop.asciidoc[]
+
+include::entwicklung/sauberer-programmierstil.asciidoc[]
+
+include::entwicklung/eine-idee-implementieren.asciidoc[]
+
+include::entwicklung/weiterfuehrende-literatur.asciidoc[]
+
+include::software/schnittstelle.asciidoc[]
+
+include::software/einfuehrung-xml.asciidoc[]
+
+include::allgemein/wettkampfmodalitaeten.asciidoc[]
+
+include::software/das-wettkampfsystem.asciidoc[]

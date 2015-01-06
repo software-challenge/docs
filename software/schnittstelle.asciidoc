@@ -1,0 +1,17 @@
+== Die Schnittstelle zum Server
+
+Der Spielleiter kommuniziert mit den Computerspielern über eine
+Netzwerkverbindung. Dadurch ist man aus technischer Sicht komplett
+flexibel, was die Wahl der Programmiersprache angeht. Die
+Computerspieler müssen lediglich das Kommunikationsprotokoll erfüllen,
+das im Dokumentationsbereich
+(http://www.informatik.uni-kiel.de/software-challenge/2013/dokumentation/)
+eingesehen werden kann.
+
+Anfängern wird allerdings davon abgeraten, einen komplett eigenen
+Client zu schreiben. Es ist deutlich einfacher, auf dem
+bereitgestellten Simpleclient aufzubauen (Den SimpleClient um eine
+eigene Strategie erweitern). Damit muss man sich nicht um die
+Kommunikation kümmern, sondern kann sich direkt auf die Spiellogik
+konzentrieren. Außerdem wird vom Institut für Informatik die beste
+Unterstützung für Java geboten.
