@@ -10,8 +10,8 @@ Entwicklungsumgebung Eclipse vor.
 [[die-oberfläche]]
 === Die Oberfläche
 
-Datei:Eclipse_Desktop.jpg[miniatur|Überblick über die wichtigsten
-Fenster in Eclipse]
+.Überblick über die wichtigsten Fenster in Eclipse
+image::eclipse_desktop.jpg[]
 
 [[package-explorer]]
 ==== Package Explorer
@@ -57,15 +57,19 @@ Programmcode gelangen.
 [[programme-starten]]
 === Programme starten
 
-Datei:Eclipse_Run-Configurations.jpg[miniatur|Dialog um die
-Starteinstellungen des Programms zu ändern] Ein Programm lässt sich
-starten, indem man im Package Explorer einen Rechtsklick auf die Datei
-mit der Main-Methode macht und dann "Run As" → "Java Application"
-ausführt.
+.Dialog um die Starteinstellungen des Programms zu ändern
+image:eclipse_run-configurations.jpg[]
+
+Ein Programm lässt sich starten, indem man im Package Explorer einen
+Rechtsklick auf die Datei mit der Main-Methode macht und dann "Run As"
+→ "Java Application" ausführt.
 
 Im Menü kann man unter "Run" → "Run Configurations" im Tab "Arguments"
 noch Optionen angeben. +
-== Tastaturkürzel == Eclipse kennt viele Tastenkombinationen, mit Hilfe
+
+=== Tastaturkürzel
+
+Eclipse kennt viele Tastenkombinationen, mit Hilfe
 derer einige Eclipse-Funktionen schneller aufgerufen werden können. Die
 wichtigsten Shortcuts kann man der folgenden Tabelle entnehmen:
 

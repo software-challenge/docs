@@ -42,8 +42,10 @@ hat, ist Java einsatzbereit.
 [[installation-unter-mac-os-x]]
 === Installation unter Mac OS X
 
-Datei:Java-Einstellungen_Mac.jpg[miniatur|Das Programm
-"Java-Einstellungen" auf Mac OS X] Da bei Mac OS X Das JDK schon
+.Das Programm "Java-Einstellungen" auf Mac OS X
+image::java-einstellungen_mac.jpg[]
+
+Da bei Mac OS X Das JDK schon
 mitgeliefert wird, braucht man sich um die eigentliche Installation
 nicht mehr zu kümmern. Neue Java-Versionen werden immer mit dem
 Software-Update des Betriebssystems automatisch installiert.

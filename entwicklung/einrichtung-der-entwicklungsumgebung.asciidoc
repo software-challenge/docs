@@ -38,8 +38,8 @@ Installation ist nicht notwendig.
 [[simpleclient-in-eclipse-einbinden]]
 ==== SimpleClient in Eclipse einbinden
 
-Datei:Eclipse_neues_Projekt_wählen.jpg[miniatur|In Eclipse ein neues
-Projekt erstellen]
+.In Eclipse ein neues Projekt erstellen
+image::eclipse_neues_projekt_wa_hlen.jpg[]
 
 1.  Im Workspace-Ordner einen neuen Ordner erstellen und ihm einen
 sinnigen Namen geben (z.B Software-Challenge-Client)
@@ -66,10 +66,12 @@ angeben. Dort den Ordner "doc" des simple Clients eingeben.
 [[simpleclient-aus-eclipse-starten]]
 ==== SimpleClient aus Eclipse starten
 
-Datei:Eclipse_SimpleClient_starten.jpg[miniatur|Start des Clients aus
-Eclipse] Den SimpleClient kann man starten, indem man im
-Project-Explorer einen Rechtsklick auf die Datei `Starter.java` macht
-und dann "Run As" → "Java Application" auswählt.
+.Start des Clients aus Eclipse
+image::eclipse_simpleclient_starten.jpg[]
+
+Den SimpleClient kann man starten, indem man im Project-Explorer einen
+Rechtsklick auf die Datei `Starter.java` macht und dann "Run As" →
+"Java Application" auswählt.
 
 *Hinweis:* Damit der SimpleClient erfolgreich startet, muss der
 Spielleiter laufen und auf eine Verbindung warten. +

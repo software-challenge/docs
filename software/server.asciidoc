@@ -37,10 +37,11 @@ auf jeden Fall zum erfolgreichen Starten des Spielleiters führen.
 [[die-programmoberfläche]]
 === Die Programmoberfläche
 
-Datei:Spielleiter_direkt_nach-Start.jpg[miniatur|Die
-Spielleiteroberfläche direkt nach dem Programmstart] Die
-Programmoberfläche besteht aus dem Menü, der Spielfläche und der
+Die Programmoberfläche besteht aus dem Menü, der Spielfläche und der
 Statusleiste.
+
+.Die Spielleiteroberfläche direkt nach dem Programmstart
+image::spielleiter_direkt_nach-start.jpg[Spielleiter]
 
 Über das Menü oben sind alle Funktionen des Servers erreichbar. Die
 Spielfläche in der Mitte mit den Steuerelementen dient zur Anzeige der
@@ -54,8 +55,9 @@ Zu Beginn ist die Spielfläche leer. +
 
 Um ein Spiel zu spielen, muss zunächst über das Menü "Spiel"→"Neues
 Spiel erstellen" das folgende Fenster aufgerufen werden:
-Datei:Neues_Spiel_Dialog.jpg[400px|thumb|zentriert|Dialog für ein neues
-Spiel]
+
+.Dialog für ein neues Spiel
+image::neues_spiel_dialog.jpg[Neues Spiel]
 
 In diesem Fenster werden die Spieler ausgewählt, die an dem Spiel
 teilnehmen sollen. Die fünf Spalten sind folgendermaßen zu verstehen:
@@ -114,18 +116,20 @@ gespielt werden.
 [[die-spielfeldoberfläche]]
 === Die Spielfeldoberfläche
 
-Datei:Spielfeldoberfläche.jpg[miniatur|Die Spielfeldoberfläche (hier mit
-dem Spiel "Schäfchen im Trockenen")] Die Spielfeldoberfläche setzt sich
-aus dem Spielbrett (der große zentrale Bereich) und den
-Spielsteuerelementen (unten) zusammen.
+.Die Spielfeldoberfläche (hier mit dem Spiel "Schäfchen im Trockenen")
+image::spieloberfl_che.jpg[]
+
+Die Spielfeldoberfläche setzt sich aus dem Spielbrett (der große
+zentrale Bereich) und den Spielsteuerelementen (unten) zusammen.
 
 Auf dem Spielbrett werden das eigentliche Spiel (hier z.B. "Schäfchen im
 Trockenen"), die Züge und weitere für das Spiel wichtige Informationen
 dargestellt. Hier setzt der menschliche Spieler auch seine Züge.
 
 Die Steuerelemente am unteren Rand haben folgende Bedeutung:
-Datei:Steuerelemente.jpg[gerahmt|zentriert|Die Steuerelemente des
-Spielleiters]
+
+.Die Steuerelemente des Spielleiters
+image::steuerelemente.jpg[]
 
 Über den Geschwindigkeitsregler kann die Pausenlänge zwischen zwei
 Spielzügen eingestellt werden. Spielen 2 Computerspieler gegeneinander,
@@ -142,8 +146,10 @@ ausgeschaltet werden.
 [[spielwiederholung-laden]]
 === Spielwiederholung laden
 
-Datei:Spielwiederholung_laden.jpg[miniatur|Dialog, um
-Spielwiederholungen zu laden] Nachdem ein Spiel beendet wurde, wird eine
+.Dialog, um Spielwiederholungen zu laden
+image::spielwiederholung_laden.jpg[]
+
+Nachdem ein Spiel beendet wurde, wird eine
 Wiederholungsdatei im Ordner "Replay" erstellt. Diese kann über das
 obige Menü unter "Spiel"→"Spielwiederholung laden" ausgewählt werden.
 Dabei öffnet sich das Fenster "Wiederholung laden".
@@ -162,8 +168,10 @@ beschriebenen Spielfeldoberfläche dargestellt.
 [[testdurchläufe]]
 === Testdurchläufe
 
-Datei:Testdurchläufe.jpg[miniatur|Beispieldialog für einen
-Testdurchlauf] Über das Menü "Spiel" → "Testdurchläufe" gelangt man zum
+.Beispieldialog für einen Testdurchlauf
+image::testdurchla_ufe.jpg[]
+
+Über das Menü "Spiel" → "Testdurchläufe" gelangt man zum
 Konfigurationsfenster für Testdurchläufe. Hier kann man Computerspieler
 (keine menschlichen Spieler) gegeneinander in mehreren Spielen
 hintereinander antreten lassen und erhält eine ausführliche Statistik
