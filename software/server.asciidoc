@@ -198,35 +198,28 @@ können, um den Computerspieler gezielt zu verbessern.
 Dies ist zur Zeit nur auf etwas kompliziertem Wege möglich. Es folgt
 eine Schritt-für-Schritt Anleitung:
 
-\1. Laden Sie das betreffende Replay aus dem Wettkampfsystem herunter
-(.xml.gz Datei).
-
-\2. Entpacken Sie das Replay, sodass sie eine .xml-Datei erhalten.
-
-\3. Öffnen Sie die XML-Datei mit einem Texteditor.
-
-\4. Jetzt folgt der wohl schwerste Teil: Suchen Sie sich anhand der
-Rundennummer und dem Spieler, der an der Reihe ist, den gewünschten
-GameState heraus. Sind Sie z.B. Spieler Rot im 6. Zug, suchen Sie nach
-einem Eintrag im XML, der folgendermaßen aussieht:
-
-\5. Kopieren Sie den kompletten GameState, von bis einschließlich zum
-nächsten
-
-\6. Erstellen Sie eine neue Textdatei mit folgendem Inhalt:
+. Laden Sie das betreffende Replay aus dem Wettkampfsystem herunter
+  (.xml.gz Datei).
+. Entpacken Sie das Replay, sodass sie eine .xml-Datei erhalten.
+. Öffnen Sie die XML-Datei mit einem Texteditor.
+. Jetzt folgt der wohl schwerste Teil: Suchen Sie sich anhand der
+  Rundennummer und dem Spieler, der an der Reihe ist, den gewünschten
+  GameState heraus. Sind Sie z.B. Spieler Rot im 6. Zug, suchen Sie nach
+  einem Eintrag im XML, der folgendermaßen aussieht:
+. Kopieren Sie den kompletten GameState, von bis einschließlich zum
+  nächsten
+. Erstellen Sie eine neue Textdatei mit folgendem Inhalt:
 
  FÜGEN SIE HIER DEN IN SCHRITT 5 KOPIERTEN GAME-STATE EIN
 
-\7. Speichern Sie die Datei unter einem beliebigen Namen mit der Endung
-.xml
-
-\8. Starten Sie den Server und erstellen Sie ein neues Spiel. Wählen Sie
-die Computerspieler nach ihren Wünschen. Wenn die fragliche Situation
-z.B. mit ihrem Client als roter Spieler auftritt, sollten Sie als roten
-Spieler auch hier wieder ihren Client auswählen. Der Gegenspieler kann
-dann ein beliebiger Computerspieler oder auch ein Mensch sein.
-
-\9. Setzen Sie einen Haken bei "Spiel aus Datei laden". Wählen Sie über
-"Datei wählen" die in Schritt 6 erstellte Datei aus. Starten Sie dann
-das Spiel. Das Spiel sollte sich nun in genau der Situation befinden, in
-der das Fehlerverhalten aufgetreten ist.
+. Speichern Sie die Datei unter einem beliebigen Namen mit der Endung
+  .xml
+. Starten Sie den Server und erstellen Sie ein neues Spiel. Wählen Sie
+  die Computerspieler nach ihren Wünschen. Wenn die fragliche Situation
+  z.B. mit ihrem Client als roter Spieler auftritt, sollten Sie als roten
+  Spieler auch hier wieder ihren Client auswählen. Der Gegenspieler kann
+  dann ein beliebiger Computerspieler oder auch ein Mensch sein.
+. Setzen Sie einen Haken bei "Spiel aus Datei laden". Wählen Sie über
+  "Datei wählen" die in Schritt 6 erstellte Datei aus. Starten Sie dann
+  das Spiel. Das Spiel sollte sich nun in genau der Situation befinden, in
+  der das Fehlerverhalten aufgetreten ist.
