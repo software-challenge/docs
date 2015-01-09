@@ -117,7 +117,7 @@ gespielt werden.
 === Die Spielfeldoberfläche
 
 .Die Spielfeldoberfläche (hier mit dem Spiel "Schäfchen im Trockenen")
-image::spieloberfl_che.jpg[]
+image::spieloberfla_che.jpg[]
 
 Die Spielfeldoberfläche setzt sich aus dem Spielbrett (der große
 zentrale Bereich) und den Spielsteuerelementen (unten) zusammen.
