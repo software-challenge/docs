@@ -12,6 +12,7 @@ die teilnehmenden Teams ist hier alles dokumentiert, was für den
 Ablauf des Wettbewerbes benötigt wird.
 
 
+
 include::allgemein/die-software-challenge.asciidoc[]
 
 include::software/server.asciidoc[]
