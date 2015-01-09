@@ -807,7 +807,7 @@ gespielt werden.</p>
 <h3 id="die-spielfeldoberfläche">Die Spielfeldoberfläche</h3>
 <div class="imageblock">
 <div class="content">
-<img src="./images/spieloberfl_che.jpg" alt="spieloberfl che">
+<img src="./images/spieloberfla_che.jpg" alt="spieloberfla che">
 </div>
 <div class="title">Figure 3. Die Spielfeldoberfläche (hier mit dem Spiel "Schäfchen im Trockenen")</div>
 </div>
@@ -914,50 +914,54 @@ können, um den Computerspieler gezielt zu verbessern.</p>
 <p>Dies ist zur Zeit nur auf etwas kompliziertem Wege möglich. Es folgt
 eine Schritt-für-Schritt Anleitung:</p>
 </div>
-<div class="paragraph">
-<p>\1. Laden Sie das betreffende Replay aus dem Wettkampfsystem herunter
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Laden Sie das betreffende Replay aus dem Wettkampfsystem herunter
 (.xml.gz Datei).</p>
-</div>
-<div class="paragraph">
-<p>\2. Entpacken Sie das Replay, sodass sie eine .xml-Datei erhalten.</p>
-</div>
-<div class="paragraph">
-<p>\3. Öffnen Sie die XML-Datei mit einem Texteditor.</p>
-</div>
-<div class="paragraph">
-<p>\4. Jetzt folgt der wohl schwerste Teil: Suchen Sie sich anhand der
+</li>
+<li>
+<p>Entpacken Sie das Replay, sodass sie eine .xml-Datei erhalten.</p>
+</li>
+<li>
+<p>Öffnen Sie die XML-Datei mit einem Texteditor.</p>
+</li>
+<li>
+<p>Jetzt folgt der wohl schwerste Teil: Suchen Sie sich anhand der
 Rundennummer und dem Spieler, der an der Reihe ist, den gewünschten
 GameState heraus. Sind Sie z.B. Spieler Rot im 6. Zug, suchen Sie nach
 einem Eintrag im XML, der folgendermaßen aussieht:</p>
-</div>
-<div class="paragraph">
-<p>\5. Kopieren Sie den kompletten GameState, von bis einschließlich zum
+</li>
+<li>
+<p>Kopieren Sie den kompletten GameState, von bis einschließlich zum
 nächsten</p>
-</div>
-<div class="paragraph">
-<p>\6. Erstellen Sie eine neue Textdatei mit folgendem Inhalt:</p>
-</div>
+</li>
+<li>
+<p>Erstellen Sie eine neue Textdatei mit folgendem Inhalt:</p>
 <div class="literalblock">
 <div class="content">
 <pre>FÜGEN SIE HIER DEN IN SCHRITT 5 KOPIERTEN GAME-STATE EIN</pre>
 </div>
 </div>
-<div class="paragraph">
-<p>\7. Speichern Sie die Datei unter einem beliebigen Namen mit der Endung
+</li>
+<li>
+<p>Speichern Sie die Datei unter einem beliebigen Namen mit der Endung
 .xml</p>
-</div>
-<div class="paragraph">
-<p>\8. Starten Sie den Server und erstellen Sie ein neues Spiel. Wählen Sie
+</li>
+<li>
+<p>Starten Sie den Server und erstellen Sie ein neues Spiel. Wählen Sie
 die Computerspieler nach ihren Wünschen. Wenn die fragliche Situation
 z.B. mit ihrem Client als roter Spieler auftritt, sollten Sie als roten
 Spieler auch hier wieder ihren Client auswählen. Der Gegenspieler kann
 dann ein beliebiger Computerspieler oder auch ein Mensch sein.</p>
-</div>
-<div class="paragraph">
-<p>\9. Setzen Sie einen Haken bei "Spiel aus Datei laden". Wählen Sie über
+</li>
+<li>
+<p>Setzen Sie einen Haken bei "Spiel aus Datei laden". Wählen Sie über
 "Datei wählen" die in Schritt 6 erstellte Datei aus. Starten Sie dann
 das Spiel. Das Spiel sollte sich nun in genau der Situation befinden, in
 der das Fehlerverhalten aufgetreten ist.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -3142,7 +3146,7 @@ weniger Last für das System zur Verfügung gestellt werden können.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-01-06 15:51:04 CET
+Last updated 2015-01-09 11:32:40 CET
 </div>
 </div>
 </body>
