@@ -2,9 +2,9 @@
 
 Man hat einige Spiele absolviert und sich eine gute Strategie
 ausgedacht. Damit hat man zwar schon einen wichtigen Teil der Arbeit
-geleistet, aber irgendwie muss dem link:Der Computerspieler
-(Client)[Computerspieler] noch beigebracht werden, nach dieser
-Strategie zu spielen.
+geleistet, aber irgendwie muss dem
+<<der-computerspieler,Computerspieler>> noch beigebracht werden, nach
+dieser Strategie zu spielen.
 
 Anhand einer kleinen Aufgabe soll gezeigt werden, wie man eine Idee
 formal beschreiben und in ein Programm überführen kann. Dabei nehmen wir
@@ -36,7 +36,9 @@ Karten) aus
 Nachdem man seine Idee formal niedergeschrieben hat, kann sie ganz
 leicht in ein Programm überführt werden:
 
-`/**
+[source,java]
+----
+/**
   * Das Array a[] symbolisiert den Stapel der unsortierten Karten. Dabei steht 
   * eine Zahl immer für eine spezielle Karte. Eine kleinere Zahl bedeutet, 
   * dass es sich um eine kleinere Karte handelt.
@@ -66,4 +68,5 @@ leicht in ein Programm überführt werden:
      if (start < a.length) {
           sortiere(a, start+1);
      }
- }`
+ }
+----

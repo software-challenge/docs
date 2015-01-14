@@ -1,3 +1,4 @@
+[[das-wettkampfsystem]]
 == Das Wettkampfsystem
 
 Das Wettkampfsystem ist die Plattform, auf der die link:Der

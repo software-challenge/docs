@@ -1,6 +1,6 @@
 == Client abgabefertig machen
 
-Damit link:das Wettkampfsystem[das Wettkampfsystem] mit dem
+Damit <<das-wettkampfsystem,das Wettkampfsystem>> mit dem
 Computerspieler arbeiten kann, muss er zu einem ausführbaren Programm
 gemacht und in ein ZIP-Archiv gepackt werden.  Diese Anleitung
 beschreibt, wie man für den Java-SimpleClient vorgehen muss.
@@ -19,7 +19,7 @@ die Verwendung eines Ant-Scripts.
 2.  Im nächsten Fenster wird die "Run Configuration" ausgewählt (dazu
 muss der SimpleClient mindestens einmal mit Eclipse gestartet worden
 sein). Darunter wird mit "Browse" die Zieldatei (z.B.
-[...]/my_player.jar) ausgewählt. Bei "Library handling" am besten die
+`[...]/my_player.jar`) ausgewählt. Bei "Library handling" am besten die
 erste Option nehmen. So wird eine einzige JAR Datei erzeugt, in der
 alles nötige drin ist. Mit einem Klick auf Finish wird die JAR-Datei
 erzeugt. Eventuell erhält man einen Hinweis "This operation repacks
@@ -85,18 +85,3 @@ Am Ende erhält man die Meldung "BUILD SUCCESSFUL".
 Im SimpleClient-Ordner findet man dann im Unterordner "build" die JAR
 Datei im Ordner "jar" sowie die fertig gepackte ZIP-Datei im Ordner
 "zipped", die direkt ins Wettkampfsystem hochgeladen werden kann.
-
-[[netbeans-1]]
-==== NetBeans
-
-Einmalig die Datei
-"Pfad/zur/Project/Loacation/schaefchen_player/build.xml" mit einem
-beliebigen Texteditor (nicht Word!) öffnen und ganz am Ende direkt vor
-der letzten Zeile "" folgendes hinzufügen:
-
- +
-`    ` +
-
-Von nun an wird eine abgabfertige Datei
-"Pfad/zur/Project/Loacation//dist/simple_client.zip" bei "Clean and
-Build" erstellt.

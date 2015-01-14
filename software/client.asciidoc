@@ -1,3 +1,4 @@
+[[der-computerspieler]]
 == Der Computerspieler (Client)
 
 Der Computerspieler ist ein Programm, dass

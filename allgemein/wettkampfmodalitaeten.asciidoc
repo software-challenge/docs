@@ -86,8 +86,9 @@ gewährleisten sollen.
 [[die-konkreten-termine]]
 === Die konkreten Termine
 
-Siehe Terminseite der
-Software-Challengehttp://www.informatik.uni-kiel.de/software-challenge/2013/termine/[1]
+Befinden sich auf der
+http://www.software-challenge.de/de/termine[Software-Challenge Website
+unter Termine].
 
 [[technische-daten-der-virtuellen-maschine]]
 === Technische Daten der virtuellen Maschine

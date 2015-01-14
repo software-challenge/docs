@@ -20,3 +20,14 @@ der Software Challenge teilnehmen.
 * Als Endung fuer Asciidoc wird `.asciidoc` benutzt.
 * Es wird des ATX-Format fuer Ueberschriften verwendet (also `=`,
   `==`, `===` etc.)
+
+== Übersetzung
+
+Um alles in HTML zu Übersetzen, sollte `asciidoctor` verwendet werden:
+
+....
+asciidoctor -D out index.asciidoc
+....
+
+Hierzu werden die beiden Ruby-Gems `asciidoctor` und `pygments.rb`
+(für Syntax-Highlighting der Quellcodes) benötigt.

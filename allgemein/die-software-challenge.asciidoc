@@ -5,7 +5,7 @@ für Informatik der CAU Kiel veranstaltet wird und das durch zahlreiche
 Unternehmen, die Prof. Dr. Werner Petersen-Stiftung sowie das
 Ministerium für Wissenschaft, Wirtschaft und Verkehr des Landes
 Schleswig-Holstein finanziert wird. In Zusammenarbeit mit den
-Gymnasien und Gesamtschulen und dem Institut für Informatik sowie den
+Gymnasien und Gesamtschulen, dem Institut für Informatik sowie den
 Firmen soll in diesem Projekt der Informatik-Unterricht in
 praxisbezogener Weise mitgestaltet und dadurch aufgewertet
 werden. Gegenstand der Software-Challenge ist ein
@@ -36,19 +36,19 @@ einigen, der dann in den Wettkampf geschickt und dann eventuell noch
 gemeinsam weiterentwickelt wird. In begründeten Einzelfällen kann die
 Wettkampfleitung Ausnahmen von den zuvor genannten Regeln zulassen.
 
-Auch im dritten Jahr der bundesweiten Software-Challenge sollen
-wieder ca. 100 Teams teilnehmen. Nach aktuellem Planungsstand sollen
-dabei neben zahlreichen Sachpreisen auch 100 Stipendien (6 Monate je
-300 Euro) an die besten 100 Schülerinnen und Schüler vergeben werden.
+Zur Zeit nehmen pro Schuljahr etwa 100 Teams bundesweit an der
+Software-Challenge teil.  Es werden dabei neben zahlreichen
+Sachpreisen auch etwa 100 Stipendien (6 Monate je 300 Euro) an die
+besten 100 Schülerinnen und Schüler vergeben.
 
-Aktuell planen wir folgendes Anmeldeverfahren, wobei Änderungen
-durchaus noch möglich sind:
+Das Anmeldeverfahren sieht etwa wie folgt aus. Genaue Termine des
+aktuellen Zeitraumes finden sich auf der
+http://www.software-challenge.de/de/termine[Website unter Termine].
 
-Seit April 2013 können interessierte SchulleiterInnen, Lehrkräfte und
+Ab April können interessierte SchulleiterInnen, Lehrkräfte und
 SchülerInnen ihre Schulen und Teams für die Teilnahme an der
-Software-Challenge im Schuljahr 2013/2014 hier unverbindlich
-anmelden. Diese Interessenten werden dann über wichtige Termine und
-andere relevanten Dinge informiert.
+Software-Challenge unverbindlich anmelden. Diese Interessenten werden
+dann über wichtige Termine und andere relevanten Dinge informiert.
 
 Gegen Ende der Anmeldungsphase werden wir dann mit den registrierten
 Interessenten in Verbindung treten. Dann soll eine (relativ)
