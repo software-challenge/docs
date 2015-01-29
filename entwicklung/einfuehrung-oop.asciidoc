@@ -28,10 +28,13 @@ lassen sich durch direkte Wertzuweisungen vornehmen:
 Auszahlungen gehandhabt? Eine Auszahlung soll nur möglich sein, wenn das
 Konto ausreichend gedeckt ist:
 
-`//Beispiel um 40 Geldeinheiten abzuheben
- if (kontostand >= 40) {
-     kontostand = kontostand - 40;
- }`
+[source,java]
+----
+// Beispiel um 40 Geldeinheiten abzuheben
+if (kontostand >= 40) {
+    kontostand = kontostand - 40;
+}
+----
 
 Jedes Mal, wenn Geld abgehoben werden soll, muss erst überprüft werden,
 ob das Konto ausreichend gedeckt ist. Sollte man die if-Abfrage nur an
@@ -39,7 +42,7 @@ einer Stelle vergessen, läuft man Gefahr, dass der Saldo negativ wird,
 was nicht möglich sein soll.
 
 Es gibt aber noch weitere Probleme: Durch
-(`kontostand = kontostand + (-25);`) kann man quasi durch Einzahlung
+`kontostand = kontostand + (-25);` kann man quasi durch Einzahlung
 eines negativen Betrages den Saldo ins Negative treiben. Dies ist in
 zweifacher Weise kritisch, da zum einen der Kontostand negativ werden
 kann und es zum anderen keine negativen Einzahlungen geben soll. Also
@@ -57,31 +60,34 @@ voll genutzt ist.
 Möchte man ein Konto objektorientiert darstellen, schreibt man zunächst
 eine _Klasse_, die eine Art Bauplan ist:
 
-`public class Konto {
-     private int kontostand;
- 
-     public Konto() {
-         kontostand = 0;
-     }
- 
-     public void einzahlen(int betrag) {
-         if (betrag > 0) {
-             kontostand = kontostand + betrag;
-         }
-     }
- 
-     public boolean abheben(int betrag) {
-         if (kontostand >= betrag) {
-             kontostand = kontostand - betrag;
-             return true;
-         }
-         return false;
-     }
- 
-     public int getKontostand() {
-         return kontostand;
-     }
- }`
+[source,java]
+----
+public class Konto {
+    private int kontostand;
+
+    public Konto() {
+        kontostand = 0;
+    }
+
+    public void einzahlen(int betrag) {
+        if (betrag > 0) {
+            kontostand = kontostand + betrag;
+        }
+    }
+
+    public boolean abheben(int betrag) {
+        if (kontostand >= betrag) {
+            kontostand = kontostand - betrag;
+            return true;
+        }
+        return false;
+    }
+
+    public int getKontostand() {
+        return kontostand;
+    }
+}
+----
 
 Das Wort `private` vor der Variablen für den Kontostand bedeutet, dass
 der Zugriff darauf nur innerhalb der Klasse gestattet ist, während
@@ -91,8 +97,11 @@ oder abheben, muss man die entsprechenden Methoden nehmen.
 Mit dem Schlüsselwort `new` kann man aus dem Bauplan (also der Klasse)
 ein Objekt erzeugen:
 
-`Konto konto1 = new Konto(); //Erzeugt ein Konto-Objekt und speichert es in der Variablen konto1
- Konto konto2 = new Konto(); //Erzeugt noch ein Konto und speichert es in einer anderen Variablen`
+[source,java]
+----
+Konto konto1 = new Konto(); //Erzeugt ein Konto-Objekt und speichert es in der Variablen konto1
+Konto konto2 = new Konto(); //Erzeugt noch ein Konto und speichert es in einer anderen Variablen
+----
 
 Das `new` führt den Konstruktor aus
 (`public Konto() { kontostand = 0; }`). Also hat jedes neu erstellte
@@ -104,45 +113,54 @@ Argumente übergeben.
 Um Geld einzuzahlen oder abzuheben ruft man die Methoden mit dem sog.
 Punktoperator auf:
 
-`Konto konto1 = new Konto();            //konto: 0 Geldeinheiten (GE)
- Konto konto2 = new Konto();                  //konto2: 0 GE
- 
- konto1.einzahlen(100);                 //konto1: 100 GE, konto2: 0  GE
- konto2.einzahlen(50);                  //konto1: 100 GE, konto2: 50 GE
- 
- boolean erfolg = konto1.auszahlen(30); //konto1: 70 GE, konto2: 50 GE, erfolg: true
- erfolg = konto2.auszahlen(90);         //konto1: 70 GE, konto2: 50 GE, erfolg: false`
+[source,java]
+----
+Konto konto1 = new Konto();            // konto: 0 Geldeinheiten (GE)
+Konto konto2 = new Konto();            // konto2: 0 GE
+
+konto1.einzahlen(100);                 // konto1: 100 GE, konto2: 0  GE
+konto2.einzahlen(50);                  // konto1: 100 GE, konto2: 50 GE
+
+boolean erfolg = konto1.auszahlen(30); // konto1: 70 GE, konto2: 50 GE, erfolg: true
+erfolg = konto2.auszahlen(90);         // konto1: 70 GE, konto2: 50 GE, erfolg: false
+----
 
 Die Erweiterung der Klasse um den Dispokredit erweist sich auch als sehr
 einfach, da nur noch Änderungen in der Klasse notwendig sind:
 
-`class Konto {
+[source,java]
+----
+class Konto {
      private int kontostand;
-     '''private int dispo;'''
- 
+     private int dispo; // <1>
+
      public Konto() {
          kontostand = 0;
-         '''dispo = 500;'''
+         dispo = 500; // <2>
      }
- 
+
      public void einzahlen(int betrag) {
          if (betrag > 0) {
              kontostand = kontostand + betrag;
          }
      }
- 
+
      public boolean abheben(int betrag) {
-         if ((kontostand '''+ dispo''') >= betrag) {
+         if ((kontostand + dispo) >= betrag) { // <3>
              kontostand = kontostand - betrag;
              return true;
          }
          return false;
      }
- 
+
      public int getKontostand() {
          return kontostand;
      }
- }`
+}
+----
+<1> Neue private Variable um den Kreditrahmen zu speichern.
+<2> Kreditrahmen im Konstruktor initialisieren.
+<3> Kreditrahmen beim Abheben mit berücksichtigen.
 
 [[referenzierung-von-objekten]]
 ==== Referenzierung von Objekten
@@ -169,21 +187,24 @@ Möchte man zum Beispiel zusätzlich auch noch ein Premiumkonto anbieten,
 auf dem der Kontostand verzinst wird, kann man die bestehende Klasse
 nehmen und entsprechend erweitern:
 
-`public class PremiumKonto extends Konto {
+[source,java]
+----
+public class PremiumKonto extends Konto {
      private double zinsbetrag;
- 
+
      public PremiumKonto() {
          super();
-         zinsbetrag = 2.5d; //2.5% Zinsen
+         zinsbetrag = 2.5d; // 2.5% Zinsen
      }
- 
+
      public void zinsenGutschreiben() {
          int saldo = getKontostand();
          if (saldo > 0) {
              einzahlen(saldo * zinsbetrag / 100);
          }
      }
- }`
+}
+----
 
 Die Methoden zum Ein- und Auszahlen brauchen nicht neu geschrieben
 werden, da diese von der Klasse Konto "kopiert" werden. Man kann eine
@@ -196,10 +217,13 @@ weggelassen werden darf.
 Ein neues Objekt erzeugt man auf die gleiche Weise, wie bei einem
 normalen Konto:
 
-`PremiumKonto premium = new PremiumKonto();
- 
- premium.einzahlen(50); //geerbte Methode
- premium.zinsenGutschreiben();`
+[source,java]
+----
+PremiumKonto premium = new PremiumKonto();
+
+premium.einzahlen(50); //geerbte Methode
+premium.zinsenGutschreiben();
+----
 
 [[casting-von-objekten]]
 ==== Casting von Objekten
@@ -220,13 +244,15 @@ ist! Sonst wird eine Fehlermeldung geworfen. Mit dem Schlüsselwort
 `instanceof` kann man abfragen, ob ein Objekt zu einer gewissen Klasse
 gehört:
 
-`Konto konto7 = new PremiumKonto();
- 
- if (konto6 instanceof PremiumKonto) {
-     Premiumkonto premium2 = (PremiumKonto) konto7;
-     premium2.zinsenGutschreiben();
- }
- `
+[source,java]
+----
+Konto konto7 = new PremiumKonto();
+
+if (konto6 instanceof PremiumKonto) {
+    Premiumkonto premium2 = (PremiumKonto) konto7;
+    premium2.zinsenGutschreiben();
+}
+----
 
 *Wichtig:* Es werden nur Methoden vererbt, jedoch keine Variablen!
 Deshalb wird auf den kontostand nur über die entsprechenden Methoden der
@@ -242,29 +268,34 @@ Klassen werden von allen Objekten geteilt.
 Soll zum Beispiel der Zinssatz beim Premiumkonto für alle Konten gleich
 sein, kann man diesen als statisch deklarieren:
 
-`public class PremiumKonto extends Konto {
+[source,java]
+----
+public class PremiumKonto extends Konto {
      private static double zinsbetrag = 2.5d; //2.5% Zinsen
- 
+
      ...
- 
+
      public static double getZinsbetrag() {
          return zinsbetrag;
-     } 
- 
+     }
+
      public static void setZinsbetrag(double wert) {
          zinsbetrag = wert;
-     } 
- }`
+     }
+ }
+----
 
 Von außen kommt man an den Zinsbetrag über die Methode
 `setZinsbetrag(double wert)`, die man entweder über das Objekt oder über
 den Klassennamen aufrufen darf.
 
-`PremiumKonto.setZinsbetrag(3d); //Zinsen auf 3% erhöhen
- 
- PremiumKonto premium3 = new PremiumKonto();
- premium3.setZinsbetrag(3d);
- `
+[source,java]
+----
+PremiumKonto.setZinsbetrag(3d); //Zinsen auf 3% erhöhen
+
+PremiumKonto premium3 = new PremiumKonto();
+premium3.setZinsbetrag(3d);
+----
 
 *Tipp:* Damit man besser erkennen kann, dass es sich um statische
 Variablen oder Methoden handelt, sollte man auf diese immer über den
@@ -281,9 +312,5 @@ behandelt.
 [[weiterführende-informationen]]
 === Weiterführende Informationen
 
-* http://de.wikipedia.org/wiki/Objektorientierte_Programmierung Eintrag
-aus der Wikipedia
-* http://www2.math.uni-wuppertal.de/~grosser/jv/haupt/node1.html
-Einführung in die Objektorientierung mit Java auf den Seiten der Uni
-Wuppertal
-
+* http://de.wikipedia.org/wiki/Objektorientierte_Programmierung[Eintrag aus der Wikipedia]
+* http://openbook.rheinwerk-verlag.de/oop/[Praxisbuch Objektorientierung (openbook)]
