@@ -93,10 +93,22 @@ unter Termine].
 [[technische-daten-der-virtuellen-maschine]]
 === Technische Daten der virtuellen Maschine
 
-[cols="<,",options="header",]
+[cols="2"]
 |==============================
-|Betriebssystem: |Ubuntu 32 Bit
-|Prozessor: |2,27 GHz Xeon
-|Arbeitsspeicher: |1,5 GB
+|Betriebssystem:
+|Ubuntu 9.04 Server 32 Bit oder 14.10 LTS Server 64 Bit
+|Prozessor:
+|2,27 GHz Xeon
+|Arbeitsspeicher:
+|1,5 GB
 |==============================
 
+Es gibt zwei Versionen der virtuellen Maschine, die sich nur durch das
+installierter Betriebssystem unterscheiden. Die Version mit Ubuntu
+9.04 wird im Wettkampfsystem als "alte VM" bezeichnet, und wird seit
+einigen Jahren eingesetzt. Inzwischen gibt es eine "neue VM", auf der
+Ubuntu 14.10 LTS installiert ist. Diese befindet sich derzeit in der
+Testphase, kann also noch nicht als vollständig getestet angesehen
+werden. Sie ist für Teams gedacht, welche neuere Versionen von
+Bibliotheken etc. für ihren Computerspieler benötigen, die auf der
+alten VM noch nicht verfügbar sind.

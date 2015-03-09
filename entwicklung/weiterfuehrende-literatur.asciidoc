@@ -1,4 +1,4 @@
-== Weiterführende Literatur
+=== Weiterführende Literatur
 
 Zu den meisten Programmiersprachen existieren umfassende
 Dokumentationen. Einige Empfehlenswerte werden hier aufgeführt. Der
@@ -6,7 +6,7 @@ geneigte Leser ist eingeladen, in dem entsprechenden Bereich eigene
 Empfehlungen hinzuzufügen.
 
 [[java]]
-=== Java
+==== Java
 
 Die umfassende (englischsprachige) offizielle Dokumentation zu Java
 befindet sich http://download.oracle.com/javase/7/docs/index.html[hier].

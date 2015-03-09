@@ -32,7 +32,7 @@ der Kommandozeilenbefehl
 
 [source,sh]
 ----
-java -jar softwarechallenge-gui.jar`
+java -jar softwarechallenge-gui.jar
 ----
 
 auf jeden Fall zum erfolgreichen Starten des Spielleiters führen.

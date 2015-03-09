@@ -1,4 +1,4 @@
-== Eine Idee implementieren
+=== Eine Idee implementieren
 
 Man hat einige Spiele absolviert und sich eine gute Strategie
 ausgedacht. Damit hat man zwar schon einen wichtigen Teil der Arbeit
@@ -11,13 +11,13 @@ formal beschreiben und in ein Programm überführen kann. Dabei nehmen wir
 an, dass wir einen Stapel mit Karten haben, der sortiert werden soll.
 
 [[vorraussetzungen]]
-=== Vorraussetzungen
+==== Vorraussetzungen
 
 * eine beliebige Anzahl an Spielkarten
 * eine Reihenfolge, in der die Spielkarten sortiert werden sollen
 
 [[idee-formalisieren]]
-=== Idee formalisieren
+===== Idee formalisieren
 
 Als erstes muss die Idee formal beschrieben werden. Oftmals kann man
 zunächst beschreiben, wie man als Mensch vorgehen würde.
@@ -31,7 +31,7 @@ Stapel.
 Karten) aus.
 
 [[idee-implementieren]]
-=== Idee implementieren
+===== Idee implementieren
 
 Nachdem man seine Idee formal niedergeschrieben hat, kann sie ganz
 leicht in ein Programm überführt werden:

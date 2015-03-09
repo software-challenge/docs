@@ -1,4 +1,4 @@
-== Der saubere Programmierstil
+=== Der saubere Programmierstil
 
 Eventuell hat manche(r) schon erlebt, dass man von einer/m Bekannten
 ein Stück Programmcode bekommen hat, den man gar nicht versteht. Oft
@@ -13,7 +13,7 @@ Java von seinen Entwicklern. Dieser soll hier ein wenig näher gebracht
 werden.
 
 [[allgemeiner-dokumentaufbau]]
-=== Allgemeiner Dokumentaufbau
+==== Allgemeiner Dokumentaufbau
 
 * Keine Zeile sollte länger als 80 Zeichen sein. Gerade in Zeiten großer
 Breitbildschirme ist das wohl eine der schwierigsten Regeln überhaupt.
@@ -33,7 +33,7 @@ benutzt (z.B. `int ANZAHL_SPIELER = 2;`)
 * Jede Zeile sollte nur eine Anweisung enthalten.
 
 [[klammerungsregeln]]
-=== Klammerungsregeln
+==== Klammerungsregeln
 
 Grundsätzlich sollte jeder Schleifenrumpf und jede `if`-Anweisung
 geklammert werden, auch wenn nur ein Befehl darin steht. Die öffnende
@@ -78,7 +78,7 @@ if (bedingung) {
 ----
 
 [[die-switch-anweisung]]
-=== Die Switch-Anweisung
+==== Die Switch-Anweisung
 
 Bei einem `switch` sollte die folgende Form gewahrt werden:
 
@@ -105,7 +105,7 @@ wird, soll das durch einen Kommentar gekennzeichnet werden. Wenn ein
 `default` benutzt wird, wird dieses als letzte Klausel geschrieben.
 
 [[weiterführende-informationen]]
-=== Weiterführende Informationen
+==== Weiterführende Informationen
 
 * http://www.oracle.com/technetwork/java/codeconv-138413.html[Die
 Richtlinien von den Java-Entwicklern]

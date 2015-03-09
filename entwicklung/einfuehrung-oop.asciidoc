@@ -1,4 +1,4 @@
-== Einführung in die objektorientierte Programmierung
+=== Einführung in die objektorientierte Programmierung
 
 "Wenn man heute einen Computer kauft, ist er morgen schon
 veraltet". Kaum ein anderes Gerücht hält sich so stark in der
@@ -10,7 +10,7 @@ Beispiel dafür ist die Objektorientierung. Sie wurde bereits Mitte der
 moderner Programmiersprachen.
 
 [[idee-der-objektorientierung]]
-=== Idee der Objektorientierung
+==== Idee der Objektorientierung
 
 Die Idee der Objektorientierung ist, die Daten und die Funktionen, die
 auf diese Daten zugreifen, in einer Komponente zu bündeln. Auf die Daten
@@ -18,7 +18,7 @@ kann man nur über die entsprechenden Funktionen (die man _Methoden_
 nennt) zugreifen.
 
 [[vorgehensweise-ohne-objektorientierung]]
-==== Vorgehensweise ohne Objektorientierung
+===== Vorgehensweise ohne Objektorientierung
 
 Möchte man zum Beispiel ein Konto ohne Objektorientierung schreiben, so
 braucht man eine Integer-Variable `int kontostand = 0;`, die Auskunft
@@ -55,7 +55,7 @@ kann man unter Umständen nichts abheben, obwohl der Dispo noch nicht
 voll genutzt ist.
 
 [[objektorientiert-arbeiten]]
-==== Objektorientiert arbeiten
+===== Objektorientiert arbeiten
 
 Möchte man ein Konto objektorientiert darstellen, schreibt man zunächst
 eine _Klasse_, die eine Art Bauplan ist:
@@ -163,7 +163,7 @@ class Konto {
 <3> Kreditrahmen beim Abheben mit berücksichtigen.
 
 [[referenzierung-von-objekten]]
-==== Referenzierung von Objekten
+===== Referenzierung von Objekten
 
 Wenn man mit `Konto konto3 = new Konto()` ein neues Objekt erzeugt, wird
 dieses im Arbeitsspeicher abgelegt und die Variable `konto3` enthält die
@@ -177,7 +177,7 @@ Statt _zeigen_ sagt man oft auch _referenzieren_.
 *Merkregel:* Neue Objekte erzeugt man nur mit dem Schlüsselwort `new`! +
 
 [[vererbung]]
-=== Vererbung
+==== Vererbung
 
 Die Vererbung ist eine Technik, mit der man eine Klasse, durch
 hinzufügen von Methoden und Variablen, einen neuen Bauplan (Klasse)
@@ -226,7 +226,7 @@ premium.zinsenGutschreiben();
 ----
 
 [[casting-von-objekten]]
-==== Casting von Objekten
+===== Casting von Objekten
 
 Da ein Premiumkonto auch ein normales Konto ist, ist der folgende Aufruf
 legal:
@@ -259,7 +259,7 @@ Deshalb wird auf den kontostand nur über die entsprechenden Methoden der
 Oberklasse zugegriffen.
 
 [[statische-variablen-und-methoden]]
-=== Statische Variablen und Methoden
+==== Statische Variablen und Methoden
 
 Gibt es Methoden oder Variablen, die für alle Objekte gültig sind, so
 werden diese als statisch (`static`) deklariert. Statische Variablen und
@@ -302,7 +302,7 @@ Variablen oder Methoden handelt, sollte man auf diese immer über den
 Klassennamen zugreifen.
 
 [[weitere-aspekte]]
-=== Weitere Aspekte
+==== Weitere Aspekte
 
 Die Objektorientierung bietet noch viele weitere Aspekte, wie zum
 Beispiel die Polymorphie. Da es sich hier nur um eine Einführung
@@ -310,7 +310,7 @@ handelt, wurden solche fortgeschrittenen Themen allerdings nicht
 behandelt.
 
 [[weiterführende-informationen]]
-=== Weiterführende Informationen
+==== Weiterführende Informationen
 
 * http://de.wikipedia.org/wiki/Objektorientierte_Programmierung[Eintrag aus der Wikipedia]
 * http://openbook.rheinwerk-verlag.de/oop/[Praxisbuch Objektorientierung (openbook)]

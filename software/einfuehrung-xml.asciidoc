@@ -1,8 +1,6 @@
-== Einführung in XML
+=== Einführung in XML
 
-Die Kommunikation zwischen <<server,Spielleiter>> und
-
-XML-Nachrichten realisiert. XML ist eine Auszeichnungssprache, d.h
+Die Kommunikation zwischen <<server,Spielleiter>> und <<der-computerspieler,Computerspieler>> wird mittels XML-Nachrichten realisiert. XML ist eine Auszeichnungssprache, d.h
 eine Sprache, die nicht nur die Daten selbst, sondern auch
 Informationen über die Interpretation oder Bearbeitung liefert. Der
 Vorteil dieser Sprache liegt darin, dass sie sowohl vom Computer, als
@@ -10,7 +8,7 @@ auch vom Menschen gut gelesen werden kann. Dieser Artikel soll den
 Aufbau einer XML-Datei beschreiben.
 
 [[tags]]
-=== Tags
+==== Tags
 
 Die Grundelemente von XML sind _Tags_. Ein Tag liefert Informationen
 über die Art der Daten, die verarbeitet werden sollen. In XML wird ein
@@ -32,7 +30,7 @@ mitgeteilt werden soll.
 *Hinweis:* XML unterscheidet strikt zwischen Groß- und Kleinschreibung.
 
 [[bildungsregeln]]
-==== Bildungsregeln
+===== Bildungsregeln
 
 Die Tags dürfen nicht beliebig in Dokumenten verwendet werden. Es gelten
 hier die folgenden Regeln:
@@ -118,7 +116,7 @@ Auf diese Weise lässt sich das Beispiel mit den komplexen Zahlen etwas
 ----
 
 [[der-header]]
-=== Der Header
+==== Der Header
 
 Ganz wichtig ist noch die erste Zeile in einem XML-Dokument. Aus ihr
 kann das Computerprogramm erfahren, wie er mit den Daten umzugehen hat
@@ -137,7 +135,7 @@ Verarbeitungsinformationen geben, für die Software-Challenge muss man
 aber nur den Header kennen.
 
 [[kommentare]]
-=== Kommentare
+==== Kommentare
 
 Man kann in sein XML-Dokument auch Kommentare einfügen, die beim
 Einlesen dann ignoriert werden:
@@ -151,6 +149,6 @@ Es darf beliebig viele solcher Kommentare geben und sie dürfen nur
 zwischen Tags stehen.
 
 [[weiterführende-informationen]]
-=== Weiterführende Informationen
+==== Weiterführende Informationen
 
 * http://de.wikipedia.org/wiki/Xml[Artikel über XML aus der Wikipedia]
