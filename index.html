@@ -409,6 +409,71 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .hide-for-print{display:none!important}
 .show-for-print{display:inherit!important}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+<style>
+.listingblock .pygments .hll { background-color: #ffffcc }
+.listingblock .pygments  { background: #f8f8f8; }
+.listingblock .pygments .tok-c { color: #408080; font-style: italic } /* Comment */
+.listingblock .pygments .tok-err { border: 1px solid #FF0000 } /* Error */
+.listingblock .pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
+.listingblock .pygments .tok-o { color: #666666 } /* Operator */
+.listingblock .pygments .tok-cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.listingblock .pygments .tok-cp { color: #BC7A00 } /* Comment.Preproc */
+.listingblock .pygments .tok-c1 { color: #408080; font-style: italic } /* Comment.Single */
+.listingblock .pygments .tok-cs { color: #408080; font-style: italic } /* Comment.Special */
+.listingblock .pygments .tok-gd { color: #A00000 } /* Generic.Deleted */
+.listingblock .pygments .tok-ge { font-style: italic } /* Generic.Emph */
+.listingblock .pygments .tok-gr { color: #FF0000 } /* Generic.Error */
+.listingblock .pygments .tok-gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.listingblock .pygments .tok-gi { color: #00A000 } /* Generic.Inserted */
+.listingblock .pygments .tok-go { color: #888888 } /* Generic.Output */
+.listingblock .pygments .tok-gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.listingblock .pygments .tok-gs { font-weight: bold } /* Generic.Strong */
+.listingblock .pygments .tok-gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.listingblock .pygments .tok-gt { color: #0044DD } /* Generic.Traceback */
+.listingblock .pygments .tok-kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.listingblock .pygments .tok-kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.listingblock .pygments .tok-kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.listingblock .pygments .tok-kp { color: #008000 } /* Keyword.Pseudo */
+.listingblock .pygments .tok-kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.listingblock .pygments .tok-kt { color: #B00040 } /* Keyword.Type */
+.listingblock .pygments .tok-m { color: #666666 } /* Literal.Number */
+.listingblock .pygments .tok-s { color: #BA2121 } /* Literal.String */
+.listingblock .pygments .tok-na { color: #7D9029 } /* Name.Attribute */
+.listingblock .pygments .tok-nb { color: #008000 } /* Name.Builtin */
+.listingblock .pygments .tok-nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.listingblock .pygments .tok-no { color: #880000 } /* Name.Constant */
+.listingblock .pygments .tok-nd { color: #AA22FF } /* Name.Decorator */
+.listingblock .pygments .tok-ni { color: #999999; font-weight: bold } /* Name.Entity */
+.listingblock .pygments .tok-ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.listingblock .pygments .tok-nf { color: #0000FF } /* Name.Function */
+.listingblock .pygments .tok-nl { color: #A0A000 } /* Name.Label */
+.listingblock .pygments .tok-nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.listingblock .pygments .tok-nt { color: #008000; font-weight: bold } /* Name.Tag */
+.listingblock .pygments .tok-nv { color: #19177C } /* Name.Variable */
+.listingblock .pygments .tok-ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.listingblock .pygments .tok-w { color: #bbbbbb } /* Text.Whitespace */
+.listingblock .pygments .tok-mf { color: #666666 } /* Literal.Number.Float */
+.listingblock .pygments .tok-mh { color: #666666 } /* Literal.Number.Hex */
+.listingblock .pygments .tok-mi { color: #666666 } /* Literal.Number.Integer */
+.listingblock .pygments .tok-mo { color: #666666 } /* Literal.Number.Oct */
+.listingblock .pygments .tok-sb { color: #BA2121 } /* Literal.String.Backtick */
+.listingblock .pygments .tok-sc { color: #BA2121 } /* Literal.String.Char */
+.listingblock .pygments .tok-sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.listingblock .pygments .tok-s2 { color: #BA2121 } /* Literal.String.Double */
+.listingblock .pygments .tok-se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.listingblock .pygments .tok-sh { color: #BA2121 } /* Literal.String.Heredoc */
+.listingblock .pygments .tok-si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.listingblock .pygments .tok-sx { color: #008000 } /* Literal.String.Other */
+.listingblock .pygments .tok-sr { color: #BB6688 } /* Literal.String.Regex */
+.listingblock .pygments .tok-s1 { color: #BA2121 } /* Literal.String.Single */
+.listingblock .pygments .tok-ss { color: #19177C } /* Literal.String.Symbol */
+.listingblock .pygments .tok-bp { color: #008000 } /* Name.Builtin.Pseudo */
+.listingblock .pygments .tok-vc { color: #19177C } /* Name.Variable.Class */
+.listingblock .pygments .tok-vg { color: #19177C } /* Name.Variable.Global */
+.listingblock .pygments .tok-vi { color: #19177C } /* Name.Variable.Instance */
+.listingblock .pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
@@ -427,7 +492,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_die_aufgabe">Die Aufgabe</a></li>
 </ul>
 </li>
-<li><a href="#_der_spielleiter_server">Der Spielleiter (Server)</a>
+<li><a href="#server">Der Spielleiter (Server)</a>
 <ul class="sectlevel2">
 <li><a href="#system-vorbereiten-und-spielleiter-starten">System vorbereiten und Spielleiter starten</a></li>
 <li><a href="#die-programmoberfläche">Die Programmoberfläche</a></li>
@@ -438,14 +503,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#spielsituation-nachstellen">Spielsituation nachstellen</a></li>
 </ul>
 </li>
-<li><a href="#_der_computerspieler_client">Der Computerspieler (Client)</a>
+<li><a href="#der-computerspieler">Der Computerspieler (Client)</a>
 <ul class="sectlevel2">
 <li><a href="#der-simpleclient">Der SimpleClient</a></li>
 <li><a href="#der-notsosimpleclient">Der NotSoSimpleClient</a></li>
-<li><a href="#weiterführende-informationen">Weiterführende Informationen</a></li>
 </ul>
 </li>
-<li><a href="#_installation_von_java">Installation von Java</a>
+<li><a href="#installation-java">Installation von Java</a>
 <ul class="sectlevel2">
 <li><a href="#grundsätzliches">Grundsätzliches</a></li>
 <li><a href="#installation-unter-windows">Installation unter Windows</a></li>
@@ -468,6 +532,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#die-oberfläche">Die Oberfläche</a></li>
 <li><a href="#programme-starten">Programme starten</a></li>
 <li><a href="#_tastaturkürzel">Tastaturkürzel</a></li>
+</ul>
+</li>
+<li><a href="#_den_simpleclient_erweitern">Den SimpleClient erweitern</a>
+<ul class="sectlevel2">
 <li><a href="#erstellen-einer-neuen-strategie">Erstellen einer neuen Strategie</a></li>
 <li><a href="#die-strategie-benutzen">Die Strategie benutzen</a></li>
 </ul>
@@ -501,10 +569,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#vorraussetzungen">Vorraussetzungen</a></li>
 <li><a href="#idee-formalisieren">Idee formalisieren</a></li>
 <li><a href="#idee-implementieren">Idee implementieren</a></li>
+</ul>
+</li>
+<li><a href="#_weiterführende_literatur">Weiterführende Literatur</a>
+<ul class="sectlevel2">
 <li><a href="#java">Java</a></li>
 </ul>
 </li>
-<li><a href="#_die_schnittstelle_zum_server">Die Schnittstelle zum Server</a></li>
+<li><a href="#schnittstelle">Die Schnittstelle zum Server</a></li>
 <li><a href="#_einführung_in_xml">Einführung in XML</a>
 <ul class="sectlevel2">
 <li><a href="#tags">Tags</a></li>
@@ -524,7 +596,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#technische-daten-der-virtuellen-maschine">Technische Daten der virtuellen Maschine</a></li>
 </ul>
 </li>
-<li><a href="#_das_wettkampfsystem">Das Wettkampfsystem</a>
+<li><a href="#das-wettkampfsystem">Das Wettkampfsystem</a>
 <ul class="sectlevel2">
 <li><a href="#die-weboberfläche">Die Weboberfläche</a></li>
 <li><a href="#auswahl">Auswahl</a></li>
@@ -557,7 +629,7 @@ für Informatik der CAU Kiel veranstaltet wird und das durch zahlreiche
 Unternehmen, die Prof. Dr. Werner Petersen-Stiftung sowie das
 Ministerium für Wissenschaft, Wirtschaft und Verkehr des Landes
 Schleswig-Holstein finanziert wird. In Zusammenarbeit mit den
-Gymnasien und Gesamtschulen und dem Institut für Informatik sowie den
+Gymnasien und Gesamtschulen, dem Institut für Informatik sowie den
 Firmen soll in diesem Projekt der Informatik-Unterricht in
 praxisbezogener Weise mitgestaltet und dadurch aufgewertet
 werden. Gegenstand der Software-Challenge ist ein
@@ -590,21 +662,21 @@ gemeinsam weiterentwickelt wird. In begründeten Einzelfällen kann die
 Wettkampfleitung Ausnahmen von den zuvor genannten Regeln zulassen.</p>
 </div>
 <div class="paragraph">
-<p>Auch im dritten Jahr der bundesweiten Software-Challenge sollen
-wieder ca. 100 Teams teilnehmen. Nach aktuellem Planungsstand sollen
-dabei neben zahlreichen Sachpreisen auch 100 Stipendien (6 Monate je
-300 Euro) an die besten 100 Schülerinnen und Schüler vergeben werden.</p>
+<p>Zur Zeit nehmen pro Schuljahr etwa 100 Teams bundesweit an der
+Software-Challenge teil.  Es werden dabei neben zahlreichen
+Sachpreisen auch etwa 100 Stipendien (6 Monate je 300 Euro) an die
+besten 100 Schülerinnen und Schüler vergeben.</p>
 </div>
 <div class="paragraph">
-<p>Aktuell planen wir folgendes Anmeldeverfahren, wobei Änderungen
-durchaus noch möglich sind:</p>
+<p>Das Anmeldeverfahren sieht etwa wie folgt aus. Genaue Termine des
+aktuellen Zeitraumes finden sich auf der
+<a href="http://www.software-challenge.de/de/termine">Website unter Termine</a>.</p>
 </div>
 <div class="paragraph">
-<p>Seit April 2013 können interessierte SchulleiterInnen, Lehrkräfte und
+<p>Ab April können interessierte SchulleiterInnen, Lehrkräfte und
 SchülerInnen ihre Schulen und Teams für die Teilnahme an der
-Software-Challenge im Schuljahr 2013/2014 hier unverbindlich
-anmelden. Diese Interessenten werden dann über wichtige Termine und
-andere relevanten Dinge informiert.</p>
+Software-Challenge unverbindlich anmelden. Diese Interessenten werden
+dann über wichtige Termine und andere relevanten Dinge informiert.</p>
 </div>
 <div class="paragraph">
 <p>Gegen Ende der Anmeldungsphase werden wir dann mit den registrierten
@@ -642,22 +714,22 @@ vorkommen darf, dass er bei viel Pech auch mal verliert.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_der_spielleiter_server">Der Spielleiter (Server)</h2>
+<h2 id="server">Der Spielleiter (Server)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Die beiden link:Der Computerspieler (Client)[Computerspieler]
-kommunizieren nicht direkt miteinander, sondern übertragen ihre
-Nachrichten über einen Mittelmann: den Spielleiter. Dadurch ist zum
-einen sichergestellt, dass man seinen Gegner nicht mit illegalen
-Nachrichten belästigen kann, zum anderen sorgt der Spielleiter dafür,
-dass sich die Kontrahenten an die Spielregeln halten.</p>
+<p>Die beiden <a href="#der-computerspieler">Computerspieler</a> kommunizieren nicht
+direkt miteinander, sondern übertragen ihre Nachrichten über einen
+Mittelmann: den Spielleiter. Dadurch ist zum einen sichergestellt,
+dass man seinen Gegner nicht mit illegalen Nachrichten belästigen
+kann, zum anderen sorgt der Spielleiter dafür, dass sich die
+Kontrahenten an die Spielregeln halten.</p>
 </div>
 <div class="paragraph">
-<p>Der Spielleiter ist direkt im link:Das Wettkampfsystem[Wettkampfsystem]
+<p>Der Spielleiter ist direkt im <a href="#das-wettkampfsystem">Wettkampfsystem</a>
 integriert, so dass alle Turnierspiele regelkonform gespielt werden
 müssen. Zum Testen des eigenen Computerspielers gibt es eine spezielle
 Version des Spielleiters, die im Downloadbereich
-(<a href="http://www.software-challenge.de/de/download" class="bare">http://www.software-challenge.de/de/download</a>) heruntergeladen werden
+(<a href="http://www.software-challenge.de" class="bare">http://www.software-challenge.de</a>) heruntergeladen werden
 kann. Diese Download-Version, die in diesem Abschnitt beschrieben wird,
 besitzt eine grafische Oberfläche, durch die man das Spiel gut verfolgen
 und sogar als Mensch mitspielen kann.</p>
@@ -666,8 +738,7 @@ und sogar als Mensch mitspielen kann.</p>
 <h3 id="system-vorbereiten-und-spielleiter-starten">System vorbereiten und Spielleiter starten</h3>
 <div class="paragraph">
 <p>Die einzige Vorraussetzung ist, dass auf dem Rechner mindestens die
-Laufzeitumgebung für Java 6 installiert ist. Im Idealfall wird gleich
-das link:Installation von Java[Java 7 SDK installiert].</p>
+Laufzeitumgebung für Java 6 installiert ist. Siehe <a href="#installation-java">Installation von Java</a>.</p>
 </div>
 <div class="paragraph">
 <p>Nach der erfolgreichen Installation kann man den Server durch einen
@@ -677,8 +748,10 @@ Um das zu umgehen kann man den Spielleiter unter Windows auch mit der
 Datei <code>Start.bat</code> starten. Im Zweifel sollte für alle Betriebssysteme
 der Kommandozeilenbefehl</p>
 </div>
-<div class="paragraph">
-<p><code>java -jar softwarechallenge-gui.jar</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh">java -jar softwarechallenge-gui.jar<span class="tok-sb">`</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>auf jeden Fall zum erfolgreichen Starten des Spielleiters führen.</p>
@@ -692,7 +765,7 @@ Statusleiste.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./images/spielleiter_direkt_nach-start.jpg" alt="Spielleiter">
+<img src="../images/spielleiter_direkt_nach-start.jpg" alt="Spielleiter">
 </div>
 <div class="title">Figure 1. Die Spielleiteroberfläche direkt nach dem Programmstart</div>
 </div>
@@ -703,7 +776,7 @@ Spiele. Die Statusleiste unten gibt kurze Statusinformationen zum Spiel
 aus.</p>
 </div>
 <div class="paragraph">
-<p>Zu Beginn ist die Spielfläche leer.<br></p>
+<p>Zu Beginn ist die Spielfläche leer.</p>
 </div>
 </div>
 <div class="sect2">
@@ -714,7 +787,7 @@ Spiel erstellen" das folgende Fenster aufgerufen werden:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./images/neues_spiel_dialog.jpg" alt="Neues Spiel">
+<img src="../images/neues_spiel_dialog.jpg" alt="Neues Spiel">
 </div>
 <div class="title">Figure 2. Dialog für ein neues Spiel</div>
 </div>
@@ -784,13 +857,13 @@ das Spiel.</p>
 <p>Die Option "Spiel aus Datei laden" ermöglicht es, einen beliebigen
 Spielzustand aus einer XML-Datei zu laden. Die XML-Datei muss dabei den
 Regeln genügen, wie sie in der
-link:Die Schnittstelle zum Server[Kommunikations-Dokumentation]
+<a href="#schnittstelle">Kommunikations-Dokumentation</a>
 beschrieben sind. Das Spiel wird dann ausgehend von dem so geladenen
 Spielzustand fortgesetzt.</p>
 </div>
 <div class="paragraph">
 <p>Links unten kann der Spieltyp ausgewählt werden, d.h. insbesondere das
-aktuelle Spiel des Jahres (z.B. 2011: Schäfchen im Trockenen).</p>
+aktuelle Spiel des Jahres.</p>
 </div>
 <div class="paragraph">
 <p>Nach Eingabe der erforderlichen Werte kann das Spiel mithilfe des
@@ -807,7 +880,7 @@ gespielt werden.</p>
 <h3 id="die-spielfeldoberfläche">Die Spielfeldoberfläche</h3>
 <div class="imageblock">
 <div class="content">
-<img src="./images/spieloberfla_che.jpg" alt="spieloberfla che">
+<img src="../images/spielfeldoberflaeche.jpg" alt="spielfeldoberflaeche">
 </div>
 <div class="title">Figure 3. Die Spielfeldoberfläche (hier mit dem Spiel "Schäfchen im Trockenen")</div>
 </div>
@@ -825,7 +898,7 @@ dargestellt. Hier setzt der menschliche Spieler auch seine Züge.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./images/steuerelemente.jpg" alt="steuerelemente">
+<img src="../images/steuerelemente.jpg" alt="steuerelemente">
 </div>
 <div class="title">Figure 4. Die Steuerelemente des Spielleiters</div>
 </div>
@@ -848,7 +921,7 @@ ausgeschaltet werden.</p>
 <h3 id="spielwiederholung-laden">Spielwiederholung laden</h3>
 <div class="imageblock">
 <div class="content">
-<img src="./images/spielwiederholung_laden.jpg" alt="spielwiederholung laden">
+<img src="../images/spielwiederholung_laden.jpg" alt="spielwiederholung laden">
 </div>
 <div class="title">Figure 5. Dialog, um Spielwiederholungen zu laden</div>
 </div>
@@ -877,7 +950,7 @@ beschriebenen Spielfeldoberfläche dargestellt.</p>
 <h3 id="testdurchläufe">Testdurchläufe</h3>
 <div class="imageblock">
 <div class="content">
-<img src="./images/testdurchla_ufe.jpg" alt="testdurchla ufe">
+<img src="../images/testdurchla_ufe.jpg" alt="testdurchla ufe">
 </div>
 <div class="title">Figure 6. Beispieldialog für einen Testdurchlauf</div>
 </div>
@@ -967,15 +1040,14 @@ der das Fehlerverhalten aufgetreten ist.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_der_computerspieler_client">Der Computerspieler (Client)</h2>
+<h2 id="der-computerspieler">Der Computerspieler (Client)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Der Computerspieler ist ein Programm, dass
-sich mit dem link:Der Spielleiter (Server)[Der Spielleiter (Server)]
-verbindet und die gestellte Aufgabe selbstängig lösen kann. Die Aufgabe
-der Schüler ist es, sich eine Strategie zu überlegen und zu
-implementieren, mit der sie gegen die Clients der anderen Schulen
-gewinnen können.</p>
+<p>Der Computerspieler ist ein Programm, dass sich mit dem Spielleiter
+(siehe <a href="#server">Der Spielleiter (Server)</a>) verbindet und die gestellte Aufgabe selbstängig
+lösen kann. Die Aufgabe der Schüler ist es, sich eine Strategie zu
+überlegen und zu implementieren, mit der sie gegen die Clients der
+anderen Schulen gewinnen können.</p>
 </div>
 <div class="paragraph">
 <p>Der Computerspieler kann in einer beliebigen Programmiersprache
@@ -983,15 +1055,14 @@ geschrieben sein, jedoch bietet das Institut für Informatik die beste
 Unterstützung für Java.</p>
 </div>
 <div class="paragraph">
-<p>Die Muster-Computerspieler können im Downloadbereich
-(<a href="http://www.informatik.uni-kiel.de/software-challenge/2013/download/" class="bare">http://www.informatik.uni-kiel.de/software-challenge/2013/download/</a>)
-heruntergeladen werden.</p>
+<p>Die Muster-Computerspieler können im Downloadbereich der Software
+Challenge Website (<a href="http://www.software-challenge.de" class="bare">http://www.software-challenge.de</a>) heruntergeladen
+werden.</p>
 </div>
 <div class="paragraph">
 <p><strong>Hinweis:</strong> Die Programme, die das Institut für Informatik zur Verfügung
 stellt, sind üblicherweise in Java geschrieben. Deshalb muss auf den
-ausführenden Rechnern auch das link:Installation von Java[Java 6 oder 7
-SDK installiert] sein.</p>
+ausführenden Rechnern auch das <a href="#installation-java">Java SDK installiert</a> sein.</p>
 </div>
 <div class="sect2">
 <h3 id="der-simpleclient">Der SimpleClient</h3>
@@ -1021,34 +1092,10 @@ NotSoSimpleClient zwar als Gegenspieler für Testspiele nehmen, jedoch
 nicht den Quellcode für den eigenen Spieler weiterverwenden können.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="weiterführende-informationen">Weiterführende Informationen</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>link:Installation von Java[Installation von Java]</p>
-</li>
-<li>
-<p>link:Einrichtung der Entwicklungsumgebung (Java)[Einrichtung der
-Entwicklungsumgebung (Java)]</p>
-</li>
-<li>
-<p>link:Bedienung von Eclipse[Bedienung von Eclipse]</p>
-</li>
-<li>
-<p>link:Den SimpleClient um eine eigene Strategie erweitern[Den
-SimpleClient um eine eigene Strategie erweitern]</p>
-</li>
-<li>
-<p>link:Den Client abgabefertig machen[Den Client abgabefertig machen]</p>
-</li>
-</ul>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_installation_von_java">Installation von Java</h2>
+<h2 id="installation-java">Installation von Java</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Die meisten Programme, die vom Institut für Informatik
@@ -1097,7 +1144,7 @@ hat, ist Java einsatzbereit.</p>
 <h3 id="installation-unter-mac-os-x">Installation unter Mac OS X</h3>
 <div class="imageblock">
 <div class="content">
-<img src="./images/java-einstellungen_mac.jpg" alt="java einstellungen mac">
+<img src="../images/java-einstellungen_mac.jpg" alt="java einstellungen mac">
 </div>
 <div class="title">Figure 7. Das Programm "Java-Einstellungen" auf Mac OS X</div>
 </div>
@@ -1214,7 +1261,7 @@ Installation ist nicht notwendig.</p>
 <h4 id="simpleclient-in-eclipse-einbinden">SimpleClient in Eclipse einbinden</h4>
 <div class="imageblock">
 <div class="content">
-<img src="./images/eclipse_neues_projekt_wa_hlen.jpg" alt="eclipse neues projekt wa hlen">
+<img src="../images/eclipse_neues_projekt_wa_hlen.jpg" alt="eclipse neues projekt wa hlen">
 </div>
 <div class="title">Figure 8. In Eclipse ein neues Projekt erstellen</div>
 </div>
@@ -1270,7 +1317,7 @@ angeben. Dort den Ordner "doc" des simple Clients eingeben.</p>
 <h4 id="simpleclient-aus-eclipse-starten">SimpleClient aus Eclipse starten</h4>
 <div class="imageblock">
 <div class="content">
-<img src="./images/eclipse_simpleclient_starten.jpg" alt="eclipse simpleclient starten">
+<img src="../images/eclipse_simpleclient_starten.jpg" alt="eclipse simpleclient starten">
 </div>
 <div class="title">Figure 9. Start des Clients aus Eclipse</div>
 </div>
@@ -1432,7 +1479,7 @@ Entwicklungsumgebung Eclipse vor.</p>
 <h3 id="die-oberfläche">Die Oberfläche</h3>
 <div class="imageblock">
 <div class="content">
-<img src="./images/eclipse_desktop.jpg" alt="eclipse desktop">
+<img src="../images/eclipse_desktop.jpg" alt="eclipse desktop">
 </div>
 <div class="title">Figure 10. Überblick über die wichtigsten Fenster in Eclipse</div>
 </div>
@@ -1487,7 +1534,7 @@ Programmcode gelangen.</p>
 <h3 id="programme-starten">Programme starten</h3>
 <div class="paragraph">
 <div class="title">Dialog um die Starteinstellungen des Programms zu ändern</div>
-<p><span class="image"><img src="./images/eclipse_run-configurations.jpg" alt="eclipse_run-configurations"></span></p>
+<p><span class="image"><img src="../images/eclipse_run-configurations.jpg" alt="eclipse_run-configurations"></span></p>
 </div>
 <div class="paragraph">
 <p>Ein Programm lässt sich starten, indem man im Package Explorer einen
@@ -1569,12 +1616,17 @@ beliebigen <code>for</code>-Schleifen</p></td>
 <p><strong>Hinweis:</strong> Bei Mac OS X wird statt der Strg-Taste meistens die
 Apple-Taste benutzt.</p>
 </div>
-<div class="paragraph">
-<p>Kategorie:Computerspieler In der Version des Java SimpleClients von der
-Software Challenge Homepage ist bereits eine Strategie implementiert,
-die RandomLogic. Man kann jedoch auch noch beliebig viele eigene
-Strategien hinzufügen.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_den_simpleclient_erweitern">Den SimpleClient erweitern</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In der Version des Java SimpleClients von der Software Challenge
+Homepage ist bereits eine Strategie implementiert, die
+RandomLogic. Man kann jedoch auch noch beliebig viele eigene
+Strategien hinzufügen.</p>
 </div>
 <div class="sect2">
 <h3 id="erstellen-einer-neuen-strategie">Erstellen einer neuen Strategie</h3>
@@ -1588,15 +1640,17 @@ Vorgehen bei einer komplett neuen Klasse:</p>
 <ul>
 <li>
 <p>Erstellt eine neue Klasse (z.B. MyLogic), die das Interface
-IGameHandler implementiert</p>
+IGameHandler implementiert:</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><code>public class MyLogic implements IGameHandler {</code><br>
-<code>    private Starter starter;</code><br>
-<code>    private GameState gameState;</code><br>
-<code>    private Player player;</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">MyLogic</span> <span class="tok-kd">implements</span> <span class="tok-n">IGameHandler</span> <span class="tok-o">{</span>
+    <span class="tok-kd">private</span> <span class="tok-n">Starter</span> <span class="tok-n">starter</span><span class="tok-o">;</span>
+    <span class="tok-kd">private</span> <span class="tok-n">GameState</span> <span class="tok-n">gameState</span><span class="tok-o">;</span>
+    <span class="tok-kd">private</span> <span class="tok-n">Player</span> <span class="tok-n">player</span><span class="tok-o">;</span></code></pre>
+</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1606,10 +1660,12 @@ Diese wird später noch gebraucht</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><code>public MyLogic(Starter starter) {</code><br>
-<code>    this.starter = starter;</code><br>
-<code>}</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-nf">MyLogic</span><span class="tok-o">(</span><span class="tok-n">Starter</span> <span class="tok-n">starter</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+    <span class="tok-k">this</span><span class="tok-o">.</span><span class="tok-na">starter</span> <span class="tok-o">=</span> <span class="tok-n">starter</span><span class="tok-o">;</span>
+<span class="tok-o">}</span></code></pre>
+</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1618,39 +1674,41 @@ Diese wird später noch gebraucht</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><code>@Override</code><br>
-<code>public void gameEnded(GameResult result, PlayerColor color, String errorMessage) {</code><br>
-<code>    // Hier muss nichts getan werden</code><br>
-<code>}</code><br>
-<br>
-<code>@Override</code><br>
-<code>public void onUpdate(Player player, Player otherPlayer) {</code><br>
-<code>    // Der Spieler wurde aktualisiert</code><br>
-<code>    this.player = player;</code><br>
-<code>}</code><br>
-<br>
-<code>@Override</code><br>
-<code>public void onUpdate(GameState gameState) {</code><br>
-<code>    // Ein neuer Spielstatus, d.h. etwas ist geschehen. Deshalb</code><br>
-<code>    // alles aktualisieren.</code><br>
-<code>    this.gameState = gameState;</code><br>
-<code>    this.player = gameState.getCurrentPlayer();</code><br>
-<code>}</code><br>
-<br>
-<code>@Override</code><br>
-<code>public void sendAction(Move move) {</code><br>
-<code>    // Einen Zug an den Server senden</code><br>
-<code>    starter.sendMove(move);</code><br>
-<code>}</code><br>
-<br>
-<code>@Override</code><br>
-<code>public void onRequestAction() {</code><br>
-<code>    // Ich soll einen Zug machen</code><br>
-<code>    Move move;</code><br>
-<code>    // &#8230;&#8203; Hier muss die Logik rein, die einen Zug findet.</code><br>
-<code>    sendAction(move);</code><br>
-<code>}</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-nd">@Override</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">gameEnded</span><span class="tok-o">(</span><span class="tok-n">GameResult</span> <span class="tok-n">result</span><span class="tok-o">,</span> <span class="tok-n">PlayerColor</span> <span class="tok-n">color</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">errorMessage</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+    <span class="tok-c1">// Hier muss nichts getan werden</span>
+<span class="tok-o">}</span>
+
+<span class="tok-nd">@Override</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onUpdate</span><span class="tok-o">(</span><span class="tok-n">Player</span> <span class="tok-n">player</span><span class="tok-o">,</span> <span class="tok-n">Player</span> <span class="tok-n">otherPlayer</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+    <span class="tok-c1">// Der Spieler wurde aktualisiert</span>
+    <span class="tok-k">this</span><span class="tok-o">.</span><span class="tok-na">player</span> <span class="tok-o">=</span> <span class="tok-n">player</span><span class="tok-o">;</span>
+<span class="tok-o">}</span>
+
+<span class="tok-nd">@Override</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onUpdate</span><span class="tok-o">(</span><span class="tok-n">GameState</span> <span class="tok-n">gameState</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+    <span class="tok-c1">// Ein neuer Spielstatus, d.h. etwas ist geschehen. Deshalb</span>
+    <span class="tok-c1">// alles aktualisieren.</span>
+    <span class="tok-k">this</span><span class="tok-o">.</span><span class="tok-na">gameState</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-o">;</span>
+    <span class="tok-k">this</span><span class="tok-o">.</span><span class="tok-na">player</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-o">();</span>
+<span class="tok-o">}</span>
+
+<span class="tok-nd">@Override</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">sendAction</span><span class="tok-o">(</span><span class="tok-n">Move</span> <span class="tok-n">move</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+    <span class="tok-c1">// Einen Zug an den Server senden</span>
+    <span class="tok-n">starter</span><span class="tok-o">.</span><span class="tok-na">sendMove</span><span class="tok-o">(</span><span class="tok-n">move</span><span class="tok-o">);</span>
+<span class="tok-o">}</span>
+
+<span class="tok-nd">@Override</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onRequestAction</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+    <span class="tok-c1">// Ich soll einen Zug machen</span>
+    <span class="tok-n">Move</span> <span class="tok-n">move</span><span class="tok-o">;</span>
+    <span class="tok-c1">// ... Hier muss die Logik rein, die einen Zug findet.</span>
+    <span class="tok-n">sendAction</span><span class="tok-o">(</span><span class="tok-n">move</span><span class="tok-o">);</span>
+<span class="tok-o">}</span></code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1662,17 +1720,18 @@ eingetragen. Mit dem Eintrag DEFAULT lässt sich festlegen, welche Logik
 standardmäßig ausgeführt wird. Hier muss die neue Strategie ebenfalls
 eingetragen werden.</p>
 </div>
-<div class="paragraph">
-<p><code>public enum LogicFactory {</code><br>
-<code>    MY_LOGIC(MyLogic.class),</code><br>
-<code>    &#8230;&#8203;</code><br>
-<code>} </code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-kd">enum</span> <span class="tok-n">LogicFactory</span> <span class="tok-o">{</span>
+    <span class="tok-n">MY_LOGIC</span><span class="tok-o">(</span><span class="tok-n">MyLogic</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">),</span>
+    <span class="tok-o">...</span>
+<span class="tok-o">}</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Nun kann der Client mit der neuen Strategie spielen, indem man ihn mit
 dem Startparameter "-s MY_LOGIC" startet. Wie man in Eclipse beim
-Programmstart Argumente übergibt, kann
-<a href="Bedienung_von_Eclipse#Programme_starten">hier</a> nachgelesen werden.</p>
+Programmstart Argumente übergibt, kann <a href="#programme-starten">hier</a> nachgelesen werden.</p>
 </div>
 </div>
 </div>
@@ -1681,7 +1740,7 @@ Programmstart Argumente übergibt, kann
 <h2 id="_client_abgabefertig_machen">Client abgabefertig machen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Damit link:das Wettkampfsystem[das Wettkampfsystem] mit dem
+<p>Damit <a href="#das-wettkampfsystem">das Wettkampfsystem</a> mit dem
 Computerspieler arbeiten kann, muss er zu einem ausführbaren Programm
 gemacht und in ein ZIP-Archiv gepackt werden.  Diese Anleitung
 beschreibt, wie man für den Java-SimpleClient vorgehen muss.</p>
@@ -1704,7 +1763,7 @@ die Verwendung eines Ant-Scripts.</p>
 <p>Im nächsten Fenster wird die "Run Configuration" ausgewählt (dazu
 muss der SimpleClient mindestens einmal mit Eclipse gestartet worden
 sein). Darunter wird mit "Browse" die Zieldatei (z.B.
-[&#8230;&#8203;]/my_player.jar) ausgewählt. Bei "Library handling" am besten die
+<code>[&#8230;&#8203;]/my_player.jar</code>) ausgewählt. Bei "Library handling" am besten die
 erste Option nehmen. So wird eine einzige JAR Datei erzeugt, in der
 alles nötige drin ist. Mit einem Klick auf Finish wird die JAR-Datei
 erzeugt. Eventuell erhält man einen Hinweis "This operation repacks
@@ -1793,26 +1852,6 @@ Datei im Ordner "jar" sowie die fertig gepackte ZIP-Datei im Ordner
 "zipped", die direkt ins Wettkampfsystem hochgeladen werden kann.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="netbeans-1">NetBeans</h4>
-<div class="paragraph">
-<p>Einmalig die Datei
-"Pfad/zur/Project/Loacation/schaefchen_player/build.xml" mit einem
-beliebigen Texteditor (nicht Word!) öffnen und ganz am Ende direkt vor
-der letzten Zeile "" folgendes hinzufügen:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre> +
-`    ` +</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Von nun an wird eine abgabfertige Datei
-"Pfad/zur/Project/Loacation//dist/simple_client.zip" bei "Clean and
-Build" erstellt.</p>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1858,11 +1897,13 @@ lassen sich durch direkte Wertzuweisungen vornehmen:
 Auszahlungen gehandhabt? Eine Auszahlung soll nur möglich sein, wenn das
 Konto ausreichend gedeckt ist:</p>
 </div>
-<div class="paragraph">
-<p><code>//Beispiel um 40 Geldeinheiten abzuheben
- if (kontostand &gt;= 40) {
-     kontostand = kontostand - 40;
- }</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-c1">// Beispiel um 40 Geldeinheiten abzuheben</span>
+<span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">kontostand</span> <span class="tok-o">&gt;=</span> <span class="tok-mi">40</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+    <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">-</span> <span class="tok-mi">40</span><span class="tok-o">;</span>
+<span class="tok-o">}</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Jedes Mal, wenn Geld abgehoben werden soll, muss erst überprüft werden,
@@ -1872,7 +1913,7 @@ was nicht möglich sein soll.</p>
 </div>
 <div class="paragraph">
 <p>Es gibt aber noch weitere Probleme: Durch
-(<code>kontostand = kontostand + (-25);</code>) kann man quasi durch Einzahlung
+<code>kontostand = kontostand + (-25);</code> kann man quasi durch Einzahlung
 eines negativen Betrages den Saldo ins Negative treiben. Dies ist in
 zweifacher Weise kritisch, da zum einen der Kontostand negativ werden
 kann und es zum anderen keine negativen Einzahlungen geben soll. Also
@@ -1892,43 +1933,33 @@ voll genutzt ist.</p>
 <p>Möchte man ein Konto objektorientiert darstellen, schreibt man zunächst
 eine <em>Klasse</em>, die eine Art Bauplan ist:</p>
 </div>
-<div class="paragraph">
-<p>`public class Konto {
-     private int kontostand;</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>public Konto() {
-    kontostand = 0;
-}</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>public void einzahlen(int betrag) {
-    if (betrag &gt; 0) {
-        kontostand = kontostand + betrag;
-    }
-}</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>public boolean abheben(int betrag) {
-    if (kontostand &gt;= betrag) {
-        kontostand = kontostand - betrag;
-        return true;
-    }
-    return false;
-}</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>    public int getKontostand() {
-        return kontostand;
-    }
-}`</pre>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">Konto</span> <span class="tok-o">{</span>
+    <span class="tok-kd">private</span> <span class="tok-kt">int</span> <span class="tok-n">kontostand</span><span class="tok-o">;</span>
+
+    <span class="tok-kd">public</span> <span class="tok-nf">Konto</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+        <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-o">;</span>
+    <span class="tok-o">}</span>
+
+    <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">einzahlen</span><span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+        <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">betrag</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+            <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">+</span> <span class="tok-n">betrag</span><span class="tok-o">;</span>
+        <span class="tok-o">}</span>
+    <span class="tok-o">}</span>
+
+    <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">abheben</span><span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+        <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">kontostand</span> <span class="tok-o">&gt;=</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+            <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">-</span> <span class="tok-n">betrag</span><span class="tok-o">;</span>
+            <span class="tok-k">return</span> <span class="tok-kc">true</span><span class="tok-o">;</span>
+        <span class="tok-o">}</span>
+        <span class="tok-k">return</span> <span class="tok-kc">false</span><span class="tok-o">;</span>
+    <span class="tok-o">}</span>
+
+    <span class="tok-kd">public</span> <span class="tok-kt">int</span> <span class="tok-nf">getKontostand</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+        <span class="tok-k">return</span> <span class="tok-n">kontostand</span><span class="tok-o">;</span>
+    <span class="tok-o">}</span>
+<span class="tok-o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1941,9 +1972,11 @@ oder abheben, muss man die entsprechenden Methoden nehmen.</p>
 <p>Mit dem Schlüsselwort <code>new</code> kann man aus dem Bauplan (also der Klasse)
 ein Objekt erzeugen:</p>
 </div>
-<div class="paragraph">
-<p><code>Konto konto1 = new Konto(); //Erzeugt ein Konto-Objekt und speichert es in der Variablen konto1
- Konto konto2 = new Konto(); //Erzeugt noch ein Konto und speichert es in einer anderen Variablen</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-n">Konto</span> <span class="tok-n">konto1</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span> <span class="tok-c1">//Erzeugt ein Konto-Objekt und speichert es in der Variablen konto1</span>
+<span class="tok-n">Konto</span> <span class="tok-n">konto2</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span> <span class="tok-c1">//Erzeugt noch ein Konto und speichert es in einer anderen Variablen</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Das <code>new</code> führt den Konstruktor aus
@@ -1957,66 +1990,68 @@ Argumente übergeben.</p>
 <p>Um Geld einzuzahlen oder abzuheben ruft man die Methoden mit dem sog.
 Punktoperator auf:</p>
 </div>
-<div class="paragraph">
-<p>`Konto konto1 = new Konto();            //konto: 0 Geldeinheiten (GE)
- Konto konto2 = new Konto();                  //konto2: 0 GE</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>konto1.einzahlen(100);                 //konto1: 100 GE, konto2: 0  GE
-konto2.einzahlen(50);                  //konto1: 100 GE, konto2: 50 GE</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>boolean erfolg = konto1.auszahlen(30); //konto1: 70 GE, konto2: 50 GE, erfolg: true
-erfolg = konto2.auszahlen(90);         //konto1: 70 GE, konto2: 50 GE, erfolg: false`</pre>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-n">Konto</span> <span class="tok-n">konto1</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span>            <span class="tok-c1">// konto: 0 Geldeinheiten (GE)</span>
+<span class="tok-n">Konto</span> <span class="tok-n">konto2</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span>            <span class="tok-c1">// konto2: 0 GE</span>
+
+<span class="tok-n">konto1</span><span class="tok-o">.</span><span class="tok-na">einzahlen</span><span class="tok-o">(</span><span class="tok-mi">100</span><span class="tok-o">);</span>                 <span class="tok-c1">// konto1: 100 GE, konto2: 0  GE</span>
+<span class="tok-n">konto2</span><span class="tok-o">.</span><span class="tok-na">einzahlen</span><span class="tok-o">(</span><span class="tok-mi">50</span><span class="tok-o">);</span>                  <span class="tok-c1">// konto1: 100 GE, konto2: 50 GE</span>
+
+<span class="tok-kt">boolean</span> <span class="tok-n">erfolg</span> <span class="tok-o">=</span> <span class="tok-n">konto1</span><span class="tok-o">.</span><span class="tok-na">auszahlen</span><span class="tok-o">(</span><span class="tok-mi">30</span><span class="tok-o">);</span> <span class="tok-c1">// konto1: 70 GE, konto2: 50 GE, erfolg: true</span>
+<span class="tok-n">erfolg</span> <span class="tok-o">=</span> <span class="tok-n">konto2</span><span class="tok-o">.</span><span class="tok-na">auszahlen</span><span class="tok-o">(</span><span class="tok-mi">90</span><span class="tok-o">);</span>         <span class="tok-c1">// konto1: 70 GE, konto2: 50 GE, erfolg: false</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Die Erweiterung der Klasse um den Dispokredit erweist sich auch als sehr
 einfach, da nur noch Änderungen in der Klasse notwendig sind:</p>
 </div>
-<div class="paragraph">
-<p>`class Konto {
-     private int kontostand;
-     '''private int dispo;'''</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>public Konto() {
-    kontostand = 0;
-    '''dispo = 500;'''
-}</pre>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">class</span> <span class="tok-nc">Konto</span> <span class="tok-o">{</span>
+     <span class="tok-kd">private</span> <span class="tok-kt">int</span> <span class="tok-n">kontostand</span><span class="tok-o">;</span>
+     <span class="tok-kd">private</span> <span class="tok-kt">int</span> <span class="tok-n">dispo</span><span class="tok-o">;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+
+     <span class="tok-kd">public</span> <span class="tok-nf">Konto</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+         <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-o">;</span>
+         <span class="tok-n">dispo</span> <span class="tok-o">=</span> <span class="tok-mi">500</span><span class="tok-o">;</span> <i class="conum" data-value="2"></i><b>(2)</b>
+     <span class="tok-o">}</span>
+
+     <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">einzahlen</span><span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+         <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">betrag</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+             <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">+</span> <span class="tok-n">betrag</span><span class="tok-o">;</span>
+         <span class="tok-o">}</span>
+     <span class="tok-o">}</span>
+
+     <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">abheben</span><span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+         <span class="tok-k">if</span> <span class="tok-o">((</span><span class="tok-n">kontostand</span> <span class="tok-o">+</span> <span class="tok-n">dispo</span><span class="tok-o">)</span> <span class="tok-o">&gt;=</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span> <i class="conum" data-value="3"></i><b>(3)</b>
+             <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">-</span> <span class="tok-n">betrag</span><span class="tok-o">;</span>
+             <span class="tok-k">return</span> <span class="tok-kc">true</span><span class="tok-o">;</span>
+         <span class="tok-o">}</span>
+         <span class="tok-k">return</span> <span class="tok-kc">false</span><span class="tok-o">;</span>
+     <span class="tok-o">}</span>
+
+     <span class="tok-kd">public</span> <span class="tok-kt">int</span> <span class="tok-nf">getKontostand</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+         <span class="tok-k">return</span> <span class="tok-n">kontostand</span><span class="tok-o">;</span>
+     <span class="tok-o">}</span>
+<span class="tok-o">}</span></code></pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>public void einzahlen(int betrag) {
-    if (betrag &gt; 0) {
-        kontostand = kontostand + betrag;
-    }
-}</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>public boolean abheben(int betrag) {
-    if ((kontostand '''+ dispo''') &gt;= betrag) {
-        kontostand = kontostand - betrag;
-        return true;
-    }
-    return false;
-}</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>    public int getKontostand() {
-        return kontostand;
-    }
-}`</pre>
-</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Neue private Variable um den Kreditrahmen zu speichern.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Kreditrahmen im Konstruktor initialisieren.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Kreditrahmen beim Abheben mit berücksichtigen.</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -2048,27 +2083,23 @@ erzeugt.</p>
 auf dem der Kontostand verzinst wird, kann man die bestehende Klasse
 nehmen und entsprechend erweitern:</p>
 </div>
-<div class="paragraph">
-<p>`public class PremiumKonto extends Konto {
-     private double zinsbetrag;</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>public PremiumKonto() {
-    super();
-    zinsbetrag = 2.5d; //2.5% Zinsen
-}</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>    public void zinsenGutschreiben() {
-        int saldo = getKontostand();
-        if (saldo &gt; 0) {
-            einzahlen(saldo * zinsbetrag / 100);
-        }
-    }
-}`</pre>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">PremiumKonto</span> <span class="tok-kd">extends</span> <span class="tok-n">Konto</span> <span class="tok-o">{</span>
+     <span class="tok-kd">private</span> <span class="tok-kt">double</span> <span class="tok-n">zinsbetrag</span><span class="tok-o">;</span>
+
+     <span class="tok-kd">public</span> <span class="tok-nf">PremiumKonto</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+         <span class="tok-kd">super</span><span class="tok-o">();</span>
+         <span class="tok-n">zinsbetrag</span> <span class="tok-o">=</span> <span class="tok-mf">2.5d</span><span class="tok-o">;</span> <span class="tok-c1">// 2.5% Zinsen</span>
+     <span class="tok-o">}</span>
+
+     <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">zinsenGutschreiben</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+         <span class="tok-kt">int</span> <span class="tok-n">saldo</span> <span class="tok-o">=</span> <span class="tok-n">getKontostand</span><span class="tok-o">();</span>
+         <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">saldo</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+             <span class="tok-n">einzahlen</span><span class="tok-o">(</span><span class="tok-n">saldo</span> <span class="tok-o">*</span> <span class="tok-n">zinsbetrag</span> <span class="tok-o">/</span> <span class="tok-mi">100</span><span class="tok-o">);</span>
+         <span class="tok-o">}</span>
+     <span class="tok-o">}</span>
+<span class="tok-o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2084,13 +2115,12 @@ weggelassen werden darf.</p>
 <p>Ein neues Objekt erzeugt man auf die gleiche Weise, wie bei einem
 normalen Konto:</p>
 </div>
-<div class="paragraph">
-<p>`PremiumKonto premium = new PremiumKonto();</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>premium.einzahlen(50); //geerbte Methode
-premium.zinsenGutschreiben();`</pre>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-n">PremiumKonto</span> <span class="tok-n">premium</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">();</span>
+
+<span class="tok-n">premium</span><span class="tok-o">.</span><span class="tok-na">einzahlen</span><span class="tok-o">(</span><span class="tok-mi">50</span><span class="tok-o">);</span> <span class="tok-c1">//geerbte Methode</span>
+<span class="tok-n">premium</span><span class="tok-o">.</span><span class="tok-na">zinsenGutschreiben</span><span class="tok-o">();</span></code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -2116,16 +2146,14 @@ ist! Sonst wird eine Fehlermeldung geworfen. Mit dem Schlüsselwort
 <code>instanceof</code> kann man abfragen, ob ein Objekt zu einer gewissen Klasse
 gehört:</p>
 </div>
-<div class="paragraph">
-<p>`Konto konto7 = new PremiumKonto();</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>if (konto6 instanceof PremiumKonto) {
-    Premiumkonto premium2 = (PremiumKonto) konto7;
-    premium2.zinsenGutschreiben();
-}
-`</pre>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-n">Konto</span> <span class="tok-n">konto7</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">();</span>
+
+<span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">konto6</span> <span class="tok-k">instanceof</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+    <span class="tok-n">Premiumkonto</span> <span class="tok-n">premium2</span> <span class="tok-o">=</span> <span class="tok-o">(</span><span class="tok-n">PremiumKonto</span><span class="tok-o">)</span> <span class="tok-n">konto7</span><span class="tok-o">;</span>
+    <span class="tok-n">premium2</span><span class="tok-o">.</span><span class="tok-na">zinsenGutschreiben</span><span class="tok-o">();</span>
+<span class="tok-o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2146,28 +2174,21 @@ Klassen werden von allen Objekten geteilt.</p>
 <p>Soll zum Beispiel der Zinssatz beim Premiumkonto für alle Konten gleich
 sein, kann man diesen als statisch deklarieren:</p>
 </div>
-<div class="paragraph">
-<p>`public class PremiumKonto extends Konto {
-     private static double zinsbetrag = 2.5d; //2.5% Zinsen</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>...</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>public static double getZinsbetrag() {
-    return zinsbetrag;
-}</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>    public static void setZinsbetrag(double wert) {
-        zinsbetrag = wert;
-    }
-}`</pre>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">PremiumKonto</span> <span class="tok-kd">extends</span> <span class="tok-n">Konto</span> <span class="tok-o">{</span>
+     <span class="tok-kd">private</span> <span class="tok-kd">static</span> <span class="tok-kt">double</span> <span class="tok-n">zinsbetrag</span> <span class="tok-o">=</span> <span class="tok-mf">2.5d</span><span class="tok-o">;</span> <span class="tok-c1">//2.5% Zinsen</span>
+
+     <span class="tok-o">...</span>
+
+     <span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">double</span> <span class="tok-nf">getZinsbetrag</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+         <span class="tok-k">return</span> <span class="tok-n">zinsbetrag</span><span class="tok-o">;</span>
+     <span class="tok-o">}</span>
+
+     <span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">void</span> <span class="tok-nf">setZinsbetrag</span><span class="tok-o">(</span><span class="tok-kt">double</span> <span class="tok-n">wert</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+         <span class="tok-n">zinsbetrag</span> <span class="tok-o">=</span> <span class="tok-n">wert</span><span class="tok-o">;</span>
+     <span class="tok-o">}</span>
+ <span class="tok-o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2175,14 +2196,12 @@ sein, kann man diesen als statisch deklarieren:</p>
 <code>setZinsbetrag(double wert)</code>, die man entweder über das Objekt oder über
 den Klassennamen aufrufen darf.</p>
 </div>
-<div class="paragraph">
-<p>`PremiumKonto.setZinsbetrag(3d); //Zinsen auf 3% erhöhen</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>PremiumKonto premium3 = new PremiumKonto();
-premium3.setZinsbetrag(3d);
-`</pre>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-n">PremiumKonto</span><span class="tok-o">.</span><span class="tok-na">setZinsbetrag</span><span class="tok-o">(</span><span class="tok-mi">3</span><span class="tok-n">d</span><span class="tok-o">);</span> <span class="tok-c1">//Zinsen auf 3% erhöhen</span>
+
+<span class="tok-n">PremiumKonto</span> <span class="tok-n">premium3</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">();</span>
+<span class="tok-n">premium3</span><span class="tok-o">.</span><span class="tok-na">setZinsbetrag</span><span class="tok-o">(</span><span class="tok-mi">3</span><span class="tok-n">d</span><span class="tok-o">);</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2205,13 +2224,10 @@ behandelt.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://de.wikipedia.org/wiki/Objektorientierte_Programmierung" class="bare">http://de.wikipedia.org/wiki/Objektorientierte_Programmierung</a> Eintrag
-aus der Wikipedia</p>
+<p><a href="http://de.wikipedia.org/wiki/Objektorientierte_Programmierung">Eintrag aus der Wikipedia</a></p>
 </li>
 <li>
-<p><a href="http://www2.math.uni-wuppertal.de/~grosser/jv/haupt/node1.html" class="bare">http://www2.math.uni-wuppertal.de/~grosser/jv/haupt/node1.html</a>
-Einführung in die Objektorientierung mit Java auf den Seiten der Uni
-Wuppertal</p>
+<p><a href="http://openbook.rheinwerk-verlag.de/oop/">Praxisbuch Objektorientierung (openbook)</a></p>
 </li>
 </ul>
 </div>
@@ -2280,36 +2296,42 @@ Klammer wird dabei ans Ende der Zeile geschrieben
 dabei eingerückt. Die schließende Klammer befindet sich in der ersten
 Zeile, die nicht mehr eingerückt ist.</p>
 </div>
-<div class="paragraph">
-<p><code>for (int i = 0; i &lt; 110; i++) {
-     x = x + 2;
-     &#8230;&#8203;
- }</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">for</span> <span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">i</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-o">;</span> <span class="tok-n">i</span> <span class="tok-o">&lt;</span> <span class="tok-mi">110</span><span class="tok-o">;</span> <span class="tok-n">i</span><span class="tok-o">++)</span> <span class="tok-o">{</span>
+     <span class="tok-n">x</span> <span class="tok-o">=</span> <span class="tok-n">x</span> <span class="tok-o">+</span> <span class="tok-mi">2</span><span class="tok-o">;</span>
+     <span class="tok-o">...</span>
+<span class="tok-o">}</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Bei einem if schreibt man das zugehörige <code>else</code> direkt hinter die
 schließende Klammer:</p>
 </div>
-<div class="paragraph">
-<p><code>if (bedingung) {
-     &#8230;&#8203;
- } else {
-     &#8230;&#8203;
- }</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">bedingung</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+     <span class="tok-o">...</span>
+<span class="tok-o">}</span> <span class="tok-k">else</span> <span class="tok-o">{</span>
+     <span class="tok-o">...</span>
+<span class="tok-o">}</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Mehrere geschachtelte <code>if</code>-Anweisungen werden zusammen geschmolzen:</p>
 </div>
-<div class="paragraph">
-<p><code>if (bedingung) {
-     &#8230;&#8203;
- } else if (begingung2) {
-     &#8230;&#8203;
- } else if (bedingung3) {
-     &#8230;&#8203;
- } else {
-     &#8230;&#8203;
- }</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">bedingung</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+     <span class="tok-o">...</span>
+<span class="tok-o">}</span> <span class="tok-k">else</span> <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">begingung2</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+     <span class="tok-o">...</span>
+<span class="tok-o">}</span> <span class="tok-k">else</span> <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">bedingung3</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+     <span class="tok-o">...</span>
+<span class="tok-o">}</span> <span class="tok-k">else</span> <span class="tok-o">{</span>
+     <span class="tok-o">...</span>
+<span class="tok-o">}</span></code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -2317,22 +2339,23 @@ schließende Klammer:</p>
 <div class="paragraph">
 <p>Bei einem <code>switch</code> sollte die folgende Form gewahrt werden:</p>
 </div>
-<div class="paragraph">
-<p>`
- switch (variable) {
- case 1 :
-     &#8230;&#8203;
-     /* fällt durch */
- case 2 :
-     &#8230;&#8203;
-     break;
- case 3 :
-     &#8230;&#8203;
-     break;
- default :
-     &#8230;&#8203;
-     break;
- }`</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">switch</span> <span class="tok-o">(</span><span class="tok-n">variable</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+<span class="tok-k">case</span> <span class="tok-mi">1</span> <span class="tok-o">:</span>
+    <span class="tok-o">...</span>
+    <span class="tok-cm">/* fällt durch */</span>
+<span class="tok-k">case</span> <span class="tok-mi">2</span> <span class="tok-o">:</span>
+    <span class="tok-o">...</span>
+    <span class="tok-k">break</span><span class="tok-o">;</span>
+<span class="tok-k">case</span> <span class="tok-mi">3</span> <span class="tok-o">:</span>
+    <span class="tok-o">...</span>
+    <span class="tok-k">break</span><span class="tok-o">;</span>
+<span class="tok-k">default</span> <span class="tok-o">:</span>
+    <span class="tok-o">...</span>
+    <span class="tok-k">break</span><span class="tok-o">;</span>
+<span class="tok-o">}</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Wenn nach einem <code>case</code>-Fall nicht aus dem <code>switch</code> herausgesprungen
@@ -2345,8 +2368,8 @@ wird, soll das durch einen Kommentar gekennzeichnet werden. Wenn ein
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://www.oracle.com/technetwork/java/codeconv-138413.html" class="bare">http://www.oracle.com/technetwork/java/codeconv-138413.html</a> Die
-Richtlinien von den Java-Entwicklern</p>
+<p><a href="http://www.oracle.com/technetwork/java/codeconv-138413.html">Die
+Richtlinien von den Java-Entwicklern</a></p>
 </li>
 </ul>
 </div>
@@ -2359,9 +2382,9 @@ Richtlinien von den Java-Entwicklern</p>
 <div class="paragraph">
 <p>Man hat einige Spiele absolviert und sich eine gute Strategie
 ausgedacht. Damit hat man zwar schon einen wichtigen Teil der Arbeit
-geleistet, aber irgendwie muss dem link:Der Computerspieler
-(Client)[Computerspieler] noch beigebracht werden, nach dieser
-Strategie zu spielen.</p>
+geleistet, aber irgendwie muss dem
+<a href="#der-computerspieler">Computerspieler</a> noch beigebracht werden, nach
+dieser Strategie zu spielen.</p>
 </div>
 <div class="paragraph">
 <p>Anhand einer kleinen Aufgabe soll gezeigt werden, wie man eine Idee
@@ -2391,18 +2414,18 @@ zunächst beschreiben, wie man als Mensch vorgehen würde.</p>
 <ol class="arabic">
 <li>
 <p>Gehe den Stapel durch und merke die Position, an der sich die
-kleinste Karte befindet</p>
+kleinste Karte befindet.</p>
 </li>
 <li>
 <p>Tausche die Position der kleinsten Karte mit der untersten Karte im
-Stapel</p>
+Stapel.</p>
 </li>
 <li>
-<p>Die kleinste Karte ist jetzt an der richtigen Position</p>
+<p>Die kleinste Karte ist jetzt an der richtigen Position.</p>
 </li>
 <li>
 <p>Führe die Schritte nochmal für den Reststapel (ohne die sortierten
-Karten) aus</p>
+Karten) aus.</p>
 </li>
 </ol>
 </div>
@@ -2413,59 +2436,75 @@ Karten) aus</p>
 <p>Nachdem man seine Idee formal niedergeschrieben hat, kann sie ganz
 leicht in ein Programm überführt werden:</p>
 </div>
-<div class="paragraph">
-<p>`/**
-  * Das Array a[] symbolisiert den Stapel der unsortierten Karten. Dabei steht
-  * eine Zahl immer für eine spezielle Karte. Eine kleinere Zahl bedeutet,
-  * dass es sich um eine kleinere Karte handelt.
-  *
-  * start gibt die Position an, wo der Reststapel beginnt (am Anfang: start = 0)
-  */
- public static void sortiere(int[] a, int start) {
-     //Position der kleinsten Karte
-     int pos = start;</p>
-</div>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>//Gehe Array durch und merke die Position der kleinsten Karte ('''Schritt 1''')
-for (int i = start+1; i &lt; a.length; i++) {
-    //Wenn eine kleinere Karte gefunden wurde...
-    if (a[i] &lt; a[pos]) {</pre>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-cm">/**</span>
+<span class="tok-cm">  * Das Array a[] symbolisiert den Stapel der unsortierten Karten. Dabei steht</span>
+<span class="tok-cm">  * eine Zahl immer für eine spezielle Karte. Eine kleinere Zahl bedeutet,</span>
+<span class="tok-cm">  * dass es sich um eine kleinere Karte handelt.</span>
+<span class="tok-cm">  *</span>
+<span class="tok-cm">  * start gibt die Position an, wo der Reststapel beginnt (am Anfang: start = 0)</span>
+<span class="tok-cm">  */</span>
+ <span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">void</span> <span class="tok-nf">sortiere</span><span class="tok-o">(</span><span class="tok-kt">int</span><span class="tok-o">[]</span> <span class="tok-n">a</span><span class="tok-o">,</span> <span class="tok-kt">int</span> <span class="tok-n">start</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+     <span class="tok-c1">//Position der kleinsten Karte</span>
+     <span class="tok-kt">int</span> <span class="tok-n">pos</span> <span class="tok-o">=</span> <span class="tok-n">start</span><span class="tok-o">;</span>
+
+     <span class="tok-c1">// Gehe Array durch und merke die Position der kleinsten Karte </span><i class="conum" data-value="1"></i><b>(1)</b>
+     <span class="tok-k">for</span> <span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">i</span> <span class="tok-o">=</span> <span class="tok-n">start</span><span class="tok-o">+</span><span class="tok-mi">1</span><span class="tok-o">;</span> <span class="tok-n">i</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-o">.</span><span class="tok-na">length</span><span class="tok-o">;</span> <span class="tok-n">i</span><span class="tok-o">++)</span> <span class="tok-o">{</span>
+         <span class="tok-c1">// Wenn eine kleinere Karte gefunden wurde...</span>
+         <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">i</span><span class="tok-o">]</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">])</span> <span class="tok-o">{</span>
+
+             <span class="tok-o">...</span> <span class="tok-n">neue</span> <span class="tok-n">Position</span> <span class="tok-n">merken</span>
+             <span class="tok-n">pos</span> <span class="tok-o">=</span> <span class="tok-n">i</span><span class="tok-o">;</span>
+         <span class="tok-o">}</span>
+     <span class="tok-o">}</span>
+
+     <span class="tok-c1">// kleinste Karte mit erster Karte des Reststapels tauschen  </span><i class="conum" data-value="2"></i><b>(2)</b> <i class="conum" data-value="3"></i><b>(3)</b>
+     <span class="tok-kt">int</span> <span class="tok-n">temp</span> <span class="tok-o">=</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">start</span><span class="tok-o">];</span> <span class="tok-c1">// erste Karte merken</span>
+     <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">start</span><span class="tok-o">]</span> <span class="tok-o">=</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">];</span>   <span class="tok-c1">// kleinste Karte nach vorne bringen</span>
+     <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">]</span> <span class="tok-o">=</span> <span class="tok-n">temp</span><span class="tok-o">;</span>       <span class="tok-c1">// gemerkte Karte in die Mitte des Stapels schreiben</span>
+
+     <span class="tok-c1">// Wenn es noch einen Reststapel gibt, soll dieser weitersortiert werden </span><i class="conum" data-value="4"></i><b>(4)</b>
+     <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">start</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-o">.</span><span class="tok-na">length</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+          <span class="tok-n">sortiere</span><span class="tok-o">(</span><span class="tok-n">a</span><span class="tok-o">,</span> <span class="tok-n">start</span><span class="tok-o">+</span><span class="tok-mi">1</span><span class="tok-o">);</span>
+     <span class="tok-o">}</span>
+ <span class="tok-o">}</span></code></pre>
 </div>
 </div>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p>neue Position merken
-        pos = i;
-    }
-}</p>
-<div class="literalblock">
-<div class="content">
-<pre>//kleinste Karte mit erster Karte des Reststapels tauschen ('''Schritt 2 und 3''')
-int temp = a[start]; //erste Karte merken
-a[start] = a[pos];   //kleinste Karte nach vorne bringen
-a[pos] = temp;       //gemerkte Karte in die Mitte des Stapels schreiben</pre>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Gehe den Stapel durch und merke die Position, an der sich die
+kleinste Karte befindet.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Tausche die Position der kleinsten Karte mit der untersten Karte im
+Stapel.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Die kleinste Karte ist jetzt an der richtigen Position.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Führe die Schritte nochmal für den Reststapel (ohne die sortierten
+Karten) aus.</td>
+</tr>
+</table>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>    //Wenn es noch einen Reststapel gibt, soll dieser weitersortiert werden ('''Schritt 4''')
-    if (start &lt; a.length) {
-         sortiere(a, start+1);
-    }
-}`</pre>
 </div>
 </div>
-</li>
-</ol>
-</div>
+<div class="sect1">
+<h2 id="_weiterführende_literatur">Weiterführende Literatur</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Zu den meisten Programmiersprachen existieren umfassende
 Dokumentationen. Einige Empfehlenswerte werden hier aufgeführt. Der
 geneigte Leser ist eingeladen, in dem entsprechenden Bereich eigene
 Empfehlungen hinzuzufügen.</p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="java">Java</h3>
@@ -2478,23 +2517,19 @@ Insel" empfehlenswert, welches man bei Galileo Computing als
 online betrachten oder auch herunterladen kann. Man kann es auf der
 selben Seite auch als gedruckte Ausgabe bestellen.</p>
 </div>
-<div class="paragraph">
-<p>Category:Java</p>
-</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_die_schnittstelle_zum_server">Die Schnittstelle zum Server</h2>
+<h2 id="schnittstelle">Die Schnittstelle zum Server</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Der Spielleiter kommuniziert mit den Computerspielern über eine
 Netzwerkverbindung. Dadurch ist man aus technischer Sicht komplett
 flexibel, was die Wahl der Programmiersprache angeht. Die
 Computerspieler müssen lediglich das Kommunikationsprotokoll erfüllen,
-das im Dokumentationsbereich
-(<a href="http://www.informatik.uni-kiel.de/software-challenge/2013/dokumentation/" class="bare">http://www.informatik.uni-kiel.de/software-challenge/2013/dokumentation/</a>)
-eingesehen werden kann.</p>
+das im Dokumentationsbereich der Software Challenge Website
+(<a href="http://www.software-challenge.de" class="bare">http://www.software-challenge.de</a>) eingesehen werden kann.</p>
 </div>
 <div class="paragraph">
 <p>Anfängern wird allerdings davon abgeraten, einen komplett eigenen
@@ -2511,14 +2546,15 @@ Unterstützung für Java geboten.</p>
 <h2 id="_einführung_in_xml">Einführung in XML</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Die Kommunikation zwischen link:Der Spielleiter (Server)[Spielleiter]
-und link:Der Computerspieler (Client)[Computerspieler] wird durch den
-Austausch von XML-Nachrichten realisiert. XML ist eine
-Auszeichnungssprache, d.h eine Sprache, die nicht nur die Daten selbst,
-sondern auch Informationen über die Interpretation oder Bearbeitung
-liefert. Der Vorteil dieser Sprache liegt darin, dass sie sowohl vom
-Computer, als auch vom Menschen gut gelesen werden kann. Dieser Artikel
-soll den Aufbau einer XML-Datei beschreiben.</p>
+<p>Die Kommunikation zwischen <a href="#server">Spielleiter</a> und</p>
+</div>
+<div class="paragraph">
+<p>XML-Nachrichten realisiert. XML ist eine Auszeichnungssprache, d.h
+eine Sprache, die nicht nur die Daten selbst, sondern auch
+Informationen über die Interpretation oder Bearbeitung liefert. Der
+Vorteil dieser Sprache liegt darin, dass sie sowohl vom Computer, als
+auch vom Menschen gut gelesen werden kann. Dieser Artikel soll den
+Aufbau einer XML-Datei beschreiben.</p>
 </div>
 <div class="sect2">
 <h3 id="tags">Tags</h3>
@@ -2531,22 +2567,12 @@ Dabei kennt XML drei verschiedene Tag-Arten:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Öffnendes Tag:</p>
+<p>Öffnendes Tag: <code>&lt;Tag&gt;</code></p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p><code>&lt;Tag&gt;</code></p>
-</div>
-<div class="ulist">
-<ul>
 <li>
-<p>Schließendes Tag:</p>
+<p>Schließendes Tag: <code>&lt;/Tag&gt;</code></p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><code>&lt;/Tag&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Der Schrägstrich bedeuted, dass das Tag geschlossen wird.</p>
@@ -2554,12 +2580,9 @@ Dabei kennt XML drei verschiedene Tag-Arten:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>das Empty-Tag:</p>
+<p>das Empty-Tag: <code>&lt;Tag /&gt;</code></p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><code>&lt;Tag /&gt;</code></p>
 </div>
 <div class="paragraph">
 <p>Durch den Schrägstrich am Ende wird das Tag sofort wieder geschlossen.</p>
@@ -2594,19 +2617,19 @@ ein Tag, in dem alle anderen enthalten sind.</p>
 </div>
 <div class="sect4">
 <h5 id="beispiel-für-korrekte-xml-syntax">Beispiel für korrekte XML-Syntax</h5>
-<div class="paragraph">
-<p><code>`<br>
-`&lt;addiere&gt;</code><br>
-<code>    &lt;komplexe_zahl&gt;</code><br>
-<code>        &lt;realteil&gt;3.5&lt;/realteil&gt;</code><br>
-<code>        &lt;imaginaerteil&gt;4.2&lt;/imaginaerteil&gt;</code><br>
-<code>    &lt;/komplexe_zahl&gt;</code><br>
-<code>    &lt;komplexe_zahl&gt;</code><br>
-<code>        &lt;realteil&gt;1&lt;/realteil&gt;</code><br>
-<code>        &lt;imaginaerteil&gt;6.9&lt;/imaginaerteil&gt;</code><br>
-<code>    &lt;/komplexe_zahl&gt;</code><br>
-<code>&lt;/addiere&gt;</code><br>
-<code> </code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span class="tok-nt">&lt;addiere&gt;</span>
+    <span class="tok-nt">&lt;komplexe_zahl&gt;</span>
+        <span class="tok-nt">&lt;realteil&gt;</span>3.5<span class="tok-nt">&lt;/realteil&gt;</span>
+        <span class="tok-nt">&lt;imaginaerteil&gt;</span>4.2<span class="tok-nt">&lt;/imaginaerteil&gt;</span>
+    <span class="tok-nt">&lt;/komplexe_zahl&gt;</span>
+    <span class="tok-nt">&lt;komplexe_zahl&gt;</span>
+        <span class="tok-nt">&lt;realteil&gt;</span>1<span class="tok-nt">&lt;/realteil&gt;</span>
+        <span class="tok-nt">&lt;imaginaerteil&gt;</span>6.9<span class="tok-nt">&lt;/imaginaerteil&gt;</span>
+    <span class="tok-nt">&lt;/komplexe_zahl&gt;</span>
+<span class="tok-nt">&lt;/addiere&gt;</span></code></pre>
+</div>
 </div>
 </div>
 <div class="sect4">
@@ -2618,16 +2641,17 @@ ein Tag, in dem alle anderen enthalten sind.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><code>`<br>
-`&lt;ueberschrift&gt;</code><br>
-<code>    Beispieldokument</code><br>
-<code>&lt;/ueberschrift&gt;</code><br>
-<code>&lt;text&gt;</code><br>
-<code>    Dies ist ein &lt;unterstrichen&gt;Beispieltext&lt;/unterstrichen&gt;</code><br>
-<code>    &lt;absatz /&gt;</code><br>
-<code>    Noch mehr Text</code><br>
-<code>&lt;/text&gt;</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span class="tok-nt">&lt;ueberschrift&gt;</span>
+    Beispieldokument
+<span class="tok-nt">&lt;/ueberschrift&gt;</span>
+<span class="tok-nt">&lt;text&gt;</span>
+    Dies ist ein <span class="tok-nt">&lt;unterstrichen&gt;</span>Beispieltext<span class="tok-nt">&lt;/unterstrichen&gt;</span>
+    <span class="tok-nt">&lt;absatz</span> <span class="tok-nt">/&gt;</span>
+    Noch mehr Text
+<span class="tok-nt">&lt;/text&gt;</span></code></pre>
+</div>
 </div>
 <div class="ulist">
 <ul>
@@ -2636,19 +2660,19 @@ ein Tag, in dem alle anderen enthalten sind.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><code>`<br>
-`&lt;dokument&gt;</code><br>
-<code>    &lt;ueberschrift&gt;</code><br>
-<code>        Beispieldokument</code><br>
-<code>    &lt;/ueberschrift&gt;</code><br>
-<code>    &lt;text&gt;</code><br>
-<code>        &lt;kursiv&gt;Dies &lt;unterstrichen&gt;ist &lt;/kursiv&gt;ein Beispieltext&lt;/unterstrichen&gt;</code><br>
-<code>        &lt;absatz /&gt;</code><br>
-<code>        Noch mehr Text</code><br>
-<code>    &lt;/text&gt;</code><br>
-<code>&lt;/dokument&gt;</code><br>
-<code> </code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span class="tok-nt">&lt;dokument&gt;</span>
+    <span class="tok-nt">&lt;ueberschrift&gt;</span>
+        Beispieldokument
+    <span class="tok-nt">&lt;/ueberschrift&gt;</span>
+    <span class="tok-nt">&lt;text&gt;</span>
+        <span class="tok-nt">&lt;kursiv&gt;</span>Dies <span class="tok-nt">&lt;unterstrichen&gt;</span>ist <span class="tok-nt">&lt;/kursiv&gt;</span>ein Beispieltext<span class="tok-nt">&lt;/unterstrichen&gt;</span>
+        <span class="tok-nt">&lt;absatz</span> <span class="tok-nt">/&gt;</span>
+        Noch mehr Text
+    <span class="tok-nt">&lt;/text&gt;</span>
+<span class="tok-nt">&lt;/dokument&gt;</span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -2658,20 +2682,22 @@ ein Tag, in dem alle anderen enthalten sind.</p>
 <p>Man kann im Tag auch Attribute einfügen, in denen Informationen
 übertragen werden:</p>
 </div>
-<div class="paragraph">
-<p><code>&lt;Tag attribut="wert"&gt;</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span class="tok-nt">&lt;Tag</span> <span class="tok-na">attribut=</span><span class="tok-s">&quot;wert&quot;</span><span class="tok-nt">&gt;</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Auf diese Weise lässt sich das Beispiel mit den komplexen Zahlen etwas
 übersichtlicher gestalten:</p>
 </div>
-<div class="paragraph">
-<p><code>`<br>
-`&lt;addiere&gt;</code><br>
-<code>    &lt;komplexe_zahl realteil="3.5" imaginaerteil="4.2" /&gt;</code><br>
-<code>    &lt;komplexe_zahl realteil="1" imaginaerteil="6.9" /&gt;</code><br>
-<code>&lt;/addiere&gt;</code><br>
-<code> </code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span class="tok-nt">&lt;addiere&gt;</span>
+    <span class="tok-nt">&lt;komplexe_zahl</span> <span class="tok-na">realteil=</span><span class="tok-s">&quot;3.5&quot;</span> <span class="tok-na">imaginaerteil=</span><span class="tok-s">&quot;4.2&quot;</span> <span class="tok-nt">/&gt;</span>
+    <span class="tok-nt">&lt;komplexe_zahl</span> <span class="tok-na">realteil=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">imaginaerteil=</span><span class="tok-s">&quot;6.9&quot;</span> <span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/addiere&gt;</span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -2683,11 +2709,13 @@ kann das Computerprogramm erfahren, wie er mit den Daten umzugehen hat
 (z.B. welcher Zeichensatz benutzt wird). Dieser Header sieht einem Tag
 sehr ähnlich:</p>
 </div>
-<div class="paragraph">
-<p><code> </code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span class="tok-cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot; ?&gt;</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Man nennt so ein Tag, auch <em>Verarbeitungsinformation</em></p>
+<p>Man nennt so ein Tag, auch <em>Verarbeitungsinformation</em>.</p>
 </div>
 <div class="paragraph">
 <p>Theoretisch darf es in einem XML-Dokument mehrere
@@ -2701,8 +2729,10 @@ aber nur den Header kennen.</p>
 <p>Man kann in sein XML-Dokument auch Kommentare einfügen, die beim
 Einlesen dann ignoriert werden:</p>
 </div>
-<div class="paragraph">
-<p><code>&lt;!-- Ich bin ein XML-Kommentar -&#8594;</code></p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span class="tok-c">&lt;!-- Ich bin ein XML-Kommentar --&gt;</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Es darf beliebig viele solcher Kommentare geben und sie dürfen nur
@@ -2714,12 +2744,9 @@ zwischen Tags stehen.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://de.wikipedia.org/wiki/Xml" class="bare">http://de.wikipedia.org/wiki/Xml</a> Artikel über XML aus der Wikipedia</p>
+<p><a href="http://de.wikipedia.org/wiki/Xml">Artikel über XML aus der Wikipedia</a></p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>Category:Protokoll</p>
 </div>
 </div>
 </div>
@@ -2827,8 +2854,9 @@ gewährleisten sollen.</p>
 <div class="sect2">
 <h3 id="die-konkreten-termine">Die konkreten Termine</h3>
 <div class="paragraph">
-<p>Siehe Terminseite der
-Software-Challengehttp://www.informatik.uni-kiel.de/software-challenge/2013/termine/[1]</p>
+<p>Befinden sich auf der
+<a href="http://www.software-challenge.de/de/termine">Software-Challenge Website
+unter Termine</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2864,11 +2892,11 @@ Software-Challengehttp://www.informatik.uni-kiel.de/software-challenge/2013/term
 </div>
 </div>
 <div class="sect1">
-<h2 id="_das_wettkampfsystem">Das Wettkampfsystem</h2>
+<h2 id="das-wettkampfsystem">Das Wettkampfsystem</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Das Wettkampfsystem ist die Plattform, auf der die link:Der
-Computerspieler (Client)[Computerspieler] der einzelnen Schulen
+<p>Das Wettkampfsystem ist die Plattform, auf der die
+<a href="#der-computerspieler">Computerspieler</a> der einzelnen Schulen
 gegeneinander antreten. Die Teams können sich dabei nicht nur im
 Wettkampf, sondern auch in Freundschaftsspielen, mit ihren Gegnern
 messen. Außerdem liefert er alle Informationen rund um den Wettkampf,
@@ -2877,29 +2905,33 @@ Mitglieder in den einzelnen Teams.</p>
 </div>
 <div class="sect2">
 <h3 id="die-weboberfläche">Die Weboberfläche</h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/weboberflaeche_startseite.jpg" alt="Die Startseite der Weboberfläche">
+</div>
+</div>
 <div class="paragraph">
-<p>Datei:Weboberfläche_startseite.jpg[miniatur|Die Startseite der
-Weboberfläche] Die Weboberfläche ist unter der URL
-<a href="http://contest.software-challenge.de/saison/13" class="bare">http://contest.software-challenge.de/saison/13</a> erreichbar. Alle
-Informationen, die den Ablauf des Wettkampfs betreffen (z.B. Terminplan,
-News oder Rangliste) sind auch ohne Anmeldung verfügbar. Man muss sich
-nur am System anmelden, wenn man auf seinen Kurs, bzw. auf seinen Client
+<p>Die Weboberfläche ist unter der URL
+<a href="http://contest.software-challenge.de" class="bare">http://contest.software-challenge.de</a> erreichbar. Alle Informationen,
+die den Ablauf des Wettkampfs betreffen (z.B. Terminplan, News oder
+Rangliste) sind auch ohne Anmeldung verfügbar. Man muss sich nur am
+System anmelden, wenn man auf seinen Kurs, bzw. auf seinen Client
 zugreifen möchte. Im Wettkampfsystem findet die gesamte
 Wettkampfverwaltung statt. Hier können die Clients abgegeben, getestet
 und aktiviert werden und es kann der aktuelle Wettkampfstand abgerufen
-werden (Rangliste, Spieltage, etc.).<br></p>
+werden (Rangliste, Spieltage, etc.).</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="auswahl">Auswahl</h3>
 <div class="paragraph">
 <p>Bevor man Informationen über den Wettkampf bekommt, muss man die
-betreffende Saison und die Wettkampfgruppe auswählen. Dies ist auch wenn
-man sich anmeldet zu beachten. Über die beiden Buttons in der oberen
-Leiste, bekommt man alle verfügbaren Saisons angezeigt, und wenn man
-eine ausgewählt hat, sieht man auch die Gruppen dazu. Anschließend kann
-man die Informationen einsehen. <strong>Hinweis</strong>: Standardmäßig ist die
-aktuellste Saison im System aktiv.</p>
+betreffende Saison und die Wettkampfgruppe auswählen. Dies ist auch
+wenn man sich anmeldet zu beachten. Über die beiden Buttons in der
+oberen Leiste, bekommt man alle verfügbaren Saisons angezeigt, und
+wenn man eine ausgewählt hat, sieht man auch die Gruppen
+dazu. Anschließend kann man die Informationen einsehen. Standardmäßig
+ist die aktuellste Saison im System aktiv.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2919,30 +2951,43 @@ erscheint hier.</p>
 <h4 id="wettkampf">Wettkampf</h4>
 <div class="sect4">
 <h5 id="spieltage">Spieltage</h5>
+<div class="imageblock">
+<div class="content">
+<img src="../images/wettkampfsystem_terminplan.jpg" alt="Screenshot des Terminplans">
+</div>
+</div>
 <div class="paragraph">
-<p>Datei:Wettkampfsystem_Terminplan.jpg[miniatur|Screenshot des
-Terminplans] Der Terminplan kann erst aufgerufen werden, wenn die
+<p>Der Terminplan kann erst aufgerufen werden, wenn die
 einzelnen Spieltage für den Wettkampf feststehen und eine Gruppe
 ausgewählt wurde. Die blauen Einträge im Kalender zeigen an, welche
 Spieltage noch austehen, wärend die grünen schon gespielt sind. Mit
 einem Klick auf einen Eintrag gelangt man direkt zur
-Spieltagübersicht.<br></p>
+Spieltagübersicht.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="xx.-spieltag">XX. Spieltag</h5>
+<div class="imageblock">
+<div class="content">
+<img src="../images/wettkampfserver_spieltaguebersicht.jpg" alt="wettkampfserver spieltaguebersicht">
+</div>
+</div>
 <div class="paragraph">
-<p>Datei:Wettkampfserver_Spieltagübersicht.jpg[miniatur] Auf dieser Seite
-kann man sehen, welche Schulen an dem Spieltag aufeinander treffen bzw.
-trafen. Wurde der Spieltag schon ausgetragen, kann man sich die
-Ergebnisse und den Verlauf der einzelnen Spiele anschauen.<br></p>
+<p>Auf dieser Seite kann man sehen, welche Schulen an dem Spieltag
+aufeinander treffen bzw.  trafen. Wurde der Spieltag schon
+ausgetragen, kann man sich die Ergebnisse und den Verlauf der
+einzelnen Spiele anschauen.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="rangliste">Rangliste</h5>
+<div class="imageblock">
+<div class="content">
+<img src="../images/wettkampfserver_rangliste.jpg" alt="Screenshot der Rangliste">
+</div>
+</div>
 <div class="paragraph">
-<p>Datei:Wettkampfserver_Rangliste.jpg[miniatur|Screenshot der Rangliste]
-Der Link erscheint erst, wenn der Wettkampf gestartet wurde. Auf dieser
+<p>Der Link erscheint erst, wenn der Wettkampf gestartet wurde. Auf dieser
 Seite gibt es drei Tabellen:</p>
 </div>
 <div class="ulist">
@@ -2958,7 +3003,7 @@ Rücksprache mit den Lehrkräften in Einsteiger oder Fortgeschritten
 eingestuft. So kann für die Einsteiger eine separate Rangliste angezeigt
 werden und die Teams können ihre Leistung besser einschätzen. Diese
 Einstufung hat weder Auswirkungen auf den Verlauf der
-Software-Challenge, noch auf die Vergabe der Preise.<br></p>
+Software-Challenge, noch auf die Vergabe der Preise.</p>
 </li>
 </ul>
 </div>
@@ -2975,11 +3020,15 @@ verfügbar, wenn die Teilnehmer feststehen.</p>
 <h4 id="teams">Teams</h4>
 <div class="sect4">
 <h5 id="alle-teams">Alle Teams</h5>
+<div class="imageblock">
+<div class="content">
+<img src="../images/wettkampfserver_teamtabelle.jpg" alt="Die Teamtabelle">
+</div>
+</div>
 <div class="paragraph">
-<p>Datei:Wettkampfserver_Teamtabelle.jpg[miniatur|Die Teamtabelle] Hier
-werden die teilnehmenden Teams mit ihren Ansprechpartnern und Tutoren
+<p>Hier werden die teilnehmenden Teams mit ihren Ansprechpartnern und Tutoren
 tabellarisch aufgelistet. Durch einen Klick auf die Lupe gelangt man zur
-Begegnungsliste für das entsprechende Team.<br></p>
+Begegnungsliste für das entsprechende Team.</p>
 </div>
 </div>
 <div class="sect4">
@@ -3001,9 +3050,13 @@ Klick auf die Lupe am Ende der Zeile gelangt man in die Teamdetails.</p>
 </div>
 <div class="sect4">
 <h5 id="personen">Personen</h5>
+<div class="imageblock">
+<div class="content">
+<img src="../images/wettkampfserver_neue_person.jpg" alt="Dialog" width="um neue Personen ins Team aufzunehmen">
+</div>
+</div>
 <div class="paragraph">
-<p>Datei:Wettkampfserver_Neue_Person.jpg[miniatur|Dialog, um neue Personen
-ins Team aufzunehmen] Hier werden alle Personen des Teams augelistet.</p>
+<p>Hier werden alle Personen des Teams augelistet.</p>
 </div>
 <div class="sect5">
 <h6 id="person-hinzufügen">Person hinzufügen</h6>
@@ -3026,8 +3079,10 @@ werfen.</p>
 <div class="paragraph">
 <p>Wenn man eine neue Person ins Team aufnehmen will, kann man sich
 entscheiden, ob man eine neue Person erstellt oder eine im System
-bekannte Person einlädt.<br>
- Ganz unten auf der Personenseite kann man die Schüleranzahl des Teams
+bekannte Person einlädt.</p>
+</div>
+<div class="paragraph">
+<p>Ganz unten auf der Personenseite kann man die Schüleranzahl des Teams
 eintragen. Hierzu zählen auch Schüler, die keine eigenen Zugangsdaten
 für den Wettkampfserver haben. Diese Zahl wird sowohl für die Presse als
 auch für statistische Zwecke gebraucht und sollte in jedem Fall stimmen.</p>
@@ -3133,8 +3188,10 @@ Archiv). Um die Replays z.B. in einer eigenen Anwendung zu verwenden,
 kann man sich auch vom Server bereits entpackte und an das Format des
 Replay-Viewers angepasste XML-Files zurückgeben lassen. Dies kann zum
 Einen durch einen XML-Header des Requests geschehen oder zum Anderen
-einfach durch das Anhängen der Endung ".xml" an den oben genannten Link.
-Wenn größere Mengen Replays benötigt werden, empfehlen wir die
+einfach durch das Anhängen der Endung ".xml" an den oben genannten Link.</p>
+</div>
+<div class="paragraph">
+<p>Wenn größere Mengen Replays benötigt werden, empfehlen wir die
 Standard-Archive vorzuziehen und dann lokal zu entpacken, da diese schon
 fertig gepackt auf dem Server vorliegen und somit schneller und mit
 weniger Last für das System zur Verfügung gestellt werden können.</p>
@@ -3146,7 +3203,7 @@ weniger Last für das System zur Verfügung gestellt werden können.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-01-09 11:32:40 CET
+Last updated 2015-03-09 13:14:55 CET
 </div>
 </div>
 </body>
