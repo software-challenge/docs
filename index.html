@@ -546,43 +546,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#zweite-möglichkeit---das-ant-script">Zweite Möglichkeit - Das ANT Script</a></li>
 </ul>
 </li>
-<li><a href="#_die_ersten_schritte">Die ersten Schritte</a></li>
-<li><a href="#_einführung_in_die_objektorientierte_programmierung">Einführung in die objektorientierte Programmierung</a>
+<li><a href="#_die_ersten_schritte">Die ersten Schritte</a>
 <ul class="sectlevel2">
-<li><a href="#idee-der-objektorientierung">Idee der Objektorientierung</a></li>
-<li><a href="#vererbung">Vererbung</a></li>
-<li><a href="#statische-variablen-und-methoden">Statische Variablen und Methoden</a></li>
-<li><a href="#weitere-aspekte">Weitere Aspekte</a></li>
-<li><a href="#weiterführende-informationen">Weiterführende Informationen</a></li>
+<li><a href="#_einführung_in_die_objektorientierte_programmierung">Einführung in die objektorientierte Programmierung</a></li>
+<li><a href="#_der_saubere_programmierstil">Der saubere Programmierstil</a></li>
+<li><a href="#_eine_idee_implementieren">Eine Idee implementieren</a></li>
+<li><a href="#_weiterführende_literatur">Weiterführende Literatur</a></li>
 </ul>
 </li>
-<li><a href="#_der_saubere_programmierstil">Der saubere Programmierstil</a>
+<li><a href="#schnittstelle">Die Schnittstelle zum Server</a>
 <ul class="sectlevel2">
-<li><a href="#allgemeiner-dokumentaufbau">Allgemeiner Dokumentaufbau</a></li>
-<li><a href="#klammerungsregeln">Klammerungsregeln</a></li>
-<li><a href="#die-switch-anweisung">Die Switch-Anweisung</a></li>
-<li><a href="#weiterführende-informationen">Weiterführende Informationen</a></li>
-</ul>
-</li>
-<li><a href="#_eine_idee_implementieren">Eine Idee implementieren</a>
-<ul class="sectlevel2">
-<li><a href="#vorraussetzungen">Vorraussetzungen</a></li>
-<li><a href="#idee-formalisieren">Idee formalisieren</a></li>
-<li><a href="#idee-implementieren">Idee implementieren</a></li>
-</ul>
-</li>
-<li><a href="#_weiterführende_literatur">Weiterführende Literatur</a>
-<ul class="sectlevel2">
-<li><a href="#java">Java</a></li>
-</ul>
-</li>
-<li><a href="#schnittstelle">Die Schnittstelle zum Server</a></li>
-<li><a href="#_einführung_in_xml">Einführung in XML</a>
-<ul class="sectlevel2">
-<li><a href="#tags">Tags</a></li>
-<li><a href="#der-header">Der Header</a></li>
-<li><a href="#kommentare">Kommentare</a></li>
-<li><a href="#weiterführende-informationen">Weiterführende Informationen</a></li>
+<li><a href="#_einführung_in_xml">Einführung in XML</a></li>
 </ul>
 </li>
 <li><a href="#_wettkampfmodalitäten">Wettkampfmodalitäten</a>
@@ -750,7 +724,7 @@ der Kommandozeilenbefehl</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sh">java -jar softwarechallenge-gui.jar<span class="tok-sb">`</span></code></pre>
+<pre class="pygments highlight"><code data-lang="sh">java -jar softwarechallenge-gui.jar</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -765,7 +739,7 @@ Statusleiste.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/spielleiter_direkt_nach-start.jpg" alt="Spielleiter">
+<img src="./images/spielleiter_direkt_nach-start.jpg" alt="Spielleiter">
 </div>
 <div class="title">Figure 1. Die Spielleiteroberfläche direkt nach dem Programmstart</div>
 </div>
@@ -787,7 +761,7 @@ Spiel erstellen" das folgende Fenster aufgerufen werden:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/neues_spiel_dialog.jpg" alt="Neues Spiel">
+<img src="./images/neues_spiel_dialog.jpg" alt="Neues Spiel">
 </div>
 <div class="title">Figure 2. Dialog für ein neues Spiel</div>
 </div>
@@ -880,7 +854,7 @@ gespielt werden.</p>
 <h3 id="die-spielfeldoberfläche">Die Spielfeldoberfläche</h3>
 <div class="imageblock">
 <div class="content">
-<img src="../images/spielfeldoberflaeche.jpg" alt="spielfeldoberflaeche">
+<img src="./images/spielfeldoberflaeche.jpg" alt="spielfeldoberflaeche">
 </div>
 <div class="title">Figure 3. Die Spielfeldoberfläche (hier mit dem Spiel "Schäfchen im Trockenen")</div>
 </div>
@@ -898,7 +872,7 @@ dargestellt. Hier setzt der menschliche Spieler auch seine Züge.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/steuerelemente.jpg" alt="steuerelemente">
+<img src="./images/steuerelemente.jpg" alt="steuerelemente">
 </div>
 <div class="title">Figure 4. Die Steuerelemente des Spielleiters</div>
 </div>
@@ -921,7 +895,7 @@ ausgeschaltet werden.</p>
 <h3 id="spielwiederholung-laden">Spielwiederholung laden</h3>
 <div class="imageblock">
 <div class="content">
-<img src="../images/spielwiederholung_laden.jpg" alt="spielwiederholung laden">
+<img src="./images/spielwiederholung_laden.jpg" alt="spielwiederholung laden">
 </div>
 <div class="title">Figure 5. Dialog, um Spielwiederholungen zu laden</div>
 </div>
@@ -950,7 +924,7 @@ beschriebenen Spielfeldoberfläche dargestellt.</p>
 <h3 id="testdurchläufe">Testdurchläufe</h3>
 <div class="imageblock">
 <div class="content">
-<img src="../images/testdurchla_ufe.jpg" alt="testdurchla ufe">
+<img src="./images/testdurchla_ufe.jpg" alt="testdurchla ufe">
 </div>
 <div class="title">Figure 6. Beispieldialog für einen Testdurchlauf</div>
 </div>
@@ -1144,7 +1118,7 @@ hat, ist Java einsatzbereit.</p>
 <h3 id="installation-unter-mac-os-x">Installation unter Mac OS X</h3>
 <div class="imageblock">
 <div class="content">
-<img src="../images/java-einstellungen_mac.jpg" alt="java einstellungen mac">
+<img src="./images/java-einstellungen_mac.jpg" alt="java einstellungen mac">
 </div>
 <div class="title">Figure 7. Das Programm "Java-Einstellungen" auf Mac OS X</div>
 </div>
@@ -1261,7 +1235,7 @@ Installation ist nicht notwendig.</p>
 <h4 id="simpleclient-in-eclipse-einbinden">SimpleClient in Eclipse einbinden</h4>
 <div class="imageblock">
 <div class="content">
-<img src="../images/eclipse_neues_projekt_wa_hlen.jpg" alt="eclipse neues projekt wa hlen">
+<img src="./images/eclipse_neues_projekt_wa_hlen.jpg" alt="eclipse neues projekt wa hlen">
 </div>
 <div class="title">Figure 8. In Eclipse ein neues Projekt erstellen</div>
 </div>
@@ -1317,7 +1291,7 @@ angeben. Dort den Ordner "doc" des simple Clients eingeben.</p>
 <h4 id="simpleclient-aus-eclipse-starten">SimpleClient aus Eclipse starten</h4>
 <div class="imageblock">
 <div class="content">
-<img src="../images/eclipse_simpleclient_starten.jpg" alt="eclipse simpleclient starten">
+<img src="./images/eclipse_simpleclient_starten.jpg" alt="eclipse simpleclient starten">
 </div>
 <div class="title">Figure 9. Start des Clients aus Eclipse</div>
 </div>
@@ -1479,7 +1453,7 @@ Entwicklungsumgebung Eclipse vor.</p>
 <h3 id="die-oberfläche">Die Oberfläche</h3>
 <div class="imageblock">
 <div class="content">
-<img src="../images/eclipse_desktop.jpg" alt="eclipse desktop">
+<img src="./images/eclipse_desktop.jpg" alt="eclipse desktop">
 </div>
 <div class="title">Figure 10. Überblick über die wichtigsten Fenster in Eclipse</div>
 </div>
@@ -1534,7 +1508,7 @@ Programmcode gelangen.</p>
 <h3 id="programme-starten">Programme starten</h3>
 <div class="paragraph">
 <div class="title">Dialog um die Starteinstellungen des Programms zu ändern</div>
-<p><span class="image"><img src="../images/eclipse_run-configurations.jpg" alt="eclipse_run-configurations"></span></p>
+<p><span class="image"><img src="./images/eclipse_run-configurations.jpg" alt="eclipse_run-configurations"></span></p>
 </div>
 <div class="paragraph">
 <p>Ein Programm lässt sich starten, indem man im Package Explorer einen
@@ -1863,11 +1837,8 @@ Datei im Ordner "jar" sowie die fertig gepackte ZIP-Datei im Ordner
 Hilfe gegeben werden, die den Start mit der Entwicklung erleichtern
 soll.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_einführung_in_die_objektorientierte_programmierung">Einführung in die objektorientierte Programmierung</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_einführung_in_die_objektorientierte_programmierung">Einführung in die objektorientierte Programmierung</h3>
 <div class="paragraph">
 <p>"Wenn man heute einen Computer kauft, ist er morgen schon
 veraltet". Kaum ein anderes Gerücht hält sich so stark in der
@@ -1878,16 +1849,16 @@ Beispiel dafür ist die Objektorientierung. Sie wurde bereits Mitte der
 80er Jahre entwickelt und ist auch heute noch das Grundkonzept
 moderner Programmiersprachen.</p>
 </div>
-<div class="sect2">
-<h3 id="idee-der-objektorientierung">Idee der Objektorientierung</h3>
+<div class="sect3">
+<h4 id="idee-der-objektorientierung">Idee der Objektorientierung</h4>
 <div class="paragraph">
 <p>Die Idee der Objektorientierung ist, die Daten und die Funktionen, die
 auf diese Daten zugreifen, in einer Komponente zu bündeln. Auf die Daten
 kann man nur über die entsprechenden Funktionen (die man <em>Methoden</em>
 nennt) zugreifen.</p>
 </div>
-<div class="sect3">
-<h4 id="vorgehensweise-ohne-objektorientierung">Vorgehensweise ohne Objektorientierung</h4>
+<div class="sect4">
+<h5 id="vorgehensweise-ohne-objektorientierung">Vorgehensweise ohne Objektorientierung</h5>
 <div class="paragraph">
 <p>Möchte man zum Beispiel ein Konto ohne Objektorientierung schreiben, so
 braucht man eine Integer-Variable <code>int kontostand = 0;</code>, die Auskunft
@@ -1927,8 +1898,8 @@ kann man unter Umständen nichts abheben, obwohl der Dispo noch nicht
 voll genutzt ist.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="objektorientiert-arbeiten">Objektorientiert arbeiten</h4>
+<div class="sect4">
+<h5 id="objektorientiert-arbeiten">Objektorientiert arbeiten</h5>
 <div class="paragraph">
 <p>Möchte man ein Konto objektorientiert darstellen, schreibt man zunächst
 eine <em>Klasse</em>, die eine Art Bauplan ist:</p>
@@ -2054,8 +2025,8 @@ einfach, da nur noch Änderungen in der Klasse notwendig sind:</p>
 </table>
 </div>
 </div>
-<div class="sect3">
-<h4 id="referenzierung-von-objekten">Referenzierung von Objekten</h4>
+<div class="sect4">
+<h5 id="referenzierung-von-objekten">Referenzierung von Objekten</h5>
 <div class="paragraph">
 <p>Wenn man mit <code>Konto konto3 = new Konto()</code> ein neues Objekt erzeugt, wird
 dieses im Arbeitsspeicher abgelegt und die Variable <code>konto3</code> enthält die
@@ -2071,8 +2042,8 @@ Statt <em>zeigen</em> sagt man oft auch <em>referenzieren</em>.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="vererbung">Vererbung</h3>
+<div class="sect3">
+<h4 id="vererbung">Vererbung</h4>
 <div class="paragraph">
 <p>Die Vererbung ist eine Technik, mit der man eine Klasse, durch
 hinzufügen von Methoden und Variablen, einen neuen Bauplan (Klasse)
@@ -2123,8 +2094,8 @@ normalen Konto:</p>
 <span class="tok-n">premium</span><span class="tok-o">.</span><span class="tok-na">zinsenGutschreiben</span><span class="tok-o">();</span></code></pre>
 </div>
 </div>
-<div class="sect3">
-<h4 id="casting-von-objekten">Casting von Objekten</h4>
+<div class="sect4">
+<h5 id="casting-von-objekten">Casting von Objekten</h5>
 <div class="paragraph">
 <p>Da ein Premiumkonto auch ein normales Konto ist, ist der folgende Aufruf
 legal:</p>
@@ -2163,8 +2134,8 @@ Oberklasse zugegriffen.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="statische-variablen-und-methoden">Statische Variablen und Methoden</h3>
+<div class="sect3">
+<h4 id="statische-variablen-und-methoden">Statische Variablen und Methoden</h4>
 <div class="paragraph">
 <p>Gibt es Methoden oder Variablen, die für alle Objekte gültig sind, so
 werden diese als statisch (<code>static</code>) deklariert. Statische Variablen und
@@ -2210,8 +2181,8 @@ Variablen oder Methoden handelt, sollte man auf diese immer über den
 Klassennamen zugreifen.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="weitere-aspekte">Weitere Aspekte</h3>
+<div class="sect3">
+<h4 id="weitere-aspekte">Weitere Aspekte</h4>
 <div class="paragraph">
 <p>Die Objektorientierung bietet noch viele weitere Aspekte, wie zum
 Beispiel die Polymorphie. Da es sich hier nur um eine Einführung
@@ -2219,8 +2190,8 @@ handelt, wurden solche fortgeschrittenen Themen allerdings nicht
 behandelt.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="weiterführende-informationen">Weiterführende Informationen</h3>
+<div class="sect3">
+<h4 id="weiterführende-informationen">Weiterführende Informationen</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2233,10 +2204,8 @@ behandelt.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_der_saubere_programmierstil">Der saubere Programmierstil</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_der_saubere_programmierstil">Der saubere Programmierstil</h3>
 <div class="paragraph">
 <p>Eventuell hat manche(r) schon erlebt, dass man von einer/m Bekannten
 ein Stück Programmcode bekommen hat, den man gar nicht versteht. Oft
@@ -2251,8 +2220,8 @@ Quelltexten.</p>
 Java von seinen Entwicklern. Dieser soll hier ein wenig näher gebracht
 werden.</p>
 </div>
-<div class="sect2">
-<h3 id="allgemeiner-dokumentaufbau">Allgemeiner Dokumentaufbau</h3>
+<div class="sect3">
+<h4 id="allgemeiner-dokumentaufbau">Allgemeiner Dokumentaufbau</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2286,8 +2255,8 @@ benutzt (z.B. <code>int ANZAHL_SPIELER = 2;</code>)</p>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="klammerungsregeln">Klammerungsregeln</h3>
+<div class="sect3">
+<h4 id="klammerungsregeln">Klammerungsregeln</h4>
 <div class="paragraph">
 <p>Grundsätzlich sollte jeder Schleifenrumpf und jede <code>if</code>-Anweisung
 geklammert werden, auch wenn nur ein Befehl darin steht. Die öffnende
@@ -2334,8 +2303,8 @@ schließende Klammer:</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="die-switch-anweisung">Die Switch-Anweisung</h3>
+<div class="sect3">
+<h4 id="die-switch-anweisung">Die Switch-Anweisung</h4>
 <div class="paragraph">
 <p>Bei einem <code>switch</code> sollte die folgende Form gewahrt werden:</p>
 </div>
@@ -2363,8 +2332,8 @@ wird, soll das durch einen Kommentar gekennzeichnet werden. Wenn ein
 <code>default</code> benutzt wird, wird dieses als letzte Klausel geschrieben.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="weiterführende-informationen">Weiterführende Informationen</h3>
+<div class="sect3">
+<h4 id="weiterführende-informationen">Weiterführende Informationen</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2375,10 +2344,8 @@ Richtlinien von den Java-Entwicklern</a></p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_eine_idee_implementieren">Eine Idee implementieren</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_eine_idee_implementieren">Eine Idee implementieren</h3>
 <div class="paragraph">
 <p>Man hat einige Spiele absolviert und sich eine gute Strategie
 ausgedacht. Damit hat man zwar schon einen wichtigen Teil der Arbeit
@@ -2391,8 +2358,8 @@ dieser Strategie zu spielen.</p>
 formal beschreiben und in ein Programm überführen kann. Dabei nehmen wir
 an, dass wir einen Stapel mit Karten haben, der sortiert werden soll.</p>
 </div>
-<div class="sect2">
-<h3 id="vorraussetzungen">Vorraussetzungen</h3>
+<div class="sect3">
+<h4 id="vorraussetzungen">Vorraussetzungen</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2403,9 +2370,8 @@ an, dass wir einen Stapel mit Karten haben, der sortiert werden soll.</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="idee-formalisieren">Idee formalisieren</h3>
+<div class="sect4">
+<h5 id="idee-formalisieren">Idee formalisieren</h5>
 <div class="paragraph">
 <p>Als erstes muss die Idee formal beschrieben werden. Oftmals kann man
 zunächst beschreiben, wie man als Mensch vorgehen würde.</p>
@@ -2430,8 +2396,8 @@ Karten) aus.</p>
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="idee-implementieren">Idee implementieren</h3>
+<div class="sect4">
+<h5 id="idee-implementieren">Idee implementieren</h5>
 <div class="paragraph">
 <p>Nachdem man seine Idee formal niedergeschrieben hat, kann sie ganz
 leicht in ein Programm überführt werden:</p>
@@ -2497,17 +2463,16 @@ Karten) aus.</td>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_weiterführende_literatur">Weiterführende Literatur</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_weiterführende_literatur">Weiterführende Literatur</h3>
 <div class="paragraph">
 <p>Zu den meisten Programmiersprachen existieren umfassende
 Dokumentationen. Einige Empfehlenswerte werden hier aufgeführt. Der
 geneigte Leser ist eingeladen, in dem entsprechenden Bereich eigene
 Empfehlungen hinzuzufügen.</p>
 </div>
-<div class="sect2">
-<h3 id="java">Java</h3>
+<div class="sect3">
+<h4 id="java">Java</h4>
 <div class="paragraph">
 <p>Die umfassende (englischsprachige) offizielle Dokumentation zu Java
 befindet sich <a href="http://download.oracle.com/javase/7/docs/index.html">hier</a>.
@@ -2516,6 +2481,7 @@ Insel" empfehlenswert, welches man bei Galileo Computing als
 <a href="http://openbook.galileocomputing.de/javainsel/">Open-Book</a> kostenlos
 online betrachten oder auch herunterladen kann. Man kann es auf der
 selben Seite auch als gedruckte Ausgabe bestellen.</p>
+</div>
 </div>
 </div>
 </div>
@@ -2540,24 +2506,18 @@ Kommunikation kümmern, sondern kann sich direkt auf die Spiellogik
 konzentrieren. Außerdem wird vom Institut für Informatik die beste
 Unterstützung für Java geboten.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_einführung_in_xml">Einführung in XML</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_einführung_in_xml">Einführung in XML</h3>
 <div class="paragraph">
-<p>Die Kommunikation zwischen <a href="#server">Spielleiter</a> und</p>
-</div>
-<div class="paragraph">
-<p>XML-Nachrichten realisiert. XML ist eine Auszeichnungssprache, d.h
+<p>Die Kommunikation zwischen <a href="#server">Spielleiter</a> und <a href="#der-computerspieler">Computerspieler</a> wird mittels XML-Nachrichten realisiert. XML ist eine Auszeichnungssprache, d.h
 eine Sprache, die nicht nur die Daten selbst, sondern auch
 Informationen über die Interpretation oder Bearbeitung liefert. Der
 Vorteil dieser Sprache liegt darin, dass sie sowohl vom Computer, als
 auch vom Menschen gut gelesen werden kann. Dieser Artikel soll den
 Aufbau einer XML-Datei beschreiben.</p>
 </div>
-<div class="sect2">
-<h3 id="tags">Tags</h3>
+<div class="sect3">
+<h4 id="tags">Tags</h4>
 <div class="paragraph">
 <p>Die Grundelemente von XML sind <em>Tags</em>. Ein Tag liefert Informationen
 über die Art der Daten, die verarbeitet werden sollen. In XML wird ein
@@ -2594,8 +2554,8 @@ mitgeteilt werden soll.</p>
 <div class="paragraph">
 <p><strong>Hinweis:</strong> XML unterscheidet strikt zwischen Groß- und Kleinschreibung.</p>
 </div>
-<div class="sect3">
-<h4 id="bildungsregeln">Bildungsregeln</h4>
+<div class="sect4">
+<h5 id="bildungsregeln">Bildungsregeln</h5>
 <div class="paragraph">
 <p>Die Tags dürfen nicht beliebig in Dokumenten verwendet werden. Es gelten
 hier die folgenden Regeln:</p>
@@ -2614,6 +2574,7 @@ jedoch nicht überkreuzen</p>
 ein Tag, in dem alle anderen enthalten sind.</p>
 </li>
 </ul>
+</div>
 </div>
 <div class="sect4">
 <h5 id="beispiel-für-korrekte-xml-syntax">Beispiel für korrekte XML-Syntax</h5>
@@ -2700,9 +2661,8 @@ ein Tag, in dem alle anderen enthalten sind.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="der-header">Der Header</h3>
+<div class="sect3">
+<h4 id="der-header">Der Header</h4>
 <div class="paragraph">
 <p>Ganz wichtig ist noch die erste Zeile in einem XML-Dokument. Aus ihr
 kann das Computerprogramm erfahren, wie er mit den Daten umzugehen hat
@@ -2723,8 +2683,8 @@ Verarbeitungsinformationen geben, für die Software-Challenge muss man
 aber nur den Header kennen.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="kommentare">Kommentare</h3>
+<div class="sect3">
+<h4 id="kommentare">Kommentare</h4>
 <div class="paragraph">
 <p>Man kann in sein XML-Dokument auch Kommentare einfügen, die beim
 Einlesen dann ignoriert werden:</p>
@@ -2739,14 +2699,15 @@ Einlesen dann ignoriert werden:</p>
 zwischen Tags stehen.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="weiterführende-informationen">Weiterführende Informationen</h3>
+<div class="sect3">
+<h4 id="weiterführende-informationen">Weiterführende Informationen</h4>
 <div class="ulist">
 <ul>
 <li>
 <p><a href="http://de.wikipedia.org/wiki/Xml">Artikel über XML aus der Wikipedia</a></p>
 </li>
 </ul>
+</div>
 </div>
 </div>
 </div>
@@ -2863,31 +2824,35 @@ unter Termine</a>.</p>
 <h3 id="technische-daten-der-virtuellen-maschine">Technische Daten der virtuellen Maschine</h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 100%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Betriebssystem:</th>
-</tr>
-</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ubuntu 32 Bit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Betriebssystem:</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ubuntu 9.04 Server 32 Bit oder 14.10 LTS Server 64 Bit</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Prozessor:</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2,27 GHz Xeon</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Arbeitsspeicher:</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1,5 GB</p></td>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>Es gibt zwei Versionen der virtuellen Maschine, die sich nur durch das
+installierter Betriebssystem unterscheiden. Die Version mit Ubuntu
+9.04 wird im Wettkampfsystem als "alte VM" bezeichnet, und wird seit
+einigen Jahren eingesetzt. Inzwischen gibt es eine "neue VM", auf der
+Ubuntu 14.10 LTS installiert ist. Diese befindet sich derzeit in der
+Testphase, kann also noch nicht als vollständig getestet angesehen
+werden. Sie ist für Teams gedacht, welche neuere Versionen von
+Bibliotheken etc. für ihren Computerspieler benötigen, die auf der
+alten VM noch nicht verfügbar sind.</p>
+</div>
 </div>
 </div>
 </div>
@@ -2907,7 +2872,7 @@ Mitglieder in den einzelnen Teams.</p>
 <h3 id="die-weboberfläche">Die Weboberfläche</h3>
 <div class="imageblock">
 <div class="content">
-<img src="../images/weboberflaeche_startseite.jpg" alt="Die Startseite der Weboberfläche">
+<img src="./images/weboberflaeche_startseite.jpg" alt="Die Startseite der Weboberfläche">
 </div>
 </div>
 <div class="paragraph">
@@ -2953,7 +2918,7 @@ erscheint hier.</p>
 <h5 id="spieltage">Spieltage</h5>
 <div class="imageblock">
 <div class="content">
-<img src="../images/wettkampfsystem_terminplan.jpg" alt="Screenshot des Terminplans">
+<img src="./images/wettkampfsystem_terminplan.jpg" alt="Screenshot des Terminplans">
 </div>
 </div>
 <div class="paragraph">
@@ -2969,7 +2934,7 @@ Spieltagübersicht.</p>
 <h5 id="xx.-spieltag">XX. Spieltag</h5>
 <div class="imageblock">
 <div class="content">
-<img src="../images/wettkampfserver_spieltaguebersicht.jpg" alt="wettkampfserver spieltaguebersicht">
+<img src="./images/wettkampfserver_spieltaguebersicht.jpg" alt="wettkampfserver spieltaguebersicht">
 </div>
 </div>
 <div class="paragraph">
@@ -2983,7 +2948,7 @@ einzelnen Spiele anschauen.</p>
 <h5 id="rangliste">Rangliste</h5>
 <div class="imageblock">
 <div class="content">
-<img src="../images/wettkampfserver_rangliste.jpg" alt="Screenshot der Rangliste">
+<img src="./images/wettkampfserver_rangliste.jpg" alt="Screenshot der Rangliste">
 </div>
 </div>
 <div class="paragraph">
@@ -3022,7 +2987,7 @@ verfügbar, wenn die Teilnehmer feststehen.</p>
 <h5 id="alle-teams">Alle Teams</h5>
 <div class="imageblock">
 <div class="content">
-<img src="../images/wettkampfserver_teamtabelle.jpg" alt="Die Teamtabelle">
+<img src="./images/wettkampfserver_teamtabelle.jpg" alt="Die Teamtabelle">
 </div>
 </div>
 <div class="paragraph">
@@ -3052,7 +3017,7 @@ Klick auf die Lupe am Ende der Zeile gelangt man in die Teamdetails.</p>
 <h5 id="personen">Personen</h5>
 <div class="imageblock">
 <div class="content">
-<img src="../images/wettkampfserver_neue_person.jpg" alt="Dialog" width="um neue Personen ins Team aufzunehmen">
+<img src="./images/wettkampfserver_neue_person.jpg" alt="Dialog" width="um neue Personen ins Team aufzunehmen">
 </div>
 </div>
 <div class="paragraph">
@@ -3203,7 +3168,7 @@ weniger Last für das System zur Verfügung gestellt werden können.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2015-03-09 13:14:55 CET
+Last updated 2015-03-09 14:38:13 CET
 </div>
 </div>
 </body>
