@@ -136,11 +136,6 @@ hinzufügen
 *Hinweis:* Der Start ist nur erfolgreich, wenn der Spielleiter auf eine
 Verbindung wartet.
 
-[[einrichtung-von-bluej]]
-=== Einrichtung von BlueJ
-
-1.  TODO
-
 [[weiterführende-links]]
 === Weiterführende Links
 
