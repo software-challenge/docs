@@ -1,3 +1,5 @@
+== Weiterführende Literatur
+
 Zu den meisten Programmiersprachen existieren umfassende
 Dokumentationen. Einige Empfehlenswerte werden hier aufgeführt. Der
 geneigte Leser ist eingeladen, in dem entsprechenden Bereich eigene
@@ -13,5 +15,3 @@ Insel" empfehlenswert, welches man bei Galileo Computing als
 http://openbook.galileocomputing.de/javainsel/[Open-Book] kostenlos
 online betrachten oder auch herunterladen kann. Man kann es auf der
 selben Seite auch als gedruckte Ausgabe bestellen.
-
-Category:Java

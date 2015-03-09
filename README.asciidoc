@@ -31,3 +31,12 @@ asciidoctor -D out index.asciidoc
 
 Hierzu werden die beiden Ruby-Gems `asciidoctor` und `pygments.rb`
 (für Syntax-Highlighting der Quellcodes) benötigt.
+
+== Quickstart
+
+* http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc Syntax Quick Reference]
+* http://asciidoctor.org/docs/asciidoc-writers-guide/[AsciiDoc Writer's Guide]
+* http://asciidoctor.org/docs/user-manual/[AsciiDoctor User Manual]
+* http://asciidoctor.org/docs/asciidoc-recommended-practices/[AsciiDoc Style Guide]
+
+Es werden häufig Links zu anderen Teilen des Dokumentes genutzt (die Dokumentation ist ein einzelnes großes Dokument). Diese haben die Syntax `<<Sektionslabel,anzuzeigender Linktext>>`. Wobei Sektionslabel über allen Überschriften stehen und die Syntax `[[labelname]]` haben.

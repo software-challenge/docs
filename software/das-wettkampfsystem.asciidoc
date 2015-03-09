@@ -1,8 +1,8 @@
 [[das-wettkampfsystem]]
 == Das Wettkampfsystem
 
-Das Wettkampfsystem ist die Plattform, auf der die link:Der
-Computerspieler (Client)[Computerspieler] der einzelnen Schulen
+Das Wettkampfsystem ist die Plattform, auf der die
+<<der-computerspieler,Computerspieler>> der einzelnen Schulen
 gegeneinander antreten. Die Teams können sich dabei nicht nur im
 Wettkampf, sondern auch in Freundschaftsspielen, mit ihren Gegnern
 messen. Außerdem liefert er alle Informationen rund um den Wettkampf,
@@ -12,27 +12,28 @@ Mitglieder in den einzelnen Teams.
 [[die-weboberfläche]]
 === Die Weboberfläche
 
-Datei:Weboberfläche_startseite.jpg[miniatur|Die Startseite der
-Weboberfläche] Die Weboberfläche ist unter der URL
-http://contest.software-challenge.de/saison/13 erreichbar. Alle
-Informationen, die den Ablauf des Wettkampfs betreffen (z.B. Terminplan,
-News oder Rangliste) sind auch ohne Anmeldung verfügbar. Man muss sich
-nur am System anmelden, wenn man auf seinen Kurs, bzw. auf seinen Client
+image::weboberflaeche_startseite.jpg[Die Startseite der Weboberfläche]
+
+Die Weboberfläche ist unter der URL
+http://contest.software-challenge.de erreichbar. Alle Informationen,
+die den Ablauf des Wettkampfs betreffen (z.B. Terminplan, News oder
+Rangliste) sind auch ohne Anmeldung verfügbar. Man muss sich nur am
+System anmelden, wenn man auf seinen Kurs, bzw. auf seinen Client
 zugreifen möchte. Im Wettkampfsystem findet die gesamte
 Wettkampfverwaltung statt. Hier können die Clients abgegeben, getestet
 und aktiviert werden und es kann der aktuelle Wettkampfstand abgerufen
-werden (Rangliste, Spieltage, etc.). +
+werden (Rangliste, Spieltage, etc.).
 
 [[auswahl]]
 === Auswahl
 
 Bevor man Informationen über den Wettkampf bekommt, muss man die
-betreffende Saison und die Wettkampfgruppe auswählen. Dies ist auch wenn
-man sich anmeldet zu beachten. Über die beiden Buttons in der oberen
-Leiste, bekommt man alle verfügbaren Saisons angezeigt, und wenn man
-eine ausgewählt hat, sieht man auch die Gruppen dazu. Anschließend kann
-man die Informationen einsehen. *Hinweis*: Standardmäßig ist die
-aktuellste Saison im System aktiv.
+betreffende Saison und die Wettkampfgruppe auswählen. Dies ist auch
+wenn man sich anmeldet zu beachten. Über die beiden Buttons in der
+oberen Leiste, bekommt man alle verfügbaren Saisons angezeigt, und
+wenn man eine ausgewählt hat, sieht man auch die Gruppen
+dazu. Anschließend kann man die Informationen einsehen. Standardmäßig
+ist die aktuellste Saison im System aktiv.
 
 [[frei-verfügbare-informationen]]
 === Frei verfügbare Informationen
@@ -53,26 +54,30 @@ erscheint hier.
 [[spieltage]]
 ===== Spieltage
 
-Datei:Wettkampfsystem_Terminplan.jpg[miniatur|Screenshot des
-Terminplans] Der Terminplan kann erst aufgerufen werden, wenn die
+image::wettkampfsystem_terminplan.jpg[Screenshot des Terminplans]
+
+Der Terminplan kann erst aufgerufen werden, wenn die
 einzelnen Spieltage für den Wettkampf feststehen und eine Gruppe
 ausgewählt wurde. Die blauen Einträge im Kalender zeigen an, welche
 Spieltage noch austehen, wärend die grünen schon gespielt sind. Mit
 einem Klick auf einen Eintrag gelangt man direkt zur
-Spieltagübersicht. +
+Spieltagübersicht.
 
 [[xx.-spieltag]]
 ===== XX. Spieltag
 
-Datei:Wettkampfserver_Spieltagübersicht.jpg[miniatur] Auf dieser Seite
-kann man sehen, welche Schulen an dem Spieltag aufeinander treffen bzw.
-trafen. Wurde der Spieltag schon ausgetragen, kann man sich die
-Ergebnisse und den Verlauf der einzelnen Spiele anschauen. +
+image::wettkampfserver_spieltaguebersicht.jpg[]
+
+Auf dieser Seite kann man sehen, welche Schulen an dem Spieltag
+aufeinander treffen bzw.  trafen. Wurde der Spieltag schon
+ausgetragen, kann man sich die Ergebnisse und den Verlauf der
+einzelnen Spiele anschauen.
 
 [[rangliste]]
 ===== Rangliste
 
-Datei:Wettkampfserver_Rangliste.jpg[miniatur|Screenshot der Rangliste]
+image::wettkampfserver_rangliste.jpg[Screenshot der Rangliste]
+
 Der Link erscheint erst, wenn der Wettkampf gestartet wurde. Auf dieser
 Seite gibt es drei Tabellen:
 
@@ -84,7 +89,7 @@ Rücksprache mit den Lehrkräften in Einsteiger oder Fortgeschritten
 eingestuft. So kann für die Einsteiger eine separate Rangliste angezeigt
 werden und die Teams können ihre Leistung besser einschätzen. Diese
 Einstufung hat weder Auswirkungen auf den Verlauf der
-Software-Challenge, noch auf die Vergabe der Preise. +
+Software-Challenge, noch auf die Vergabe der Preise.
 
 [[finale]]
 ===== Finale
@@ -98,10 +103,11 @@ verfügbar, wenn die Teilnehmer feststehen.
 [[alle-teams]]
 ===== Alle Teams
 
-Datei:Wettkampfserver_Teamtabelle.jpg[miniatur|Die Teamtabelle] Hier
-werden die teilnehmenden Teams mit ihren Ansprechpartnern und Tutoren
+image::wettkampfserver_teamtabelle.jpg[Die Teamtabelle]
+
+Hier werden die teilnehmenden Teams mit ihren Ansprechpartnern und Tutoren
 tabellarisch aufgelistet. Durch einen Klick auf die Lupe gelangt man zur
-Begegnungsliste für das entsprechende Team. +
+Begegnungsliste für das entsprechende Team.
 
 [[meine-teams]]
 ===== Meine Teams
@@ -121,8 +127,9 @@ Klick auf die Lupe am Ende der Zeile gelangt man in die Teamdetails.
 [[personen]]
 ===== Personen
 
-Datei:Wettkampfserver_Neue_Person.jpg[miniatur|Dialog, um neue Personen
-ins Team aufzunehmen] Hier werden alle Personen des Teams augelistet.
+image::wettkampfserver_neue_person.jpg[Dialog, um neue Personen ins Team aufzunehmen]
+
+Hier werden alle Personen des Teams augelistet.
 
 [[person-hinzufügen]]
 ====== Person hinzufügen
@@ -142,8 +149,9 @@ werfen.
 
 Wenn man eine neue Person ins Team aufnehmen will, kann man sich
 entscheiden, ob man eine neue Person erstellt oder eine im System
-bekannte Person einlädt. +
- Ganz unten auf der Personenseite kann man die Schüleranzahl des Teams
+bekannte Person einlädt.
+
+Ganz unten auf der Personenseite kann man die Schüleranzahl des Teams
 eintragen. Hierzu zählen auch Schüler, die keine eigenen Zugangsdaten
 für den Wettkampfserver haben. Diese Zahl wird sowohl für die Presse als
 auch für statistische Zwecke gebraucht und sollte in jedem Fall stimmen.
@@ -156,14 +164,11 @@ werden, unter welchen Umständen diese Personen eine e-Mail mit einer
 entsprechenden Benachrichtigung erhalten sollen. Dabei gibt es folgende
 Optionen:
 
-- Ein Spieltag wurde gespielt
-
-- In einem Ihrer Teams gibt es noch keinen spielbereiten Computerspieler
+* Ein Spieltag wurde gespielt
+* In einem Ihrer Teams gibt es noch keinen spielbereiten Computerspieler
 für den nahenden Spieltag
-
-- Es gibt Neuigkeiten zum Wettbewerb
-
-- Eines ihrer Tickets wurde geändert
+* Es gibt Neuigkeiten zum Wettbewerb
+* Eines ihrer Tickets wurde geändert
 
 [[computerspieler]]
 ===== Computerspieler
@@ -229,6 +234,7 @@ kann man sich auch vom Server bereits entpackte und an das Format des
 Replay-Viewers angepasste XML-Files zurückgeben lassen. Dies kann zum
 Einen durch einen XML-Header des Requests geschehen oder zum Anderen
 einfach durch das Anhängen der Endung ".xml" an den oben genannten Link.
+
 Wenn größere Mengen Replays benötigt werden, empfehlen wir die
 Standard-Archive vorzuziehen und dann lokal zu entpacken, da diese schon
 fertig gepackt auf dem Server vorliegen und somit schneller und mit

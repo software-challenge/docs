@@ -1,17 +1,18 @@
+[[server]]
 == Der Spielleiter (Server)
 
-Die beiden link:Der Computerspieler (Client)[Computerspieler]
-kommunizieren nicht direkt miteinander, sondern übertragen ihre
-Nachrichten über einen Mittelmann: den Spielleiter. Dadurch ist zum
-einen sichergestellt, dass man seinen Gegner nicht mit illegalen
-Nachrichten belästigen kann, zum anderen sorgt der Spielleiter dafür,
-dass sich die Kontrahenten an die Spielregeln halten.
+Die beiden <<der-computerspieler,Computerspieler>> kommunizieren nicht
+direkt miteinander, sondern übertragen ihre Nachrichten über einen
+Mittelmann: den Spielleiter. Dadurch ist zum einen sichergestellt,
+dass man seinen Gegner nicht mit illegalen Nachrichten belästigen
+kann, zum anderen sorgt der Spielleiter dafür, dass sich die
+Kontrahenten an die Spielregeln halten.
 
-Der Spielleiter ist direkt im link:Das Wettkampfsystem[Wettkampfsystem]
+Der Spielleiter ist direkt im <<das-wettkampfsystem,Wettkampfsystem>>
 integriert, so dass alle Turnierspiele regelkonform gespielt werden
 müssen. Zum Testen des eigenen Computerspielers gibt es eine spezielle
 Version des Spielleiters, die im Downloadbereich
-(http://www.software-challenge.de/de/download) heruntergeladen werden
+(http://www.software-challenge.de) heruntergeladen werden
 kann. Diese Download-Version, die in diesem Abschnitt beschrieben wird,
 besitzt eine grafische Oberfläche, durch die man das Spiel gut verfolgen
 und sogar als Mensch mitspielen kann.
@@ -20,8 +21,7 @@ und sogar als Mensch mitspielen kann.
 === System vorbereiten und Spielleiter starten
 
 Die einzige Vorraussetzung ist, dass auf dem Rechner mindestens die
-Laufzeitumgebung für Java 6 installiert ist. Im Idealfall wird gleich
-das link:Installation von Java[Java 7 SDK installiert].
+Laufzeitumgebung für Java 6 installiert ist. Siehe <<installation-java>>.
 
 Nach der erfolgreichen Installation kann man den Server durch einen
 Doppelklick auf die `softwarechallenge-gui.jar` starten. Wenn der Start
@@ -30,7 +30,10 @@ Um das zu umgehen kann man den Spielleiter unter Windows auch mit der
 Datei `Start.bat` starten. Im Zweifel sollte für alle Betriebssysteme
 der Kommandozeilenbefehl
 
-`java -jar softwarechallenge-gui.jar`
+[source,sh]
+----
+java -jar softwarechallenge-gui.jar`
+----
 
 auf jeden Fall zum erfolgreichen Starten des Spielleiters führen.
 
@@ -48,7 +51,7 @@ Spielfläche in der Mitte mit den Steuerelementen dient zur Anzeige der
 Spiele. Die Statusleiste unten gibt kurze Statusinformationen zum Spiel
 aus.
 
-Zu Beginn ist die Spielfläche leer. +
+Zu Beginn ist die Spielfläche leer.
 
 [[ein-neues-spiel-erstellen]]
 === Ein neues Spiel erstellen
@@ -98,12 +101,12 @@ das Spiel.
 Die Option "Spiel aus Datei laden" ermöglicht es, einen beliebigen
 Spielzustand aus einer XML-Datei zu laden. Die XML-Datei muss dabei den
 Regeln genügen, wie sie in der
-link:Die Schnittstelle zum Server[Kommunikations-Dokumentation]
+<<schnittstelle,Kommunikations-Dokumentation>>
 beschrieben sind. Das Spiel wird dann ausgehend von dem so geladenen
 Spielzustand fortgesetzt.
 
 Links unten kann der Spieltyp ausgewählt werden, d.h. insbesondere das
-aktuelle Spiel des Jahres (z.B. 2011: Schäfchen im Trockenen).
+aktuelle Spiel des Jahres.
 
 Nach Eingabe der erforderlichen Werte kann das Spiel mithilfe des
 unteren Knopfs "Spiel starten" erstellt werden. Dabei erscheint der
@@ -117,7 +120,7 @@ gespielt werden.
 === Die Spielfeldoberfläche
 
 .Die Spielfeldoberfläche (hier mit dem Spiel "Schäfchen im Trockenen")
-image::spieloberfla_che.jpg[]
+image::spielfeldoberflaeche.jpg[]
 
 Die Spielfeldoberfläche setzt sich aus dem Spielbrett (der große
 zentrale Bereich) und den Spielsteuerelementen (unten) zusammen.

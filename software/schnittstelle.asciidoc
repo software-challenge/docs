@@ -1,12 +1,12 @@
+[[schnittstelle]]
 == Die Schnittstelle zum Server
 
 Der Spielleiter kommuniziert mit den Computerspielern über eine
 Netzwerkverbindung. Dadurch ist man aus technischer Sicht komplett
 flexibel, was die Wahl der Programmiersprache angeht. Die
 Computerspieler müssen lediglich das Kommunikationsprotokoll erfüllen,
-das im Dokumentationsbereich
-(http://www.informatik.uni-kiel.de/software-challenge/2013/dokumentation/)
-eingesehen werden kann.
+das im Dokumentationsbereich der Software Challenge Website
+(http://www.software-challenge.de) eingesehen werden kann.
 
 Anfängern wird allerdings davon abgeraten, einen komplett eigenen
 Client zu schreiben. Es ist deutlich einfacher, auf dem

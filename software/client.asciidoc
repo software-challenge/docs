@@ -1,25 +1,23 @@
 [[der-computerspieler]]
 == Der Computerspieler (Client)
 
-Der Computerspieler ist ein Programm, dass
-sich mit dem link:Der Spielleiter (Server)[Der Spielleiter (Server)]
-verbindet und die gestellte Aufgabe selbstängig lösen kann. Die Aufgabe
-der Schüler ist es, sich eine Strategie zu überlegen und zu
-implementieren, mit der sie gegen die Clients der anderen Schulen
-gewinnen können.
+Der Computerspieler ist ein Programm, dass sich mit dem Spielleiter
+(siehe <<server>>) verbindet und die gestellte Aufgabe selbstängig
+lösen kann. Die Aufgabe der Schüler ist es, sich eine Strategie zu
+überlegen und zu implementieren, mit der sie gegen die Clients der
+anderen Schulen gewinnen können.
 
 Der Computerspieler kann in einer beliebigen Programmiersprache
 geschrieben sein, jedoch bietet das Institut für Informatik die beste
 Unterstützung für Java.
 
-Die Muster-Computerspieler können im Downloadbereich
-(http://www.informatik.uni-kiel.de/software-challenge/2013/download/)
-heruntergeladen werden.
+Die Muster-Computerspieler können im Downloadbereich der Software
+Challenge Website (http://www.software-challenge.de) heruntergeladen
+werden.
 
 *Hinweis:* Die Programme, die das Institut für Informatik zur Verfügung
 stellt, sind üblicherweise in Java geschrieben. Deshalb muss auf den
-ausführenden Rechnern auch das link:Installation von Java[Java 6 oder 7
-SDK installiert] sein.
+ausführenden Rechnern auch das <<installation-java,Java SDK installiert>> sein.
 
 [[der-simpleclient]]
 === Der SimpleClient
@@ -46,15 +44,3 @@ verfolgt und dadurch nicht mehr so leicht zu schlagen ist. Dieser
 Spieler wird ohne den Quellcode veröffentlicht, so dass die Schüler den
 NotSoSimpleClient zwar als Gegenspieler für Testspiele nehmen, jedoch
 nicht den Quellcode für den eigenen Spieler weiterverwenden können.
-
-[[weiterführende-informationen]]
-=== Weiterführende Informationen
-
-* link:Installation von Java[Installation von Java]
-* link:Einrichtung der Entwicklungsumgebung (Java)[Einrichtung der
-Entwicklungsumgebung (Java)]
-* link:Bedienung von Eclipse[Bedienung von Eclipse]
-* link:Den SimpleClient um eine eigene Strategie erweitern[Den
-SimpleClient um eine eigene Strategie erweitern]
-* link:Den Client abgabefertig machen[Den Client abgabefertig machen]
-

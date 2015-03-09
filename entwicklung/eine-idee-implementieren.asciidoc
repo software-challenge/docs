@@ -23,12 +23,12 @@ Als erstes muss die Idee formal beschrieben werden. Oftmals kann man
 zunächst beschreiben, wie man als Mensch vorgehen würde.
 
 1.  Gehe den Stapel durch und merke die Position, an der sich die
-kleinste Karte befindet
+kleinste Karte befindet.
 2.  Tausche die Position der kleinsten Karte mit der untersten Karte im
-Stapel
-3.  Die kleinste Karte ist jetzt an der richtigen Position
+Stapel.
+3.  Die kleinste Karte ist jetzt an der richtigen Position.
 4.  Führe die Schritte nochmal für den Reststapel (ohne die sortierten
-Karten) aus
+Karten) aus.
 
 [[idee-implementieren]]
 === Idee implementieren
@@ -39,34 +39,41 @@ leicht in ein Programm überführt werden:
 [source,java]
 ----
 /**
-  * Das Array a[] symbolisiert den Stapel der unsortierten Karten. Dabei steht 
-  * eine Zahl immer für eine spezielle Karte. Eine kleinere Zahl bedeutet, 
+  * Das Array a[] symbolisiert den Stapel der unsortierten Karten. Dabei steht
+  * eine Zahl immer für eine spezielle Karte. Eine kleinere Zahl bedeutet,
   * dass es sich um eine kleinere Karte handelt.
-  * 
+  *
   * start gibt die Position an, wo der Reststapel beginnt (am Anfang: start = 0)
   */
  public static void sortiere(int[] a, int start) {
      //Position der kleinsten Karte
      int pos = start;
- 
-     //Gehe Array durch und merke die Position der kleinsten Karte ('''Schritt 1''')
+
+     // Gehe Array durch und merke die Position der kleinsten Karte <1>
      for (int i = start+1; i < a.length; i++) {
-         //Wenn eine kleinere Karte gefunden wurde...
+         // Wenn eine kleinere Karte gefunden wurde...
          if (a[i] < a[pos]) {
- 
+
              ... neue Position merken
              pos = i;
          }
      }
- 
-     //kleinste Karte mit erster Karte des Reststapels tauschen ('''Schritt 2 und 3''')
-     int temp = a[start]; //erste Karte merken
-     a[start] = a[pos];   //kleinste Karte nach vorne bringen
-     a[pos] = temp;       //gemerkte Karte in die Mitte des Stapels schreiben
- 
-     //Wenn es noch einen Reststapel gibt, soll dieser weitersortiert werden ('''Schritt 4''')
+
+     // kleinste Karte mit erster Karte des Reststapels tauschen <2> <3>
+     int temp = a[start]; // erste Karte merken
+     a[start] = a[pos];   // kleinste Karte nach vorne bringen
+     a[pos] = temp;       // gemerkte Karte in die Mitte des Stapels schreiben
+
+     // Wenn es noch einen Reststapel gibt, soll dieser weitersortiert werden <4>
      if (start < a.length) {
           sortiere(a, start+1);
      }
  }
 ----
+<1>  Gehe den Stapel durch und merke die Position, an der sich die
+kleinste Karte befindet.
+<2>  Tausche die Position der kleinsten Karte mit der untersten Karte im
+Stapel.
+<3>  Die kleinste Karte ist jetzt an der richtigen Position.
+<4>  Führe die Schritte nochmal für den Reststapel (ohne die sortierten
+Karten) aus.

@@ -1,3 +1,4 @@
+[[installation-java]]
 == Installation von Java
 
 Die meisten Programme, die vom Institut für Informatik

@@ -42,52 +42,63 @@ Klammer wird dabei ans Ende der Zeile geschrieben
 dabei eingerückt. Die schließende Klammer befindet sich in der ersten
 Zeile, die nicht mehr eingerückt ist.
 
-`for (int i = 0; i < 110; i++) {
+[source,java]
+----
+for (int i = 0; i < 110; i++) {
      x = x + 2;
      ...
- }`
+}
+----
 
 Bei einem if schreibt man das zugehörige `else` direkt hinter die
 schließende Klammer:
 
-`if (bedingung) {
+[source,java]
+----
+if (bedingung) {
      ...
- } else {
+} else {
      ...
- }`
+}
+----
 
 Mehrere geschachtelte `if`-Anweisungen werden zusammen geschmolzen:
 
-`if (bedingung) {
+[source,java]
+----
+if (bedingung) {
      ...
- } else if (begingung2) {
+} else if (begingung2) {
      ...
- } else if (bedingung3) {
+} else if (bedingung3) {
      ...
- } else {
+} else {
      ...
- }`
+}
+----
 
 [[die-switch-anweisung]]
 === Die Switch-Anweisung
 
 Bei einem `switch` sollte die folgende Form gewahrt werden:
 
-`
- switch (variable) {
- case 1 :
-     ...
-     /* fällt durch */
- case 2 :
-     ...
-     break;
- case 3 :
-     ...
-     break;
- default :
-     ...
-     break;
- }`
+[source,java]
+----
+switch (variable) {
+case 1 :
+    ...
+    /* fällt durch */
+case 2 :
+    ...
+    break;
+case 3 :
+    ...
+    break;
+default :
+    ...
+    break;
+}
+----
 
 Wenn nach einem `case`-Fall nicht aus dem `switch` herausgesprungen
 wird, soll das durch einen Kommentar gekennzeichnet werden. Wenn ein
@@ -96,6 +107,6 @@ wird, soll das durch einen Kommentar gekennzeichnet werden. Wenn ein
 [[weiterführende-informationen]]
 === Weiterführende Informationen
 
-* http://www.oracle.com/technetwork/java/codeconv-138413.html Die
-Richtlinien von den Java-Entwicklern
+* http://www.oracle.com/technetwork/java/codeconv-138413.html[Die
+Richtlinien von den Java-Entwicklern]
 
