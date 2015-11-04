@@ -86,4 +86,6 @@ Syntax:
 Wobei Sektionslabel über allen Überschriften stehen und die Syntax ist wie folgt:
 
 [source,asciidoc]
+----
 [[labelname]]
+----
