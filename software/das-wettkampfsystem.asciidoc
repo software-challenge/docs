@@ -118,7 +118,20 @@ betreuten Teams finden.
 [[nur-mit-anmeldung-verfügbar]]
 === Nur mit Anmeldung verfügbar
 
-[[meine-teams-1]]
+==== Verbindlich anmelden
+
+image::wettkampfsystem_verbindliche_anmeldung.jpg[Link zur verbindlichen Anmeldung]
+
+Vor der Wettkampfphase muss man ein oder mehrere vorangemeldete Teams
+verbindlich anmelden. Hierzu klickt man nach dem Login auf den Link
+"Teams verbindlich anmelden" unten auf der Startseite (siehe
+Bild). Auf der folgenden Seite wird eine Liste der eigenen Teams
+angezeigt. Um ein Team verbindlich anzumelden, klickt man in der
+Spalte "Teilnahme" auf die Checkbox
+(image:wettkampfsystem_unchecked.png[Checkbox zur verbindlichen
+Anmeldung]).
+
+[[meine-teams-intern]]
 ==== Meine Teams
 
 Hier sind alle Teams aufgelistet, auf die man Zugriff hat. Mit einem

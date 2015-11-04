@@ -12,7 +12,7 @@ der Software Challenge teilnehmen.
 
 * Die Hauptdatei ist `index.asciidoc` im Wurzelverzeichnis. Alle
   anderen Dateien werden per `include`-Anweisung in die Hauptdatei
-  eingebungen.
+  eingebunden.
 * Dateinamen und Verzeichnisnahmen sollten nur die Zeichen `a` bis `z`
   sowie Bindestriche (`-`) enthalten.
 * Sprache fuer Dateinamen, Verzeichnisnamen sowie Inhalt ist
@@ -32,6 +32,42 @@ asciidoctor -D out index.asciidoc
 Hierzu werden die beiden Ruby-Gems `asciidoctor` und `pygments.rb`
 (für Syntax-Highlighting der Quellcodes) benötigt.
 
+IMPORTANT: Bilder werden nicht mitkopiert, dies muss manuell
+geschehen. Hat man also Bilder im `images`-Verzeichnis hinzugefuegt,
+muessen diese manuell nach `out/images` kopiert werden.
+
+=== Live-Preview
+
+CAUTION: Noch nicht vollstaendig getestet.
+
+Einen Live-Preview-Mode gibt es leider nicht direkt, aber es gibt
+http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/[verschiedene
+Wege um ein Live-Preview zu bekommen].
+
+Einer ist die Nutzung von `guard`. Dazu müssen die beiden Gems `guard`
+und `guard-shell` installiert werden. Ein passendes `Guardfile` liegt
+schon im Repository, man kann `guard` also einfach mittels `guard
+start` starten, und die Ausgabe im Verzeichnis `out` wird
+aktualisiert, sobald man etwas an den Quellen ändert.
+
+Wenn man dann noch die Browseransicht automatisch aktualisieren lassen
+will, muss man die beiden zusätzlichen Gems `guard-livereload` und
+`yajl-ruby` installieren sowie eine LiveReload Extension für
+http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-[Firefox]
+oder
+https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en[Chrome].
+
+== Auto-Deploy
+
+Aktualisierte Dokumentation wird bei einem Commit in den
+`master`-Branch automatisch online gestellt, sofern der
+`git-post-commit-hook.sh` lokal installiert ist. Dazu einfach die
+Datei `git-post-commit-hook.sh` aus dem Repository in das Verzeichnis
+`.git/hooks` des Repositories kopieren.
+
+Dann wird nach einem Commit alles automatisch konvertiert auf GitHub
+Pages hochgeladen (inklusive Kopieren der Bilder).
+
 == Quickstart
 
 * http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc Syntax Quick Reference]
@@ -39,4 +75,7 @@ Hierzu werden die beiden Ruby-Gems `asciidoctor` und `pygments.rb`
 * http://asciidoctor.org/docs/user-manual/[AsciiDoctor User Manual]
 * http://asciidoctor.org/docs/asciidoc-recommended-practices/[AsciiDoc Style Guide]
 
-Es werden häufig Links zu anderen Teilen des Dokumentes genutzt (die Dokumentation ist ein einzelnes großes Dokument). Diese haben die Syntax `<<Sektionslabel,anzuzeigender Linktext>>`. Wobei Sektionslabel über allen Überschriften stehen und die Syntax `[[labelname]]` haben.
+Es werden häufig Links zu anderen Teilen des Dokumentes genutzt (die
+Dokumentation ist ein einzelnes großes Dokument). Diese haben die
+Syntax `<<Sektionslabel,anzuzeigender Linktext>>`. Wobei Sektionslabel
+über allen Überschriften stehen und die Syntax `[[labelname]]` haben.
