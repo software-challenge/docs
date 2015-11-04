@@ -78,5 +78,12 @@ Pages hochgeladen (inklusive Kopieren der Bilder).
 
 Es werden häufig Links zu anderen Teilen des Dokumentes genutzt (die
 Dokumentation ist ein einzelnes großes Dokument). Diese haben die
-Syntax `<<Sektionslabel,anzuzeigender Linktext>>`. Wobei Sektionslabel
-über allen Überschriften stehen und die Syntax `[[labelname]]` haben.
+Syntax:
+
+[source,asciidoc]
+<<Sektionslabel,anzuzeigender Linktext>>
+
+Wobei Sektionslabel über allen Überschriften stehen und die Syntax ist wie folgt:
+
+[source,asciidoc]
+[[labelname]]
