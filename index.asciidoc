@@ -13,6 +13,16 @@ und Kursleiter über den Zweck der Software-Challenge informieren. Für
 die teilnehmenden Teams ist hier alles dokumentiert, was für den
 Ablauf des Wettbewerbes benötigt wird.
 
+Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
+Dokumentation kann
+https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs[direkt auf
+GitHub editiert] werden, einzige Voraussetzung ist eine kostenlose
+Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
+auswählen (ein guter Startpunkt ist die Datei
+https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.asciidoc[index.asciidoc]
+welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
+auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
+svk@informatik.uni-kiel.de.
 
 include::allgemein/die-software-challenge.asciidoc[]
 

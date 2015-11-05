@@ -1,12 +1,23 @@
 = Software Challenge Endbenutzer-Dokumentation-Dokumentation
 Sven Koschnicke <svk@informatik.uni-kiel.de>
-2015-01-06
+2015-11-04
 :toc:
 :toc-title: Inhalt
 
 In diesem Repository befindet sich die Endbenutzer-Dokumentation fuer
 die Software Challenge. Zielgruppe sind Schueler und Leherer, die an
 der Software Challenge teilnehmen.
+
+== Beitragen
+
+Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
+Dokumentation kann direkt hier auf GitHub editiert werden, einzige
+Voraussetzung ist eine kostenlose Registrierung bei GitHub. Ist man
+angemeldet, kann man ein Dokument auswählen (ein guter Startpunkt ist
+die Datei link:index.asciidoc[index.asciidoc] welche Verweise auf alle
+Sektionen der Dokumentation enthält) und dann auf den Stift oben
+rechts klicken. Alternativ auch gern eine E-Mail an
+svk@informatik.uni-kiel.de.
 
 == Konventionen
 
@@ -21,7 +32,7 @@ der Software Challenge teilnehmen.
 * Es wird des ATX-Format fuer Ueberschriften verwendet (also `=`,
   `==`, `===` etc.)
 
-== Übersetzung
+== Konvertierung
 
 Um alles in HTML zu Übersetzen, sollte `asciidoctor` verwendet werden:
 
@@ -35,6 +46,11 @@ Hierzu werden die beiden Ruby-Gems `asciidoctor` und `pygments.rb`
 IMPORTANT: Bilder werden nicht mitkopiert, dies muss manuell
 geschehen. Hat man also Bilder im `images`-Verzeichnis hinzugefuegt,
 muessen diese manuell nach `out/images` kopiert werden.
+
+Bei Bedarf kann die Dokumentation auch in ein anderes Format
+konvertiert werden, Details hierzu finden sich in der
+http://asciidoctor.org/docs/user-manual/#processing-your-content[AsciiDoctor
+Dokumentation].
 
 === Live-Preview
 
@@ -58,6 +74,12 @@ oder
 https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en[Chrome].
 
 == Auto-Deploy
+
+Um die Dokumentation unter
+https://cau-kiel-tech-inf.github.io/socha-enduser-docs/ automatisch
+aktualisieren zu lassen, sind Schreibrechte für das
+https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs[GitHub
+Repository] erforderlich.
 
 Aktualisierte Dokumentation wird bei einem Commit in den
 `master`-Branch automatisch online gestellt, sofern der
