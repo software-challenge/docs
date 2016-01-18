@@ -2,17 +2,21 @@
 
 Damit <<das-wettkampfsystem,das Wettkampfsystem>> mit dem
 Computerspieler arbeiten kann, muss er zu einem ausführbaren Programm
-gemacht und in ein ZIP-Archiv gepackt werden.  Diese Anleitung
-beschreibt, wie man für den Java-SimpleClient vorgehen muss.
+gemacht und in ein ZIP-Archiv gepackt werden.
+
+Je nach Programmiersprache, in der der Computerspieler entwickelt wurde, sind unterschiedliche Schritte notwendig.
+
+=== Java
+
+Diese Anleitung beschreibt, wie man für den Java-SimpleClient vorgehen muss.
 
 Hierzu gibt es zwei Möglichkeiten: Die Jar-Datei selbst erstellen und
 die Verwendung eines Ant-Scripts.
 
 [[erste-möglichkeit---jar-erstellen]]
-=== Erste Möglichkeit - JAR erstellen
+==== Erste Möglichkeit - JAR erstellen
 
-[[eclipse]]
-==== Eclipse
+===== Eclipse
 
 1.  In Eclipse im Menü auf "File" -> "Export". Dann unter "Java" ->
 "Runnable JAR file" wählen
@@ -29,8 +33,7 @@ Wenn alles geklappt hat, wurde der Computerspieler in ein auführbares
 Programm überführt. Damit der Wettkampfserver den Client verarbeiten
 kann, muss er noch in ein ZIP-Archiv gepackt werden.
 
-[[netbeans]]
-==== NetBeans
+===== NetBeans
 
 Nach einem Rechtsklick auf das Projekt in der Projektansicht kann man
 "Properties" auswählen. Auf der linken Seite unter "Categories" die
@@ -45,14 +48,13 @@ mit einem beliebigen Archivierungsprogramm in eine ZIP-Datei
 zusammengepackt werden. Dieses Archiv kann dann hochegeladen werden.
 
 [[zweite-möglichkeit---das-ant-script]]
-=== Zweite Möglichkeit - Das ANT Script
+==== Zweite Möglichkeit - Das ANT Script
 
 Man kann auch das dem SimpleClient beiliegende Ant Buildscript benutzen.
 Dieses kompiliert den SimpleClient und erzeugt automatisch eine JAR
 Datei sowie ein ZIP-Archiv, das man direkt im Websystem hochladen kann.
 
-[[direkt-ausführen]]
-==== Direkt ausführen
+===== Direkt ausführen
 
 Wenn Ant installiert ist, kann man über die Kommandozeile in das
 Verzeichnis des SimpleClients wechseln und mit dem Aufruf "Ant" den
@@ -62,8 +64,7 @@ erscheinen. Im SimpleClient Ordner findet man dann im Unterordner
 ZIP-Datei im Ordner "zipped" die direkt im Wettkampfsystem hochgeladen
 werden kann.
 
-[[eclipse-1]]
-==== Eclipse
+===== Eclipse
 
 Eclipse kann von Haus aus auch mit Ant-Scripten umgehen.
 
@@ -85,3 +86,51 @@ Am Ende erhält man die Meldung "BUILD SUCCESSFUL".
 Im SimpleClient-Ordner findet man dann im Unterordner "build" die JAR
 Datei im Ordner "jar" sowie die fertig gepackte ZIP-Datei im Ordner
 "zipped", die direkt ins Wettkampfsystem hochgeladen werden kann.
+
+=== Ruby
+
+Da Ruby eine interpretierte Sprache ist, muss der Ruby-Quellcode
+direkt in ein ZIP-Archiv gepackt und auf das Wettkampfsystem
+hochgeladen werden. In den virtuellen Maschinen ist ein
+Ruby-Interpreter sowie das aktuellste `software_challenge_client` Gem
+installiert. Alle weiteren Bibliotheken müssen im ZIP-Archiv vorhanden
+sein. Nach dem Hochladen des ZIP-Archiv muss die auszuführende
+Hauptdatei in Wettkampfsystem ausgewählt werden. Diese wird dann zum
+Start des Computerspielers gestartet. Damit dies richtig funktioniert,
+ist es entscheidend, dass die Hauptdatei mit einer sogenannten
+"Shebang"-Zeile beginnt:
+
+[source,ruby]
+----
+#!/usr/bin/env ruby
+----
+
+Weiterhin ist es ratsam, den Magic-Comment zum Encoding direkt unter
+die Shebang-Zeile zu schreiben:
+
+[source,ruby]
+----
+# encoding: UTF-8
+----
+
+Ein vollständiges Beispiel für einen abgabefertigen
+Ruby-Computerspieler gibt es im
+https://github.com/CAU-Kiel-Tech-Inf/socha_ruby_client/tree/master/example[example
+Verzeichnis des Client-Gems bei Github]. Packt man die beiden Dateien
+`client.rb` und `main.rb` in ein ZIP-Archiv, hat man einen
+abgabefertigen Computerspieler. Beim Hochladen wählt man `main.rb` als
+Hauptdatei.
+
+=== Andere Programmiersprache
+
+Bei Computerspielern in jeder anderen Programmiersprache muss ein
+Shell-Script dem ZIP-Archiv beigelegt werden, was die genauen
+Instruktionen zum Start des Computerspielers enthält. Dieses muss nach
+dem Hochladen im Wettkampfystem als Hauptdatei ausgewählt werden. Bei
+compilierten Sprachen müssen die Computerspieler für 64bit Linux
+compiliert werden, bei interpretierten Sprachen muss ein Interpreter
+mitgeliefert werden, der unter 64bit Linux funktioniert.
+
+Am besten die Verwendung einer anderen Programmiersprache frühezeitig
+mit der Betreuung absprechen, damit sichergestellt ist, dass der
+Computerspieler auch am Wettkampf teilnehmen kann.
