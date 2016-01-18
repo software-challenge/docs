@@ -550,8 +550,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_client_abgabefertig_machen">Client abgabefertig machen</a>
 <ul class="sectlevel2">
-<li><a href="#erste-möglichkeit---jar-erstellen">Erste Möglichkeit - JAR erstellen</a></li>
-<li><a href="#zweite-möglichkeit---das-ant-script">Zweite Möglichkeit - Das ANT Script</a></li>
+<li><a href="#_java">Java</a></li>
+<li><a href="#_ruby">Ruby</a></li>
+<li><a href="#_andere_programmiersprache">Andere Programmiersprache</a></li>
 </ul>
 </li>
 <li><a href="#_die_ersten_schritte">Die ersten Schritte</a>
@@ -1726,17 +1727,24 @@ Programmstart Argumente übergibt, kann <a href="#programme-starten">hier</a> na
 <div class="paragraph">
 <p>Damit <a href="#das-wettkampfsystem">das Wettkampfsystem</a> mit dem
 Computerspieler arbeiten kann, muss er zu einem ausführbaren Programm
-gemacht und in ein ZIP-Archiv gepackt werden.  Diese Anleitung
-beschreibt, wie man für den Java-SimpleClient vorgehen muss.</p>
+gemacht und in ein ZIP-Archiv gepackt werden.</p>
+</div>
+<div class="paragraph">
+<p>Je nach Programmiersprache, in der der Computerspieler entwickelt wurde, sind unterschiedliche Schritte notwendig.</p>
+</div>
+<div class="sect2">
+<h3 id="_java">Java</h3>
+<div class="paragraph">
+<p>Diese Anleitung beschreibt, wie man für den Java-SimpleClient vorgehen muss.</p>
 </div>
 <div class="paragraph">
 <p>Hierzu gibt es zwei Möglichkeiten: Die Jar-Datei selbst erstellen und
 die Verwendung eines Ant-Scripts.</p>
 </div>
-<div class="sect2">
-<h3 id="erste-möglichkeit---jar-erstellen">Erste Möglichkeit - JAR erstellen</h3>
 <div class="sect3">
-<h4 id="eclipse">Eclipse</h4>
+<h4 id="erste-möglichkeit---jar-erstellen">Erste Möglichkeit - JAR erstellen</h4>
+<div class="sect4">
+<h5 id="_eclipse">Eclipse</h5>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1761,8 +1769,8 @@ Programm überführt. Damit der Wettkampfserver den Client verarbeiten
 kann, muss er noch in ein ZIP-Archiv gepackt werden.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="netbeans">NetBeans</h4>
+<div class="sect4">
+<h5 id="_netbeans">NetBeans</h5>
 <div class="paragraph">
 <p>Nach einem Rechtsklick auf das Projekt in der Projektansicht kann man
 "Properties" auswählen. Auf der linken Seite unter "Categories" die
@@ -1779,15 +1787,15 @@ zusammengepackt werden. Dieses Archiv kann dann hochegeladen werden.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="zweite-möglichkeit---das-ant-script">Zweite Möglichkeit - Das ANT Script</h3>
+<div class="sect3">
+<h4 id="zweite-möglichkeit---das-ant-script">Zweite Möglichkeit - Das ANT Script</h4>
 <div class="paragraph">
 <p>Man kann auch das dem SimpleClient beiliegende Ant Buildscript benutzen.
 Dieses kompiliert den SimpleClient und erzeugt automatisch eine JAR
 Datei sowie ein ZIP-Archiv, das man direkt im Websystem hochladen kann.</p>
 </div>
-<div class="sect3">
-<h4 id="direkt-ausführen">Direkt ausführen</h4>
+<div class="sect4">
+<h5 id="_direkt_ausführen">Direkt ausführen</h5>
 <div class="paragraph">
 <p>Wenn Ant installiert ist, kann man über die Kommandozeile in das
 Verzeichnis des SimpleClients wechseln und mit dem Aufruf "Ant" den
@@ -1798,8 +1806,8 @@ ZIP-Datei im Ordner "zipped" die direkt im Wettkampfsystem hochgeladen
 werden kann.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="eclipse-1">Eclipse</h4>
+<div class="sect4">
+<h5 id="_eclipse_2">Eclipse</h5>
 <div class="paragraph">
 <p>Eclipse kann von Haus aus auch mit Ant-Scripten umgehen.</p>
 </div>
@@ -1835,6 +1843,62 @@ wird dann durchgeführt (dauert i.d.R. wenige Sekunden).</p>
 Datei im Ordner "jar" sowie die fertig gepackte ZIP-Datei im Ordner
 "zipped", die direkt ins Wettkampfsystem hochgeladen werden kann.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ruby">Ruby</h3>
+<div class="paragraph">
+<p>Da Ruby eine interpretierte Sprache ist, muss der Ruby-Quellcode
+direkt in ein ZIP-Archiv gepackt und auf das Wettkampfsystem
+hochgeladen werden. In den virtuellen Maschinen ist ein
+Ruby-Interpreter sowie das aktuellste <code>software_challenge_client</code> Gem
+installiert. Alle weiteren Bibliotheken müssen im ZIP-Archiv vorhanden
+sein. Nach dem Hochladen des ZIP-Archiv muss die auszuführende
+Hauptdatei in Wettkampfsystem ausgewählt werden. Diese wird dann zum
+Start des Computerspielers gestartet. Damit dies richtig funktioniert,
+ist es entscheidend, dass die Hauptdatei mit einer sogenannten
+"Shebang"-Zeile beginnt:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="ruby"><span class="tok-c1">#!/usr/bin/env ruby</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Weiterhin ist es ratsam, den Magic-Comment zum Encoding direkt unter
+die Shebang-Zeile zu schreiben:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="ruby"><span class="tok-c1"># encoding: UTF-8</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ein vollständiges Beispiel für einen abgabefertigen
+Ruby-Computerspieler gibt es im
+<a href="https://github.com/CAU-Kiel-Tech-Inf/socha_ruby_client/tree/master/example">example
+Verzeichnis des Client-Gems bei Github</a>. Packt man die beiden Dateien
+<code>client.rb</code> und <code>main.rb</code> in ein ZIP-Archiv, hat man einen
+abgabefertigen Computerspieler. Beim Hochladen wählt man <code>main.rb</code> als
+Hauptdatei.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_andere_programmiersprache">Andere Programmiersprache</h3>
+<div class="paragraph">
+<p>Bei Computerspielern in jeder anderen Programmiersprache muss ein
+Shell-Script dem ZIP-Archiv beigelegt werden, was die genauen
+Instruktionen zum Start des Computerspielers enthält. Dieses muss nach
+dem Hochladen im Wettkampfystem als Hauptdatei ausgewählt werden. Bei
+compilierten Sprachen müssen die Computerspieler für 64bit Linux
+compiliert werden, bei interpretierten Sprachen muss ein Interpreter
+mitgeliefert werden, der unter 64bit Linux funktioniert.</p>
+</div>
+<div class="paragraph">
+<p>Am besten die Verwendung einer anderen Programmiersprache frühezeitig
+mit der Betreuung absprechen, damit sichergestellt ist, dass der
+Computerspieler auch am Wettkampf teilnehmen kann.</p>
 </div>
 </div>
 </div>
