@@ -5,7 +5,7 @@ Sven Koschnicke <svk@informatik.uni-kiel.de>
 :toc-title: Inhalt
 
 In diesem Repository befindet sich die Endbenutzer-Dokumentation fuer
-die Software Challenge. Zielgruppe sind Schueler und Leherer, die an
+die Software Challenge. Zielgruppe sind Schüler und Lehrer, die an
 der Software Challenge teilnehmen.
 
 == Beitragen
@@ -14,21 +14,21 @@ Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
 Dokumentation kann direkt hier auf GitHub editiert werden, einzige
 Voraussetzung ist eine kostenlose Registrierung bei GitHub. Ist man
 angemeldet, kann man ein Dokument auswählen (ein guter Startpunkt ist
-die Datei link:index.asciidoc[index.asciidoc] welche Verweise auf alle
+die Datei link:index.adoc[index.adoc] welche Verweise auf alle
 Sektionen der Dokumentation enthält) und dann auf den Stift oben
 rechts klicken. Alternativ auch gern eine E-Mail an
 svk@informatik.uni-kiel.de.
 
 == Konventionen
 
-* Die Hauptdatei ist `index.asciidoc` im Wurzelverzeichnis. Alle
+* Die Hauptdatei ist `index.adoc` im Wurzelverzeichnis. Alle
   anderen Dateien werden per `include`-Anweisung in die Hauptdatei
   eingebunden.
 * Dateinamen und Verzeichnisnahmen sollten nur die Zeichen `a` bis `z`
   sowie Bindestriche (`-`) enthalten.
 * Sprache fuer Dateinamen, Verzeichnisnamen sowie Inhalt ist
   Deutsch. Sprache fuer Attribute und sonstige Interna ist Englisch.
-* Als Endung fuer Asciidoc wird `.asciidoc` benutzt.
+* Als Endung fuer Asciidoc wird `.adoc` benutzt.
 * Es wird des ATX-Format fuer Ueberschriften verwendet (also `=`,
   `==`, `===` etc.)
 
@@ -37,7 +37,7 @@ svk@informatik.uni-kiel.de.
 Um alles in HTML zu Übersetzen, sollte `asciidoctor` verwendet werden:
 
 ....
-asciidoctor -D out index.asciidoc
+asciidoctor -D out index.adoc
 ....
 
 Hierzu werden die beiden Ruby-Gems `asciidoctor` und `pygments.rb`
