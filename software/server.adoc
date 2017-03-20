@@ -211,36 +211,74 @@ eine Schritt-für-Schritt Anleitung:
   einem Eintrag im XML, der folgendermaßen aussieht:
 [source,xml]
   <state turn="6" startPlayer="RED" currentPlayer="RED" freeTurn="false">
-  
-. Kopieren Sie den kompletten GameState, von dem öffnenden bis einschließlich 
+
+. Kopieren Sie den kompletten GameState, von dem öffnenden bis einschließlich
   zum dazugehörigen schließenden state-XML-Tag, z.B.:
 [source,xml]
  <state turn="6" startPlayer="RED" currentPlayer="RED" freeTurn="false">
  ...
  </state>
- 
+
 . Erstellen Sie eine neue Textdatei mit folgendem Inhalt:
 [source,xml]
  <object-stream>
  FÜGEN SIE HIER DEN IN SCHRITT 5 KOPIERTEN GAME-STATE EIN
  </object-stream>
- 
+
 . Speichern Sie die Datei unter einem beliebigen Namen mit der Endung
   .xml
 . Starten Sie den Server und erstellen Sie ein neues Spiel. Wählen Sie
   den Computerspieler, der für diese Spielsituation getestet werden soll.
-  Dieser Spieler muss als Spieler 1 gestartet werden und ist dann direkt 
+  Dieser Spieler muss als Spieler 1 gestartet werden und ist dann direkt
   als erstes dran. Der Gegenspieler kann dann ein beliebiger Computerspieler
   oder auch ein Mensch sein.
 . Setzen Sie einen Haken bei "Spiel aus Datei laden". Wählen Sie über
   "Datei wählen" die in Schritt 6 erstellte Datei aus. Starten Sie dann
   das Spiel. Das Spiel sollte sich nun in genau der Situation befinden, in
-  der das Fehlerverhalten aufgetreten ist. Dabei ist der Spieler, der nun 
-  dran ist immer der rote Spieler. Falls der blaue Spieler eigentlich dran 
+  der das Fehlerverhalten aufgetreten ist. Dabei ist der Spieler, der nun
+  dran ist immer der rote Spieler. Falls der blaue Spieler eigentlich dran
   war, werden die Farben der Spieler getauscht.
-. Nun kann der nächste Zug beim Spieler angefordert werden und dabei 
+. Nun kann der nächste Zug beim Spieler angefordert werden und dabei
   durch Debugging kontrolliert werden, wo sich der Spieler falsch verhalten
   hat.
   Achtung: Wenn weitere Züge angefordert werden, kann das Verhalten vom
   normalen Spielverlauf abweichen, da evtl. nicht alle Daten für das Spiel
   in der XML vorhanden sind.
+
+[[automatische-spiele]]
+=== Automatische Spiele: Der Testserver
+
+Wenn Sie automatisiert Spiele mit Ihrem Computerspieler spielen wollen, um
+bestimmte Verhaltensweisen bei der Weiterentwicklung regelmäßig zu testen,
+können Sie dafür einen speziellen Server ohne grafische Oberfläche verwenden,
+den sogenannten Testserver.
+
+Gehen Sie dazu wie folgt vor:
+
+. Laden Sie den Testserver von der Download-Seite herunter.
+. Entpacken Sie das heruntergeladene Archiv.
+. Wechseln Sie in einer Kommandozeilenumgebung (Windows: cmd.exe oder
+Powershell, Linux: beliebige Shell oder Terminal) in das Verzeichnis des
+entpackten Archives.
+. Starten Sie den Testserver mit folgendem Befehl:
+[source,sh]
+  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=./logback.xml -jar softwarechallenge-server.jar
+. Starten Sie Ihren Computerspieler und einen zweiten Computerspieler manuell
+(in weiteren Kommandozeilenumgebungen). Die Computerspieler verbinden sich
+automatisch zum Testserver und es wird ein Spiel gespielt. Danach sollten sich
+die Computerspieler automatisch beenden.
+. Wenn Sie weitere Testspiele starten wollen, können Sie die Computerspieler
+erneut starten. Der Testserver muss nicht neu gestartet werden.
+
+Beachten Sie, dass der Testserver keine Spielaufzeichnungen anlegt, wie es der
+Server mit grafischer Oberfläche tut. Die Auswertung der Spiele muss in einem
+der teilnehmenden Computerspieler geschehen (z.B. durch Log-Ausgaben).
+
+Es ist ebenfalls möglich, statt eines Zufällig generierten vollständigen
+Spielplanes eine Spielsituation zu laden und zu testen. Die Spielsituation muss
+vorher wie unter <<spielsituation-nachstellen,Spielsituation nachstellen>>
+erzeugt werden. Dann kann die Datei mit dem Argument `--loadGameFile` geladen
+werden:
+
+[source,sh]
+  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=./logback.xml -jar softwarechallenge-server.jar --loadGameFile ./replay.xml
