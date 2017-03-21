@@ -40,6 +40,8 @@ Um alles in HTML zu Übersetzen, sollte `asciidoctor` verwendet werden:
 asciidoctor -D out index.adoc
 ....
 
+Die fertige HTML-Version befindet sich dann unter `out/index.html`.
+
 Hierzu werden die beiden Ruby-Gems `asciidoctor` und `pygments.rb`
 (für Syntax-Highlighting der Quellcodes) benötigt.
 
