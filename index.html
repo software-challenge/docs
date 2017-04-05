@@ -1125,6 +1125,74 @@ werden:</p>
 <pre class="pygments highlight"><code data-lang="sh">  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>./logback.xml -jar softwarechallenge-server.jar --loadGameFile ./replay.xml</code></pre>
 </div>
 </div>
+<div class="sect3">
+<h4 id="soft-timeouts">Unerwartete Zugzeitüberschreitungen (Soft-Timeout)</h4>
+<div class="paragraph">
+<p>Wenn Sie den Testserver einige Zeit laufen lassen, um eine größere Anzahl von
+Testspielen durchzuführen, kann es dazu kommen, dass Computerspieler wegen
+Zugzeitüberschreitungen vom Server disqualifiziert werden (Soft-Timeout). Dies
+passiert, obwohl sie ihren Zug innerhalb der erlaubten Zugzeit (abhängig vom
+Spiel, bisher aber immer zwei Sekunden) an den Server geschickt haben. Der
+Garbage Collector der Java Virtual Machine löst dieses Verhalten aus. Er
+pausiert die Anwendung, um nicht mehr genutzten Speicher freizugeben. Wenn der
+Server dadurch zu einem ungünstigen Zeitpunkt angehalten wird, bemerkt er den
+Eingang des Zuges vom Computerspieler nicht rechtzeitig und disqualifiziert ihn
+daraufhin. Damit dieses Problem möglichst selten auftritt, haben sich die
+folgenden Parameter beim Starten des Servers bewährt:</p>
+</div>
+<div class="paragraph">
+<p>Unter Linux:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh">java -Dfile.encoding<span class="tok-o">=</span>UTF-8 <span class="tok-se">\</span>
+     -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml <span class="tok-se">\</span>
+     -server <span class="tok-se">\</span>
+     -XX:MaxGCPauseMillis<span class="tok-o">=</span><span class="tok-m">100</span> <span class="tok-se">\</span>
+     -XX:GCPauseIntervalMillis<span class="tok-o">=</span><span class="tok-m">2050</span> <span class="tok-se">\</span>
+     -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled <span class="tok-se">\</span>
+     -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction<span class="tok-o">=</span><span class="tok-m">70</span> <span class="tok-se">\</span>
+     -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark <span class="tok-se">\</span>
+     -jar softwarechallenge-server.jar</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Unter Windows (unterscheidet sich nur durch die Art, den langen Befehl auf
+mehrere Zeilen zu verteilen):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="batch">java -Dfile.encoding=UTF-8 <span class="tok-se">^</span>
+<span class="tok-se"> </span>    -Dlogback.configurationFile=logback.xml <span class="tok-se">^</span>
+<span class="tok-se"> </span>    -server <span class="tok-se">^</span>
+<span class="tok-se"> </span>    -XX:MaxGCPauseMillis=100 <span class="tok-se">^</span>
+<span class="tok-se"> </span>    -XX:GCPauseIntervalMillis=2050 <span class="tok-se">^</span>
+<span class="tok-se"> </span>    -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled <span class="tok-se">^</span>
+<span class="tok-se"> </span>    -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=70 <span class="tok-se">^</span>
+<span class="tok-se"> </span>    -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark <span class="tok-se">^</span>
+<span class="tok-se"> </span>    -jar softwarechallenge-server.jar</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Um das Verhalten des Garbage Collectors noch weiter zu verbessern, kann man auch
+noch mittels der Optionen</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>-XX:+PrintGCDateStamps -verbose:gc -XX:+PrintGCDetails -Xloggc:"pfad_zum_gc.log"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>eine Logdatei über die Aktivitäten des Garbage Collectors anlegen. Darin sieht
+man genau, wann er wie lange lief. Man kann dann die Einstellungen verändern und
+testen, ob sich das Verhalten verbessert.</p>
+</div>
+<div class="paragraph">
+<p>Die Konfiguration des Garbage Collectors ist kein Allheilmittel und kann zu
+neuen Problemen führen, auf die man gefasst sein sollte. Dazu gehören erhöhter
+Resourcenverbrauch und Instabilität der Anwendung.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -3353,7 +3421,7 @@ weniger Last für das System zur Verfügung gestellt werden können.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-19 15:00:20 CET
+Last updated 2016-10-25 15:37:33 CEST
 </div>
 </div>
 </body>
