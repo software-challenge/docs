@@ -6,6 +6,8 @@
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 branch_to_deploy=master
 if [ $current_branch == $branch_to_deploy ]; then
+  echo "Updating date in index.adoc"
+  ./update-date.sh
   echo "removing output directory ('out')"
   rm -rf ./out
   echo "getting gh-pages repository..."
