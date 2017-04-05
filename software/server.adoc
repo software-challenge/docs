@@ -282,3 +282,64 @@ werden:
 
 [source,sh]
   java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=./logback.xml -jar softwarechallenge-server.jar --loadGameFile ./replay.xml
+
+[[soft-timeouts]]
+==== Unerwartete Zugzeitüberschreitungen (Soft-Timeout)
+
+Wenn Sie den Testserver einige Zeit laufen lassen, um eine größere Anzahl von
+Testspielen durchzuführen, kann es dazu kommen, dass Computerspieler wegen
+Zugzeitüberschreitungen vom Server disqualifiziert werden (Soft-Timeout). Dies
+passiert, obwohl sie ihren Zug innerhalb der erlaubten Zugzeit (abhängig vom
+Spiel, bisher aber immer zwei Sekunden) an den Server geschickt haben. Der
+Garbage Collector der Java Virtual Machine löst dieses Verhalten aus. Er
+pausiert die Anwendung, um nicht mehr genutzten Speicher freizugeben. Wenn der
+Server dadurch zu einem ungünstigen Zeitpunkt angehalten wird, bemerkt er den
+Eingang des Zuges vom Computerspieler nicht rechtzeitig und disqualifiziert ihn
+daraufhin. Damit dieses Problem möglichst selten auftritt, haben sich die
+folgenden Parameter beim Starten des Servers bewährt:
+
+Unter Linux:
+
+[source,sh]
+....
+java -Dfile.encoding=UTF-8 \
+     -Dlogback.configurationFile=logback.xml \
+     -server \
+     -XX:MaxGCPauseMillis=100 \
+     -XX:GCPauseIntervalMillis=2050 \
+     -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled \
+     -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=70 \
+     -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark \
+     -jar softwarechallenge-server.jar
+....
+
+Unter Windows (unterscheidet sich nur durch die Art, den langen Befehl auf
+mehrere Zeilen zu verteilen):
+
+[source,batch]
+....
+java -Dfile.encoding=UTF-8 ^
+     -Dlogback.configurationFile=logback.xml ^
+     -server ^
+     -XX:MaxGCPauseMillis=100 ^
+     -XX:GCPauseIntervalMillis=2050 ^
+     -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled ^
+     -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=70 ^
+     -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark ^
+     -jar softwarechallenge-server.jar
+....
+
+Um das Verhalten des Garbage Collectors noch weiter zu verbessern, kann man auch
+noch mittels der Optionen
+
+....
+-XX:+PrintGCDateStamps -verbose:gc -XX:+PrintGCDetails -Xloggc:"pfad_zum_gc.log"
+....
+
+eine Logdatei über die Aktivitäten des Garbage Collectors anlegen. Darin sieht
+man genau, wann er wie lange lief. Man kann dann die Einstellungen verändern und
+testen, ob sich das Verhalten verbessert.
+
+Die Konfiguration des Garbage Collectors ist kein Allheilmittel und kann zu
+neuen Problemen führen, auf die man gefasst sein sollte. Dazu gehören erhöhter
+Resourcenverbrauch und Instabilität der Anwendung.
