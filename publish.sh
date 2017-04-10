@@ -5,6 +5,6 @@
 
 # Update the date to the date of the last commit (which is the current date)
 formatted_date=$(date +%Y-%m-%d)
-sed -i "/[0-9]{4}-[0-9]{2}-[0-9]{2}$/c\\$formatted_date" index.adoc
+sed --regexp-extended -i "/[0-9]{4}-[0-9]{2}-[0-9]{2}$/c\\$formatted_date" index.adoc
 git add index.adoc
 git commit
