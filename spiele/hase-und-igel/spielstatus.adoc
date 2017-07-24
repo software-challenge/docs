@@ -1,0 +1,99 @@
+== Spielstatus
+Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die Clients gesendet wird. Das Spielstatus-Tag ist dabei noch in einem _data_-Tag der Klasse _memento_ gewrappt:
+[[memento]]
+=== memento
+* ROOM_ID Id des GameRooms
+* status Gamestate wie in xref:status[]
+[source,xml]
+----
+<room roomId="ROOM_ID">
+  <data class="memento">
+  	status
+  </data>
+</room>
+----
+
+[[status]]
+=== Status
+--
+* Z aktuelle Zugzahl
+* S Spieler, der das Spiel gestartet hat (RED/BLUE)
+* C Spieler, der an der Reihe ist (RED/BLUE)
+* F true, falls der aktuelle Spieler vorherigen im Zug des Gegners abgedrängt wurde und jetzt eine zusätzliche kostenlose Drehung machen darf, sonst false.
+* red, blue wie in xref:spieler[] definiert
+* board Das Spielbrett, wie in xref:spielbrett[] definiert
+* lastMove Letzter getätigter Zug (nicht in der ersten Runde), wie in xref:letzter-zug[] definiert
+* condition Spielergebnis, wie in xref:spielende[] definiert; nur zum Spielende
+--
+[source,xml]
+----
+<state class="state" turn="Z" startPlayer="S" currentPlayer="C" freeTurn="F">
+  red
+  blue
+  [board]
+  [lastMove]
+  [condition]
+</state>
+----
+
+[[spieler]]
+=== Spieler
+--
+* C Farbe (RED/BLUE)
+* N Anzeigename
+* I Feldindex des Spielers
+* S Anzahl Salate
+* K Anzahl der Karotten
+--
+[source,xml]
+----
+\begin{verbatim}
+<C displayName="N" color="C" index="I" carrots="K" salads="S"
+  <cards>
+    <type>TAKE_OR_DROP_CARROTS</type>
+    <type>EAT_SALAD</type>
+    <type>HURRY_AHEAD</type>
+    <type>FALL_BACK</type>
+  </cards>
+</C>
+----
+
+[[spielbrett]]
+=== Spielbrett
+--
+* FIELD Ein Spielfeld wie in xref:spielfeld[] definiert.
+--
+[source,xml]
+----
+<board>
+  <fields index="0" type="START"/>
+  ..
+  FIELD
+  ..
+  <fields index="64" type="GOAL"/>
+</board>
+----
+[[spielfeld]]
+=== Spielfeld
+--
+* I Feldnummer
+* TYPE Typ des Feldes (START/CARROT/HARE/GOAL/POSITION_{X}/HEDGEHOG/SALAD). X ist 1 oder 2
+--
+[source,xml]
+----
+<fields index="I" type="TYPE"/>
+----
+
+[[letzter-zug]]
+=== Letzter Zug
+Der letzte Zug ist ein Move (siehe hierzu xref:zug[]).
+--
+* ACTIONS Teilzüge des Zuges (siehe hierzu xref:action[]).
+--
+[source,xml]
+----
+<lastMove>
+  ACTIONS
+</lastMove>
+----
+
