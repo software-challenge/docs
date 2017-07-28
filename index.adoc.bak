@@ -1,6 +1,6 @@
 = Software Challenge Endbenutzer-Dokumentation
 Sven Koschnicke <svk@informatik.uni-kiel.de>
-2015-01-06
+2017-07-28
 :imagesdir: ./images
 :toc: right
 :toc-title: Inhalt
@@ -23,6 +23,11 @@ https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc[i
 welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 svk@informatik.uni-kiel.de.
+
+Die Dokumentation zu dem aktuellen Spiel, Hase und Igel, finden Sie in zwei separaten Dokumenten:
+
+- <<spiele/hase-und-igel/regeln.adoc#,Hase und Igel Spielregeln>>
+- <<spiele/hase-und-igel/xml-dokumentation.adoc#,Hase und Igel XML Dokumentation>>
 
 include::allgemein/die-software-challenge.adoc[]
 
