@@ -25,7 +25,7 @@ if [ $current_branch == $branch_to_deploy ]; then
   echo "deploying to github"
   git push origin
   cd ..
-  #rm -rf ./out
+  rm -rf ./out
   GIT_DIR=$old_git_dir
   GIT_WORK_TREE=$old_git_working_dir
 fi

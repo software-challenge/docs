@@ -1,7 +1,7 @@
 #!/bin/sh
 TARGET=out
-rm -rf "$TARGET"
-mkdir "$TARGET"
+#rm -rf "$TARGET"
+#mkdir "$TARGET"
 
 # Allgemeine Doku
 asciidoctor -D "$TARGET" index.adoc
