@@ -1,9 +1,12 @@
 == Spielstatus
 Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die Clients gesendet wird. Das Spielstatus-Tag ist dabei noch in einem _data_-Tag der Klasse _memento_ gewrappt:
+
 [[memento]]
 === memento
+--
 * ROOM_ID Id des GameRooms
 * status Gamestate wie in xref:status[]
+--
 [source,xml]
 ----
 <room roomId="ROOM_ID">
@@ -39,7 +42,7 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 [[spieler]]
 === Spieler
 --
-* C Farbe (RED/BLUE)
+* C Farbe (red/blue)
 * N Anzeigename
 * I Feldindex des Spielers
 * S Anzahl Salate
@@ -48,13 +51,14 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 [source,xml]
 ----
 \begin{verbatim}
-<C displayName="N" color="C" index="I" carrots="K" salads="S"
+<C displayName="N" color="C" index="I" carrots="K" salads="S">
   <cards>
     <type>TAKE_OR_DROP_CARROTS</type>
     <type>EAT_SALAD</type>
     <type>HURRY_AHEAD</type>
     <type>FALL_BACK</type>
   </cards>
+  <lastNonSkipAction class="fallBack" order="0"/> // Beispiel für letzte Aktion
 </C>
 ----
 
@@ -96,4 +100,5 @@ Der letzte Zug ist ein Move (siehe hierzu xref:zug[]).
   ACTIONS
 </lastMove>
 ----
+
 

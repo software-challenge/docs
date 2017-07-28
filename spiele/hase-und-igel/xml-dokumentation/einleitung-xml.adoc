@@ -29,3 +29,4 @@ nicht weiter definiert sind. Die vom Institut bereitgestellten
 Programme (Server, Simpleclient) nutzen eine Bibliothek um Java-Objekte direkt
 in XML zu konvertieren und umgekehrt. Dabei werden XML-Nachrichten nicht mit
 einem newline abgeschlossen.
+

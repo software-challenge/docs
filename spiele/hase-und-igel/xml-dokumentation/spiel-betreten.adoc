@@ -1,19 +1,23 @@
 == Spiel betreten
 Wenn begonnen wird mit dem Server zu kommunizieren, muss zuallererst 
+
 [source,xml]
 ----
 <protocol> 
 ----
 gesendet werden, um die Kommunikation zu beginnen.
+
 [[ohne-reservierung]]
 === Ohne Reservierung
 Betritt ein beliebiges offenes Spiel:
+
 [source,xml]
 ----
 <join gameType="swc_2018_hase_und_igel"/>
 ----
 Sollte kein Spiel offen sein, wird so ein neues erstellt.
 Der Server antwortet darauf mit:
+
 --
 * ROOM_ID Id des GameRooms
 --
@@ -25,6 +29,10 @@ Der Server antwortet darauf mit:
 [[mit-reservierungscode]]
 === Mit Reservierungscode
 Ist ein Reservierungscode gegeben, so kann man den durch den Code gegebenen Platz betreten.
+
+[[join-reserved]]
+==== Join mit RC
+
 --
 * RC Reservierungscode
 --
@@ -32,10 +40,14 @@ Ist ein Reservierungscode gegeben, so kann man den durch den Code gegebenen Plat
 ----
 <joinPrepared reservationCode="RC"/>
 ----
+
+[[welcome-message]]
+==== Welcome Message
 Der Server antwortet darauf nur, wenn der zweite Client ebenfalls verbunden ist:
+
 --
 * ROOM_ID Id des GameRooms
-* COLOR Spielerfarbe
+* COLOR Spielerfarbe also red oder blue
 * status GameState wie in xref:status[]
 --
 [source,xml]
@@ -50,4 +62,5 @@ Der Server antwortet darauf nur, wenn der zweite Client ebenfalls verbunden ist:
   </data>
 </room>
 ----
+
 

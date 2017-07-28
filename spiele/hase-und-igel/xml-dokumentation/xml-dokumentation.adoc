@@ -1,5 +1,5 @@
 = Software Challenge XML-Dokumentation Hase und Igel
-Sven Koschnicke <svk@informatik.uni-kiel.de>
+Sören Domrös <soed@informatik.uni-kiel.de>
 :imagesdir: ./images
 :toc: right
 :toc-title: Inhalt
@@ -24,7 +24,11 @@ include::einleitung-xml.adoc[]
 include::spiel-betreten.adoc[]
 include::zuege-senden.adoc[]
 include::spielstatus.adoc[]
-// TODO Spielverlauf, Spielende
+include::zug-anforderung.adoc[]
+include::fehler.adoc[]
+include::spiel-verlassen.adoc[]
+include::spielergebnis.adoc[]
+include::spielverlauf.adoc[]
 
 
 
