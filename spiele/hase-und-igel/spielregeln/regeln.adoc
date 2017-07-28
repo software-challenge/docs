@@ -1,4 +1,4 @@
-= Software Challenge Spielregeln Hase und Igel
+= Modifizierte Spielregeln Hase und Igel Software Challenge 2018
 Sven Koschnicke <svk@informatik.uni-kiel.de>
 :imagesdir: ./images
 :toc: right
@@ -18,3 +18,5 @@ https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc[i
 welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 svk@informatik.uni-kiel.de.
+
+include::einleitung
