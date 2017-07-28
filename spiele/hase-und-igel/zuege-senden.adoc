@@ -3,6 +3,9 @@
 [[der-move]]
 === Der Move
 Der Move ist die Antwort auf den MoveRequest des Servers.
+
+[[move-request]]
+==== MoveRequest
 --
 * ROOM_ID Id des GameRooms
 --
@@ -12,7 +15,11 @@ Der Move ist die Antwort auf den MoveRequest des Servers.
   <data class="sc.framework.plugins.protocol.MoveRequest"/>
 </room>
 ----
+
+[[senden]]
+==== Senden
 Der Move ist der allgemeine Zug, der in verschiedenen Varianten gesendet werden kann.
+
 --
 * ROOM_ID Id des GameRooms
 * ZUG Zug wie in xref:zug[]
@@ -23,6 +30,7 @@ Der Move ist der allgemeine Zug, der in verschiedenen Varianten gesendet werden 
   ZUG
 </room>
 ----
+
 [[zug]]
 === ZUG
 --
@@ -40,10 +48,12 @@ Der Move ist der allgemeine Zug, der in verschiedenen Varianten gesendet werden 
 [[action]]
 === ACTION
 Mögliche Aktionen:
+
 --
 * I Index der Aktion beginnend mit 0
 * D Anzahl der Felder um die sich bewegt wird
-* V \[ \in {10,-10}\ ] 
+* W -10 oder 10
+* V 20,0,-20 falls type TAKE_OR_DROP_CARROTS, 0 sonst
 --
 [source,xml]
 ----
@@ -58,11 +68,14 @@ Mögliche Aktionen:
 [[debughints]]
 === Debughints
 Zügen können Debug-Informationen beigefügt werden:
+
 [source,xml]
 ----
 <hint content="S"/>
 ----
+
 Damit sieht beispielsweise ein Laufzug so aus:
+
 [source,xml]
 ----
 <room roomId="ROOM_ID">

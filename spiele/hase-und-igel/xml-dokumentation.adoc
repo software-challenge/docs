@@ -24,7 +24,11 @@ include::einleitung-xml.adoc[]
 include::spiel-betreten.adoc[]
 include::zuege-senden.adoc[]
 include::spielstatus.adoc[]
-// TODO Spielverlauf, Spielende
+include::zug-anforderung.adoc[]
+include::fehler.adoc[]
+include::spiel-verlassen.adoc[]
+include::spielergebnis.adoc[]
+include::spielverlauf.adoc[]
 
 
 
