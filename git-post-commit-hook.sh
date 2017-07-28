@@ -19,7 +19,7 @@ if [ $current_branch == $branch_to_deploy ]; then
   echo "copying images..."
   cp -r images out/
   echo "generating static pages..."
-  asciidoctor -D out index.adoc
+  ./generate.sh
   echo "putting new version in gh-pages branch"
   cd out
   git add -A
