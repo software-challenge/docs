@@ -23,7 +23,7 @@ if [ $current_branch == $branch_to_deploy ]; then
   git add -A
   git commit -a -u -m "automatically updated generated files on commit to master"
   echo "deploying to github"
-  git push origin gh-pages
+  git push origin
   cd ..
   #rm -rf ./out
   GIT_DIR=$old_git_dir
