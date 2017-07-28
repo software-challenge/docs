@@ -1,5 +1,5 @@
 = Modifizierte Spielregeln Hase und Igel Software Challenge 2018
-Sven Koschnicke <svk@informatik.uni-kiel.de>
+Sören Domrös <soed@informatik.uni-kiel.de>
 :imagesdir: ./../images
 :toc: right
 :toc-title: Inhalt

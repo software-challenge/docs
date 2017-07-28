@@ -1,5 +1,5 @@
 = Software Challenge XML-Dokumentation Hase und Igel
-Sven Koschnicke <svk@informatik.uni-kiel.de>
+Sören Domrös <soed@informatik.uni-kiel.de>
 :imagesdir: ./images
 :toc: right
 :toc-title: Inhalt
