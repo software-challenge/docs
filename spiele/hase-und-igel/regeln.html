@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.5">
+<meta name="generator" content="Asciidoctor 1.5.4">
 <meta name="author" content="Sören Domrös">
 <title>Modifizierte Spielregeln Hase und Igel Software Challenge 2018</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -18,6 +18,7 @@ audio:not([controls]){display:none;height:0}
 [hidden],template{display:none}
 script{display:none!important}
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+body{margin:0}
 a{background:transparent}
 a:focus{outline:thin dotted}
 a:active,a:hover{outline:0}
@@ -52,7 +53,7 @@ textarea{overflow:auto;vertical-align:top}
 table{border-collapse:collapse;border-spacing:0}
 *,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
 html,body{font-size:100%}
-body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto}
 a:hover{cursor:pointer}
 img,object,embed{max-width:100%;height:auto}
 object,embed{height:100%}
@@ -64,6 +65,7 @@ img{-ms-interpolation-mode:bicubic}
 .text-center{text-align:center!important}
 .text-justify{text-align:justify!important}
 .hide{display:none}
+body{-webkit-font-smoothing:antialiased}
 img,object,svg{display:inline-block;vertical-align:middle}
 textarea{height:auto;min-height:50px}
 select{width:100%}
@@ -118,16 +120,13 @@ table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:
 table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
 table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
 table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+body{tab-size:4}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
 h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
 .clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
 .clearfix:after,.float-group:after{clear:both}
-*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
-*:not(pre)>code.nobreak{word-wrap:normal}
-*:not(pre)>code.nowrap{white-space:nowrap}
+*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
 pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
-em em{font-style:normal}
-strong strong{font-weight:400}
 .keyseq{color:rgba(51,51,51,.8)}
 kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
 .keyseq kbd:first-child{margin-left:0}
@@ -418,116 +417,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .hide-for-print{display:none!important}
 .show-for-print{display:inherit!important}}
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-<style>
-.listingblock .pygments .hll { background-color: #ffffcc }
-.listingblock .pygments, .listingblock .pygments code { background: #f8f8f8; }
-.listingblock .pygments .tok-c { color: #408080; font-style: italic } /* Comment */
-.listingblock .pygments .tok-err { border: 1px solid #FF0000 } /* Error */
-.listingblock .pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
-.listingblock .pygments .tok-o { color: #666666 } /* Operator */
-.listingblock .pygments .tok-ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.listingblock .pygments .tok-cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.listingblock .pygments .tok-cp { color: #BC7A00 } /* Comment.Preproc */
-.listingblock .pygments .tok-cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.listingblock .pygments .tok-c1 { color: #408080; font-style: italic } /* Comment.Single */
-.listingblock .pygments .tok-cs { color: #408080; font-style: italic } /* Comment.Special */
-.listingblock .pygments .tok-gd { color: #A00000 } /* Generic.Deleted */
-.listingblock .pygments .tok-ge { font-style: italic } /* Generic.Emph */
-.listingblock .pygments .tok-gr { color: #FF0000 } /* Generic.Error */
-.listingblock .pygments .tok-gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.listingblock .pygments .tok-gi { color: #00A000 } /* Generic.Inserted */
-.listingblock .pygments .tok-go { color: #888888 } /* Generic.Output */
-.listingblock .pygments .tok-gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.listingblock .pygments .tok-gs { font-weight: bold } /* Generic.Strong */
-.listingblock .pygments .tok-gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.listingblock .pygments .tok-gt { color: #0044DD } /* Generic.Traceback */
-.listingblock .pygments .tok-kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.listingblock .pygments .tok-kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.listingblock .pygments .tok-kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.listingblock .pygments .tok-kp { color: #008000 } /* Keyword.Pseudo */
-.listingblock .pygments .tok-kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.listingblock .pygments .tok-kt { color: #B00040 } /* Keyword.Type */
-.listingblock .pygments .tok-m { color: #666666 } /* Literal.Number */
-.listingblock .pygments .tok-s { color: #BA2121 } /* Literal.String */
-.listingblock .pygments .tok-na { color: #7D9029 } /* Name.Attribute */
-.listingblock .pygments .tok-nb { color: #008000 } /* Name.Builtin */
-.listingblock .pygments .tok-nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.listingblock .pygments .tok-no { color: #880000 } /* Name.Constant */
-.listingblock .pygments .tok-nd { color: #AA22FF } /* Name.Decorator */
-.listingblock .pygments .tok-ni { color: #999999; font-weight: bold } /* Name.Entity */
-.listingblock .pygments .tok-ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.listingblock .pygments .tok-nf { color: #0000FF } /* Name.Function */
-.listingblock .pygments .tok-nl { color: #A0A000 } /* Name.Label */
-.listingblock .pygments .tok-nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.listingblock .pygments .tok-nt { color: #008000; font-weight: bold } /* Name.Tag */
-.listingblock .pygments .tok-nv { color: #19177C } /* Name.Variable */
-.listingblock .pygments .tok-ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.listingblock .pygments .tok-w { color: #bbbbbb } /* Text.Whitespace */
-.listingblock .pygments .tok-mb { color: #666666 } /* Literal.Number.Bin */
-.listingblock .pygments .tok-mf { color: #666666 } /* Literal.Number.Float */
-.listingblock .pygments .tok-mh { color: #666666 } /* Literal.Number.Hex */
-.listingblock .pygments .tok-mi { color: #666666 } /* Literal.Number.Integer */
-.listingblock .pygments .tok-mo { color: #666666 } /* Literal.Number.Oct */
-.listingblock .pygments .tok-sa { color: #BA2121 } /* Literal.String.Affix */
-.listingblock .pygments .tok-sb { color: #BA2121 } /* Literal.String.Backtick */
-.listingblock .pygments .tok-sc { color: #BA2121 } /* Literal.String.Char */
-.listingblock .pygments .tok-dl { color: #BA2121 } /* Literal.String.Delimiter */
-.listingblock .pygments .tok-sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.listingblock .pygments .tok-s2 { color: #BA2121 } /* Literal.String.Double */
-.listingblock .pygments .tok-se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.listingblock .pygments .tok-sh { color: #BA2121 } /* Literal.String.Heredoc */
-.listingblock .pygments .tok-si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.listingblock .pygments .tok-sx { color: #008000 } /* Literal.String.Other */
-.listingblock .pygments .tok-sr { color: #BB6688 } /* Literal.String.Regex */
-.listingblock .pygments .tok-s1 { color: #BA2121 } /* Literal.String.Single */
-.listingblock .pygments .tok-ss { color: #19177C } /* Literal.String.Symbol */
-.listingblock .pygments .tok-bp { color: #008000 } /* Name.Builtin.Pseudo */
-.listingblock .pygments .tok-fm { color: #0000FF } /* Name.Function.Magic */
-.listingblock .pygments .tok-vc { color: #19177C } /* Name.Variable.Class */
-.listingblock .pygments .tok-vg { color: #19177C } /* Name.Variable.Global */
-.listingblock .pygments .tok-vi { color: #19177C } /* Name.Variable.Instance */
-.listingblock .pygments .tok-vm { color: #19177C } /* Name.Variable.Magic */
-.listingblock .pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
-</style>
 </head>
-<body class="article toc2 toc-right">
+<body class="article">
 <div id="header">
 <h1>Modifizierte Spielregeln Hase und Igel Software Challenge 2018</h1>
 <div class="details">
 <span id="author" class="author">Sören Domrös</span><br>
-<span id="email" class="email"><a href="mailto:soed@informatik.uni-kiel.de">soed@informatik.uni-kiel.de</a></span><br>
-</div>
-<div id="toc" class="toc2">
-<div id="toctitle">Inhalt</div>
-<ul class="sectlevel1">
-<li><a href="#_spielbeginn">Spielbeginn</a></li>
-<li><a href="#_zugmöglichkeiten">Zugmöglichkeiten</a>
-<ul class="sectlevel2">
-<li><a href="#_vorwärtszug">Vorwärtszug</a></li>
-<li><a href="#_rückwärtszug">Rückwärtszug</a></li>
-<li><a href="#_karte_ausspielen">Karte ausspielen</a></li>
-<li><a href="#_karotten_tauschen_aktion">Karotten tauschen (Aktion)</a></li>
-<li><a href="#_salat_fressen_aktion">Salat fressen (Aktion)</a></li>
-<li><a href="#_aussetzen">Aussetzen</a></li>
-<li><a href="#_zusammenfassung">Zusammenfassung</a></li>
-</ul>
-</li>
-<li><a href="#_felder">Felder</a>
-<ul class="sectlevel2">
-<li><a href="#_startfeld">Startfeld</a></li>
-<li><a href="#_karottenfeld">Karottenfeld</a></li>
-<li><a href="#_hasenfeld">Hasenfeld</a></li>
-<li><a href="#_salatfeld">Salatfeld</a></li>
-<li><a href="#_igelfeld">Igelfeld</a></li>
-<li><a href="#_position_1_feld">Position-1 Feld</a></li>
-<li><a href="#_position_2_feld">Position-2 Feld</a></li>
-<li><a href="#_zielfeld">Zielfeld</a></li>
-</ul>
-</li>
-<li><a href="#_spielende">Spielende</a></li>
-<li><a href="#_beispiel">Beispiel</a></li>
-</ul>
+<span id="email" class="email"><a href="mailto:stu114053@mail.uni-kiel.de">stu114053@mail.uni-kiel.de</a></span><br>
 </div>
 </div>
 <div id="content">
@@ -548,23 +444,14 @@ welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 <a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
 </div>
-<div class="paragraph">
-<p>Die Nutzung des Spielkonzeptes "Hase und Igel" (Name, Spielregeln und Grafik) erfolgt mit
-freundlicher Genehmigung der Ravensburger Spieleverlag GmbH.
-Das Spielfeld der Version 2008 vom Ravensburger Spieleverlag wird folgendermaßen modifiziert:
-1. Die Igel- und Salatfelder werden so angeordnet wie im Original. Die Felder zwischen 2 Igelfeldern
-mit Ausnahme der Salatfelder werden zufällig permutiert.
-2. Die Zahlenfelder 3 und 4 werden durch Möhrenfelder ersetzt.
-3. Das Zahlenfeld 1/5/6 wird durch das Zahlenfeld 1 ersetzt.</p>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_spielbeginn">Spielbeginn</h2>
+<h2 id="_spielbeginn">1. Spielbeginn</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Jeder Spieler erhält zu Beginn 68 Karotten und 5 Salate als Wegzehrung sowie je einen Karten
-„Rücke eine Position vor“, „Falle eine Position zurück“, „Salat fressen“, „Karotten tauschen“. Mit den Karotten bezahlt der Spieler das Vorrücken. Die Anzahl der
+„Rücke eine Position vor“, „Falle eine Position zurück“, „Friss sofort einen Salat“, „Karotten nehmen oder abgeben“. Mit den Karotten bezahlt der Spieler das Vorrücken. Die Anzahl der
 Karotten, die benötigt werden, um eine bestimmte Anzahl von Zügen zu ziehen, ist dabei der folgenden
 Rennkarte zu entnehmen.</p>
 </div>
@@ -579,142 +466,55 @@ Rennkarte zu entnehmen.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_zugmöglichkeiten">Zugmöglichkeiten</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Ein Spieler kann folgende Züge machen:</p>
-</div>
-<div class="sect2">
-<h3 id="_vorwärtszug">Vorwärtszug</h3>
-<div class="paragraph">
-<p>Durch einen Vorwärtszug bewegt sich der Spieler um die entsprechende Zahl von Feldern nach vorne (mindestens 1). Dabei werden Karotten entsprechend der Rennkarte verbraucht.
-Wenn ein Spieler sich auf dem Startfeld befindet muss ein Vorwärtszug gemacht werden.
-Wenn ein Spieler sich auf einem Startfeld befindet und den letzten Zug einen Salat gefressen hat, muss ein Bewegungszug gemacht werden (Vorwärtszug oder Rückwärtszug).
-Ein Spieler darf nicht auf ein Feld ziehen, dass bereits durch den Gegner besetzt ist, außer es handelt sich um das Zielfeld.
-Durch eine Vorwärtszug dürfen alle Felder außer das Igelfeld direkt betreten werden.
-Es ist nicht erlaubt das Zielfeld zu betreten, wenn die Siegbedingungen (höchstens 10 Karotten und 0 Salate) nicht erfüllt sind.
-Wenn durch einen Vorwärtszug ein Hasenfeld betreten wird, muss danach eine Karte ausgespielt werden.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_rückwärtszug">Rückwärtszug</h3>
-<div class="paragraph">
-<p>Durch einen Rückwärtszug zieht der Spieler zu dem vorherigen Igelfeld, sollte dies nicht besetzt sein.
-ist das vorherige Igelfeld besetzt, darf kein Rückzug gemacht werden.
-Durch einen Rückzug werden 10 mal zurückgezogene Felder viele Karotten aufgenommen.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_karte_ausspielen">Karte ausspielen</h3>
-<div class="paragraph">
-<p>Eine Karte muss ausgespielt werden, wenn ein Hasenfeld neu betreten wird. Dies ist entweder durch eine Vorwärtszug oder das Ausspielen einer Karte möglich.
-Sollte es nicht möglich sein eine Karte auszuspielen ist das Betreten eines Hasenfeldes nicht erlaubt.
-Ein Spieler hat zu Beginn folgende Karten:</p>
-</div>
-<div class="sect3">
-<h4 id="_salat_fressen_karte">Salat fressen (Karte)</h4>
-<div class="paragraph">
-<p>Es wird ein Salat vom Spieler entfernt, je nach Position des Spielers (Erster/Zweiter) erhält der Spieler Karotten (10/30).
-Diese Karte darf nur eingesetzt werden, wenn der Spieler mehr als einen Salat hat. Im dem nächsten Zug muss das betretene Hasenfeld verlassen werden.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_karotten_tauschen_karte">Karotten tauschen (Karte)</h4>
-<div class="paragraph">
-<p>Der Spieler darf 20 Karotten abgeben oder aufnehmen oder nichts tun. Es darf der Spieler nicht mehr Karotten abgeben als er besitzt. Im dem nächsten Zug muss das betretene Hasenfeld verlassen werden.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_rücke_eine_position_vor">Rücke eine Position vor</h4>
-<div class="paragraph">
-<p>Kann nur ausgespielt werden, wenn der Spieler sich an zweiter Position befindet. Der Spieler rückt auf das Feld vor dem gegnerischen Spieler vor. Dies ist nicht erlaubt, sollte es sich bei dem so betretenen Feld um ein Igelfeld handeln oder sollte der gegnerische Spieler sich im Ziel befinden. Es ist außerdem nicht erlaubt, so ein Salatfeld zu betreten ohne mindestens einen Salat zu besitzen. Es kann so das Ziel erreicht werden, wenn die Siegbedingungen erfüllt sind.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_falle_eine_position_zurück">Falle eine Position zurück</h4>
-<div class="paragraph">
-<p>Kann nur ausgespielt werden, wenn der Spieler sich an erster Position befindet. Der Spieler fällt auf das Feld hinter dem gegnerischen Spieler zurück. Dies ist nicht erlaubt, sollte es sich bei dem so betretenen Feld um ein Igelfeld handeln oder sollte der gegnerische Spieler sich auf dem Startfeld befinden. Es ist außerdem nicht erlaubt, so ein Salatfeld zu betreten ohne mindestens einen Salat zu besitzen.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_karotten_tauschen_aktion">Karotten tauschen (Aktion)</h3>
-<div class="paragraph">
-<p>Kann nur ausgeführt werden, wenn sich der Spieler auf einem Karottenfeld befindet. Es können entweder zehn Karotten abgegeben werden (dabei muss der Spieler mindestens zehn Karotten besitzen)
-oder 10 Karotten aufgenommen werden.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_salat_fressen_aktion">Salat fressen (Aktion)</h3>
-<div class="paragraph">
-<p>Wenn sich der Spieler auf einem Salatfeld befindet und er in seiner letzten Aktion, die kein Aussetzzug war, keinen Salat gefressen hat, darf er einen Salat fressen.
-Der Spieler verliert einen Salat (dies ist immer möglich, da ein Spieler nur mit mindestens einem Salat ein Salatfeld betreten kann) und erhält je nach Position (Erster/Zweiter) Karotten (10/30).</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_aussetzen">Aussetzen</h3>
-<div class="paragraph">
-<p>Es Spieler darf nur Aussetzen, sollte sonst keine anderer Zug möglich sein.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_zusammenfassung">Zusammenfassung</h3>
-<div class="paragraph">
-<p>Ein Zug kann als entweder nur aus einem Rückzug, Salat fressen, Karotten tauschen,  Aussetzen oder einem Vorwärtszug und 0 bis 3 Karten (sollte ein Hasenfeld oder durch Karten Hasenfelder betreten werden).</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_felder">Felder</h2>
+<h2 id="_felder">2. Felder</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Es gibt acht verschiedene Spielfelder:</p>
 </div>
 <div class="sect2">
-<h3 id="_startfeld">Startfeld</h3>
+<h3 id="_startfeld">2.1. Startfeld</h3>
 <div class="paragraph">
 <p>Das Startfeld darf nur verlassen werden. Es ist nicht erlaubt das Startfeld erneut zu betreten, sollte es einmal verlassen werden. Auf ihm starten beide Spieler</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_karottenfeld">Karottenfeld</h3>
+<h3 id="_karottenfeld">2.2. Karottenfeld</h3>
 <div class="paragraph">
 <p>Ein Karottenfeld darf durch jede Bewegungsaktion (Vorwärtszug, Karten) betreten werden. Nur auf ihm dürfen darf ein Karotten tauschen Zug stattfinden (die Karotten tauschen Karte darf hier nicht benutzt werden).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_hasenfeld">Hasenfeld</h3>
+<h3 id="_hasenfeld">2.3. Hasenfeld</h3>
 <div class="paragraph">
 <p>Darf nur betreten werden, wenn eine Hasenkarte gespielt werden kann. Sollte sich ein Spieler am Ende seines Zuges auf einem Hasenfeld befinden, muss dieses verlassen werden (es ist erlaubt das Hasenfeld zu verlassen und dann durch nutzen von Karten wieder zu betreten).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_salatfeld">Salatfeld</h3>
+<h3 id="_salatfeld">2.4. Salatfeld</h3>
 <div class="paragraph">
 <p>Darf nur betreten werden, der Spieler mindestens einen Salat besitzt. Nur auf einem Salatfeld darf ein Salat gefressen werden (außer natürlich die Karte Salat fressen). Muss verlassen werden (wenn möglich) sobald ein Salat gegessen wurde (es ist innerhalb des Spiels trotzdem durch Rückzüge oder Karten möglich auf dem selben Salatfeld mehrere Salate zu essen).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_igelfeld">Igelfeld</h3>
+<h3 id="_igelfeld">2.5. Igelfeld</h3>
 <div class="paragraph">
-<p>Darf nur durch einen Rückzug betreten werden. Muss (wnen möglich) im nächsten Zug wieder verlassen werden.</p>
+<p>Darf nur durch einen Rückzug betreten werden. Muss (wenn möglich) im nächsten Zug wieder verlassen werden.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_position_1_feld">Position-1 Feld</h3>
+<h3 id="_position_1_feld">2.6. Position-1 Feld</h3>
 <div class="paragraph">
 <p>Das Position 1 Feld darf uneingeschränkt betreten werden. Sollte sich ein Spieler am Anfang seines Zuges auf diesem Feld befinden und an erster Stelle stehen, so erhält er zehn Karotten.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_position_2_feld">Position-2 Feld</h3>
+<h3 id="_position_2_feld">2.7. Position-2 Feld</h3>
 <div class="paragraph">
 <p>Das Position 2 Feld darf uneingeschränkt betreten werden. Sollte sich ein Spieler am Anfang seines Zuges auf diesem Feld befinden und an zweiter Stelle stehen, so erhält er 30 Karotten.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_zielfeld">Zielfeld</h3>
+<h3 id="_zielfeld">2.8. Zielfeld</h3>
 <div class="paragraph">
 <p>Das Zielfeld darf nur betreten werden, wenn der Spieler höchstens zehn Karotten und keine Salate besitzt.</p>
 </div>
@@ -722,7 +522,98 @@ Der Spieler verliert einen Salat (dies ist immer möglich, da ein Spieler nur mi
 </div>
 </div>
 <div class="sect1">
-<h2 id="_spielende">Spielende</h2>
+<h2 id="_zugmöglichkeiten">3. Zugmöglichkeiten</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ein Spieler kann folgende Züge machen:</p>
+</div>
+<div class="sect2">
+<h3 id="_vorwärtszug">3.1. Vorwärtszug</h3>
+<div class="paragraph">
+<p>Durch einen Vorwärtszug bewegt sich der Spieler um die entsprechende Zahl von Feldern nach vorne (mindestens 1). Dabei werden Karotten entsprechend der Rennkarte verbraucht.
+Wenn ein Spieler sich auf dem Startfeld befindet muss ein Vorwärtszug gemacht werden.
+Wenn ein Spieler sich auf einem Startfeld befindet und den letzten Zug einen Salat gefressen hat, muss ein Bewegungszug gemacht werden (Vorwärtszug oder Rückwärtszug).
+Ein Spieler darf nicht auf ein Feld ziehen, dass bereits durch den Gegner besetzt ist, außer es handelt sich um das Zielfeld.
+Durch eine Vorwärtszug dürfen alle Felder außer das Igelfeld direkt betreten werden.
+Es ist nicht erlaubt das Zielfeld zu betreten, wenn die Siegbedingungen (höchstens 10 Karotten und 0 Salate) nicht erfüllt sind.
+Wenn durch einen Vorwärtszug ein Hasenfeld betreten wird, muss danach eine Karte ausgespielt werden. Sollte durch einen Vorwärtszug kein Hasenfeld betreten werden endet der Zug.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rückwärtszug">3.2. Rückwärtszug</h3>
+<div class="paragraph">
+<p>Durch einen Rückwärtszug zieht der Spieler zu dem nächsten Igelfeld mit kleinerem Index, sollte dies nicht besetzt sein.
+Ist das vorherige Igelfeld besetzt, darf kein Rückzug gemacht werden.
+Durch einen Rückzug werden 10 mal zurückgezogene Felder viele Karotten aufgenommen. Nach einem Rückwärtszug endet der Zug.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_karte_ausspielen">3.3. Karte ausspielen</h3>
+<div class="paragraph">
+<p>Eine Karte muss ausgespielt werden, wenn ein Hasenfeld neu betreten wird und darf auch nur auf einem Hasenfeld ausgespielt werden. Das betreten eines Hasenfeldes ist entweder durch eine Vorwärtszug oder das Ausspielen einer Karte möglich.
+Sollte es nicht möglich sein eine Karte auszuspielen ist das Betreten eines Hasenfeldes nicht erlaubt. Sollte durch das Ausspielen einer Karte kein Hasenfeld neu betreten werden Ende der Zug.
+Ein Spieler hat zu Beginn folgende Karten:</p>
+</div>
+<div class="sect3">
+<h4 id="_friss_sofort_einen_salat">3.3.1. Friss sofort einen Salat</h4>
+<div class="paragraph">
+<p>Es wird ein Salat vom Spieler entfernt, je nach Position des Spielers (Erster/Zweiter) erhält der Spieler Karotten (10/30).
+Diese Karte darf nur eingesetzt werden, wenn der Spieler mehr als einen Salat hat. Im dem nächsten Zug muss das betretene Hasenfeld verlassen werden.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_karotten_nehmen_oder_abgeben">3.3.2. Karotten nehmen oder abgeben</h4>
+<div class="paragraph">
+<p>Der Spieler darf 20 Karotten abgeben oder aufnehmen oder nichts tun. Es darf der Spieler nicht mehr Karotten abgeben als er besitzt. Im dem nächsten Zug muss das betretene Hasenfeld verlassen werden.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_rücke_eine_position_vor">3.3.3. Rücke eine Position vor</h4>
+<div class="paragraph">
+<p>Kann nur ausgespielt werden, wenn der Spieler sich an zweiter Position befindet. Der Spieler rückt auf das Feld vor dem gegnerischen Spieler vor. Dies ist nicht erlaubt, sollte es sich bei dem so betretenen Feld um ein Igelfeld handeln oder sollte der gegnerische Spieler sich im Ziel befinden. Es ist außerdem nicht erlaubt, so ein Salatfeld zu betreten ohne mindestens einen Salat zu besitzen. Es kann so das Ziel erreicht werden, wenn die Siegbedingungen erfüllt sind.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_falle_eine_position_zurück">3.3.4. Falle eine Position zurück</h4>
+<div class="paragraph">
+<p>Kann nur ausgespielt werden, wenn der Spieler sich an erster Position befindet. Der Spieler fällt auf das Feld hinter dem gegnerischen Spieler zurück. Dies ist nicht erlaubt, sollte es sich bei dem so betretenen Feld um ein Igelfeld handeln oder sollte der gegnerische Spieler sich auf dem Startfeld befinden. Es ist außerdem nicht erlaubt, so ein Salatfeld zu betreten ohne mindestens einen Salat zu besitzen.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_karotten_tauschen">3.4. Karotten tauschen</h3>
+<div class="paragraph">
+<p>Kann nur ausgeführt werden, wenn sich der Spieler auf einem Karottenfeld befindet. Es können entweder zehn Karotten abgegeben werden (dabei muss der Spieler mindestens zehn Karotten besitzen)
+oder 10 Karotten aufgenommen werden. Nach dieser Aktion endet der Zug.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_salat_fressen">3.5. Salat fressen</h3>
+<div class="paragraph">
+<p>Wenn sich der Spieler auf einem Salatfeld befindet und er in seiner letzten Aktion, die kein Aussetzzug war, keinen Salat gefressen hat, darf er einen Salat fressen.
+Der Spieler verliert einen Salat (dies ist immer möglich, da ein Spieler nur mit mindestens einem Salat ein Salatfeld betreten kann) und erhält je nach Position (Erster/Zweiter) Karotten (10/30).
+Nach dieser Aktion endet der Zug.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_aussetzen">3.6. Aussetzen</h3>
+<div class="paragraph">
+<p>Es Spieler darf nur Aussetzen, sollte sonst keine anderer Zug möglich sein. Nach dieser Aktion endet der Zug.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zusammenfassung">3.7. Zusammenfassung</h3>
+<div class="paragraph">
+<p>Enthält ein Zug einen der folgenden Aktionen kann er nur aus einer Aktion bestehen: Rückwärtszug, Karotten tauschen, Salat fressen oder Aussetzen. Eine Karte kann nur nach einem Vorwärtszug oder einer
+anderen Karte gespielt werden (wenn durch die vorherige Aktion ein Hasenfeld betreten wird). Ein Vorwärtszug der auf kein Hasenfeld führt kann ebenfalls nur die einzige Aktion eines Zuges sein. Die einzige Möglichkeit mehr als eine Aktion pro Zug zu machen ist durch Karten möglich. Dies kann folgendermaßen passieren:<br>
+Der Gegner befindet sich zwischen zwei Hasenfeldern. Der Spieler selbst befindet sich hinter ihm. Der Spieler zieht mit einem Vorwärtszug auf das Hasenfeld hinter dem Gegner. Daraufhin muss er eine Karte spielen. Er spielt die Karte "Rücke eine Position vor". Dadurch steht er auf dem Hasenfeld direkt vor dem Gegner und muss erneut eine Karte spielen. Er spielt die Karte "Falle eine Position zurück".
+Dadurch steht er auf dem Hasenfeld direkt hinter dem Gegner und muss erneut eine Karte spielen. Er spielt "Friss sofort einen Salat". Es wird kein Hasenfeld neu betreten, also endet der Zug. So ist es möglich maximal vier Aktionen in einem Zug zu machen.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_spielende">4. Spielende</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Das Spiel endet, sobald das Rundenlimit von 30 Runden erreicht ist oder sich mindestens einer Spieler am Ende einer Runde im Ziel befindet.
@@ -731,7 +622,7 @@ Sollte der erste Spieler im Ziel sein, hat der zweite Spieler einen Nachzug. Der
 </div>
 </div>
 <div class="sect1">
-<h2 id="_beispiel">Beispiel</h2>
+<h2 id="_beispiel">5. Beispiel</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Jasper steht unmittelbar vor einem Hasenfeld (Feld 34). Johannes steht weit hinter Jasper (Feld
@@ -751,7 +642,7 @@ weil er dafür dann keinen Hasenjoker mehr hat.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-07-28 19:36:31 CEST
+Last updated 2017-08-03 12:46:55 CEST
 </div>
 </div>
 </body>
