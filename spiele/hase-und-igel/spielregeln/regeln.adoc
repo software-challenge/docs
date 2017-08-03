@@ -1,12 +1,15 @@
-= Modifizierte Spielregeln Hase und Igel Software Challenge 2018
-Sören Domrös <stu114053@mail.uni-kiel.de>
-
 :imagesdir: ./../images
 :toc: right
 :toc-title: Inhalt
 :source-highlighter: pygments
 :icons: font
+
 :sectnums:
+
+= Modifizierte Spielregeln Hase und Igel Software Challenge 2018
+Sören Domrös <stu114053@mail.uni-kiel.de>
+
+
 Ziel dieser Dokumentation ist es, die Spielregeln der Softwarechallenge festzuhalten.
 
 Wir freuen uns über sämtliche Verbesserungsvorschläge. Die

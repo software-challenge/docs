@@ -1,11 +1,12 @@
-= Dokumentation Hase und Igel Software Challenge 2018
-Sören Domrös <stu114053@mail.uni-kiel.de>
-
 :imagesdir: ./../images
 :toc: right
 :toc-title: Inhalt
 :source-highlighter: pygments
 :icons: font
+
+= Dokumentation Hase und Igel Software Challenge 2018
+Sören Domrös <stu114053@mail.uni-kiel.de>
+
 
 Die Nutzung des Spielkonzeptes "Hase und Igel" (Name, Spielregeln und Grafik) erfolgt mit
 freundlicher Genehmigung der Ravensburger Spieleverlag GmbH.
