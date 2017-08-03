@@ -14,7 +14,7 @@ Darf nur betreten werden, wenn eine Hasenkarte gespielt werden kann. Sollte sich
 Darf nur betreten werden, der Spieler mindestens einen Salat besitzt. Nur auf einem Salatfeld darf ein Salat gefressen werden (außer natürlich die Karte Salat fressen). Muss verlassen werden (wenn möglich) sobald ein Salat gegessen wurde (es ist innerhalb des Spiels trotzdem durch Rückzüge oder Karten möglich auf dem selben Salatfeld mehrere Salate zu essen).
 
 === Igelfeld
-Darf nur durch einen Rückzug betreten werden. Muss (wnen möglich) im nächsten Zug wieder verlassen werden.
+Darf nur durch einen Rückzug betreten werden. Muss (wenn möglich) im nächsten Zug wieder verlassen werden.
 
 === Position-1 Feld
 Das Position 1 Feld darf uneingeschränkt betreten werden. Sollte sich ein Spieler am Anfang seines Zuges auf diesem Feld befinden und an erster Stelle stehen, so erhält er zehn Karotten.

@@ -1,0 +1,18 @@
+= Dokumentation Hase und Igel Software Challenge 2018
+Sören Domrös <stu114053@mail.uni-kiel.de>
+:imagesdir: ./images
+:toc: right
+:toc-title: Inhalt
+:source-highlighter: pygments
+:icons: font
+
+Die Nutzung des Spielkonzeptes "Hase und Igel" (Name, Spielregeln und Grafik) erfolgt mit
+freundlicher Genehmigung der Ravensburger Spieleverlag GmbH.
+Das Spielfeld der Version 2008 vom Ravensburger Spieleverlag wird folgendermaßen modifiziert:
+1. Die Igel- und Salatfelder werden so angeordnet wie im Original. Die Felder zwischen 2 Igelfeldern
+mit Ausnahme der Salatfelder werden zufällig permutiert.
+2. Die Zahlenfelder 3 und 4 werden durch Karottenfelder ersetzt.
+3. Das Zahlenfeld 1/5/6 wird durch das Zahlenfeld 1 ersetzt.
+
+include::spielregeln/regeln.adoc[]
+include::xml-dokumentation/xml-dokumentation.adoc[]

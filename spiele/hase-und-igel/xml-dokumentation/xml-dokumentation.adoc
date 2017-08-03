@@ -1,5 +1,5 @@
 = Software Challenge XML-Dokumentation Hase und Igel
-Sören Domrös <soed@informatik.uni-kiel.de>
+Sören Domrös <stu114053@mail.uni-kiel.de>
 :imagesdir: ./images
 :toc: right
 :toc-title: Inhalt

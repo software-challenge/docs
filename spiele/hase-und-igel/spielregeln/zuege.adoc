@@ -9,23 +9,23 @@ Wenn ein Spieler sich auf einem Startfeld befindet und den letzten Zug einen Sal
 Ein Spieler darf nicht auf ein Feld ziehen, dass bereits durch den Gegner besetzt ist, außer es handelt sich um das Zielfeld.
 Durch eine Vorwärtszug dürfen alle Felder außer das Igelfeld direkt betreten werden.
 Es ist nicht erlaubt das Zielfeld zu betreten, wenn die Siegbedingungen (höchstens 10 Karotten und 0 Salate) nicht erfüllt sind.
-Wenn durch einen Vorwärtszug ein Hasenfeld betreten wird, muss danach eine Karte ausgespielt werden.
+Wenn durch einen Vorwärtszug ein Hasenfeld betreten wird, muss danach eine Karte ausgespielt werden. Sollte durch einen Vorwärtszug kein Hasenfeld betreten werden endet der Zug.
 
 === Rückwärtszug
-Durch einen Rückwärtszug zieht der Spieler zu dem vorherigen Igelfeld, sollte dies nicht besetzt sein.
-ist das vorherige Igelfeld besetzt, darf kein Rückzug gemacht werden.
-Durch einen Rückzug werden 10 mal zurückgezogene Felder viele Karotten aufgenommen.
+Durch einen Rückwärtszug zieht der Spieler zu dem nächsten Igelfeld mit kleinerem Index, sollte dies nicht besetzt sein.
+Ist das vorherige Igelfeld besetzt, darf kein Rückzug gemacht werden.
+Durch einen Rückzug werden 10 mal zurückgezogene Felder viele Karotten aufgenommen. Nach einem Rückwärtszug endet der Zug.
 
 === Karte ausspielen
-Eine Karte muss ausgespielt werden, wenn ein Hasenfeld neu betreten wird. Dies ist entweder durch eine Vorwärtszug oder das Ausspielen einer Karte möglich.
-Sollte es nicht möglich sein eine Karte auszuspielen ist das Betreten eines Hasenfeldes nicht erlaubt.
+Eine Karte muss ausgespielt werden, wenn ein Hasenfeld neu betreten wird und darf auch nur auf einem Hasenfeld ausgespielt werden. Das betreten eines Hasenfeldes ist entweder durch eine Vorwärtszug oder das Ausspielen einer Karte möglich.
+Sollte es nicht möglich sein eine Karte auszuspielen ist das Betreten eines Hasenfeldes nicht erlaubt. Sollte durch das Ausspielen einer Karte kein Hasenfeld neu betreten werden Ende der Zug.
 Ein Spieler hat zu Beginn folgende Karten:
 
-==== Salat fressen (Karte)
+==== Friss sofort einen Salat
 Es wird ein Salat vom Spieler entfernt, je nach Position des Spielers (Erster/Zweiter) erhält der Spieler Karotten (10/30).
 Diese Karte darf nur eingesetzt werden, wenn der Spieler mehr als einen Salat hat. Im dem nächsten Zug muss das betretene Hasenfeld verlassen werden.
 
-==== Karotten tauschen (Karte)
+==== Karotten nehmen oder abgeben
 Der Spieler darf 20 Karotten abgeben oder aufnehmen oder nichts tun. Es darf der Spieler nicht mehr Karotten abgeben als er besitzt. Im dem nächsten Zug muss das betretene Hasenfeld verlassen werden.
 
 ==== Rücke eine Position vor
@@ -34,18 +34,22 @@ Kann nur ausgespielt werden, wenn der Spieler sich an zweiter Position befindet.
 ==== Falle eine Position zurück
 Kann nur ausgespielt werden, wenn der Spieler sich an erster Position befindet. Der Spieler fällt auf das Feld hinter dem gegnerischen Spieler zurück. Dies ist nicht erlaubt, sollte es sich bei dem so betretenen Feld um ein Igelfeld handeln oder sollte der gegnerische Spieler sich auf dem Startfeld befinden. Es ist außerdem nicht erlaubt, so ein Salatfeld zu betreten ohne mindestens einen Salat zu besitzen.
 
-=== Karotten tauschen (Aktion)
+=== Karotten tauschen
 Kann nur ausgeführt werden, wenn sich der Spieler auf einem Karottenfeld befindet. Es können entweder zehn Karotten abgegeben werden (dabei muss der Spieler mindestens zehn Karotten besitzen)
-oder 10 Karotten aufgenommen werden.
+oder 10 Karotten aufgenommen werden. Nach dieser Aktion endet der Zug.
 
-=== Salat fressen (Aktion)
+=== Salat fressen
 Wenn sich der Spieler auf einem Salatfeld befindet und er in seiner letzten Aktion, die kein Aussetzzug war, keinen Salat gefressen hat, darf er einen Salat fressen.
 Der Spieler verliert einen Salat (dies ist immer möglich, da ein Spieler nur mit mindestens einem Salat ein Salatfeld betreten kann) und erhält je nach Position (Erster/Zweiter) Karotten (10/30).
+Nach dieser Aktion endet der Zug.
 
 === Aussetzen
-Es Spieler darf nur Aussetzen, sollte sonst keine anderer Zug möglich sein.
+Es Spieler darf nur Aussetzen, sollte sonst keine anderer Zug möglich sein. Nach dieser Aktion endet der Zug.
 
 === Zusammenfassung
-Ein Zug kann als entweder nur aus einem Rückzug, Salat fressen, Karotten tauschen,  Aussetzen oder einem Vorwärtszug und 0 bis 3 Karten (sollte ein Hasenfeld oder durch Karten Hasenfelder betreten werden).
+Enthält ein Zug einen der folgenden Aktionen kann er nur aus einer Aktion bestehen: Rückwärtszug, Karotten tauschen, Salat fressen oder Aussetzen. Eine Karte kann nur nach einem Vorwärtszug oder einer
+anderen Karte gespielt werden (wenn durch die vorherige Aktion ein Hasenfeld betreten wird). Ein Vorwärtszug der auf kein Hasenfeld führt kann ebenfalls nur die einzige Aktion eines Zuges sein. Die einzige Möglichkeit mehr als eine Aktion pro Zug zu machen ist durch Karten möglich. Dies kann folgendermaßen passieren: +
+Der Gegner befindet sich zwischen zwei Hasenfeldern. Der Spieler selbst befindet sich hinter ihm. Der Spieler zieht mit einem Vorwärtszug auf das Hasenfeld hinter dem Gegner. Daraufhin muss er eine Karte spielen. Er spielt die Karte "Rücke eine Position vor". Dadurch steht er auf dem Hasenfeld direkt vor dem Gegner und muss erneut eine Karte spielen. Er spielt die Karte "Falle eine Position zurück".
+Dadurch steht er auf dem Hasenfeld direkt hinter dem Gegner und muss erneut eine Karte spielen. Er spielt "Friss sofort einen Salat". Es wird kein Hasenfeld neu betreten, also endet der Zug. So ist es möglich maximal vier Aktionen in einem Zug zu machen.
 
 
