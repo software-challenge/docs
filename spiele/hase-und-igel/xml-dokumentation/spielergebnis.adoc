@@ -1,5 +1,5 @@
 [[spielende]]
-=== Spielergebnis
+== Spielergebnis
 
 Zum Spielende enthält der Spieler das Ergebnis:
 

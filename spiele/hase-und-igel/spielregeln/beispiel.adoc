@@ -1,4 +1,4 @@
-=== Beispiel
+== Beispiel
 
 Jasper steht unmittelbar vor einem Hasenfeld (Feld 34). Johannes steht weit hinter Jasper (Feld
 22) und hat nur noch den Hasenjoker „Rücke eine Position vor“. Dann darf Johannes weder auf ein
@@ -8,6 +8,3 @@ noch darf er auf ein Hasenfeld hinter Jasper setzen (z.B. Feld 25), denn wenn er
 weil er dafür dann keinen Hasenjoker mehr hat.
 
 image::hui-bilder-004.png[]
-
-
-:sectnums!:

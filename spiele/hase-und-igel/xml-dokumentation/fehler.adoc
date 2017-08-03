@@ -1,4 +1,4 @@
-=== Fehler
+== Fehler
 
 Ein "`spielfähiger`" Client muss nicht mit Fehlern umgehen können.
 Fehlerhafte Züge beispielsweise resultieren in einem vorzeitigen Ende des

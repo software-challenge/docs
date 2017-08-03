@@ -1,5 +1,4 @@
-:sectnums:
-=== Spielbeginn
+== Spielbeginn
 
 Jeder Spieler erhält zu Beginn 68 Karotten und 5 Salate als Wegzehrung sowie je einen Karten
 „Rücke eine Position vor“, „Falle eine Position zurück“, „Friss sofort einen Salat“, „Karotten nehmen oder abgeben“. Mit den Karotten bezahlt der Spieler das Vorrücken. Die Anzahl der

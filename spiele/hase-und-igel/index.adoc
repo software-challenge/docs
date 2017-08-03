@@ -1,4 +1,4 @@
-== Dokumentation Hase und Igel Software Challenge 2018
+= Dokumentation Hase und Igel Software Challenge 2018
 Sören Domrös <stu114053@mail.uni-kiel.de>
 
 :imagesdir: ./../images
