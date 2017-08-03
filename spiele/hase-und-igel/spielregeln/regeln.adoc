@@ -1,5 +1,6 @@
-= Modifizierte Spielregeln Hase und Igel Software Challenge 2018
+== Modifizierte Spielregeln Hase und Igel Software Challenge 2018
 Sören Domrös <stu114053@mail.uni-kiel.de>
+
 :imagesdir: ./../images
 :toc: right
 :toc-title: Inhalt

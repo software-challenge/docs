@@ -1,11 +1,11 @@
-== Züge senden
+=== Züge senden
 
 [[der-move]]
-=== Der Move
+==== Der Move
 Der Move ist die Antwort auf den MoveRequest des Servers.
 
 [[move-request]]
-==== MoveRequest
+===== MoveRequest
 --
 * ROOM_ID Id des GameRooms
 --
@@ -17,7 +17,7 @@ Der Move ist die Antwort auf den MoveRequest des Servers.
 ----
 
 [[senden]]
-==== Senden
+===== Senden
 Der Move ist der allgemeine Zug, der in verschiedenen Varianten gesendet werden kann.
 
 --
@@ -32,7 +32,7 @@ Der Move ist der allgemeine Zug, der in verschiedenen Varianten gesendet werden 
 ----
 
 [[zug]]
-=== ZUG
+==== ZUG
 --
 * ACTION Aktionen wie in xref:action[]
 --
@@ -46,7 +46,7 @@ Der Move ist der allgemeine Zug, der in verschiedenen Varianten gesendet werden 
 ----
 
 [[action]]
-=== ACTION
+==== ACTION
 Mögliche Aktionen:
 
 --
@@ -66,7 +66,7 @@ Mögliche Aktionen:
 ----
 
 [[debughints]]
-=== Debughints
+==== Debughints
 Zügen können Debug-Informationen beigefügt werden:
 
 [source,xml]

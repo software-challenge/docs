@@ -1,10 +1,10 @@
-== Spielverlauf
+=== Spielverlauf
 
 Der Server startet (StandardIp: localhost 13050).
 
 Nun gibt es zwei Varianten ein Spiel zu starten, eine durch einen Administratorclient die andere durch hinzufügen der Spieler zu einen Spieltyp:
 
-=== Variante 1 (AdminClient xref:mit-reservierungscode[])
+==== Variante 1 (AdminClient xref:mit-reservierungscode[])
 
 Ein Client registriert sich als Administrator mit dem in server.properties festgelegten Passwort p:
 
@@ -54,7 +54,7 @@ Clients die auf dem Serverport (localhost 13050) gestartet werden können so üb
   <joinPrepared reservationCode="RC2"/>
 ----
 
-=== Variante 1 (AdminClient xref:mit-reservierungscode[])
+==== Variante 1 (AdminClient xref:mit-reservierungscode[])
 
 Die Clients wurden auf dem Serverport (Standard: localhost 13050) gestartet.
 
@@ -75,7 +75,7 @@ Der Server antwortet mit:
 ----
 
 
-=== Weiterer Spielverlauf
+==== Weiterer Spielverlauf
 
 Der Server antwortet jeweils mit der WelcomeMessage (xref:welcome-message[]) und dem ersten GameState (xref:memento[]) sobald beide Spieler verbunden sind.
 

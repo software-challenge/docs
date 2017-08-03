@@ -1,5 +1,5 @@
 [[zug-anforderung]]
-== Zug-Anforderung
+=== Zug-Anforderung
 
 Eine einfache Nachricht fordert zum Zug auf:
 

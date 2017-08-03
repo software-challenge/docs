@@ -1,4 +1,4 @@
-== Spiel betreten
+=== Spiel betreten
 Wenn begonnen wird mit dem Server zu kommunizieren, muss zuallererst 
 
 [source,xml]
@@ -8,7 +8,7 @@ Wenn begonnen wird mit dem Server zu kommunizieren, muss zuallererst
 gesendet werden, um die Kommunikation zu beginnen.
 
 [[ohne-reservierung]]
-=== Ohne Reservierung
+==== Ohne Reservierung
 Betritt ein beliebiges offenes Spiel:
 
 [source,xml]
@@ -27,11 +27,11 @@ Der Server antwortet darauf mit:
 ----
 
 [[mit-reservierungscode]]
-=== Mit Reservierungscode
+==== Mit Reservierungscode
 Ist ein Reservierungscode gegeben, so kann man den durch den Code gegebenen Platz betreten.
 
 [[join-reserved]]
-==== Join mit RC
+===== Join mit RC
 
 --
 * RC Reservierungscode
@@ -42,7 +42,7 @@ Ist ein Reservierungscode gegeben, so kann man den durch den Code gegebenen Plat
 ----
 
 [[welcome-message]]
-==== Welcome Message
+===== Welcome Message
 Der Server antwortet darauf nur, wenn der zweite Client ebenfalls verbunden ist:
 
 --

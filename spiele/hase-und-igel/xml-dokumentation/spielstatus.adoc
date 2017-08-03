@@ -1,8 +1,8 @@
-== Spielstatus
+=== Spielstatus
 Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die Clients gesendet wird. Das Spielstatus-Tag ist dabei noch in einem _data_-Tag der Klasse _memento_ gewrappt:
 
 [[memento]]
-=== memento
+==== memento
 --
 * ROOM_ID Id des GameRooms
 * status Gamestate wie in xref:status[]
@@ -17,7 +17,7 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 ----
 
 [[status]]
-=== Status
+==== Status
 --
 * Z aktuelle Zugzahl
 * S Spieler, der das Spiel gestartet hat (RED/BLUE)
@@ -40,7 +40,7 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 ----
 
 [[spieler]]
-=== Spieler
+==== Spieler
 --
 * C Farbe (red/blue)
 * N Anzeigename
@@ -63,7 +63,7 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 ----
 
 [[spielbrett]]
-=== Spielbrett
+==== Spielbrett
 --
 * FIELD Ein Spielfeld wie in xref:spielfeld[] definiert.
 --
@@ -78,7 +78,7 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 </board>
 ----
 [[spielfeld]]
-=== Spielfeld
+==== Spielfeld
 --
 * I Feldnummer
 * TYPE Typ des Feldes (START/CARROT/HARE/GOAL/POSITION_{X}/HEDGEHOG/SALAD). X ist 1 oder 2
@@ -89,8 +89,9 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 ----
 
 [[letzter-zug]]
-=== Letzter Zug
+==== Letzter Zug
 Der letzte Zug ist ein Move (siehe hierzu xref:zug[]).
+
 --
 * ACTIONS Teilzüge des Zuges (siehe hierzu xref:action[]).
 --

@@ -1,5 +1,5 @@
 :sectnums:
-== Einleitung
+=== Einleitung
 
 Wie in den letzten Jahren wird zur Client-Server Kommunikation ein XML-Protokoll
 genutzt.
@@ -9,7 +9,7 @@ vollständige Kommunikation dokumentiert bzw. definiert, dennoch alles, womit ei
 Client umgehen können muss, um spielfähig zu sein.
 
 [[an-wen-richtet-sich]]
-=== An wen richtet sich dieses Dokument?
+==== An wen richtet sich dieses Dokument?
 
 Die Kommunikation mit dem Spielserver ist für diejenigen, die aufbauend auf dem
 Simpleclient programmieren, unwichtig. Dort steht bereits ein funktionierender
@@ -18,7 +18,7 @@ komplett eigenen Client entwerfen will, beispielsweise um die Programmiersprache
 frei wählen zu können, benötigt die Definitionen.
 
 [[hinweise]]
-=== Hinweise
+==== Hinweise
 
 Falls Sie beabsichtigen sollten, diese Kommunikationsschnittstelle zu
 realisieren, sei darauf hingewiesen, dass es im Verlauf des Wettbewerbes möglich
