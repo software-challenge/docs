@@ -16,8 +16,6 @@ if [ $current_branch == $branch_to_deploy ]; then
   old_git_working_dir=$GIT_WORK_TREE
   unset GIT_WORK_TREE
   git clone git@github.com:CAU-Kiel-Tech-Inf/socha-enduser-docs.git --branch gh-pages --single-branch out
-  echo "copying images..."
-  cp -r images out/
   echo "generating static pages..."
   ./generate.sh
   echo "putting new version in gh-pages branch"
@@ -25,7 +23,7 @@ if [ $current_branch == $branch_to_deploy ]; then
   git add -A
   git commit -a -u -m "automatically updated generated files on commit to master"
   echo "deploying to github"
-  git push origin gh-pages
+  git push origin
   cd ..
   rm -rf ./out
   GIT_DIR=$old_git_dir
