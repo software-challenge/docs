@@ -40,7 +40,7 @@ Kann nur ausgeführt werden, wenn sich der Spieler auf einem Karottenfeld befind
 oder 10 Karotten aufgenommen werden. Nach dieser Aktion endet der Zug.
 
 === Salat fressen
-Wenn sich der Spieler auf einem Salatfeld befindet und er in seiner letzten Aktion, die kein Aussetzzug war, keinen Salat gefressen hat, darf er einen Salat fressen.
+Wenn sich der Spieler auf einem Salatfeld befindet und er in seiner letzten Aktion, die kein Aussetzzug war, keinen Salat gefressen hat, muss er einen Salat fressen.
 Der Spieler verliert einen Salat (dies ist immer möglich, da ein Spieler nur mit mindestens einem Salat ein Salatfeld betreten kann) und erhält je nach Position (Erster/Zweiter) Karotten (10/30).
 Nach dieser Aktion endet der Zug.
 
