@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.4">
+<meta name="generator" content="Asciidoctor 1.5.5">
 <meta name="author" content="Sören Domrös">
 <title>Dokumentation Hase und Igel Software Challenge 2018</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -18,7 +18,6 @@ audio:not([controls]){display:none;height:0}
 [hidden],template{display:none}
 script{display:none!important}
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
-body{margin:0}
 a{background:transparent}
 a:focus{outline:thin dotted}
 a:active,a:hover{outline:0}
@@ -53,7 +52,7 @@ textarea{overflow:auto;vertical-align:top}
 table{border-collapse:collapse;border-spacing:0}
 *,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
 html,body{font-size:100%}
-body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
 a:hover{cursor:pointer}
 img,object,embed{max-width:100%;height:auto}
 object,embed{height:100%}
@@ -65,7 +64,6 @@ img{-ms-interpolation-mode:bicubic}
 .text-center{text-align:center!important}
 .text-justify{text-align:justify!important}
 .hide{display:none}
-body{-webkit-font-smoothing:antialiased}
 img,object,svg{display:inline-block;vertical-align:middle}
 textarea{height:auto;min-height:50px}
 select{width:100%}
@@ -120,13 +118,16 @@ table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:
 table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
 table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
 table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
-body{tab-size:4}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
 h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
 .clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
 .clearfix:after,.float-group:after{clear:both}
-*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+*:not(pre)>code.nobreak{word-wrap:normal}
+*:not(pre)>code.nowrap{white-space:nowrap}
 pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
+em em{font-style:normal}
+strong strong{font-weight:400}
 .keyseq{color:rgba(51,51,51,.8)}
 kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
 .keyseq kbd:first-child{margin-left:0}
@@ -417,10 +418,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .hide-for-print{display:none!important}
 .show-for-print{display:inherit!important}}
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <style>
 .listingblock .pygments .hll { background-color: #ffffcc }
-.listingblock .pygments  { background: #f8f8f8; }
+.listingblock .pygments, .listingblock .pygments code { background: #f8f8f8; }
 .listingblock .pygments .tok-c { color: #408080; font-style: italic } /* Comment */
 .listingblock .pygments .tok-err { border: 1px solid #FF0000 } /* Error */
 .listingblock .pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
@@ -499,80 +500,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhalt</div>
-<ul class="sectlevel0">
-<li><a href="#_modifizierte_spielregeln_hase_und_igel_software_challenge_2018">Modifizierte Spielregeln Hase und Igel Software Challenge 2018</a>
 <ul class="sectlevel1">
-<li><a href="#_spielbeginn">1. Spielbeginn</a></li>
-<li><a href="#_felder">2. Felder</a>
+<li><a href="#_modifizierte_spielregeln_hase_und_igel_software_challenge_2018">1. Modifizierte Spielregeln Hase und Igel Software Challenge 2018</a>
 <ul class="sectlevel2">
-<li><a href="#_startfeld">2.1. Startfeld</a></li>
-<li><a href="#_karottenfeld">2.2. Karottenfeld</a></li>
-<li><a href="#_hasenfeld">2.3. Hasenfeld</a></li>
-<li><a href="#_salatfeld">2.4. Salatfeld</a></li>
-<li><a href="#_igelfeld">2.5. Igelfeld</a></li>
-<li><a href="#_position_1_feld">2.6. Position-1 Feld</a></li>
-<li><a href="#_position_2_feld">2.7. Position-2 Feld</a></li>
-<li><a href="#_zielfeld">2.8. Zielfeld</a></li>
+<li><a href="#_spielbeginn">1.1. Spielbeginn</a></li>
+<li><a href="#_felder">1.2. Felder</a></li>
+<li><a href="#_zugmöglichkeiten">1.3. Zugmöglichkeiten</a></li>
+<li><a href="#_spielende">1.4. Spielende</a></li>
+<li><a href="#_beispiel">1.5. Beispiel</a></li>
 </ul>
 </li>
-<li><a href="#_zugmöglichkeiten">3. Zugmöglichkeiten</a>
+<li><a href="#_software_challenge_xml_dokumentation_hase_und_igel">2. Software Challenge XML-Dokumentation Hase und Igel</a>
 <ul class="sectlevel2">
-<li><a href="#_vorwärtszug">3.1. Vorwärtszug</a></li>
-<li><a href="#_rückwärtszug">3.2. Rückwärtszug</a></li>
-<li><a href="#_karte_ausspielen">3.3. Karte ausspielen</a></li>
-<li><a href="#_karotten_tauschen">3.4. Karotten tauschen</a></li>
-<li><a href="#_salat_fressen">3.5. Salat fressen</a></li>
-<li><a href="#_aussetzen">3.6. Aussetzen</a></li>
-<li><a href="#_zusammenfassung">3.7. Zusammenfassung</a></li>
-</ul>
-</li>
-<li><a href="#_spielende">4. Spielende</a></li>
-<li><a href="#_beispiel">5. Beispiel</a></li>
-</ul>
-</li>
-<li><a href="#_software_challenge_xml_dokumentation_hase_und_igel">Software Challenge XML-Dokumentation Hase und Igel</a>
-<ul class="sectlevel1">
-<li><a href="#_einleitung">1. Einleitung</a>
-<ul class="sectlevel2">
-<li><a href="#an-wen-richtet-sich">1.1. An wen richtet sich dieses Dokument?</a></li>
-<li><a href="#hinweise">1.2. Hinweise</a></li>
-</ul>
-</li>
-<li><a href="#_spiel_betreten">2. Spiel betreten</a>
-<ul class="sectlevel2">
-<li><a href="#ohne-reservierung">2.1. Ohne Reservierung</a></li>
-<li><a href="#mit-reservierungscode">2.2. Mit Reservierungscode</a></li>
-</ul>
-</li>
-<li><a href="#_züge_senden">3. Züge senden</a>
-<ul class="sectlevel2">
-<li><a href="#der-move">3.1. Der Move</a></li>
-<li><a href="#zug">3.2. ZUG</a></li>
-<li><a href="#action">3.3. ACTION</a></li>
-<li><a href="#debughints">3.4. Debughints</a></li>
-</ul>
-</li>
-<li><a href="#_spielstatus">4. Spielstatus</a>
-<ul class="sectlevel2">
-<li><a href="#memento">4.1. memento</a></li>
-<li><a href="#status">4.2. Status</a></li>
-<li><a href="#spieler">4.3. Spieler</a></li>
-<li><a href="#spielbrett">4.4. Spielbrett</a></li>
-<li><a href="#spielfeld">4.5. Spielfeld</a></li>
-<li><a href="#letzter-zug">4.6. Letzter Zug</a></li>
-</ul>
-</li>
-<li><a href="#zug-anforderung">5. Zug-Anforderung</a></li>
-<li><a href="#_fehler">6. Fehler</a></li>
-<li><a href="#_spiel_verlassen">7. Spiel verlassen</a></li>
-<li><a href="#spielende">8. Spielergebnis</a></li>
-<li><a href="#_spielverlauf">9. Spielverlauf</a>
-<ul class="sectlevel2">
-<li><a href="#_variante_1_adminclient_a_href_mit_reservierungscode_mit_reservierungscode_a">9.1. Variante 1 (AdminClient <a href="#mit-reservierungscode">Mit Reservierungscode</a>)</a></li>
-<li><a href="#_variante_1_adminclient_a_href_mit_reservierungscode_mit_reservierungscode_a_2">9.2. Variante 1 (AdminClient <a href="#mit-reservierungscode">Mit Reservierungscode</a>)</a></li>
-<li><a href="#_weiterer_spielverlauf">9.3. Weiterer Spielverlauf</a></li>
-</ul>
-</li>
+<li><a href="#_einleitung">2.1. Einleitung</a></li>
+<li><a href="#_spiel_betreten">2.2. Spiel betreten</a></li>
+<li><a href="#_züge_senden">2.3. Züge senden</a></li>
+<li><a href="#_spielstatus">2.4. Spielstatus</a></li>
+<li><a href="#zug-anforderung">2.5. Zug-Anforderung</a></li>
+<li><a href="#_fehler">2.6. Fehler</a></li>
+<li><a href="#_spiel_verlassen">2.7. Spiel verlassen</a></li>
+<li><a href="#spielende">2.8. Spielergebnis</a></li>
+<li><a href="#_spielverlauf">2.9. Spielverlauf</a></li>
 </ul>
 </li>
 </ul>
@@ -592,12 +540,17 @@ mit Ausnahme der Salatfelder werden zufällig permutiert.
 </div>
 </div>
 </div>
-<h1 id="_modifizierte_spielregeln_hase_und_igel_software_challenge_2018" class="sect0">Modifizierte Spielregeln Hase und Igel Software Challenge 2018</h1>
+<div class="sect1">
+<h2 id="_modifizierte_spielregeln_hase_und_igel_software_challenge_2018">1. Modifizierte Spielregeln Hase und Igel Software Challenge 2018</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Sören Domrös &lt;<a href="mailto:stu114053@mail.uni-kiel.de">stu114053@mail.uni-kiel.de</a>&gt;</p>
 </div>
 <div class="paragraph">
 <p>Ziel dieser Dokumentation ist es, die Spielregeln der Softwarechallenge festzuhalten.</p>
+</div>
+<div class="paragraph">
+<p><a href="regeln.pdf">PDF-Version dieses Dokumentes</a></p>
 </div>
 <div class="paragraph">
 <p>Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
@@ -611,9 +564,8 @@ welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 <a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
 </div>
-<div class="sect1">
-<h2 id="_spielbeginn">1. Spielbeginn</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_spielbeginn">1.1. Spielbeginn</h3>
 <div class="paragraph">
 <p>Jeder Spieler erhält zu Beginn 68 Karotten und 5 Salate als Wegzehrung sowie je einen Karten
 „Rücke eine Position vor“, „Falle eine Position zurück“, „Friss sofort einen Salat“, „Karotten nehmen oder abgeben“. Mit den Karotten bezahlt der Spieler das Vorrücken. Die Anzahl der
@@ -629,145 +581,142 @@ Rennkarte zu entnehmen.</p>
 <p>Das Spielfeld besteht aus 65 Feldern. Ziel des Spiels ist es das Zielfeld (Feld 65) mit weniger als zehn Karotten und keinem Salat zu erreichen.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_felder">2. Felder</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_felder">1.2. Felder</h3>
 <div class="paragraph">
 <p>Es gibt acht verschiedene Spielfelder:</p>
 </div>
-<div class="sect2">
-<h3 id="_startfeld">2.1. Startfeld</h3>
+<div class="sect3">
+<h4 id="_startfeld">1.2.1. Startfeld</h4>
 <div class="paragraph">
 <p>Das Startfeld darf nur verlassen werden. Es ist nicht erlaubt das Startfeld erneut zu betreten, sollte es einmal verlassen werden. Auf ihm starten beide Spieler</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_karottenfeld">2.2. Karottenfeld</h3>
+<div class="sect3">
+<h4 id="_karottenfeld">1.2.2. Karottenfeld</h4>
 <div class="paragraph">
 <p>Ein Karottenfeld darf durch jede Bewegungsaktion (Vorwärtszug, Karten) betreten werden. Nur auf ihm dürfen darf ein Karotten tauschen Zug stattfinden (die Karotten tauschen Karte darf hier nicht benutzt werden).</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_hasenfeld">2.3. Hasenfeld</h3>
+<div class="sect3">
+<h4 id="_hasenfeld">1.2.3. Hasenfeld</h4>
 <div class="paragraph">
-<p>Darf nur betreten werden, wenn eine Hasenkarte gespielt werden kann. Sollte sich ein Spieler am Ende seines Zuges auf einem Hasenfeld befinden, muss dieses verlassen werden (es ist erlaubt das Hasenfeld zu verlassen und dann durch nutzen von Karten wieder zu betreten).</p>
+<p>Darf nur betreten werden, wenn eine Karte gespielt werden kann. Sollte sich ein Spieler am Ende seines Zuges auf einem Hasenfeld befinden, muss dieses im nächsten Zug (wenn möglich) verlassen werden (es ist erlaubt das Hasenfeld zu verlassen und dann durch nutzen von Karten wieder zu betreten).</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_salatfeld">2.4. Salatfeld</h3>
+<div class="sect3">
+<h4 id="_salatfeld">1.2.4. Salatfeld</h4>
 <div class="paragraph">
-<p>Darf nur betreten werden, der Spieler mindestens einen Salat besitzt. Nur auf einem Salatfeld darf ein Salat gefressen werden (außer natürlich die Karte Salat fressen). Muss verlassen werden (wenn möglich) sobald ein Salat gegessen wurde (es ist innerhalb des Spiels trotzdem durch Rückzüge oder Karten möglich auf dem selben Salatfeld mehrere Salate zu essen).</p>
+<p>Darf nur betreten werden, der Spieler mindestens einen Salat besitzt. In dem Zug nach dem Betreten muss ein Salat gefressen werden. Nur auf einem Salatfeld darf ein Salat gefressen werden (außer natürlich durch die Karte Salat fressen). Das Salatfeld muss verlassen werden (wenn möglich) sobald ein Salat gegessen wurde (es ist innerhalb des Spiels trotzdem durch Rückzüge oder Karten möglich auf dem selben Salatfeld mehrere Salate zu essen).</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_igelfeld">2.5. Igelfeld</h3>
+<div class="sect3">
+<h4 id="_igelfeld">1.2.5. Igelfeld</h4>
 <div class="paragraph">
 <p>Darf nur durch einen Rückzug betreten werden. Muss (wenn möglich) im nächsten Zug wieder verlassen werden.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_position_1_feld">2.6. Position-1 Feld</h3>
+<div class="sect3">
+<h4 id="_position_1_feld">1.2.6. Position-1 Feld</h4>
 <div class="paragraph">
 <p>Das Position 1 Feld darf uneingeschränkt betreten werden. Sollte sich ein Spieler am Anfang seines Zuges auf diesem Feld befinden und an erster Stelle stehen, so erhält er zehn Karotten.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_position_2_feld">2.7. Position-2 Feld</h3>
+<div class="sect3">
+<h4 id="_position_2_feld">1.2.7. Position-2 Feld</h4>
 <div class="paragraph">
 <p>Das Position 2 Feld darf uneingeschränkt betreten werden. Sollte sich ein Spieler am Anfang seines Zuges auf diesem Feld befinden und an zweiter Stelle stehen, so erhält er 30 Karotten.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_zielfeld">2.8. Zielfeld</h3>
+<div class="sect3">
+<h4 id="_zielfeld">1.2.8. Zielfeld</h4>
 <div class="paragraph">
 <p>Das Zielfeld darf nur betreten werden, wenn der Spieler höchstens zehn Karotten und keine Salate besitzt.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_zugmöglichkeiten">3. Zugmöglichkeiten</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_zugmöglichkeiten">1.3. Zugmöglichkeiten</h3>
 <div class="paragraph">
 <p>Ein Spieler kann folgende Züge machen:</p>
 </div>
-<div class="sect2">
-<h3 id="_vorwärtszug">3.1. Vorwärtszug</h3>
+<div class="sect3">
+<h4 id="_vorwärtszug">1.3.1. Vorwärtszug</h4>
 <div class="paragraph">
 <p>Durch einen Vorwärtszug bewegt sich der Spieler um die entsprechende Zahl von Feldern nach vorne (mindestens 1). Dabei werden Karotten entsprechend der Rennkarte verbraucht.
 Wenn ein Spieler sich auf dem Startfeld befindet muss ein Vorwärtszug gemacht werden.
-Wenn ein Spieler sich auf einem Startfeld befindet und den letzten Zug einen Salat gefressen hat, muss ein Bewegungszug gemacht werden (Vorwärtszug oder Rückwärtszug).
+Wenn ein Spieler sich auf einem Startfeld befindet oder die letzte Aktion, die keine Aussetzaktion war, Salat fressen war, muss ein Bewegungszug gemacht werden (Vorwärtszug oder Rückwärtszug).
 Ein Spieler darf nicht auf ein Feld ziehen, dass bereits durch den Gegner besetzt ist, außer es handelt sich um das Zielfeld.
 Durch eine Vorwärtszug dürfen alle Felder außer das Igelfeld direkt betreten werden.
 Es ist nicht erlaubt das Zielfeld zu betreten, wenn die Siegbedingungen (höchstens 10 Karotten und 0 Salate) nicht erfüllt sind.
-Wenn durch einen Vorwärtszug ein Hasenfeld betreten wird, muss danach eine Karte ausgespielt werden. Sollte durch einen Vorwärtszug kein Hasenfeld betreten werden endet der Zug.</p>
+Wenn durch einen Vorwärtszug ein Salatfeld betreten wird, muss im nächsten Zug eine Salat gefressen werden (sollte kein Salat vorhanden sein ist das Betreten nicht erlaubt).
+Wenn durch einen Vorwärtszug ein Hasenfeld betreten wird, muss danach eine Karte ausgespielt werden (wenn keine spielbare Karte vorhanden ist das Betreten nicht erlaubt). Sollte durch einen Vorwärtszug kein Hasenfeld betreten werden endet der Zug.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_rückwärtszug">3.2. Rückwärtszug</h3>
+<div class="sect3">
+<h4 id="_rückwärtszug">1.3.2. Rückwärtszug</h4>
 <div class="paragraph">
 <p>Durch einen Rückwärtszug zieht der Spieler zu dem nächsten Igelfeld mit kleinerem Index, sollte dies nicht besetzt sein.
 Ist das vorherige Igelfeld besetzt, darf kein Rückzug gemacht werden.
 Durch einen Rückzug werden 10 mal zurückgezogene Felder viele Karotten aufgenommen. Nach einem Rückwärtszug endet der Zug.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_karte_ausspielen">3.3. Karte ausspielen</h3>
+<div class="sect3">
+<h4 id="_karte_ausspielen">1.3.3. Karte ausspielen</h4>
 <div class="paragraph">
 <p>Eine Karte muss ausgespielt werden, wenn ein Hasenfeld neu betreten wird und darf auch nur auf einem Hasenfeld ausgespielt werden. Das betreten eines Hasenfeldes ist entweder durch eine Vorwärtszug oder das Ausspielen einer Karte möglich.
-Sollte es nicht möglich sein eine Karte auszuspielen ist das Betreten eines Hasenfeldes nicht erlaubt. Sollte durch das Ausspielen einer Karte kein Hasenfeld neu betreten werden Ende der Zug.
+Sollte es nicht möglich sein eine Karte aus zuspielen ist das Betreten eines Hasenfeldes nicht erlaubt. Sollte durch das Ausspielen einer Karte kein Hasenfeld neu betreten werden Ende der Zug.
 Ein Spieler hat zu Beginn folgende Karten:</p>
 </div>
-<div class="sect3">
-<h4 id="_friss_sofort_einen_salat">3.3.1. Friss sofort einen Salat</h4>
+<div class="sect4">
+<h5 id="_friss_sofort_einen_salat">Friss sofort einen Salat</h5>
 <div class="paragraph">
 <p>Es wird ein Salat vom Spieler entfernt, je nach Position des Spielers (Erster/Zweiter) erhält der Spieler Karotten (10/30).
 Diese Karte darf nur eingesetzt werden, wenn der Spieler mehr als einen Salat hat. Im dem nächsten Zug muss das betretene Hasenfeld verlassen werden.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_karotten_nehmen_oder_abgeben">3.3.2. Karotten nehmen oder abgeben</h4>
+<div class="sect4">
+<h5 id="_karotten_nehmen_oder_abgeben">Karotten nehmen oder abgeben</h5>
 <div class="paragraph">
 <p>Der Spieler darf 20 Karotten abgeben oder aufnehmen oder nichts tun. Es darf der Spieler nicht mehr Karotten abgeben als er besitzt. Im dem nächsten Zug muss das betretene Hasenfeld verlassen werden.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_rücke_eine_position_vor">3.3.3. Rücke eine Position vor</h4>
+<div class="sect4">
+<h5 id="_rücke_eine_position_vor">Rücke eine Position vor</h5>
 <div class="paragraph">
 <p>Kann nur ausgespielt werden, wenn der Spieler sich an zweiter Position befindet. Der Spieler rückt auf das Feld vor dem gegnerischen Spieler vor. Dies ist nicht erlaubt, sollte es sich bei dem so betretenen Feld um ein Igelfeld handeln oder sollte der gegnerische Spieler sich im Ziel befinden. Es ist außerdem nicht erlaubt, so ein Salatfeld zu betreten ohne mindestens einen Salat zu besitzen. Es kann so das Ziel erreicht werden, wenn die Siegbedingungen erfüllt sind.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_falle_eine_position_zurück">3.3.4. Falle eine Position zurück</h4>
+<div class="sect4">
+<h5 id="_falle_eine_position_zurück">Falle eine Position zurück</h5>
 <div class="paragraph">
 <p>Kann nur ausgespielt werden, wenn der Spieler sich an erster Position befindet. Der Spieler fällt auf das Feld hinter dem gegnerischen Spieler zurück. Dies ist nicht erlaubt, sollte es sich bei dem so betretenen Feld um ein Igelfeld handeln oder sollte der gegnerische Spieler sich auf dem Startfeld befinden. Es ist außerdem nicht erlaubt, so ein Salatfeld zu betreten ohne mindestens einen Salat zu besitzen.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_karotten_tauschen">3.4. Karotten tauschen</h3>
+<div class="sect3">
+<h4 id="_karotten_tauschen">1.3.4. Karotten tauschen</h4>
 <div class="paragraph">
 <p>Kann nur ausgeführt werden, wenn sich der Spieler auf einem Karottenfeld befindet. Es können entweder zehn Karotten abgegeben werden (dabei muss der Spieler mindestens zehn Karotten besitzen)
 oder 10 Karotten aufgenommen werden. Nach dieser Aktion endet der Zug.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_salat_fressen">3.5. Salat fressen</h3>
+<div class="sect3">
+<h4 id="_salat_fressen">1.3.5. Salat fressen</h4>
 <div class="paragraph">
-<p>Wenn sich der Spieler auf einem Salatfeld befindet und er in seiner letzten Aktion, die kein Aussetzzug war, keinen Salat gefressen hat, darf er einen Salat fressen.
+<p>Wenn sich der Spieler auf einem Salatfeld befindet und er in seiner letzten Aktion, die kein Aussetzzug war, keinen Salat gefressen hat, muss er einen Salat fressen.
 Der Spieler verliert einen Salat (dies ist immer möglich, da ein Spieler nur mit mindestens einem Salat ein Salatfeld betreten kann) und erhält je nach Position (Erster/Zweiter) Karotten (10/30).
 Nach dieser Aktion endet der Zug.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_aussetzen">3.6. Aussetzen</h3>
+<div class="sect3">
+<h4 id="_aussetzen">1.3.6. Aussetzen</h4>
 <div class="paragraph">
 <p>Es Spieler darf nur Aussetzen, sollte sonst keine anderer Zug möglich sein. Nach dieser Aktion endet der Zug.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_zusammenfassung">3.7. Zusammenfassung</h3>
+<div class="sect3">
+<h4 id="_zusammenfassung">1.3.7. Zusammenfassung</h4>
 <div class="paragraph">
 <p>Enthält ein Zug einen der folgenden Aktionen kann er nur aus einer Aktion bestehen: Rückwärtszug, Karotten tauschen, Salat fressen oder Aussetzen. Eine Karte kann nur nach einem Vorwärtszug oder einer
 anderen Karte gespielt werden (wenn durch die vorherige Aktion ein Hasenfeld betreten wird). Ein Vorwärtszug der auf kein Hasenfeld führt kann ebenfalls nur die einzige Aktion eines Zuges sein. Die einzige Möglichkeit mehr als eine Aktion pro Zug zu machen ist durch Karten möglich. Dies kann folgendermaßen passieren:<br>
@@ -776,19 +725,15 @@ Dadurch steht er auf dem Hasenfeld direkt hinter dem Gegner und muss erneut eine
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_spielende">4. Spielende</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_spielende">1.4. Spielende</h3>
 <div class="paragraph">
 <p>Das Spiel endet, sobald das Rundenlimit von 30 Runden erreicht ist oder sich mindestens einer Spieler am Ende einer Runde im Ziel befindet.
 Sollte der erste Spieler im Ziel sein, hat der zweite Spieler einen Nachzug. Der erste Spieler bekommt keinen Nachzug. Es gewinnt der Spieler, der am nächsten am Ziel befindet. Sollte beide Spieler sich im Ziel befinden, gewinnt der Spieler mit weniger Karotten. Sollten beide Spieler gleich viele Karotten besitzen, gewinnt der Startspieler, da er zuerst das Ziel erreicht hat.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_beispiel">5. Beispiel</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_beispiel">1.5. Beispiel</h3>
 <div class="paragraph">
 <p>Jasper steht unmittelbar vor einem Hasenfeld (Feld 34). Johannes steht weit hinter Jasper (Feld
 22) und hat nur noch den Hasenjoker „Rücke eine Position vor“. Dann darf Johannes weder auf ein
@@ -804,12 +749,18 @@ weil er dafür dann keinen Hasenjoker mehr hat.</p>
 </div>
 </div>
 </div>
-<h1 id="_software_challenge_xml_dokumentation_hase_und_igel" class="sect0">Software Challenge XML-Dokumentation Hase und Igel</h1>
+</div>
+<div class="sect1">
+<h2 id="_software_challenge_xml_dokumentation_hase_und_igel">2. Software Challenge XML-Dokumentation Hase und Igel</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Sören Domrös &lt;<a href="mailto:stu114053@mail.uni-kiel.de">stu114053@mail.uni-kiel.de</a>&gt;</p>
 </div>
 <div class="paragraph">
 <p>Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.</p>
+</div>
+<div class="paragraph">
+<p><a href="xml-dokumentation.pdf">PDF-Version dieses Dokumentes</a></p>
 </div>
 <div class="paragraph">
 <p>Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
@@ -823,9 +774,8 @@ welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 <a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
 </div>
-<div class="sect1">
-<h2 id="_einleitung">1. Einleitung</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_einleitung">2.1. Einleitung</h3>
 <div class="paragraph">
 <p>Wie in den letzten Jahren wird zur Client-Server Kommunikation ein XML-Protokoll
 genutzt.
@@ -834,8 +784,8 @@ komplett eigener Client geschrieben werden kann. Es wird hier nicht die
 vollständige Kommunikation dokumentiert bzw. definiert, dennoch alles, womit ein
 Client umgehen können muss, um spielfähig zu sein.</p>
 </div>
-<div class="sect2">
-<h3 id="an-wen-richtet-sich">1.1. An wen richtet sich dieses Dokument?</h3>
+<div class="sect3">
+<h4 id="an-wen-richtet-sich">2.1.1. An wen richtet sich dieses Dokument?</h4>
 <div class="paragraph">
 <p>Die Kommunikation mit dem Spielserver ist für diejenigen, die aufbauend auf dem
 Simpleclient programmieren, unwichtig. Dort steht bereits ein funktionierender
@@ -844,8 +794,8 @@ komplett eigenen Client entwerfen will, beispielsweise um die Programmiersprache
 frei wählen zu können, benötigt die Definitionen.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="hinweise">1.2. Hinweise</h3>
+<div class="sect3">
+<h4 id="hinweise">2.1.2. Hinweise</h4>
 <div class="paragraph">
 <p>Falls Sie beabsichtigen sollten, diese Kommunikationsschnittstelle zu
 realisieren, sei darauf hingewiesen, dass es im Verlauf des Wettbewerbes möglich
@@ -860,10 +810,8 @@ einem newline abgeschlossen.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_spiel_betreten">2. Spiel betreten</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_spiel_betreten">2.2. Spiel betreten</h3>
 <div class="paragraph">
 <p>Wenn begonnen wird mit dem Server zu kommunizieren, muss zuallererst</p>
 </div>
@@ -875,8 +823,8 @@ einem newline abgeschlossen.</p>
 <div class="paragraph">
 <p>gesendet werden, um die Kommunikation zu beginnen.</p>
 </div>
-<div class="sect2">
-<h3 id="ohne-reservierung">2.1. Ohne Reservierung</h3>
+<div class="sect3">
+<h4 id="ohne-reservierung">2.2.1. Ohne Reservierung</h4>
 <div class="paragraph">
 <p>Betritt ein beliebiges offenes Spiel:</p>
 </div>
@@ -906,13 +854,13 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="mit-reservierungscode">2.2. Mit Reservierungscode</h3>
+<div class="sect3">
+<h4 id="mit-reservierungscode">2.2.2. Mit Reservierungscode</h4>
 <div class="paragraph">
 <p>Ist ein Reservierungscode gegeben, so kann man den durch den Code gegebenen Platz betreten.</p>
 </div>
-<div class="sect3">
-<h4 id="join-reserved">2.2.1. Join mit RC</h4>
+<div class="sect4">
+<h5 id="join-reserved">Join mit RC</h5>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -930,8 +878,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="welcome-message">2.2.2. Welcome Message</h4>
+<div class="sect4">
+<h5 id="welcome-message">Welcome Message</h5>
 <div class="paragraph">
 <p>Der Server antwortet darauf nur, wenn der zweite Client ebenfalls verbunden ist:</p>
 </div>
@@ -968,17 +916,15 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_züge_senden">3. Züge senden</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="der-move">3.1. Der Move</h3>
+<h3 id="_züge_senden">2.3. Züge senden</h3>
+<div class="sect3">
+<h4 id="der-move">2.3.1. Der Move</h4>
 <div class="paragraph">
 <p>Der Move ist die Antwort auf den MoveRequest des Servers.</p>
 </div>
-<div class="sect3">
-<h4 id="move-request">3.1.1. MoveRequest</h4>
+<div class="sect4">
+<h5 id="move-request">MoveRequest</h5>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -998,8 +944,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="senden">3.1.2. Senden</h4>
+<div class="sect4">
+<h5 id="senden">Senden</h5>
 <div class="paragraph">
 <p>Der Move ist der allgemeine Zug, der in verschiedenen Varianten gesendet werden kann.</p>
 </div>
@@ -1026,8 +972,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="zug">3.2. ZUG</h3>
+<div class="sect3">
+<h4 id="zug">2.3.2. ZUG</h4>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -1049,8 +995,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="action">3.3. ACTION</h3>
+<div class="sect3">
+<h4 id="action">2.3.3. ACTION</h4>
 <div class="paragraph">
 <p>Mögliche Aktionen:</p>
 </div>
@@ -1085,8 +1031,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="debughints">3.4. Debughints</h3>
+<div class="sect3">
+<h4 id="debughints">2.3.4. Debughints</h4>
 <div class="paragraph">
 <p>Zügen können Debug-Informationen beigefügt werden:</p>
 </div>
@@ -1112,15 +1058,13 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_spielstatus">4. Spielstatus</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_spielstatus">2.4. Spielstatus</h3>
 <div class="paragraph">
 <p>Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die Clients gesendet wird. Das Spielstatus-Tag ist dabei noch in einem <em>data</em>-Tag der Klasse <em>memento</em> gewrappt:</p>
 </div>
-<div class="sect2">
-<h3 id="memento">4.1. memento</h3>
+<div class="sect3">
+<h4 id="memento">2.4.1. memento</h4>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -1145,8 +1089,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="status">4.2. Status</h3>
+<div class="sect3">
+<h4 id="status">2.4.2. Status</h4>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -1191,8 +1135,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="spieler">4.3. Spieler</h3>
+<div class="sect3">
+<h4 id="spieler">2.4.3. Spieler</h4>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -1231,8 +1175,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="spielbrett">4.4. Spielbrett</h3>
+<div class="sect3">
+<h4 id="spielbrett">2.4.4. Spielbrett</h4>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -1256,8 +1200,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="spielfeld">4.5. Spielfeld</h3>
+<div class="sect3">
+<h4 id="spielfeld">2.4.5. Spielfeld</h4>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -1278,8 +1222,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="letzter-zug">4.6. Letzter Zug</h3>
+<div class="sect3">
+<h4 id="letzter-zug">2.4.6. Letzter Zug</h4>
 <div class="paragraph">
 <p>Der letzte Zug ist ein Move (siehe hierzu <a href="#zug">ZUG</a>).</p>
 </div>
@@ -1303,10 +1247,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="zug-anforderung">5. Zug-Anforderung</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="zug-anforderung">2.5. Zug-Anforderung</h3>
 <div class="paragraph">
 <p>Eine einfache Nachricht fordert zum Zug auf:</p>
 </div>
@@ -1318,10 +1260,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_fehler">6. Fehler</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_fehler">2.6. Fehler</h3>
 <div class="paragraph">
 <p>Ein &#8220;spielfähiger&#8221; Client muss nicht mit Fehlern umgehen können.
 Fehlerhafte Züge beispielsweise resultieren in einem vorzeitigen Ende des
@@ -1350,10 +1290,8 @@ Spieles, das im nächsten gesendeten Gamestate erkannt werden kann (siehe <a hre
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_spiel_verlassen">7. Spiel verlassen</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_spiel_verlassen">2.7. Spiel verlassen</h3>
 <div class="paragraph">
 <p>Wenn ein Client den Raum verlässt, bekommen die anderen Clients eine entsprechende Meldung vom Server.</p>
 </div>
@@ -1374,10 +1312,8 @@ Spieles, das im nächsten gesendeten Gamestate erkannt werden kann (siehe <a hre
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="spielende">8. Spielergebnis</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="spielende">2.8. Spielergebnis</h3>
 <div class="paragraph">
 <p>Zum Spielende enthält der Spieler das Ergebnis:</p>
 </div>
@@ -1465,18 +1401,16 @@ Spieles, das im nächsten gesendeten Gamestate erkannt werden kann (siehe <a hre
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_spielverlauf">9. Spielverlauf</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_spielverlauf">2.9. Spielverlauf</h3>
 <div class="paragraph">
 <p>Der Server startet (StandardIp: localhost 13050).</p>
 </div>
 <div class="paragraph">
 <p>Nun gibt es zwei Varianten ein Spiel zu starten, eine durch einen Administratorclient die andere durch hinzufügen der Spieler zu einen Spieltyp:</p>
 </div>
-<div class="sect2">
-<h3 id="_variante_1_adminclient_a_href_mit_reservierungscode_mit_reservierungscode_a">9.1. Variante 1 (AdminClient <a href="#mit-reservierungscode">Mit Reservierungscode</a>)</h3>
+<div class="sect3">
+<h4 id="_variante_1_adminclient_a_href_mit_reservierungscode_mit_reservierungscode_a">2.9.1. Variante 1 (AdminClient <a href="#mit-reservierungscode">Mit Reservierungscode</a>)</h4>
 <div class="paragraph">
 <p>Ein Client registriert sich als Administrator mit dem in server.properties festgelegten Passwort p:</p>
 </div>
@@ -1533,8 +1467,8 @@ Dadurch wird das derzeitge Spielfeld (<a href="#memento">memento</a>) ebenfalls 
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_variante_1_adminclient_a_href_mit_reservierungscode_mit_reservierungscode_a_2">9.2. Variante 1 (AdminClient <a href="#mit-reservierungscode">Mit Reservierungscode</a>)</h3>
+<div class="sect3">
+<h4 id="_variante_1_adminclient_a_href_mit_reservierungscode_mit_reservierungscode_a_2">2.9.2. Variante 1 (AdminClient <a href="#mit-reservierungscode">Mit Reservierungscode</a>)</h4>
 <div class="paragraph">
 <p>Die Clients wurden auf dem Serverport (Standard: localhost 13050) gestartet.</p>
 </div>
@@ -1557,8 +1491,8 @@ Dadurch wird das derzeitge Spielfeld (<a href="#memento">memento</a>) ebenfalls 
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_weiterer_spielverlauf">9.3. Weiterer Spielverlauf</h3>
+<div class="sect3">
+<h4 id="_weiterer_spielverlauf">2.9.3. Weiterer Spielverlauf</h4>
 <div class="paragraph">
 <p>Der Server antwortet jeweils mit der WelcomeMessage (<a href="#welcome-message">Welcome Message</a>) und dem ersten GameState (<a href="#memento">memento</a>) sobald beide Spieler verbunden sind.</p>
 </div>
@@ -1661,9 +1595,10 @@ Die letzte Nachricht des Servers endet mit:</p>
 </div>
 </div>
 </div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-08-03 12:59:28 CEST
+Last updated 2017-08-13 05:40:30 CEST
 </div>
 </div>
 </body>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.4">
+<meta name="generator" content="Asciidoctor 1.5.5">
 <meta name="author" content="Sören Domrös">
 <title>Modifizierte Spielregeln Hase und Igel Software Challenge 2018</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -18,7 +18,6 @@ audio:not([controls]){display:none;height:0}
 [hidden],template{display:none}
 script{display:none!important}
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
-body{margin:0}
 a{background:transparent}
 a:focus{outline:thin dotted}
 a:active,a:hover{outline:0}
@@ -53,7 +52,7 @@ textarea{overflow:auto;vertical-align:top}
 table{border-collapse:collapse;border-spacing:0}
 *,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
 html,body{font-size:100%}
-body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
 a:hover{cursor:pointer}
 img,object,embed{max-width:100%;height:auto}
 object,embed{height:100%}
@@ -65,7 +64,6 @@ img{-ms-interpolation-mode:bicubic}
 .text-center{text-align:center!important}
 .text-justify{text-align:justify!important}
 .hide{display:none}
-body{-webkit-font-smoothing:antialiased}
 img,object,svg{display:inline-block;vertical-align:middle}
 textarea{height:auto;min-height:50px}
 select{width:100%}
@@ -120,13 +118,16 @@ table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:
 table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
 table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
 table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
-body{tab-size:4}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
 h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
 .clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
 .clearfix:after,.float-group:after{clear:both}
-*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+*:not(pre)>code.nobreak{word-wrap:normal}
+*:not(pre)>code.nowrap{white-space:nowrap}
 pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
+em em{font-style:normal}
+strong strong{font-weight:400}
 .keyseq{color:rgba(51,51,51,.8)}
 kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
 .keyseq kbd:first-child{margin-left:0}
@@ -417,10 +418,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .hide-for-print{display:none!important}
 .show-for-print{display:inherit!important}}
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <style>
 .listingblock .pygments .hll { background-color: #ffffcc }
-.listingblock .pygments  { background: #f8f8f8; }
+.listingblock .pygments, .listingblock .pygments code { background: #f8f8f8; }
 .listingblock .pygments .tok-c { color: #408080; font-style: italic } /* Comment */
 .listingblock .pygments .tok-err { border: 1px solid #FF0000 } /* Error */
 .listingblock .pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
@@ -536,6 +537,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Ziel dieser Dokumentation ist es, die Spielregeln der Softwarechallenge festzuhalten.</p>
 </div>
 <div class="paragraph">
+<p><a href="regeln.pdf">PDF-Version dieses Dokumentes</a></p>
+</div>
+<div class="paragraph">
 <p>Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
 Dokumentation kann
 <a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs">direkt auf
@@ -589,13 +593,13 @@ Rennkarte zu entnehmen.</p>
 <div class="sect2">
 <h3 id="_hasenfeld">2.3. Hasenfeld</h3>
 <div class="paragraph">
-<p>Darf nur betreten werden, wenn eine Hasenkarte gespielt werden kann. Sollte sich ein Spieler am Ende seines Zuges auf einem Hasenfeld befinden, muss dieses verlassen werden (es ist erlaubt das Hasenfeld zu verlassen und dann durch nutzen von Karten wieder zu betreten).</p>
+<p>Darf nur betreten werden, wenn eine Karte gespielt werden kann. Sollte sich ein Spieler am Ende seines Zuges auf einem Hasenfeld befinden, muss dieses im nächsten Zug (wenn möglich) verlassen werden (es ist erlaubt das Hasenfeld zu verlassen und dann durch nutzen von Karten wieder zu betreten).</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_salatfeld">2.4. Salatfeld</h3>
 <div class="paragraph">
-<p>Darf nur betreten werden, der Spieler mindestens einen Salat besitzt. Nur auf einem Salatfeld darf ein Salat gefressen werden (außer natürlich die Karte Salat fressen). Muss verlassen werden (wenn möglich) sobald ein Salat gegessen wurde (es ist innerhalb des Spiels trotzdem durch Rückzüge oder Karten möglich auf dem selben Salatfeld mehrere Salate zu essen).</p>
+<p>Darf nur betreten werden, der Spieler mindestens einen Salat besitzt. In dem Zug nach dem Betreten muss ein Salat gefressen werden. Nur auf einem Salatfeld darf ein Salat gefressen werden (außer natürlich durch die Karte Salat fressen). Das Salatfeld muss verlassen werden (wenn möglich) sobald ein Salat gegessen wurde (es ist innerhalb des Spiels trotzdem durch Rückzüge oder Karten möglich auf dem selben Salatfeld mehrere Salate zu essen).</p>
 </div>
 </div>
 <div class="sect2">
@@ -635,11 +639,12 @@ Rennkarte zu entnehmen.</p>
 <div class="paragraph">
 <p>Durch einen Vorwärtszug bewegt sich der Spieler um die entsprechende Zahl von Feldern nach vorne (mindestens 1). Dabei werden Karotten entsprechend der Rennkarte verbraucht.
 Wenn ein Spieler sich auf dem Startfeld befindet muss ein Vorwärtszug gemacht werden.
-Wenn ein Spieler sich auf einem Startfeld befindet und den letzten Zug einen Salat gefressen hat, muss ein Bewegungszug gemacht werden (Vorwärtszug oder Rückwärtszug).
+Wenn ein Spieler sich auf einem Startfeld befindet oder die letzte Aktion, die keine Aussetzaktion war, Salat fressen war, muss ein Bewegungszug gemacht werden (Vorwärtszug oder Rückwärtszug).
 Ein Spieler darf nicht auf ein Feld ziehen, dass bereits durch den Gegner besetzt ist, außer es handelt sich um das Zielfeld.
 Durch eine Vorwärtszug dürfen alle Felder außer das Igelfeld direkt betreten werden.
 Es ist nicht erlaubt das Zielfeld zu betreten, wenn die Siegbedingungen (höchstens 10 Karotten und 0 Salate) nicht erfüllt sind.
-Wenn durch einen Vorwärtszug ein Hasenfeld betreten wird, muss danach eine Karte ausgespielt werden. Sollte durch einen Vorwärtszug kein Hasenfeld betreten werden endet der Zug.</p>
+Wenn durch einen Vorwärtszug ein Salatfeld betreten wird, muss im nächsten Zug eine Salat gefressen werden (sollte kein Salat vorhanden sein ist das Betreten nicht erlaubt).
+Wenn durch einen Vorwärtszug ein Hasenfeld betreten wird, muss danach eine Karte ausgespielt werden (wenn keine spielbare Karte vorhanden ist das Betreten nicht erlaubt). Sollte durch einen Vorwärtszug kein Hasenfeld betreten werden endet der Zug.</p>
 </div>
 </div>
 <div class="sect2">
@@ -654,7 +659,7 @@ Durch einen Rückzug werden 10 mal zurückgezogene Felder viele Karotten aufgeno
 <h3 id="_karte_ausspielen">3.3. Karte ausspielen</h3>
 <div class="paragraph">
 <p>Eine Karte muss ausgespielt werden, wenn ein Hasenfeld neu betreten wird und darf auch nur auf einem Hasenfeld ausgespielt werden. Das betreten eines Hasenfeldes ist entweder durch eine Vorwärtszug oder das Ausspielen einer Karte möglich.
-Sollte es nicht möglich sein eine Karte auszuspielen ist das Betreten eines Hasenfeldes nicht erlaubt. Sollte durch das Ausspielen einer Karte kein Hasenfeld neu betreten werden Ende der Zug.
+Sollte es nicht möglich sein eine Karte aus zuspielen ist das Betreten eines Hasenfeldes nicht erlaubt. Sollte durch das Ausspielen einer Karte kein Hasenfeld neu betreten werden Ende der Zug.
 Ein Spieler hat zu Beginn folgende Karten:</p>
 </div>
 <div class="sect3">
@@ -693,7 +698,7 @@ oder 10 Karotten aufgenommen werden. Nach dieser Aktion endet der Zug.</p>
 <div class="sect2">
 <h3 id="_salat_fressen">3.5. Salat fressen</h3>
 <div class="paragraph">
-<p>Wenn sich der Spieler auf einem Salatfeld befindet und er in seiner letzten Aktion, die kein Aussetzzug war, keinen Salat gefressen hat, darf er einen Salat fressen.
+<p>Wenn sich der Spieler auf einem Salatfeld befindet und er in seiner letzten Aktion, die kein Aussetzzug war, keinen Salat gefressen hat, muss er einen Salat fressen.
 Der Spieler verliert einen Salat (dies ist immer möglich, da ein Spieler nur mit mindestens einem Salat ein Salatfeld betreten kann) und erhält je nach Position (Erster/Zweiter) Karotten (10/30).
 Nach dieser Aktion endet der Zug.</p>
 </div>
@@ -745,7 +750,7 @@ weil er dafür dann keinen Hasenjoker mehr hat.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-08-03 12:59:59 CEST
+Last updated 2017-08-13 06:26:49 CEST
 </div>
 </div>
 </body>
