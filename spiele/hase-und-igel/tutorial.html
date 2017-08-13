@@ -542,9 +542,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_start_zum_schreiben_einer_ki">Start zum Schreiben einer KI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Simon Döring</p>
-</div>
-<div class="paragraph">
 <p>Am einfachsten ist es die KI auf Grundlage des SimpleClients zu schreiben:</p>
 </div>
 <div class="ulist">
@@ -568,15 +565,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onRequestAction</span><span class="tok-o">(){</span>
-	<span class="tok-kt">long</span> <span class="tok-n">startTime</span> <span class="tok-o">=</span> <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">nanoTime</span><span class="tok-o">();</span> <span class="tok-c1">//optional: Laufzeitmessung</span>
+  <span class="tok-c1">//optional: Laufzeitmessung</span>
+	<span class="tok-kt">long</span> <span class="tok-n">startTime</span> <span class="tok-o">=</span> <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">nanoTime</span><span class="tok-o">();</span>
 
 
 	<span class="tok-c1">//Quellcode der KI, welche eine Zug (move) erstellt</span>
 
 
-    <span class="tok-kt">long</span> <span class="tok-n">nowTime</span> <span class="tok-o">=</span> <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">nanoTime</span><span class="tok-o">();</span>
-    <span class="tok-n">sendAction</span><span class="tok-o">(</span><span class="tok-n">move</span><span class="tok-o">);</span><span class="tok-c1">//sende Move. Danach gibt es kein zurück mehr</span>
-    <span class="tok-n">log</span><span class="tok-o">.</span><span class="tok-na">warn</span><span class="tok-o">(</span><span class="tok-s">&quot;Time needed for turn: {}&quot;</span><span class="tok-o">,</span> <span class="tok-o">(</span><span class="tok-n">nowTime</span> <span class="tok-o">-</span> <span class="tok-n">startTime</span><span class="tok-o">)/</span><span class="tok-mi">1000000</span><span class="tok-o">);</span><span class="tok-c1">//optional: LOG-Eintrag mit Zeit</span>
+  <span class="tok-kt">long</span> <span class="tok-n">nowTime</span> <span class="tok-o">=</span> <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">nanoTime</span><span class="tok-o">();</span>
+
+  <span class="tok-c1">//sende Move. Danach gibt es kein zurück mehr:</span>
+  <span class="tok-n">sendAction</span><span class="tok-o">(</span><span class="tok-n">move</span><span class="tok-o">);</span>
+
+  <span class="tok-c1">//optional: LOG-Eintrag mit Zeit:</span>
+  <span class="tok-n">log</span><span class="tok-o">.</span><span class="tok-na">warn</span><span class="tok-o">(</span><span class="tok-s">&quot;Time needed for turn: {}&quot;</span><span class="tok-o">,</span> <span class="tok-o">(</span><span class="tok-n">nowTime</span> <span class="tok-o">-</span> <span class="tok-n">startTime</span><span class="tok-o">)/</span><span class="tok-mi">1000000</span><span class="tok-o">);</span>
 <span class="tok-o">}</span></code></pre>
 </div>
 </div>
@@ -600,9 +602,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java">	<span class="tok-kd">private</span> <span class="tok-n">Starter</span> <span class="tok-n">client</span><span class="tok-o">;</span> <span class="tok-c1">//Intern für die Server wichtig. Bitte nicht modifizieren</span>
-	<span class="tok-kd">private</span> <span class="tok-n">GameState</span> <span class="tok-n">gameState</span><span class="tok-o">;</span> <span class="tok-c1">//Gibt u.a Informationen über mögliche Züge und das Spielbrett an</span>
-	<span class="tok-kd">private</span> <span class="tok-n">Player</span> <span class="tok-n">currentPlayer</span><span class="tok-o">;</span><span class="tok-c1">//Informationen über den aktuellen Spieler, welchen man steuert.</span></code></pre>
+<pre class="pygments highlight"><code data-lang="java">  <span class="tok-c1">//Intern für die Server wichtig. Bitte nicht modifizieren</span>
+	<span class="tok-kd">private</span> <span class="tok-n">Starter</span> <span class="tok-n">client</span><span class="tok-o">;</span>
+  <span class="tok-c1">//Gibt u.a Informationen über mögliche Züge und das Spielbrett an</span>
+	<span class="tok-kd">private</span> <span class="tok-n">GameState</span> <span class="tok-n">gameState</span><span class="tok-o">;</span>
+  <span class="tok-c1">//Informationen über den aktuellen Spieler, welchen man steuert.</span>
+	<span class="tok-kd">private</span> <span class="tok-n">Player</span> <span class="tok-n">currentPlayer</span><span class="tok-o">;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -642,9 +647,6 @@ Die <strong>API-Dokumentation</strong> befindet sich im Ordner „doc“ im Verz
 <div class="sect1">
 <h2 id="_spielbrett_informationen">Spielbrett Informationen</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Simon Döring</p>
-</div>
 <div class="sect2">
 <h3 id="_die_klasse_fieldtype">Die Klasse „FieldType“</h3>
 <div class="paragraph">
@@ -836,9 +838,6 @@ Tipp: Suche in der API von GameState nach einer Funktion, welchen den anderen Sp
 <h2 id="_die_klasse_player">Die Klasse Player</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Simon Döring</p>
-</div>
-<div class="paragraph">
 <p>Die Klasse Player repräsentiert einen Spieler. Der eigene Spieler kann in der RandomLogic durch die Variable <strong>currentPlayer</strong> oder mithilfe der GameState Funktion <em>getCurrentPlayer()</em> abgefragt werden. Der gegnerische Spieler kann ebenfalls mithilfe einer Methode von GameState bestimmt werden (<em>gameState.getOtherPlayer()</em>).</p>
 </div>
 <div class="paragraph">
@@ -951,9 +950,6 @@ Tipp: Es gibt die Funktion getTypeAt der Klasse Board. Weiter Informationen sind
 <div class="sect1">
 <h2 id="_gamerulelogic_hilfreiche_hilfsfunktionen">GameRuleLogic: Hilfreiche Hilfsfunktionen</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Simon Döring</p>
-</div>
 <div class="paragraph">
 <p>Die Klasse GameRuleLogic hat viele Hilfsfunktionen, mit welchen man die Regeln des Spieles überprüfen kann. Hierbei sind alle Funktionen static. D.h., dass man sie ohne eine Instanz aufrufen kann.</p>
 </div>
@@ -1081,9 +1077,6 @@ Die komplette API-Dokumentation ist in doc/sc/plugin2018/util/GameRuleLogic.html
 <div class="paragraph">
 <p>Alle Funktionen von GameRuleLogic können wir nun, mithilfe der Variable otherGameState, auf den Gegner anwenden.</p>
 </div>
-<div class="paragraph">
-<p>&#8203;<br></p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_einführende_beispiele">Einführende Beispiele</h3>
@@ -1109,9 +1102,6 @@ Die komplette API-Dokumentation ist in doc/sc/plugin2018/util/GameRuleLogic.html
 	<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Unmöglich&quot;</span><span class="tok-o">);</span>
 <span class="tok-o">}</span></code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>&#8203;<br></p>
 </div>
 <div class="paragraph">
 <p>Eine weiter hilfreiche Funktion ist <em>isValidToAdvance</em>. Mit dieser Funktion wird überprüft, ob ein Vorwärtszug mit der übergeben Distanz überhaupt möglich ist:</p>
@@ -1196,7 +1186,7 @@ Die komplette API-Dokumentation ist in doc/sc/plugin2018/util/GameRuleLogic.html
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-08-13 06:27:07 CEST
+Last updated 2017-08-13 20:48:18 CEST
 </div>
 </div>
 </body>
