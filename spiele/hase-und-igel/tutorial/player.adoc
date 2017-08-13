@@ -1,9 +1,9 @@
 :imagesdir: ./../images
 :source-highlighter: pygments
 :icons: font
+:author: Simon Döring
 
 = Die Klasse Player
-Simon Döring
 
 Die Klasse Player repräsentiert einen Spieler. Der eigene Spieler kann in der RandomLogic durch die Variable *currentPlayer* oder mithilfe der GameState Funktion _getCurrentPlayer()_ abgefragt werden. Der gegnerische Spieler kann ebenfalls mithilfe einer Methode von GameState bestimmt werden (_gameState.getOtherPlayer()_).
 

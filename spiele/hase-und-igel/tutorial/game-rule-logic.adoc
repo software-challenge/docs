@@ -3,9 +3,9 @@
 :toc-title: Inhalt
 :source-highlighter: pygments
 :icons: font
+:author: Simon Döring
 
 = GameRuleLogic: Hilfreiche Hilfsfunktionen
-Simon Döring
 
 Die Klasse GameRuleLogic hat viele Hilfsfunktionen, mit welchen man die Regeln des Spieles überprüfen kann. Hierbei sind alle Funktionen static. D.h., dass man sie ohne eine Instanz aufrufen kann.
 
@@ -66,8 +66,6 @@ try {
 
 Alle Funktionen von GameRuleLogic können wir nun, mithilfe der Variable otherGameState, auf den Gegner anwenden.
 
-{zwsp} +
-
 == Einführende Beispiele
 
 Die meisten Funktionen dieser Klasse sind selbsterklärend. Dennoch werden einige der häufig verwendeten Funktionen mit kleinen Beispielen vorgestellt.
@@ -89,8 +87,6 @@ if(GameRuleLogic.isValidToEat(gameState) && (GameRuleLogic.isValidToFallBack(gam
 	System.out.println("Unmöglich");
 }
 ------
-
-{zwsp} +
 
 Eine weiter hilfreiche Funktion ist _isValidToAdvance_. Mit dieser Funktion wird überprüft, ob ein Vorwärtszug mit der übergeben Distanz überhaupt möglich ist:
 
