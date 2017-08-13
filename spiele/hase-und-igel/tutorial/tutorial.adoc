@@ -1,0 +1,15 @@
+:imagesdir: ./../images
+:toc: right
+:toc-title: Inhalt
+:source-highlighter: pygments
+:icons: font
+
+= Tutorial Hase und Igel Software Challenge 2018
+Simon Döring
+
+ifndef::backend-pdf[link:tutorial.pdf[PDF-Version dieses Dokumentes]]
+
+include::start.adoc[leveloffset=+1]
+include::board.adoc[leveloffset=+1]
+include::player.adoc[leveloffset=+1]
+include::game-rule-logic.adoc[leveloffset=+1]

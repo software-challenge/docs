@@ -1,0 +1,61 @@
+:imagesdir: ./../images
+:source-highlighter: pygments
+:icons: font
+
+= Die Klasse Player
+Simon Döring
+
+Die Klasse Player repräsentiert einen Spieler. Der eigene Spieler kann in der RandomLogic durch die Variable *currentPlayer* oder mithilfe der GameState Funktion _getCurrentPlayer()_ abgefragt werden. Der gegnerische Spieler kann ebenfalls mithilfe einer Methode von GameState bestimmt werden (_gameState.getOtherPlayer()_).
+
+Die Klasse Player besitzt viele Funktionen, welche einen Informationen über den Spieler geben:
+
+|=======================
+|java.util.List<CardType>|_getCards()_ +
+Gibt die für diesen Spieler verfügbaren Hasenkarten zurück.
+
+|java.util.List<CardType>    |_getCardsWithout(CardType type)_ +
+Gibt Karten ohne bestimmten Typ zurück.
+|int    |_getCarrots()_  +
+Die Anzahl an Karotten die der Spieler zur Zeit auf der Hand hat.
+|int    |_getFieldIndex()_ +
+Die aktuelle Position der Figur auf dem Spielfeld.
+|Action   |_getLastNonSkipAction_ +
+Gibt letzte Aktion des Spielers zurück.
+|sc.shared.PlayerColor   |_getPlayerColor()_ +
+Die Farbe dieses Spielers auf dem Spielbrett
+|int    |_getSalads()_ +
+Die Anzahl der Salate, die dieser Spieler noch verspeisen muss.
+
+|boolean    |_inGoal()_ +
+Überprüft, ob Spieler im Ziel.
+|boolean    |_ownsCardOfType(CardType type)_ +
+Überprüft ob Spieler bestimmte Karte noch besitzt
+|=======================
+
+TIP: Die Vollständige API ist in /doc/sc/plugin2018/Player.html zu finden.
+
+Die Meisten dieser Funktionen sind selbsterklärend. Dennoch sind hier einige Beispiele angegeben:
+[source,java]
+----
+System.out.print("Du hast noch folgende Karten: ");
+for(CardType c : currentPlayer.getCards()){
+	System.out.print(c + " ");
+}System.out.println();
+----
+Dies würde alle Karten ausgeben, welche man noch hat.
+
+[source,java]
+----
+if(currentPlayer.inGoal() && !currentPlayer.getCards().isEmpty()){
+	System.out.println("Was fuer eine Verschwendung.");
+}
+----
+Die If-Bedingung würde dann ausgeführt werden, wenn man im Ziel ist, allerdings noch Karten hat.
+
+Eine weitere wichtige Funktion ist _getFieldIndex_. Diese Funktion wird häufig im Dokument „Hase_Igel_Spielbrett“ verwendet.
+
+Neben diesen Funktionen existieren noch einige „Setter“. Diese sind allerdings hauptsächlich für den Server notwendig und haben einen geringen praktischen Nutzten für uns.
+
+== Aufgabe
+Schreibe eine If-Bedingung, welche abfragt, ob beide Spieler auf dem selben Feld sind. Da dies nur möglich ist, wenn man auf dem Start- Zielfeld ist, soll zunächst abgefragt werden, ob der aktuelle Spieler auf dem Start- Zielfeld ist.
+Tipp: Es gibt die Funktion getTypeAt der Klasse Board. Weiter Informationen sind im Dokument „Hase_Igel_Spielbrett“ zu finden.

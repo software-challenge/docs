@@ -11,6 +11,8 @@ Sören Domrös <stu114053@mail.uni-kiel.de>
 
 Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.
 
+ifndef::backend-pdf[link:xml-dokumentation.pdf[PDF-Version dieses Dokumentes]]
+
 Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
 Dokumentation kann
 https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs[direkt auf
@@ -32,7 +34,3 @@ include::fehler.adoc[]
 include::spiel-verlassen.adoc[]
 include::spielergebnis.adoc[]
 include::spielverlauf.adoc[]
-
-
-
-
