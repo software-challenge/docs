@@ -113,8 +113,10 @@ if(gameState.getNextFieldByType(FieldType.HARE, currentPlayer.getFieldIndex())>0
 try {
 
 GameState gameHare = gameState.clone(); //erstelle Deep-Copy
+Player harePlayer = gameHare.getCurrentPlayer(); // erstelle Shallow-Copy
+
 //setzte den aktuellen Spieler auf ein Hasenfeld
-gameHare.getCurrentPlayer().setFieldIndex(gameState.getNextFieldByType(FieldType.HARE, currentPlayer.getFieldIndex()));
+harePlayer.setFieldIndex(gameState.getNextFieldByType(FieldType.HARE, currentPlayer.getFieldIndex()));
 System.out.println(gameHare.getCurrentPlayer().getCards()); //gib alle Karten aus
 
 //Welche Karten kann man spielen?
