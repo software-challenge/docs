@@ -95,6 +95,7 @@ Eine weiter hilfreiche Funktion ist _isValidToAdvance_. Mit dieser Funktion wird
 ------
 //berechne die maximale Entfernung, welche man laufen darf
 int max_move = GameRuleLogic.calculateMoveableFields(currentPlayer.getCarrots());
+
 if(GameRuleLogic.isValidToAdvance(gameState, max_move +1)){
 	System.out.println("Unmöglich");
 }
