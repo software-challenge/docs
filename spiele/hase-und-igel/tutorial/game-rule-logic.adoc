@@ -54,17 +54,17 @@ Natürlich kann man alle diese Funktionen auch auf den Gegenspieler anwenden. Da
 [source, java]
 ------
 try {
-	GameState otherGameState = gameState.clone();//Deep-Copy
-	otherGameState.setTurn(gameState.getTurn()+1); //Rundenanzahl hochsetzten für switch Befehl
-	otherGameState.switchCurrentPlayer(); //Tausche currentPlayer (hängt von der Rundenanzahl ab)
+	GameState otherGame = gameState.clone();//Deep-Copy
+	otherGame.setTurn(gameState.getTurn()+1); //Rundenanzahl hochsetzten für switch Befehl
+	otherGame.switchCurrentPlayer(); //Tausche currentPlayer (hängt von der Rundenanzahl ab)
 	//Gib Informationen über den Gegner aus
-	System.out.println("CurrentPlayer von otherGameState:" + otherGameState.getCurrentPlayer());
+	System.out.println("CurrentPlayer von otherGame:" + otherGame.getCurrentPlayer());
 } catch (CloneNotSupportedException e1) {// Fehlerbehandlung
 	e1.printStackTrace();
 }
 ------
 
-Alle Funktionen von GameRuleLogic können wir nun, mithilfe der Variable otherGameState, auf den Gegner anwenden.
+Alle Funktionen von GameRuleLogic können wir nun, mithilfe der Variable otherGame, auf den Gegner anwenden.
 
 == Einführende Beispiele
 
@@ -83,7 +83,8 @@ Dadurch wird auch die Unerfüllbarkeit des folgenden Ausdrucks impliziert:
 
 [source, java]
 ------
-if(GameRuleLogic.isValidToEat(gameState) && (GameRuleLogic.isValidToFallBack(gameState) || GameRuleLogic.canMove(gameState))){
+if(GameRuleLogic.isValidToEat(gameState) && 
+(GameRuleLogic.isValidToFallBack(gameState) || GameRuleLogic.canMove(gameState))){
 	System.out.println("Unmöglich");
 }
 ------
@@ -92,7 +93,9 @@ Eine weiter hilfreiche Funktion ist _isValidToAdvance_. Mit dieser Funktion wird
 
 [source, java]
 ------
-if(GameRuleLogic.isValidToAdvance(gameState, GameRuleLogic.calculateMoveableFields(currentPlayer.getCarrots())+1)){
+//berechne die maximale Entfernung, welche man laufen darf
+int max_move = GameRuleLogic.calculateMoveableFields(currentPlayer.getCarrots());
+if(GameRuleLogic.isValidToAdvance(gameState, max_move +1)){
 	System.out.println("Unmöglich");
 }
 ------
@@ -105,19 +108,21 @@ Alle Funktionen die mit einem * markiert wurden (s.o) haben eine Gemeinsamkeit. 
 
 [source, java]
 ------
-if(gameState.getNextFieldByType(FieldType.HARE, currentPlayer.getFieldIndex())>0){//wenn es ein nächstes Hasenfeld gibt
+//wenn es ein nächstes Hasenfeld gibt
+if(gameState.getNextFieldByType(FieldType.HARE, currentPlayer.getFieldIndex())>0){
 try {
 
-	GameState gameHare = gameState.clone(); //erstelle Deep-Copy
-	//setzte den aktuellen Spieler auf ein Hasenfeld
-	gameHare.getCurrentPlayer().setFieldIndex(gameState.getNextFieldByType(FieldType.HARE, currentPlayer.getFieldIndex()));
-	System.out.println(gameHare.getCurrentPlayer().getCards()); //gib alle Karten aus
+GameState gameHare = gameState.clone(); //erstelle Deep-Copy
+//setzte den aktuellen Spieler auf ein Hasenfeld
+gameHare.getCurrentPlayer().setFieldIndex(gameState.getNextFieldByType(FieldType.HARE, currentPlayer.getFieldIndex()));
+System.out.println(gameHare.getCurrentPlayer().getCards()); //gib alle Karten aus
 
-	//Welche Karten kann man spielen?
-	System.out.println("Play EatSalad: " + GameRuleLogic.isValidToPlayEatSalad(gameHare));
-	System.out.println("Play TakeOrDropCarrots: " + GameRuleLogic.isValidToPlayTakeOrDropCarrots(gameHare,20));
-	System.out.println("Play HurryAhead: " + GameRuleLogic.isValidToPlayHurryAhead(gameHare));
-	System.out.println("Play FallBack: " + GameRuleLogic.isValidToPlayFallBack(gameHare));
+//Welche Karten kann man spielen?
+System.out.println("Play EatSalad: " + GameRuleLogic.isValidToPlayEatSalad(gameHare));
+System.out.println("Play TakeOrDropCarrots: " + GameRuleLogic.isValidToPlayTakeOrDropCarrots(gameHare,20));
+System.out.println("Play HurryAhead: " + GameRuleLogic.isValidToPlayHurryAhead(gameHare));
+System.out.println("Play FallBack: " + GameRuleLogic.isValidToPlayFallBack(gameHare));
+
 } catch (CloneNotSupportedException e1) {
 	e1.printStackTrace();
 }
@@ -132,7 +137,7 @@ Hierfür müssen wir den Spieler einfach nur auf das Hasenfeld setzten. Allerdin
 
 [source, java]
 ------
-int dif = gameState.getOtherPlayer().getFieldIndex() - gameState.getCurrentPlayer().getFieldIndex();
+int dif = gameState.getOtherPlayer().getFieldIndex() - currentPlayer.getFieldIndex();
 
 if(dif >= 0 && dif <= GameRuleLogic.calculateMoveableFields(currentPlayer.getCarrots())){
 	if(GameRuleLogic.isValidToAdvance(gameState, dif)){
