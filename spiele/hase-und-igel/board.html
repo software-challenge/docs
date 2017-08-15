@@ -589,11 +589,13 @@ Das Spielbrett bekommen wir durch den GameState. Mit Hilfe der Methode <em>gameS
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getFieldIndex</span><span class="tok-o">();</span> <span class="tok-c1">//Es wird immer ein Integer zwischen 0 bis 64 zurückgegeben</span>
-<span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-o">().</span><span class="tok-na">getFieldIndex</span><span class="tok-o">();</span> <span class="tok-c1">//das Selbe wie oben</span>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-c1">// Es wird immer ein Integer zwischen 0 bis 64 zurückgegeben:</span>
+<span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getFieldIndex</span><span class="tok-o">();</span>
+<span class="tok-c1">// dasselbe wie oben:</span>
+<span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-o">().</span><span class="tok-na">getFieldIndex</span><span class="tok-o">();</span>
 
-<span class="tok-k">if</span><span class="tok-o">(</span><span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getFieldIndex</span><span class="tok-o">()</span> <span class="tok-o">==</span> <span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-o">().</span><span class="tok-na">getFieldIndex</span><span class="tok-o">()){</span>
-	<span class="tok-c1">//wird immer ausgeführt</span>
+<span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getFieldIndex</span><span class="tok-o">()</span> <span class="tok-o">==</span> <span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-o">().</span><span class="tok-na">getFieldIndex</span><span class="tok-o">())</span> <span class="tok-o">{</span>
+  <span class="tok-c1">//wird immer ausgeführt</span>
 <span class="tok-o">}</span></code></pre>
 </div>
 </div>
@@ -604,7 +606,8 @@ Das Spielbrett bekommen wir durch den GameState. Mit Hilfe der Methode <em>gameS
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getBoard</span><span class="tok-o">().</span><span class="tok-na">getNextFieldByType</span><span class="tok-o">(</span><span class="tok-n">FieldType</span><span class="tok-o">.</span><span class="tok-na">GOAL</span><span class="tok-o">,</span> <span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getFieldIndex</span><span class="tok-o">());</span></code></pre>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getBoard</span><span class="tok-o">().</span><span class="tok-na">getNextFieldByType</span><span class="tok-o">(</span><span class="tok-n">FieldType</span><span class="tok-o">.</span><span class="tok-na">GOAL</span><span class="tok-o">,</span>
+                                        <span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getFieldIndex</span><span class="tok-o">());</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -612,11 +615,12 @@ Das Spielbrett bekommen wir durch den GameState. Mit Hilfe der Methode <em>gameS
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-n">Board</span> <span class="tok-n">b</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getBoard</span><span class="tok-o">();</span> <span class="tok-c1">//Damit man nicht immer gameState.getBoard() schreiben muss</span>
-<span class="tok-kd">final</span> <span class="tok-kt">int</span> <span class="tok-n">index</span> <span class="tok-o">=</span> <span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getFieldIndex</span><span class="tok-o">();</span> <span class="tok-c1">//Index des Spielers</span>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-c1">// Damit man nicht immer gameState.getBoard() schreiben muss:</span>
+<span class="tok-n">Board</span> <span class="tok-n">b</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getBoard</span><span class="tok-o">();</span>
+<span class="tok-kd">final</span> <span class="tok-kt">int</span> <span class="tok-n">index</span> <span class="tok-o">=</span> <span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getFieldIndex</span><span class="tok-o">();</span> <span class="tok-c1">// Index des Spielers</span>
 
-<span class="tok-k">if</span><span class="tok-o">(</span><span class="tok-n">index</span> <span class="tok-o">==</span> <span class="tok-n">b</span><span class="tok-o">.</span><span class="tok-na">getNextFieldByType</span><span class="tok-o">(</span><span class="tok-n">b</span><span class="tok-o">.</span><span class="tok-na">getTypeAt</span><span class="tok-o">(</span><span class="tok-n">index</span><span class="tok-o">),</span> <span class="tok-n">index</span><span class="tok-o">)){</span>
-	<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Geht nicht&quot;</span><span class="tok-o">);</span>
+<span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">index</span> <span class="tok-o">==</span> <span class="tok-n">b</span><span class="tok-o">.</span><span class="tok-na">getNextFieldByType</span><span class="tok-o">(</span><span class="tok-n">b</span><span class="tok-o">.</span><span class="tok-na">getTypeAt</span><span class="tok-o">(</span><span class="tok-n">index</span><span class="tok-o">),</span> <span class="tok-n">index</span><span class="tok-o">))</span> <span class="tok-o">{</span>
+  <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Geht nicht&quot;</span><span class="tok-o">);</span>
 <span class="tok-o">}</span></code></pre>
 </div>
 </div>
@@ -625,7 +629,8 @@ Das Spielbrett bekommen wir durch den GameState. Mit Hilfe der Methode <em>gameS
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-kt">int</span> <span class="tok-n">next_hedgehog</span> <span class="tok-o">=</span> <span class="tok-n">b</span><span class="tok-o">.</span><span class="tok-na">getNextFieldByType</span><span class="tok-o">(</span><span class="tok-n">FieldType</span><span class="tok-o">.</span><span class="tok-na">HEDGEHOG</span><span class="tok-o">,</span> <span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getFieldIndex</span><span class="tok-o">());</span>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-kt">int</span> <span class="tok-n">next_hedgehog</span> <span class="tok-o">=</span> <span class="tok-n">b</span><span class="tok-o">.</span><span class="tok-na">getNextFieldByType</span><span class="tok-o">(</span><span class="tok-n">FieldType</span><span class="tok-o">.</span><span class="tok-na">HEDGEHOG</span><span class="tok-o">,</span>
+                                         <span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getFieldIndex</span><span class="tok-o">());</span>
 <span class="tok-kt">int</span> <span class="tok-n">next_next_hedgehog</span> <span class="tok-o">=</span> <span class="tok-n">b</span><span class="tok-o">.</span><span class="tok-na">getNextFieldByType</span><span class="tok-o">(</span><span class="tok-n">FieldType</span><span class="tok-o">.</span><span class="tok-na">HEDGEHOG</span><span class="tok-o">,</span> <span class="tok-n">next_hedgehog</span><span class="tok-o">);</span></code></pre>
 </div>
 </div>
@@ -655,8 +660,8 @@ Das Spielbrett bekommen wir durch den GameState. Mit Hilfe der Methode <em>gameS
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">if</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getBoard</span><span class="tok-o">().</span><span class="tok-na">getTypeAt</span><span class="tok-o">(-</span><span class="tok-mi">1</span><span class="tok-o">)</span> <span class="tok-o">==</span> <span class="tok-n">FieldType</span><span class="tok-o">.</span><span class="tok-na">INVALID</span><span class="tok-o">){</span>
-	<span class="tok-c1">//Wird immer ausgeführt, da es das Feld an der Position -1 nicht gibt</span>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getBoard</span><span class="tok-o">().</span><span class="tok-na">getTypeAt</span><span class="tok-o">(-</span><span class="tok-mi">1</span><span class="tok-o">)</span> <span class="tok-o">==</span> <span class="tok-n">FieldType</span><span class="tok-o">.</span><span class="tok-na">INVALID</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+  <span class="tok-c1">// Wird immer ausgeführt, da es das Feld an der Position -1 nicht gibt</span>
 <span class="tok-o">}</span></code></pre>
 </div>
 </div>
@@ -692,7 +697,8 @@ Tipp: Suche in der API von GameState nach einer Funktion, welchen den anderen Sp
 <p>Erkläre warum <strong>next_next_hedgehog</strong> den Wert 11 hätte, wenn wir auf den letzten Igelfeld stehen würden.</p>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-kt">int</span> <span class="tok-n">next_hedgehog</span> <span class="tok-o">=</span> <span class="tok-n">b</span><span class="tok-o">.</span><span class="tok-na">getNextFieldByType</span><span class="tok-o">(</span><span class="tok-n">FieldType</span><span class="tok-o">.</span><span class="tok-na">HEDGEHOG</span><span class="tok-o">,</span> <span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getFieldIndex</span><span class="tok-o">());</span>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-kt">int</span> <span class="tok-n">next_hedgehog</span> <span class="tok-o">=</span> <span class="tok-n">b</span><span class="tok-o">.</span><span class="tok-na">getNextFieldByType</span><span class="tok-o">(</span><span class="tok-n">FieldType</span><span class="tok-o">.</span><span class="tok-na">HEDGEHOG</span><span class="tok-o">,</span>
+                                         <span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getFieldIndex</span><span class="tok-o">());</span>
 <span class="tok-kt">int</span> <span class="tok-n">next_next_hedgehog</span> <span class="tok-o">=</span> <span class="tok-n">b</span><span class="tok-o">.</span><span class="tok-na">getNextFieldByType</span><span class="tok-o">(</span><span class="tok-n">FieldType</span><span class="tok-o">.</span><span class="tok-na">HEDGEHOG</span><span class="tok-o">,</span> <span class="tok-n">next_hedgehog</span><span class="tok-o">);</span></code></pre>
 </div>
 </div>
@@ -713,7 +719,7 @@ Tipp: Suche in der API von GameState nach einer Funktion, welchen den anderen Sp
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-08-13 20:47:49 CEST
+Last updated 2017-08-15 06:31:45 CEST
 </div>
 </div>
 </body>

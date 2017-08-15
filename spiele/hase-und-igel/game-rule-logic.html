@@ -627,18 +627,20 @@ Die komplette API-Dokumentation ist in doc/sc/plugin2018/util/GameRuleLogic.html
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="java"><span class="tok-k">try</span> <span class="tok-o">{</span>
-	<span class="tok-n">GameState</span> <span class="tok-n">otherGameState</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">clone</span><span class="tok-o">();</span><span class="tok-c1">//Deep-Copy</span>
-	<span class="tok-n">otherGameState</span><span class="tok-o">.</span><span class="tok-na">setTurn</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getTurn</span><span class="tok-o">()+</span><span class="tok-mi">1</span><span class="tok-o">);</span> <span class="tok-c1">//Rundenanzahl hochsetzten für switch Befehl</span>
-	<span class="tok-n">otherGameState</span><span class="tok-o">.</span><span class="tok-na">switchCurrentPlayer</span><span class="tok-o">();</span> <span class="tok-c1">//Tausche currentPlayer (hängt von der Rundenanzahl ab)</span>
-	<span class="tok-c1">//Gib Informationen über den Gegner aus</span>
-	<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;CurrentPlayer von otherGameState:&quot;</span> <span class="tok-o">+</span> <span class="tok-n">otherGameState</span><span class="tok-o">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-o">());</span>
-<span class="tok-o">}</span> <span class="tok-k">catch</span> <span class="tok-o">(</span><span class="tok-n">CloneNotSupportedException</span> <span class="tok-n">e1</span><span class="tok-o">)</span> <span class="tok-o">{</span><span class="tok-c1">// Fehlerbehandlung</span>
-	<span class="tok-n">e1</span><span class="tok-o">.</span><span class="tok-na">printStackTrace</span><span class="tok-o">();</span>
+  <span class="tok-n">GameState</span> <span class="tok-n">otherGame</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">clone</span><span class="tok-o">();</span> <span class="tok-c1">// Deep-Copy</span>
+  <span class="tok-c1">// Rundenanzahl hochsetzten für switch Befehl:</span>
+  <span class="tok-n">otherGame</span><span class="tok-o">.</span><span class="tok-na">setTurn</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getTurn</span><span class="tok-o">()+</span><span class="tok-mi">1</span><span class="tok-o">);</span>
+  <span class="tok-c1">// Tausche currentPlayer (hängt von der Rundenanzahl ab):</span>
+  <span class="tok-n">otherGame</span><span class="tok-o">.</span><span class="tok-na">switchCurrentPlayer</span><span class="tok-o">();</span>
+  <span class="tok-c1">// Gib Informationen über den Gegner aus:</span>
+  <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;CurrentPlayer von otherGame:&quot;</span> <span class="tok-o">+</span> <span class="tok-n">otherGame</span><span class="tok-o">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-o">());</span>
+<span class="tok-o">}</span> <span class="tok-k">catch</span> <span class="tok-o">(</span><span class="tok-n">CloneNotSupportedException</span> <span class="tok-n">e1</span><span class="tok-o">)</span> <span class="tok-o">{</span> <span class="tok-c1">// Fehlerbehandlung</span>
+  <span class="tok-n">e1</span><span class="tok-o">.</span><span class="tok-na">printStackTrace</span><span class="tok-o">();</span>
 <span class="tok-o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Alle Funktionen von GameRuleLogic können wir nun, mithilfe der Variable otherGameState, auf den Gegner anwenden.</p>
+<p>Alle Funktionen von GameRuleLogic können wir nun, mithilfe der Variable otherGame, auf den Gegner anwenden.</p>
 </div>
 </div>
 </div>
@@ -650,8 +652,8 @@ Die komplette API-Dokumentation ist in doc/sc/plugin2018/util/GameRuleLogic.html
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">if</span><span class="tok-o">(</span><span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToEat</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">)</span> <span class="tok-o">!=</span> <span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">mustEatSalad</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">)){</span>
-	<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Unmöglich&quot;</span><span class="tok-o">);</span>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToEat</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">)</span> <span class="tok-o">!=</span> <span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">mustEatSalad</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">))</span> <span class="tok-o">{</span>
+  <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Unmöglich&quot;</span><span class="tok-o">);</span>
 <span class="tok-o">}</span></code></pre>
 </div>
 </div>
@@ -663,8 +665,9 @@ Die komplette API-Dokumentation ist in doc/sc/plugin2018/util/GameRuleLogic.html
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">if</span><span class="tok-o">(</span><span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToEat</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">)</span> <span class="tok-o">&amp;&amp;</span> <span class="tok-o">(</span><span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToFallBack</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">)</span> <span class="tok-o">||</span> <span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">canMove</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">))){</span>
-	<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Unmöglich&quot;</span><span class="tok-o">);</span>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToEat</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">)</span> <span class="tok-o">&amp;&amp;</span>
+    <span class="tok-o">(</span><span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToFallBack</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">)</span> <span class="tok-o">||</span> <span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">canMove</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">)))</span> <span class="tok-o">{</span>
+  <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Unmöglich&quot;</span><span class="tok-o">);</span>
 <span class="tok-o">}</span></code></pre>
 </div>
 </div>
@@ -673,8 +676,11 @@ Die komplette API-Dokumentation ist in doc/sc/plugin2018/util/GameRuleLogic.html
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">if</span><span class="tok-o">(</span><span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToAdvance</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">,</span> <span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">calculateMoveableFields</span><span class="tok-o">(</span><span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getCarrots</span><span class="tok-o">())+</span><span class="tok-mi">1</span><span class="tok-o">)){</span>
-	<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Unmöglich&quot;</span><span class="tok-o">);</span>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-c1">// berechne die maximale Entfernung, welche man laufen darf</span>
+<span class="tok-kt">int</span> <span class="tok-n">max_move</span> <span class="tok-o">=</span> <span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">calculateMoveableFields</span><span class="tok-o">(</span><span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getCarrots</span><span class="tok-o">());</span>
+
+<span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToAdvance</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">,</span> <span class="tok-n">max_move</span> <span class="tok-o">+</span><span class="tok-mi">1</span><span class="tok-o">))</span> <span class="tok-o">{</span>
+  <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Unmöglich&quot;</span><span class="tok-o">);</span>
 <span class="tok-o">}</span></code></pre>
 </div>
 </div>
@@ -691,23 +697,33 @@ Die komplette API-Dokumentation ist in doc/sc/plugin2018/util/GameRuleLogic.html
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">if</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getNextFieldByType</span><span class="tok-o">(</span><span class="tok-n">FieldType</span><span class="tok-o">.</span><span class="tok-na">HARE</span><span class="tok-o">,</span> <span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getFieldIndex</span><span class="tok-o">())&gt;</span><span class="tok-mi">0</span><span class="tok-o">){</span><span class="tok-c1">//wenn es ein nächstes Hasenfeld gibt</span>
-<span class="tok-k">try</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-kt">int</span> <span class="tok-n">nextHareFieldIndex</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getNextFieldByType</span><span class="tok-o">(</span><span class="tok-n">FieldType</span><span class="tok-o">.</span><span class="tok-na">HARE</span><span class="tok-o">,</span>
+                                                      <span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getFieldIndex</span><span class="tok-o">())</span>
+<span class="tok-c1">// wenn es ein nächstes Hasenfeld gibt</span>
+<span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">nextHareFieldIndex</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+  <span class="tok-k">try</span> <span class="tok-o">{</span>
 
-	<span class="tok-n">GameState</span> <span class="tok-n">gameHare</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">clone</span><span class="tok-o">();</span> <span class="tok-c1">//erstelle Deep-Copy</span>
-	<span class="tok-c1">//setzte den aktuellen Spieler auf ein Hasenfeld</span>
-	<span class="tok-n">gameHare</span><span class="tok-o">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-o">().</span><span class="tok-na">setFieldIndex</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getNextFieldByType</span><span class="tok-o">(</span><span class="tok-n">FieldType</span><span class="tok-o">.</span><span class="tok-na">HARE</span><span class="tok-o">,</span> <span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getFieldIndex</span><span class="tok-o">()));</span>
-	<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-n">gameHare</span><span class="tok-o">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-o">().</span><span class="tok-na">getCards</span><span class="tok-o">());</span> <span class="tok-c1">//gib alle Karten aus</span>
+    <span class="tok-n">GameState</span> <span class="tok-n">gameHare</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">clone</span><span class="tok-o">();</span> <span class="tok-c1">// erstelle Deep-Copy</span>
+    <span class="tok-n">Player</span> <span class="tok-n">harePlayer</span> <span class="tok-o">=</span> <span class="tok-n">gameHare</span><span class="tok-o">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-o">();</span> <span class="tok-c1">// erstelle Shallow-Copy</span>
 
-	<span class="tok-c1">//Welche Karten kann man spielen?</span>
-	<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Play EatSalad: &quot;</span> <span class="tok-o">+</span> <span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToPlayEatSalad</span><span class="tok-o">(</span><span class="tok-n">gameHare</span><span class="tok-o">));</span>
-	<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Play TakeOrDropCarrots: &quot;</span> <span class="tok-o">+</span> <span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToPlayTakeOrDropCarrots</span><span class="tok-o">(</span><span class="tok-n">gameHare</span><span class="tok-o">,</span><span class="tok-mi">20</span><span class="tok-o">));</span>
-	<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Play HurryAhead: &quot;</span> <span class="tok-o">+</span> <span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToPlayHurryAhead</span><span class="tok-o">(</span><span class="tok-n">gameHare</span><span class="tok-o">));</span>
-	<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Play FallBack: &quot;</span> <span class="tok-o">+</span> <span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToPlayFallBack</span><span class="tok-o">(</span><span class="tok-n">gameHare</span><span class="tok-o">));</span>
-<span class="tok-o">}</span> <span class="tok-k">catch</span> <span class="tok-o">(</span><span class="tok-n">CloneNotSupportedException</span> <span class="tok-n">e1</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-	<span class="tok-n">e1</span><span class="tok-o">.</span><span class="tok-na">printStackTrace</span><span class="tok-o">();</span>
-<span class="tok-o">}</span>
-<span class="tok-o">}</span><span class="tok-c1">//ende if</span></code></pre>
+    <span class="tok-c1">//setzte den aktuellen Spieler auf ein Hasenfeld</span>
+    <span class="tok-n">harePlayer</span><span class="tok-o">.</span><span class="tok-na">setFieldIndex</span><span class="tok-o">(</span><span class="tok-n">nextHareFieldIndex</span><span class="tok-o">);</span>
+    <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-n">gameHare</span><span class="tok-o">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-o">().</span><span class="tok-na">getCards</span><span class="tok-o">());</span> <span class="tok-c1">// gib alle Karten aus</span>
+
+    <span class="tok-c1">// Welche Karten kann man spielen?</span>
+    <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Play EatSalad: &quot;</span> <span class="tok-o">+</span>
+                       <span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToPlayEatSalad</span><span class="tok-o">(</span><span class="tok-n">gameHare</span><span class="tok-o">));</span>
+    <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Play TakeOrDropCarrots: &quot;</span> <span class="tok-o">+</span>
+                       <span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToPlayTakeOrDropCarrots</span><span class="tok-o">(</span><span class="tok-n">gameHare</span><span class="tok-o">,</span><span class="tok-mi">20</span><span class="tok-o">));</span>
+    <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Play HurryAhead: &quot;</span> <span class="tok-o">+</span>
+                       <span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToPlayHurryAhead</span><span class="tok-o">(</span><span class="tok-n">gameHare</span><span class="tok-o">));</span>
+    <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Play FallBack: &quot;</span> <span class="tok-o">+</span>
+                       <span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToPlayFallBack</span><span class="tok-o">(</span><span class="tok-n">gameHare</span><span class="tok-o">));</span>
+
+  <span class="tok-o">}</span> <span class="tok-k">catch</span> <span class="tok-o">(</span><span class="tok-n">CloneNotSupportedException</span> <span class="tok-n">e1</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+    <span class="tok-n">e1</span><span class="tok-o">.</span><span class="tok-na">printStackTrace</span><span class="tok-o">();</span>
+  <span class="tok-o">}</span>
+<span class="tok-o">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -727,12 +743,13 @@ Die komplette API-Dokumentation ist in doc/sc/plugin2018/util/GameRuleLogic.html
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-kt">int</span> <span class="tok-n">dif</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getOtherPlayer</span><span class="tok-o">().</span><span class="tok-na">getFieldIndex</span><span class="tok-o">()</span> <span class="tok-o">-</span> <span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-o">().</span><span class="tok-na">getFieldIndex</span><span class="tok-o">();</span>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-kt">int</span> <span class="tok-n">dif</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getOtherPlayer</span><span class="tok-o">().</span><span class="tok-na">getFieldIndex</span><span class="tok-o">()</span> <span class="tok-o">-</span> <span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getFieldIndex</span><span class="tok-o">();</span>
 
-<span class="tok-k">if</span><span class="tok-o">(</span><span class="tok-n">dif</span> <span class="tok-o">&gt;=</span> <span class="tok-mi">0</span> <span class="tok-o">&amp;&amp;</span> <span class="tok-n">dif</span> <span class="tok-o">&lt;=</span> <span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">calculateMoveableFields</span><span class="tok-o">(</span><span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getCarrots</span><span class="tok-o">())){</span>
-	<span class="tok-k">if</span><span class="tok-o">(</span><span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToAdvance</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">,</span> <span class="tok-n">dif</span><span class="tok-o">)){</span>
-		<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Unmöglich&quot;</span><span class="tok-o">);</span>
-	<span class="tok-o">}</span>
+<span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">dif</span> <span class="tok-o">&gt;=</span> <span class="tok-mi">0</span> <span class="tok-o">&amp;&amp;</span>
+    <span class="tok-n">dif</span> <span class="tok-o">&lt;=</span> <span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">calculateMoveableFields</span><span class="tok-o">(</span><span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getCarrots</span><span class="tok-o">()))</span> <span class="tok-o">{</span>
+  <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">GameRuleLogic</span><span class="tok-o">.</span><span class="tok-na">isValidToAdvance</span><span class="tok-o">(</span><span class="tok-n">gameState</span><span class="tok-o">,</span> <span class="tok-n">dif</span><span class="tok-o">))</span> <span class="tok-o">{</span>
+    <span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Unmöglich&quot;</span><span class="tok-o">);</span>
+  <span class="tok-o">}</span>
 <span class="tok-o">}</span></code></pre>
 </div>
 </div>
@@ -748,7 +765,7 @@ Die komplette API-Dokumentation ist in doc/sc/plugin2018/util/GameRuleLogic.html
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-08-13 20:47:37 CEST
+Last updated 2017-08-15 06:35:38 CEST
 </div>
 </div>
 </body>

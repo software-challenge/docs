@@ -578,9 +578,10 @@ Die Vollständige API ist in /doc/sc/plugin2018/Player.html zu finden.
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="java"><span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">print</span><span class="tok-o">(</span><span class="tok-s">&quot;Du hast noch folgende Karten: &quot;</span><span class="tok-o">);</span>
-<span class="tok-k">for</span><span class="tok-o">(</span><span class="tok-n">CardType</span> <span class="tok-n">c</span> <span class="tok-o">:</span> <span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getCards</span><span class="tok-o">()){</span>
+<span class="tok-k">for</span> <span class="tok-o">(</span><span class="tok-n">CardType</span> <span class="tok-n">c</span> <span class="tok-o">:</span> <span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getCards</span><span class="tok-o">())</span> <span class="tok-o">{</span>
 	<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">print</span><span class="tok-o">(</span><span class="tok-n">c</span> <span class="tok-o">+</span> <span class="tok-s">&quot; &quot;</span><span class="tok-o">);</span>
-<span class="tok-o">}</span><span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">();</span></code></pre>
+<span class="tok-o">}</span>
+<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">();</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -588,7 +589,7 @@ Die Vollständige API ist in /doc/sc/plugin2018/Player.html zu finden.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">if</span><span class="tok-o">(</span><span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">inGoal</span><span class="tok-o">()</span> <span class="tok-o">&amp;&amp;</span> <span class="tok-o">!</span><span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getCards</span><span class="tok-o">().</span><span class="tok-na">isEmpty</span><span class="tok-o">()){</span>
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">inGoal</span><span class="tok-o">()</span> <span class="tok-o">&amp;&amp;</span> <span class="tok-o">!</span><span class="tok-n">currentPlayer</span><span class="tok-o">.</span><span class="tok-na">getCards</span><span class="tok-o">().</span><span class="tok-na">isEmpty</span><span class="tok-o">())</span> <span class="tok-o">{</span>
 	<span class="tok-n">System</span><span class="tok-o">.</span><span class="tok-na">out</span><span class="tok-o">.</span><span class="tok-na">println</span><span class="tok-o">(</span><span class="tok-s">&quot;Was fuer eine Verschwendung.&quot;</span><span class="tok-o">);</span>
 <span class="tok-o">}</span></code></pre>
 </div>
@@ -616,7 +617,7 @@ Tipp: Es gibt die Funktion getTypeAt der Klasse Board. Weiter Informationen sind
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-08-13 20:48:01 CEST
+Last updated 2017-08-15 06:27:09 CEST
 </div>
 </div>
 </body>
