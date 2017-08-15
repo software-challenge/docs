@@ -38,15 +38,16 @@ Die Meisten dieser Funktionen sind selbsterklärend. Dennoch sind hier einige Be
 [source,java]
 ----
 System.out.print("Du hast noch folgende Karten: ");
-for(CardType c : currentPlayer.getCards()){
+for (CardType c : currentPlayer.getCards()) {
 	System.out.print(c + " ");
-}System.out.println();
+}
+System.out.println();
 ----
 Dies würde alle Karten ausgeben, welche man noch hat.
 
 [source,java]
 ----
-if(currentPlayer.inGoal() && !currentPlayer.getCards().isEmpty()){
+if (currentPlayer.inGoal() && !currentPlayer.getCards().isEmpty()) {
 	System.out.println("Was fuer eine Verschwendung.");
 }
 ----

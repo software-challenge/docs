@@ -34,11 +34,13 @@ Unsere Eigene Position können wir mithilfe von *currentPlayer* oder *gameState*
 
 [source,java]
 -------
-currentPlayer.getFieldIndex(); //Es wird immer ein Integer zwischen 0 bis 64 zurückgegeben
-gameState.getCurrentPlayer().getFieldIndex(); //das Selbe wie oben
+// Es wird immer ein Integer zwischen 0 bis 64 zurückgegeben:
+currentPlayer.getFieldIndex();
+// dasselbe wie oben:
+gameState.getCurrentPlayer().getFieldIndex();
 
-if(currentPlayer.getFieldIndex() == gameState.getCurrentPlayer().getFieldIndex()){
-	//wird immer ausgeführt
+if (currentPlayer.getFieldIndex() == gameState.getCurrentPlayer().getFieldIndex()) {
+  //wird immer ausgeführt
 }
 -------
 
@@ -47,24 +49,27 @@ if(currentPlayer.getFieldIndex() == gameState.getCurrentPlayer().getFieldIndex()
 Dieser Funktion übergeben wir eine Position und ein FieldType. Es gibt die Position des nächsten FieldType an, welches *nach* der angegeben Position liegt. Hat das Feld mit der angegeben Position, den gleichen FieldType, so wird dennoch die Position des nächsten Felds angegeben (siehe zweites Beispiel). Gibt es diesen FieldType nicht mehr wird -1 zurückgegeben.
 
 [source,java]
-gameState.getBoard().getNextFieldByType(FieldType.GOAL, currentPlayer.getFieldIndex());
+gameState.getBoard().getNextFieldByType(FieldType.GOAL,
+                                        currentPlayer.getFieldIndex());
 
 Dies würde in einem normalen Spiel immer 64 zurückgeben, außer man befindet sich auf dem Ziel. Im diesem Fall wäre das Ergebnis -1.
 
 [source, java]
 -------
-Board b = gameState.getBoard(); //Damit man nicht immer gameState.getBoard() schreiben muss
-final int index = currentPlayer.getFieldIndex(); //Index des Spielers
+// Damit man nicht immer gameState.getBoard() schreiben muss:
+Board b = gameState.getBoard();
+final int index = currentPlayer.getFieldIndex(); // Index des Spielers
 
-if(index == b.getNextFieldByType(b.getTypeAt(index), index)){
-	System.out.println("Geht nicht");
+if (index == b.getNextFieldByType(b.getTypeAt(index), index)) {
+  System.out.println("Geht nicht");
 }
 -------
 Dies liegt daran, dass der verwendete Index nie der Rückgabewert von *getNextFieldByType* sein kann.
 
 [source, java]
 -------
-int next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG, currentPlayer.getFieldIndex());
+int next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG,
+                                         currentPlayer.getFieldIndex());
 int next_next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG, next_hedgehog);
 -------
 
@@ -89,8 +94,8 @@ Speichert den aktuelle FieldType auf welchen man steht und den FieldType des Fel
 
 [source, java]
 -------
-if(gameState.getBoard().getTypeAt(-1) == FieldType.INVALID){
-	//Wird immer ausgeführt, da es das Feld an der Position -1 nicht gibt
+if (gameState.getBoard().getTypeAt(-1) == FieldType.INVALID) {
+  // Wird immer ausgeführt, da es das Feld an der Position -1 nicht gibt
 }
 -------
 
@@ -105,7 +110,8 @@ Tipp: Suche in der API von GameState nach einer Funktion, welchen den anderen Sp
 
 . Erkläre warum *next_next_hedgehog* den Wert 11 hätte, wenn wir auf den letzten Igelfeld stehen würden.
 [source, java]
-int next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG, currentPlayer.getFieldIndex());
+int next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG,
+                                         currentPlayer.getFieldIndex());
 int next_next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG, next_hedgehog);
 
 . Schreibe eine Funktion, welche das übernächste Igelfeld ausgibt. Gibt es solch ein Feld nicht, so soll immer -1 zurückgegeben werden.

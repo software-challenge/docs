@@ -21,20 +21,20 @@ In der Datei gibt es eine Funktion mit der Bezeichnung _public void onRequestAct
 [source,java]
 -----------------
 public void onRequestAction(){
-  //optional: Laufzeitmessung
-	long startTime = System.nanoTime();
+  // optional: Laufzeitmessung
+  long startTime = System.nanoTime();
 
 
-	//Quellcode der KI, welche eine Zug (move) erstellt
+  // Quellcode der KI, welche eine Zug (move) erstellt
 
 
   long nowTime = System.nanoTime();
 
-  //sende Move. Danach gibt es kein zurück mehr:
+  // sende Move. Danach gibt es kein zurück mehr:
   sendAction(move);
 
-  //optional: LOG-Eintrag mit Zeit:
-  log.warn("Time needed for turn: {}", (nowTime - startTime)/1000000);
+  // optional: LOG-Eintrag mit Zeit:
+  log.warn("Time needed for turn: {}", (nowTime - startTime) / 1000000);
 }
 -----------------
 [IMPORTANT]
@@ -45,14 +45,16 @@ public void onRequestAction(){
 
 == Wichtige Membervariablen
 In der Klasse befinden sich auch drei sehr wichtige Membervariablen:
+
 [source,java]
 ----------
-private Starter client;//Intern für den Server wichtig. Bitte nicht modifizieren
-  
-private GameState gameState; //Gibt u.a Infos über mögliche Züge und das Spielbrett
+private Starter client; // Intern für den Server wichtig. Bitte nicht modifizieren
 
-private Player currentPlayer;  //Infos über den aktuellen Spieler, welchen man steuert
+private GameState gameState; // Gibt u.a Infos über mögliche Züge und das Spielbrett
+
+private Player currentPlayer; // Infos über den aktuellen Spieler, welchen man steuert
 ----------
+
 In den Folgenden Dokumenten werden Grundlagen zum erstellen einer KI gezeigt. Hierbei werden wir oft die Variablen *gameState* und *currentPlayer* verwenden.
 
 [NOTE]

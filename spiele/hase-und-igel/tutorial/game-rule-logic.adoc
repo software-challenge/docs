@@ -54,13 +54,15 @@ Natürlich kann man alle diese Funktionen auch auf den Gegenspieler anwenden. Da
 [source, java]
 ------
 try {
-	GameState otherGame = gameState.clone();//Deep-Copy
-	otherGame.setTurn(gameState.getTurn()+1); //Rundenanzahl hochsetzten für switch Befehl
-	otherGame.switchCurrentPlayer(); //Tausche currentPlayer (hängt von der Rundenanzahl ab)
-	//Gib Informationen über den Gegner aus
-	System.out.println("CurrentPlayer von otherGame:" + otherGame.getCurrentPlayer());
-} catch (CloneNotSupportedException e1) {// Fehlerbehandlung
-	e1.printStackTrace();
+  GameState otherGame = gameState.clone(); // Deep-Copy
+  // Rundenanzahl hochsetzten für switch Befehl:
+  otherGame.setTurn(gameState.getTurn()+1);
+  // Tausche currentPlayer (hängt von der Rundenanzahl ab):
+  otherGame.switchCurrentPlayer();
+  // Gib Informationen über den Gegner aus:
+  System.out.println("CurrentPlayer von otherGame:" + otherGame.getCurrentPlayer());
+} catch (CloneNotSupportedException e1) { // Fehlerbehandlung
+  e1.printStackTrace();
 }
 ------
 
@@ -72,8 +74,8 @@ Die meisten Funktionen dieser Klasse sind selbsterklärend. Dennoch werden einig
 
 [source, java]
 ------
-if(GameRuleLogic.isValidToEat(gameState) != GameRuleLogic.mustEatSalad(gameState)){
-	System.out.println("Unmöglich");
+if (GameRuleLogic.isValidToEat(gameState) != GameRuleLogic.mustEatSalad(gameState)) {
+  System.out.println("Unmöglich");
 }
 ------
 
@@ -83,9 +85,9 @@ Dadurch wird auch die Unerfüllbarkeit des folgenden Ausdrucks impliziert:
 
 [source, java]
 ------
-if(GameRuleLogic.isValidToEat(gameState) && 
-(GameRuleLogic.isValidToFallBack(gameState) || GameRuleLogic.canMove(gameState))){
-	System.out.println("Unmöglich");
+if (GameRuleLogic.isValidToEat(gameState) &&
+    (GameRuleLogic.isValidToFallBack(gameState) || GameRuleLogic.canMove(gameState))) {
+  System.out.println("Unmöglich");
 }
 ------
 
@@ -93,11 +95,11 @@ Eine weiter hilfreiche Funktion ist _isValidToAdvance_. Mit dieser Funktion wird
 
 [source, java]
 ------
-//berechne die maximale Entfernung, welche man laufen darf
+// berechne die maximale Entfernung, welche man laufen darf
 int max_move = GameRuleLogic.calculateMoveableFields(currentPlayer.getCarrots());
 
-if(GameRuleLogic.isValidToAdvance(gameState, max_move +1)){
-	System.out.println("Unmöglich");
+if (GameRuleLogic.isValidToAdvance(gameState, max_move +1)) {
+  System.out.println("Unmöglich");
 }
 ------
 
@@ -109,27 +111,33 @@ Alle Funktionen die mit einem * markiert wurden (s.o) haben eine Gemeinsamkeit. 
 
 [source, java]
 ------
-//wenn es ein nächstes Hasenfeld gibt
-if(gameState.getNextFieldByType(FieldType.HARE, currentPlayer.getFieldIndex())>0){
-try {
+int nextHareFieldIndex = gameState.getNextFieldByType(FieldType.HARE,
+                                                      currentPlayer.getFieldIndex())
+// wenn es ein nächstes Hasenfeld gibt
+if (nextHareFieldIndex > 0) {
+  try {
 
-GameState gameHare = gameState.clone(); //erstelle Deep-Copy
-Player harePlayer = gameHare.getCurrentPlayer(); // erstelle Shallow-Copy
+    GameState gameHare = gameState.clone(); // erstelle Deep-Copy
+    Player harePlayer = gameHare.getCurrentPlayer(); // erstelle Shallow-Copy
 
-//setzte den aktuellen Spieler auf ein Hasenfeld
-harePlayer.setFieldIndex(gameState.getNextFieldByType(FieldType.HARE, currentPlayer.getFieldIndex()));
-System.out.println(gameHare.getCurrentPlayer().getCards()); //gib alle Karten aus
+    //setzte den aktuellen Spieler auf ein Hasenfeld
+    harePlayer.setFieldIndex(nextHareFieldIndex);
+    System.out.println(gameHare.getCurrentPlayer().getCards()); // gib alle Karten aus
 
-//Welche Karten kann man spielen?
-System.out.println("Play EatSalad: " + GameRuleLogic.isValidToPlayEatSalad(gameHare));
-System.out.println("Play TakeOrDropCarrots: " + GameRuleLogic.isValidToPlayTakeOrDropCarrots(gameHare,20));
-System.out.println("Play HurryAhead: " + GameRuleLogic.isValidToPlayHurryAhead(gameHare));
-System.out.println("Play FallBack: " + GameRuleLogic.isValidToPlayFallBack(gameHare));
+    // Welche Karten kann man spielen?
+    System.out.println("Play EatSalad: " +
+                       GameRuleLogic.isValidToPlayEatSalad(gameHare));
+    System.out.println("Play TakeOrDropCarrots: " +
+                       GameRuleLogic.isValidToPlayTakeOrDropCarrots(gameHare,20));
+    System.out.println("Play HurryAhead: " +
+                       GameRuleLogic.isValidToPlayHurryAhead(gameHare));
+    System.out.println("Play FallBack: " +
+                       GameRuleLogic.isValidToPlayFallBack(gameHare));
 
-} catch (CloneNotSupportedException e1) {
-	e1.printStackTrace();
+  } catch (CloneNotSupportedException e1) {
+    e1.printStackTrace();
+  }
 }
-}//ende if
 ------
 
 Hierfür müssen wir den Spieler einfach nur auf das Hasenfeld setzten. Allerdings wird nicht überprüft, ob der Spieler überhaupt bis zum nächsten Hasenfeld laufen kann.
@@ -142,10 +150,11 @@ Hierfür müssen wir den Spieler einfach nur auf das Hasenfeld setzten. Allerdin
 ------
 int dif = gameState.getOtherPlayer().getFieldIndex() - currentPlayer.getFieldIndex();
 
-if(dif >= 0 && dif <= GameRuleLogic.calculateMoveableFields(currentPlayer.getCarrots())){
-	if(GameRuleLogic.isValidToAdvance(gameState, dif)){
-		System.out.println("Unmöglich");
-	}
+if (dif >= 0 &&
+    dif <= GameRuleLogic.calculateMoveableFields(currentPlayer.getCarrots())) {
+  if (GameRuleLogic.isValidToAdvance(gameState, dif)) {
+    System.out.println("Unmöglich");
+  }
 }
 ------
 
