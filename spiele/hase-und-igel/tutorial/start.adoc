@@ -46,13 +46,13 @@ public void onRequestAction(){
 == Wichtige Membervariablen
 In der Klasse befinden sich auch drei sehr wichtige Membervariablen:
 [source,java]
-  //Intern für die Server wichtig. Bitte nicht modifizieren
-	private Starter client;
-  //Gibt u.a Informationen über mögliche Züge und das Spielbrett an
-	private GameState gameState;
-  //Informationen über den aktuellen Spieler, welchen man steuert.
-	private Player currentPlayer;
+----------
+private Starter client;//Intern für den Server wichtig. Bitte nicht modifizieren
+  
+private GameState gameState; //Gibt u.a Infos über mögliche Züge und das Spielbrett
 
+private Player currentPlayer;  //Infos über den aktuellen Spieler, welchen man steuert
+----------
 In den Folgenden Dokumenten werden Grundlagen zum erstellen einer KI gezeigt. Hierbei werden wir oft die Variablen *gameState* und *currentPlayer* verwenden.
 
 [NOTE]
