@@ -1105,9 +1105,6 @@ Der Server antwortet darauf mit:</p>
 <p>C Spieler, der an der Reihe ist (RED/BLUE)</p>
 </li>
 <li>
-<p>F true, falls der aktuelle Spieler vorherigen im Zug des Gegners abgedrängt wurde und jetzt eine zusätzliche kostenlose Drehung machen darf, sonst false.</p>
-</li>
-<li>
 <p>red, blue wie in <a href="#spieler">Spieler</a> definiert</p>
 </li>
 <li>
@@ -1125,7 +1122,7 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;Z&quot;</span> <span class="tok-na">startPlayer=</span><span class="tok-s">&quot;S&quot;</span> <span class="tok-na">currentPlayer=</span><span class="tok-s">&quot;C&quot;</span> <span class="tok-na">freeTurn=</span><span class="tok-s">&quot;F&quot;</span><span class="tok-nt">&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml"><span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;Z&quot;</span> <span class="tok-na">startPlayer=</span><span class="tok-s">&quot;S&quot;</span> <span class="tok-na">currentPlayer=</span><span class="tok-s">&quot;C&quot;</span><span class="tok-nt">&gt;</span>
   red
   blue
   [board]
@@ -1162,8 +1159,7 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">\begin{verbatim}
-<span class="tok-nt">&lt;C</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;N&quot;</span> <span class="tok-na">color=</span><span class="tok-s">&quot;C&quot;</span> <span class="tok-na">index=</span><span class="tok-s">&quot;I&quot;</span> <span class="tok-na">carrots=</span><span class="tok-s">&quot;K&quot;</span> <span class="tok-na">salads=</span><span class="tok-s">&quot;S&quot;</span><span class="tok-nt">&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml"><span class="tok-nt">&lt;C</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;N&quot;</span> <span class="tok-na">color=</span><span class="tok-s">&quot;C&quot;</span> <span class="tok-na">index=</span><span class="tok-s">&quot;I&quot;</span> <span class="tok-na">carrots=</span><span class="tok-s">&quot;K&quot;</span> <span class="tok-na">salads=</span><span class="tok-s">&quot;S&quot;</span><span class="tok-nt">&gt;</span>
   <span class="tok-nt">&lt;cards&gt;</span>
     <span class="tok-nt">&lt;type&gt;</span>TAKE_OR_DROP_CARROTS<span class="tok-nt">&lt;/type&gt;</span>
     <span class="tok-nt">&lt;type&gt;</span>EAT_SALAD<span class="tok-nt">&lt;/type&gt;</span>
@@ -1598,7 +1594,7 @@ Die letzte Nachricht des Servers endet mit:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-08-13 05:40:30 CEST
+Last updated 2017-08-24 10:44:20 CEST
 </div>
 </div>
 </body>
