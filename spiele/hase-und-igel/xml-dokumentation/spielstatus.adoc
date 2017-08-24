@@ -22,7 +22,6 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 * Z aktuelle Zugzahl
 * S Spieler, der das Spiel gestartet hat (RED/BLUE)
 * C Spieler, der an der Reihe ist (RED/BLUE)
-* F true, falls der aktuelle Spieler vorherigen im Zug des Gegners abgedrängt wurde und jetzt eine zusätzliche kostenlose Drehung machen darf, sonst false.
 * red, blue wie in xref:spieler[] definiert
 * board Das Spielbrett, wie in xref:spielbrett[] definiert
 * lastMove Letzter getätigter Zug (nicht in der ersten Runde), wie in xref:letzter-zug[] definiert
@@ -30,7 +29,7 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 --
 [source,xml]
 ----
-<state class="state" turn="Z" startPlayer="S" currentPlayer="C" freeTurn="F">
+<state class="state" turn="Z" startPlayer="S" currentPlayer="C">
   red
   blue
   [board]
@@ -50,7 +49,6 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 --
 [source,xml]
 ----
-\begin{verbatim}
 <C displayName="N" color="C" index="I" carrots="K" salads="S">
   <cards>
     <type>TAKE_OR_DROP_CARROTS</type>
@@ -101,5 +99,3 @@ Der letzte Zug ist ein Move (siehe hierzu xref:zug[]).
   ACTIONS
 </lastMove>
 ----
-
-
