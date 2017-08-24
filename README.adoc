@@ -63,7 +63,7 @@ http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/[verschiedene
 Wege um ein Live-Preview zu bekommen].
 
 Einer ist die Nutzung von `guard`. Dazu müssen die beiden Gems `guard`
-und `guard-shell` installiert werden. Ein passendes `Guardfile` liegt
+,`guard-shell` installiert werden. Ein passendes `Guardfile` liegt
 schon im Repository, man kann `guard` also einfach mittels `guard
 start` starten, und die Ausgabe im Verzeichnis `out` wird
 aktualisiert, sobald man etwas an den Quellen ändert.
