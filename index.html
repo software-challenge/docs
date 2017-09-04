@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.5">
+<meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="Sven Koschnicke">
 <title>Software Challenge Endbenutzer-Dokumentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -90,13 +90,12 @@ strong,b{font-weight:bold;line-height:inherit}
 small{font-size:60%;line-height:inherit}
 code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
 ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
-ul,ol,ul.no-bullet,ol.no-bullet{margin-left:1.5em}
+ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
 ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
 ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
-ul.no-bullet{list-style:none}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -132,7 +131,11 @@ strong strong{font-weight:400}
 kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
 .keyseq kbd:first-child{margin-left:0}
 .keyseq kbd:last-child{margin-right:0}
-.menuseq,.menu{color:rgba(0,0,0,.8)}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
 b.button:before,b.button:after{position:relative;top:-1px;font-weight:400}
 b.button:before{content:"[";padding:0 3px 0 2px}
 b.button:after{content:"]";padding:0 2px 0 3px}
@@ -199,7 +202,7 @@ table.tableblock>caption.title{white-space:nowrap;overflow:visible;max-width:0}
 table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inherit}
 .admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
 .admonitionblock>table td.icon{text-align:center;width:80px}
-.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon img{max-width:initial}
 .admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
 .admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6)}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
@@ -255,13 +258,13 @@ table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
 table.tableblock{max-width:100%;border-collapse:separate}
 table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
 table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
-table.grid-all th.tableblock,table.grid-all td.tableblock{border-width:0 1px 1px 0}
-table.grid-all tfoot>tr>th.tableblock,table.grid-all tfoot>tr>td.tableblock{border-width:1px 1px 0 0}
-table.grid-cols th.tableblock,table.grid-cols td.tableblock{border-width:0 1px 0 0}
-table.grid-all *>tr>.tableblock:last-child,table.grid-cols *>tr>.tableblock:last-child{border-right-width:0}
-table.grid-rows th.tableblock,table.grid-rows td.tableblock{border-width:0 0 1px 0}
-table.grid-all tbody>tr:last-child>th.tableblock,table.grid-all tbody>tr:last-child>td.tableblock,table.grid-all thead:last-child>tr>th.tableblock,table.grid-rows tbody>tr:last-child>th.tableblock,table.grid-rows tbody>tr:last-child>td.tableblock,table.grid-rows thead:last-child>tr>th.tableblock{border-bottom-width:0}
-table.grid-rows tfoot>tr>th.tableblock,table.grid-rows tfoot>tr>td.tableblock{border-width:1px 0 0 0}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px 0}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
 table.frame-all{border-width:1px}
 table.frame-sides{border-width:0 1px}
 table.frame-topbot{border-width:1px 0}
@@ -282,10 +285,12 @@ ul li ol{margin-left:1.5em}
 dl dd{margin-left:1.125em}
 dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
 ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
-ul.unstyled,ol.unnumbered,ul.checklist,ul.none{list-style-type:none}
-ul.unstyled,ol.unnumbered,ul.checklist{margin-left:.625em}
-ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1em;font-size:.85em}
-ul.checklist li>p:first-child>input[type="checkbox"]:first-child{width:1em;position:relative;top:1px}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
 ul.inline{margin:0 auto .625em auto;margin-left:-1.375em;margin-right:0;padding:0;list-style:none;overflow:hidden}
 ul.inline>li{list-style:none;float:left;margin-left:1.375em;display:block}
 ul.inline>li>*{display:block}
@@ -302,7 +307,8 @@ ol.lowergreek{list-style-type:lower-greek}
 td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
 td.hdlist1{font-weight:bold;padding-bottom:1.25em}
 .literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
-.colist>table tr>td:first-of-type{padding:0 .75em;line-height:1}
+.colist>table tr>td:first-of-type{padding:.4em .75em 0 .75em;line-height:1;vertical-align:top}
+.colist>table tr>td:first-of-type img{max-width:initial}
 .colist>table tr>td:last-of-type{padding:.25em 0}
 .thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
 .imageblock.left,.imageblock[style*="float: left"]{margin:.25em .625em 1.25em 0}
@@ -365,6 +371,7 @@ div.unbreakable{page-break-inside:avoid}
 .yellow{color:#bfbf00}
 .yellow-background{background-color:#fafa00}
 span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
 .admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
 .admonitionblock td.icon .icon-note:before{content:"\f05a";color:#19407c}
 .admonitionblock td.icon .icon-tip:before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
@@ -760,30 +767,17 @@ und sogar als Mensch mitspielen kann.</p>
 <h3 id="system-vorbereiten-und-spielleiter-starten">System vorbereiten und Spielleiter starten</h3>
 <div class="paragraph">
 <p>Die einzige Vorraussetzung ist, dass auf dem Rechner mindestens die
-Laufzeitumgebung für Java 6 installiert ist. Siehe <a href="#installation-java">Installation von Java</a>.</p>
+Laufzeitumgebung für Java 8 installiert ist. Siehe <a href="#installation-java">Installation von Java</a>.</p>
 </div>
 <div class="paragraph">
 <p>Nach der erfolgreichen Installation kann man den Server durch einen
-Doppelklick auf die <code>softwarechallenge-gui.jar</code> starten. Wenn der Start
-misslingt, liegt das meist an falsch eingestellten Umgebungsvariablen.
-Um das zu umgehen kann man den Spielleiter unter Windows auch mit der
-Datei <code>Start.bat</code> starten. Im Zweifel sollte für alle Betriebssysteme
-der Kommandozeilenbefehl</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="sh">java -jar softwarechallenge-gui.jar</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>auf jeden Fall zum erfolgreichen Starten des Spielleiters führen.</p>
+Doppelklick auf die Datei <code>software-challenge-gui.jar</code> starten.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="die-programmoberfläche">Die Programmoberfläche</h3>
 <div class="paragraph">
-<p>Die Programmoberfläche besteht aus dem Menü, der Spielfläche und der
-Statusleiste.</p>
+<p>Die Programmoberfläche besteht aus dem Menü links sowie der Spielfläche in der Mitte.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -792,10 +786,7 @@ Statusleiste.</p>
 <div class="title">Figure 1. Die Spielleiteroberfläche direkt nach dem Programmstart</div>
 </div>
 <div class="paragraph">
-<p>Über das Menü oben sind alle Funktionen des Servers erreichbar. Die
-Spielfläche in der Mitte mit den Steuerelementen dient zur Anzeige der
-Spiele. Die Statusleiste unten gibt kurze Statusinformationen zum Spiel
-aus.</p>
+<p>Auf der linken Seite sind alle möglichen Aktionen aufgelistet.</p>
 </div>
 <div class="paragraph">
 <p>Zu Beginn ist die Spielfläche leer.</p>
@@ -804,8 +795,8 @@ aus.</p>
 <div class="sect2">
 <h3 id="ein-neues-spiel-erstellen">Ein neues Spiel erstellen</h3>
 <div class="paragraph">
-<p>Um ein Spiel zu spielen, muss zunächst über das Menü "Spiel"→"Neues
-Spiel erstellen" das folgende Fenster aufgerufen werden:</p>
+<p>Um ein Spiel zu spielen, muss zunächst über das Menü links "Neues
+Spiel" die folgende Ansicht aufgerufen werden:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -815,14 +806,10 @@ Spiel erstellen" das folgende Fenster aufgerufen werden:</p>
 </div>
 <div class="paragraph">
 <p>In diesem Fenster werden die Spieler ausgewählt, die an dem Spiel
-teilnehmen sollen. Die fünf Spalten sind folgendermaßen zu verstehen:</p>
+teilnehmen sollen. Für jeden Spieler gibt es folgende Optionen:</p>
 </div>
 <div class="ulist">
 <ul>
-<li>
-<p>Position: Stellt die Startpositionen der einzelnen Spieler dar (der
-Spieler an Position 1 beginnt).</p>
-</li>
 <li>
 <p>Name: Hier kann für jeden Spieler ein Name eingegeben werden, der dann
 im Spiel angezeigt wird.</p>
@@ -842,7 +829,7 @@ Programms, das beim Starten des Spiels automatisch vom Server gestartet
 wird.</p>
 </li>
 <li>
-<p>Computerspieler (manuell): Ein Computerspieler in Form eines
+<p>Externes Programm: Ein Computerspieler in Form eines
 separaten Programms, das manuell durch den Benutzer gestartet werden
 muss.</p>
 </li>
@@ -850,52 +837,18 @@ muss.</p>
 </div>
 </li>
 <li>
-<p>Dateiname (auswählbar für 'Computerspieler'): Bei Spielertyp
+<p>Programm zum starten (auswählbar für 'Computerspieler'): Bei Spielertyp
 ‚Computerspieler’ ist eine Programmdatei auszuwählen, deren Name dann
-hier angezeigt wird. Bei anderen Spielertypen wird dort "-" angezeigt.</p>
+hier angezeigt wird.</p>
 </li>
 <li>
-<p>Parameter: Bei Spielertyp 'Computerspieler' können hier noch
-Kommandozeilenparameter übergeben werden.</p>
+<p>direkt aufrufen (kein Java Client): Bei Spielertyp ‚Computerspieler’ kann man durch aktivieren dieser Option erreichen, dass das ausgewählte Programm nicht wie ein Java Client gestartet wird (es ist also keine Jar-Datei). Wenn die Option activity ist, wird das ausgewählte Programm direkt aufgerufen. Die Daten zum Server und die Reservierungs-Nummer für das Spiel werden aber in jedem Fall als Parameter übergeben.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Unten lässt sich der Port für das Spiel einstellen. Dieser wird zum
-Verbinden der Programme mit dem Server benötigt, insbesondere für
-diejenigen, die manuell gestartet werden. Standardmäßig ist 13050
-eingestellt.</p>
-</div>
-<div class="paragraph">
-<p>Links daneben kann das Zeitlimit für einen Zug für Computerspieler
-deaktiviert werden. Menschliche Spieler können immer unbeschränkt lange
-über ihren aktuellen Zug nachdenken. Das Zeitlimit ist abhängig vom
-ausgewählten Spieltyp (s.u. und entsprechende Dokumentation). Benötigt
-ein Computerspieler mehr Zeit für die Kalkulation eines Zuges, wird das
-Spiel automatisch vom Server beendet und der Computerspieler verliert
-das Spiel.</p>
-</div>
-<div class="paragraph">
-<p>Die Option "Spiel aus Datei laden" ermöglicht es, einen beliebigen
-Spielzustand aus einer XML-Datei zu laden. Die XML-Datei muss dabei den
-Regeln genügen, wie sie in der
-<a href="#schnittstelle">Kommunikations-Dokumentation</a>
-beschrieben sind. Das Spiel wird dann ausgehend von dem so geladenen
-Spielzustand fortgesetzt.</p>
-</div>
-<div class="paragraph">
-<p>Links unten kann der Spieltyp ausgewählt werden, d.h. insbesondere das
-aktuelle Spiel des Jahres.</p>
-</div>
-<div class="paragraph">
 <p>Nach Eingabe der erforderlichen Werte kann das Spiel mithilfe des
-unteren Knopfs "Spiel starten" erstellt werden. Dabei erscheint der
-Dialog "Warte auf Spieler&#8230;&#8203;" solange, bis alle Computerspieler
-gestartet und mit dem Server verbunden wurden.</p>
-</div>
-<div class="paragraph">
-<p><strong>Hinweis:</strong> Es kann immer nur höchstens ein Spiel zurzeit über den Server
-gespielt werden.</p>
+unteren Knopfs "Start!" erstellt werden.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1028,7 +981,7 @@ GameState heraus. Sind Sie z.B. Spieler Rot im 6. Zug, suchen Sie nach
 einem Eintrag im XML, der folgendermaßen aussieht:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">  <span class="tok-nt">&lt;state</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;6&quot;</span> <span class="tok-na">startPlayer=</span><span class="tok-s">&quot;RED&quot;</span> <span class="tok-na">currentPlayer=</span><span class="tok-s">&quot;RED&quot;</span> <span class="tok-na">freeTurn=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">&gt;</span></code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span>  <span class="tok-nt">&lt;state</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;6&quot;</span> <span class="tok-na">startPlayer=</span><span class="tok-s">&quot;RED&quot;</span> <span class="tok-na">currentPlayer=</span><span class="tok-s">&quot;RED&quot;</span> <span class="tok-na">freeTurn=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">&gt;</span></code></pre>
 </div>
 </div>
 </li>
@@ -1037,7 +990,7 @@ einem Eintrag im XML, der folgendermaßen aussieht:</p>
 zum dazugehörigen schließenden state-XML-Tag, z.B.:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"> <span class="tok-nt">&lt;state</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;6&quot;</span> <span class="tok-na">startPlayer=</span><span class="tok-s">&quot;RED&quot;</span> <span class="tok-na">currentPlayer=</span><span class="tok-s">&quot;RED&quot;</span> <span class="tok-na">freeTurn=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml"><span></span> <span class="tok-nt">&lt;state</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;6&quot;</span> <span class="tok-na">startPlayer=</span><span class="tok-s">&quot;RED&quot;</span> <span class="tok-na">currentPlayer=</span><span class="tok-s">&quot;RED&quot;</span> <span class="tok-na">freeTurn=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">&gt;</span>
  ...
  <span class="tok-nt">&lt;/state&gt;</span></code></pre>
 </div>
@@ -1047,7 +1000,7 @@ zum dazugehörigen schließenden state-XML-Tag, z.B.:</p>
 <p>Erstellen Sie eine neue Textdatei mit folgendem Inhalt:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"> <span class="tok-nt">&lt;object-stream&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml"><span></span> <span class="tok-nt">&lt;object-stream&gt;</span>
  FÜGEN SIE HIER DEN IN SCHRITT 5 KOPIERTEN GAME-STATE EIN
  <span class="tok-nt">&lt;/object-stream&gt;</span></code></pre>
 </div>
@@ -1111,7 +1064,7 @@ entpackten Archives.</p>
 <p>Starten Sie den Testserver mit folgendem Befehl:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sh">  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>./logback.xml -jar softwarechallenge-server.jar</code></pre>
+<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>./logback.xml -jar softwarechallenge-server.jar</code></pre>
 </div>
 </div>
 </li>
@@ -1141,7 +1094,7 @@ werden:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sh">  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>./logback.xml -jar softwarechallenge-server.jar --loadGameFile ./replay.xml</code></pre>
+<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>./logback.xml -jar softwarechallenge-server.jar --loadGameFile ./replay.xml</code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -1164,7 +1117,7 @@ folgenden Parameter beim Starten des Servers bewährt:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sh">java -Dfile.encoding<span class="tok-o">=</span>UTF-8 <span class="tok-se">\</span>
+<pre class="pygments highlight"><code data-lang="sh"><span></span>java -Dfile.encoding<span class="tok-o">=</span>UTF-8 <span class="tok-se">\</span>
      -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml <span class="tok-se">\</span>
      -server <span class="tok-se">\</span>
      -XX:MaxGCPauseMillis<span class="tok-o">=</span><span class="tok-m">100</span> <span class="tok-se">\</span>
@@ -1181,7 +1134,7 @@ mehrere Zeilen zu verteilen):</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="batch">java -Dfile.encoding=UTF-8 <span class="tok-se">^</span>
+<pre class="pygments highlight"><code data-lang="batch"><span></span>java -Dfile.encoding=UTF-8 <span class="tok-se">^</span>
 <span class="tok-se"> </span>    -Dlogback.configurationFile=logback.xml <span class="tok-se">^</span>
 <span class="tok-se"> </span>    -server <span class="tok-se">^</span>
 <span class="tok-se"> </span>    -XX:MaxGCPauseMillis=100 <span class="tok-se">^</span>
@@ -1812,7 +1765,7 @@ IGameHandler implementiert:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">MyLogic</span> <span class="tok-kd">implements</span> <span class="tok-n">IGameHandler</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">MyLogic</span> <span class="tok-kd">implements</span> <span class="tok-n">IGameHandler</span> <span class="tok-o">{</span>
     <span class="tok-kd">private</span> <span class="tok-n">Starter</span> <span class="tok-n">starter</span><span class="tok-o">;</span>
     <span class="tok-kd">private</span> <span class="tok-n">GameState</span> <span class="tok-n">gameState</span><span class="tok-o">;</span>
     <span class="tok-kd">private</span> <span class="tok-n">Player</span> <span class="tok-n">player</span><span class="tok-o">;</span></code></pre>
@@ -1828,7 +1781,7 @@ Diese wird später noch gebraucht</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-nf">MyLogic</span><span class="tok-o">(</span><span class="tok-n">Starter</span> <span class="tok-n">starter</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-nf">MyLogic</span><span class="tok-o">(</span><span class="tok-n">Starter</span> <span class="tok-n">starter</span><span class="tok-o">)</span> <span class="tok-o">{</span>
     <span class="tok-k">this</span><span class="tok-o">.</span><span class="tok-na">starter</span> <span class="tok-o">=</span> <span class="tok-n">starter</span><span class="tok-o">;</span>
 <span class="tok-o">}</span></code></pre>
 </div>
@@ -1842,7 +1795,7 @@ Diese wird später noch gebraucht</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-nd">@Override</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-nd">@Override</span>
 <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">gameEnded</span><span class="tok-o">(</span><span class="tok-n">GameResult</span> <span class="tok-n">result</span><span class="tok-o">,</span> <span class="tok-n">PlayerColor</span> <span class="tok-n">color</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">errorMessage</span><span class="tok-o">)</span> <span class="tok-o">{</span>
     <span class="tok-c1">// Hier muss nichts getan werden</span>
 <span class="tok-o">}</span>
@@ -1888,7 +1841,7 @@ eingetragen werden.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-kd">enum</span> <span class="tok-n">LogicFactory</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">enum</span> <span class="tok-n">LogicFactory</span> <span class="tok-o">{</span>
     <span class="tok-n">MY_LOGIC</span><span class="tok-o">(</span><span class="tok-n">MyLogic</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">),</span>
     <span class="tok-o">...</span>
 <span class="tok-o">}</span></code></pre>
@@ -2043,7 +1996,7 @@ ist es entscheidend, dass die Hauptdatei mit einer sogenannten
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="ruby"><span class="tok-ch">#!/usr/bin/env ruby</span></code></pre>
+<pre class="pygments highlight"><code data-lang="ruby"><span></span><span class="tok-ch">#!/usr/bin/env ruby</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2052,7 +2005,7 @@ die Shebang-Zeile zu schreiben:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="ruby"><span class="tok-c1"># encoding: UTF-8</span></code></pre>
+<pre class="pygments highlight"><code data-lang="ruby"><span></span><span class="tok-c1"># encoding: UTF-8</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2125,7 +2078,7 @@ Konto ausreichend gedeckt ist:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-c1">// Beispiel um 40 Geldeinheiten abzuheben</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-c1">// Beispiel um 40 Geldeinheiten abzuheben</span>
 <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">kontostand</span> <span class="tok-o">&gt;=</span> <span class="tok-mi">40</span><span class="tok-o">)</span> <span class="tok-o">{</span>
     <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">-</span> <span class="tok-mi">40</span><span class="tok-o">;</span>
 <span class="tok-o">}</span></code></pre>
@@ -2161,7 +2114,7 @@ eine <em>Klasse</em>, die eine Art Bauplan ist:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">Konto</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">Konto</span> <span class="tok-o">{</span>
     <span class="tok-kd">private</span> <span class="tok-kt">int</span> <span class="tok-n">kontostand</span><span class="tok-o">;</span>
 
     <span class="tok-kd">public</span> <span class="tok-nf">Konto</span><span class="tok-o">()</span> <span class="tok-o">{</span>
@@ -2200,7 +2153,7 @@ ein Objekt erzeugen:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-n">Konto</span> <span class="tok-n">konto1</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span> <span class="tok-c1">//Erzeugt ein Konto-Objekt und speichert es in der Variablen konto1</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">Konto</span> <span class="tok-n">konto1</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span> <span class="tok-c1">//Erzeugt ein Konto-Objekt und speichert es in der Variablen konto1</span>
 <span class="tok-n">Konto</span> <span class="tok-n">konto2</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span> <span class="tok-c1">//Erzeugt noch ein Konto und speichert es in einer anderen Variablen</span></code></pre>
 </div>
 </div>
@@ -2218,7 +2171,7 @@ Punktoperator auf:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-n">Konto</span> <span class="tok-n">konto1</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span>            <span class="tok-c1">// konto: 0 Geldeinheiten (GE)</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">Konto</span> <span class="tok-n">konto1</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span>            <span class="tok-c1">// konto: 0 Geldeinheiten (GE)</span>
 <span class="tok-n">Konto</span> <span class="tok-n">konto2</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span>            <span class="tok-c1">// konto2: 0 GE</span>
 
 <span class="tok-n">konto1</span><span class="tok-o">.</span><span class="tok-na">einzahlen</span><span class="tok-o">(</span><span class="tok-mi">100</span><span class="tok-o">);</span>                 <span class="tok-c1">// konto1: 100 GE, konto2: 0  GE</span>
@@ -2234,7 +2187,7 @@ einfach, da nur noch Änderungen in der Klasse notwendig sind:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">class</span> <span class="tok-nc">Konto</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">class</span> <span class="tok-nc">Konto</span> <span class="tok-o">{</span>
      <span class="tok-kd">private</span> <span class="tok-kt">int</span> <span class="tok-n">kontostand</span><span class="tok-o">;</span>
      <span class="tok-kd">private</span> <span class="tok-kt">int</span> <span class="tok-n">dispo</span><span class="tok-o">;</span> <i class="conum" data-value="1"></i><b>(1)</b>
 
@@ -2311,7 +2264,7 @@ nehmen und entsprechend erweitern:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">PremiumKonto</span> <span class="tok-kd">extends</span> <span class="tok-n">Konto</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">PremiumKonto</span> <span class="tok-kd">extends</span> <span class="tok-n">Konto</span> <span class="tok-o">{</span>
      <span class="tok-kd">private</span> <span class="tok-kt">double</span> <span class="tok-n">zinsbetrag</span><span class="tok-o">;</span>
 
      <span class="tok-kd">public</span> <span class="tok-nf">PremiumKonto</span><span class="tok-o">()</span> <span class="tok-o">{</span>
@@ -2343,7 +2296,7 @@ normalen Konto:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-n">PremiumKonto</span> <span class="tok-n">premium</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">();</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">PremiumKonto</span> <span class="tok-n">premium</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">();</span>
 
 <span class="tok-n">premium</span><span class="tok-o">.</span><span class="tok-na">einzahlen</span><span class="tok-o">(</span><span class="tok-mi">50</span><span class="tok-o">);</span> <span class="tok-c1">//geerbte Methode</span>
 <span class="tok-n">premium</span><span class="tok-o">.</span><span class="tok-na">zinsenGutschreiben</span><span class="tok-o">();</span></code></pre>
@@ -2374,7 +2327,7 @@ gehört:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-n">Konto</span> <span class="tok-n">konto7</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">();</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">Konto</span> <span class="tok-n">konto7</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">();</span>
 
 <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">konto6</span> <span class="tok-k">instanceof</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">)</span> <span class="tok-o">{</span>
     <span class="tok-n">Premiumkonto</span> <span class="tok-n">premium2</span> <span class="tok-o">=</span> <span class="tok-o">(</span><span class="tok-n">PremiumKonto</span><span class="tok-o">)</span> <span class="tok-n">konto7</span><span class="tok-o">;</span>
@@ -2402,7 +2355,7 @@ sein, kann man diesen als statisch deklarieren:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">PremiumKonto</span> <span class="tok-kd">extends</span> <span class="tok-n">Konto</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">PremiumKonto</span> <span class="tok-kd">extends</span> <span class="tok-n">Konto</span> <span class="tok-o">{</span>
      <span class="tok-kd">private</span> <span class="tok-kd">static</span> <span class="tok-kt">double</span> <span class="tok-n">zinsbetrag</span> <span class="tok-o">=</span> <span class="tok-mf">2.5d</span><span class="tok-o">;</span> <span class="tok-c1">//2.5% Zinsen</span>
 
      <span class="tok-o">...</span>
@@ -2424,7 +2377,7 @@ den Klassennamen aufrufen darf.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-n">PremiumKonto</span><span class="tok-o">.</span><span class="tok-na">setZinsbetrag</span><span class="tok-o">(</span><span class="tok-mf">3d</span><span class="tok-o">);</span> <span class="tok-c1">//Zinsen auf 3% erhöhen</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">PremiumKonto</span><span class="tok-o">.</span><span class="tok-na">setZinsbetrag</span><span class="tok-o">(</span><span class="tok-mf">3d</span><span class="tok-o">);</span> <span class="tok-c1">//Zinsen auf 3% erhöhen</span>
 
 <span class="tok-n">PremiumKonto</span> <span class="tok-n">premium3</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">();</span>
 <span class="tok-n">premium3</span><span class="tok-o">.</span><span class="tok-na">setZinsbetrag</span><span class="tok-o">(</span><span class="tok-mf">3d</span><span class="tok-o">);</span></code></pre>
@@ -2522,7 +2475,7 @@ Zeile, die nicht mehr eingerückt ist.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">for</span> <span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">i</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-o">;</span> <span class="tok-n">i</span> <span class="tok-o">&lt;</span> <span class="tok-mi">110</span><span class="tok-o">;</span> <span class="tok-n">i</span><span class="tok-o">++)</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-k">for</span> <span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">i</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-o">;</span> <span class="tok-n">i</span> <span class="tok-o">&lt;</span> <span class="tok-mi">110</span><span class="tok-o">;</span> <span class="tok-n">i</span><span class="tok-o">++)</span> <span class="tok-o">{</span>
      <span class="tok-n">x</span> <span class="tok-o">=</span> <span class="tok-n">x</span> <span class="tok-o">+</span> <span class="tok-mi">2</span><span class="tok-o">;</span>
      <span class="tok-o">...</span>
 <span class="tok-o">}</span></code></pre>
@@ -2534,7 +2487,7 @@ schließende Klammer:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">bedingung</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">bedingung</span><span class="tok-o">)</span> <span class="tok-o">{</span>
      <span class="tok-o">...</span>
 <span class="tok-o">}</span> <span class="tok-k">else</span> <span class="tok-o">{</span>
      <span class="tok-o">...</span>
@@ -2546,7 +2499,7 @@ schließende Klammer:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">bedingung</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">bedingung</span><span class="tok-o">)</span> <span class="tok-o">{</span>
      <span class="tok-o">...</span>
 <span class="tok-o">}</span> <span class="tok-k">else</span> <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">begingung2</span><span class="tok-o">)</span> <span class="tok-o">{</span>
      <span class="tok-o">...</span>
@@ -2565,7 +2518,7 @@ schließende Klammer:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-k">switch</span> <span class="tok-o">(</span><span class="tok-n">variable</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-k">switch</span> <span class="tok-o">(</span><span class="tok-n">variable</span><span class="tok-o">)</span> <span class="tok-o">{</span>
 <span class="tok-k">case</span> <span class="tok-mi">1</span> <span class="tok-o">:</span>
     <span class="tok-o">...</span>
     <span class="tok-cm">/* fällt durch */</span>
@@ -2659,7 +2612,7 @@ leicht in ein Programm überführt werden:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span class="tok-cm">/**</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-cm">/**</span>
 <span class="tok-cm">  * Das Array a[] symbolisiert den Stapel der unsortierten Karten. Dabei steht</span>
 <span class="tok-cm">  * eine Zahl immer für eine spezielle Karte. Eine kleinere Zahl bedeutet,</span>
 <span class="tok-cm">  * dass es sich um eine kleinere Karte handelt.</span>
@@ -2835,7 +2788,7 @@ ein Tag, in dem alle anderen enthalten sind.</p>
 <h5 id="beispiel-für-korrekte-xml-syntax">Beispiel für korrekte XML-Syntax</h5>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span class="tok-nt">&lt;addiere&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;addiere&gt;</span>
     <span class="tok-nt">&lt;komplexe_zahl&gt;</span>
         <span class="tok-nt">&lt;realteil&gt;</span>3.5<span class="tok-nt">&lt;/realteil&gt;</span>
         <span class="tok-nt">&lt;imaginaerteil&gt;</span>4.2<span class="tok-nt">&lt;/imaginaerteil&gt;</span>
@@ -2859,7 +2812,7 @@ ein Tag, in dem alle anderen enthalten sind.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span class="tok-nt">&lt;ueberschrift&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;ueberschrift&gt;</span>
     Beispieldokument
 <span class="tok-nt">&lt;/ueberschrift&gt;</span>
 <span class="tok-nt">&lt;text&gt;</span>
@@ -2878,7 +2831,7 @@ ein Tag, in dem alle anderen enthalten sind.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span class="tok-nt">&lt;dokument&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;dokument&gt;</span>
     <span class="tok-nt">&lt;ueberschrift&gt;</span>
         Beispieldokument
     <span class="tok-nt">&lt;/ueberschrift&gt;</span>
@@ -2900,7 +2853,7 @@ ein Tag, in dem alle anderen enthalten sind.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span class="tok-nt">&lt;Tag</span> <span class="tok-na">attribut=</span><span class="tok-s">&quot;wert&quot;</span><span class="tok-nt">&gt;</span></code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;Tag</span> <span class="tok-na">attribut=</span><span class="tok-s">&quot;wert&quot;</span><span class="tok-nt">&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2909,7 +2862,7 @@ ein Tag, in dem alle anderen enthalten sind.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span class="tok-nt">&lt;addiere&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;addiere&gt;</span>
     <span class="tok-nt">&lt;komplexe_zahl</span> <span class="tok-na">realteil=</span><span class="tok-s">&quot;3.5&quot;</span> <span class="tok-na">imaginaerteil=</span><span class="tok-s">&quot;4.2&quot;</span> <span class="tok-nt">/&gt;</span>
     <span class="tok-nt">&lt;komplexe_zahl</span> <span class="tok-na">realteil=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">imaginaerteil=</span><span class="tok-s">&quot;6.9&quot;</span> <span class="tok-nt">/&gt;</span>
 <span class="tok-nt">&lt;/addiere&gt;</span></code></pre>
@@ -2926,7 +2879,7 @@ sehr ähnlich:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span class="tok-cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot; ?&gt;</span></code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot; ?&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2946,7 +2899,7 @@ Einlesen dann ignoriert werden:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span class="tok-c">&lt;!-- Ich bin ein XML-Kommentar --&gt;</span></code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-c">&lt;!-- Ich bin ein XML-Kommentar --&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
