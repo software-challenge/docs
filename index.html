@@ -771,7 +771,7 @@ Laufzeitumgebung für Java 8 installiert ist. Siehe <a href="#installation-java"
 </div>
 <div class="paragraph">
 <p>Nach der erfolgreichen Installation kann man den Server durch einen
-Doppelklick auf die Datei <code>software-challenge-gui.jar</code> starten.</p>
+Doppelklick auf die Datei <code>software-challenge-gui</code> starten.</p>
 </div>
 </div>
 <div class="sect2">
@@ -857,97 +857,72 @@ unteren Knopfs "Start!" erstellt werden.</p>
 <div class="content">
 <img src="./images/spielfeldoberflaeche.jpg" alt="spielfeldoberflaeche">
 </div>
-<div class="title">Figure 3. Die Spielfeldoberfläche (hier mit dem Spiel "Schäfchen im Trockenen")</div>
+<div class="title">Figure 3. Die Spielfeldoberfläche (hier mit dem Spiel "Hase und Igel")</div>
 </div>
 <div class="paragraph">
 <p>Die Spielfeldoberfläche setzt sich aus dem Spielbrett (der große
 zentrale Bereich) und den Spielsteuerelementen (unten) zusammen.</p>
 </div>
 <div class="paragraph">
-<p>Auf dem Spielbrett werden das eigentliche Spiel (hier z.B. "Schäfchen im
-Trockenen"), die Züge und weitere für das Spiel wichtige Informationen
+<p>Auf dem Spielbrett werden das eigentliche Spiel (hier z.B. "Hase und Igel"),
+die Züge und weitere für das Spiel wichtige Informationen
 dargestellt. Hier setzt der menschliche Spieler auch seine Züge.</p>
 </div>
 <div class="paragraph">
-<p>Die Steuerelemente am unteren Rand haben folgende Bedeutung:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="./images/steuerelemente.jpg" alt="steuerelemente">
-</div>
-<div class="title">Figure 4. Die Steuerelemente des Spielleiters</div>
+<p>Die Steuerelemente unterscheiden sich je nach Spiel und Spielsituation. Unten
+rechts gibt es immer die beiden Schaltflächen "Vor" und "Zurück". Mit diesen
+kann man die Züge des Spiels durchgehen (das ist am nützlichsten, wenn zwei
+Computerspieler gegeneinander spielen und man sich die Züge genau ansehen will).</p>
 </div>
 <div class="paragraph">
-<p>Über den Geschwindigkeitsregler kann die Pausenlänge zwischen zwei
-Spielzügen eingestellt werden. Spielen 2 Computerspieler gegeneinander,
-ist es evtl. ratsam, diesen Wert z.B. auf 3 Sekunden einzustellen, damit
-die Partie besser am Bildschirm verfolgt werden kann.</p>
+<p>Wenn ein menschlicher Spieler am Zug ist, werden ausserdem Schaltfächen zur
+Eingabe des Spielzuges angezeigt. Die allgemeinen Schaltflächen sind "Senden"
+und "Abbrechen", mit denen man den aktuell eingegebenen Spielzug abschicken oder
+löschen (um einen anderen einzugeben) kann.</p>
 </div>
 <div class="paragraph">
-<p>Ganz rechts unten am Rand kann ein laufendes Spiel mithilfe des Knopfes
-"Abbrechen" abgebrochen werden, wobei alle verbundenen Computerspieler
-vom Server getrennt werden. Damit das Spiel nicht versehentlich
-abgebrochen wird, erscheint vor dem Abbruch allerdings zunächst ein
-Warnhinweis. Dieser Warnhinweis kann über den Menüpunkt "Optionen"
-ausgeschaltet werden.</p>
+<p>Alle anderen Schaltflächen hängen von der aktuellen Spielsituation ab:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Die Felder, auf die man ziehen kann, werden rot eingefärbt. Man kann auf ein
+Feld klicken, um einen Vorwärtszug einzugeben (oder bei einem Feld hinter dem
+Spieler einen Zurückfallen-Zug).</p>
+</li>
+<li>
+<p>Befindet man sich zu Beginn des Zuges auf einem Karotten-Feld, werden unten
+Schaltflächen zum Nehmen oder Abgeben von Karotten angezeigt.</p>
+</li>
+<li>
+<p>Befindet man sich zu Beginn des Zuges auf einem Salat-Feld, wird unten eine
+Schaltfläche zum Essen eines Salates angezeigt.</p>
+</li>
+<li>
+<p>Zieht man auf ein Hasen-Feld, werden die Spielbaren Hasen-Joker oben beim
+Punktestand des jeweiligen Spielers weiss eingfärbt und man kann sie durch
+einen Klick darauf spielen. Bei dem Joker "Karotten abgeben oder nehmen" kann
+man danach noch eine Karottenzahl wählen.</p>
+</li>
+<li>
+<p>Gibt es keine anderen Zugmöglichkeiten, wird eine Aussetzen-Schaltfläche unten
+angezeigt.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
 <h3 id="spielwiederholung-laden">Spielwiederholung laden</h3>
-<div class="imageblock">
-<div class="content">
-<img src="./images/spielwiederholung_laden.jpg" alt="spielwiederholung laden">
-</div>
-<div class="title">Figure 5. Dialog, um Spielwiederholungen zu laden</div>
-</div>
 <div class="paragraph">
-<p>Nachdem ein Spiel beendet wurde, wird eine
-Wiederholungsdatei im Ordner "Replay" erstellt. Diese kann über das
-obige Menü unter "Spiel"→"Spielwiederholung laden" ausgewählt werden.
-Dabei öffnet sich das Fenster "Wiederholung laden".</p>
-</div>
-<div class="paragraph">
-<p>Oben muss der Spieltyp der zu ladenden Wiederholung ausgewählt werden.</p>
-</div>
-<div class="paragraph">
-<p>Nach Betätigung des Knopfes "Wiederholung auswählen" kann die
-Replay-Datei des gewünschten Spiels gewählt werden. Die Dateinamen sind
-dabei nach folgendem Schema aufgebaut:
-<code>replay_Spielername1_Spielername2 Datum Uhrzeit.xml.gz</code>, also z.B.
-<code>replay_Jasper_Johannes 2010.09.02 15_10_16.xml.gz</code></p>
-</div>
-<div class="paragraph">
-<p>Mit "Start" wird dann die Wiederholung geladen und auf der zuvor
-beschriebenen Spielfeldoberfläche dargestellt.</p>
+<p>Spielwiederholungen werden leider noch nicht unterstützt. Wir werden diese
+Funktion so schnell wie möglich nachreichen!</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="testdurchläufe">Testdurchläufe</h3>
-<div class="imageblock">
-<div class="content">
-<img src="./images/testdurchla_ufe.jpg" alt="testdurchla ufe">
-</div>
-<div class="title">Figure 6. Beispieldialog für einen Testdurchlauf</div>
-</div>
 <div class="paragraph">
-<p>Über das Menü "Spiel" → "Testdurchläufe" gelangt man zum
-Konfigurationsfenster für Testdurchläufe. Hier kann man Computerspieler
-(keine menschlichen Spieler) gegeneinander in mehreren Spielen
-hintereinander antreten lassen und erhält eine ausführliche Statistik
-über die absolvierten Spiele.</p>
-</div>
-<div class="paragraph">
-<p>Oben muss der Spieltyp ausgewählt, rechts daneben die Anzahl der Spiele
-eingegeben werden. Außerdem kann wieder optional das Zeitlimit
-deaktiviert werden.</p>
-</div>
-<div class="paragraph">
-<p>Darunter sind die Computerspieler auszuwählen. Anschließend kann der
-Test durch das Anklicken des entsprechenden Knopfes unten rechts
-gestartet werden.</p>
-</div>
-<div class="paragraph">
-<p>Die durchgeführten Spiele werden als Replay-Datei gespeichert.</p>
+<p>Testdurchläufe werden leider noch nicht unterstützt. Wir werden diese
+Funktion so schnell wie möglich nachreichen!</p>
 </div>
 </div>
 <div class="sect2">
@@ -1275,7 +1250,7 @@ hat, ist Java einsatzbereit.</p>
 <div class="content">
 <img src="./images/java-einstellungen_mac.jpg" alt="java einstellungen mac">
 </div>
-<div class="title">Figure 7. Das Programm "Java-Einstellungen" auf Mac OS X</div>
+<div class="title">Figure 4. Das Programm "Java-Einstellungen" auf Mac OS X</div>
 </div>
 <div class="paragraph">
 <p>Da bei Mac OS X Das JDK schon
@@ -1392,7 +1367,7 @@ Installation ist nicht notwendig.</p>
 <div class="content">
 <img src="./images/eclipse_neues_projekt_wa_hlen.jpg" alt="eclipse neues projekt wa hlen">
 </div>
-<div class="title">Figure 8. In Eclipse ein neues Projekt erstellen</div>
+<div class="title">Figure 5. In Eclipse ein neues Projekt erstellen</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1448,7 +1423,7 @@ angeben. Dort den Ordner "doc" des simple Clients eingeben.</p>
 <div class="content">
 <img src="./images/eclipse_simpleclient_starten.jpg" alt="eclipse simpleclient starten">
 </div>
-<div class="title">Figure 9. Start des Clients aus Eclipse</div>
+<div class="title">Figure 6. Start des Clients aus Eclipse</div>
 </div>
 <div class="paragraph">
 <p>Den SimpleClient kann man starten, indem man im Project-Explorer einen
@@ -1600,7 +1575,7 @@ Entwicklungsumgebung Eclipse vor.</p>
 <div class="content">
 <img src="./images/eclipse_desktop.jpg" alt="eclipse desktop">
 </div>
-<div class="title">Figure 10. Überblick über die wichtigsten Fenster in Eclipse</div>
+<div class="title">Figure 7. Überblick über die wichtigsten Fenster in Eclipse</div>
 </div>
 <div class="sect3">
 <h4 id="package-explorer">Package Explorer</h4>
@@ -3393,7 +3368,7 @@ weniger Last für das System zur Verfügung gestellt werden können.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-09-04 15:56:49 CEST
+Last updated 2017-09-05 11:12:26 CEST
 </div>
 </div>
 </body>
