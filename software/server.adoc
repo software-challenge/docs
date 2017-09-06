@@ -158,37 +158,14 @@ eine Schritt-für-Schritt Anleitung:
 . Laden Sie das betreffende Replay aus dem Wettkampfsystem herunter
   (.xml.gz Datei).
 . Entpacken Sie das Replay, sodass sie eine .xml-Datei erhalten.
-. Öffnen Sie die XML-Datei mit einem Texteditor.
-. Jetzt folgt der wohl schwerste Teil: Suchen Sie sich anhand der
-  Rundennummer und dem Spieler, der an der Reihe ist, den gewünschten
-  GameState heraus. Sind Sie z.B. Spieler Rot im 6. Zug, suchen Sie nach
-  einem Eintrag im XML, der folgendermaßen aussieht:
-[source,xml]
-  <state turn="6" startPlayer="RED" currentPlayer="RED" freeTurn="false">
-
-. Kopieren Sie den kompletten GameState, von dem öffnenden bis einschließlich
-  zum dazugehörigen schließenden state-XML-Tag, z.B.:
-[source,xml]
- <state turn="6" startPlayer="RED" currentPlayer="RED" freeTurn="false">
- ...
- </state>
-
-. Erstellen Sie eine neue Textdatei mit folgendem Inhalt:
-[source,xml]
- <object-stream>
- FÜGEN SIE HIER DEN IN SCHRITT 5 KOPIERTEN GAME-STATE EIN
- </object-stream>
-
-. Speichern Sie die Datei unter einem beliebigen Namen mit der Endung
-  .xml
 . Starten Sie den Server und erstellen Sie ein neues Spiel. Wählen Sie
   den Computerspieler, der für diese Spielsituation getestet werden soll.
   Dieser Spieler muss als Spieler 1 gestartet werden und ist dann direkt
   als erstes dran. Der Gegenspieler kann dann ein beliebiger Computerspieler
   oder auch ein Mensch sein.
 . Setzen Sie einen Haken bei "Spiel aus Datei laden". Wählen Sie über
-  "Datei wählen" die in Schritt 6 erstellte Datei aus. Starten Sie dann
-  das Spiel. Das Spiel sollte sich nun in genau der Situation befinden, in
+  "Datei wählen" das entsprechende Replay aus und spezifizieren sie den Zug in dem gestartet werden soll. 
+  Starten Sie dann das Spiel. Das Spiel sollte sich nun in genau der Situation befinden, in
   der das Fehlerverhalten aufgetreten ist. Dabei ist der Spieler, der nun
   dran ist immer der rote Spieler. Falls der blaue Spieler eigentlich dran
   war, werden die Farben der Spieler getauscht.
@@ -232,10 +209,10 @@ Es ist ebenfalls möglich, statt eines Zufällig generierten vollständigen
 Spielplanes eine Spielsituation zu laden und zu testen. Die Spielsituation muss
 vorher wie unter <<spielsituation-nachstellen,Spielsituation nachstellen>>
 erzeugt werden. Dann kann die Datei mit dem Argument `--loadGameFile` geladen
-werden:
+werden und optional mit `--turn` ein Zug spezifiziert werden.
 
 [source,sh]
-  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=./logback.xml -jar softwarechallenge-server.jar --loadGameFile ./replay.xml
+  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=./logback.xml -jar softwarechallenge-server.jar --loadGameFile ./replay.xml --turn 10
 
 [[soft-timeouts]]
 ==== Unerwartete Zugzeitüberschreitungen (Soft-Timeout)

@@ -2,5 +2,5 @@
 
 == Hase und Igel
 
-- <<spiele/hase-und-igel/spielregln/regeln.adoc#,Spielregeln>>
+- <<spiele/hase-und-igel/spielregeln/regeln.adoc#,Spielregeln>>
 - <<spiele/hase-und-igel/xml-dokumentation/xml-dokumentation.adoc#,XML Dokumentation>>
