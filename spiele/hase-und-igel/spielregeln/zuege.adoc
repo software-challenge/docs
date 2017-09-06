@@ -23,7 +23,7 @@ Ein Spieler hat zu Beginn folgende Karten:
 
 ==== Friss sofort einen Salat
 Es wird ein Salat vom Spieler entfernt, je nach Position des Spielers (Erster/Zweiter) erhält der Spieler Karotten (10/30).
-Diese Karte darf nur eingesetzt werden, wenn der Spieler mehr als einen Salat hat. Im dem nächsten Zug muss das betretene Hasenfeld verlassen werden.
+Diese Karte darf nur eingesetzt werden, wenn der Spieler mindestens einen Salat hat. Im dem nächsten Zug muss das betretene Hasenfeld verlassen werden.
 
 ==== Karotten nehmen oder abgeben
 Der Spieler darf 20 Karotten abgeben oder aufnehmen oder nichts tun. Es darf der Spieler nicht mehr Karotten abgeben als er besitzt. Im dem nächsten Zug muss das betretene Hasenfeld verlassen werden.
