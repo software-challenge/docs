@@ -13,6 +13,8 @@ und Kursleiter über den Zweck der Software-Challenge informieren. Für
 die teilnehmenden Teams ist hier alles dokumentiert, was für den
 Ablauf des Wettbewerbes benötigt wird.
 
+ifndef::backend-pdf[link:index.pdf[PDF-Version dieses Dokumentes]]
+
 Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
 Dokumentation kann
 https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs[direkt auf
@@ -24,10 +26,14 @@ welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 svk@informatik.uni-kiel.de.
 
-Die Dokumentation zu dem aktuellen Spiel, Hase und Igel, finden Sie in zwei separaten Dokumenten:
+ifndef::backend-pdf[]
+Die Dokumentation zu dem aktuellen Spiel, Hase und Igel, finden Sie in separaten Dokumenten:
 
 - <<spiele/hase-und-igel/regeln.adoc#,Hase und Igel Spielregeln>>
 - <<spiele/hase-und-igel/xml-dokumentation.adoc#,Hase und Igel XML Dokumentation>>
+- <<spiele/hase-und-igel/tutorial.adoc#,Hase und Igel Tutorial>>
+endif::backend-pdf[]
+
 
 include::allgemein/die-software-challenge.adoc[]
 

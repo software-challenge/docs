@@ -16,5 +16,5 @@ mit Ausnahme der Salatfelder werden zufällig permutiert.
 2. Die Zahlenfelder 3 und 4 werden durch Karottenfelder ersetzt.
 3. Das Zahlenfeld 1/5/6 wird durch das Zahlenfeld 1 ersetzt.
 
-include::spielregeln/regeln.adoc[]
-include::xml-dokumentation/xml-dokumentation.adoc[]
+include::spielregeln/regeln.adoc[leveloffset=+1]
+include::xml-dokumentation/xml-dokumentation.adoc[leveloffset=+1]

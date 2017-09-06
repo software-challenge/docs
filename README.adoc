@@ -88,9 +88,11 @@ Aktualisierte Dokumentation wird bei einem Commit in den
 `git-post-commit-hook.sh` lokal installiert ist. Dazu einfach die
 Datei `git-post-commit-hook.sh` aus dem Repository in das Verzeichnis
 `.git/hooks` des Repositories kopieren. Der Dateiname muss dann
-`post-commit` lauten.
+`post-commit` lauten. Damit auch das Aktualisierungsdatum im Kopf der
+Dokumentation immer aktualisiert wird, kann man das `publish.sh` Script
+verwenden, anstatt direkt ein `git commit` zu machen.
 
-Dann wird nach einem Commit alles automatisch konvertiert auf GitHub
+Dann wird nach dem Commit alles automatisch konvertiert auf GitHub
 Pages hochgeladen (inklusive Kopieren der Bilder).
 
 == Quickstart

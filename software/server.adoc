@@ -21,52 +21,35 @@ und sogar als Mensch mitspielen kann.
 === System vorbereiten und Spielleiter starten
 
 Die einzige Vorraussetzung ist, dass auf dem Rechner mindestens die
-Laufzeitumgebung für Java 6 installiert ist. Siehe <<installation-java>>.
+Laufzeitumgebung für Java 8 installiert ist. Siehe <<installation-java>>.
 
 Nach der erfolgreichen Installation kann man den Server durch einen
-Doppelklick auf die `softwarechallenge-gui.jar` starten. Wenn der Start
-misslingt, liegt das meist an falsch eingestellten Umgebungsvariablen.
-Um das zu umgehen kann man den Spielleiter unter Windows auch mit der
-Datei `Start.bat` starten. Im Zweifel sollte für alle Betriebssysteme
-der Kommandozeilenbefehl
-
-[source,sh]
-----
-java -jar softwarechallenge-gui.jar
-----
-
-auf jeden Fall zum erfolgreichen Starten des Spielleiters führen.
+Doppelklick auf die Datei `software-challenge-gui.jar` starten.
 
 [[die-programmoberfläche]]
 === Die Programmoberfläche
 
-Die Programmoberfläche besteht aus dem Menü, der Spielfläche und der
-Statusleiste.
+Die Programmoberfläche besteht aus dem Menü links sowie der Spielfläche in der Mitte.
 
 .Die Spielleiteroberfläche direkt nach dem Programmstart
 image::spielleiter_direkt_nach-start.jpg[Spielleiter]
 
-Über das Menü oben sind alle Funktionen des Servers erreichbar. Die
-Spielfläche in der Mitte mit den Steuerelementen dient zur Anzeige der
-Spiele. Die Statusleiste unten gibt kurze Statusinformationen zum Spiel
-aus.
+Auf der linken Seite sind alle möglichen Aktionen aufgelistet.
 
 Zu Beginn ist die Spielfläche leer.
 
 [[ein-neues-spiel-erstellen]]
 === Ein neues Spiel erstellen
 
-Um ein Spiel zu spielen, muss zunächst über das Menü "Spiel"→"Neues
-Spiel erstellen" das folgende Fenster aufgerufen werden:
+Um ein Spiel zu spielen, muss zunächst über das Menü links "Neues
+Spiel" die folgende Ansicht aufgerufen werden:
 
 .Dialog für ein neues Spiel
 image::neues_spiel_dialog.jpg[Neues Spiel]
 
 In diesem Fenster werden die Spieler ausgewählt, die an dem Spiel
-teilnehmen sollen. Die fünf Spalten sind folgendermaßen zu verstehen:
+teilnehmen sollen. Für jeden Spieler gibt es folgende Optionen:
 
-* Position: Stellt die Startpositionen der einzelnen Spieler dar (der
-Spieler an Position 1 beginnt).
 * Name: Hier kann für jeden Spieler ein Name eingegeben werden, der dann
 im Spiel angezeigt wird.
 * Spielertyp: Es kann zwischen 3 verschiedenen Spielertypen gewählt
@@ -76,45 +59,16 @@ spielt.
 2.  Computerspieler: Ein Computerspieler in Form eines separaten
 Programms, das beim Starten des Spiels automatisch vom Server gestartet
 wird.
-3.  Computerspieler (manuell): Ein Computerspieler in Form eines
+3.  Externes Programm: Ein Computerspieler in Form eines
 separaten Programms, das manuell durch den Benutzer gestartet werden
 muss.
-* Dateiname (auswählbar für 'Computerspieler'): Bei Spielertyp
+* Programm zum starten (auswählbar für 'Computerspieler'): Bei Spielertyp
 ‚Computerspieler’ ist eine Programmdatei auszuwählen, deren Name dann
-hier angezeigt wird. Bei anderen Spielertypen wird dort "-" angezeigt.
-* Parameter: Bei Spielertyp 'Computerspieler' können hier noch
-Kommandozeilenparameter übergeben werden.
-
-Unten lässt sich der Port für das Spiel einstellen. Dieser wird zum
-Verbinden der Programme mit dem Server benötigt, insbesondere für
-diejenigen, die manuell gestartet werden. Standardmäßig ist 13050
-eingestellt.
-
-Links daneben kann das Zeitlimit für einen Zug für Computerspieler
-deaktiviert werden. Menschliche Spieler können immer unbeschränkt lange
-über ihren aktuellen Zug nachdenken. Das Zeitlimit ist abhängig vom
-ausgewählten Spieltyp (s.u. und entsprechende Dokumentation). Benötigt
-ein Computerspieler mehr Zeit für die Kalkulation eines Zuges, wird das
-Spiel automatisch vom Server beendet und der Computerspieler verliert
-das Spiel.
-
-Die Option "Spiel aus Datei laden" ermöglicht es, einen beliebigen
-Spielzustand aus einer XML-Datei zu laden. Die XML-Datei muss dabei den
-Regeln genügen, wie sie in der
-<<schnittstelle,Kommunikations-Dokumentation>>
-beschrieben sind. Das Spiel wird dann ausgehend von dem so geladenen
-Spielzustand fortgesetzt.
-
-Links unten kann der Spieltyp ausgewählt werden, d.h. insbesondere das
-aktuelle Spiel des Jahres.
+hier angezeigt wird.
+* direkt aufrufen (kein Java Client): Bei Spielertyp ‚Computerspieler’ kann man durch aktivieren dieser Option erreichen, dass das ausgewählte Programm nicht wie ein Java Client gestartet wird (es ist also keine Jar-Datei). Wenn die Option activity ist, wird das ausgewählte Programm direkt aufgerufen. Die Daten zum Server und die Reservierungs-Nummer für das Spiel werden aber in jedem Fall als Parameter übergeben.
 
 Nach Eingabe der erforderlichen Werte kann das Spiel mithilfe des
-unteren Knopfs "Spiel starten" erstellt werden. Dabei erscheint der
-Dialog "Warte auf Spieler..." solange, bis alle Computerspieler
-gestartet und mit dem Server verbunden wurden.
-
-*Hinweis:* Es kann immer nur höchstens ein Spiel zurzeit über den Server
-gespielt werden.
+unteren Knopfs "Start!" erstellt werden.
 
 [[die-spielfeldoberfläche]]
 === Die Spielfeldoberfläche

@@ -5,11 +5,12 @@ Ein Spieler kann folgende Züge machen:
 === Vorwärtszug
 Durch einen Vorwärtszug bewegt sich der Spieler um die entsprechende Zahl von Feldern nach vorne (mindestens 1). Dabei werden Karotten entsprechend der Rennkarte verbraucht. 
 Wenn ein Spieler sich auf dem Startfeld befindet muss ein Vorwärtszug gemacht werden.
-Wenn ein Spieler sich auf einem Startfeld befindet und den letzten Zug einen Salat gefressen hat, muss ein Bewegungszug gemacht werden (Vorwärtszug oder Rückwärtszug).
+Wenn ein Spieler sich auf einem Startfeld befindet oder die letzte Aktion, die keine Aussetzaktion war, Salat fressen war, muss ein Bewegungszug gemacht werden (Vorwärtszug oder Rückwärtszug).
 Ein Spieler darf nicht auf ein Feld ziehen, dass bereits durch den Gegner besetzt ist, außer es handelt sich um das Zielfeld.
 Durch eine Vorwärtszug dürfen alle Felder außer das Igelfeld direkt betreten werden.
 Es ist nicht erlaubt das Zielfeld zu betreten, wenn die Siegbedingungen (höchstens 10 Karotten und 0 Salate) nicht erfüllt sind.
-Wenn durch einen Vorwärtszug ein Hasenfeld betreten wird, muss danach eine Karte ausgespielt werden. Sollte durch einen Vorwärtszug kein Hasenfeld betreten werden endet der Zug.
+Wenn durch einen Vorwärtszug ein Salatfeld betreten wird, muss im nächsten Zug eine Salat gefressen werden (sollte kein Salat vorhanden sein ist das Betreten nicht erlaubt).
+Wenn durch einen Vorwärtszug ein Hasenfeld betreten wird, muss danach eine Karte ausgespielt werden (wenn keine spielbare Karte vorhanden ist das Betreten nicht erlaubt). Sollte durch einen Vorwärtszug kein Hasenfeld betreten werden endet der Zug.
 
 === Rückwärtszug
 Durch einen Rückwärtszug zieht der Spieler zu dem nächsten Igelfeld mit kleinerem Index, sollte dies nicht besetzt sein.
@@ -18,7 +19,7 @@ Durch einen Rückzug werden 10 mal zurückgezogene Felder viele Karotten aufgeno
 
 === Karte ausspielen
 Eine Karte muss ausgespielt werden, wenn ein Hasenfeld neu betreten wird und darf auch nur auf einem Hasenfeld ausgespielt werden. Das betreten eines Hasenfeldes ist entweder durch eine Vorwärtszug oder das Ausspielen einer Karte möglich.
-Sollte es nicht möglich sein eine Karte auszuspielen ist das Betreten eines Hasenfeldes nicht erlaubt. Sollte durch das Ausspielen einer Karte kein Hasenfeld neu betreten werden Ende der Zug.
+Sollte es nicht möglich sein eine Karte aus zuspielen ist das Betreten eines Hasenfeldes nicht erlaubt. Sollte durch das Ausspielen einer Karte kein Hasenfeld neu betreten werden Ende der Zug.
 Ein Spieler hat zu Beginn folgende Karten:
 
 ==== Friss sofort einen Salat
@@ -39,7 +40,7 @@ Kann nur ausgeführt werden, wenn sich der Spieler auf einem Karottenfeld befind
 oder 10 Karotten aufgenommen werden. Nach dieser Aktion endet der Zug.
 
 === Salat fressen
-Wenn sich der Spieler auf einem Salatfeld befindet und er in seiner letzten Aktion, die kein Aussetzzug war, keinen Salat gefressen hat, darf er einen Salat fressen.
+Wenn sich der Spieler auf einem Salatfeld befindet und er in seiner letzten Aktion, die kein Aussetzzug war, keinen Salat gefressen hat, muss er einen Salat fressen.
 Der Spieler verliert einen Salat (dies ist immer möglich, da ein Spieler nur mit mindestens einem Salat ein Salatfeld betreten kann) und erhält je nach Position (Erster/Zweiter) Karotten (10/30).
 Nach dieser Aktion endet der Zug.
 

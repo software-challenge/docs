@@ -21,4 +21,14 @@ asciidoctor -D $HUI_DIR spiele/hase-und-igel/spielregeln/regeln.adoc
 asciidoctor-pdf -D $HUI_DIR spiele/hase-und-igel/spielregeln/regeln.adoc
 asciidoctor -D $HUI_DIR spiele/hase-und-igel/xml-dokumentation/xml-dokumentation.adoc
 asciidoctor-pdf -D $HUI_DIR spiele/hase-und-igel/xml-dokumentation/xml-dokumentation.adoc
+asciidoctor -D $HUI_DIR spiele/hase-und-igel/tutorial/tutorial.adoc
+asciidoctor-pdf -D $HUI_DIR spiele/hase-und-igel/tutorial/tutorial.adoc
+asciidoctor -D $HUI_DIR spiele/hase-und-igel/tutorial/start.adoc
+asciidoctor-pdf -D $HUI_DIR spiele/hase-und-igel/tutorial/start.adoc
+asciidoctor -D $HUI_DIR spiele/hase-und-igel/tutorial/game-rule-logic.adoc
+asciidoctor-pdf -D $HUI_DIR spiele/hase-und-igel/tutorial/game-rule-logic.adoc
+asciidoctor -D $HUI_DIR spiele/hase-und-igel/tutorial/player.adoc
+asciidoctor-pdf -D $HUI_DIR spiele/hase-und-igel/tutorial/player.adoc
+asciidoctor -D $HUI_DIR spiele/hase-und-igel/tutorial/board.adoc
+asciidoctor-pdf -D $HUI_DIR spiele/hase-und-igel/tutorial/board.adoc
 cp -r spiele/hase-und-igel/images "$HUI_DIR/.."

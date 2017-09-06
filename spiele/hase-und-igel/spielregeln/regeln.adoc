@@ -9,8 +9,9 @@
 = Modifizierte Spielregeln Hase und Igel Software Challenge 2018
 Sören Domrös <stu114053@mail.uni-kiel.de>
 
-
 Ziel dieser Dokumentation ist es, die Spielregeln der Softwarechallenge festzuhalten.
+
+ifndef::backend-pdf[link:regeln.pdf[PDF-Version dieses Dokumentes]]
 
 Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
 Dokumentation kann
@@ -28,6 +29,3 @@ include::felder.adoc[]
 include::zuege.adoc[]
 include::spielende.adoc[]
 include::beispiel.adoc[]
-
-
-
