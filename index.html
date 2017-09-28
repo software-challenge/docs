@@ -504,7 +504,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="details">
 <span id="author" class="author">Sven Koschnicke</span><br>
 <span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
-<span id="revdate">2017-07-28</span>
+<span id="revdate">2017-09-28</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhalt</div>
@@ -524,6 +524,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#spielwiederholung-laden">Spielwiederholung laden</a></li>
 <li><a href="#testdurchläufe">Testdurchläufe</a></li>
 <li><a href="#spielsituation-nachstellen">Spielsituation nachstellen</a></li>
+<li><a href="#replay-ohne-gui-speichern">Replay mit Server ohne graphische Oberfläche speichern</a></li>
 <li><a href="#automatische-spiele">Automatische Spiele: Der Testserver</a></li>
 </ul>
 </li>
@@ -947,45 +948,6 @@ eine Schritt-für-Schritt Anleitung:</p>
 <p>Entpacken Sie das Replay, sodass sie eine .xml-Datei erhalten.</p>
 </li>
 <li>
-<p>Öffnen Sie die XML-Datei mit einem Texteditor.</p>
-</li>
-<li>
-<p>Jetzt folgt der wohl schwerste Teil: Suchen Sie sich anhand der
-Rundennummer und dem Spieler, der an der Reihe ist, den gewünschten
-GameState heraus. Sind Sie z.B. Spieler Rot im 6. Zug, suchen Sie nach
-einem Eintrag im XML, der folgendermaßen aussieht:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span>  <span class="tok-nt">&lt;state</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;6&quot;</span> <span class="tok-na">startPlayer=</span><span class="tok-s">&quot;RED&quot;</span> <span class="tok-na">currentPlayer=</span><span class="tok-s">&quot;RED&quot;</span> <span class="tok-na">freeTurn=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">&gt;</span></code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Kopieren Sie den kompletten GameState, von dem öffnenden bis einschließlich
-zum dazugehörigen schließenden state-XML-Tag, z.B.:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span> <span class="tok-nt">&lt;state</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;6&quot;</span> <span class="tok-na">startPlayer=</span><span class="tok-s">&quot;RED&quot;</span> <span class="tok-na">currentPlayer=</span><span class="tok-s">&quot;RED&quot;</span> <span class="tok-na">freeTurn=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">&gt;</span>
- ...
- <span class="tok-nt">&lt;/state&gt;</span></code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Erstellen Sie eine neue Textdatei mit folgendem Inhalt:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span> <span class="tok-nt">&lt;object-stream&gt;</span>
- FÜGEN SIE HIER DEN IN SCHRITT 5 KOPIERTEN GAME-STATE EIN
- <span class="tok-nt">&lt;/object-stream&gt;</span></code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Speichern Sie die Datei unter einem beliebigen Namen mit der Endung
-.xml</p>
-</li>
-<li>
 <p>Starten Sie den Server und erstellen Sie ein neues Spiel. Wählen Sie
 den Computerspieler, der für diese Spielsituation getestet werden soll.
 Dieser Spieler muss als Spieler 1 gestartet werden und ist dann direkt
@@ -994,8 +956,8 @@ oder auch ein Mensch sein.</p>
 </li>
 <li>
 <p>Setzen Sie einen Haken bei "Spiel aus Datei laden". Wählen Sie über
-"Datei wählen" die in Schritt 6 erstellte Datei aus. Starten Sie dann
-das Spiel. Das Spiel sollte sich nun in genau der Situation befinden, in
+"Datei wählen" das entsprechende Replay aus und spezifizieren sie den Zug in dem gestartet werden soll.
+Starten Sie dann das Spiel. Das Spiel sollte sich nun in genau der Situation befinden, in
 der das Fehlerverhalten aufgetreten ist. Dabei ist der Spieler, der nun
 dran ist immer der rote Spieler. Falls der blaue Spieler eigentlich dran
 war, werden die Farben der Spieler getauscht.</p>
@@ -1009,6 +971,18 @@ normalen Spielverlauf abweichen, da evtl. nicht alle Daten für das Spiel
 in der XML vorhanden sind.</p>
 </li>
 </ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replay-ohne-gui-speichern">Replay mit Server ohne graphische Oberfläche speichern</h3>
+<div class="paragraph">
+<p>Wenn der Server ohne die graphische Oberfläche gestartet wird, kann das <code>--saveReplay</code>
+Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter <code>./replays</code> gespeichert wird.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>./logback.xml -jar softwarechallenge-server.jar --saveReplay <span class="tok-nb">true</span></code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1065,11 +1039,11 @@ der teilnehmenden Computerspieler geschehen (z.B. durch Log-Ausgaben).</p>
 Spielplanes eine Spielsituation zu laden und zu testen. Die Spielsituation muss
 vorher wie unter <a href="#spielsituation-nachstellen">Spielsituation nachstellen</a>
 erzeugt werden. Dann kann die Datei mit dem Argument <code>--loadGameFile</code> geladen
-werden:</p>
+werden und optional mit <code>--turn</code> ein Zug spezifiziert werden.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>./logback.xml -jar softwarechallenge-server.jar --loadGameFile ./replay.xml</code></pre>
+<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>./logback.xml -jar softwarechallenge-server.jar --loadGameFile ./replay.xml --turn <span class="tok-m">10</span></code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -3368,7 +3342,7 @@ weniger Last für das System zur Verfügung gestellt werden können.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-09-05 11:12:26 CEST
+Last updated 2017-09-28 13:11:12 CEST
 </div>
 </div>
 </body>
