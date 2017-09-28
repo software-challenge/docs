@@ -176,6 +176,15 @@ eine Schritt-für-Schritt Anleitung:
   normalen Spielverlauf abweichen, da evtl. nicht alle Daten für das Spiel
   in der XML vorhanden sind.
 
+[[replay-ohne-gui-speichern]]
+=== Replay mit Server ohne graphische Oberfläche speichern
+
+Wenn der Server ohne die graphische Oberfläche gestartet wird, kann das `--saveReplay`
+Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter `./replays` gespeichert wird.
+
+[source, sh]
+  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=./logback.xml -jar softwarechallenge-server.jar --saveReplay true
+
 [[automatische-spiele]]
 === Automatische Spiele: Der Testserver
 
