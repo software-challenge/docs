@@ -283,3 +283,91 @@ testen, ob sich das Verhalten verbessert.
 Die Konfiguration des Garbage Collectors ist kein Allheilmittel und kann zu
 neuen Problemen führen, auf die man gefasst sein sollte. Dazu gehören erhöhter
 Resourcenverbrauch und Instabilität der Anwendung.
+
+[[tests-ohne-gui]]
+=== Massentests mit Server ohne graphische Oberfläche
+
+Wenn Sie Massentests mit ihrem Computerspieler ausführen wollen, um Beispielsweise seine
+Gewinnchance gegenüber einer früheren Version zu testen, wobei sich die beiden Spieler als Startspieler abwechseln,
+dann ist dies mit folgenden Schritten möglich:
+
+Starten sie den Server
+
+[source,sh]
+....
+java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=./logback.xml -jar softwarechallenge-server.jar
+....
+
+==== Variante mit TestClient
+
+Starten sie den TestClient
+
+[source,sh]
+....
+java -jar -Dlogback.configurationFile=./logback-tests.xml test_client.jar 
+    --tests 4 (100)
+    --name1 "displayName1" ("player1")
+    --player1 "./player1.jar" ("./../simple_client/hase_und_igel_player_new/jar/hase_und_igel_player_new.jar")
+    --timeout1 true (true)
+    --name2 "displayName2" ("player2")
+    --player2 "./player1.jar" ("./../simple_client/hase_und_igel_player_new/jar/hase_und_igel_player_new.jar")
+    --timeout2 true (true)
+....
+In Klammern hinter den Optionen befinden sich die Defaultwerte, sollten die Optionen weggelassen werden.
+Es ist wichtig, dass die Namen der Spieler nicht gleich sind, ansonsten werden keine Testdaten gesammelt.
+Die Ausgabe der Daten erfolgt nach jedem Spiel anhand von gerundeten Werten. Der TestClient beendet sich selbst
+sollten alle Spiele gespielt wurden.
+
+==== Variante ohne TestClient
+
+Starten Sie ein Spiel mit Reservierungscode (siehe Spielverlauf in der XML-Dokumentation).
+Aktivieren Sie mit dem erstellten Administratorclient den Testmodus:
+
+[source,xml]
+....
+<testModus testModus="true"/>
+....
+Dies liefert die Antwort
+
+[source,xml]
+....
+<testing testModus="true"/>
+....
+Mit false als entsprechenden Parameter kann dieser wieder deaktiviert werden.
+Nun können sie jederzeit die Testdaten der Spieler anhand ihres Anzeigenamens erfragen (es ist zu beachten, dass dafür die Spieler unterschiedliche Anzeigenamen haben müssen):
+
+[source,xml]
+....
+<scoreForPlayer displayName="player1" />
+....
+Der Server antwortet mit:
+
+[source,xml]
+....
+<playerScore>
+  <score displayName="player1" numberOfTests="4">
+    <values>
+      <fragment name="Gewinner">
+        <aggregation>SUM</aggregation>
+        <relevantForRanking>true</relevantForRanking>
+      </fragment>
+      <value>4</value>
+    </values>
+    <values>
+      <fragment name="∅ Feldnummer">
+        <aggregation>AVERAGE</aggregation>
+        <relevantForRanking>true</relevantForRanking>
+      </fragment>
+      <value>5.0000013</value>
+    </values>
+    <values>
+      <fragment name="∅ Karotten">
+        <aggregation>AVERAGE</aggregation>
+        <relevantForRanking>true</relevantForRanking>
+      </fragment>
+      <value>40.500011</value>
+    </values>
+  </score>
+</playerScore>
+....
+Bei dieser Variante muss sich selbst um das Starten der Clients gekümmert werden.

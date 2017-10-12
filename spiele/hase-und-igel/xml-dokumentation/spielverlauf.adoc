@@ -4,6 +4,7 @@ Der Server startet (StandardIp: localhost 13050).
 
 Nun gibt es zwei Varianten ein Spiel zu starten, eine durch einen Administratorclient die andere durch hinzufügen der Spieler zu einen Spieltyp:
 
+[[authentifizieren, Starten eines Spiels mit Reservierungscode]]
 === Variante 1 (AdminClient xref:mit-reservierungscode[])
 
 Ein Client registriert sich als Administrator mit dem in server.properties festgelegten Passwort p:
