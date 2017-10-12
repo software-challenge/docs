@@ -24,7 +24,7 @@ Die einzige Vorraussetzung ist, dass auf dem Rechner mindestens die
 Laufzeitumgebung für Java 8 installiert ist. Siehe <<installation-java>>.
 
 Nach der erfolgreichen Installation kann man den Server durch einen
-Doppelklick auf die Datei `software-challenge-gui.jar` starten.
+Doppelklick auf die Datei `software-challenge-gui` starten.
 
 [[die-programmoberfläche]]
 === Die Programmoberfläche
@@ -73,76 +73,53 @@ unteren Knopfs "Start!" erstellt werden.
 [[die-spielfeldoberfläche]]
 === Die Spielfeldoberfläche
 
-.Die Spielfeldoberfläche (hier mit dem Spiel "Schäfchen im Trockenen")
+.Die Spielfeldoberfläche (hier mit dem Spiel "Hase und Igel")
 image::spielfeldoberflaeche.jpg[]
 
 Die Spielfeldoberfläche setzt sich aus dem Spielbrett (der große
 zentrale Bereich) und den Spielsteuerelementen (unten) zusammen.
 
-Auf dem Spielbrett werden das eigentliche Spiel (hier z.B. "Schäfchen im
-Trockenen"), die Züge und weitere für das Spiel wichtige Informationen
+Auf dem Spielbrett werden das eigentliche Spiel (hier z.B. "Hase und Igel"),
+die Züge und weitere für das Spiel wichtige Informationen
 dargestellt. Hier setzt der menschliche Spieler auch seine Züge.
 
-Die Steuerelemente am unteren Rand haben folgende Bedeutung:
+Die Steuerelemente unterscheiden sich je nach Spiel und Spielsituation. Unten
+rechts gibt es immer die beiden Schaltflächen "Vor" und "Zurück". Mit diesen
+kann man die Züge des Spiels durchgehen (das ist am nützlichsten, wenn zwei
+Computerspieler gegeneinander spielen und man sich die Züge genau ansehen will).
 
-.Die Steuerelemente des Spielleiters
-image::steuerelemente.jpg[]
+Wenn ein menschlicher Spieler am Zug ist, werden ausserdem Schaltfächen zur
+Eingabe des Spielzuges angezeigt. Die allgemeinen Schaltflächen sind "Senden"
+und "Abbrechen", mit denen man den aktuell eingegebenen Spielzug abschicken oder
+löschen (um einen anderen einzugeben) kann.
 
-Über den Geschwindigkeitsregler kann die Pausenlänge zwischen zwei
-Spielzügen eingestellt werden. Spielen 2 Computerspieler gegeneinander,
-ist es evtl. ratsam, diesen Wert z.B. auf 3 Sekunden einzustellen, damit
-die Partie besser am Bildschirm verfolgt werden kann.
+Alle anderen Schaltflächen hängen von der aktuellen Spielsituation ab:
 
-Ganz rechts unten am Rand kann ein laufendes Spiel mithilfe des Knopfes
-"Abbrechen" abgebrochen werden, wobei alle verbundenen Computerspieler
-vom Server getrennt werden. Damit das Spiel nicht versehentlich
-abgebrochen wird, erscheint vor dem Abbruch allerdings zunächst ein
-Warnhinweis. Dieser Warnhinweis kann über den Menüpunkt "Optionen"
-ausgeschaltet werden.
+* Die Felder, auf die man ziehen kann, werden rot eingefärbt. Man kann auf ein
+  Feld klicken, um einen Vorwärtszug einzugeben (oder bei einem Feld hinter dem
+  Spieler einen Zurückfallen-Zug).
+* Befindet man sich zu Beginn des Zuges auf einem Karotten-Feld, werden unten
+  Schaltflächen zum Nehmen oder Abgeben von Karotten angezeigt.
+* Befindet man sich zu Beginn des Zuges auf einem Salat-Feld, wird unten eine
+  Schaltfläche zum Essen eines Salates angezeigt.
+* Zieht man auf ein Hasen-Feld, werden die Spielbaren Hasen-Joker oben beim
+  Punktestand des jeweiligen Spielers weiss eingfärbt und man kann sie durch
+  einen Klick darauf spielen. Bei dem Joker "Karotten abgeben oder nehmen" kann
+  man danach noch eine Karottenzahl wählen.
+* Gibt es keine anderen Zugmöglichkeiten, wird eine Aussetzen-Schaltfläche unten
+  angezeigt.
 
 [[spielwiederholung-laden]]
 === Spielwiederholung laden
 
-.Dialog, um Spielwiederholungen zu laden
-image::spielwiederholung_laden.jpg[]
-
-Nachdem ein Spiel beendet wurde, wird eine
-Wiederholungsdatei im Ordner "Replay" erstellt. Diese kann über das
-obige Menü unter "Spiel"→"Spielwiederholung laden" ausgewählt werden.
-Dabei öffnet sich das Fenster "Wiederholung laden".
-
-Oben muss der Spieltyp der zu ladenden Wiederholung ausgewählt werden.
-
-Nach Betätigung des Knopfes "Wiederholung auswählen" kann die
-Replay-Datei des gewünschten Spiels gewählt werden. Die Dateinamen sind
-dabei nach folgendem Schema aufgebaut:
-`replay_Spielername1_Spielername2 Datum Uhrzeit.xml.gz`, also z.B.
-`replay_Jasper_Johannes 2010.09.02 15_10_16.xml.gz`
-
-Mit "Start" wird dann die Wiederholung geladen und auf der zuvor
-beschriebenen Spielfeldoberfläche dargestellt.
+Spielwiederholungen werden leider noch nicht unterstützt. Wir werden diese
+Funktion so schnell wie möglich nachreichen!
 
 [[testdurchläufe]]
 === Testdurchläufe
 
-.Beispieldialog für einen Testdurchlauf
-image::testdurchla_ufe.jpg[]
-
-Über das Menü "Spiel" → "Testdurchläufe" gelangt man zum
-Konfigurationsfenster für Testdurchläufe. Hier kann man Computerspieler
-(keine menschlichen Spieler) gegeneinander in mehreren Spielen
-hintereinander antreten lassen und erhält eine ausführliche Statistik
-über die absolvierten Spiele.
-
-Oben muss der Spieltyp ausgewählt, rechts daneben die Anzahl der Spiele
-eingegeben werden. Außerdem kann wieder optional das Zeitlimit
-deaktiviert werden.
-
-Darunter sind die Computerspieler auszuwählen. Anschließend kann der
-Test durch das Anklicken des entsprechenden Knopfes unten rechts
-gestartet werden.
-
-Die durchgeführten Spiele werden als Replay-Datei gespeichert.
+Testdurchläufe werden leider noch nicht unterstützt. Wir werden diese
+Funktion so schnell wie möglich nachreichen!
 
 [[spielsituation-nachstellen]]
 === Spielsituation nachstellen
