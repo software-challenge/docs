@@ -54,7 +54,7 @@ Clients die auf dem Serverport (localhost 13050) gestartet werden können so üb
   <joinPrepared reservationCode="RC2"/>
 ----
 
-=== Variante 1 (AdminClient xref:mit-reservierungscode[])
+=== Variante 2 ((eventuell) ohne AdminClient xref:ohne-reservierungscode[])
 
 Die Clients wurden auf dem Serverport (Standard: localhost 13050) gestartet.
 
@@ -140,7 +140,23 @@ Der Server antwortet jeweils mit der WelcomeMessage (xref:welcome-message[]) und
 </room>
 ----
 
-Der erste Spieler erhält dann eine Zugaufforderung (xref:move-request[]):
+Der erste Spieler erhält dann eine Zugaufforderung (xref:move-request[]), falls in server.properties paused auf false gesetzt wurde.
+Falls das Spiel pausiert ist, muss das Spiel durch einen Administratorclient gestartet werden:
+
+Verbinden des Administratorclients (falls es sich um die erste Kontaktaufnahme zum Server handelt, ansonsten <protocol> weglassen).
+
+[source,xml]
+----
+<protocol>
+  <authenticate passphrase="examplepassword"/>
+----
+Pausierung aufheben:
+
+[source,xml]
+----
+<pause roomId="871faccb-5190-4e44-82fc-6cdcbb493726" pause="false" />
+----
+Daraufhin wird der erste Spieler aufgefordert einen Zug zu senden:
 
 [source,xml]
 ----

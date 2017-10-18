@@ -7,8 +7,8 @@ Wenn begonnen wird mit dem Server zu kommunizieren, muss zuallererst
 ----
 gesendet werden, um die Kommunikation zu beginnen.
 
-[[ohne-reservierung]]
-=== Ohne Reservierung
+[[ohne-reservierungscode]]
+=== Ohne Reservierungscode
 Betritt ein beliebiges offenes Spiel:
 
 [source,xml]
@@ -16,6 +16,7 @@ Betritt ein beliebiges offenes Spiel:
 <join gameType="swc_2018_hase_und_igel"/>
 ----
 Sollte kein Spiel offen sein, wird so ein neues erstellt.
+Je nachdem ob paused in server.properties true oder false ist, wird das Spiel pausiert gestartet oder nicht.
 Der Server antwortet darauf mit:
 
 --
