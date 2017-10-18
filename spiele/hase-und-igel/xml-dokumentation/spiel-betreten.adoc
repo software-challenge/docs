@@ -26,6 +26,18 @@ Der Server antwortet darauf mit:
 <joined roomId="ROOM_ID"/>
 ----
 
+Alle administrativen Clients werden ebenfalls darüber benachrichtigt und erhalten folgende Nachricht:
+
+--
+* ROOM_ID Id des GameRooms
+--
+[source,xml]
+----
+<joinedGameRoom roomId="ROOM_ID" existing="false"/>
+----
+
+Falls bereits ein GameRoom offen war, ist dementsprechend existing true.
+
 [[mit-reservierungscode]]
 === Mit Reservierungscode
 Ist ein Reservierungscode gegeben, so kann man den durch den Code gegebenen Platz betreten.
