@@ -1,0 +1,105 @@
+[[der-adminclient]]
+== Der AdminClient
+
+Der AdminClient dient dazu, um Spiele anzulegen und wenn nötig bestimmte Einstellungen zu ändern:
+
+Verbinden als AdminClient:
+
+[source, xml]
+----
+<protocol><authenticate passphrase="examplepassword"/>
+----
+
+Sobald der Client sich authentifiziert hat ist folgendes möglich:
+
+Ein AdminClient erhält eine Nachricht, sobald sich ein Client über eine JoinRoomRequest verbindet:
+
+[source,xml]
+----
+<joinedGameRoom roomId=ROOMID existing="false" />
+----
+Existing gibt hier an, ob der GameRoom bereits existierte bevor der Spieler beigetreten ist.
+
+Ein AdminClient kann sich als Observer mit einem GameRoom verbinden, dadurch erhält er alle Nachrichten, die das
+Spiel betreffen:
+
+[source,xml]
+----
+<observe roomId=ROOMID />
+----
+
+Ein AdminClient kann ein Spiel pausieren oder die Pausierung aufheben:
+
+[source,xml]
+----
+<pause roomId=ROOMID pause="true/false" />
+----
+
+Ein AdminClient kann einen Zug in einem pausierten Spiel anfordern:
+
+[source,xml]
+----
+<step roomId=ROOMID />
+---- 
+
+Ein AdminClient kann ein Spiel abbrechen:
+
+[source,xml]
+----
+<cancel roomId=ROOMID />
+----
+
+Ein AdminClient kann ein Spiel vorbereiten:
+
+[source,xml]
+----
+<prepare gameType="pluginUUID">
+  <slot displayName="p1" canTimeout="true" shouldBePaused="false"/>
+  <slot displayName="p2" canTimeout="true" shouldBePaused="false"/>
+</prepare>
+----
+
+Ein AdminClient kann den Testmodus aktivieren/deaktivieren:
+
+[source,xml]
+----
+<testMode testMode="true/false" />
+----
+
+Ein AdminClient kann die Punkte und Gewinnkriterien, falls der Testmodus aktiviert wurde, anhand des Anzeigenamens der
+Spieler abfragen:
+
+[source,xml]
+----
+<scoreForPlayer displayName="p1"/>
+----
+Der Server antwortet darauf mit:
+
+[source,xml]
+----
+<playerScore>
+  <score displayName="p1" numberOfTests="1">
+    <values>
+      <fragment name="Gewinner">
+        <aggregation>SUM</aggregation>
+        <relevantForRanking>true</relevantForRanking>
+      </fragment>
+      <value>2</value>
+    </values>
+    <values>
+      <fragment name="∅ Feldnummer">
+        <aggregation>AVERAGE</aggregation>
+        <relevantForRanking>true</relevantForRanking>
+      </fragment>
+      <value>10.000000</value>
+    </values>
+    <values>
+      <fragment name="∅ Karotten">
+        <aggregation>AVERAGE</aggregation>
+        <relevantForRanking>true</relevantForRanking>
+      </fragment>
+      <value>13.000000</value>
+    </values>
+  </score>
+</playerScore>
+----
