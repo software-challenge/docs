@@ -18,7 +18,7 @@ Ein AdminClient erhält eine Nachricht, sobald sich ein Client über eine JoinRo
 ----
 <joinedGameRoom roomId=ROOMID existing="false" />
 ----
-Existing gibt hier an, ob der GameRoom bereits existierte bevor der Spieler beigetreten ist.
+`existing` gibt hier an, ob der GameRoom bereits existierte bevor der Spieler beigetreten ist.
 
 Ein AdminClient kann sich als Observer mit einem GameRoom verbinden, dadurch erhält er alle Nachrichten, die das
 Spiel betreffen:
@@ -28,7 +28,7 @@ Spiel betreffen:
 <observe roomId=ROOMID />
 ----
 
-Ein AdminClient kann ein Spiel pausieren oder die Pausierung aufheben:
+Ein AdminClient kann ein Spiel pausieren oder fortsetzen:
 
 [source,xml]
 ----
@@ -64,6 +64,12 @@ Ein AdminClient kann den Testmodus aktivieren/deaktivieren:
 [source,xml]
 ----
 <testMode testMode="true/false" />
+----
+Der Server antwortet mit:
+
+[source,xml]
+----
+<testing testMode="true/false" />
 ----
 
 Ein AdminClient kann die Punkte und Gewinnkriterien, falls der Testmodus aktiviert wurde, anhand des Anzeigenamens der
@@ -103,3 +109,14 @@ Der Server antwortet darauf mit:
   </score>
 </playerScore>
 ----
+
+[[servereinstellungen]]
+=== Servereinstellungen
+
+Die Servereinstellungen liegen in der server.properties Datei, die zusammen mit dem Server heruntergeladen wird.
+In ihr können folgede Werte konfiguriert werden:
+
+Das lokale Administratorpasswort kann geändert werden. Dazu muss das password Attribut neu gesetzt werden (standardmäßig auf examplepassword).
+Es kann eingestellt werden, ob ein durch einen JoinRequest gestartetes Spiel anfangs pausiert sein soll oder nicht (standardmäßig pausiert),
+indem der entsprechende Wert auf `true` oder `false` gesetzt wird.
+
