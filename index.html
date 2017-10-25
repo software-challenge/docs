@@ -526,12 +526,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#spielsituation-nachstellen">Spielsituation nachstellen</a></li>
 <li><a href="#replay-ohne-gui-speichern">Replay mit Server ohne graphische Oberfläche speichern</a></li>
 <li><a href="#automatische-spiele">Automatische Spiele: Der Testserver</a></li>
+<li><a href="#tests-ohne-gui">Massentests mit Server ohne graphische Oberfläche</a></li>
 </ul>
 </li>
 <li><a href="#der-computerspieler">Der Computerspieler (Client)</a>
 <ul class="sectlevel2">
 <li><a href="#der-simpleclient">Der SimpleClient</a></li>
 <li><a href="#der-notsosimpleclient">Der NotSoSimpleClient</a></li>
+</ul>
+</li>
+<li><a href="#der-adminclient">Der AdminClient</a>
+<ul class="sectlevel2">
+<li><a href="#servereinstellungen">Servereinstellungen</a></li>
 </ul>
 </li>
 <li><a href="#installation-java">Installation von Java</a>
@@ -1115,6 +1121,110 @@ Resourcenverbrauch und Instabilität der Anwendung.</p>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="tests-ohne-gui">Massentests mit Server ohne graphische Oberfläche</h3>
+<div class="paragraph">
+<p>Wenn Sie Massentests mit ihrem Computerspieler ausführen wollen, um Beispielsweise seine
+Gewinnchance gegenüber einer früheren Version zu testen, wobei sich die beiden Spieler als Startspieler abwechseln,
+dann ist dies mit folgenden Schritten möglich:</p>
+</div>
+<div class="paragraph">
+<p>Starten sie den Server</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>./logback.xml -jar softwarechallenge-server.jar</code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_variante_mit_testclient">Variante mit TestClient</h4>
+<div class="paragraph">
+<p>Starten sie den TestClient</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>java -jar -Dlogback.configurationFile<span class="tok-o">=</span>./logback-tests.xml test_client.jar
+    --tests <span class="tok-m">4</span> <span class="tok-o">(</span><span class="tok-m">100</span><span class="tok-o">)</span>
+    --name1 <span class="tok-s2">&quot;displayName1&quot;</span> <span class="tok-o">(</span><span class="tok-s2">&quot;player1&quot;</span><span class="tok-o">)</span>
+    --player1 <span class="tok-s2">&quot;./player1.jar&quot;</span> <span class="tok-o">(</span><span class="tok-s2">&quot;./../simple_client/hase_und_igel_player_new/jar/hase_und_igel_player_new.jar&quot;</span><span class="tok-o">)</span>
+    --timeout1 <span class="tok-nb">true</span> <span class="tok-o">(</span><span class="tok-nb">true</span><span class="tok-o">)</span>
+    --name2 <span class="tok-s2">&quot;displayName2&quot;</span> <span class="tok-o">(</span><span class="tok-s2">&quot;player2&quot;</span><span class="tok-o">)</span>
+    --player2 <span class="tok-s2">&quot;./player1.jar&quot;</span> <span class="tok-o">(</span><span class="tok-s2">&quot;./../simple_client/hase_und_igel_player_new/jar/hase_und_igel_player_new.jar&quot;</span><span class="tok-o">)</span>
+    --timeout2 <span class="tok-nb">true</span> <span class="tok-o">(</span><span class="tok-nb">true</span><span class="tok-o">)</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In Klammern hinter den Optionen befinden sich die Defaultwerte, sollten die Optionen weggelassen werden.
+Es ist wichtig, dass die Namen der Spieler nicht gleich sind, ansonsten werden keine Testdaten gesammelt.
+Die Ausgabe der Daten erfolgt nach jedem Spiel anhand von gerundeten Werten. Der TestClient beendet sich selbst
+sollten alle Spiele gespielt wurden.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_variante_ohne_testclient">Variante ohne TestClient</h4>
+<div class="paragraph">
+<p>Starten Sie ein Spiel mit Reservierungscode (siehe Spielverlauf in der XML-Dokumentation).
+Aktivieren Sie mit dem erstellten Administratorclient den Testmodus:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;testModus</span> <span class="tok-na">testModus=</span><span class="tok-s">&quot;true&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dies liefert die Antwort</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;testing</span> <span class="tok-na">testModus=</span><span class="tok-s">&quot;true&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Mit false als entsprechenden Parameter kann dieser wieder deaktiviert werden.
+Nun können sie jederzeit die Testdaten der Spieler anhand ihres Anzeigenamens erfragen (es ist zu beachten, dass dafür die Spieler unterschiedliche Anzeigenamen haben müssen):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;scoreForPlayer</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;player1&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Server antwortet mit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;playerScore&gt;</span>
+  <span class="tok-nt">&lt;score</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;player1&quot;</span> <span class="tok-na">numberOfTests=</span><span class="tok-s">&quot;4&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;values&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Gewinner&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>SUM<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;value&gt;</span>4<span class="tok-nt">&lt;/value&gt;</span>
+    <span class="tok-nt">&lt;/values&gt;</span>
+    <span class="tok-nt">&lt;values&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;∅ Feldnummer&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;value&gt;</span>5.0000013<span class="tok-nt">&lt;/value&gt;</span>
+    <span class="tok-nt">&lt;/values&gt;</span>
+    <span class="tok-nt">&lt;values&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;∅ Karotten&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;value&gt;</span>40.500011<span class="tok-nt">&lt;/value&gt;</span>
+    <span class="tok-nt">&lt;/values&gt;</span>
+  <span class="tok-nt">&lt;/score&gt;</span>
+<span class="tok-nt">&lt;/playerScore&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Bei dieser Variante muss sich selbst um das Starten der Clients gekümmert werden.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -1168,6 +1278,149 @@ verfolgt und dadurch nicht mehr so leicht zu schlagen ist. Dieser
 Spieler wird ohne den Quellcode veröffentlicht, so dass die Schüler den
 NotSoSimpleClient zwar als Gegenspieler für Testspiele nehmen, jedoch
 nicht den Quellcode für den eigenen Spieler weiterverwenden können.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="der-adminclient">Der AdminClient</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Der AdminClient dient dazu, um Spiele anzulegen und wenn nötig bestimmte Einstellungen zu ändern:</p>
+</div>
+<div class="paragraph">
+<p>Verbinden als AdminClient:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;&lt;authenticate</span> <span class="tok-na">passphrase=</span><span class="tok-s">&quot;examplepassword&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sobald der Client sich authentifiziert hat ist folgendes möglich:</p>
+</div>
+<div class="paragraph">
+<p>Ein AdminClient erhält eine Nachricht, sobald sich ein Client über eine JoinRoomRequest verbindet:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joinedGameRoom</span> <span class="tok-na">roomId=</span><span class="tok-s">ROOMID</span> <span class="tok-na">existing=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>existing</code> gibt hier an, ob der GameRoom bereits existierte bevor der Spieler beigetreten ist.</p>
+</div>
+<div class="paragraph">
+<p>Ein AdminClient kann sich als Observer mit einem GameRoom verbinden, dadurch erhält er alle Nachrichten, die das
+Spiel betreffen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;observe</span> <span class="tok-na">roomId=</span><span class="tok-s">ROOMID</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ein AdminClient kann ein Spiel pausieren oder fortsetzen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;pause</span> <span class="tok-na">roomId=</span><span class="tok-s">ROOMID</span> <span class="tok-na">pause=</span><span class="tok-s">&quot;true/false&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ein AdminClient kann einen Zug in einem pausierten Spiel anfordern:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;step</span> <span class="tok-na">roomId=</span><span class="tok-s">ROOMID</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ein AdminClient kann ein Spiel abbrechen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;cancel</span> <span class="tok-na">roomId=</span><span class="tok-s">ROOMID</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ein AdminClient kann ein Spiel vorbereiten:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;prepare</span> <span class="tok-na">gameType=</span><span class="tok-s">&quot;pluginUUID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;slot</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p1&quot;</span> <span class="tok-na">canTimeout=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-na">shouldBePaused=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;slot</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p2&quot;</span> <span class="tok-na">canTimeout=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-na">shouldBePaused=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/prepare&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ein AdminClient kann den Testmodus aktivieren/deaktivieren:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;testMode</span> <span class="tok-na">testMode=</span><span class="tok-s">&quot;true/false&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Server antwortet mit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;testing</span> <span class="tok-na">testMode=</span><span class="tok-s">&quot;true/false&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ein AdminClient kann die Punkte und Gewinnkriterien, falls der Testmodus aktiviert wurde, anhand des Anzeigenamens der
+Spieler abfragen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;scoreForPlayer</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p1&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Server antwortet darauf mit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;playerScore&gt;</span>
+  <span class="tok-nt">&lt;score</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p1&quot;</span> <span class="tok-na">numberOfTests=</span><span class="tok-s">&quot;1&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;values&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Gewinner&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>SUM<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;value&gt;</span>2<span class="tok-nt">&lt;/value&gt;</span>
+    <span class="tok-nt">&lt;/values&gt;</span>
+    <span class="tok-nt">&lt;values&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;∅ Feldnummer&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;value&gt;</span>10.000000<span class="tok-nt">&lt;/value&gt;</span>
+    <span class="tok-nt">&lt;/values&gt;</span>
+    <span class="tok-nt">&lt;values&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;∅ Karotten&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;value&gt;</span>13.000000<span class="tok-nt">&lt;/value&gt;</span>
+    <span class="tok-nt">&lt;/values&gt;</span>
+  <span class="tok-nt">&lt;/score&gt;</span>
+<span class="tok-nt">&lt;/playerScore&gt;</span></code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="servereinstellungen">Servereinstellungen</h3>
+<div class="paragraph">
+<p>Die Servereinstellungen liegen in der server.properties Datei, die zusammen mit dem Server heruntergeladen wird.
+In ihr können folgede Werte konfiguriert werden:</p>
+</div>
+<div class="paragraph">
+<p>Das lokale Administratorpasswort kann geändert werden. Dazu muss das password Attribut neu gesetzt werden (standardmäßig auf examplepassword).
+Es kann eingestellt werden, ob ein durch einen JoinRequest gestartetes Spiel anfangs pausiert sein soll oder nicht (standardmäßig pausiert),
+indem der entsprechende Wert auf <code>true</code> oder <code>false</code> gesetzt wird.</p>
 </div>
 </div>
 </div>
@@ -3342,7 +3595,7 @@ weniger Last für das System zur Verfügung gestellt werden können.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-09-28 13:11:12 CEST
+Last updated 2017-10-25 09:48:38 CEST
 </div>
 </div>
 </body>

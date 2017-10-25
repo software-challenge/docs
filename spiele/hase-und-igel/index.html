@@ -831,7 +831,7 @@ einem newline abgeschlossen.</p>
 <p>gesendet werden, um die Kommunikation zu beginnen.</p>
 </div>
 <div class="sect3">
-<h4 id="ohne-reservierung">2.2.1. Ohne Reservierung</h4>
+<h4 id="ohne-reservierungscode">2.2.1. Ohne Reservierungscode</h4>
 <div class="paragraph">
 <p>Betritt ein beliebiges offenes Spiel:</p>
 </div>
@@ -842,6 +842,7 @@ einem newline abgeschlossen.</p>
 </div>
 <div class="paragraph">
 <p>Sollte kein Spiel offen sein, wird so ein neues erstellt.
+Je nachdem ob paused in server.properties true oder false ist, wird das Spiel pausiert gestartet oder nicht.
 Der Server antwortet darauf mit:</p>
 </div>
 <div class="openblock">
@@ -859,6 +860,28 @@ Der Server antwortet darauf mit:</p>
 <div class="content">
 <pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joined</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
+</div>
+<div class="paragraph">
+<p>Alle administrativen Clients werden ebenfalls darüber benachrichtigt und erhalten folgende Nachricht:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>ROOM_ID Id des GameRooms</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joinedGameRoom</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span> <span class="tok-na">existing=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Falls bereits ein GameRoom offen war, ist dementsprechend existing true.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1471,7 +1494,7 @@ Dadurch wird das derzeitge Spielfeld (<a href="#memento">memento</a>) ebenfalls 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_variante_1_adminclient_a_href_mit_reservierungscode_mit_reservierungscode_a_2">2.9.2. Variante 1 (AdminClient <a href="#mit-reservierungscode">Mit Reservierungscode</a>)</h4>
+<h4 id="_variante_2_eventuell_ohne_adminclient_a_href_ohne_reservierungscode_ohne_reservierungscode_a">2.9.2. Variante 2 ((eventuell) ohne AdminClient <a href="#ohne-reservierungscode">Ohne Reservierungscode</a>)</h4>
 <div class="paragraph">
 <p>Die Clients wurden auf dem Serverport (Standard: localhost 13050) gestartet.</p>
 </div>
@@ -1561,7 +1584,28 @@ Dadurch wird das derzeitge Spielfeld (<a href="#memento">memento</a>) ebenfalls 
 </div>
 </div>
 <div class="paragraph">
-<p>Der erste Spieler erhält dann eine Zugaufforderung (<a href="#move-request">MoveRequest</a>):</p>
+<p>Der erste Spieler erhält dann eine Zugaufforderung (<a href="#move-request">MoveRequest</a>), falls in server.properties paused auf false gesetzt wurde.
+Falls das Spiel pausiert ist, muss das Spiel durch einen Administratorclient gestartet werden:</p>
+</div>
+<div class="paragraph">
+<p>Verbinden des Administratorclients (falls es sich um die erste Kontaktaufnahme zum Server handelt, ansonsten &lt;protocol&gt; weglassen).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;authenticate</span> <span class="tok-na">passphrase=</span><span class="tok-s">&quot;examplepassword&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pausierung aufheben:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;pause</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span> <span class="tok-na">pause=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Daraufhin wird der erste Spieler aufgefordert einen Zug zu senden:</p>
 </div>
 <div class="listingblock">
 <div class="content">
