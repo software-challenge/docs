@@ -282,15 +282,51 @@ Starten sie den TestClient
 [source,sh]
 ....
 java -jar -Dlogback.configurationFile=./logback-tests.xml test_client.jar 
-    --tests 4 (100)
-    --name1 "displayName1" ("player1")
-    --player1 "./player1.jar" ("./../simple_client/hase_und_igel_player_new/jar/hase_und_igel_player_new.jar")
-    --timeout1 true (true)
-    --name2 "displayName2" ("player2")
-    --player2 "./player1.jar" ("./../simple_client/hase_und_igel_player_new/jar/hase_und_igel_player_new.jar")
-    --timeout2 true (true)
+    --tests 4
+    --name1 "displayName1"
+    --player1 "./player1.jar"
+    --timeout1 true
+    --name2 "displayName2"
+    --player2 "./player1.jar"
+    --timeout2 true
 ....
-In Klammern hinter den Optionen befinden sich die Defaultwerte, sollten die Optionen weggelassen werden.
+
+Attribute des TestClients
+|===
+|Attribut | Default Wert | Kurzbeschreibung
+
+|tests
+|100
+|Anzahl der Tests die durchlaufen werden sollen.
+
+|name1
+|"player1"
+|Name des ersten Spielers.
+
+|name2
+|"player2"
+|Name des zweiten Spielers.
+
+|player1
+|"../simple_client/hase_und_igel_player_new/jar/ hase_und_igel_player_new.jar"
+|Erster Computerspieler.
+
+|player2
+|"../simple_client/hase_und_igel_player_new/jar/ hase_und_igel_player_new.jar"
+|Zweiter Computerspieler.
+
+|timeout1
+|true
+|Soll der erste Spieler nach dem Timeout abbrechen? (true\|false)
+
+|timeout2
+|true
+|Soll der zweite Spieler nach dem Timeout abbrechen? (true\|false)
+
+|===
+
+
+Sollten einige Attribute weggelassen werden, so werden die Defaultwerte aus der Tabelle oben gewählt.
 Es ist wichtig, dass die Namen der Spieler nicht gleich sind, ansonsten werden keine Testdaten gesammelt.
 Die Ausgabe der Daten erfolgt nach jedem Spiel anhand von gerundeten Werten. Der TestClient beendet sich selbst
 sollten alle Spiele gespielt wurden.
