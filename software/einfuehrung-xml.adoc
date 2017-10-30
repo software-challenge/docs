@@ -148,7 +148,7 @@ Einlesen dann ignoriert werden:
 Es darf beliebig viele solcher Kommentare geben und sie dürfen nur
 zwischen Tags stehen.
 
-[[weiterführende-informationen]]
+[[weiterführende-informationen-xml]]
 ==== Weiterführende Informationen
 
 * http://de.wikipedia.org/wiki/Xml[Artikel über XML aus der Wikipedia]
