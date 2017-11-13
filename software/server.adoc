@@ -65,7 +65,12 @@ muss.
 * Programm zum starten (auswählbar für 'Computerspieler'): Bei Spielertyp
 ‚Computerspieler’ ist eine Programmdatei auszuwählen, deren Name dann
 hier angezeigt wird.
-* direkt aufrufen (kein Java Client): Bei Spielertyp ‚Computerspieler’ kann man durch aktivieren dieser Option erreichen, dass das ausgewählte Programm nicht wie ein Java Client gestartet wird (es ist also keine Jar-Datei). Wenn die Option activity ist, wird das ausgewählte Programm direkt aufgerufen. Die Daten zum Server und die Reservierungs-Nummer für das Spiel werden aber in jedem Fall als Parameter übergeben.
+* direkt aufrufen (kein Java Client): Bei Spielertyp ‚Computerspieler’ kann man durch aktivieren dieser Option
+erreichen, dass das ausgewählte Programm nicht wie ein Java Client gestartet wird (es ist also keine Jar-Datei).
+Wenn die Option activity ist, wird das ausgewählte Programm direkt aufgerufen. Die Daten zum Server und die
+Reservierungs-Nummer für das Spiel werden aber in jedem Fall als Parameter übergeben.
+Soll zum Beispiel der ruby simple-client gestartet werden, kann unter Linux-Distributionen und Mac die "main.rb" aus dem "example"-Ordner als Computerspieler
+angegeben werden; unter Windows kann die "start.bat" ausgewählt werden.
 
 Nach Eingabe der erforderlichen Werte kann das Spiel mithilfe des
 unteren Knopfs "Start!" erstellt werden.
