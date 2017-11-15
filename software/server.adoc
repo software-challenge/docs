@@ -165,7 +165,7 @@ Wenn der Server ohne die graphische Oberfläche gestartet wird, kann das `--save
 Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter `./replays` gespeichert wird.
 
 [source, sh]
-  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=./logback.xml -jar softwarechallenge-server.jar --saveReplay true
+  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --saveReplay true
 
 [[automatische-spiele]]
 === Automatische Spiele: Der Testserver
@@ -184,7 +184,7 @@ Powershell, Linux: beliebige Shell oder Terminal) in das Verzeichnis des
 entpackten Archives.
 . Starten Sie den Testserver mit folgendem Befehl:
 [source,sh]
-  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=./logback.xml -jar softwarechallenge-server.jar
+  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar
 . Starten Sie Ihren Computerspieler und einen zweiten Computerspieler manuell
 (in weiteren Kommandozeilenumgebungen). Die Computerspieler verbinden sich
 automatisch zum Testserver und es wird ein Spiel gespielt. Danach sollten sich
@@ -203,7 +203,7 @@ erzeugt werden. Dann kann die Datei mit dem Argument `--loadGameFile` geladen
 werden und optional mit `--turn` ein Zug spezifiziert werden.
 
 [source,sh]
-  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=./logback.xml -jar softwarechallenge-server.jar --loadGameFile ./replay.xml --turn 10
+  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --loadGameFile ./replay.xml --turn 10
 
 [[soft-timeouts]]
 ==== Unerwartete Zugzeitüberschreitungen (Soft-Timeout)
@@ -277,7 +277,7 @@ Starten sie den Server
 
 [source,sh]
 ....
-java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=./logback.xml -jar softwarechallenge-server.jar
+java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar
 ....
 
 ==== Variante mit TestClient
@@ -286,7 +286,7 @@ Starten sie den TestClient
 
 [source,sh]
 ....
-java -jar -Dlogback.configurationFile=./logback-tests.xml test_client.jar 
+java -jar -Dlogback.configurationFile=logback-tests.xml test_client.jar
     --tests 4
     --name1 "displayName1"
     --player1 "./player1.jar"
