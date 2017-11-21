@@ -309,7 +309,7 @@ Beispiel die Polymorphie. Da es sich hier nur um eine Einführung
 handelt, wurden solche fortgeschrittenen Themen allerdings nicht
 behandelt.
 
-[[weiterführende-informationen]]
+[[weiterführende-informationen-oop]]
 ==== Weiterführende Informationen
 
 * http://de.wikipedia.org/wiki/Objektorientierte_Programmierung[Eintrag aus der Wikipedia]
