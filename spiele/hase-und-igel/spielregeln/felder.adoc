@@ -11,7 +11,7 @@ Ein Karottenfeld darf durch jede Bewegungsaktion (Vorwärtszug, Karten) betreten
 Darf nur betreten werden, wenn eine Karte gespielt werden kann. Sollte sich ein Spieler am Ende seines Zuges auf einem Hasenfeld befinden, muss dieses im nächsten Zug (wenn möglich) verlassen werden (es ist erlaubt das Hasenfeld zu verlassen und dann durch nutzen von Karten wieder zu betreten).
 
 === Salatfeld
-Darf nur betreten werden, der Spieler mindestens einen Salat besitzt. In dem Zug nach dem Betreten muss ein Salat gefressen werden. Nur auf einem Salatfeld darf ein Salat gefressen werden (außer natürlich durch die Karte Salat fressen). Das Salatfeld muss verlassen werden (wenn möglich) sobald ein Salat gegessen wurde (es ist innerhalb des Spiels trotzdem durch Rückzüge oder Karten möglich auf demselben Salatfeld mehrere Salate zu essen).
+Darf nur betreten werden, wenn der Spieler mindestens einen Salat besitzt. In dem Zug nach dem Betreten muss ein Salat gefressen werden. Nur auf einem Salatfeld darf ein Salat gefressen werden (außer natürlich durch die Karte Salat fressen). Das Salatfeld muss verlassen werden (wenn möglich) sobald ein Salat gegessen wurde (es ist innerhalb des Spiels trotzdem durch Rückzüge oder Karten möglich auf demselben Salatfeld mehrere Salate zu essen).
 
 === Igelfeld
 Darf nur durch einen Rückzug betreten werden. Muss (wenn möglich) im nächsten Zug wieder verlassen werden.
