@@ -1,10 +1,11 @@
-== Client abgabefertig machen
+== Computerspieler abgabefertig machen
 
 Damit <<das-wettkampfsystem,das Wettkampfsystem>> mit dem
 Computerspieler arbeiten kann, muss er zu einem ausführbaren Programm
 gemacht und in ein ZIP-Archiv gepackt werden.
 
-Je nach Programmiersprache, in der der Computerspieler entwickelt wurde, sind unterschiedliche Schritte notwendig.
+Je nach Programmiersprache, in der der Computerspieler entwickelt wurde, sind
+unterschiedliche Schritte notwendig.
 
 === Java
 
@@ -29,9 +30,10 @@ alles nötige drin ist. Mit einem Klick auf Finish wird die JAR-Datei
 erzeugt. Eventuell erhält man einen Hinweis "This operation repacks
 referenced libraries", den man mit "OK" bestätigen muss.
 
-Wenn alles geklappt hat, wurde der Computerspieler in ein auführbares
-Programm überführt. Damit der Wettkampfserver den Client verarbeiten
-kann, muss er noch in ein ZIP-Archiv gepackt werden.
+Wenn alles geklappt hat, wurde der Computerspieler in ein auführbares Programm
+überführt. Damit der Wettkampfserver den Client verarbeiten kann, muss er noch
+in ein ZIP-Archiv gepackt werden (auch wenn ein JAR technisch gesehen bereits
+ein ZIP-Archiv ist).
 
 ===== NetBeans
 
@@ -89,16 +91,15 @@ Datei im Ordner "jar" sowie die fertig gepackte ZIP-Datei im Ordner
 
 === Ruby
 
-Da Ruby eine interpretierte Sprache ist, muss der Ruby-Quellcode
-direkt in ein ZIP-Archiv gepackt und auf das Wettkampfsystem
-hochgeladen werden. In den virtuellen Maschinen ist ein
-Ruby-Interpreter sowie das aktuellste `software_challenge_client` Gem
-installiert. Alle weiteren Bibliotheken müssen im ZIP-Archiv vorhanden
-sein. Nach dem Hochladen des ZIP-Archiv muss die auszuführende
-Hauptdatei in Wettkampfsystem ausgewählt werden. Diese wird dann zum
-Start des Computerspielers gestartet. Damit dies richtig funktioniert,
-ist es entscheidend, dass die Hauptdatei mit einer sogenannten
-"Shebang"-Zeile beginnt:
+Da Ruby eine interpretierte Sprache ist, muss der Ruby-Quellcode direkt in ein
+ZIP-Archiv gepackt und auf das Wettkampfsystem hochgeladen werden. Auf dem
+Wettkampfsystem ist ein Ruby-Interpreter sowie das aktuellste
+`software_challenge_client` Gem installiert. Alle weiteren Bibliotheken müssen
+im ZIP-Archiv vorhanden sein. Nach dem Hochladen des ZIP-Archiv muss die
+auszuführende Hauptdatei in Wettkampfsystem ausgewählt werden. Diese wird dann
+zum Start des Computerspielers gestartet. Damit dies richtig funktioniert, ist
+es entscheidend, dass die Hauptdatei mit einer sogenannten "Shebang"-Zeile
+beginnt:
 
 [source,ruby]
 ----
@@ -131,6 +132,6 @@ compilierten Sprachen müssen die Computerspieler für 64bit Linux
 compiliert werden, bei interpretierten Sprachen muss ein Interpreter
 mitgeliefert werden, der unter 64bit Linux funktioniert.
 
-Am besten die Verwendung einer anderen Programmiersprache frühezeitig
+Am besten die Verwendung einer anderen Programmiersprache frühzeitig
 mit der Betreuung absprechen, damit sichergestellt ist, dass der
 Computerspieler auch am Wettkampf teilnehmen kann.

@@ -34,7 +34,13 @@ svk@informatik.uni-kiel.de.
 
 == Konvertierung
 
-Um alles in HTML zu Übersetzen, sollte `asciidoctor` verwendet werden:
+Um alles in HTML zu Übersetzen, sollte das `generate.sh` Script verwendet werden:
+
+....
+./generate.sh
+....
+
+Intern wird `asciidoctor` verwendet:
 
 ....
 asciidoctor -D out index.adoc
@@ -45,9 +51,9 @@ Die fertige HTML-Version befindet sich dann unter `out/index.html`.
 Hierzu werden die beiden Ruby-Gems `asciidoctor` und `pygments.rb`
 (für Syntax-Highlighting der Quellcodes) benötigt.
 
-IMPORTANT: Bilder werden nicht mitkopiert, dies muss manuell
-geschehen. Hat man also Bilder im `images`-Verzeichnis hinzugefuegt,
-muessen diese manuell nach `out/images` kopiert werden.
+IMPORTANT: Bilder werden nicht mitkopiert, dies muss manuell geschehen. Hat man
+also Bilder im `images`-Verzeichnis hinzugefuegt, muessen diese manuell nach
+`out/images` kopiert werden (das `generate.sh` Script macht das).
 
 Bei Bedarf kann die Dokumentation auch in ein anderes Format
 konvertiert werden, Details hierzu finden sich in der
@@ -56,24 +62,32 @@ Dokumentation].
 
 === Live-Preview
 
-CAUTION: Noch nicht vollstaendig getestet.
+CAUTION: Noch nicht vollstaendig getestet. Im Moment sehr langsam, da alles neu
+übersetzt wird.
 
 Einen Live-Preview-Mode gibt es leider nicht direkt, aber es gibt
 http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/[verschiedene
 Wege um ein Live-Preview zu bekommen].
 
-Einer ist die Nutzung von `guard`. Dazu müssen die beiden Gems `guard`
-,`guard-shell` installiert werden. Ein passendes `Guardfile` liegt
-schon im Repository, man kann `guard` also einfach mittels `guard
-start` starten, und die Ausgabe im Verzeichnis `out` wird
+Einer ist die Nutzung von `guard`. Dazu müssen folgende Gems installiert werden:
+
+* `guard`
+* `guard-shell`
+* `guard-livereload`
+* `yajl-ruby`
+
+Also zum Beispiel `gem install guard guard-shell guard-livereload yajl-ruby`.
+
+Ein passendes `Guardfile` liegt schon im Repository, man kann `guard` also
+einfach mittels `guard start` starten, und die Ausgabe im Verzeichnis `out` wird
 aktualisiert, sobald man etwas an den Quellen ändert.
 
-Wenn man dann noch die Browseransicht automatisch aktualisieren lassen
-will, muss man die beiden zusätzlichen Gems `guard-livereload` und
-`yajl-ruby` installieren sowie eine LiveReload Extension für
+Wenn man dann noch die Browseransicht automatisch aktualisieren lassen will,
+muss man eine LiveReload Extension für
 http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-[Firefox]
 oder
-https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en[Chrome].
+https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en[Chrome]
+installieren.
 
 == Auto-Deploy
 
