@@ -18,7 +18,8 @@ Ein AdminClient erhält eine Nachricht, sobald sich ein Client über eine JoinRo
 ----
 <joinedGameRoom roomId=ROOMID existing="false" />
 ----
-`existing` gibt hier an, ob der GameRoom bereits existierte bevor der Spieler beigetreten ist.
+`existing` gibt hier an, ob der GameRoom bereits existierte bevor der Spieler beigetreten ist. Die ROOMID ist ein
+String der vom Server eindeutig generiert wird und ist wichtig für die genaue Zuordnung zu dem entsprechenden Raum.
 
 Ein AdminClient kann sich als Observer mit einem GameRoom verbinden, dadurch erhält er alle Nachrichten, die das
 Spiel betreffen:

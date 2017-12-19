@@ -65,7 +65,12 @@ muss.
 * Programm zum starten (auswählbar für 'Computerspieler'): Bei Spielertyp
 ‚Computerspieler’ ist eine Programmdatei auszuwählen, deren Name dann
 hier angezeigt wird.
-* direkt aufrufen (kein Java Client): Bei Spielertyp ‚Computerspieler’ kann man durch aktivieren dieser Option erreichen, dass das ausgewählte Programm nicht wie ein Java Client gestartet wird (es ist also keine Jar-Datei). Wenn die Option activity ist, wird das ausgewählte Programm direkt aufgerufen. Die Daten zum Server und die Reservierungs-Nummer für das Spiel werden aber in jedem Fall als Parameter übergeben.
+* direkt aufrufen (kein Java Client): Bei Spielertyp ‚Computerspieler’ kann man durch aktivieren dieser Option
+erreichen, dass das ausgewählte Programm nicht wie ein Java Client gestartet wird (es ist also keine Jar-Datei).
+Wenn die Option aktiviert ist, wird das ausgewählte Programm direkt aufgerufen. Der Hostname und Port zum Server sowie die
+Reservierungs-Nummer für das Spiel werden als Parameter übergeben.
+Soll zum Beispiel der ruby simple-client gestartet werden, kann unter Linux-Distributionen und Mac die "main.rb" aus
+dem "example"-Ordner als Computerspieler angegeben werden; unter Windows kann die "start.bat" ausgewählt werden.
 
 Nach Eingabe der erforderlichen Werte kann das Spiel mithilfe des
 unteren Knopfs "Start!" erstellt werden.
@@ -160,7 +165,7 @@ Wenn der Server ohne die graphische Oberfläche gestartet wird, kann das `--save
 Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter `./replays` gespeichert wird.
 
 [source, sh]
-  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=./logback.xml -jar softwarechallenge-server.jar --saveReplay true
+  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --saveReplay true
 
 [[automatische-spiele]]
 === Automatische Spiele: Der Testserver
@@ -179,7 +184,7 @@ Powershell, Linux: beliebige Shell oder Terminal) in das Verzeichnis des
 entpackten Archives.
 . Starten Sie den Testserver mit folgendem Befehl:
 [source,sh]
-  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=./logback.xml -jar softwarechallenge-server.jar
+  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar
 . Starten Sie Ihren Computerspieler und einen zweiten Computerspieler manuell
 (in weiteren Kommandozeilenumgebungen). Die Computerspieler verbinden sich
 automatisch zum Testserver und es wird ein Spiel gespielt. Danach sollten sich
@@ -198,7 +203,7 @@ erzeugt werden. Dann kann die Datei mit dem Argument `--loadGameFile` geladen
 werden und optional mit `--turn` ein Zug spezifiziert werden.
 
 [source,sh]
-  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=./logback.xml -jar softwarechallenge-server.jar --loadGameFile ./replay.xml --turn 10
+  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --loadGameFile ./replay.xml --turn 10
 
 [[soft-timeouts]]
 ==== Unerwartete Zugzeitüberschreitungen (Soft-Timeout)
@@ -272,7 +277,7 @@ Starten sie den Server
 
 [source,sh]
 ....
-java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=./logback.xml -jar softwarechallenge-server.jar
+java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar
 ....
 
 ==== Variante mit TestClient
@@ -281,16 +286,52 @@ Starten sie den TestClient
 
 [source,sh]
 ....
-java -jar -Dlogback.configurationFile=./logback-tests.xml test_client.jar 
-    --tests 4 (100)
-    --name1 "displayName1" ("player1")
-    --player1 "./player1.jar" ("./../simple_client/hase_und_igel_player_new/jar/hase_und_igel_player_new.jar")
-    --timeout1 true (true)
-    --name2 "displayName2" ("player2")
-    --player2 "./player1.jar" ("./../simple_client/hase_und_igel_player_new/jar/hase_und_igel_player_new.jar")
-    --timeout2 true (true)
+java -jar -Dlogback.configurationFile=logback-tests.xml test_client.jar
+    --tests 4
+    --name1 "displayName1"
+    --player1 "./player1.jar"
+    --timeout1 true
+    --name2 "displayName2"
+    --player2 "./player1.jar"
+    --timeout2 true
 ....
-In Klammern hinter den Optionen befinden sich die Defaultwerte, sollten die Optionen weggelassen werden.
+
+Attribute des TestClients
+|===
+|Attribut | Default Wert | Kurzbeschreibung
+
+|tests
+|100
+|Anzahl der Tests die durchlaufen werden sollen.
+
+|name1
+|"player1"
+|Name des ersten Spielers.
+
+|name2
+|"player2"
+|Name des zweiten Spielers.
+
+|player1
+|"../simple_client/hase_und_igel_player_new/jar/ hase_und_igel_player_new.jar"
+|Erster Computerspieler.
+
+|player2
+|"../simple_client/hase_und_igel_player_new/jar/ hase_und_igel_player_new.jar"
+|Zweiter Computerspieler.
+
+|timeout1
+|true
+|Soll der erste Spieler nach dem Timeout abbrechen? (true\|false)
+
+|timeout2
+|true
+|Soll der zweite Spieler nach dem Timeout abbrechen? (true\|false)
+
+|===
+
+
+Sollten einige Attribute weggelassen werden, so werden die Defaultwerte aus der Tabelle oben gewählt.
 Es ist wichtig, dass die Namen der Spieler nicht gleich sind, ansonsten werden keine Testdaten gesammelt.
 Die Ausgabe der Daten erfolgt nach jedem Spiel anhand von gerundeten Werten. Der TestClient beendet sich selbst
 sollten alle Spiele gespielt wurden.
