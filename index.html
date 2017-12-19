@@ -504,7 +504,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="details">
 <span id="author" class="author">Sven Koschnicke</span><br>
 <span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
-<span id="revdate">2017-09-28</span>
+<span id="revdate">2017-12-19</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhalt</div>
@@ -570,7 +570,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#die-strategie-benutzen">Die Strategie benutzen</a></li>
 </ul>
 </li>
-<li><a href="#_client_abgabefertig_machen">Client abgabefertig machen</a>
+<li><a href="#_computerspieler_abgabefertig_machen">Computerspieler abgabefertig machen</a>
 <ul class="sectlevel2">
 <li><a href="#_java">Java</a></li>
 <li><a href="#_ruby">Ruby</a></li>
@@ -849,7 +849,12 @@ muss.</p>
 hier angezeigt wird.</p>
 </li>
 <li>
-<p>direkt aufrufen (kein Java Client): Bei Spielertyp ‚Computerspieler’ kann man durch aktivieren dieser Option erreichen, dass das ausgewählte Programm nicht wie ein Java Client gestartet wird (es ist also keine Jar-Datei). Wenn die Option activity ist, wird das ausgewählte Programm direkt aufgerufen. Die Daten zum Server und die Reservierungs-Nummer für das Spiel werden aber in jedem Fall als Parameter übergeben.</p>
+<p>direkt aufrufen (kein Java Client): Bei Spielertyp ‚Computerspieler’ kann man durch aktivieren dieser Option
+erreichen, dass das ausgewählte Programm nicht wie ein Java Client gestartet wird (es ist also keine Jar-Datei).
+Wenn die Option aktiviert ist, wird das ausgewählte Programm direkt aufgerufen. Der Hostname und Port zum Server sowie die
+Reservierungs-Nummer für das Spiel werden als Parameter übergeben.
+Soll zum Beispiel der ruby simple-client gestartet werden, kann unter Linux-Distributionen und Mac die "main.rb" aus
+dem "example"-Ordner als Computerspieler angegeben werden; unter Windows kann die "start.bat" ausgewählt werden.</p>
 </li>
 </ul>
 </div>
@@ -987,7 +992,7 @@ Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>./logback.xml -jar softwarechallenge-server.jar --saveReplay <span class="tok-nb">true</span></code></pre>
+<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar softwarechallenge-server.jar --saveReplay <span class="tok-nb">true</span></code></pre>
 </div>
 </div>
 </div>
@@ -1019,7 +1024,7 @@ entpackten Archives.</p>
 <p>Starten Sie den Testserver mit folgendem Befehl:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>./logback.xml -jar softwarechallenge-server.jar</code></pre>
+<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar softwarechallenge-server.jar</code></pre>
 </div>
 </div>
 </li>
@@ -1049,7 +1054,7 @@ werden und optional mit <code>--turn</code> ein Zug spezifiziert werden.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>./logback.xml -jar softwarechallenge-server.jar --loadGameFile ./replay.xml --turn <span class="tok-m">10</span></code></pre>
+<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar softwarechallenge-server.jar --loadGameFile ./replay.xml --turn <span class="tok-m">10</span></code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -1133,7 +1138,7 @@ dann ist dies mit folgenden Schritten möglich:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sh"><span></span>java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>./logback.xml -jar softwarechallenge-server.jar</code></pre>
+<pre class="pygments highlight"><code data-lang="sh"><span></span>java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar softwarechallenge-server.jar</code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -1143,18 +1148,72 @@ dann ist dies mit folgenden Schritten möglich:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sh"><span></span>java -jar -Dlogback.configurationFile<span class="tok-o">=</span>./logback-tests.xml test_client.jar
-    --tests <span class="tok-m">4</span> <span class="tok-o">(</span><span class="tok-m">100</span><span class="tok-o">)</span>
-    --name1 <span class="tok-s2">&quot;displayName1&quot;</span> <span class="tok-o">(</span><span class="tok-s2">&quot;player1&quot;</span><span class="tok-o">)</span>
-    --player1 <span class="tok-s2">&quot;./player1.jar&quot;</span> <span class="tok-o">(</span><span class="tok-s2">&quot;./../simple_client/hase_und_igel_player_new/jar/hase_und_igel_player_new.jar&quot;</span><span class="tok-o">)</span>
-    --timeout1 <span class="tok-nb">true</span> <span class="tok-o">(</span><span class="tok-nb">true</span><span class="tok-o">)</span>
-    --name2 <span class="tok-s2">&quot;displayName2&quot;</span> <span class="tok-o">(</span><span class="tok-s2">&quot;player2&quot;</span><span class="tok-o">)</span>
-    --player2 <span class="tok-s2">&quot;./player1.jar&quot;</span> <span class="tok-o">(</span><span class="tok-s2">&quot;./../simple_client/hase_und_igel_player_new/jar/hase_und_igel_player_new.jar&quot;</span><span class="tok-o">)</span>
-    --timeout2 <span class="tok-nb">true</span> <span class="tok-o">(</span><span class="tok-nb">true</span><span class="tok-o">)</span></code></pre>
+<pre class="pygments highlight"><code data-lang="sh"><span></span>java -jar -Dlogback.configurationFile<span class="tok-o">=</span>logback-tests.xml test_client.jar
+    --tests <span class="tok-m">4</span>
+    --name1 <span class="tok-s2">&quot;displayName1&quot;</span>
+    --player1 <span class="tok-s2">&quot;./player1.jar&quot;</span>
+    --timeout1 <span class="tok-nb">true</span>
+    --name2 <span class="tok-s2">&quot;displayName2&quot;</span>
+    --player2 <span class="tok-s2">&quot;./player1.jar&quot;</span>
+    --timeout2 <span class="tok-nb">true</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>In Klammern hinter den Optionen befinden sich die Defaultwerte, sollten die Optionen weggelassen werden.
+<p>Attribute des TestClients</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribut</th>
+<th class="tableblock halign-left valign-top">Default Wert</th>
+<th class="tableblock halign-left valign-top">Kurzbeschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tests</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl der Tests die durchlaufen werden sollen.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"player1"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des ersten Spielers.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"player2"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des zweiten Spielers.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">player1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"../simple_client/hase_und_igel_player_new/jar/ hase_und_igel_player_new.jar"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erster Computerspieler.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">player2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"../simple_client/hase_und_igel_player_new/jar/ hase_und_igel_player_new.jar"</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zweiter Computerspieler.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timeout1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Soll der erste Spieler nach dem Timeout abbrechen? (true|false)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timeout2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Soll der zweite Spieler nach dem Timeout abbrechen? (true|false)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Sollten einige Attribute weggelassen werden, so werden die Defaultwerte aus der Tabelle oben gewählt.
 Es ist wichtig, dass die Namen der Spieler nicht gleich sind, ansonsten werden keine Testdaten gesammelt.
 Die Ausgabe der Daten erfolgt nach jedem Spiel anhand von gerundeten Werten. Der TestClient beendet sich selbst
 sollten alle Spiele gespielt wurden.</p>
@@ -1308,7 +1367,8 @@ nicht den Quellcode für den eigenen Spieler weiterverwenden können.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><code>existing</code> gibt hier an, ob der GameRoom bereits existierte bevor der Spieler beigetreten ist.</p>
+<p><code>existing</code> gibt hier an, ob der GameRoom bereits existierte bevor der Spieler beigetreten ist. Die ROOMID ist ein
+String der vom Server eindeutig generiert wird und ist wichtig für die genaue Zuordnung zu dem entsprechenden Raum.</p>
 </div>
 <div class="paragraph">
 <p>Ein AdminClient kann sich als Observer mit einem GameRoom verbinden, dadurch erhält er alle Nachrichten, die das
@@ -2058,7 +2118,7 @@ Programmstart Argumente übergibt, kann <a href="#programme-starten">hier</a> na
 </div>
 </div>
 <div class="sect1">
-<h2 id="_client_abgabefertig_machen">Client abgabefertig machen</h2>
+<h2 id="_computerspieler_abgabefertig_machen">Computerspieler abgabefertig machen</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Damit <a href="#das-wettkampfsystem">das Wettkampfsystem</a> mit dem
@@ -2066,7 +2126,8 @@ Computerspieler arbeiten kann, muss er zu einem ausführbaren Programm
 gemacht und in ein ZIP-Archiv gepackt werden.</p>
 </div>
 <div class="paragraph">
-<p>Je nach Programmiersprache, in der der Computerspieler entwickelt wurde, sind unterschiedliche Schritte notwendig.</p>
+<p>Je nach Programmiersprache, in der der Computerspieler entwickelt wurde, sind
+unterschiedliche Schritte notwendig.</p>
 </div>
 <div class="sect2">
 <h3 id="_java">Java</h3>
@@ -2100,9 +2161,10 @@ referenced libraries", den man mit "OK" bestätigen muss.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Wenn alles geklappt hat, wurde der Computerspieler in ein auführbares
-Programm überführt. Damit der Wettkampfserver den Client verarbeiten
-kann, muss er noch in ein ZIP-Archiv gepackt werden.</p>
+<p>Wenn alles geklappt hat, wurde der Computerspieler in ein auführbares Programm
+überführt. Damit der Wettkampfserver den Client verarbeiten kann, muss er noch
+in ein ZIP-Archiv gepackt werden (auch wenn ein JAR technisch gesehen bereits
+ein ZIP-Archiv ist).</p>
 </div>
 </div>
 <div class="sect4">
@@ -2185,16 +2247,15 @@ Datei im Ordner "jar" sowie die fertig gepackte ZIP-Datei im Ordner
 <div class="sect2">
 <h3 id="_ruby">Ruby</h3>
 <div class="paragraph">
-<p>Da Ruby eine interpretierte Sprache ist, muss der Ruby-Quellcode
-direkt in ein ZIP-Archiv gepackt und auf das Wettkampfsystem
-hochgeladen werden. In den virtuellen Maschinen ist ein
-Ruby-Interpreter sowie das aktuellste <code>software_challenge_client</code> Gem
-installiert. Alle weiteren Bibliotheken müssen im ZIP-Archiv vorhanden
-sein. Nach dem Hochladen des ZIP-Archiv muss die auszuführende
-Hauptdatei in Wettkampfsystem ausgewählt werden. Diese wird dann zum
-Start des Computerspielers gestartet. Damit dies richtig funktioniert,
-ist es entscheidend, dass die Hauptdatei mit einer sogenannten
-"Shebang"-Zeile beginnt:</p>
+<p>Da Ruby eine interpretierte Sprache ist, muss der Ruby-Quellcode direkt in ein
+ZIP-Archiv gepackt und auf das Wettkampfsystem hochgeladen werden. Auf dem
+Wettkampfsystem ist ein Ruby-Interpreter sowie das aktuellste
+<code>software_challenge_client</code> Gem installiert. Alle weiteren Bibliotheken müssen
+im ZIP-Archiv vorhanden sein. Nach dem Hochladen des ZIP-Archiv muss die
+auszuführende Hauptdatei in Wettkampfsystem ausgewählt werden. Diese wird dann
+zum Start des Computerspielers gestartet. Damit dies richtig funktioniert, ist
+es entscheidend, dass die Hauptdatei mit einer sogenannten "Shebang"-Zeile
+beginnt:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2232,7 +2293,7 @@ compiliert werden, bei interpretierten Sprachen muss ein Interpreter
 mitgeliefert werden, der unter 64bit Linux funktioniert.</p>
 </div>
 <div class="paragraph">
-<p>Am besten die Verwendung einer anderen Programmiersprache frühezeitig
+<p>Am besten die Verwendung einer anderen Programmiersprache frühzeitig
 mit der Betreuung absprechen, damit sichergestellt ist, dass der
 Computerspieler auch am Wettkampf teilnehmen kann.</p>
 </div>
@@ -2601,7 +2662,7 @@ behandelt.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="weiterführende-informationen">Weiterführende Informationen</h4>
+<h4 id="weiterführende-informationen-oop">Weiterführende Informationen</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -2743,7 +2804,7 @@ wird, soll das durch einen Kommentar gekennzeichnet werden. Wenn ein
 </div>
 </div>
 <div class="sect3">
-<h4 id="weiterführende-informationen">Weiterführende Informationen</h4>
+<h4 id="weiterführende-informationen-programmierstil">Weiterführende Informationen</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -3110,7 +3171,7 @@ zwischen Tags stehen.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="weiterführende-informationen">Weiterführende Informationen</h4>
+<h4 id="weiterführende-informationen-xml">Weiterführende Informationen</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -3595,7 +3656,7 @@ weniger Last für das System zur Verfügung gestellt werden können.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-10-25 09:48:38 CEST
+Last updated 2017-12-19 14:55:15 CET
 </div>
 </div>
 </body>
