@@ -1,6 +1,6 @@
 = Software Challenge Endbenutzer-Dokumentation
 Sven Koschnicke <svk@informatik.uni-kiel.de>
-2017-07-28
+2017-12-19
 :imagesdir: ./images
 :toc: right
 :toc-title: Inhalt
@@ -40,6 +40,8 @@ include::allgemein/die-software-challenge.adoc[]
 include::software/server.adoc[]
 
 include::software/client.adoc[]
+
+include::software/adminclient.adoc[]
 
 include::entwicklung/installation-von-java.adoc[]
 

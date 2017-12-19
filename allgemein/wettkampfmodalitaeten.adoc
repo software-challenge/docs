@@ -90,25 +90,46 @@ Befinden sich auf der
 http://www.software-challenge.de/de/termine[Software-Challenge Website
 unter Termine].
 
-[[technische-daten-der-virtuellen-maschine]]
-=== Technische Daten der virtuellen Maschine
+[[technische-daten-ausfuehrung-compuerspieler]]
+=== Technische Daten für die Ausführung der Computerspieler
+
+Für alle im Wettkampfsystem ausgetragenen Spiele laufen die Computerspieler auf den Servern des Wettkampfsystems.
 
 [cols="2"]
 |==============================
 |Betriebssystem:
-|Ubuntu 9.04 Server 32 Bit oder 14.10 LTS Server 64 Bit
+|64 Bit Linux
 |Prozessor:
-|2,27 GHz Xeon
+|Ein Kern von einem https://ark.intel.com/de/products/92986/Intel-Xeon-Processor-E5-2620-v4-20M-Cache-2_10-GHz[Intel Xeon E5-2620 v4, 2,1 GHz]
 |Arbeitsspeicher:
 |1,5 GB
 |==============================
 
-Es gibt zwei Versionen der virtuellen Maschine, die sich nur durch das
-installierter Betriebssystem unterscheiden. Die Version mit Ubuntu
-9.04 wird im Wettkampfsystem als "alte VM" bezeichnet, und wird seit
-einigen Jahren eingesetzt. Inzwischen gibt es eine "neue VM", auf der
-Ubuntu 14.10 LTS installiert ist. Diese befindet sich derzeit in der
-Testphase, kann also noch nicht als vollständig getestet angesehen
-werden. Sie ist für Teams gedacht, welche neuere Versionen von
-Bibliotheken etc. für ihren Computerspieler benötigen, die auf der
-alten VM noch nicht verfügbar sind.
+==== Log-Ausgabe
+
+Die Computerspieler laufen im Wettkampfsystem ohne eine grafische Oberfläche, sie können also keine Fenster oder ähnliches anzeigen. Der Versuch eines Computerspielers, so etwas trotzdem zu tun, wird wahrscheinlich zum Absturz des Computerspielers führen.
+
+Die Computerspieler können jedoch Text auf die beiden Standard-Ausgabedatenströme "stdout" und "stderr" schreiben. Diese Ausgaben finden sich dann in den Log-Dateien wieder, die nach Beenden eines Spiels über das Wettkampfsystem verfügbar sind.
+
+==== Lesen von Daten
+
+Zugriff auf das Internet ist nicht möglich. Schreiben auf die Festplatte ist möglich, es kann jedoch nicht auf Daten, die in früheren Spielen geschrieben wurden, zugegriffen werden.
+
+==== Weitere Ausführungsumgebung
+
+Der Computerspieler wird in einem sogenannten "Docker Container" ausgeführt, welcher die verfügbaren Bibliotheken und Programme bestimmt. Folgende Container-Images können genutzt werden:
+
+|===
+|Bezeichnung|Image-Name|Beschreibung
+|Java 8
+|https://hub.docker.com/_/openjdk/[openjdk:8u151-jre]
+|Open Source Java Platform, Standard Edition, Version 1.8.0. Für alle Computerspieler auf Basis des Java SimpleClients.</td>
+|Ruby 2
+|https://hub.docker.com/_/ruby/[ruby:2.4.2] mit installiertem Software-Challenge-Client-Gem
+|Ruby Interpreter, Version 2.4.2. Für alle Computerspieler auf Basis des Ruby SimpleClients.
+|Python 3
+|https://hub.docker.com/_/python/[python:3.6.3]
+|Python Interpreter, Version 3.6.3. Für selbst entwickelte Computerspieler in Python.
+|===
+
+Wenn Ihr Computerspieler eine speziellere Umgebung benötigt (zum Beispiel ein hier nicht angebotener Interpreter), nehmen sie bitte mit uns Kontakt auf (svk@informatik.uni-kiel.de). Wir stellen gern weitere Images zur Verfügung.</li>
