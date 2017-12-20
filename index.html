@@ -504,7 +504,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="details">
 <span id="author" class="author">Sven Koschnicke</span><br>
 <span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
-<span id="revdate">2017-12-19</span>
+<span id="revdate">2017-12-20</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhalt</div>
@@ -598,7 +598,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#die-begegnungen">Die Begegnungen</a></li>
 <li><a href="#die-probespieltage">Die Probespieltage</a></li>
 <li><a href="#die-konkreten-termine">Die konkreten Termine</a></li>
-<li><a href="#technische-daten-der-virtuellen-maschine">Technische Daten der virtuellen Maschine</a></li>
+<li><a href="#technische-daten-ausfuehrung-compuerspieler">Technische Daten für die Ausführung der Computerspieler</a></li>
 </ul>
 </li>
 <li><a href="#das-wettkampfsystem">Das Wettkampfsystem</a>
@@ -2129,6 +2129,10 @@ gemacht und in ein ZIP-Archiv gepackt werden.</p>
 <p>Je nach Programmiersprache, in der der Computerspieler entwickelt wurde, sind
 unterschiedliche Schritte notwendig.</p>
 </div>
+<div class="paragraph">
+<p>Wie man den abgabefertigen Computerspieler dann im Wettkampfsystem einsendet,
+ist unter <a href="#computerspieler">Wettkampfsystem, Computerspieler</a> beschrieben.</p>
+</div>
 <div class="sect2">
 <h3 id="_java">Java</h3>
 <div class="paragraph">
@@ -3292,7 +3296,10 @@ unter Termine</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="technische-daten-der-virtuellen-maschine">Technische Daten der virtuellen Maschine</h3>
+<h3 id="technische-daten-ausfuehrung-compuerspieler">Technische Daten für die Ausführung der Computerspieler</h3>
+<div class="paragraph">
+<p>Für alle im Wettkampfsystem ausgetragenen Spiele laufen die Computerspieler auf den Servern des Wettkampfsystems.</p>
+</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 50%;">
@@ -3301,11 +3308,11 @@ unter Termine</a>.</p>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Betriebssystem:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ubuntu 9.04 Server 32 Bit oder 14.10 LTS Server 64 Bit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64 Bit Linux</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Prozessor:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">2,27 GHz Xeon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ein Kern von einem <a href="https://ark.intel.com/de/products/92986/Intel-Xeon-Processor-E5-2620-v4-20M-Cache-2_10-GHz">Intel Xeon E5-2620 v4, 2,1 GHz</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Arbeitsspeicher:</p></td>
@@ -3313,16 +3320,58 @@ unter Termine</a>.</p>
 </tr>
 </tbody>
 </table>
+<div class="sect3">
+<h4 id="_log_ausgabe">Log-Ausgabe</h4>
 <div class="paragraph">
-<p>Es gibt zwei Versionen der virtuellen Maschine, die sich nur durch das
-installierter Betriebssystem unterscheiden. Die Version mit Ubuntu
-9.04 wird im Wettkampfsystem als "alte VM" bezeichnet, und wird seit
-einigen Jahren eingesetzt. Inzwischen gibt es eine "neue VM", auf der
-Ubuntu 14.10 LTS installiert ist. Diese befindet sich derzeit in der
-Testphase, kann also noch nicht als vollständig getestet angesehen
-werden. Sie ist für Teams gedacht, welche neuere Versionen von
-Bibliotheken etc. für ihren Computerspieler benötigen, die auf der
-alten VM noch nicht verfügbar sind.</p>
+<p>Die Computerspieler laufen im Wettkampfsystem ohne eine grafische Oberfläche, sie können also keine Fenster oder ähnliches anzeigen. Der Versuch eines Computerspielers, so etwas trotzdem zu tun, wird wahrscheinlich zum Absturz des Computerspielers führen.</p>
+</div>
+<div class="paragraph">
+<p>Die Computerspieler können jedoch Text auf die beiden Standard-Ausgabedatenströme "stdout" und "stderr" schreiben. Diese Ausgaben finden sich dann in den Log-Dateien wieder, die nach Beenden eines Spiels über das Wettkampfsystem verfügbar sind.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_lesen_von_daten">Lesen von Daten</h4>
+<div class="paragraph">
+<p>Zugriff auf das Internet ist nicht möglich. Schreiben auf die Festplatte ist möglich, es kann jedoch nicht auf Daten, die in früheren Spielen geschrieben wurden, zugegriffen werden.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_weitere_ausführungsumgebung">Weitere Ausführungsumgebung</h4>
+<div class="paragraph">
+<p>Der Computerspieler wird in einem sogenannten "Docker Container" ausgeführt, welcher die verfügbaren Bibliotheken und Programme bestimmt. Folgende Container-Images können genutzt werden:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bezeichnung</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image-Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Beschreibung</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Java 8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://hub.docker.com/_/openjdk/">openjdk:8u151-jre</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Open Source Java Platform, Standard Edition, Version 1.8.0. Für alle Computerspieler auf Basis des Java SimpleClients.&lt;/td&gt;</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ruby 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://hub.docker.com/_/ruby/">ruby:2.4.2</a> mit installiertem Software-Challenge-Client-Gem</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ruby Interpreter, Version 2.4.2. Für alle Computerspieler auf Basis des Ruby SimpleClients.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Python 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://hub.docker.com/_/python/">python:3.6.3</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Python Interpreter, Version 3.6.3. Für selbst entwickelte Computerspieler in Python.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Wenn Ihr Computerspieler eine speziellere Umgebung benötigt (zum Beispiel ein hier nicht angebotener Interpreter), nehmen sie bitte mit uns Kontakt auf (<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>). Wir stellen gern weitere Images zur Verfügung.&lt;/li&gt;</p>
+</div>
 </div>
 </div>
 </div>
@@ -3570,36 +3619,46 @@ für den nahenden Spieltag</p>
 </div>
 <div class="sect4">
 <h5 id="computerspieler">Computerspieler</h5>
+<div class="imageblock">
+<div class="content">
+<img src="./images/computerspieler_uebersicht.jpg" alt="Übersicht der eingesendeten Computerspieler">
+</div>
+</div>
 <div class="paragraph">
 <p>In dieser Rubrik kann man die Clients hochladen und verwalten. Oben am
 rechten Rand befindet sich die Schaltfläche, um neue Computerspieler
-hinzuzufügen. Bitte die Hinweise des Servers auf der Upload-Seite
-beachten.</p>
+hinzuzufügen.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/computerspieler_hochladen.jpg" alt="Forumlar zum Einsenden eines Computerspielers">
+</div>
 </div>
 <div class="paragraph">
-<p>Wurde ein Spieler erfolgreich hochgeladen, befindet er sich in der Liste
-aller Spieler des Teams. Hier kann man mit dem Link "Testen" seine
-Turnierfähigkeit prüfen, indem er zwei Spiele absolviert. Ein Haken in
-einem grünen Kreis symbolisiert einen erfolgreichen Test. Das Logbuch
-über den Testlauf kann mit dem Link "Logs" aufgerufen werden. Unter
-Umständen muss noch die richtige Startdatei eingestellt werden. Dafür
-kann man rechts in der Spalte "Hauptdatei" auf den entsprechenden Link
-klicken und im folgenden Dateimenü die richtige Startdatei auswählen.</p>
+<p>Wurde ein Spieler erfolgreich hochgeladen, befindet er sich in der Liste aller
+Spieler des Teams. Hier kann man mit dem Link "Testen" seine Turnierfähigkeit
+prüfen. Der Spieler spielt dann zweimal gegen den SimpleClient. Ein Haken in
+einem grünen Kreis symbolisiert einen erfolgreichen Test. Das Logbuch über den
+Testlauf kann mit dem Link "Logs" aufgerufen werden. Unter Umständen muss noch
+die richtige Startdatei eingestellt werden. Dafür kann man rechts in der Spalte
+"Hauptdatei" auf den entsprechenden Link klicken und im folgenden Dateimenü die
+richtige Startdatei auswählen.</p>
 </div>
 <div class="paragraph">
 <p>Mit dem '+' kann man einen Kommentar an den Client heften, so dass man
 ihn besser von den anderen unterscheiden kann.</p>
 </div>
 <div class="paragraph">
-<p>Mit dem Link "Aktivieren" sagt man dem Wettkampfserver, dass dieser
-Client die nächsten Spiele bestreiten soll.</p>
+<p>Mit dem Link "Aktivieren" markiert man den Spieler als denjenigen, der das
+nächste Spiel auf dem Wettkampfsystem spielen soll. Dies kann ein
+Freundschaftsspiel oder ein Spiel des Wettkampfes sein.</p>
 </div>
 <div class="paragraph">
 <p><strong>Hinweis:</strong> Es nimmt der jeweils aktive Computerspieler am Spieltag teil.
 Die Frist für das Aktivieren eines Clients, der an einem Spieltag
 teilnehmen soll, endet am Spieltag um 0 Uhr. Bei späterer Aktivierung
-können die Oranisatoren keine Zusage machen, ob der neue oder der
-bisherige Client an dem Spieltag berücksichtigt wird. Ist an einem
+kann nicht garantiert werden, dass der neue statt des
+bisherigen Clients am Spieltag teilnimmt. Ist an einem
 Spieltag kein Computerspieler aktiviert, nimmt das Team nicht an der
 Begegnung dieses Spieltages teil und die betreffenden Spiele zählen als
 verloren.</p>
@@ -3656,7 +3715,7 @@ weniger Last für das System zur Verfügung gestellt werden können.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-12-19 14:55:15 CET
+Last updated 2017-12-20 10:12:56 CET
 </div>
 </div>
 </body>
