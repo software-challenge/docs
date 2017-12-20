@@ -7,6 +7,10 @@ gemacht und in ein ZIP-Archiv gepackt werden.
 Je nach Programmiersprache, in der der Computerspieler entwickelt wurde, sind
 unterschiedliche Schritte notwendig.
 
+Wie man den abgabefertigen Computerspieler dann im Wettkampfsystem einsendet,
+ist unter <<computerspieler,Wettkampfsystem, Computerspieler>> beschrieben.
+
+
 === Java
 
 Diese Anleitung beschreibt, wie man für den Java-SimpleClient vorgehen muss.

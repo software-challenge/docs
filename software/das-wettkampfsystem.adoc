@@ -186,31 +186,35 @@ für den nahenden Spieltag
 [[computerspieler]]
 ===== Computerspieler
 
+image::computerspieler_uebersicht.jpg[Übersicht der eingesendeten Computerspieler]
+
 In dieser Rubrik kann man die Clients hochladen und verwalten. Oben am
 rechten Rand befindet sich die Schaltfläche, um neue Computerspieler
-hinzuzufügen. Bitte die Hinweise des Servers auf der Upload-Seite
-beachten.
+hinzuzufügen.
 
-Wurde ein Spieler erfolgreich hochgeladen, befindet er sich in der Liste
-aller Spieler des Teams. Hier kann man mit dem Link "Testen" seine
-Turnierfähigkeit prüfen, indem er zwei Spiele absolviert. Ein Haken in
-einem grünen Kreis symbolisiert einen erfolgreichen Test. Das Logbuch
-über den Testlauf kann mit dem Link "Logs" aufgerufen werden. Unter
-Umständen muss noch die richtige Startdatei eingestellt werden. Dafür
-kann man rechts in der Spalte "Hauptdatei" auf den entsprechenden Link
-klicken und im folgenden Dateimenü die richtige Startdatei auswählen.
+image::computerspieler_hochladen.jpg[Forumlar zum Einsenden eines Computerspielers]
+
+Wurde ein Spieler erfolgreich hochgeladen, befindet er sich in der Liste aller
+Spieler des Teams. Hier kann man mit dem Link "Testen" seine Turnierfähigkeit
+prüfen. Der Spieler spielt dann zweimal gegen den SimpleClient. Ein Haken in
+einem grünen Kreis symbolisiert einen erfolgreichen Test. Das Logbuch über den
+Testlauf kann mit dem Link "Logs" aufgerufen werden. Unter Umständen muss noch
+die richtige Startdatei eingestellt werden. Dafür kann man rechts in der Spalte
+"Hauptdatei" auf den entsprechenden Link klicken und im folgenden Dateimenü die
+richtige Startdatei auswählen.
 
 Mit dem '+' kann man einen Kommentar an den Client heften, so dass man
 ihn besser von den anderen unterscheiden kann.
 
-Mit dem Link "Aktivieren" sagt man dem Wettkampfserver, dass dieser
-Client die nächsten Spiele bestreiten soll.
+Mit dem Link "Aktivieren" markiert man den Spieler als denjenigen, der das
+nächste Spiel auf dem Wettkampfsystem spielen soll. Dies kann ein
+Freundschaftsspiel oder ein Spiel des Wettkampfes sein.
 
 *Hinweis:* Es nimmt der jeweils aktive Computerspieler am Spieltag teil.
 Die Frist für das Aktivieren eines Clients, der an einem Spieltag
 teilnehmen soll, endet am Spieltag um 0 Uhr. Bei späterer Aktivierung
-können die Oranisatoren keine Zusage machen, ob der neue oder der
-bisherige Client an dem Spieltag berücksichtigt wird. Ist an einem
+kann nicht garantiert werden, dass der neue statt des
+bisherigen Clients am Spieltag teilnimmt. Ist an einem
 Spieltag kein Computerspieler aktiviert, nimmt das Team nicht an der
 Begegnung dieses Spieltages teil und die betreffenden Spiele zählen als
 verloren.
