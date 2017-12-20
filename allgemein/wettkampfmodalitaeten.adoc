@@ -123,7 +123,7 @@ Der Computerspieler wird in einem sogenannten "Docker Container" ausgeführt, we
 |Bezeichnung|Image-Name|Beschreibung
 |Java 8
 |https://hub.docker.com/_/openjdk/[openjdk:8u151-jre]
-|Open Source Java Platform, Standard Edition, Version 1.8.0. Für alle Computerspieler auf Basis des Java SimpleClients.</td>
+|Open Source Java Platform, Standard Edition, Version 1.8.0. Für alle Computerspieler auf Basis des Java SimpleClients.
 |Ruby 2
 |https://hub.docker.com/_/ruby/[ruby:2.4.2] mit installiertem Software-Challenge-Client-Gem
 |Ruby Interpreter, Version 2.4.2. Für alle Computerspieler auf Basis des Ruby SimpleClients.
