@@ -2288,18 +2288,20 @@ Hauptdatei.</p>
 <div class="sect2">
 <h3 id="_andere_programmiersprache">Andere Programmiersprache</h3>
 <div class="paragraph">
-<p>Bei Computerspielern in jeder anderen Programmiersprache muss ein
-Shell-Script dem ZIP-Archiv beigelegt werden, was die genauen
-Instruktionen zum Start des Computerspielers enthält. Dieses muss nach
-dem Hochladen im Wettkampfystem als Hauptdatei ausgewählt werden. Bei
-compilierten Sprachen müssen die Computerspieler für 64bit Linux
-compiliert werden, bei interpretierten Sprachen muss ein Interpreter
-mitgeliefert werden, der unter 64bit Linux funktioniert.</p>
+<p>Bei Computerspielern in jeder anderen Programmiersprache muss ein Shell-Script
+dem ZIP-Archiv beigelegt werden, was die genauen Instruktionen zum Start des
+Computerspielers enthält. Dieses muss nach dem Hochladen im Wettkampfystem als
+Hauptdatei ausgewählt werden. Bei compilierten Sprachen müssen die
+Computerspieler für 64bit Linux compiliert werden, bei interpretierten Sprachen
+muss ein passender Interpreter auf dem Wettkampfsystem vorhanden sein. Weiterhin
+müssen Abhängigkeiten wie z.B. genutzte Bibliotheken vorhanden sein oder
+mitgeliefert werden.</p>
 </div>
 <div class="paragraph">
-<p>Am besten die Verwendung einer anderen Programmiersprache frühzeitig
-mit der Betreuung absprechen, damit sichergestellt ist, dass der
-Computerspieler auch am Wettkampf teilnehmen kann.</p>
+<p>Am besten die Verwendung einer anderen Programmiersprache frühzeitig mit der
+Betreuung absprechen, damit sichergestellt ist, dass der Computerspieler auch am
+Wettkampf teilnehmen kann. Wir stellen gern eine passende Laufzeitumgebung auf
+dem Wettkampfsystem für die Programmiersprache zur Verfügung.</p>
 </div>
 </div>
 </div>
@@ -3619,20 +3621,42 @@ für den nahenden Spieltag</p>
 </div>
 <div class="sect4">
 <h5 id="computerspieler">Computerspieler</h5>
+<div class="paragraph">
+<p>In dieser Rubrik kann man die Computerspieler hochladen und verwalten. Bevor man
+einen Computerspieler hochlädt, muss <a href="#_computerspieler_abgabefertig_machen">der
+Computerspieler abgabefertig gemacht werden</a>.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="./images/computerspieler_uebersicht.jpg" alt="Übersicht der eingesendeten Computerspieler">
 </div>
 </div>
 <div class="paragraph">
-<p>In dieser Rubrik kann man die Clients hochladen und verwalten. Oben am
-rechten Rand befindet sich die Schaltfläche, um neue Computerspieler
-hinzuzufügen.</p>
+<p>Oben am rechten Rand befindet sich die Schaltfläche, um neue Computerspieler
+hinzuzufügen. Diese führt zu einem Formular, mit dem man das ZIP-Archiv des
+Computerspielers hochladen kann.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="./images/computerspieler_hochladen.jpg" alt="Forumlar zum Einsenden eines Computerspielers">
 </div>
+</div>
+<div class="paragraph">
+<p>Man kann dem Spieler einen <strong>Namen</strong> geben, damit man ihn in der Liste der
+hochgeladenen Spieler später besser erkennt. Man kann auch noch zusätzliche
+<strong>Parameter</strong> festlegen, die dem Computerspieler beim Start übergeben werden. Dies
+ist nützlich, wenn der Computerspieler verschiedene Spielstrategien unterstützt
+und man diese per Parameter auswählen kann. Dann muss man den Computerspieler
+nur einmal hochladen (die Parameter kann man auch später verändern). Die Angabe
+eines Namens und von Parametern ist optional.</p>
+</div>
+<div class="paragraph">
+<p>Als letztes muss noch die Umgebung (das <strong>Docker Image</strong>) gewählt werden, in der der
+Computerspieler auf dem Wettkampfsystem ausgeführt werden soll. Verwendet der
+Computerspieler eine der beiden offiziell unterstützten Programmiersprachen Java
+und Ruby, kann hier einfach das entsprechende ausgewählt werden. Ansonsten hängt
+es von der gewählten Programmiersprache ab, ob eine passende Umgebung angeboten
+wird. Sollte sich nichts finden, installieren wir gern etwas passendes nach.</p>
 </div>
 <div class="paragraph">
 <p>Wurde ein Spieler erfolgreich hochgeladen, befindet er sich in der Liste aller
@@ -3715,7 +3739,7 @@ weniger Last für das System zur Verfügung gestellt werden können.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-12-20 10:46:56 CET
+Last updated 2018-01-03 12:29:01 CET
 </div>
 </div>
 </body>
