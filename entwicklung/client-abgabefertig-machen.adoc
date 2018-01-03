@@ -128,14 +128,16 @@ Hauptdatei.
 
 === Andere Programmiersprache
 
-Bei Computerspielern in jeder anderen Programmiersprache muss ein
-Shell-Script dem ZIP-Archiv beigelegt werden, was die genauen
-Instruktionen zum Start des Computerspielers enthält. Dieses muss nach
-dem Hochladen im Wettkampfystem als Hauptdatei ausgewählt werden. Bei
-compilierten Sprachen müssen die Computerspieler für 64bit Linux
-compiliert werden, bei interpretierten Sprachen muss ein Interpreter
-mitgeliefert werden, der unter 64bit Linux funktioniert.
+Bei Computerspielern in jeder anderen Programmiersprache muss ein Shell-Script
+dem ZIP-Archiv beigelegt werden, was die genauen Instruktionen zum Start des
+Computerspielers enthält. Dieses muss nach dem Hochladen im Wettkampfystem als
+Hauptdatei ausgewählt werden. Bei compilierten Sprachen müssen die
+Computerspieler für 64bit Linux compiliert werden, bei interpretierten Sprachen
+muss ein passender Interpreter auf dem Wettkampfsystem vorhanden sein. Weiterhin
+müssen Abhängigkeiten wie z.B. genutzte Bibliotheken vorhanden sein oder
+mitgeliefert werden.
 
-Am besten die Verwendung einer anderen Programmiersprache frühzeitig
-mit der Betreuung absprechen, damit sichergestellt ist, dass der
-Computerspieler auch am Wettkampf teilnehmen kann.
+Am besten die Verwendung einer anderen Programmiersprache frühzeitig mit der
+Betreuung absprechen, damit sichergestellt ist, dass der Computerspieler auch am
+Wettkampf teilnehmen kann. Wir stellen gern eine passende Laufzeitumgebung auf
+dem Wettkampfsystem für die Programmiersprache zur Verfügung.
