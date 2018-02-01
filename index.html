@@ -2291,7 +2291,48 @@ Hauptdatei.</p>
 <p>Bei Computerspielern in jeder anderen Programmiersprache muss ein Shell-Script
 dem ZIP-Archiv beigelegt werden, was die genauen Instruktionen zum Start des
 Computerspielers enthält. Dieses muss nach dem Hochladen im Wettkampfystem als
-Hauptdatei ausgewählt werden. Bei compilierten Sprachen müssen die
+Hauptdatei ausgewählt werden. Beachten Sie hierbei, dass diesem Script vom
+Wettkampfsystem Parameter übergeben werden, die an Ihr Programm weitergegeben
+werden müssen. Diese Parameter sind mindestens Host und Port des Spielservers
+sowie die Reservierungsnummer des Spiels, dem der Computerspieler beitreten
+soll. Ein Aufruf sieht also in etwa wie folgt aus (falls <code>start.sh</code> als
+Hauptdatei eingestellt ist):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>start.sh -h gameserver -p <span class="tok-m">13050</span> -r 590e5e6f-cf93-488e-a12d-5c194ecf95c2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Weiterhin ist es wichtig, den Interpreter in der ersten Zeile des Script
+anzugeben, da das Script nicht von einer Shell aufgerufen wird. Ein <code>start.sh</code>
+Script sieht also in etwa so aus:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span><span class="tok-ch">#!/bin/sh </span><i class="conum" data-value="1"></i><b>(1)</b>
+chmod +x hauptprogramm_dateiname <i class="conum" data-value="2"></i><b>(2)</b>
+./hauptprogramm_dateiname <span class="tok-s2">&quot;</span><span class="tok-nv">$@</span><span class="tok-s2">&quot;</span> <i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Script soll von <code>/bin/sh</code> interpretiert werden, es ist also ein einfaches Shell-Script.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Die Binärdatei wird ausführbar gemacht (das ist nötig, da in einem ZIP-Archiv das Ausührbar-Attribut nicht gespeichert wird).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Die Binärdatei wird aufgerufen und alle Parameter, die das Script bekommen hat, werden weitergereicht (<code>"$@"</code>).</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Bei compilierten Sprachen müssen die
 Computerspieler für 64bit Linux compiliert werden, bei interpretierten Sprachen
 muss ein passender Interpreter auf dem Wettkampfsystem vorhanden sein. Weiterhin
 müssen Abhängigkeiten wie z.B. genutzte Bibliotheken vorhanden sein oder
@@ -3739,7 +3780,7 @@ weniger Last für das System zur Verfügung gestellt werden können.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-03 12:29:01 CET
+Last updated 2018-02-01 15:18:57 CET
 </div>
 </div>
 </body>
