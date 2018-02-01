@@ -131,7 +131,33 @@ Hauptdatei.
 Bei Computerspielern in jeder anderen Programmiersprache muss ein Shell-Script
 dem ZIP-Archiv beigelegt werden, was die genauen Instruktionen zum Start des
 Computerspielers enthält. Dieses muss nach dem Hochladen im Wettkampfystem als
-Hauptdatei ausgewählt werden. Bei compilierten Sprachen müssen die
+Hauptdatei ausgewählt werden. Beachten Sie hierbei, dass diesem Script vom
+Wettkampfsystem Parameter übergeben werden, die an Ihr Programm weitergegeben
+werden müssen. Diese Parameter sind mindestens Host und Port des Spielservers
+sowie die Reservierungsnummer des Spiels, dem der Computerspieler beitreten
+soll. Ein Aufruf sieht also in etwa wie folgt aus (falls `start.sh` als
+Hauptdatei eingestellt ist):
+
+[source,sh]
+----
+start.sh -h gameserver -p 13050 -r 590e5e6f-cf93-488e-a12d-5c194ecf95c2
+----
+
+Weiterhin ist es wichtig, den Interpreter in der ersten Zeile des Script
+anzugeben, da das Script nicht von einer Shell aufgerufen wird. Ein `start.sh`
+Script sieht also in etwa so aus:
+
+[source,sh]
+----
+#!/bin/sh # <1>
+chmod +x hauptprogramm_dateiname # <2>
+./hauptprogramm_dateiname "$@" # <3>
+----
+<1> Script soll von `/bin/sh` interpretiert werden, es ist also ein einfaches Shell-Script.
+<2> Die Binärdatei wird ausführbar gemacht (das ist nötig, da in einem ZIP-Archiv das Ausührbar-Attribut nicht gespeichert wird).
+<3> Die Binärdatei wird aufgerufen und alle Parameter, die das Script bekommen hat, werden weitergereicht (`"$@"`).
+
+Bei compilierten Sprachen müssen die
 Computerspieler für 64bit Linux compiliert werden, bei interpretierten Sprachen
 muss ein passender Interpreter auf dem Wettkampfsystem vorhanden sein. Weiterhin
 müssen Abhängigkeiten wie z.B. genutzte Bibliotheken vorhanden sein oder
