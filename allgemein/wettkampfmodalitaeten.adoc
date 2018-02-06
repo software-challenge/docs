@@ -130,6 +130,9 @@ Der Computerspieler wird in einem sogenannten "Docker Container" ausgeführt, we
 |Python 3
 |https://hub.docker.com/_/python/[python:3.6.3]
 |Python Interpreter, Version 3.6.3. Für selbst entwickelte Computerspieler in Python.
+|Mono 5.4 (C# .NET)
+|https://hub.docker.com/_/mono/[mono:5.4.1.6]
+|Mono Laufzeitumgebung, Version 5.4.1.6. Für selbst entwickelte Computerspieler basierend auf dem Microsoft .NET Framework.
 |===
 
-Wenn Ihr Computerspieler eine speziellere Umgebung benötigt (zum Beispiel ein hier nicht angebotener Interpreter), nehmen sie bitte mit uns Kontakt auf (svk@informatik.uni-kiel.de). Wir stellen gern weitere Images zur Verfügung.</li>
+Wenn Ihr Computerspieler eine speziellere Umgebung benötigt (zum Beispiel ein hier nicht angebotener Interpreter), nehmen sie bitte mit uns Kontakt auf (svk@informatik.uni-kiel.de). Wir stellen gern weitere Images zur Verfügung.
