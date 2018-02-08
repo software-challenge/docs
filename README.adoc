@@ -48,8 +48,11 @@ asciidoctor -D out index.adoc
 
 Die fertige HTML-Version befindet sich dann unter `out/index.html`.
 
-Hierzu werden die beiden Ruby-Gems `asciidoctor` und `pygments.rb`
-(für Syntax-Highlighting der Quellcodes) benötigt.
+Hierzu werden die beiden Ruby-Gems `asciidoctor` und `pygments.rb` (für
+Syntax-Highlighting der Quellcodes) benötigt. Ausserdem wird das Gem
+`asciidoctor-pdf` benötigt, welches aber im Moment nur im "Prerelease" status
+ist. Man kann es also nur mit `gem install --prerelease asciidoctor-pdf`
+installieren.
 
 IMPORTANT: Bilder werden nicht mitkopiert, dies muss manuell geschehen. Hat man
 also Bilder im `images`-Verzeichnis hinzugefuegt, muessen diese manuell nach
