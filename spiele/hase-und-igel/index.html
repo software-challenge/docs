@@ -427,7 +427,75 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <style>
-/* Pygments styles disabled. Pygments is not available. */
+.listingblock .pygments .hll { background-color: #ffffcc }
+.listingblock .pygments, .listingblock .pygments code { background: #f8f8f8; }
+.listingblock .pygments .tok-c { color: #408080; font-style: italic } /* Comment */
+.listingblock .pygments .tok-err { border: 1px solid #FF0000 } /* Error */
+.listingblock .pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
+.listingblock .pygments .tok-o { color: #666666 } /* Operator */
+.listingblock .pygments .tok-ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.listingblock .pygments .tok-cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.listingblock .pygments .tok-cp { color: #BC7A00 } /* Comment.Preproc */
+.listingblock .pygments .tok-cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.listingblock .pygments .tok-c1 { color: #408080; font-style: italic } /* Comment.Single */
+.listingblock .pygments .tok-cs { color: #408080; font-style: italic } /* Comment.Special */
+.listingblock .pygments .tok-gd { color: #A00000 } /* Generic.Deleted */
+.listingblock .pygments .tok-ge { font-style: italic } /* Generic.Emph */
+.listingblock .pygments .tok-gr { color: #FF0000 } /* Generic.Error */
+.listingblock .pygments .tok-gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.listingblock .pygments .tok-gi { color: #00A000 } /* Generic.Inserted */
+.listingblock .pygments .tok-go { color: #888888 } /* Generic.Output */
+.listingblock .pygments .tok-gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.listingblock .pygments .tok-gs { font-weight: bold } /* Generic.Strong */
+.listingblock .pygments .tok-gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.listingblock .pygments .tok-gt { color: #0044DD } /* Generic.Traceback */
+.listingblock .pygments .tok-kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.listingblock .pygments .tok-kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.listingblock .pygments .tok-kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.listingblock .pygments .tok-kp { color: #008000 } /* Keyword.Pseudo */
+.listingblock .pygments .tok-kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.listingblock .pygments .tok-kt { color: #B00040 } /* Keyword.Type */
+.listingblock .pygments .tok-m { color: #666666 } /* Literal.Number */
+.listingblock .pygments .tok-s { color: #BA2121 } /* Literal.String */
+.listingblock .pygments .tok-na { color: #7D9029 } /* Name.Attribute */
+.listingblock .pygments .tok-nb { color: #008000 } /* Name.Builtin */
+.listingblock .pygments .tok-nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.listingblock .pygments .tok-no { color: #880000 } /* Name.Constant */
+.listingblock .pygments .tok-nd { color: #AA22FF } /* Name.Decorator */
+.listingblock .pygments .tok-ni { color: #999999; font-weight: bold } /* Name.Entity */
+.listingblock .pygments .tok-ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.listingblock .pygments .tok-nf { color: #0000FF } /* Name.Function */
+.listingblock .pygments .tok-nl { color: #A0A000 } /* Name.Label */
+.listingblock .pygments .tok-nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.listingblock .pygments .tok-nt { color: #008000; font-weight: bold } /* Name.Tag */
+.listingblock .pygments .tok-nv { color: #19177C } /* Name.Variable */
+.listingblock .pygments .tok-ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.listingblock .pygments .tok-w { color: #bbbbbb } /* Text.Whitespace */
+.listingblock .pygments .tok-mb { color: #666666 } /* Literal.Number.Bin */
+.listingblock .pygments .tok-mf { color: #666666 } /* Literal.Number.Float */
+.listingblock .pygments .tok-mh { color: #666666 } /* Literal.Number.Hex */
+.listingblock .pygments .tok-mi { color: #666666 } /* Literal.Number.Integer */
+.listingblock .pygments .tok-mo { color: #666666 } /* Literal.Number.Oct */
+.listingblock .pygments .tok-sa { color: #BA2121 } /* Literal.String.Affix */
+.listingblock .pygments .tok-sb { color: #BA2121 } /* Literal.String.Backtick */
+.listingblock .pygments .tok-sc { color: #BA2121 } /* Literal.String.Char */
+.listingblock .pygments .tok-dl { color: #BA2121 } /* Literal.String.Delimiter */
+.listingblock .pygments .tok-sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.listingblock .pygments .tok-s2 { color: #BA2121 } /* Literal.String.Double */
+.listingblock .pygments .tok-se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.listingblock .pygments .tok-sh { color: #BA2121 } /* Literal.String.Heredoc */
+.listingblock .pygments .tok-si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.listingblock .pygments .tok-sx { color: #008000 } /* Literal.String.Other */
+.listingblock .pygments .tok-sr { color: #BB6688 } /* Literal.String.Regex */
+.listingblock .pygments .tok-s1 { color: #BA2121 } /* Literal.String.Single */
+.listingblock .pygments .tok-ss { color: #19177C } /* Literal.String.Symbol */
+.listingblock .pygments .tok-bp { color: #008000 } /* Name.Builtin.Pseudo */
+.listingblock .pygments .tok-fm { color: #0000FF } /* Name.Function.Magic */
+.listingblock .pygments .tok-vc { color: #19177C } /* Name.Variable.Class */
+.listingblock .pygments .tok-vg { color: #19177C } /* Name.Variable.Global */
+.listingblock .pygments .tok-vi { color: #19177C } /* Name.Variable.Instance */
+.listingblock .pygments .tok-vm { color: #19177C } /* Name.Variable.Magic */
+.listingblock .pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 </style>
 </head>
 <body class="article toc2 toc-right">
@@ -756,7 +824,7 @@ einem newline abgeschlossen.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;protocol&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -769,7 +837,7 @@ einem newline abgeschlossen.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;join gameType="swc_2018_hase_und_igel"/&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;join</span> <span class="tok-na">gameType=</span><span class="tok-s">&quot;swc_2018_hase_und_igel&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -790,7 +858,7 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;joined roomId="ROOM_ID"/&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joined</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -809,7 +877,7 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;joinedGameRoom roomId="ROOM_ID" existing="false"/&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joinedGameRoom</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span> <span class="tok-na">existing=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -836,7 +904,7 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;joinPrepared reservationCode="RC"/&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joinPrepared</span> <span class="tok-na">reservationCode=</span><span class="tok-s">&quot;RC&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -864,15 +932,15 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;joined roomId="ROOM_ID"/&gt;
-&lt;room roomId="ROOM_ID"&gt;
-  &lt;data class="welcomeMessage" color="COLOR"&gt;&lt;/data&gt;
-&lt;/room&gt;
-&lt;room roomId="ROOM_ID"&gt;
-  &lt;data class="memento"&gt;
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joined</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;welcomeMessage&quot;</span> <span class="tok-na">color=</span><span class="tok-s">&quot;COLOR&quot;</span><span class="tok-nt">&gt;&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span>
+<span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;memento&quot;</span><span class="tok-nt">&gt;</span>
   	status
-  &lt;/data&gt;
-&lt;/room&gt;</code></pre>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -900,9 +968,9 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;room roomId="ROOM_ID"&gt;
-  &lt;data class="sc.framework.plugins.protocol.MoveRequest"/&gt;
-&lt;/room&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.framework.plugins.protocol.MoveRequest&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -927,9 +995,9 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;room roomId="ROOM_ID"&gt;
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
   ZUG
-&lt;/room&gt;</code></pre>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -949,11 +1017,11 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;data class="move"&gt;
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;move&quot;</span><span class="tok-nt">&gt;</span>
   ACTION
   ..
   ACTION
-&lt;/move&gt;</code></pre>
+<span class="tok-nt">&lt;/move&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -984,12 +1052,12 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;advance order="I" distance="D"/&gt;
-&lt;card order="I" type="CARD_TYPE" value="V"/&gt;
-&lt;exchangeCarrots order="I" value="W"/&gt;
-&lt;eatSalad order="I"/&gt;
-&lt;fallBack order="I"/&gt;
-&lt;skip order="I"/&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;advance</span> <span class="tok-na">order=</span><span class="tok-s">&quot;I&quot;</span> <span class="tok-na">distance=</span><span class="tok-s">&quot;D&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;card</span> <span class="tok-na">order=</span><span class="tok-s">&quot;I&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;CARD_TYPE&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;V&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;exchangeCarrots</span> <span class="tok-na">order=</span><span class="tok-s">&quot;I&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;W&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;eatSalad</span> <span class="tok-na">order=</span><span class="tok-s">&quot;I&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;fallBack</span> <span class="tok-na">order=</span><span class="tok-s">&quot;I&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;skip</span> <span class="tok-na">order=</span><span class="tok-s">&quot;I&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1000,7 +1068,7 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;hint content="S"/&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;hint</span> <span class="tok-na">content=</span><span class="tok-s">&quot;S&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1008,14 +1076,14 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;room roomId="ROOM_ID"&gt;
-  &lt;data class="move"&gt;
-    &lt;advance order="0" distance="1"/&gt;
-    &lt;card order="1" type="EAT_SALAD" value="0"/&gt;
-    &lt;hint content="Dies ist ein Hint."/&gt;
-    &lt;hint content="noch ein Hint"/&gt;
-  &lt;/data&gt;
-&lt;/room&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;move&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;advance</span> <span class="tok-na">order=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">distance=</span><span class="tok-s">&quot;1&quot;</span><span class="tok-nt">/&gt;</span>
+    <span class="tok-nt">&lt;card</span> <span class="tok-na">order=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;EAT_SALAD&quot;</span> <span class="tok-na">value=</span><span class="tok-s">&quot;0&quot;</span><span class="tok-nt">/&gt;</span>
+    <span class="tok-nt">&lt;hint</span> <span class="tok-na">content=</span><span class="tok-s">&quot;Dies ist ein Hint.&quot;</span><span class="tok-nt">/&gt;</span>
+    <span class="tok-nt">&lt;hint</span> <span class="tok-na">content=</span><span class="tok-s">&quot;noch ein Hint&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1043,11 +1111,11 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;room roomId="ROOM_ID"&gt;
-  &lt;data class="memento"&gt;
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;memento&quot;</span><span class="tok-nt">&gt;</span>
   	status
-  &lt;/data&gt;
-&lt;/room&gt;</code></pre>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1084,13 +1152,13 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;state class="state" turn="Z" startPlayer="S" currentPlayer="C"&gt;
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;Z&quot;</span> <span class="tok-na">startPlayer=</span><span class="tok-s">&quot;S&quot;</span> <span class="tok-na">currentPlayer=</span><span class="tok-s">&quot;C&quot;</span><span class="tok-nt">&gt;</span>
   red
   blue
   [board]
   [lastMove]
   [condition]
-&lt;/state&gt;</code></pre>
+<span class="tok-nt">&lt;/state&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1121,15 +1189,15 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;C displayName="N" color="C" index="I" carrots="K" salads="S"&gt;
-  &lt;cards&gt;
-    &lt;type&gt;TAKE_OR_DROP_CARROTS&lt;/type&gt;
-    &lt;type&gt;EAT_SALAD&lt;/type&gt;
-    &lt;type&gt;HURRY_AHEAD&lt;/type&gt;
-    &lt;type&gt;FALL_BACK&lt;/type&gt;
-  &lt;/cards&gt;
-  &lt;lastNonSkipAction class="fallBack" order="0"/&gt; // Beispiel für letzte Aktion
-&lt;/C&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;C</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;N&quot;</span> <span class="tok-na">color=</span><span class="tok-s">&quot;C&quot;</span> <span class="tok-na">index=</span><span class="tok-s">&quot;I&quot;</span> <span class="tok-na">carrots=</span><span class="tok-s">&quot;K&quot;</span> <span class="tok-na">salads=</span><span class="tok-s">&quot;S&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;cards&gt;</span>
+    <span class="tok-nt">&lt;type&gt;</span>TAKE_OR_DROP_CARROTS<span class="tok-nt">&lt;/type&gt;</span>
+    <span class="tok-nt">&lt;type&gt;</span>EAT_SALAD<span class="tok-nt">&lt;/type&gt;</span>
+    <span class="tok-nt">&lt;type&gt;</span>HURRY_AHEAD<span class="tok-nt">&lt;/type&gt;</span>
+    <span class="tok-nt">&lt;type&gt;</span>FALL_BACK<span class="tok-nt">&lt;/type&gt;</span>
+  <span class="tok-nt">&lt;/cards&gt;</span>
+  <span class="tok-nt">&lt;lastNonSkipAction</span> <span class="tok-na">class=</span><span class="tok-s">&quot;fallBack&quot;</span> <span class="tok-na">order=</span><span class="tok-s">&quot;0&quot;</span><span class="tok-nt">/&gt;</span> // Beispiel für letzte Aktion
+<span class="tok-nt">&lt;/C&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1148,13 +1216,13 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;board&gt;
-  &lt;fields index="0" type="START"/&gt;
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;board&gt;</span>
+  <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;START&quot;</span><span class="tok-nt">/&gt;</span>
   ..
   FIELD
   ..
-  &lt;fields index="64" type="GOAL"/&gt;
-&lt;/board&gt;</code></pre>
+  <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;64&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;GOAL&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/board&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1176,7 +1244,7 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;fields index="I" type="TYPE"/&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;I&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;TYPE&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1198,9 +1266,9 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;lastMove&gt;
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;lastMove&gt;</span>
   ACTIONS
-&lt;/lastMove&gt;</code></pre>
+<span class="tok-nt">&lt;/lastMove&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1212,9 +1280,9 @@ Der Server antwortet darauf mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;room roomId="RID"&gt;
-  &lt;data class="sc.framework.plugins.protocol.MoveRequest"/&gt;
-&lt;/room&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;RID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.framework.plugins.protocol.MoveRequest&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1238,13 +1306,13 @@ Spieles, das im nächsten gesendeten Gamestate erkannt werden kann (siehe <a hre
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;room roomId="RID"&gt;
-  &lt;error message="MSG"&gt;
-    &lt;originalRequest&gt;
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;RID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;error</span> <span class="tok-na">message=</span><span class="tok-s">&quot;MSG&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;originalRequest&gt;</span>
 	Request, der den Fehler verursacht hat
-    &lt;/originalRequest&gt;
-  &lt;/error&gt;
-&lt;/room&gt;</code></pre>
+    <span class="tok-nt">&lt;/originalRequest&gt;</span>
+  <span class="tok-nt">&lt;/error&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1266,7 +1334,7 @@ Spieles, das im nächsten gesendeten Gamestate erkannt werden kann (siehe <a hre
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;left roomId="ROOM_ID"/&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;left</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1324,38 +1392,38 @@ Spieles, das im nächsten gesendeten Gamestate erkannt werden kann (siehe <a hre
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;room roomId="ROOM_ID"&gt;
-  &lt;data class="result"&gt;
-    &lt;definition&gt;
-      &lt;fragment name="Gewinner"&gt;
-        &lt;aggregation&gt;SUM&lt;/aggregation&gt;
-        &lt;relevantForRanking&gt;true&lt;/relevantForRanking&gt;
-      &lt;/fragment&gt;
-      &lt;fragment name="Ø Feldnummer"&gt;
-        &lt;aggregation&gt;AVERAGE&lt;/aggregation&gt;
-        &lt;relevantForRanking&gt;true&lt;/relevantForRanking&gt;
-      &lt;/fragment&gt;
-      &lt;fragment name="Ø Karotten"&gt;
-        &lt;aggregation&gt;AVERAGE&lt;/aggregation&gt;
-        &lt;relevantForRanking&gt;true&lt;/relevantForRanking&gt;
-      &lt;/fragment&gt;
-    &lt;/definition&gt;
-    &lt;score cause="CAUSE1" reason="R1"&gt;
-      &lt;part&gt;WP1&lt;/part&gt;
-      &lt;part&gt;I1&lt;/part&gt;
-      &lt;part&gt;C1&lt;/part&gt;
-    &lt;/score&gt;
-    &lt;score cause="CAUSE2" reason="R2"&gt;
-      &lt;part&gt;WP2&lt;/part&gt;
-      &lt;part&gt;I2&lt;/part&gt;
-      &lt;part&gt;C1&lt;/part&gt;
-    &lt;/score&gt;
-    &lt;winner class="player" displayName="NAME" color="COLOR" index="I3" carrots="C3" salads="S"&gt;
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;result&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;definition&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Gewinner&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>SUM<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Ø Feldnummer&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Ø Karotten&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+    <span class="tok-nt">&lt;/definition&gt;</span>
+    <span class="tok-nt">&lt;score</span> <span class="tok-na">cause=</span><span class="tok-s">&quot;CAUSE1&quot;</span> <span class="tok-na">reason=</span><span class="tok-s">&quot;R1&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>WP1<span class="tok-nt">&lt;/part&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>I1<span class="tok-nt">&lt;/part&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>C1<span class="tok-nt">&lt;/part&gt;</span>
+    <span class="tok-nt">&lt;/score&gt;</span>
+    <span class="tok-nt">&lt;score</span> <span class="tok-na">cause=</span><span class="tok-s">&quot;CAUSE2&quot;</span> <span class="tok-na">reason=</span><span class="tok-s">&quot;R2&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>WP2<span class="tok-nt">&lt;/part&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>I2<span class="tok-nt">&lt;/part&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>C1<span class="tok-nt">&lt;/part&gt;</span>
+    <span class="tok-nt">&lt;/score&gt;</span>
+    <span class="tok-nt">&lt;winner</span> <span class="tok-na">class=</span><span class="tok-s">&quot;player&quot;</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;NAME&quot;</span> <span class="tok-na">color=</span><span class="tok-s">&quot;COLOR&quot;</span> <span class="tok-na">index=</span><span class="tok-s">&quot;I3&quot;</span> <span class="tok-na">carrots=</span><span class="tok-s">&quot;C3&quot;</span> <span class="tok-na">salads=</span><span class="tok-s">&quot;S&quot;</span><span class="tok-nt">&gt;</span>
       [cards]
       [lastNonSkipAction]
-    &lt;/winner&gt;
-  &lt;/data&gt;
-&lt;/room&gt;</code></pre>
+    <span class="tok-nt">&lt;/winner&gt;</span>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1374,7 +1442,7 @@ Spieles, das im nächsten gesendeten Gamestate erkannt werden kann (siehe <a hre
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;protocol&gt;&lt;authenticate passphrase="p"/&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;&lt;authenticate</span> <span class="tok-na">passphrase=</span><span class="tok-s">&quot;p&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1382,10 +1450,10 @@ Spieles, das im nächsten gesendeten Gamestate erkannt werden kann (siehe <a hre
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;prepare gameType="swc_2018_hase_und_igel"&gt;
-  &lt;slot displayName="p1" canTimeout="false" shouldBePaused="true"/&gt;
-  &lt;slot displayName="p2" canTimeout="false" shouldBePaused="true"/&gt;
-&lt;/prepare&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;prepare</span> <span class="tok-na">gameType=</span><span class="tok-s">&quot;swc_2018_hase_und_igel&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;slot</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p1&quot;</span> <span class="tok-na">canTimeout=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-na">shouldBePaused=</span><span class="tok-s">&quot;true&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;slot</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p2&quot;</span> <span class="tok-na">canTimeout=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-na">shouldBePaused=</span><span class="tok-s">&quot;true&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/prepare&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1393,11 +1461,11 @@ Spieles, das im nächsten gesendeten Gamestate erkannt werden kann (siehe <a hre
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;protocol&gt;
-  &lt;prepared roomId="871faccb-5190-4e44-82fc-6cdcbb493726"&gt;
-    &lt;reservation&gt;RC1&lt;/reservation&gt;
-    &lt;reservation&gt;RC2&lt;/reservation&gt;
-  &lt;/prepared&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;prepared</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;reservation&gt;</span>RC1<span class="tok-nt">&lt;/reservation&gt;</span>
+    <span class="tok-nt">&lt;reservation&gt;</span>RC2<span class="tok-nt">&lt;/reservation&gt;</span>
+  <span class="tok-nt">&lt;/prepared&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1406,7 +1474,7 @@ Dadurch wird das derzeitge Spielfeld (<a href="#memento">memento</a>) ebenfalls 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;observe roomId="871faccb-5190-4e44-82fc-6cdcbb493726"/&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;observe</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1414,14 +1482,14 @@ Dadurch wird das derzeitge Spielfeld (<a href="#memento">memento</a>) ebenfalls 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;protocol&gt;
-  &lt;joinPrepared reservationCode="RC1"/&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;joinPrepared</span> <span class="tok-na">reservationCode=</span><span class="tok-s">&quot;RC1&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;protocol&gt;
-  &lt;joinPrepared reservationCode="RC2"/&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;joinPrepared</span> <span class="tok-na">reservationCode=</span><span class="tok-s">&quot;RC2&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1435,8 +1503,8 @@ Dadurch wird das derzeitge Spielfeld (<a href="#memento">memento</a>) ebenfalls 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;protocol&gt;
-  &lt;join gameType="swc_2018_hase_und_igel"/&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;join</span> <span class="tok-na">gameType=</span><span class="tok-s">&quot;swc_2018_hase_und_igel&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1444,8 +1512,8 @@ Dadurch wird das derzeitge Spielfeld (<a href="#memento">memento</a>) ebenfalls 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;protocol&gt;
-  &lt;joined roomId="871faccb-5190-4e44-82fc-6cdcbb493726"/&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;joined</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1456,63 +1524,63 @@ Dadurch wird das derzeitge Spielfeld (<a href="#memento">memento</a>) ebenfalls 
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;room roomId="871faccb-5190-4e44-82fc-6cdcbb493726"&gt;
-  &lt;data class="welcomeMessage" color="red"/&gt;
-&lt;/room&gt;
-&lt;room roomId="871faccb-5190-4e44-82fc-6cdcbb493726"&gt;
-  &lt;data class="memento"&gt;
-    &lt;state class="state" turn="0" startPlayer="RED" currentPlayer="RED"&gt;
-      &lt;red displayName="Unknown" color="RED" index="0" carrots="68" salads="5"&gt;
-        &lt;cards&gt;
-          &lt;type&gt;TAKE_OR_DROP_CARROTS&lt;/type&gt;
-          &lt;type&gt;EAT_SALAD&lt;/type&gt;
-          &lt;type&gt;HURRY_AHEAD&lt;/type&gt;
-          &lt;type&gt;FALL_BACK&lt;/type&gt;
-        &lt;/cards&gt;
-      &lt;/red&gt;
-      &lt;blue displayName="Unknown" color="BLUE" index="0" carrots="68" salads="5"&gt;
-        &lt;cards&gt;
-          &lt;type&gt;TAKE_OR_DROP_CARROTS&lt;/type&gt;
-          &lt;type&gt;EAT_SALAD&lt;/type&gt;
-          &lt;type&gt;HURRY_AHEAD&lt;/type&gt;
-          &lt;type&gt;FALL_BACK&lt;/type&gt;
-        &lt;/cards&gt;
-      &lt;/blue&gt;
-      &lt;board&gt;
-        &lt;fields index="0" type="START"/&gt;
-        &lt;fields index="1" type="CARROT"/&gt;
-        &lt;fields index="2" type="HARE"/&gt;
-        &lt;fields index="3" type="HARE"/&gt;
-        &lt;fields index="4" type="POSITION_2"/&gt;
-        &lt;fields index="5" type="POSITION_1"/&gt;
-        &lt;fields index="6" type="CARROT"/&gt;
-        &lt;fields index="7" type="CARROT"/&gt;
-        &lt;fields index="8" type="HARE"/&gt;
-        &lt;fields index="9" type="CARROT"/&gt;
-        &lt;fields index="10" type="SALAD"/&gt;
-        &lt;fields index="11" type="HEDGEHOG"/&gt;
-        &lt;fields index="12" type="HARE"/&gt;
-        &lt;fields index="13" type="CARROT"/&gt;
-        &lt;fields index="14" type="CARROT"/&gt;
-        &lt;fields index="15" type="HEDGEHOG"/&gt;
-        &lt;fields index="16" type="POSITION_1"/&gt;
-        &lt;fields index="17" type="CARROT"/&gt;
-        &lt;fields index="18" type="POSITION_2"/&gt;
-        &lt;fields index="19" type="HEDGEHOG"/&gt;
-        &lt;fields index="20" type="CARROT"/&gt;
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;welcomeMessage&quot;</span> <span class="tok-na">color=</span><span class="tok-s">&quot;red&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span>
+<span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;memento&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">startPlayer=</span><span class="tok-s">&quot;RED&quot;</span> <span class="tok-na">currentPlayer=</span><span class="tok-s">&quot;RED&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;red</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;Unknown&quot;</span> <span class="tok-na">color=</span><span class="tok-s">&quot;RED&quot;</span> <span class="tok-na">index=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">carrots=</span><span class="tok-s">&quot;68&quot;</span> <span class="tok-na">salads=</span><span class="tok-s">&quot;5&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;cards&gt;</span>
+          <span class="tok-nt">&lt;type&gt;</span>TAKE_OR_DROP_CARROTS<span class="tok-nt">&lt;/type&gt;</span>
+          <span class="tok-nt">&lt;type&gt;</span>EAT_SALAD<span class="tok-nt">&lt;/type&gt;</span>
+          <span class="tok-nt">&lt;type&gt;</span>HURRY_AHEAD<span class="tok-nt">&lt;/type&gt;</span>
+          <span class="tok-nt">&lt;type&gt;</span>FALL_BACK<span class="tok-nt">&lt;/type&gt;</span>
+        <span class="tok-nt">&lt;/cards&gt;</span>
+      <span class="tok-nt">&lt;/red&gt;</span>
+      <span class="tok-nt">&lt;blue</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;Unknown&quot;</span> <span class="tok-na">color=</span><span class="tok-s">&quot;BLUE&quot;</span> <span class="tok-na">index=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">carrots=</span><span class="tok-s">&quot;68&quot;</span> <span class="tok-na">salads=</span><span class="tok-s">&quot;5&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;cards&gt;</span>
+          <span class="tok-nt">&lt;type&gt;</span>TAKE_OR_DROP_CARROTS<span class="tok-nt">&lt;/type&gt;</span>
+          <span class="tok-nt">&lt;type&gt;</span>EAT_SALAD<span class="tok-nt">&lt;/type&gt;</span>
+          <span class="tok-nt">&lt;type&gt;</span>HURRY_AHEAD<span class="tok-nt">&lt;/type&gt;</span>
+          <span class="tok-nt">&lt;type&gt;</span>FALL_BACK<span class="tok-nt">&lt;/type&gt;</span>
+        <span class="tok-nt">&lt;/cards&gt;</span>
+      <span class="tok-nt">&lt;/blue&gt;</span>
+      <span class="tok-nt">&lt;board&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;START&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;CARROT&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;2&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;HARE&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;3&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;HARE&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;4&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;POSITION_2&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;5&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;POSITION_1&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;6&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;CARROT&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;7&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;CARROT&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;8&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;HARE&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;9&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;CARROT&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;10&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;SALAD&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;11&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;HEDGEHOG&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;12&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;HARE&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;13&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;CARROT&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;14&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;CARROT&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;15&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;HEDGEHOG&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;16&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;POSITION_1&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;CARROT&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;18&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;POSITION_2&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;19&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;HEDGEHOG&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;20&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;CARROT&quot;</span><span class="tok-nt">/&gt;</span>
         ...
-        &lt;fields index="57" type="SALAD"/&gt;
-        &lt;fields index="58" type="CARROT"/&gt;
-        &lt;fields index="59" type="POSITION_1"/&gt;
-        &lt;fields index="60" type="HARE"/&gt;
-        &lt;fields index="61" type="CARROT"/&gt;
-        &lt;fields index="62" type="HARE"/&gt;
-        &lt;fields index="63" type="CARROT"/&gt;
-        &lt;fields index="64" type="GOAL"/&gt;
-      &lt;/board&gt;
-    &lt;/state&gt;
-  &lt;/data&gt;
-&lt;/room&gt;</code></pre>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;57&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;SALAD&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;58&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;CARROT&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;59&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;POSITION_1&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;60&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;HARE&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;61&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;CARROT&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;62&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;HARE&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;63&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;CARROT&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">index=</span><span class="tok-s">&quot;64&quot;</span> <span class="tok-na">type=</span><span class="tok-s">&quot;GOAL&quot;</span><span class="tok-nt">/&gt;</span>
+      <span class="tok-nt">&lt;/board&gt;</span>
+    <span class="tok-nt">&lt;/state&gt;</span>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1524,8 +1592,8 @@ Falls das Spiel pausiert ist, muss das Spiel durch einen Administratorclient ges
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;protocol&gt;
-  &lt;authenticate passphrase="examplepassword"/&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;authenticate</span> <span class="tok-na">passphrase=</span><span class="tok-s">&quot;examplepassword&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1533,7 +1601,7 @@ Falls das Spiel pausiert ist, muss das Spiel durch einen Administratorclient ges
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;pause roomId="871faccb-5190-4e44-82fc-6cdcbb493726" pause="false" /&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;pause</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span> <span class="tok-na">pause=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1541,9 +1609,9 @@ Falls das Spiel pausiert ist, muss das Spiel durch einen Administratorclient ges
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;room roomId="871faccb-5190-4e44-82fc-6cdcbb493726"&gt;
-  &lt;data class="sc.framework.plugins.protocol.MoveRequest"/&gt;
-&lt;/room&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.framework.plugins.protocol.MoveRequest&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1551,11 +1619,11 @@ Falls das Spiel pausiert ist, muss das Spiel durch einen Administratorclient ges
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;room roomId="871faccb-5190-4e44-82fc-6cdcbb493726"&gt;
-  &lt;data class="move"&gt;
-    &lt;advance order="0" distance="6"&gt;
-  &lt;/data&gt;
-&lt;/room&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;move&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;advance</span> <span class="tok-na">order=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">distance=</span><span class="tok-s">&quot;6&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1564,7 +1632,7 @@ Die letzte Nachricht des Servers endet mit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml">&lt;/protocol&gt;</code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;/protocol&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
