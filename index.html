@@ -504,7 +504,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="details">
 <span id="author" class="author">Sven Koschnicke</span><br>
 <span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
-<span id="revdate">2017-12-20</span>
+<span id="revdate">2018-02-06</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhalt</div>
@@ -935,6 +935,10 @@ Funktion so schnell wie möglich nachreichen!</p>
 <div class="paragraph">
 <p>Testdurchläufe werden leider noch nicht unterstützt. Wir werden diese
 Funktion so schnell wie möglich nachreichen!</p>
+</div>
+<div class="paragraph">
+<p>Es ist jedoch möglich, die Testdurchläufe ohne die grafische Oberfläche zu
+starten. Dies ist im Abschnitt <a href="#tests-ohne-gui">Massentests mit Server ohne graphische Oberfläche</a> beschrieben.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2291,50 +2295,17 @@ Hauptdatei.</p>
 <p>Bei Computerspielern in jeder anderen Programmiersprache muss ein Shell-Script
 dem ZIP-Archiv beigelegt werden, was die genauen Instruktionen zum Start des
 Computerspielers enthält. Dieses muss nach dem Hochladen im Wettkampfystem als
-Hauptdatei ausgewählt werden.</p>
-</div>
-<div class="paragraph">
-<p>Beachten Sie hierbei, dass diesem Script vom Wettkampfsystem Parameter übergeben
-werden, die an Ihr Programm weitergegeben werden müssen. Diese Parameter sind
-mindestens Host und Port des Spielservers sowie die Reservierungsnummer des
-Spiels, dem der Computerspieler beitreten soll. Ein Aufruf sieht also in etwa
-wie folgt aus (falls <code>start.sh</code> als Hauptdatei eingestellt ist):</p>
+Hauptdatei ausgewählt werden. Beachten Sie hierbei, dass diesem Script vom
+Wettkampfsystem Parameter übergeben werden, die an Ihr Programm weitergegeben
+werden müssen. Diese Parameter sind mindestens Host und Port des Spielservers
+sowie die Reservierungsnummer des Spiels, dem der Computerspieler beitreten
+soll. Ein Aufruf sieht also in etwa wie folgt aus (falls <code>start.sh</code> als
+Hauptdatei eingestellt ist):</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="sh"><span></span>start.sh -h gameserver -p <span class="tok-m">13050</span> -r 590e5e6f-cf93-488e-a12d-5c194ecf95c2</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>Die Parameter folgen dabei den
-<a href="https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html#Argument-Syntax">GNU
-Getopt Konventionen</a>. Das heißt, die drei Parameter können in beliebiger
-Reihenfolge und als kurze oder lange Version übergeben werden. Folgende
-Variante muss also auch von Ihrem Programm korrekt verarbeitet werden können:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="sh"><span></span>start.sh --reservation 590e5e6f-cf93-488e-a12d-5c194ecf95c2 --host gameserver --port <span class="tok-m">13050</span></code></pre>
-</div>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-Auch der Server mit grafischer Oberfläche ruft Ihr Programm mit diesen
-Parametern auf. Ihr Programm wird also nur von der grafischen Oberfläche richtig
-gestartet, wenn es die Parameter richtig verarbeitet.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Für die meisten Programmiersprachen gibt es Bibliotheken, die die
-Kommandozeilenparameter nach diesem Schema verarbeiten können, sie müssen diese
-Funktion also nicht unbedingt selbst implementieren.</p>
 </div>
 <div class="paragraph">
 <p>Weiterhin ist es wichtig, den Interpreter in der ersten Zeile des Script
@@ -3443,10 +3414,15 @@ unter Termine</a>.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://hub.docker.com/_/python/">python:3.6.3</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Python Interpreter, Version 3.6.3. Für selbst entwickelte Computerspieler in Python.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mono 5.4 (C# .NET)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://hub.docker.com/_/mono/">mono:5.4.1.6</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mono Laufzeitumgebung, Version 5.4.1.6. Für selbst entwickelte Computerspieler basierend auf dem Microsoft .NET Framework.</p></td>
+</tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Wenn Ihr Computerspieler eine speziellere Umgebung benötigt (zum Beispiel ein hier nicht angebotener Interpreter), nehmen sie bitte mit uns Kontakt auf (<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>). Wir stellen gern weitere Images zur Verfügung.&lt;/li&gt;</p>
+<p>Wenn Ihr Computerspieler eine speziellere Umgebung benötigt (zum Beispiel ein hier nicht angebotener Interpreter), nehmen sie bitte mit uns Kontakt auf (<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>). Wir stellen gern weitere Images zur Verfügung.</p>
 </div>
 </div>
 </div>
@@ -3813,7 +3789,7 @@ weniger Last für das System zur Verfügung gestellt werden können.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-02-08 10:25:24 CET
+Last updated 2018-02-19 13:07:43 CET
 </div>
 </div>
 </body>
