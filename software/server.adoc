@@ -126,6 +126,9 @@ Funktion so schnell wie möglich nachreichen!
 Testdurchläufe werden leider noch nicht unterstützt. Wir werden diese
 Funktion so schnell wie möglich nachreichen!
 
+Es ist jedoch möglich, die Testdurchläufe ohne die grafische Oberfläche zu
+starten. Dies ist im Abschnitt <<tests-ohne-gui>> beschrieben.
+
 [[spielsituation-nachstellen]]
 === Spielsituation nachstellen
 
@@ -146,7 +149,7 @@ eine Schritt-für-Schritt Anleitung:
   als erstes dran. Der Gegenspieler kann dann ein beliebiger Computerspieler
   oder auch ein Mensch sein.
 . Setzen Sie einen Haken bei "Spiel aus Datei laden". Wählen Sie über
-  "Datei wählen" das entsprechende Replay aus und spezifizieren sie den Zug in dem gestartet werden soll. 
+  "Datei wählen" das entsprechende Replay aus und spezifizieren sie den Zug in dem gestartet werden soll.
   Starten Sie dann das Spiel. Das Spiel sollte sich nun in genau der Situation befinden, in
   der das Fehlerverhalten aufgetreten ist. Dabei ist der Spieler, der nun
   dran ist immer der rote Spieler. Falls der blaue Spieler eigentlich dran
