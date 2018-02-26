@@ -167,11 +167,12 @@ Weiterhin ist es wichtig, den Interpreter in der ersten Zeile des Script
 anzugeben, da das Script nicht von einer Shell aufgerufen wird. Ein `start.sh`
 Script sieht also in etwa so aus:
 
+// Don't put a space between the line endings and line markers. They appear in the resulting listing and will be copied when someone selects the text. A space at the end of the shebang line may cause errors when executing the script.
 [source,sh]
 ----
-#!/bin/sh # <1>
-chmod +x hauptprogramm_dateiname # <2>
-./hauptprogramm_dateiname "$@" # <3>
+#!/bin/sh# <1>
+chmod +x hauptprogramm_dateiname# <2>
+./hauptprogramm_dateiname "$@"# <3>
 ----
 <1> Script soll von `/bin/sh` interpretiert werden, es ist also ein einfaches Shell-Script.
 <2> Die Binärdatei wird ausführbar gemacht (das ist nötig, da in einem ZIP-Archiv das Ausührbar-Attribut nicht gespeichert wird).
