@@ -146,7 +146,7 @@ eine Schritt-für-Schritt Anleitung:
   als erstes dran. Der Gegenspieler kann dann ein beliebiger Computerspieler
   oder auch ein Mensch sein.
 . Setzen Sie einen Haken bei "Spiel aus Datei laden". Wählen Sie über
-  "Datei wählen" das entsprechende Replay aus und spezifizieren sie den Zug in dem gestartet werden soll. 
+  "Datei wählen" das entsprechende Replay aus und spezifizieren sie den Zug in dem gestartet werden soll.
   Starten Sie dann das Spiel. Das Spiel sollte sich nun in genau der Situation befinden, in
   der das Fehlerverhalten aufgetreten ist. Dabei ist der Spieler, der nun
   dran ist immer der rote Spieler. Falls der blaue Spieler eigentlich dran
@@ -335,6 +335,12 @@ Sollten einige Attribute weggelassen werden, so werden die Defaultwerte aus der 
 Es ist wichtig, dass die Namen der Spieler nicht gleich sind, ansonsten werden keine Testdaten gesammelt.
 Die Ausgabe der Daten erfolgt nach jedem Spiel anhand von gerundeten Werten. Der TestClient beendet sich selbst
 sollten alle Spiele gespielt wurden.
+
+Die Ergebnisse der Spiele werden für den jeweiligen Spielernamen vom Server
+zusammengezählt. Dies wird auch über mehrere Starts des TestClients getan. Die
+Ergebnisse werden erst zurückgesetzt, wenn der Server neu gestartet wird. Achten
+Sie also darauf, den Server neuzustarten oder einen anderen Spielernamen zu
+verwenden, wenn Sie den Spieler verändern.
 
 ==== Variante ohne TestClient
 
