@@ -282,7 +282,7 @@ java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar software
 
 ==== Variante mit TestClient
 
-Starten sie den TestClient
+Starten sie (mit weiterhin laufendem Server, s.o.) den TestClient
 
 [source,sh]
 ....
@@ -343,6 +343,8 @@ Sie also darauf, den Server neuzustarten oder einen anderen Spielernamen zu
 verwenden, wenn Sie den Spieler verändern.
 
 ==== Variante ohne TestClient
+
+Auch hier muss der Server laufen (s.o.).
 
 Starten Sie ein Spiel mit Reservierungscode (siehe Spielverlauf in der XML-Dokumentation).
 Aktivieren Sie mit dem erstellten Administratorclient den Testmodus:
