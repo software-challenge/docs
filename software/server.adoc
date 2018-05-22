@@ -123,8 +123,8 @@ Funktion so schnell wie möglich nachreichen!
 [[testdurchläufe]]
 === Testdurchläufe
 
-Testdurchläufe werden leider noch nicht unterstützt. Wir werden diese
-Funktion so schnell wie möglich nachreichen!
+Für die Testdurchläufe wird ein Testserver und TestClient zur Verfügung gestellt. 
+Wie man diese verwendet, können Sie weiter unten, unter den Überschrift <<automatische-spiele, Automatische Spiele: Der Testserver>> und <<tests-ohne-gui, Massentests>> nachlesen.
 
 [[spielsituation-nachstellen]]
 === Spielsituation nachstellen
@@ -173,7 +173,8 @@ Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter
 Wenn Sie automatisiert Spiele mit Ihrem Computerspieler spielen wollen, um
 bestimmte Verhaltensweisen bei der Weiterentwicklung regelmäßig zu testen,
 können Sie dafür einen speziellen Server ohne grafische Oberfläche verwenden,
-den sogenannten Testserver.
+den sogenannten Testserver. Hier ist zu beachten, dass der Testserver auf dem Port 13051 
+gestartet wird und nicht, wie im normalen Spiel auf Port 13050.
 
 Gehen Sie dazu wie folgt vor:
 
@@ -182,7 +183,7 @@ Gehen Sie dazu wie folgt vor:
 . Wechseln Sie in einer Kommandozeilenumgebung (Windows: cmd.exe oder
 Powershell, Linux: beliebige Shell oder Terminal) in das Verzeichnis des
 entpackten Archives.
-. Starten Sie den Testserver mit folgendem Befehl:
+. Starten Sie den Testserver auf dem Port 13051 mit folgendem Befehl:
 [source,sh]
   java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051
 . Starten Sie Ihren Computerspieler und einen zweiten Computerspieler manuell auf dem Port 13051 (im SimpleClient geht dies mit der Option --port 13051) 
@@ -273,7 +274,7 @@ Wenn Sie Massentests mit ihrem Computerspieler ausführen wollen, um Beispielswe
 Gewinnchance gegenüber einer früheren Version zu testen, wobei sich die beiden Spieler als Startspieler abwechseln,
 dann ist dies mit folgenden Schritten möglich:
 
-Starten sie den Server
+Starten sie den Server auf dem Port 13051.
 
 [source,sh]
 ....
