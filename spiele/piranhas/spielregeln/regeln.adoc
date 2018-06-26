@@ -1,0 +1,92 @@
+:imagesdir: ./../images
+:toc: right
+:toc-title: Inhalt
+:source-highlighter: pygments
+:icons: font
+
+:sectnums:
+
+= Spielregeln Piranhas Software Challenge 2019
+Sven Koschnicke <svk@informatik.uni-kiel.de>
+
+ifndef::backend-pdf[link:regeln.pdf[PDF-Version dieses Dokumentes]]
+
+WARNING: Es handelt sich um eine vorläufige Version. Die Regeln können sich noch
+grundlegend ändern.
+
+Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
+Dokumentation kann
+https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs[direkt auf
+GitHub editiert] werden, einzige Voraussetzung ist eine kostenlose
+Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
+auswählen (ein guter Startpunkt ist die Datei
+https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc[index.adoc]
+welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
+auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
+svk@informatik.uni-kiel.de.
+
+Das Spielfeld ist ein Aquarium (10x10 Schachbrett), ein Spieler spielt die
+weißen, der andere die schwarzen Fische.
+
+== Anfangsaufstellung
+
+- 8 weiße Fische auf den (Schachbrett-)Feldern A2, A3, …, A9
+- 8 weiße Fische auf den Feldern J2, J3, …, J9
+- 8 schwarze Fische auf den Feldern B1, C1, …, I1
+- 8 schwarze Fische auf den Feldern B10, C10, …, I10
+
+Auf dem Spielfeld gibt es im inneren 6x6-Bereich 2 zufällig generierte
+Kraken-Felder, die zwar durchschwommen werden können, auf denen jedoch kein Zug
+enden darf. Am Ende eines Zuges darf sich auf diesen beiden Feldern also kein
+Piranha befinden. Diese Felder behindern also die Schwarmbildung. Die beiden
+zufällig generierten Felder dürfen sich weder in derselben Zeile noch in
+derselben Spalte, noch in derselben Diagonale befinden.
+
+== Ziel des Spieles
+
+Alle Fische der eigenen Farbe sollen zu einem Schwarm verbunden werden, sie
+sollen also auf einem zusammenhängenden Gebiet auf dem Spielfeld stehen, wobei
+senkrecht, waagerecht und diagonal nebeneinanderliegende Felder als
+zusammenhängend gelten.
+
+== Züge
+
+Es wird abwechselnd gezogen. Weiß beginnt. Jede Runde besteht aus 2 Zügen. In
+jedem Zug muss man einen eigenen Fisch auf einer senkrechten, waagerechten oder
+diagonalen Linie genau so viele Felder in eine Richtung bewegen, wie insgesamt
+Fische (beider Farben) auf dieser Linie sind. Dabei muss man auf einem leeren
+Feld oder auf einem vom Gegner besetzten Feld landen. Beim Zug darf man Felder
+mit eigenen Fischen sowie Kraken überspringen, nicht aber Felder mit
+gegnerischen Fischen. Bei der Anzahl der zu ziehenden Felder werden
+übersprungene Felder mitgezählt. Wenn man auf einem Feld ankommt, auf dem ein
+gegnerischer Fisch schwimmt, wird dieser gefressen (ersatzlos vom Spielfeld
+genommen). Zum Beispiel kann Weiß im 1. Zug einen beliebigen weißen Fisch zwei
+Felder in Richtung der Spielfeldmitte bewegen, z.B. von A4 nach C4. Eine andere
+Möglichkeit für den 1. Zug wäre, einen Fisch von A2 nach A10 zu ziehen. Man
+könnte auch mit dem Fisch auf A3 den gegnerischen Fisch auf C1 fressen.
+
+== Spielende
+
+Das Spiel endet, wenn am Ende einer Runde alle auf dem Spielfeld verbliebenen
+Fische einer Farbe zu einem einzigen zusammenhängenden Schwarm verbunden sind,
+spätestens jedoch nach 30 Runden. (Schwarz könnte also einen weißen Schwarm noch
+in der 2. Hälfte einer Runde wieder zerstören.) Das Spiel endet ebenfalls, wenn
+einer der Spieler keinen regulären Zug machen kann. In diesem Fall hat dieser
+Spieler verloren.
+
+== Gewinner
+
+Falls beim Spielende die Fische nur eines Spielers zu einem einzigen
+zusammenhängenden Schwarm verbunden sind, hat dieser Spieler gewonnen;
+anderenfalls derjenige Spieler mit dem größeren Schwarm. Falls nach den
+vorgenannten Kriterien kein Gewinner ermittelt werden kann, endet das Spiel
+unentschieden.
+
+Nachrangiges Kriterium für das Ranking im Wettkampfsystem:
+Anzahl der Fische im größten Schwarm des Spielers.
+
+Beim Final Eight gibt es kein nachrangiges Kriterium. Beim Final Eight gewinnt
+derjenige Spieler eine Begegnung, der nach einer geraden Anzahl von Spielen
+(mindestens 6) mehr Spiele als der Gegner gewonnen hat.
+
+Vorschlag zur Erzeugung unterschiedlicher Spielfelder:
