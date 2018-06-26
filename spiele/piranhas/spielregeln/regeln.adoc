@@ -28,15 +28,15 @@ auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 svk@informatik.uni-kiel.de.
 ****
 
-Das Spielfeld ist ein Aquarium (10x10 Schachbrett), ein Spieler spielt die
-weißen, der andere die schwarzen Fische.
+Das Spielfeld ist ein Aquarium (10x10 Schachbrett mit Spalten A-J und Zeilen
+0-9), ein Spieler spielt die weißen, der andere die schwarzen Fische.
 
 == Anfangsaufstellung
 
-- 8 weiße Fische auf den (Schachbrett-)Feldern A2, A3, …, A9
-- 8 weiße Fische auf den Feldern J2, J3, …, J9
-- 8 schwarze Fische auf den Feldern B1, C1, …, I1
-- 8 schwarze Fische auf den Feldern B10, C10, …, I10
+- 8 weiße Fische auf den (Schachbrett-)Feldern A1, A1, …, A8
+- 8 weiße Fische auf den Feldern J1, J2, …, J8
+- 8 schwarze Fische auf den Feldern B0, C0, …, I0
+- 8 schwarze Fische auf den Feldern B9, C9, …, I9
 
 Auf dem Spielfeld gibt es im inneren 6x6-Bereich 2 zufällig generierte
 Kraken-Felder, die zwar durchschwommen werden können, auf denen jedoch kein Zug
@@ -65,8 +65,8 @@ gegnerischen Fischen. Bei der Anzahl der zu ziehenden Felder werden
 gegnerischer Fisch schwimmt, wird dieser gefressen (ersatzlos vom Spielfeld
 genommen). Zum Beispiel kann Weiß im 1. Zug einen beliebigen weißen Fisch zwei
 Felder in Richtung der Spielfeldmitte bewegen, z.B. von A4 nach C4. Eine andere
-Möglichkeit für den 1. Zug wäre, einen Fisch von A2 nach A10 zu ziehen. Man
-könnte auch mit dem Fisch auf A3 den gegnerischen Fisch auf C1 fressen.
+Möglichkeit für den 1. Zug wäre, einen Fisch von A1 nach A9 zu ziehen. Man
+könnte auch mit dem Fisch auf A2 den gegnerischen Fisch auf C0 fressen.
 
 == Spielende
 
