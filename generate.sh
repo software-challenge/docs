@@ -1,34 +1,54 @@
-#!/bin/sh
+#!/bin/bash
+
+GENERATE_PDFS=false
+GAMES="hase-und-igel piranhas"
+while getopts "pg:" opt; do
+  case $opt in
+    p)
+      GENERATE_PDFS=true
+      ;;
+    g)
+      GAMES=$OPTARG
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
+
 TARGET=out
-#rm -rf "$TARGET"
-#mkdir "$TARGET"
+rm -rf "$TARGET"
+mkdir "$TARGET"
 
 # Allgemeine Doku
 asciidoctor -D "$TARGET" index.adoc
-asciidoctor-pdf -D "$TARGET" index.adoc
+if [ "$GENERATE_PDFS" = true ]; then
+  asciidoctor-pdf -D "$TARGET" index.adoc
+fi
 
 # Spiele Uebersicht
 asciidoctor -D "$TARGET" spiele.adoc
-asciidoctor-pdf -D "$TARGET" spiele.adoc
+if [ "$GENERATE_PDFS" = true ]; then
+  asciidoctor-pdf -D "$TARGET" spiele.adoc
+fi
 
 cp -r images "$TARGET"
 
-# Hase und Igel
-HUI_DIR="$TARGET/spiele/hase-und-igel"
-mkdir -p "$HUI_DIR"
-asciidoctor -D $HUI_DIR spiele/hase-und-igel/index.adoc
-asciidoctor -D $HUI_DIR spiele/hase-und-igel/spielregeln/regeln.adoc
-asciidoctor-pdf -D $HUI_DIR spiele/hase-und-igel/spielregeln/regeln.adoc
-asciidoctor -D $HUI_DIR spiele/hase-und-igel/xml-dokumentation/xml-dokumentation.adoc
-asciidoctor-pdf -D $HUI_DIR spiele/hase-und-igel/xml-dokumentation/xml-dokumentation.adoc
-asciidoctor -D $HUI_DIR spiele/hase-und-igel/tutorial/tutorial.adoc
-asciidoctor-pdf -D $HUI_DIR spiele/hase-und-igel/tutorial/tutorial.adoc
-asciidoctor -D $HUI_DIR spiele/hase-und-igel/tutorial/start.adoc
-asciidoctor-pdf -D $HUI_DIR spiele/hase-und-igel/tutorial/start.adoc
-asciidoctor -D $HUI_DIR spiele/hase-und-igel/tutorial/game-rule-logic.adoc
-asciidoctor-pdf -D $HUI_DIR spiele/hase-und-igel/tutorial/game-rule-logic.adoc
-asciidoctor -D $HUI_DIR spiele/hase-und-igel/tutorial/player.adoc
-asciidoctor-pdf -D $HUI_DIR spiele/hase-und-igel/tutorial/player.adoc
-asciidoctor -D $HUI_DIR spiele/hase-und-igel/tutorial/board.adoc
-asciidoctor-pdf -D $HUI_DIR spiele/hase-und-igel/tutorial/board.adoc
-cp -r spiele/hase-und-igel/images "$HUI_DIR/.."
+# Spiele
+for GAME in $GAMES; do
+  GAME_OUT_DIR="$TARGET/spiele/$GAME"
+  mkdir -p "$GAME_OUT_DIR"
+  cp -r "spiele/$GAME/images" "$GAME_OUT_DIR/.."
+  for doc in $(find "spiele/$GAME" -name "*.adoc"); do
+    echo processing $doc
+    asciidoctor -D "$GAME_OUT_DIR" "$doc"
+    if [ "$GENERATE_PDFS" = true ]; then
+      asciidoctor-pdf -D "$GAME_OUT_DIR" "$doc"
+    fi
+  done
+done

@@ -6,7 +6,7 @@
 
 :sectnums:
 
-= Spielregeln Piranhas Software Challenge 2019
+= Spielregeln Piranhas: Software Challenge 2019
 Sven Koschnicke <svk@informatik.uni-kiel.de>
 
 ifndef::backend-pdf[link:regeln.pdf[PDF-Version dieses Dokumentes]]
@@ -14,6 +14,8 @@ ifndef::backend-pdf[link:regeln.pdf[PDF-Version dieses Dokumentes]]
 WARNING: Es handelt sich um eine vorläufige Version. Die Regeln können sich noch
 grundlegend ändern.
 
+.Beitragen
+****
 Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
 Dokumentation kann
 https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs[direkt auf
@@ -24,6 +26,7 @@ https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc[i
 welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 svk@informatik.uni-kiel.de.
+****
 
 Das Spielfeld ist ein Aquarium (10x10 Schachbrett), ein Spieler spielt die
 weißen, der andere die schwarzen Fische.
@@ -88,5 +91,3 @@ Anzahl der Fische im größten Schwarm des Spielers.
 Beim Final Eight gibt es kein nachrangiges Kriterium. Beim Final Eight gewinnt
 derjenige Spieler eine Begegnung, der nach einer geraden Anzahl von Spielen
 (mindestens 6) mehr Spiele als der Gegner gewonnen hat.
-
-Vorschlag zur Erzeugung unterschiedlicher Spielfelder:
