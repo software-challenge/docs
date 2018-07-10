@@ -1,7 +1,6 @@
 #!/bin/bash
-# This script needs bash to work! sh ist not enough!
 
-# Put it into .git/hooks/post-commit to automatically publish the docs on github pages.
+# Put this into .git/hooks/post-commit to automatically publish the docs on github pages.
 
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 branch_to_deploy=master
