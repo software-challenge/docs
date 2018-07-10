@@ -1,0 +1,72 @@
+#!/bin/sh
+
+if [ "$1" = "setup" ]; then
+	sudo gem install asciidoctor pygments.rb
+	sudo gem install --prerelease asciidoctor-pdf
+	echo 'if [ "master" = "$(git rev-parse --abbrev-ref HEAD)" ]; then
+  echo "Updating date in index.adoc"
+  ./docs update-date
+  echo "removing output directory ('out')"
+  rm -rf ./out
+  echo "getting gh-pages repository..."
+  old_git_dir=$GIT_DIR
+  unset GIT_DIR
+  old_git_working_dir=$GIT_WORK_TREE
+  unset GIT_WORK_TREE
+  git clone git@github.com:CAU-Kiel-Tech-Inf/socha-enduser-docs.git --branch gh-pages --single-branch out
+  echo "generating static pages..."
+  ./docs generate pdf
+  echo "putting new version in gh-pages branch"
+  cd out
+  git add -A
+  git commit -a -u -m "automatically updated generated files on commit to master"
+  echo "deploying to github"
+  git push origin
+  cd ..
+  rm -rf ./out
+  GIT_DIR=$old_git_dir
+  GIT_WORK_TREE=$old_git_working_dir
+fi'>.git/hooks/post-commit
+	chmod +x .git/hooks/post-commit
+	echo "post-commit hook installed"
+	if [ "$2" = "live" ]; then
+		sudo gem install guard guard-shell guard-livereload yajl-ruby
+	fi
+fi
+
+if [ "$1" = "publish" ]; then
+	# refreshes the last update date in the header of the docs and creates a commit
+	formatted_date=$(date +%Y-%m-%d)
+	sed --regexp-extended -i "/[0-9]{4}-[0-9]{2}-[0-9]{2}$/c\\$formatted_date" index.adoc
+	git add index.adoc
+	git commit
+fi
+
+if [ "$1" = "generate" ]; then
+	[ "$2" = "pdf" ] && pdf="true"
+	TARGET="out"
+	asciid() {
+		echo $1
+		target="$TARGET/$(dirname $1)"
+		case $1 in *spiele/*) target="$TARGET/spiele/$(echo $1 | cut -d/ -f2)"; esac
+		asciidoctor -D "$target" "$1"
+		test "$1" != "spiele/hase-und-igel/index.adoc" && test $pdf && asciidoctor-pdf -D "$target" "$1"
+	}
+
+	# Images
+	for images in $(find . -name "images" -not -path "./out/*" -type d); do
+		echo $images
+		mkdir -p "$TARGET/$(dirname $images)"
+		cp -r $images "$TARGET/$(dirname $images)"
+	done
+
+	asciid index.adoc
+	asciid spiele.adoc
+	find spiele -name "*.adoc" | while read adoc; do read word _<$adoc; case "$word" in :*) asciid "$adoc"; esac; done
+fi
+
+if [ "$1" = "update-date" ]; then
+	last_commit_date=$(git log -1 --format=%cd | cut -c5- | cut -c-6)
+	formatted_date=$(date -d"$last_commit_date" +%Y-%m-%d)
+	sed -i.bak "/[0-9]{4}-[0-9]{2}-[0-9]{2}$/c\\$formatted_date" index.adoc
+fi
