@@ -34,11 +34,27 @@ svk@informatik.uni-kiel.de.
 
 == Konvertierung
 
-Um alles in HTML zu Übersetzen, sollte das `generate.sh` Script verwendet werden:
+Um schnell starten zu können, existiert ein setup, das folgendermaßen aufgerufen werden kann.
+
+```
+./docs setup
+```
+
+Dies installiert die beiden Ruby-Gems `asciidoctor` und `pygments.rb` (für
+Syntax-Highlighting der Quellcodes), außerdem das Gem `asciidoctor-pdf`,
+welches aber im Moment nur im "Prerelease"-Status ist, es wird also per
+`gem install --prerelease asciidoctor-pdf` installiert. +
+Schließlich installiert es auch den post-commit-hook,
+sodass pushes zu master automatisch auf der Website landen.
+
+Um alles in HTML zu Übersetzen, sollte folgender Befehl verwendet werden:
 
 ....
-./generate.sh
+./docs generate
 ....
+
+Wenn zusätzlich die Option `pdf` angehängt wird, wird auch asciidoctor-pdf
+aufgerufen. Aus Geschwindigkeitsgründen wird dies standardmäßig nicht gemacht.
 
 Intern wird `asciidoctor` verwendet:
 
@@ -48,16 +64,6 @@ asciidoctor -D out index.adoc
 
 Die fertige HTML-Version befindet sich dann unter `out/index.html`.
 
-Hierzu werden die beiden Ruby-Gems `asciidoctor` und `pygments.rb` (für
-Syntax-Highlighting der Quellcodes) benötigt. Ausserdem wird das Gem
-`asciidoctor-pdf` benötigt, welches aber im Moment nur im "Prerelease" status
-ist. Man kann es also nur mit `gem install --prerelease asciidoctor-pdf`
-installieren.
-
-IMPORTANT: Bilder werden nicht mitkopiert, dies muss manuell geschehen. Hat man
-also Bilder im `images`-Verzeichnis hinzugefuegt, muessen diese manuell nach
-`out/images` kopiert werden (das `generate.sh` Script macht das).
-
 Bei Bedarf kann die Dokumentation auch in ein anderes Format
 konvertiert werden, Details hierzu finden sich in der
 http://asciidoctor.org/docs/user-manual/#processing-your-content[AsciiDoctor
@@ -65,21 +71,18 @@ Dokumentation].
 
 === Live-Preview
 
-CAUTION: Noch nicht vollstaendig getestet. Im Moment sehr langsam, da alles neu
+CAUTION: Noch nicht vollständig getestet. Im Moment sehr langsam, da alles neu
 übersetzt wird.
 
 Einen Live-Preview-Mode gibt es leider nicht direkt, aber es gibt
 http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/[verschiedene
 Wege um ein Live-Preview zu bekommen].
+Einer ist die Nutzung von `guard`. Dies kann durch folgenden Aufruf installiert werden:
 
-Einer ist die Nutzung von `guard`. Dazu müssen folgende Gems installiert werden:
-
-* `guard`
-* `guard-shell`
-* `guard-livereload`
-* `yajl-ruby`
-
-Also zum Beispiel `gem install guard guard-shell guard-livereload yajl-ruby`.
+```
+./docs setup live
+```
+Dies installiert dann die folgenden Gems: `guard guard-shell guard-livereload yajl-ruby`
 
 Ein passendes `Guardfile` liegt schon im Repository, man kann `guard` also
 einfach mittels `guard start` starten, und die Ausgabe im Verzeichnis `out` wird
@@ -88,29 +91,27 @@ aktualisiert, sobald man etwas an den Quellen ändert.
 Wenn man dann noch die Browseransicht automatisch aktualisieren lassen will,
 muss man eine LiveReload Extension für
 http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-[Firefox]
-oder
-https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en[Chrome]
+oder https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei[Chrome]
 installieren.
 
-== Auto-Deploy
+== Deployment
 
 Um die Dokumentation unter
-https://cau-kiel-tech-inf.github.io/socha-enduser-docs/ automatisch
-aktualisieren zu lassen, sind Schreibrechte für das
+https://cau-kiel-tech-inf.github.io/socha-enduser-docs/
+automatisch aktualisieren zu lassen, sind Schreibrechte für dieses
 https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs[GitHub
 Repository] erforderlich.
 
-Aktualisierte Dokumentation wird bei einem Commit in den
-`master`-Branch automatisch online gestellt, sofern der
-`git-post-commit-hook.sh` lokal installiert ist. Dazu einfach die
-Datei `git-post-commit-hook.sh` aus dem Repository in das Verzeichnis
-`.git/hooks` des Repositories kopieren. Der Dateiname muss dann
-`post-commit` lauten. Damit auch das Aktualisierungsdatum im Kopf der
-Dokumentation immer aktualisiert wird, kann man das `publish.sh` Script
-verwenden, anstatt direkt ein `git commit` zu machen.
+Wenn `./docs setup` verwendet wurde, kann direkt statt eines commits
+im master-branch `./docs publish` verwendet werden. Es stellt sicher,
+dass das Deployment korrekt vonstatten geht.
 
-Dann wird nach dem Commit alles automatisch konvertiert auf GitHub
-Pages hochgeladen (inklusive Kopieren der Bilder).
+Ansonsten muss zuerst der post-commit-hook installiert werden.
+Dazu einfach die Datei `git-post-commit-hook.sh` aus dem Verzeichnis `bin` zu
+`.git/hooks/post-commit` kopieren.
+
+Dann wird nach jedem commit auf master alles automatisch konvertiert und
+online gestellt (inklusive der Bilder).
 
 == Quickstart
 
