@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script upates the last update date in the header of the docs and commits
+# This script updates the last update date in the header of the docs and commits
 # all changes, which triggers the publish script (post-commit-hook).
 
 # Update the date to the date of the last commit (which is the current date)
