@@ -54,7 +54,7 @@ Um alles in HTML zu Übersetzen, sollte folgender Befehl verwendet werden:
 ....
 
 Wenn zusätzlich die Option `pdf` angehängt wird, wird auch asciidoctor-pdf
-aufgerufen. Aus Geschwindigkeitsgründen wird dies standardmäßig nicht gemacht.
+aufgerufen. Aus Geschwindigkeitsgründen wird darauf standardmäßig verzichtet.
 
 Intern wird `asciidoctor` verwendet:
 
@@ -71,7 +71,7 @@ Dokumentation].
 
 === Live-Preview
 
-CAUTION: Noch nicht vollständig getestet. Im Moment sehr langsam, da alles neu
+> Noch nicht vollständig getestet. Im Moment sehr langsam, da alles neu
 übersetzt wird.
 
 Einen Live-Preview-Mode gibt es leider nicht direkt, aber es gibt

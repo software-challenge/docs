@@ -4,9 +4,9 @@ set -e #Instantly abort on error
 # Put this into .git/hooks/post-commit (or execute ./docs setup) to
 # automatically publish the docs on github pages.
 
-current_branch=$(git rev-parse --abbrev-ref HEAD)
-branch_to_deploy=master
-if [ $current_branch == $branch_to_deploy ]; then
+current_branch="$(git rev-parse --abbrev-ref HEAD)"
+branch_to_deploy="master"
+if [ "$current_branch" = "$branch_to_deploy" ]; then
   echo "Updating date in index.adoc"
   ./docs update-date
   echo "removing output directory ('out')"

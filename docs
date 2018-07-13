@@ -1,36 +1,52 @@
 #!/bin/sh
-
-case $1 in
+action=$1
+case $action in
 setup)
 	sudo gem install asciidoctor pygments.rb
 	sudo gem install --prerelease asciidoctor-pdf
+
 	cp bin/git-post-commit-hook.sh .git/hooks/post-commit
 	chmod +x .git/hooks/post-commit
-	echo "post-commit hook installed"
-	[ "$2" = "live" ] && sudo gem install guard guard-shell guard-livereload yajl-ruby
+	echo "\nCopied post-commit hook\n"
+
+	case "$@" in *"live"*) sudo gem install guard guard-shell guard-livereload yajl-ruby;; esac
 	;;
+
 
 generate)
 	TARGET="out"
-	[ "$2" = "pdf" ] && pdf="true"
+	game="piranhas"
+	shift
+	for arg in "$@" ; do
+		[ "$arg" = "pdf" ] && pdf="true" && continue
+		game="$arg"
+	done
+
 	asciid() {
-		echo "$1"
+		echo "Converting $1"
 		target="$TARGET/$(dirname "$1")"
 		case $1 in *spiele/*) target="$TARGET/spiele/$(echo "$1" | cut -d/ -f2)"; esac
 		asciidoctor -D "$target" "$1"
-		test "$1" != "spiele/hase-und-igel/index.adoc" && test $pdf && asciidoctor-pdf -D "$target" "$1"
+		case "$1" in *"hase-und-igel/index.adoc") ;; 
+			*) test $pdf && asciidoctor-pdf -D "$target" "$1";; esac
 	}
 
 	# Images
 	find . -name "images" -not -path "./out/*" -type d | while read -r images; do
-		echo "$images"
+		echo "Copying $(echo $images | cut -c3-1000)"
 		mkdir -p "$TARGET/$(dirname "$images")"
 		cp -r "$images" "$TARGET/$(dirname "$images")"
 	done
 
 	asciid index.adoc
-	find spiele -name "*.adoc" | while read -r adoc; do read -r word _<"$adoc"; case "$word" in :*) asciid "$adoc"; esac; done
+	find spiele -path "spiele/$game/*" -name "*.adoc" | while read -r adoc; do 
+		# save the first word of the file to $word
+		read -r word _<"$adoc"; 
+		# do conversion if it starts with a colon
+		case "$word" in :*) asciid "$adoc"; esac; 
+	done
 	;;
+
 
 publish)
 	$0 update-date now
@@ -38,18 +54,21 @@ publish)
 	git commit
 	;;
 
+
 update-date)
 	last_commit_date=${2:-$(git log -1 --format=%cd | cut -c5- | cut -c-6)}
 	formatted_date=$(date -d"$last_commit_date" +%Y-%m-%d)
 	sed --regexp-extended -i.bak "/[0-9]{4}-[0-9]{2}-[0-9]{2}$/c\\$formatted_date" index.adoc
 	;;
 
+
 *)
-	echo "Usage: docs <command> [options]
+	echo "Usage: docs <command> [options...]
     setup - install the gems required for generate and setup the post-commit-hook
       └─ live - also install the gems required for a live-preview
     generate - copy the images and convert the adoc to html
-      └─ pdf - also convert to pdf
+      └─ \e[3mgamename\e[0m - convert a specific game
+      └─ pdf - additionally convert to pdf
     publish - refresh the last update date in the header of the docs and commit
     update-date - update the date in the header of the docs to the date of the last commit"
 	;;
