@@ -123,8 +123,8 @@ Funktion so schnell wie möglich nachreichen!
 [[testdurchläufe]]
 === Testdurchläufe
 
-Testdurchläufe werden leider noch nicht unterstützt. Wir werden diese
-Funktion so schnell wie möglich nachreichen!
+Für die Testdurchläufe wird ein Testserver und TestClient zur Verfügung gestellt. 
+Wie man diese verwendet, können Sie weiter unten, unter den Überschrift <<automatische-spiele, Automatische Spiele: Der Testserver>> und <<tests-ohne-gui, Massentests>> nachlesen.
 
 [[spielsituation-nachstellen]]
 === Spielsituation nachstellen
@@ -165,7 +165,7 @@ Wenn der Server ohne die graphische Oberfläche gestartet wird, kann das `--save
 Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter `./replays` gespeichert wird.
 
 [source, sh]
-  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --saveReplay true
+  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051 --saveReplay true
 
 [[automatische-spiele]]
 === Automatische Spiele: Der Testserver
@@ -173,7 +173,8 @@ Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter
 Wenn Sie automatisiert Spiele mit Ihrem Computerspieler spielen wollen, um
 bestimmte Verhaltensweisen bei der Weiterentwicklung regelmäßig zu testen,
 können Sie dafür einen speziellen Server ohne grafische Oberfläche verwenden,
-den sogenannten Testserver.
+den sogenannten Testserver. Hier ist zu beachten, dass der Testserver auf dem Port 13051 
+gestartet wird und nicht, wie im normalen Spiel auf Port 13050.
 
 Gehen Sie dazu wie folgt vor:
 
@@ -182,11 +183,11 @@ Gehen Sie dazu wie folgt vor:
 . Wechseln Sie in einer Kommandozeilenumgebung (Windows: cmd.exe oder
 Powershell, Linux: beliebige Shell oder Terminal) in das Verzeichnis des
 entpackten Archives.
-. Starten Sie den Testserver mit folgendem Befehl:
+. Starten Sie den Testserver auf dem Port 13051 mit folgendem Befehl:
 [source,sh]
-  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar
-. Starten Sie Ihren Computerspieler und einen zweiten Computerspieler manuell
-(in weiteren Kommandozeilenumgebungen). Die Computerspieler verbinden sich
+  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051
+. Starten Sie Ihren Computerspieler und einen zweiten Computerspieler manuell auf dem Port 13051 (im SimpleClient geht dies mit der Option --port 13051) 
+in weiteren Kommandozeilenumgebungen. Die Computerspieler verbinden sich
 automatisch zum Testserver und es wird ein Spiel gespielt. Danach sollten sich
 die Computerspieler automatisch beenden.
 . Wenn Sie weitere Testspiele starten wollen, können Sie die Computerspieler
@@ -203,7 +204,7 @@ erzeugt werden. Dann kann die Datei mit dem Argument `--loadGameFile` geladen
 werden und optional mit `--turn` ein Zug spezifiziert werden.
 
 [source,sh]
-  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --loadGameFile ./replay.xml --turn 10
+  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051 --loadGameFile ./replay.xml --turn 10
 
 [[soft-timeouts]]
 ==== Unerwartete Zugzeitüberschreitungen (Soft-Timeout)
@@ -223,7 +224,6 @@ folgenden Parameter beim Starten des Servers bewährt:
 Unter Linux:
 
 [source,sh]
-....
 java -Dfile.encoding=UTF-8 \
      -Dlogback.configurationFile=logback.xml \
      -server \
@@ -232,14 +232,12 @@ java -Dfile.encoding=UTF-8 \
      -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled \
      -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=70 \
      -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark \
-     -jar softwarechallenge-server.jar
-....
+     -jar softwarechallenge-server.jar --port 13051
 
 Unter Windows (unterscheidet sich nur durch die Art, den langen Befehl auf
 mehrere Zeilen zu verteilen):
 
 [source,batch]
-....
 java -Dfile.encoding=UTF-8 ^
      -Dlogback.configurationFile=logback.xml ^
      -server ^
@@ -248,14 +246,13 @@ java -Dfile.encoding=UTF-8 ^
      -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled ^
      -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=70 ^
      -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark ^
-     -jar softwarechallenge-server.jar
-....
+     -jar softwarechallenge-server.jar --port 13051
 
 Um das Verhalten des Garbage Collectors noch weiter zu verbessern, kann man auch
 noch mittels der Optionen
 
 ....
--XX:+PrintGCDateStamps -verbose:gc -XX:+PrintGCDetails -Xloggc:"pfad_zum_gc.log"
+-XX:+PrintGCDateStamps -XX:+PrintGC -XX:+PrintGCDetails -Xloggc:"pfad_zum_gc.log"
 ....
 
 eine Logdatei über die Aktivitäten des Garbage Collectors anlegen. Darin sieht
@@ -273,11 +270,11 @@ Wenn Sie Massentests mit ihrem Computerspieler ausführen wollen, um Beispielswe
 Gewinnchance gegenüber einer früheren Version zu testen, wobei sich die beiden Spieler als Startspieler abwechseln,
 dann ist dies mit folgenden Schritten möglich:
 
-Starten sie den Server
+Starten sie den Server auf dem Port 13051.
 
 [source,sh]
 ....
-java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar
+java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051
 ....
 
 ==== Variante mit TestClient
@@ -285,56 +282,49 @@ java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar software
 Starten sie (mit weiterhin laufendem Server, s.o.) den TestClient
 
 [source,sh]
-....
 java -jar -Dlogback.configurationFile=logback-tests.xml test_client.jar
     --tests 4
     --name1 "displayName1"
     --player1 "./player1.jar"
     --timeout1 true
     --name2 "displayName2"
-    --player2 "./player1.jar"
+    --player2 "./player2.jar"
     --timeout2 true
-....
+    --port 13051
 
-Attribute des TestClients
+Argumente des TestClients
 |===
-|Attribut | Default Wert | Kurzbeschreibung
+| Attribut	|  Standardwert	| Kurzbeschreibung
 
-|tests
-|100
-|Anzahl der Tests die durchlaufen werden sollen.
+|--tests 		| 100
+| Anzahl der Tests, die gespielt werden sollen (Integer)
 
-|name1
-|"player1"
-|Name des ersten Spielers.
+|--player1	| "./defaultplayer.jar"
+|Erster Computerspieler (Dateipfad)
 
-|name2
-|"player2"
-|Name des zweiten Spielers.
+|--player2	| "./defaultplayer.jar"
+|Zweiter Computerspieler (Dateipfad)
 
-|player1
-|"../simple_client/hase_und_igel_player_new/jar/ hase_und_igel_player_new.jar"
-|Erster Computerspieler.
+|--name1		| "player1"
+| Name des ersten Spielers (String)
 
-|player2
-|"../simple_client/hase_und_igel_player_new/jar/ hase_und_igel_player_new.jar"
-|Zweiter Computerspieler.
+| --name2		| "player2"
+| Name des zweiten Spielers (String)
 
-|timeout1
-|true
-|Soll der erste Spieler nach dem Timeout abbrechen? (true\|false)
+|--timeout1	| true
+|Scheidet der erste Spieler bei einem Timeout aus? (true\|false)
 
-|timeout2
-|true
-|Soll der zweite Spieler nach dem Timeout abbrechen? (true\|false)
+|--timeout2	| true
+|Scheidet der zweite Spieler bei einem Timeout aus? (true\|false)
+
+|--port			| 13051
+|Der Port, auf dem der TestClient die Clients startet
 
 |===
 
-
-Sollten einige Attribute weggelassen werden, so werden die Defaultwerte aus der Tabelle oben gewählt.
-Es ist wichtig, dass die Namen der Spieler nicht gleich sind, ansonsten werden keine Testdaten gesammelt.
-Die Ausgabe der Daten erfolgt nach jedem Spiel anhand von gerundeten Werten. Der TestClient beendet sich selbst
-sollten alle Spiele gespielt wurden.
+Bei Argumenten, die nicht angegeben wurden, werden die Standardwerte aus der Tabelle verwendet.
+Die Ausgabe der Daten erfolgt nach jedem Spiel anhand von gerundeten Werten.
+Der TestClient beendet sich selbst, nachdem alle Spiele gespielt wurden.
 
 Die Ergebnisse der Spiele werden für den jeweiligen Spielernamen vom Server
 zusammengezählt. Dies wird auch über mehrere Starts des TestClients getan. Die
@@ -396,4 +386,5 @@ Der Server antwortet mit:
   </score>
 </playerScore>
 ....
+
 Bei dieser Variante muss sich selbst um das Starten der Clients gekümmert werden.

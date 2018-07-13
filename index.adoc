@@ -1,6 +1,6 @@
 = Software Challenge Endbenutzer-Dokumentation
 Sven Koschnicke <svk@informatik.uni-kiel.de>
-2017-12-20
+2018-05-28
 :imagesdir: ./images
 :toc: right
 :toc-title: Inhalt
