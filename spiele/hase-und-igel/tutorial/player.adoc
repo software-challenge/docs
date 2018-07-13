@@ -1,4 +1,4 @@
-:imagesdir: ./../images
+:imagesdir: ../images
 :source-highlighter: pygments
 :icons: font
 :author: Simon Döring
