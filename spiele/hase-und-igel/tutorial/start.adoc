@@ -1,4 +1,4 @@
-:imagesdir: ./../images
+:imagesdir: ../images
 :toc: right
 :toc-title: Inhalt
 :source-highlighter: pygments
