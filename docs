@@ -50,7 +50,7 @@ update-date)
       └─ live - also install the gems required for a live-preview
     generate - copy the images and convert the adoc to html
       └─ pdf - also convert to pdf
-    publish - refresh the last update date in the header of the docs and commits
+    publish - refresh the last update date in the header of the docs and commit
     update-date - update the date in the header of the docs to the date of the last commit"
 	;;
 
