@@ -1,0 +1,67 @@
+== Züge senden
+
+[[der-move]]
+=== Der Move
+Der Move ist die Antwort auf den MoveRequest des Servers.
+
+[[move-request]]
+==== MoveRequest
+--
+* ROOM_ID Id des GameRooms
+--
+[source,xml]
+----
+<room roomId="ROOM_ID">
+  <data class="sc.framework.plugins.protocol.MoveRequest"/>
+</room>
+----
+
+[[senden]]
+==== Senden
+Der Move ist der allgemeine Zug, der in verschiedenen Varianten gesendet werden kann.
+
+--
+* ROOM_ID Id des GameRooms
+* ZUG Zug wie in xref:zug[]
+--
+[source,xml]
+----
+<room roomId="ROOM_ID">
+  ZUG
+</room>
+----
+
+[[zug]]
+=== ZUG
+--
+* X X-Koordinate des zu ziehenden Piranhas
+* Y Y-Koordinate des zu ziehenden Piranhas
+* DIRECTION Richtung in der Piranha zieht
+--
+[source,xml]
+----
+<data class="move" x="X" y="Y" direction="DIRECTION"/>
+----
+
+
+[[debughints]]
+=== Debughints
+Zügen können Debug-Informationen beigefügt werden:
+
+[source,xml]
+----
+<hint content="S"/>
+----
+
+Damit sieht beispielsweise ein Laufzug so aus:
+
+[source,xml]
+----
+<room roomId="ROOM_ID">
+  <data class="move" x="0" y="0" direction="UP">
+    <hint content="Dies ist ein Hint."/>
+    <hint content="noch ein Hint"/>
+  </data>
+</room>
+----
+
