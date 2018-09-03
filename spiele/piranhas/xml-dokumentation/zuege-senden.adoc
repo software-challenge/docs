@@ -7,7 +7,7 @@ Der Move ist die Antwort auf den MoveRequest des Servers.
 [[move-request]]
 ==== MoveRequest
 --
-* ROOM_ID Id des GameRooms
+`ROOM_ID`:: ID des GameRooms, dient der Zuordnung der Antworten des Clients.
 --
 [source,xml]
 ----
@@ -21,8 +21,8 @@ Der Move ist die Antwort auf den MoveRequest des Servers.
 Der Move ist der allgemeine Zug, der in verschiedenen Varianten gesendet werden kann.
 
 --
-* ROOM_ID Id des GameRooms
-* ZUG Zug wie in xref:zug[]
+`ROOM_ID`:: ID des GameRooms, aus dem `MoveRequest`.
+`ZUG`:: Zug wie in xref:zug[]
 --
 [source,xml]
 ----
@@ -34,9 +34,18 @@ Der Move ist der allgemeine Zug, der in verschiedenen Varianten gesendet werden 
 [[zug]]
 === ZUG
 --
-* X X-Koordinate des zu ziehenden Piranhas
-* Y Y-Koordinate des zu ziehenden Piranhas
-* DIRECTION Richtung in der Piranha zieht
+`X`:: X-Koordinate des zu ziehenden Piranhas (`0` bis `9`, Spalten des Spielfeldes von links nach rechts)
+`Y`:: Y-Koordinate des zu ziehenden Piranhas (`0` bis `9`, Zeilen des Spielfeldes von unten nach oben)
+`DIRECTION`::
+Richtung, in die der Piranha zieht. Eine von folgenden:
+* `UP`
+* `UP_RIGHT`
+* `RIGHT`
+* `DOWN_RIGHT`
+* `DOWN`
+* `DOWN_LEFT`
+* `LEFT`
+* `UP_LEFT`
 --
 [source,xml]
 ----
@@ -64,4 +73,3 @@ Damit sieht beispielsweise ein Laufzug so aus:
   </data>
 </room>
 ----
-
