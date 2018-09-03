@@ -30,9 +30,8 @@ svk@informatik.uni-kiel.de.
 ifndef::backend-pdf[]
 Die Dokumentation zu dem aktuellen Spiel, Hase und Igel, finden Sie in separaten Dokumenten:
 
-- <<spiele/hase-und-igel/regeln.adoc#,Hase und Igel Spielregeln>>
-- <<spiele/hase-und-igel/xml-dokumentation.adoc#,Hase und Igel XML Dokumentation>>
-- <<spiele/hase-und-igel/tutorial.adoc#,Hase und Igel Tutorial>>
+- <<spiele/piranhas/regeln.adoc#,Piranhas Spielregeln>>
+- <<spiele/piranhas/xml-dokumentation.adoc#,Piranhas XML Dokumentation>>
 endif::backend-pdf[]
 
 

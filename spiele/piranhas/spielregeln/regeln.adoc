@@ -11,9 +11,6 @@ Sven Koschnicke <svk@informatik.uni-kiel.de>
 
 ifndef::backend-pdf[link:regeln.pdf[PDF-Version dieses Dokumentes]]
 
-WARNING: Es handelt sich um eine vorläufige Version. Die Regeln können sich noch
-grundlegend ändern.
-
 .Beitragen
 ****
 Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
@@ -53,21 +50,21 @@ zusammenhängend gelten.
 
 == Züge
 
-Es wird abwechselnd gezogen, wobei Rot beginnt. Jede Runde macht jeder Spieler 
-einen Zug. In jedem Zug muss man einen eigenen Fisch auf einer senkrechten, 
-waagerechten oder diagonalen Linie genau so viele Felder in eine Richtung bewegen, 
-wie insgesamt Fische (beider Farben) auf dieser Linie sind. 
+Es wird abwechselnd gezogen, wobei Rot beginnt. Jede Runde macht jeder Spieler
+einen Zug. In jedem Zug muss man einen eigenen Fisch auf einer senkrechten,
+waagerechten oder diagonalen Linie genau so viele Felder in eine Richtung bewegen,
+wie insgesamt Fische (beider Farben) auf dieser Linie sind.
 
-Dabei muss man auf einem leeren Feld oder auf einem vom Gegner besetzten Feld 
-landen. Beim Zug darf man Felder mit eigenen Fischen sowie Kraken überspringen, 
-nicht aber Felder mit gegnerischen Fischen. Bei der Anzahl der zu ziehenden Felder 
-werden übersprungene Felder mitgezählt. Wenn man auf einem Feld ankommt, auf dem 
+Dabei muss man auf einem leeren Feld oder auf einem vom Gegner besetzten Feld
+landen. Beim Zug darf man Felder mit eigenen Fischen sowie Kraken überspringen,
+nicht aber Felder mit gegnerischen Fischen. Bei der Anzahl der zu ziehenden Felder
+werden übersprungene Felder mitgezählt. Wenn man auf einem Feld ankommt, auf dem
 ein gegnerischer Fisch schwimmt, wird dieser gefressen (ersatzlos vom Spielfeld
-entfernt). 
+entfernt).
 
-Zum Beispiel kann Rot im 1. Zug einen beliebigen roten Fisch zwei Felder in 
-Richtung der Spielfeldmitte bewegen, z.B. von A4 nach C4. Eine andere Möglichkeit 
-für den 1. Zug wäre, einen Fisch von A1 nach A9 zu ziehen. Man könnte auch mit dem 
+Zum Beispiel kann Rot im 1. Zug einen beliebigen roten Fisch zwei Felder in
+Richtung der Spielfeldmitte bewegen, z.B. von A4 nach C4. Eine andere Möglichkeit
+für den 1. Zug wäre, einen Fisch von A1 nach A9 zu ziehen. Man könnte auch mit dem
 Fisch auf A2 den gegnerischen Fisch auf C0 fressen.
 
 == Spielende
@@ -75,8 +72,8 @@ Fisch auf A2 den gegnerischen Fisch auf C0 fressen.
 Das Spiel endet, wenn am Ende einer Runde alle auf dem Spielfeld verbliebenen
 Fische einer Farbe zu einem einzigen zusammenhängenden Schwarm verbunden sind,
 spätestens jedoch nach 30 Runden. (Blau könnte also einen roten Schwarm noch
-in der 2. Hälfte einer Runde wieder zerstören.) 
-Das Spiel endet ebenfalls, wenn einer der Spieler keinen regulären Zug machen 
+in der 2. Hälfte einer Runde wieder zerstören.)
+Das Spiel endet ebenfalls, wenn einer der Spieler keinen regulären Zug machen
 kann. In diesem Fall hat dieser Spieler verloren.
 
 == Gewinner
