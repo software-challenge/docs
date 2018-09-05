@@ -39,6 +39,7 @@ generate)
 	done
 
 	asciid index.adoc
+	asciid getting-started.adoc
 	find spiele -path "spiele/$game/*" -name "*.adoc" | while read -r adoc; do 
 		# save the first word of the file to $word
 		read -r word _<"$adoc"; 

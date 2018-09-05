@@ -99,8 +99,8 @@ ein Objekt erzeugen:
 
 [source,java]
 ----
-Konto konto1 = new Konto(); //Erzeugt ein Konto-Objekt und speichert es in der Variablen konto1
-Konto konto2 = new Konto(); //Erzeugt noch ein Konto und speichert es in einer anderen Variablen
+Konto konto1 = new Konto(); // Erzeugt ein Konto-Objekt und speichert es in der Variablen konto1
+Konto konto2 = new Konto(); // Erzeugt noch ein Konto und speichert es in einer anderen Variablen
 ----
 
 Das `new` führt den Konstruktor aus
@@ -271,7 +271,7 @@ sein, kann man diesen als statisch deklarieren:
 [source,java]
 ----
 public class PremiumKonto extends Konto {
-     private static double zinsbetrag = 2.5d; //2.5% Zinsen
+     private static double zinsbetrag = 2.5d; // 2.5% Zinsen
 
      ...
 
@@ -291,7 +291,7 @@ den Klassennamen aufrufen darf.
 
 [source,java]
 ----
-PremiumKonto.setZinsbetrag(3d); //Zinsen auf 3% erhöhen
+PremiumKonto.setZinsbetrag(3d); // Zinsen auf 3% erhöhen
 
 PremiumKonto premium3 = new PremiumKonto();
 premium3.setZinsbetrag(3d);

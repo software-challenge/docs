@@ -59,18 +59,12 @@ spielt.
 2.  Computerspieler: Ein Computerspieler in Form eines separaten
 Programms, das beim Starten des Spiels automatisch vom Server gestartet
 wird.
-3.  Externes Programm: Ein Computerspieler in Form eines
+3.  Manuell gestarteter Client: Ein Computerspieler in Form eines
 separaten Programms, das manuell durch den Benutzer gestartet werden
 muss.
-* Programm zum starten (auswählbar für 'Computerspieler'): Bei Spielertyp
+* Wähle ein Programm zum starten (auswählbar für 'Computerspieler'): Bei Spielertyp
 ‚Computerspieler’ ist eine Programmdatei auszuwählen, deren Name dann
 hier angezeigt wird.
-* direkt aufrufen (kein Java Client): Bei Spielertyp ‚Computerspieler’ kann man durch aktivieren dieser Option
-erreichen, dass das ausgewählte Programm nicht wie ein Java Client gestartet wird (es ist also keine Jar-Datei).
-Wenn die Option aktiviert ist, wird das ausgewählte Programm direkt aufgerufen. Der Hostname und Port zum Server sowie die
-Reservierungs-Nummer für das Spiel werden als Parameter übergeben.
-Soll zum Beispiel der ruby simple-client gestartet werden, kann unter Linux-Distributionen und Mac die "main.rb" aus
-dem "example"-Ordner als Computerspieler angegeben werden; unter Windows kann die "start.bat" ausgewählt werden.
 
 Nach Eingabe der erforderlichen Werte kann das Spiel mithilfe des
 unteren Knopfs "Start!" erstellt werden.
@@ -78,56 +72,68 @@ unteren Knopfs "Start!" erstellt werden.
 [[die-spielfeldoberfläche]]
 === Die Spielfeldoberfläche
 
-.Die Spielfeldoberfläche (hier mit dem Spiel "Hase und Igel")
+.Die Spielfeldoberfläche (hier mit dem Spiel "Piranhas")
 image::spielfeldoberflaeche.jpg[]
 
 Die Spielfeldoberfläche setzt sich aus dem Spielbrett (der große
 zentrale Bereich) und den Spielsteuerelementen (unten) zusammen.
 
-Auf dem Spielbrett werden das eigentliche Spiel (hier z.B. "Hase und Igel"),
+Auf dem Spielbrett werden das eigentliche Spiel (hier z.B. "Piranhas"),
 die Züge und weitere für das Spiel wichtige Informationen
 dargestellt. Hier setzt der menschliche Spieler auch seine Züge.
 
 Die Steuerelemente unterscheiden sich je nach Spiel und Spielsituation. Unten
-rechts gibt es immer die beiden Schaltflächen "Vor" und "Zurück". Mit diesen
-kann man die Züge des Spiels durchgehen (das ist am nützlichsten, wenn zwei
-Computerspieler gegeneinander spielen und man sich die Züge genau ansehen will).
+links gibt es immer die Schaltflächen "Abspielen/Pause", "Vor" und "Zurück". Mit
+diesen kann man die Züge des Spiels durchgehen (das ist am nützlichsten, wenn
+zwei Computerspieler gegeneinander spielen und man sich die Züge genau ansehen
+will). Rechts daneben gibt es noch einen Regler für die Abspielgeschwindigkeit
+und eine Anzeige des aktuellen Zuges. Ganz rechts ist die Schaltfläche zum
+Speichern des aktuellen Spiels als Replay-Datei, die man dann später wieder
+laden und das Spiel erneut ansehen kann.
 
 Wenn ein menschlicher Spieler am Zug ist, werden ausserdem Schaltfächen zur
-Eingabe des Spielzuges angezeigt. Die allgemeinen Schaltflächen sind "Senden"
-und "Abbrechen", mit denen man den aktuell eingegebenen Spielzug abschicken oder
-löschen (um einen anderen einzugeben) kann.
+Eingabe des Spielzuges angezeigt. Diese sind von Spiel zu Spiel sehr
+unterschiedlich.
 
-Alle anderen Schaltflächen hängen von der aktuellen Spielsituation ab:
+Für das Spiel Piranhas:
 
-* Die Felder, auf die man ziehen kann, werden rot eingefärbt. Man kann auf ein
-  Feld klicken, um einen Vorwärtszug einzugeben (oder bei einem Feld hinter dem
-  Spieler einen Zurückfallen-Zug).
-* Befindet man sich zu Beginn des Zuges auf einem Karotten-Feld, werden unten
-  Schaltflächen zum Nehmen oder Abgeben von Karotten angezeigt.
-* Befindet man sich zu Beginn des Zuges auf einem Salat-Feld, wird unten eine
-  Schaltfläche zum Essen eines Salates angezeigt.
-* Zieht man auf ein Hasen-Feld, werden die Spielbaren Hasen-Joker oben beim
-  Punktestand des jeweiligen Spielers weiss eingfärbt und man kann sie durch
-  einen Klick darauf spielen. Bei dem Joker "Karotten abgeben oder nehmen" kann
-  man danach noch eine Karottenzahl wählen.
-* Gibt es keine anderen Zugmöglichkeiten, wird eine Aussetzen-Schaltfläche unten
-  angezeigt.
+* Die Fische, die man ziehen kann, werden mit einem gelben Kasten markiert. Um
+  einen Fisch zum ziehen auszuwählen, klickt man auf ihn. Der ausgewählte Fisch
+  beginnt dann zu springen.
+* Nach Auswahl eines zu ziehenden Fisches werden die möglichen Zielfelder mit
+  einem gelben Kasten markiert. Um den Fisch auf ein mögliches Feld zu ziehen,
+  klickt man es an. Der Fisch zieht auf das angeklickte Feld und der Zug ist
+  beendet.
+* Möchte man nach Auswahl eines Fisches doch einen anderen Fisch ziehen, klickt
+  man irgendwo auf dem Spielbrett, nur nicht auf eines der markierten
+  Zielfelder. Dann wird der Fisch wieder abgewählt und man kann erneut einen zu
+  ziehenden Fisch auswählen.
 
 [[spielwiederholung-laden]]
-=== Spielwiederholung laden
+=== Spielwiederholungen
 
-Spielwiederholungen werden leider noch nicht unterstützt. Wir werden diese
-Funktion so schnell wie möglich nachreichen!
+Spielwiederholungen oder Replay-Dateien sind aufgezeichnete frühere Spiele, die
+man sich beliebig oft wieder ansehen kann, um beispielsweise einen Fehler des
+eigenen Spielers zu analysieren oder eine Strategie zu verbessern.
+
+Um das aktuelle Spiel als Spielwiederholung zu speichern, klickt man auf das
+Icon ganz rechts unten im Spielbereich. Dann kann man einen Dateinamen und
+Speicherort festlegen.
+
+Um eine gespeicherte Spielwiederholung zu laden verwendet man den Eintrag
+"Replay laden" in der linken Leiste. Nachdem man eine Datei ausgewählt hat, kann
+man das gespeicherte Spiel abspielen oder Schritt für Schritt durchgehen.
 
 [[testdurchläufe]]
 === Testdurchläufe
 
-Für die Testdurchläufe wird ein Testserver und TestClient zur Verfügung gestellt. 
-Wie man diese verwendet, können Sie weiter unten, unter den Überschrift <<automatische-spiele, Automatische Spiele: Der Testserver>> und <<tests-ohne-gui, Massentests>> nachlesen.
-
-Es ist jedoch möglich, die Testdurchläufe ohne die grafische Oberfläche zu
-starten. Dies ist im Abschnitt <<tests-ohne-gui>> beschrieben.
+Wenn man einen grundsätzlich funkionierenden Computerspieler programmiert hat,
+ist es sinnvoll, diesen mit vielen verschiedenen Spielsituationen zu
+konfrontieren. Dadurch lassen sich Fehler entdecken und die Spielstärke des
+Computerspielers beurteilen. Für solche Testdurchläufe wird ein Testserver und
+TestClient zur Verfügung gestellt. Wie man diese verwendet, ist weiter unten
+unter den Überschrift <<automatische-spiele, Automatische Spiele: Der
+Testserver>> und <<tests-ohne-gui, Massentests>> beschrieben.
 
 [[spielsituation-nachstellen]]
 === Spielsituation nachstellen
@@ -176,7 +182,7 @@ Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter
 Wenn Sie automatisiert Spiele mit Ihrem Computerspieler spielen wollen, um
 bestimmte Verhaltensweisen bei der Weiterentwicklung regelmäßig zu testen,
 können Sie dafür einen speziellen Server ohne grafische Oberfläche verwenden,
-den sogenannten Testserver. Hier ist zu beachten, dass der Testserver auf dem Port 13051 
+den sogenannten Testserver. Hier ist zu beachten, dass der Testserver auf dem Port 13051
 gestartet wird und nicht, wie im normalen Spiel auf Port 13050.
 
 Gehen Sie dazu wie folgt vor:
@@ -189,7 +195,7 @@ entpackten Archives.
 . Starten Sie den Testserver auf dem Port 13051 mit folgendem Befehl:
 [source,sh]
   java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051
-. Starten Sie Ihren Computerspieler und einen zweiten Computerspieler manuell auf dem Port 13051 (im SimpleClient geht dies mit der Option --port 13051) 
+. Starten Sie Ihren Computerspieler und einen zweiten Computerspieler manuell auf dem Port 13051 (im SimpleClient geht dies mit der Option --port 13051)
 in weiteren Kommandozeilenumgebungen. Die Computerspieler verbinden sich
 automatisch zum Testserver und es wird ein Spiel gespielt. Danach sollten sich
 die Computerspieler automatisch beenden.

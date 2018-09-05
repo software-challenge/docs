@@ -4,7 +4,7 @@
 :source-highlighter: pygments
 :icons: font
 
-= Software Challenge Endbenutzer-Dokumentation
+= Software-Challenge Endbenutzer-Dokumentation
 Sven Koschnicke <svk@informatik.uni-kiel.de>
 2018-09-05
 
@@ -16,19 +16,10 @@ Ablauf des Wettbewerbes benötigt wird.
 
 ifndef::backend-pdf[link:index.pdf[PDF-Version dieses Dokumentes]]
 
-Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
-Dokumentation kann
-https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs[direkt auf
-GitHub editiert] werden, einzige Voraussetzung ist eine kostenlose
-Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
-auswählen (ein guter Startpunkt ist die Datei
-https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc[index.adoc]
-welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
-auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
-svk@informatik.uni-kiel.de.
+include::allgemein/beitragen.adoc[]
 
 ifndef::backend-pdf[]
-Die Dokumentation zu dem aktuellen Spiel, Hase und Igel, finden Sie in separaten Dokumenten:
+Die Dokumentation zu dem aktuellen Spiel, Piranhas, finden Sie in separaten Dokumenten:
 
 - <<spiele/piranhas/regeln.adoc#,Piranhas Spielregeln>>
 - <<spiele/piranhas/xml-dokumentation.adoc#,Piranhas XML Dokumentation>>

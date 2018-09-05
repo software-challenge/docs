@@ -1,0 +1,25 @@
+:imagesdir: images
+:source-highlighter: pygments
+:icons: font
+
+= Software-Challenge Einstieg
+Sven Koschnicke <svk@informatik.uni-kiel.de>
+2018-09-05
+
+include::allgemein/das-spiel-kennenlernen.adoc[]
+
+include::entwicklung/einrichtung-der-entwicklungsumgebung.adoc[]
+
+include::entwicklung/bedienung-von-eclipse.adoc[]
+
+include::entwicklung/erste-schritte.adoc[]
+
+include::entwicklung/einfuehrung-oop.adoc[]
+
+include::software/client.adoc[]
+
+include::software/server.adoc[]
+
+include::entwicklung/simpleclient-erweitern.adoc[]
+
+include::entwicklung/eine-idee-implementieren.adoc[]
