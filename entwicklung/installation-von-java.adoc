@@ -17,76 +17,20 @@ schreiben, muss das JDK auf jeden Fall installiert sein. Da im JDK auch
 das JRE integriert ist, kann man aber immer ohne Bedenken gleich zum JDK
 greifen.
 
-[[installation-unter-windows]]
-=== Installation unter Windows
-
-[[beschaffung-der-software]]
-==== Beschaffung der Software
+=== Installation
 
 Das JDK gibt es auf den Seiten von Oracle
-(http://www.oracle.com/technetwork/java/javase/downloads/index.html).
-Dort einfach auf "Download JDK" klicken und anschließend "Download"
-auswählen. Auf der erscheinenden Seite einfach die richtige
-Windows-Version auswählen und mit einem Klick auf "Continue" gelangt man
-zur entsprechenden Datei.
-
-[[installation]]
-==== Installation
-
-Wenn der Download abgeschlossen ist, kann man die
-Installationsassistenten mit einem Doppelklick auf die Datei starten.
-Der Vorgang gestaltet sich derart einfach, dass man lediglich hin und
-wieder auf "Next" klicken muss, der Rest läuft automatisch ab. Nachdem
-man den Installationsdialog mit einem Klick auf "Finish" geschlossen
-hat, ist Java einsatzbereit.
-
-[[installation-unter-mac-os-x]]
-=== Installation unter Mac OS X
-
-.Das Programm "Java-Einstellungen" auf Mac OS X
-image::java-einstellungen_mac.jpg[]
-
-Da bei Mac OS X Das JDK schon
-mitgeliefert wird, braucht man sich um die eigentliche Installation
-nicht mehr zu kümmern. Neue Java-Versionen werden immer mit dem
-Software-Update des Betriebssystems automatisch installiert.
-
-Es kann jedoch nötig sein, dem Betriebssystem die richtige Java-Version
-mitzuteilen: Im Dock gibt es im Menü "Programme" → "Dienstprogramme" das
-Tool Java-Einstellungen. Dort kann man in den Boxen die Reihenfolge der
-Einträge per Drag and Drop verändern. Hier muss mindestens Java SE 6 als
-oberster Eintrag stehen, damit alles läuft.
-
-[[installation-unter-linux]]
-=== Installation unter Linux
-
-Die große Menge an Linux-Distributionen macht es unmöglich eine
-Anleitung zu schreiben, die auf jeder Linux-Maschine gültig ist. Deshalb
-gibt es an dieser Stelle nur ein Paar Tipps zur Installation.
+http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html#javasejdk
+Dort das aktuelle "JDK" herunterladen. Es gibt auch Installationsanleitungen auf der Seite.
 
 [[installation-über-paketquellen]]
-==== Installation über Paketquellen
+==== Installation über Paketquellen (Linux)
 
 Meistens ist das Java JDK in den Paketquellen der Linux-Distributionen
 enthalten, so dass man es einfach über den Paketmanager installieren
 kann. Sofern möglich, wird diese Art der Installation empfohlen, da es
 oft noch Paketabhängigkeiten gibt, die dann automatisch mitinstalliert
 werden.
-
-[[manuelle-installation]]
-==== Manuelle Installation
-
-Sollte eine Installation über die Paketquellen nicht möglich sein, kann
-man sich das JDK unter
-http://www.oracle.com/technetwork/java/javase/downloads/index.html
-herunterladen. Hierzu einfach auf "Download JDK" → "Download" klicken
-und die gewünschte Linux-Variante auswählen. Mit einem Klick auf
-Continue gelangt man zu der gewünschten Datei, die heruntergeladen
-werden muss.
-
-Nachdem der Download abgeschlossen ist, muss man der Datei eventuell
-noch Ausführungsrechte geben. Danach wird man vom Assistenten durch die
-Installation begleitet.
 
 [[weiterführende-informationen]]
 === Weiterführende Informationen
@@ -95,4 +39,3 @@ Installation begleitet.
 * http://wiki.ubuntuusers.de/Java/Installation[Installation von Java auf
 Ubuntu Linux] (Für andere Distributionen gibt es meist auch Wikis oder
 Foren mit den entsprechenden Anleitungen)
-

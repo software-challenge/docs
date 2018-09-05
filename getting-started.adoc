@@ -8,6 +8,8 @@ Sven Koschnicke <svk@informatik.uni-kiel.de>
 
 include::allgemein/das-spiel-kennenlernen.adoc[]
 
+include::entwicklung/installation-von-java.adoc[]
+
 include::entwicklung/einrichtung-der-entwicklungsumgebung.adoc[]
 
 include::entwicklung/bedienung-von-eclipse.adoc[]
