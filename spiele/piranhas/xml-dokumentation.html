@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<meta name="author" content="Sven Koschnicke">
-<title>Dokumentation Piranhas Software Challenge 2019</title>
+<meta name="author" content="Sören Domrös">
+<title>Software Challenge XML-Dokumentation Piranhas</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -505,166 +505,60 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Dokumentation Piranhas Software Challenge 2019</h1>
+<h1>Software Challenge XML-Dokumentation Piranhas</h1>
 <div class="details">
-<span id="author" class="author">Sven Koschnicke</span><br>
-<span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
+<span id="author" class="author">Sören Domrös</span><br>
+<span id="email" class="email"><a href="mailto:stu114053@mail.uni-kiel.de">stu114053@mail.uni-kiel.de</a></span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhalt</div>
 <ul class="sectlevel1">
-<li><a href="#_spielregeln_piranhas_software_challenge_2019">1. Spielregeln Piranhas: Software Challenge 2019</a>
+<li><a href="#_einleitung">1. Einleitung</a>
 <ul class="sectlevel2">
-<li><a href="#_anfangsaufstellung">1.1. Anfangsaufstellung</a></li>
-<li><a href="#_ziel_des_spieles">1.2. Ziel des Spieles</a></li>
-<li><a href="#_züge">1.3. Züge</a></li>
-<li><a href="#_spielende">1.4. Spielende</a></li>
-<li><a href="#_gewinner">1.5. Gewinner</a></li>
+<li><a href="#an-wen-richtet-sich">1.1. An wen richtet sich dieses Dokument?</a></li>
+<li><a href="#hinweise">1.2. Hinweise</a></li>
 </ul>
 </li>
-<li><a href="#_software_challenge_xml_dokumentation_piranhas">2. Software Challenge XML-Dokumentation Piranhas</a>
+<li><a href="#_spiel_betreten">2. Spiel betreten</a>
 <ul class="sectlevel2">
-<li><a href="#_einleitung">2.1. Einleitung</a></li>
-<li><a href="#_spiel_betreten">2.2. Spiel betreten</a></li>
-<li><a href="#_züge_senden">2.3. Züge senden</a></li>
-<li><a href="#_spielstatus">2.4. Spielstatus</a></li>
-<li><a href="#zug-anforderung">2.5. Zug-Anforderung</a></li>
-<li><a href="#_fehler">2.6. Fehler</a></li>
-<li><a href="#_spiel_verlassen">2.7. Spiel verlassen</a></li>
-<li><a href="#spielende">2.8. Spielergebnis</a></li>
-<li><a href="#_spielverlauf">2.9. Spielverlauf</a></li>
+<li><a href="#ohne-reservierungscode">2.1. Ohne Reservierungscode</a></li>
+<li><a href="#mit-reservierungscode">2.2. Mit Reservierungscode</a></li>
+</ul>
+</li>
+<li><a href="#_züge_senden">3. Züge senden</a>
+<ul class="sectlevel2">
+<li><a href="#der-move">3.1. Der Move</a></li>
+<li><a href="#zug">3.2. ZUG</a></li>
+<li><a href="#debughints">3.3. Debughints</a></li>
+</ul>
+</li>
+<li><a href="#_spielstatus">4. Spielstatus</a>
+<ul class="sectlevel2">
+<li><a href="#memento">4.1. memento</a></li>
+<li><a href="#status">4.2. Status</a></li>
+<li><a href="#spieler">4.3. Spieler</a></li>
+<li><a href="#spielbrett">4.4. Spielbrett</a></li>
+<li><a href="#spielfeld">4.5. Spielfeld</a></li>
+<li><a href="#letzter-zug">4.6. Letzter Zug</a></li>
+</ul>
+</li>
+<li><a href="#zug-anforderung">5. Zug-Anforderung</a></li>
+<li><a href="#_fehler">6. Fehler</a></li>
+<li><a href="#_spiel_verlassen">7. Spiel verlassen</a></li>
+<li><a href="#spielende">8. Spielergebnis</a></li>
+<li><a href="#_spielverlauf">9. Spielverlauf</a>
+<ul class="sectlevel2">
+<li><a href="#_variante_1_adminclient_mit_reservierungscode">9.1. Variante 1 (AdminClient Mit Reservierungscode)</a></li>
+<li><a href="#_variante_2_eventuell_ohne_adminclient_ohne_reservierungscode">9.2. Variante 2 ((eventuell) ohne AdminClient Ohne Reservierungscode)</a></li>
+<li><a href="#_weiterer_spielverlauf">9.3. Weiterer Spielverlauf</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_spielregeln_piranhas_software_challenge_2019">1. Spielregeln Piranhas: Software Challenge 2019</h2>
+<div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>Sven Koschnicke &lt;<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>&gt;</p>
-</div>
-<div class="paragraph">
-<p><a href="regeln.pdf">PDF-Version dieses Dokumentes</a></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="title">Beitragen</div>
-<div class="paragraph">
-<p>Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
-Dokumentation kann
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs">direkt auf
-GitHub editiert</a> werden, einzige Voraussetzung ist eine kostenlose
-Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
-auswählen (ein guter Startpunkt ist die Datei
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc">index.adoc</a>
-welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
-auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
-<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Das Spielfeld ist ein Aquarium (10x10 Schachbrett mit Spalten A-J und Zeilen
-0-9), ein Spieler spielt die roten, der andere die blauen Fische.</p>
-</div>
-<div class="sect2">
-<h3 id="_anfangsaufstellung">1.1. Anfangsaufstellung</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>8 rote Fische auf den (Schachbrett-)Feldern A1-A8</p>
-</li>
-<li>
-<p>8 rote Fische auf den Feldern J1-J8</p>
-</li>
-<li>
-<p>8 blaue Fische auf den Feldern B0-I0</p>
-</li>
-<li>
-<p>8 blaue Fische auf den Feldern B9-I9</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Auf dem Spielfeld gibt es im inneren 6x6-Bereich zwei zufällig generierte
-Kraken-Felder, die zwar durchschwommen werden können, auf denen jedoch kein Zug
-enden darf. Diese Felder behindern also die Schwarmbildung. Die beiden
-zufällig generierten Felder befinden sich weder in derselben Zeile noch in
-derselben Spalte, noch in derselben Diagonale.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_ziel_des_spieles">1.2. Ziel des Spieles</h3>
-<div class="paragraph">
-<p>Alle Fische der eigenen Farbe sollen zu einem Schwarm verbunden werden, sie
-sollen also auf einem zusammenhängenden Gebiet auf dem Spielfeld stehen, wobei
-senkrecht, waagerecht und diagonal nebeneinanderliegende Felder als
-zusammenhängend gelten.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_züge">1.3. Züge</h3>
-<div class="paragraph">
-<p>Es wird abwechselnd gezogen, wobei Rot beginnt. Jede Runde macht jeder Spieler
-einen Zug. In jedem Zug muss man einen eigenen Fisch auf einer senkrechten,
-waagerechten oder diagonalen Linie genau so viele Felder in eine Richtung bewegen,
-wie insgesamt Fische (beider Farben) auf dieser Linie sind.</p>
-</div>
-<div class="paragraph">
-<p>Dabei muss man auf einem leeren Feld oder auf einem vom Gegner besetzten Feld
-landen. Beim Zug darf man Felder mit eigenen Fischen sowie Kraken überspringen,
-nicht aber Felder mit gegnerischen Fischen. Bei der Anzahl der zu ziehenden Felder
-werden übersprungene Felder mitgezählt. Wenn man auf einem Feld ankommt, auf dem
-ein gegnerischer Fisch schwimmt, wird dieser gefressen (ersatzlos vom Spielfeld
-entfernt).</p>
-</div>
-<div class="paragraph">
-<p>Zum Beispiel kann Rot im 1. Zug einen beliebigen roten Fisch zwei Felder in
-Richtung der Spielfeldmitte bewegen, z.B. von A4 nach C4. Eine andere Möglichkeit
-für den 1. Zug wäre, einen Fisch von A1 nach A9 zu ziehen. Man könnte auch mit dem
-Fisch auf A2 den gegnerischen Fisch auf C0 fressen.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_spielende">1.4. Spielende</h3>
-<div class="paragraph">
-<p>Das Spiel endet, wenn am Ende einer Runde alle auf dem Spielfeld verbliebenen
-Fische einer Farbe zu einem einzigen zusammenhängenden Schwarm verbunden sind,
-spätestens jedoch nach 30 Runden. (Blau könnte also einen roten Schwarm noch
-in der 2. Hälfte einer Runde wieder zerstören.)
-Das Spiel endet ebenfalls, wenn einer der Spieler keinen regulären Zug machen
-kann. In diesem Fall hat dieser Spieler verloren.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_gewinner">1.5. Gewinner</h3>
-<div class="paragraph">
-<p>Falls beim Spielende die Fische nur eines Spielers zu einem einzigen
-zusammenhängenden Schwarm verbunden sind, hat dieser Spieler gewonnen;
-anderenfalls derjenige Spieler mit dem größeren Schwarm. Falls nach den
-vorgenannten Kriterien kein Gewinner ermittelt werden kann, endet das Spiel
-unentschieden.</p>
-</div>
-<div class="paragraph">
-<p>Nachrangiges Kriterium für das Ranking im Wettkampfsystem:
-Anzahl der Fische im größten Schwarm des Spielers.</p>
-</div>
-<div class="paragraph">
-<p>Beim Final Eight gibt es kein nachrangiges Kriterium. Beim Final Eight gewinnt
-derjenige Spieler eine Begegnung, der nach einer geraden Anzahl von Spielen
-(mindestens 6) mehr Spiele als der Gegner gewonnen hat.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_software_challenge_xml_dokumentation_piranhas">2. Software Challenge XML-Dokumentation Piranhas</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Sören Domrös &lt;<a href="mailto:stu114053@mail.uni-kiel.de">stu114053@mail.uni-kiel.de</a>&gt;</p>
-</div>
 <div class="paragraph">
 <p>Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.</p>
 </div>
@@ -683,8 +577,11 @@ welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 <a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
 </div>
-<div class="sect2">
-<h3 id="_einleitung">2.1. Einleitung</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_einleitung">1. Einleitung</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Wie in den letzten Jahren wird zur Client-Server Kommunikation ein XML-Protokoll
 genutzt.
@@ -693,8 +590,8 @@ komplett eigener Client geschrieben werden kann. Es wird hier nicht die
 vollständige Kommunikation dokumentiert bzw. definiert, dennoch alles, womit ein
 Client umgehen können muss, um spielfähig zu sein.</p>
 </div>
-<div class="sect3">
-<h4 id="an-wen-richtet-sich">2.1.1. An wen richtet sich dieses Dokument?</h4>
+<div class="sect2">
+<h3 id="an-wen-richtet-sich">1.1. An wen richtet sich dieses Dokument?</h3>
 <div class="paragraph">
 <p>Die Kommunikation mit dem Spielserver ist für diejenigen, die aufbauend auf dem
 Simpleclient programmieren, unwichtig. Dort steht bereits ein funktionierender
@@ -703,8 +600,8 @@ komplett eigenen Client entwerfen will, beispielsweise um die Programmiersprache
 frei wählen zu können, benötigt die Definitionen.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="hinweise">2.1.2. Hinweise</h4>
+<div class="sect2">
+<h3 id="hinweise">1.2. Hinweise</h3>
 <div class="paragraph">
 <p>Falls Sie beabsichtigen sollten, diese Kommunikationsschnittstelle zu
 realisieren, sei darauf hingewiesen, dass es im Verlauf des Wettbewerbes möglich
@@ -719,8 +616,10 @@ einem newline abgeschlossen.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_spiel_betreten">2.2. Spiel betreten</h3>
+</div>
+<div class="sect1">
+<h2 id="_spiel_betreten">2. Spiel betreten</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Wenn begonnen wird mit dem Server zu kommunizieren, muss zuallererst</p>
 </div>
@@ -732,8 +631,8 @@ einem newline abgeschlossen.</p>
 <div class="paragraph">
 <p>gesendet werden, um die Kommunikation zu beginnen.</p>
 </div>
-<div class="sect3">
-<h4 id="ohne-reservierungscode">2.2.1. Ohne Reservierungscode</h4>
+<div class="sect2">
+<h3 id="ohne-reservierungscode">2.1. Ohne Reservierungscode</h3>
 <div class="paragraph">
 <p>Betritt ein beliebiges offenes Spiel:</p>
 </div>
@@ -786,13 +685,13 @@ Der Server antwortet darauf mit:</p>
 <p>Falls bereits ein GameRoom offen war, ist dementsprechend existing true.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="mit-reservierungscode">2.2.2. Mit Reservierungscode</h4>
+<div class="sect2">
+<h3 id="mit-reservierungscode">2.2. Mit Reservierungscode</h3>
 <div class="paragraph">
 <p>Ist ein Reservierungscode gegeben, so kann man den durch den Code gegebenen Platz betreten.</p>
 </div>
-<div class="sect4">
-<h5 id="join-reserved">Join mit RC</h5>
+<div class="sect3">
+<h4 id="join-reserved">2.2.1. Join mit RC</h4>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -810,8 +709,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="welcome-message">Welcome Message</h5>
+<div class="sect3">
+<h4 id="welcome-message">2.2.2. Welcome Message</h4>
 <div class="paragraph">
 <p>Der Server antwortet darauf nur, wenn der zweite Client ebenfalls verbunden ist:</p>
 </div>
@@ -848,15 +747,17 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_züge_senden">3. Züge senden</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_züge_senden">2.3. Züge senden</h3>
-<div class="sect3">
-<h4 id="der-move">2.3.1. Der Move</h4>
+<h3 id="der-move">3.1. Der Move</h3>
 <div class="paragraph">
 <p>Der Move ist die Antwort auf den MoveRequest des Servers.</p>
 </div>
-<div class="sect4">
-<h5 id="move-request">MoveRequest</h5>
+<div class="sect3">
+<h4 id="move-request">3.1.1. MoveRequest</h4>
 <div class="openblock">
 <div class="content">
 <div class="dlist">
@@ -877,8 +778,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="senden">Senden</h5>
+<div class="sect3">
+<h4 id="senden">3.1.2. Senden</h4>
 <div class="paragraph">
 <p>Der Move ist der allgemeine Zug, der in verschiedenen Varianten gesendet werden kann.</p>
 </div>
@@ -907,8 +808,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="zug">2.3.2. ZUG</h4>
+<div class="sect2">
+<h3 id="zug">3.2. ZUG</h3>
 <div class="openblock">
 <div class="content">
 <div class="dlist">
@@ -963,8 +864,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="debughints">2.3.3. Debughints</h4>
+<div class="sect2">
+<h3 id="debughints">3.3. Debughints</h3>
 <div class="paragraph">
 <p>Zügen können Debug-Informationen beigefügt werden:</p>
 </div>
@@ -988,13 +889,15 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_spielstatus">2.4. Spielstatus</h3>
+</div>
+<div class="sect1">
+<h2 id="_spielstatus">4. Spielstatus</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die Clients gesendet wird. Das Spielstatus-Tag ist dabei noch in einem <em>data</em>-Tag der Klasse <em>memento</em> gewrappt:</p>
 </div>
-<div class="sect3">
-<h4 id="memento">2.4.1. memento</h4>
+<div class="sect2">
+<h3 id="memento">4.1. memento</h3>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -1019,8 +922,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="status">2.4.2. Status</h4>
+<div class="sect2">
+<h3 id="status">4.2. Status</h3>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -1062,8 +965,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="spieler">2.4.3. Spieler</h4>
+<div class="sect2">
+<h3 id="spieler">4.3. Spieler</h3>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -1081,8 +984,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="spielbrett">2.4.4. Spielbrett</h4>
+<div class="sect2">
+<h3 id="spielbrett">4.4. Spielbrett</h3>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -1106,8 +1009,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="spielfeld">2.4.5. Spielfeld</h4>
+<div class="sect2">
+<h3 id="spielfeld">4.5. Spielfeld</h3>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
@@ -1131,8 +1034,8 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="letzter-zug">2.4.6. Letzter Zug</h4>
+<div class="sect2">
+<h3 id="letzter-zug">4.6. Letzter Zug</h3>
 <div class="paragraph">
 <p>Der letzte Zug ist ein Move (siehe hierzu <a href="#zug">ZUG</a>).</p>
 </div>
@@ -1145,8 +1048,10 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="zug-anforderung">2.5. Zug-Anforderung</h3>
+</div>
+<div class="sect1">
+<h2 id="zug-anforderung">5. Zug-Anforderung</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Eine einfache Nachricht fordert zum Zug auf:</p>
 </div>
@@ -1158,8 +1063,10 @@ Der Server antwortet darauf mit:</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_fehler">2.6. Fehler</h3>
+</div>
+<div class="sect1">
+<h2 id="_fehler">6. Fehler</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Ein &#8220;spielfähiger&#8221; Client muss nicht mit Fehlern umgehen können.
 Fehlerhafte Züge beispielsweise resultieren in einem vorzeitigen Ende des
@@ -1188,8 +1095,10 @@ Spieles, das im nächsten gesendeten Gamestate erkannt werden kann (siehe <a hre
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_spiel_verlassen">2.7. Spiel verlassen</h3>
+</div>
+<div class="sect1">
+<h2 id="_spiel_verlassen">7. Spiel verlassen</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Wenn ein Client den Raum verlässt, bekommen die anderen Clients eine entsprechende Meldung vom Server.</p>
 </div>
@@ -1210,8 +1119,10 @@ Spieles, das im nächsten gesendeten Gamestate erkannt werden kann (siehe <a hre
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="spielende">2.8. Spielergebnis</h3>
+</div>
+<div class="sect1">
+<h2 id="spielende">8. Spielergebnis</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Zum Spielende enthält der Spieler das Ergebnis:</p>
 </div>
@@ -1272,16 +1183,18 @@ Spieles, das im nächsten gesendeten Gamestate erkannt werden kann (siehe <a hre
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_spielverlauf">2.9. Spielverlauf</h3>
+</div>
+<div class="sect1">
+<h2 id="_spielverlauf">9. Spielverlauf</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Der Server startet (StandardIp: localhost 13050).</p>
 </div>
 <div class="paragraph">
 <p>Nun gibt es zwei Varianten ein Spiel zu starten, eine durch einen Administratorclient die andere durch hinzufügen der Spieler zu einen Spieltyp:</p>
 </div>
-<div class="sect3">
-<h4 id="_variante_1_adminclient_mit_reservierungscode">2.9.1. Variante 1 (AdminClient <a href="#mit-reservierungscode">Mit Reservierungscode</a>)</h4>
+<div class="sect2">
+<h3 id="_variante_1_adminclient_mit_reservierungscode">9.1. Variante 1 (AdminClient <a href="#mit-reservierungscode">Mit Reservierungscode</a>)</h3>
 <div class="paragraph">
 <p>Ein Client registriert sich als Administrator mit dem in server.properties festgelegten Passwort p:</p>
 </div>
@@ -1338,8 +1251,8 @@ Dadurch wird das derzeitge Spielfeld (<a href="#memento">memento</a>) ebenfalls 
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_variante_2_eventuell_ohne_adminclient_ohne_reservierungscode">2.9.2. Variante 2 ((eventuell) ohne AdminClient <a href="#ohne-reservierungscode">Ohne Reservierungscode</a>)</h4>
+<div class="sect2">
+<h3 id="_variante_2_eventuell_ohne_adminclient_ohne_reservierungscode">9.2. Variante 2 ((eventuell) ohne AdminClient <a href="#ohne-reservierungscode">Ohne Reservierungscode</a>)</h3>
 <div class="paragraph">
 <p>Die Clients wurden auf dem Serverport (Standard: localhost 13050) gestartet.</p>
 </div>
@@ -1362,8 +1275,8 @@ Dadurch wird das derzeitge Spielfeld (<a href="#memento">memento</a>) ebenfalls 
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_weiterer_spielverlauf">2.9.3. Weiterer Spielverlauf</h4>
+<div class="sect2">
+<h3 id="_weiterer_spielverlauf">9.3. Weiterer Spielverlauf</h3>
 <div class="paragraph">
 <p>Der Server antwortet jeweils mit der WelcomeMessage (<a href="#welcome-message">Welcome Message</a>) und dem ersten GameState (<a href="#memento">memento</a>) sobald beide Spieler verbunden sind.</p>
 </div>
@@ -1439,7 +1352,6 @@ Die letzte Nachricht des Servers endet mit:</p>
 </div>
 <div class="paragraph">
 <p>Danach wird die Verbindung geschlossen.</p>
-</div>
 </div>
 </div>
 </div>
