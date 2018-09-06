@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
 <meta name="author" content="Sven Koschnicke">
-<title>Software Challenge Endbenutzer-Dokumentation</title>
+<title>Software-Challenge Endbenutzer-Dokumentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -505,11 +505,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right">
 <div id="header">
-<h1>Software Challenge Endbenutzer-Dokumentation</h1>
+<h1>Software-Challenge Endbenutzer-Dokumentation</h1>
 <div class="details">
 <span id="author" class="author">Sven Koschnicke</span><br>
 <span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
-<span id="revdate">2018-09-05</span>
+<span id="revdate">2018-09-06</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhalt</div>
@@ -526,7 +526,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#die-programmoberfläche">Die Programmoberfläche</a></li>
 <li><a href="#ein-neues-spiel-erstellen">Ein neues Spiel erstellen</a></li>
 <li><a href="#die-spielfeldoberfläche">Die Spielfeldoberfläche</a></li>
-<li><a href="#spielwiederholung-laden">Spielwiederholung laden</a></li>
+<li><a href="#spielwiederholung-laden">Spielwiederholungen</a></li>
 <li><a href="#testdurchläufe">Testdurchläufe</a></li>
 <li><a href="#spielsituation-nachstellen">Spielsituation nachstellen</a></li>
 <li><a href="#replay-ohne-gui-speichern">Replay mit Server ohne graphische Oberfläche speichern</a></li>
@@ -548,9 +548,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#installation-java">Installation von Java</a>
 <ul class="sectlevel2">
 <li><a href="#grundsätzliches">Grundsätzliches</a></li>
-<li><a href="#installation-unter-windows">Installation unter Windows</a></li>
-<li><a href="#installation-unter-mac-os-x">Installation unter Mac OS X</a></li>
-<li><a href="#installation-unter-linux">Installation unter Linux</a></li>
+<li><a href="#_installation">Installation</a></li>
 <li><a href="#weiterführende-informationen">Weiterführende Informationen</a></li>
 </ul>
 </li>
@@ -558,7 +556,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#simpleclient-beschaffen">SimpleClient beschaffen</a></li>
 <li><a href="#einrichtung-von-eclipse">Einrichtung von Eclipse</a></li>
-<li><a href="#einrichtung-von-netbeans">Einrichtung von NetBeans</a></li>
 <li><a href="#weiterführende-links">Weiterführende Links</a></li>
 </ul>
 </li>
@@ -582,7 +579,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_andere_programmiersprache">Andere Programmiersprache</a></li>
 </ul>
 </li>
-<li><a href="#_die_ersten_schritte">Die ersten Schritte</a>
+<li><a href="#_die_ersten_programmier_schritte">Die ersten (Programmier-)Schritte</a>
 <ul class="sectlevel2">
 <li><a href="#_einführung_in_die_objektorientierte_programmierung">Einführung in die objektorientierte Programmierung</a></li>
 <li><a href="#_der_saubere_programmierstil">Der saubere Programmierstil</a></li>
@@ -631,6 +628,9 @@ Ablauf des Wettbewerbes benötigt wird.</p>
 <div class="paragraph">
 <p><a href="index.pdf">PDF-Version dieses Dokumentes</a></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Beitragen</div>
 <div class="paragraph">
 <p>Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
 Dokumentation kann
@@ -643,8 +643,10 @@ welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 <a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
 </div>
+</div>
+</div>
 <div class="paragraph">
-<p>Die Dokumentation zu dem aktuellen Spiel, Hase und Igel, finden Sie in separaten Dokumenten:</p>
+<p>Die Dokumentation zu dem aktuellen Spiel, Piranhas, finden Sie in separaten Dokumenten:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -838,7 +840,7 @@ Programms, das beim Starten des Spiels automatisch vom Server gestartet
 wird.</p>
 </li>
 <li>
-<p>Externes Programm: Ein Computerspieler in Form eines
+<p>Manuell gestarteter Client: Ein Computerspieler in Form eines
 separaten Programms, das manuell durch den Benutzer gestartet werden
 muss.</p>
 </li>
@@ -846,17 +848,9 @@ muss.</p>
 </div>
 </li>
 <li>
-<p>Programm zum starten (auswählbar für 'Computerspieler'): Bei Spielertyp
+<p>Wähle ein Programm zum starten (auswählbar für 'Computerspieler'): Bei Spielertyp
 ‚Computerspieler’ ist eine Programmdatei auszuwählen, deren Name dann
 hier angezeigt wird.</p>
-</li>
-<li>
-<p>direkt aufrufen (kein Java Client): Bei Spielertyp ‚Computerspieler’ kann man durch aktivieren dieser Option
-erreichen, dass das ausgewählte Programm nicht wie ein Java Client gestartet wird (es ist also keine Jar-Datei).
-Wenn die Option aktiviert ist, wird das ausgewählte Programm direkt aufgerufen. Der Hostname und Port zum Server sowie die
-Reservierungs-Nummer für das Spiel werden als Parameter übergeben.
-Soll zum Beispiel der ruby simple-client gestartet werden, kann unter Linux-Distributionen und Mac die "main.rb" aus
-dem "example"-Ordner als Computerspieler angegeben werden; unter Windows kann die "start.bat" ausgewählt werden.</p>
 </li>
 </ul>
 </div>
@@ -871,76 +865,85 @@ unteren Knopfs "Start!" erstellt werden.</p>
 <div class="content">
 <img src="images/spielfeldoberflaeche.jpg" alt="spielfeldoberflaeche">
 </div>
-<div class="title">Figure 3. Die Spielfeldoberfläche (hier mit dem Spiel "Hase und Igel")</div>
+<div class="title">Figure 3. Die Spielfeldoberfläche (hier mit dem Spiel "Piranhas")</div>
 </div>
 <div class="paragraph">
 <p>Die Spielfeldoberfläche setzt sich aus dem Spielbrett (der große
 zentrale Bereich) und den Spielsteuerelementen (unten) zusammen.</p>
 </div>
 <div class="paragraph">
-<p>Auf dem Spielbrett werden das eigentliche Spiel (hier z.B. "Hase und Igel"),
+<p>Auf dem Spielbrett werden das eigentliche Spiel (hier z.B. "Piranhas"),
 die Züge und weitere für das Spiel wichtige Informationen
 dargestellt. Hier setzt der menschliche Spieler auch seine Züge.</p>
 </div>
 <div class="paragraph">
 <p>Die Steuerelemente unterscheiden sich je nach Spiel und Spielsituation. Unten
-rechts gibt es immer die beiden Schaltflächen "Vor" und "Zurück". Mit diesen
-kann man die Züge des Spiels durchgehen (das ist am nützlichsten, wenn zwei
-Computerspieler gegeneinander spielen und man sich die Züge genau ansehen will).</p>
+links gibt es immer die Schaltflächen "Abspielen/Pause", "Vor" und "Zurück". Mit
+diesen kann man die Züge des Spiels durchgehen (das ist am nützlichsten, wenn
+zwei Computerspieler gegeneinander spielen und man sich die Züge genau ansehen
+will). Rechts daneben gibt es noch einen Regler für die Abspielgeschwindigkeit
+und eine Anzeige des aktuellen Zuges. Ganz rechts ist die Schaltfläche zum
+Speichern des aktuellen Spiels als Replay-Datei, die man dann später wieder
+laden und das Spiel erneut ansehen kann.</p>
 </div>
 <div class="paragraph">
 <p>Wenn ein menschlicher Spieler am Zug ist, werden ausserdem Schaltfächen zur
-Eingabe des Spielzuges angezeigt. Die allgemeinen Schaltflächen sind "Senden"
-und "Abbrechen", mit denen man den aktuell eingegebenen Spielzug abschicken oder
-löschen (um einen anderen einzugeben) kann.</p>
+Eingabe des Spielzuges angezeigt. Diese sind von Spiel zu Spiel sehr
+unterschiedlich.</p>
 </div>
 <div class="paragraph">
-<p>Alle anderen Schaltflächen hängen von der aktuellen Spielsituation ab:</p>
+<p>Für das Spiel Piranhas:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Die Felder, auf die man ziehen kann, werden rot eingefärbt. Man kann auf ein
-Feld klicken, um einen Vorwärtszug einzugeben (oder bei einem Feld hinter dem
-Spieler einen Zurückfallen-Zug).</p>
+<p>Die Fische, die man ziehen kann, werden mit einem gelben Kasten markiert. Um
+einen Fisch zum ziehen auszuwählen, klickt man auf ihn. Der ausgewählte Fisch
+beginnt dann zu springen.</p>
 </li>
 <li>
-<p>Befindet man sich zu Beginn des Zuges auf einem Karotten-Feld, werden unten
-Schaltflächen zum Nehmen oder Abgeben von Karotten angezeigt.</p>
+<p>Nach Auswahl eines zu ziehenden Fisches werden die möglichen Zielfelder mit
+einem gelben Kasten markiert. Um den Fisch auf ein mögliches Feld zu ziehen,
+klickt man es an. Der Fisch zieht auf das angeklickte Feld und der Zug ist
+beendet.</p>
 </li>
 <li>
-<p>Befindet man sich zu Beginn des Zuges auf einem Salat-Feld, wird unten eine
-Schaltfläche zum Essen eines Salates angezeigt.</p>
-</li>
-<li>
-<p>Zieht man auf ein Hasen-Feld, werden die Spielbaren Hasen-Joker oben beim
-Punktestand des jeweiligen Spielers weiss eingfärbt und man kann sie durch
-einen Klick darauf spielen. Bei dem Joker "Karotten abgeben oder nehmen" kann
-man danach noch eine Karottenzahl wählen.</p>
-</li>
-<li>
-<p>Gibt es keine anderen Zugmöglichkeiten, wird eine Aussetzen-Schaltfläche unten
-angezeigt.</p>
+<p>Möchte man nach Auswahl eines Fisches doch einen anderen Fisch ziehen, klickt
+man irgendwo auf dem Spielbrett, nur nicht auf eines der markierten
+Zielfelder. Dann wird der Fisch wieder abgewählt und man kann erneut einen zu
+ziehenden Fisch auswählen.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="spielwiederholung-laden">Spielwiederholung laden</h3>
+<h3 id="spielwiederholung-laden">Spielwiederholungen</h3>
 <div class="paragraph">
-<p>Spielwiederholungen werden leider noch nicht unterstützt. Wir werden diese
-Funktion so schnell wie möglich nachreichen!</p>
+<p>Spielwiederholungen oder Replay-Dateien sind aufgezeichnete frühere Spiele, die
+man sich beliebig oft wieder ansehen kann, um beispielsweise einen Fehler des
+eigenen Spielers zu analysieren oder eine Strategie zu verbessern.</p>
+</div>
+<div class="paragraph">
+<p>Um das aktuelle Spiel als Spielwiederholung zu speichern, klickt man auf das
+Icon ganz rechts unten im Spielbereich. Dann kann man einen Dateinamen und
+Speicherort festlegen.</p>
+</div>
+<div class="paragraph">
+<p>Um eine gespeicherte Spielwiederholung zu laden verwendet man den Eintrag
+"Replay laden" in der linken Leiste. Nachdem man eine Datei ausgewählt hat, kann
+man das gespeicherte Spiel abspielen oder Schritt für Schritt durchgehen.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="testdurchläufe">Testdurchläufe</h3>
 <div class="paragraph">
-<p>Für die Testdurchläufe wird ein Testserver und TestClient zur Verfügung gestellt.
-Wie man diese verwendet, können Sie weiter unten, unter den Überschrift <a href="#automatische-spiele">Automatische Spiele: Der Testserver</a> und <a href="#tests-ohne-gui">Massentests</a> nachlesen.</p>
-</div>
-<div class="paragraph">
-<p>Es ist jedoch möglich, die Testdurchläufe ohne die grafische Oberfläche zu
-starten. Dies ist im Abschnitt <a href="#tests-ohne-gui">Massentests mit Server ohne graphische Oberfläche</a> beschrieben.</p>
+<p>Wenn man einen grundsätzlich funkionierenden Computerspieler programmiert hat,
+ist es sinnvoll, diesen mit vielen verschiedenen Spielsituationen zu
+konfrontieren. Dadurch lassen sich Fehler entdecken und die Spielstärke des
+Computerspielers beurteilen. Für solche Testdurchläufe wird ein Testserver und
+TestClient zur Verfügung gestellt. Wie man diese verwendet, ist weiter unten
+unter den Überschrift <a href="#automatische-spiele">Automatische Spiele: Der
+Testserver</a> und <a href="#tests-ohne-gui">Massentests</a> beschrieben.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1313,15 +1316,14 @@ Nun können sie jederzeit die Testdaten der Spieler anhand ihres Anzeigenamens e
 <div class="sectionbody">
 <div class="paragraph">
 <p>Der Computerspieler ist ein Programm, dass sich mit dem Spielleiter
-(siehe <a href="#server">Der Spielleiter (Server)</a>) verbindet und die gestellte Aufgabe selbstängig
+(siehe <a href="#server">Der Spielleiter (Server)</a>) verbindet und die gestellte Aufgabe selbständig
 lösen kann. Die Aufgabe der Schüler ist es, sich eine Strategie zu
 überlegen und zu implementieren, mit der sie gegen die Clients der
 anderen Schulen gewinnen können.</p>
 </div>
 <div class="paragraph">
-<p>Der Computerspieler kann in einer beliebigen Programmiersprache
-geschrieben sein, jedoch bietet das Institut für Informatik die beste
-Unterstützung für Java.</p>
+<p>Der Computerspieler kann in einer beliebigen Programmiersprache geschrieben
+sein, jedoch gibt es Muster-Computerspieler nur in Java und Ruby.</p>
 </div>
 <div class="paragraph">
 <p>Die Muster-Computerspieler können im Downloadbereich der Software
@@ -1329,23 +1331,22 @@ Challenge Website (<a href="http://www.software-challenge.de" class="bare">http:
 werden.</p>
 </div>
 <div class="paragraph">
-<p><strong>Hinweis:</strong> Die Programme, die das Institut für Informatik zur Verfügung
-stellt, sind üblicherweise in Java geschrieben. Deshalb muss auf den
-ausführenden Rechnern auch das <a href="#installation-java">Java SDK installiert</a> sein.</p>
+<p><strong>Hinweis:</strong> Das Spielleiter-Programm (siehe <a href="#server">Der Spielleiter (Server)</a>) benötigt Java. Deshalb
+muss auf den ausführenden Rechnern auch das <a href="#installation-java">Java SDK
+installiert</a> sein.</p>
 </div>
 <div class="sect2">
 <h3 id="der-simpleclient">Der SimpleClient</h3>
 <div class="paragraph">
-<p>Der SimpleClient ist ein Computerspieler, den das Institut für
-Informatik ins Rennen schickt. Er stellt zwar eine korrekte Lösung der
-gestellten Aufgabe dar, ist aber nicht besonders intelligent. Neben dem
-eigentlichen Programm ist auch der Quellcode des SimpleClients
-verfügbar. Auf diese Weise können sich die Schüler anschauen und lernen,
-wie man beispielsweise die gestellte Aufgabe lösen kann. Außerdem darf
-der Code um die eigene Strategie erweitert werden. Auf diese Weise
-müssen die Schüler nicht den ganzen Computerspieler selbst entwickeln,
-sondern können sich auf den Entwurf und die Implementierung ihrer
-eigenen Strategie konzentrieren.</p>
+<p>Der SimpleClient ist ein Computerspieler, den das Institut für Informatik ins
+Rennen schickt. Er stellt zwar eine korrekte Lösung der gestellten Aufgabe dar,
+ist aber nicht besonders intelligent. Neben dem eigentlichen Programm ist auch
+der Quellcode des SimpleClients verfügbar. Auf diese Weise können sich die
+Schüler anschauen und lernen, wie man die gestellte Aufgabe lösen kann. Außerdem
+darf der Code um die eigene Strategie erweitert werden. Auf diese Weise müssen
+die Schüler nicht den ganzen Computerspieler selbst entwickeln, sondern können
+sich auf den Entwurf und die Implementierung ihrer eigenen Strategie
+konzentrieren.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1529,84 +1530,20 @@ greifen.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="installation-unter-windows">Installation unter Windows</h3>
-<div class="sect3">
-<h4 id="beschaffung-der-software">Beschaffung der Software</h4>
+<h3 id="_installation">Installation</h3>
 <div class="paragraph">
 <p>Das JDK gibt es auf den Seiten von Oracle
-(<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" class="bare">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>).
-Dort einfach auf "Download JDK" klicken und anschließend "Download"
-auswählen. Auf der erscheinenden Seite einfach die richtige
-Windows-Version auswählen und mit einem Klick auf "Continue" gelangt man
-zur entsprechenden Datei.</p>
-</div>
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html#javasejdk" class="bare">http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html#javasejdk</a>
+Dort das aktuelle "JDK" herunterladen. Es gibt auch Installationsanleitungen auf der Seite.</p>
 </div>
 <div class="sect3">
-<h4 id="installation">Installation</h4>
-<div class="paragraph">
-<p>Wenn der Download abgeschlossen ist, kann man die
-Installationsassistenten mit einem Doppelklick auf die Datei starten.
-Der Vorgang gestaltet sich derart einfach, dass man lediglich hin und
-wieder auf "Next" klicken muss, der Rest läuft automatisch ab. Nachdem
-man den Installationsdialog mit einem Klick auf "Finish" geschlossen
-hat, ist Java einsatzbereit.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="installation-unter-mac-os-x">Installation unter Mac OS X</h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/java-einstellungen_mac.jpg" alt="java einstellungen mac">
-</div>
-<div class="title">Figure 4. Das Programm "Java-Einstellungen" auf Mac OS X</div>
-</div>
-<div class="paragraph">
-<p>Da bei Mac OS X Das JDK schon
-mitgeliefert wird, braucht man sich um die eigentliche Installation
-nicht mehr zu kümmern. Neue Java-Versionen werden immer mit dem
-Software-Update des Betriebssystems automatisch installiert.</p>
-</div>
-<div class="paragraph">
-<p>Es kann jedoch nötig sein, dem Betriebssystem die richtige Java-Version
-mitzuteilen: Im Dock gibt es im Menü "Programme" → "Dienstprogramme" das
-Tool Java-Einstellungen. Dort kann man in den Boxen die Reihenfolge der
-Einträge per Drag and Drop verändern. Hier muss mindestens Java SE 6 als
-oberster Eintrag stehen, damit alles läuft.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="installation-unter-linux">Installation unter Linux</h3>
-<div class="paragraph">
-<p>Die große Menge an Linux-Distributionen macht es unmöglich eine
-Anleitung zu schreiben, die auf jeder Linux-Maschine gültig ist. Deshalb
-gibt es an dieser Stelle nur ein Paar Tipps zur Installation.</p>
-</div>
-<div class="sect3">
-<h4 id="installation-über-paketquellen">Installation über Paketquellen</h4>
+<h4 id="installation-über-paketquellen">Installation über Paketquellen (Linux)</h4>
 <div class="paragraph">
 <p>Meistens ist das Java JDK in den Paketquellen der Linux-Distributionen
 enthalten, so dass man es einfach über den Paketmanager installieren
 kann. Sofern möglich, wird diese Art der Installation empfohlen, da es
 oft noch Paketabhängigkeiten gibt, die dann automatisch mitinstalliert
 werden.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="manuelle-installation">Manuelle Installation</h4>
-<div class="paragraph">
-<p>Sollte eine Installation über die Paketquellen nicht möglich sein, kann
-man sich das JDK unter
-<a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" class="bare">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>
-herunterladen. Hierzu einfach auf "Download JDK" → "Download" klicken
-und die gewünschte Linux-Variante auswählen. Mit einem Klick auf
-Continue gelangt man zu der gewünschten Datei, die heruntergeladen
-werden muss.</p>
-</div>
-<div class="paragraph">
-<p>Nachdem der Download abgeschlossen ist, muss man der Datei eventuell
-noch Ausführungsrechte geben. Danach wird man vom Assistenten durch die
-Installation begleitet.</p>
 </div>
 </div>
 </div>
@@ -1631,29 +1568,24 @@ Foren mit den entsprechenden Anleitungen)</p>
 <h2 id="_einrichtung_der_java_entwicklungsumgebung">Einrichtung der (Java-)Entwicklungsumgebung</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Kategorie:Computerspieler Kategorie:Java Die Aufgabe einer
-Entwicklungsumgebung (IDE) ist es, den Programmierer bei seiner Arbeit
-zu unterstützen. Dazu bietet sie neben dem Editor auch viele Tools, die
-das Entwickeln eigener Programme stark erleichtern. Zwei große Vertreter
-an Entwicklungsumgebungen sind Eclipse und NetBeans.</p>
-</div>
-<div class="paragraph">
-<p>Erfahrungsgemäß bereitet der Umgang mit Eclipse die wenigsten Probleme.
-Wenn also keine Gründe gegen den Einsatz dieser IDE sprechen, sollte
-Eclipse benutzt werden.</p>
+<p>Die Aufgabe einer Entwicklungsumgebung (IDE) ist es, den Programmierer bei
+seiner Arbeit zu unterstützen. Dazu bietet sie neben dem Editor auch viele
+Tools, die das Entwickeln eigener Programme stark erleichtern. Zwei große
+Vertreter an Entwicklungsumgebungen sind Eclipse und IntelliJ.</p>
 </div>
 <div class="paragraph">
 <p><strong>Hinweis:</strong> Bevor man sich um die Einrichtung der Entwicklungsumgebung
-kümmert, muss unbedingt link:Installation von Java[Java installiert]
+kümmert, muss unbedingt <a href="#installation-java">Java installiert</a>
 sein.</p>
 </div>
 <div class="sect2">
 <h3 id="simpleclient-beschaffen">SimpleClient beschaffen</h3>
 <div class="paragraph">
-<p>Den SimpleClient bekommt man im Downloadbereich der Software-Challenge
-(<a href="http://www.informatik.uni-kiel.de/software-challenge/2013/download/" class="bare">http://www.informatik.uni-kiel.de/software-challenge/2013/download/</a>).
-Man braucht die Version, die auch den Java-Quelltext beinhaltet. Nach
-dem Herunterladen muss die Datei entpackt werden.</p>
+<p>Der SimpleClient ist schon ein fertiger Computerspieler. Denn Quellcode kann man
+verwenden, um seinen eigenen Spieler zu programmieren. Den SimpleClient bekommt
+man im Downloadbereich der Software-Challenge
+(<a href="https://www.software-challenge.de/downloads" class="bare">https://www.software-challenge.de/downloads</a>). Man braucht die Version "als
+Quellcode".</p>
 </div>
 </div>
 <div class="sect2">
@@ -1661,47 +1593,31 @@ dem Herunterladen muss die Datei entpackt werden.</p>
 <div class="sect3">
 <h4 id="beschaffung-und-installation-der-software">Beschaffung und Installation der Software</h4>
 <div class="paragraph">
-<p>Auf der Downloadseite des Eclipse-Projektes
-(<a href="http://www.eclipse.org/downloads/" class="bare">http://www.eclipse.org/downloads/</a>) lädt man sich die "Eclipse IDE for
-Java Developers" herunter.</p>
-</div>
-<div class="paragraph">
-<p>Man kann Eclipse direkt aus dem entpackten Archiv starten, eine
-Installation ist nicht notwendig.</p>
+<p>Am einfachsten ist die Installation von Eclipse mittels des Eclipse Installer.
+Dies ist auf folgender Seite erklärt:
+<a href="https://www.eclipse.org/downloads/packages/installer" class="bare">https://www.eclipse.org/downloads/packages/installer</a></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="simpleclient-in-eclipse-einbinden">SimpleClient in Eclipse einbinden</h4>
 <div class="imageblock">
 <div class="content">
-<img src="images/eclipse_neues_projekt_wa_hlen.jpg" alt="eclipse neues projekt wa hlen">
+<img src="images/eclipse_import_project.jpg" alt="eclipse import project">
 </div>
-<div class="title">Figure 5. In Eclipse ein neues Projekt erstellen</div>
+<div class="title">Figure 4. SimpleClient in Eclipse importieren</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Im Workspace-Ordner einen neuen Ordner erstellen und ihm einen
-sinnigen Namen geben (z.B Software-Challenge-Client)</p>
+<p>Im Menü auf "File" → "Import…" gehen</p>
 </li>
 <li>
-<p>In diesen Ordner wird der heruntergeladene SimpleClient entpackt</p>
+<p>Im Dialogfenster unter "General" "Projects from Folder or Archive" wählen,
+dann auf den "Next" Button klicken</p>
 </li>
 <li>
-<p>Eclipse starten (Falls es noch nicht läuft)</p>
-</li>
-<li>
-<p>In Eclipse im Menü "File" → "New" → "Project" auswählen. Danach
-"Java Project from Existing Ant Buildfile" markieren und weiter mit
-"Next"</p>
-</li>
-<li>
-<p>Im nächsten Fenster neben dem Eingabefeld "Ant buildfile" auf
-"Browse" klicken und die Datei "build.xml" aus dem oben erstellten
-Ordner auswählen. Anschließend auf "Finish" klicken</p>
-</li>
-<li>
-<p>Der SimpleClient wurde erfolgreich importiert</p>
+<p>Oben rechts auf "Archive…" klicken und die heruntergeladene ZIP-Datei mit dem
+SimpleClient auswählen. Dann auf "Finish" klicken.</p>
 </li>
 </ol>
 </div>
@@ -1712,28 +1628,22 @@ hinzuzufügen. Dazu geht man wie folgt vor:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Im Package Explorer unter "Referenced Libraries" das Plugin zum
-aktuellen Spiel suchen. Bei der Software-Challenge 2013 heißt es
-beispielsweise "cartagena-plugin.jar"</p>
+<p>Im Package Explorer unter "Referenced Libraries" das Plugin zum aktuellen
+Spiel suchen. Bei der Software-Challenge 2019 heißt es beispielsweise
+"piranhas_2019.jar"</p>
 </li>
 <li>
 <p>Rechtsklick auf das Plugin und "Properties" anklicken</p>
 </li>
 <li>
-<p>Unter "Javadoc Location" lässt sich der "Javadoc location path"
-angeben. Dort den Ordner "doc" des simple Clients eingeben.</p>
+<p>Unter "Javadoc Location" lässt sich der "Javadoc location path" angeben. Dort
+den Ordner "doc" des simple Clients eingeben.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="simpleclient-aus-eclipse-starten">SimpleClient aus Eclipse starten</h4>
-<div class="imageblock">
-<div class="content">
-<img src="images/eclipse_simpleclient_starten.jpg" alt="eclipse simpleclient starten">
-</div>
-<div class="title">Figure 6. Start des Clients aus Eclipse</div>
-</div>
 <div class="paragraph">
 <p>Den SimpleClient kann man starten, indem man im Project-Explorer einen
 Rechtsklick auf die Datei <code>Starter.java</code> macht und dann "Run As" →
@@ -1741,114 +1651,7 @@ Rechtsklick auf die Datei <code>Starter.java</code> macht und dann "Run As" →
 </div>
 <div class="paragraph">
 <p><strong>Hinweis:</strong> Damit der SimpleClient erfolgreich startet, muss der
-Spielleiter laufen und auf eine Verbindung warten.<br></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="einrichtung-von-netbeans">Einrichtung von NetBeans</h3>
-<div class="sect3">
-<h4 id="beschaffung-und-installation-von-netbeans">Beschaffung und Installation von NetBeans</h4>
-<div class="paragraph">
-<p>NetBeans kann unter <a href="http://netbeans.org/downloads/index.html" class="bare">http://netbeans.org/downloads/index.html</a>
-heruntergeladen werden. Für die Software-Challenge genügt das Paket
-"Java SE", man kann aber auch ein anderes auswählen, solange "Java SE"
-darin enthalten ist.</p>
-</div>
-<div class="paragraph">
-<p>Durch das Starten der heruntergeladenen Datei wird der
-Installationsassistent ausgeführt, der den Benutzer sicher durch den
-Installationsvorgang leitet.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="simpleclient-in-netbeans-einbinden">SimpleClient in NetBeans einbinden</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>NetBeans starten</p>
-</li>
-<li>
-<p>Im Menü "File" → "New Project" auswählen</p>
-</li>
-<li>
-<p>In der linken Liste "Java" und in der rechten "Java Application"
-auswählen und auf "Next &gt;" klicken</p>
-</li>
-<li>
-<p>unter "Project Name" beispielsweise "software-challenge-player"
-eintragen, den Haken vor "Create Main Class" entfernen.</p>
-</li>
-<li>
-<p>Den Ordner unter "Project Location" ggf. ändern und merken. Auf
-"Finish" klicken</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>NetBeans hat in seinem workspace (normalerweise im Home-Ordner unter
-"NetBeansProjects") einen Ordner mit dem gemerkten Namen erstellt. In
-diesem ist u.A. ein Unterordner "src".</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Aus dem heruntergeladenen SimpleClient die Ordner "lib", "src" und
-"doc" in den Projektordner kopieren</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>In NetBeans sollten in der Projektansicht bei dem erstellten Projekt
-unter "Source Packages" die Quelldateien des SimpleClients zu sehen
-sein.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>In NetBeans in der Projektansicht einen Rechtsklick auf Libraries
-machen machen und "Add Library&#8230;&#8203;" auswählen und auf "Create&#8230;&#8203;"
-klicken.</p>
-</li>
-<li>
-<p>Einen Namen wählen (z.B. "SC") und auf "OK" klicken</p>
-</li>
-<li>
-<p>Im Tab "Classpath" "Add Jar/Folder&#8230;&#8203;" auswählen und den lib-Ordner
-aus dem Projekt auswählen</p>
-</li>
-<li>
-<p>Alle angezeigten jar-Dateien markieren und auf "OK" klicken</p>
-</li>
-<li>
-<p>Im Tab "Javadoc" "Add Zip/Folder" auswählen und den doc-Ordner aus dem
-Projekt auswählen und hinzufügen</p>
-</li>
-<li>
-<p>Auf "OK" klicken und die neue Library mit "Add Library" dem Projekt
-hinzufügen</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="simpleclient-in-netbeans-starten">SimpleClient in NetBeans starten</h4>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>In der Projektansicht die Datei <code>Starter.java</code> suchen</p>
-</li>
-<li>
-<p>Rechtsklick auf die Datei</p>
-</li>
-<li>
-<p>"Run File" auswählen</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Hinweis:</strong> Der Start ist nur erfolgreich, wenn der Spielleiter auf eine
-Verbindung wartet.</p>
+Spielleiter laufen und auf eine Verbindung warten.</p>
 </div>
 </div>
 </div>
@@ -1884,7 +1687,7 @@ Entwicklungsumgebung Eclipse vor.</p>
 <div class="content">
 <img src="images/eclipse_desktop.jpg" alt="eclipse desktop">
 </div>
-<div class="title">Figure 7. Überblick über die wichtigsten Fenster in Eclipse</div>
+<div class="title">Figure 5. Überblick über die wichtigsten Fenster in Eclipse</div>
 </div>
 <div class="sect3">
 <h4 id="package-explorer">Package Explorer</h4>
@@ -2403,7 +2206,7 @@ dem Wettkampfsystem für die Programmiersprache zur Verfügung.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_die_ersten_schritte">Die ersten Schritte</h2>
+<h2 id="_die_ersten_programmier_schritte">Die ersten (Programmier-)Schritte</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Bekanntlich ist aller Anfang schwer. Deshalb soll hier eine kleine
@@ -2518,8 +2321,8 @@ ein Objekt erzeugen:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">Konto</span> <span class="tok-n">konto1</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span> <span class="tok-c1">//Erzeugt ein Konto-Objekt und speichert es in der Variablen konto1</span>
-<span class="tok-n">Konto</span> <span class="tok-n">konto2</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span> <span class="tok-c1">//Erzeugt noch ein Konto und speichert es in einer anderen Variablen</span></code></pre>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">Konto</span> <span class="tok-n">konto1</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span> <span class="tok-c1">// Erzeugt ein Konto-Objekt und speichert es in der Variablen konto1</span>
+<span class="tok-n">Konto</span> <span class="tok-n">konto2</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span> <span class="tok-c1">// Erzeugt noch ein Konto und speichert es in einer anderen Variablen</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2721,7 +2524,7 @@ sein, kann man diesen als statisch deklarieren:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">PremiumKonto</span> <span class="tok-kd">extends</span> <span class="tok-n">Konto</span> <span class="tok-o">{</span>
-     <span class="tok-kd">private</span> <span class="tok-kd">static</span> <span class="tok-kt">double</span> <span class="tok-n">zinsbetrag</span> <span class="tok-o">=</span> <span class="tok-mf">2.5d</span><span class="tok-o">;</span> <span class="tok-c1">//2.5% Zinsen</span>
+     <span class="tok-kd">private</span> <span class="tok-kd">static</span> <span class="tok-kt">double</span> <span class="tok-n">zinsbetrag</span> <span class="tok-o">=</span> <span class="tok-mf">2.5d</span><span class="tok-o">;</span> <span class="tok-c1">// 2.5% Zinsen</span>
 
      <span class="tok-o">...</span>
 
@@ -2742,7 +2545,7 @@ den Klassennamen aufrufen darf.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">PremiumKonto</span><span class="tok-o">.</span><span class="tok-na">setZinsbetrag</span><span class="tok-o">(</span><span class="tok-mf">3d</span><span class="tok-o">);</span> <span class="tok-c1">//Zinsen auf 3% erhöhen</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">PremiumKonto</span><span class="tok-o">.</span><span class="tok-na">setZinsbetrag</span><span class="tok-o">(</span><span class="tok-mf">3d</span><span class="tok-o">);</span> <span class="tok-c1">// Zinsen auf 3% erhöhen</span>
 
 <span class="tok-n">PremiumKonto</span> <span class="tok-n">premium3</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">();</span>
 <span class="tok-n">premium3</span><span class="tok-o">.</span><span class="tok-na">setZinsbetrag</span><span class="tok-o">(</span><span class="tok-mf">3d</span><span class="tok-o">);</span></code></pre>
@@ -3840,7 +3643,7 @@ weniger Last für das System zur Verfügung gestellt werden können.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-09-05 09:31:04 CEST
+Last updated 2018-09-06 09:12:02 CEST
 </div>
 </div>
 </body>
