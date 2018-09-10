@@ -8,20 +8,20 @@ Strategien hinzufügen.
 [[erstellen-einer-neuen-strategie]]
 === Erstellen einer neuen Strategie
 
-Die einfachste Möglichkeit ist, die RandomLogic zu kopieren und
-umzubenennen (alle Vorkommen von RandomLogic durch den neuen
-Klassennamen ersetzen). Der Vollständigkeit halber hier noch das
-Vorgehen bei einer komplett neuen Klasse:
+Die einfachste Möglichkeit ist, die Klasse `Logic` des SimpleClient zu kopieren
+und umzubenennen (alle Vorkommen von `Logic` durch den neuen Klassennamen
+ersetzen). Der Vollständigkeit halber hier noch das Vorgehen bei einer komplett
+neuen Klasse:
 
-* Erstellt eine neue Klasse (z.B. MyLogic), die das Interface
-IGameHandler implementiert:
+* Erstellt eine neue Klasse (z.B. `MyLogic`), die das Interface
+`IGameHandler` implementiert:
 
 [source,java]
 ----
 public class MyLogic implements IGameHandler {
-    private Starter starter;
+    private Starter client;
     private GameState gameState;
-    private Player player;
+    private Player currentPlayer;
 ----
 
 * Erstellt einen Konstruktor, der eine Instanz des Starters erhält.
@@ -29,8 +29,8 @@ Diese wird später noch gebraucht
 
 [source,java]
 ----
-public MyLogic(Starter starter) {
-    this.starter = starter;
+public MyLogic(Starter client) {
+    this.client = client;
 }
 ----
 
@@ -72,23 +72,5 @@ public void onRequestAction() {
 }
 ----
 
-[[die-strategie-benutzen]]
-=== Die Strategie benutzen
-
-Damit die Strategie benutzbar ist, muss sie in der LogicFactory
-eingetragen werden. In dem enum ist bereits die Logik RANDOM
-eingetragen. Mit dem Eintrag DEFAULT lässt sich festlegen, welche Logik
-standardmäßig ausgeführt wird. Hier muss die neue Strategie ebenfalls
-eingetragen werden.
-
-[source,java]
-----
-public enum LogicFactory {
-    MY_LOGIC(MyLogic.class),
-    ...
-}
-----
-
-Nun kann der Client mit der neuen Strategie spielen, indem man ihn mit
-dem Startparameter "-s MY_LOGIC" startet. Wie man in Eclipse beim
-Programmstart Argumente übergibt, kann <<programme-starten,hier>> nachgelesen werden.
+Nun kann die Strategie in der Methode `onRequestAction` (oder in eigenen
+Klassen, die dort verwendet werden) implementiert werden.
