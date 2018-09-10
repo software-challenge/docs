@@ -1844,25 +1844,25 @@ Strategien hinzufügen.</p>
 <div class="sect2">
 <h3 id="erstellen-einer-neuen-strategie">Erstellen einer neuen Strategie</h3>
 <div class="paragraph">
-<p>Die einfachste Möglichkeit ist, die RandomLogic zu kopieren und
-umzubenennen (alle Vorkommen von RandomLogic durch den neuen
-Klassennamen ersetzen). Der Vollständigkeit halber hier noch das
-Vorgehen bei einer komplett neuen Klasse:</p>
+<p>Die einfachste Möglichkeit ist, die Klasse <code>Logic</code> des SimpleClient zu kopieren
+und umzubenennen (alle Vorkommen von <code>Logic</code> durch den neuen Klassennamen
+ersetzen). Der Vollständigkeit halber hier noch das Vorgehen bei einer komplett
+neuen Klasse:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Erstellt eine neue Klasse (z.B. MyLogic), die das Interface
-IGameHandler implementiert:</p>
+<p>Erstellt eine neue Klasse (z.B. <code>MyLogic</code>), die das Interface
+<code>IGameHandler</code> implementiert:</p>
 </li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">MyLogic</span> <span class="tok-kd">implements</span> <span class="tok-n">IGameHandler</span> <span class="tok-o">{</span>
-    <span class="tok-kd">private</span> <span class="tok-n">Starter</span> <span class="tok-n">starter</span><span class="tok-o">;</span>
+    <span class="tok-kd">private</span> <span class="tok-n">Starter</span> <span class="tok-n">client</span><span class="tok-o">;</span>
     <span class="tok-kd">private</span> <span class="tok-n">GameState</span> <span class="tok-n">gameState</span><span class="tok-o">;</span>
-    <span class="tok-kd">private</span> <span class="tok-n">Player</span> <span class="tok-n">player</span><span class="tok-o">;</span></code></pre>
+    <span class="tok-kd">private</span> <span class="tok-n">Player</span> <span class="tok-n">currentPlayer</span><span class="tok-o">;</span></code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -1875,8 +1875,8 @@ Diese wird später noch gebraucht</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-nf">MyLogic</span><span class="tok-o">(</span><span class="tok-n">Starter</span> <span class="tok-n">starter</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-    <span class="tok-k">this</span><span class="tok-o">.</span><span class="tok-na">starter</span> <span class="tok-o">=</span> <span class="tok-n">starter</span><span class="tok-o">;</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-nf">MyLogic</span><span class="tok-o">(</span><span class="tok-n">Starter</span> <span class="tok-n">client</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+    <span class="tok-k">this</span><span class="tok-o">.</span><span class="tok-na">client</span> <span class="tok-o">=</span> <span class="tok-n">client</span><span class="tok-o">;</span>
 <span class="tok-o">}</span></code></pre>
 </div>
 </div>
@@ -1923,28 +1923,9 @@ Diese wird später noch gebraucht</p>
 <span class="tok-o">}</span></code></pre>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="die-strategie-benutzen">Die Strategie benutzen</h3>
 <div class="paragraph">
-<p>Damit die Strategie benutzbar ist, muss sie in der LogicFactory
-eingetragen werden. In dem enum ist bereits die Logik RANDOM
-eingetragen. Mit dem Eintrag DEFAULT lässt sich festlegen, welche Logik
-standardmäßig ausgeführt wird. Hier muss die neue Strategie ebenfalls
-eingetragen werden.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">enum</span> <span class="tok-n">LogicFactory</span> <span class="tok-o">{</span>
-    <span class="tok-n">MY_LOGIC</span><span class="tok-o">(</span><span class="tok-n">MyLogic</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">),</span>
-    <span class="tok-o">...</span>
-<span class="tok-o">}</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Nun kann der Client mit der neuen Strategie spielen, indem man ihn mit
-dem Startparameter "-s MY_LOGIC" startet. Wie man in Eclipse beim
-Programmstart Argumente übergibt, kann <a href="#programme-starten">hier</a> nachgelesen werden.</p>
+<p>Nun kann die Strategie in der Methode <code>onRequestAction</code> (oder in eigenen
+Klassen, die dort verwendet werden) implementiert werden.</p>
 </div>
 </div>
 <div class="sect2">
