@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.8">
-<meta name="author" content="Sören Domrös">
-<title>Software Challenge XML-Dokumentation Piranhas</title>
+<meta name="author" content="Sven Koschnicke">
+<title>Spielregeln Piranhas: Software Challenge 2019</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -507,75 +507,47 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="xml-dokumentation" class="article">
+<body id="_züge" class="article">
 <div id="header">
-<h1>Software Challenge XML-Dokumentation Piranhas</h1>
+<h1>Spielregeln Piranhas: Software Challenge 2019</h1>
 <div class="details">
-<span id="author" class="author">Sören Domrös</span><br>
-<span id="email" class="email"><a href="mailto:stu114053@mail.uni-kiel.de">stu114053@mail.uni-kiel.de</a></span><br>
+<span id="author" class="author">Sven Koschnicke</span><br>
+<span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_züge">Züge</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.</p>
+<p>Es wird abwechselnd gezogen, wobei Rot beginnt. Jede Runde macht jeder Spieler
+einen Zug. In jedem Zug muss man einen eigenen Fisch auf einer senkrechten,
+waagerechten oder diagonalen Linie genau so viele Felder in eine Richtung bewegen,
+wie insgesamt Fische (beider Farben) auf dieser Linie sind.</p>
 </div>
 <div class="paragraph">
-<p><a href="xml-dokumentation.pdf">PDF-Version dieses Dokumentes</a></p>
+<p>Dabei muss man auf einem leeren Feld oder auf einem vom Gegner besetzten Feld
+landen. Beim Zug darf man Felder mit eigenen Fischen sowie Kraken überspringen,
+nicht aber Felder mit gegnerischen Fischen. Bei der Anzahl der zu ziehenden Felder
+werden übersprungene Felder mitgezählt. Wenn man auf einem Feld ankommt, auf dem
+ein gegnerischer Fisch schwimmt, wird dieser gefressen (ersatzlos vom Spielfeld
+entfernt).</p>
 </div>
 <div class="paragraph">
-<p>Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
-Dokumentation kann
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs">direkt auf
-GitHub editiert</a> werden, einzige Voraussetzung ist eine kostenlose
-Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
-auswählen (ein guter Startpunkt ist die Datei
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc">index.adoc</a>
-welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
-auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
-<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
+<p>Zum Beispiel kann Rot im 1. Zug einen beliebigen roten Fisch zwei Felder in
+Richtung der Spielfeldmitte bewegen, z.B. von A4 nach C4. Eine andere Möglichkeit
+für den 1. Zug wäre, einen Fisch von A1 nach A9 zu ziehen. Man könnte auch mit dem
+Fisch auf A2 den gegnerischen Fisch auf C0 fressen.</p>
 </div>
 </div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="_einleitung.html">Einleitung</a></p>
-</li>
-<li>
-<p><a href="_spiel_betreten.html">Spiel betreten</a></p>
-</li>
-<li>
-<p><a href="_züge_senden.html">Züge senden</a></p>
-</li>
-<li>
-<p><a href="_spielstatus.html">Spielstatus</a></p>
-</li>
-<li>
-<p><a href="zug-anforderung.html">Zug-Anforderung</a></p>
-</li>
-<li>
-<p><a href="_fehler.html">Fehler</a></p>
-</li>
-<li>
-<p><a href="_spiel_verlassen.html">Spiel verlassen</a></p>
-</li>
-<li>
-<p><a href="spielende.html">Spielergebnis</a></p>
-</li>
-<li>
-<p><a href="_spielverlauf.html">Spielverlauf</a></p>
-</li>
-</ul>
 </div>
 <div class="paragraph nav-footer">
-<p>Next: <a href="_einleitung.html">Einleitung</a> →</p>
+<p>← Previous: <a href="_ziel_des_spieles.html">Ziel des Spieles</a> | ↑ Up: <a href="regeln.html">Spielregeln Piranhas: Software Challenge 2019</a> | Next: <a href="_spielende.html">Spielende</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-11-02 10:06:04 +0100
+Last updated 2018-11-02 10:06:40 +0100
 </div>
 </div>
 </body>

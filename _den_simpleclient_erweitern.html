@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.8">
-<meta name="author" content="Sören Domrös">
-<title>Software Challenge XML-Dokumentation Piranhas</title>
+<meta name="author" content="Sven Koschnicke">
+<title>Software-Challenge Einstieg</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -507,75 +507,259 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="xml-dokumentation" class="article">
+<body id="_den_simpleclient_erweitern" class="article">
 <div id="header">
-<h1>Software Challenge XML-Dokumentation Piranhas</h1>
+<h1>Software-Challenge Einstieg</h1>
 <div class="details">
-<span id="author" class="author">Sören Domrös</span><br>
-<span id="email" class="email"><a href="mailto:stu114053@mail.uni-kiel.de">stu114053@mail.uni-kiel.de</a></span><br>
+<span id="author" class="author">Sven Koschnicke</span><br>
+<span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
+<span id="revdate">2018-09-05</span>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_den_simpleclient_erweitern">Den SimpleClient erweitern</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.</p>
+<p>In der Version des Java SimpleClients von der Software Challenge
+Homepage ist bereits eine Strategie implementiert, die
+RandomLogic. Man kann jedoch auch noch beliebig viele eigene
+Strategien hinzufügen.</p>
 </div>
+<div class="sect2">
+<h3 id="erstellen-einer-neuen-strategie">Erstellen einer neuen Strategie</h3>
 <div class="paragraph">
-<p><a href="xml-dokumentation.pdf">PDF-Version dieses Dokumentes</a></p>
+<p>Die einfachste Möglichkeit ist, die RandomLogic zu kopieren und
+umzubenennen (alle Vorkommen von RandomLogic durch den neuen
+Klassennamen ersetzen). Der Vollständigkeit halber hier noch das
+Vorgehen bei einer komplett neuen Klasse:</p>
 </div>
-<div class="paragraph">
-<p>Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
-Dokumentation kann
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs">direkt auf
-GitHub editiert</a> werden, einzige Voraussetzung ist eine kostenlose
-Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
-auswählen (ein guter Startpunkt ist die Datei
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc">index.adoc</a>
-welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
-auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
-<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Erstellt eine neue Klasse (z.B. MyLogic), die das Interface
+IGameHandler implementiert:</p>
+</li>
+</ul>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">MyLogic</span> <span class="tok-kd">implements</span> <span class="tok-n">IGameHandler</span> <span class="tok-o">{</span>
+    <span class="tok-kd">private</span> <span class="tok-n">Starter</span> <span class="tok-n">starter</span><span class="tok-o">;</span>
+    <span class="tok-kd">private</span> <span class="tok-n">GameState</span> <span class="tok-n">gameState</span><span class="tok-o">;</span>
+    <span class="tok-kd">private</span> <span class="tok-n">Player</span> <span class="tok-n">player</span><span class="tok-o">;</span></code></pre>
 </div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="_einleitung.html">Einleitung</a></p>
-</li>
-<li>
-<p><a href="_spiel_betreten.html">Spiel betreten</a></p>
-</li>
-<li>
-<p><a href="_züge_senden.html">Züge senden</a></p>
-</li>
-<li>
-<p><a href="_spielstatus.html">Spielstatus</a></p>
-</li>
-<li>
-<p><a href="zug-anforderung.html">Zug-Anforderung</a></p>
-</li>
-<li>
-<p><a href="_fehler.html">Fehler</a></p>
-</li>
-<li>
-<p><a href="_spiel_verlassen.html">Spiel verlassen</a></p>
-</li>
-<li>
-<p><a href="spielende.html">Spielergebnis</a></p>
-</li>
-<li>
-<p><a href="_spielverlauf.html">Spielverlauf</a></p>
+<p>Erstellt einen Konstruktor, der eine Instanz des Starters erhält.
+Diese wird später noch gebraucht</p>
 </li>
 </ul>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-nf">MyLogic</span><span class="tok-o">(</span><span class="tok-n">Starter</span> <span class="tok-n">starter</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+    <span class="tok-k">this</span><span class="tok-o">.</span><span class="tok-na">starter</span> <span class="tok-o">=</span> <span class="tok-n">starter</span><span class="tok-o">;</span>
+<span class="tok-o">}</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Implementiert die 5 Interface-Methoden</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-nd">@Override</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">gameEnded</span><span class="tok-o">(</span><span class="tok-n">GameResult</span> <span class="tok-n">result</span><span class="tok-o">,</span> <span class="tok-n">PlayerColor</span> <span class="tok-n">color</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">errorMessage</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+    <span class="tok-c1">// Hier muss nichts getan werden</span>
+<span class="tok-o">}</span>
+
+<span class="tok-nd">@Override</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onUpdate</span><span class="tok-o">(</span><span class="tok-n">Player</span> <span class="tok-n">player</span><span class="tok-o">,</span> <span class="tok-n">Player</span> <span class="tok-n">otherPlayer</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+    <span class="tok-c1">// Der Spieler wurde aktualisiert</span>
+    <span class="tok-k">this</span><span class="tok-o">.</span><span class="tok-na">player</span> <span class="tok-o">=</span> <span class="tok-n">player</span><span class="tok-o">;</span>
+<span class="tok-o">}</span>
+
+<span class="tok-nd">@Override</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onUpdate</span><span class="tok-o">(</span><span class="tok-n">GameState</span> <span class="tok-n">gameState</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+    <span class="tok-c1">// Ein neuer Spielstatus, d.h. etwas ist geschehen. Deshalb</span>
+    <span class="tok-c1">// alles aktualisieren.</span>
+    <span class="tok-k">this</span><span class="tok-o">.</span><span class="tok-na">gameState</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-o">;</span>
+    <span class="tok-k">this</span><span class="tok-o">.</span><span class="tok-na">player</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-o">();</span>
+<span class="tok-o">}</span>
+
+<span class="tok-nd">@Override</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">sendAction</span><span class="tok-o">(</span><span class="tok-n">Move</span> <span class="tok-n">move</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+    <span class="tok-c1">// Einen Zug an den Server senden</span>
+    <span class="tok-n">starter</span><span class="tok-o">.</span><span class="tok-na">sendMove</span><span class="tok-o">(</span><span class="tok-n">move</span><span class="tok-o">);</span>
+<span class="tok-o">}</span>
+
+<span class="tok-nd">@Override</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onRequestAction</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+    <span class="tok-c1">// Ich soll einen Zug machen</span>
+    <span class="tok-n">Move</span> <span class="tok-n">move</span><span class="tok-o">;</span>
+    <span class="tok-c1">// ... Hier muss die Logik rein, die einen Zug findet.</span>
+    <span class="tok-n">sendAction</span><span class="tok-o">(</span><span class="tok-n">move</span><span class="tok-o">);</span>
+<span class="tok-o">}</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="die-strategie-benutzen">Die Strategie benutzen</h3>
+<div class="paragraph">
+<p>Damit die Strategie benutzbar ist, muss sie in der LogicFactory
+eingetragen werden. In dem enum ist bereits die Logik RANDOM
+eingetragen. Mit dem Eintrag DEFAULT lässt sich festlegen, welche Logik
+standardmäßig ausgeführt wird. Hier muss die neue Strategie ebenfalls
+eingetragen werden.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">enum</span> <span class="tok-n">LogicFactory</span> <span class="tok-o">{</span>
+    <span class="tok-n">MY_LOGIC</span><span class="tok-o">(</span><span class="tok-n">MyLogic</span><span class="tok-o">.</span><span class="tok-na">class</span><span class="tok-o">),</span>
+    <span class="tok-o">...</span>
+<span class="tok-o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nun kann der Client mit der neuen Strategie spielen, indem man ihn mit
+dem Startparameter "-s MY_LOGIC" startet. Wie man in Eclipse beim
+Programmstart Argumente übergibt, kann <a href="_bedienung_von_eclipse.html#programme-starten">hier</a> nachgelesen werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_eine_idee_implementieren">Eine Idee implementieren</h3>
+<div class="paragraph">
+<p>Man hat einige Spiele absolviert und sich eine gute Strategie
+ausgedacht. Damit hat man zwar schon einen wichtigen Teil der Arbeit
+geleistet, aber irgendwie muss dem
+<a href="der-computerspieler.html">Computerspieler</a> noch beigebracht werden, nach
+dieser Strategie zu spielen.</p>
+</div>
+<div class="paragraph">
+<p>Anhand einer kleinen Aufgabe soll gezeigt werden, wie man eine Idee
+formal beschreiben und in ein Programm überführen kann. Dabei nehmen wir
+an, dass wir einen Stapel mit Karten haben, der sortiert werden soll.</p>
+</div>
+<div class="sect3">
+<h4 id="vorraussetzungen">Vorraussetzungen</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>eine beliebige Anzahl an Spielkarten</p>
+</li>
+<li>
+<p>eine Reihenfolge, in der die Spielkarten sortiert werden sollen</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="idee-formalisieren">Idee formalisieren</h5>
+<div class="paragraph">
+<p>Als erstes muss die Idee formal beschrieben werden. Oftmals kann man
+zunächst beschreiben, wie man als Mensch vorgehen würde.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Gehe den Stapel durch und merke die Position, an der sich die
+kleinste Karte befindet.</p>
+</li>
+<li>
+<p>Tausche die Position der kleinsten Karte mit der untersten Karte im
+Stapel.</p>
+</li>
+<li>
+<p>Die kleinste Karte ist jetzt an der richtigen Position.</p>
+</li>
+<li>
+<p>Führe die Schritte nochmal für den Reststapel (ohne die sortierten
+Karten) aus.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="idee-implementieren">Idee implementieren</h5>
+<div class="paragraph">
+<p>Nachdem man seine Idee formal niedergeschrieben hat, kann sie ganz
+leicht in ein Programm überführt werden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-cm">/**</span>
+<span class="tok-cm">  * Das Array a[] symbolisiert den Stapel der unsortierten Karten. Dabei steht</span>
+<span class="tok-cm">  * eine Zahl immer für eine spezielle Karte. Eine kleinere Zahl bedeutet,</span>
+<span class="tok-cm">  * dass es sich um eine kleinere Karte handelt.</span>
+<span class="tok-cm">  *</span>
+<span class="tok-cm">  * start gibt die Position an, wo der Reststapel beginnt (am Anfang: start = 0)</span>
+<span class="tok-cm">  */</span>
+ <span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">void</span> <span class="tok-nf">sortiere</span><span class="tok-o">(</span><span class="tok-kt">int</span><span class="tok-o">[]</span> <span class="tok-n">a</span><span class="tok-o">,</span> <span class="tok-kt">int</span> <span class="tok-n">start</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+     <span class="tok-c1">//Position der kleinsten Karte</span>
+     <span class="tok-kt">int</span> <span class="tok-n">pos</span> <span class="tok-o">=</span> <span class="tok-n">start</span><span class="tok-o">;</span>
+
+     <span class="tok-c1">// Gehe Array durch und merke die Position der kleinsten Karte </span><i class="conum" data-value="1"></i><b>(1)</b>
+     <span class="tok-k">for</span> <span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">i</span> <span class="tok-o">=</span> <span class="tok-n">start</span><span class="tok-o">+</span><span class="tok-mi">1</span><span class="tok-o">;</span> <span class="tok-n">i</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-o">.</span><span class="tok-na">length</span><span class="tok-o">;</span> <span class="tok-n">i</span><span class="tok-o">++)</span> <span class="tok-o">{</span>
+         <span class="tok-c1">// Wenn eine kleinere Karte gefunden wurde...</span>
+         <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">i</span><span class="tok-o">]</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">])</span> <span class="tok-o">{</span>
+
+             <span class="tok-o">...</span> <span class="tok-n">neue</span> <span class="tok-n">Position</span> <span class="tok-n">merken</span>
+             <span class="tok-n">pos</span> <span class="tok-o">=</span> <span class="tok-n">i</span><span class="tok-o">;</span>
+         <span class="tok-o">}</span>
+     <span class="tok-o">}</span>
+
+     <span class="tok-c1">// kleinste Karte mit erster Karte des Reststapels tauschen  </span><i class="conum" data-value="2"></i><b>(2)</b> <i class="conum" data-value="3"></i><b>(3)</b>
+     <span class="tok-kt">int</span> <span class="tok-n">temp</span> <span class="tok-o">=</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">start</span><span class="tok-o">];</span> <span class="tok-c1">// erste Karte merken</span>
+     <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">start</span><span class="tok-o">]</span> <span class="tok-o">=</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">];</span>   <span class="tok-c1">// kleinste Karte nach vorne bringen</span>
+     <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">]</span> <span class="tok-o">=</span> <span class="tok-n">temp</span><span class="tok-o">;</span>       <span class="tok-c1">// gemerkte Karte in die Mitte des Stapels schreiben</span>
+
+     <span class="tok-c1">// Wenn es noch einen Reststapel gibt, soll dieser weitersortiert werden </span><i class="conum" data-value="4"></i><b>(4)</b>
+     <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">start</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-o">.</span><span class="tok-na">length</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+          <span class="tok-n">sortiere</span><span class="tok-o">(</span><span class="tok-n">a</span><span class="tok-o">,</span> <span class="tok-n">start</span><span class="tok-o">+</span><span class="tok-mi">1</span><span class="tok-o">);</span>
+     <span class="tok-o">}</span>
+ <span class="tok-o">}</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Gehe den Stapel durch und merke die Position, an der sich die
+kleinste Karte befindet.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Tausche die Position der kleinsten Karte mit der untersten Karte im
+Stapel.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Die kleinste Karte ist jetzt an der richtigen Position.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Führe die Schritte nochmal für den Reststapel (ohne die sortierten
+Karten) aus.</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="paragraph nav-footer">
-<p>Next: <a href="_einleitung.html">Einleitung</a> →</p>
+<p>← Previous: <a href="server.html">Der Spielleiter (Server)</a> | ↑ Up: <a href="getting-started.html">Software-Challenge Einstieg</a></p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-11-02 10:06:04 +0100
+Last updated 2018-09-07 11:40:30 +0200
 </div>
 </div>
 </body>

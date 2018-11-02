@@ -507,7 +507,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="xml-dokumentation" class="article">
+<body id="spielende" class="article">
 <div id="header">
 <h1>Software Challenge XML-Dokumentation Piranhas</h1>
 <div class="details">
@@ -516,61 +516,72 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="spielende">Spielergebnis</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.</p>
+<p>Zum Spielende enthält der Spieler das Ergebnis:</p>
 </div>
-<div class="paragraph">
-<p><a href="xml-dokumentation.pdf">PDF-Version dieses Dokumentes</a></p>
-</div>
-<div class="paragraph">
-<p>Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
-Dokumentation kann
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs">direkt auf
-GitHub editiert</a> werden, einzige Voraussetzung ist eine kostenlose
-Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
-auswählen (ein guter Startpunkt ist die Datei
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc">index.adoc</a>
-welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
-auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
-<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
-</div>
-</div>
-</div>
+<div class="openblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="_einleitung.html">Einleitung</a></p>
+<p>ROOM_ID Id des GameRooms</p>
 </li>
 <li>
-<p><a href="_spiel_betreten.html">Spiel betreten</a></p>
+<p>R1, R2 Text, der den Grund für das Spielende erklärt</p>
 </li>
 <li>
-<p><a href="_züge_senden.html">Züge senden</a></p>
+<p>CAUSE1, CAUSE2 Grund des Spielendes (REGULAR/LEFT/RULE_VIOLATION/SOFT_TIMEOUT/HARD_TIMEOUT)</p>
 </li>
 <li>
-<p><a href="_spielstatus.html">Spielstatus</a></p>
+<p>WP1, WP2 Siegpunkte der jeweiligen Spieler, 0 verloren, 1 unentschieden, 2 gewonnen</p>
 </li>
 <li>
-<p><a href="zug-anforderung.html">Zug-Anforderung</a></p>
+<p>NAME Anzeigename des Spielers</p>
 </li>
 <li>
-<p><a href="_fehler.html">Fehler</a></p>
+<p>COLOR Farbe des Siegers</p>
 </li>
 <li>
-<p><a href="_spiel_verlassen.html">Spiel verlassen</a></p>
-</li>
-<li>
-<p><a href="spielende.html">Spielergebnis</a></p>
-</li>
-<li>
-<p><a href="_spielverlauf.html">Spielverlauf</a></p>
+<p>S3 S1 oder S2 je nachdem wer gewonnen hat</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;result&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;definition&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Gewinner&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>SUM<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Ø Schwarm&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+    <span class="tok-nt">&lt;/definition&gt;</span>
+    <span class="tok-nt">&lt;score</span> <span class="tok-na">cause=</span><span class="tok-s">&quot;CAUSE1&quot;</span> <span class="tok-na">reason=</span><span class="tok-s">&quot;R1&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>WP1<span class="tok-nt">&lt;/part&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>S1<span class="tok-nt">&lt;/part&gt;</span>
+    <span class="tok-nt">&lt;/score&gt;</span>
+    <span class="tok-nt">&lt;score</span> <span class="tok-na">cause=</span><span class="tok-s">&quot;CAUSE2&quot;</span> <span class="tok-na">reason=</span><span class="tok-s">&quot;R2&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>WP2<span class="tok-nt">&lt;/part&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>S2<span class="tok-nt">&lt;/part&gt;</span>
+    <span class="tok-nt">&lt;/score&gt;</span>
+    <span class="tok-nt">&lt;winner</span> <span class="tok-na">class=</span><span class="tok-s">&quot;player&quot;</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;NAME&quot;</span> <span class="tok-na">color=</span><span class="tok-s">&quot;COLOR&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
 <div class="paragraph nav-footer">
-<p>Next: <a href="_einleitung.html">Einleitung</a> →</p>
+<p>← Previous: <a href="_spiel_verlassen.html">Spiel verlassen</a> | ↑ Up: <a href="xml-dokumentation.html">Software Challenge XML-Dokumentation Piranhas</a> | Next: <a href="_spielverlauf.html">Spielverlauf</a> →</p>
 </div>
 </div>
 <div id="footer">

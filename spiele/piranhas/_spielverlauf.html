@@ -507,7 +507,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="xml-dokumentation" class="article">
+<body id="_spielverlauf" class="article">
 <div id="header">
 <h1>Software Challenge XML-Dokumentation Piranhas</h1>
 <div class="details">
@@ -516,61 +516,180 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_spielverlauf">Spielverlauf</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.</p>
+<p>Der Server startet (StandardIp: localhost 13050).</p>
 </div>
 <div class="paragraph">
-<p><a href="xml-dokumentation.pdf">PDF-Version dieses Dokumentes</a></p>
+<p>Nun gibt es zwei Varianten ein Spiel zu starten, eine durch einen Administratorclient die andere durch hinzufügen der Spieler zu einen Spieltyp:</p>
+</div>
+<div class="sect2">
+<h3 id="_variante_1_adminclient_mit_reservierungscode">Variante 1 (AdminClient <a href="mit-reservierungscode.html">Mit Reservierungscode</a>)</h3>
+<div class="paragraph">
+<p>Ein Client registriert sich als Administrator mit dem in server.properties festgelegten Passwort p:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;&lt;authenticate</span> <span class="tok-na">passphrase=</span><span class="tok-s">&quot;p&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
-Dokumentation kann
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs">direkt auf
-GitHub editiert</a> werden, einzige Voraussetzung ist eine kostenlose
-Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
-auswählen (ein guter Startpunkt ist die Datei
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc">index.adoc</a>
-welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
-auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
-<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
+<p>Dann kann ein Spiel angelegt werden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;prepare</span> <span class="tok-na">gameType=</span><span class="tok-s">&quot;swc_2019_piranhas&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;slot</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p1&quot;</span> <span class="tok-na">canTimeout=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-na">shouldBePaused=</span><span class="tok-s">&quot;true&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;slot</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p2&quot;</span> <span class="tok-na">canTimeout=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-na">shouldBePaused=</span><span class="tok-s">&quot;true&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/prepare&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Server antwortet darauf mit einer Nachricht, die die ROOM_ID und Reservierungscodes für die beiden Clients enthält:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;prepared</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;reservation&gt;</span>RC1<span class="tok-nt">&lt;/reservation&gt;</span>
+    <span class="tok-nt">&lt;reservation&gt;</span>RC2<span class="tok-nt">&lt;/reservation&gt;</span>
+  <span class="tok-nt">&lt;/prepared&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Administratorclient kann nur ebenfalls als Observer des Spiels genutzt werden, indem ein entsprechender Request gesendet wird.
+Dadurch wird das derzeitge Spielfeld (<a href="_spielstatus.html#memento">memento</a>) ebenfalls an den Administratorclient gesendet.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;observe</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Clients die auf dem Serverport (localhost 13050) gestartet werden können so über diesen Code joinen.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;joinPrepared</span> <span class="tok-na">reservationCode=</span><span class="tok-s">&quot;RC1&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;joinPrepared</span> <span class="tok-na">reservationCode=</span><span class="tok-s">&quot;RC2&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="_einleitung.html">Einleitung</a></p>
-</li>
-<li>
-<p><a href="_spiel_betreten.html">Spiel betreten</a></p>
-</li>
-<li>
-<p><a href="_züge_senden.html">Züge senden</a></p>
-</li>
-<li>
-<p><a href="_spielstatus.html">Spielstatus</a></p>
-</li>
-<li>
-<p><a href="zug-anforderung.html">Zug-Anforderung</a></p>
-</li>
-<li>
-<p><a href="_fehler.html">Fehler</a></p>
-</li>
-<li>
-<p><a href="_spiel_verlassen.html">Spiel verlassen</a></p>
-</li>
-<li>
-<p><a href="spielende.html">Spielergebnis</a></p>
-</li>
-<li>
-<p><a href="_spielverlauf.html">Spielverlauf</a></p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="_variante_2_eventuell_ohne_adminclient_ohne_reservierungscode">Variante 2 ((eventuell) ohne AdminClient <a href="ohne-reservierungscode.html">Ohne Reservierungscode</a>)</h3>
+<div class="paragraph">
+<p>Die Clients wurden auf dem Serverport (Standard: localhost 13050) gestartet.</p>
+</div>
+<div class="paragraph">
+<p>Sie können sich mit folgender Anfrage einen bereits offenen Spiel gleichen Typs beitreten oder, falls kein Spiel des Typs vorhanden selbst eines starten:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;join</span> <span class="tok-na">gameType=</span><span class="tok-s">&quot;swc_2019_piranhas&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Server antwortet mit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;joined</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_weiterer_spielverlauf">Weiterer Spielverlauf</h3>
+<div class="paragraph">
+<p>Der Server antwortet jeweils mit der WelcomeMessage (<a href="_spiel_betreten.html#welcome-message">Welcome Message</a>) und dem ersten GameState (<a href="_spielstatus.html#memento">memento</a>) sobald beide Spieler verbunden sind.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;welcomeMessage&quot;</span> <span class="tok-na">color=</span><span class="tok-s">&quot;red&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span>
+<span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;memento&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">startPlayer=</span><span class="tok-s">&quot;RED&quot;</span> <span class="tok-na">currentPlayer=</span><span class="tok-s">&quot;RED&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;red</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;Unknown&quot;</span> <span class="tok-na">color=</span><span class="tok-s">&quot;RED&quot;</span><span class="tok-nt">/&gt;</span>
+      <span class="tok-nt">&lt;blue</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;Unknown&quot;</span> <span class="tok-na">color=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
+      <span class="tok-nt">&lt;board&gt;</span>
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">x=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">state=</span><span class="tok-s">&quot;EMPTY&quot;</span><span class="tok-nt">/&gt;</span>
+	TODO
+        <span class="tok-nt">&lt;fields</span> <span class="tok-na">x=</span><span class="tok-s">&quot;9&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;9&quot;</span> <span class="tok-na">state=</span><span class="tok-s">&quot;EMPTY&quot;</span><span class="tok-nt">/&gt;</span>
+      <span class="tok-nt">&lt;/board&gt;</span>
+    <span class="tok-nt">&lt;/state&gt;</span>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der erste Spieler erhält dann eine Zugaufforderung (<a href="_züge_senden.html#move-request">MoveRequest</a>), falls in server.properties paused auf false gesetzt wurde.
+Falls das Spiel pausiert ist, muss das Spiel durch einen Administratorclient gestartet werden:</p>
+</div>
+<div class="paragraph">
+<p>Verbinden des Administratorclients (falls es sich um die erste Kontaktaufnahme zum Server handelt, ansonsten &lt;protocol&gt; weglassen).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;authenticate</span> <span class="tok-na">passphrase=</span><span class="tok-s">&quot;examplepassword&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pausierung aufheben:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;pause</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span> <span class="tok-na">pause=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Daraufhin wird der erste Spieler aufgefordert einen Zug zu senden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.framework.plugins.protocol.MoveRequest&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Client des CurrentPlayer sendet nun einen Zug (<a href="_züge_senden.html#zug">ZUG</a>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;move&quot;</span> <span class="tok-na">x=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">direection=</span><span class="tok-s">&quot;UP&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So geht es abwechselnd weiter, bis zum Spielende (<a href="spielende.html">Spielergebnis</a>).
+Die letzte Nachricht des Servers endet mit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;/protocol&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Danach wird die Verbindung geschlossen.</p>
+</div>
+</div>
+</div>
 </div>
 <div class="paragraph nav-footer">
-<p>Next: <a href="_einleitung.html">Einleitung</a> →</p>
+<p>← Previous: <a href="spielende.html">Spielergebnis</a> | ↑ Up: <a href="xml-dokumentation.html">Software Challenge XML-Dokumentation Piranhas</a></p>
 </div>
 </div>
 <div id="footer">

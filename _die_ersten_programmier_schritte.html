@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.8">
-<meta name="author" content="Sören Domrös">
-<title>Software Challenge XML-Dokumentation Piranhas</title>
+<meta name="author" content="Sven Koschnicke">
+<title>Software-Challenge Einstieg</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -507,75 +507,400 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="xml-dokumentation" class="article">
+<body id="_die_ersten_programmier_schritte" class="article">
 <div id="header">
-<h1>Software Challenge XML-Dokumentation Piranhas</h1>
+<h1>Software-Challenge Einstieg</h1>
 <div class="details">
-<span id="author" class="author">Sören Domrös</span><br>
-<span id="email" class="email"><a href="mailto:stu114053@mail.uni-kiel.de">stu114053@mail.uni-kiel.de</a></span><br>
+<span id="author" class="author">Sven Koschnicke</span><br>
+<span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
+<span id="revdate">2018-09-05</span>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_die_ersten_programmier_schritte">Die ersten (Programmier-)Schritte</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.</p>
+<p>Bekanntlich ist aller Anfang schwer. Deshalb soll hier eine kleine
+Hilfe gegeben werden, die den Start mit der Entwicklung erleichtern
+soll.</p>
+</div>
+<div class="sect2">
+<h3 id="_einführung_in_die_objektorientierte_programmierung">Einführung in die objektorientierte Programmierung</h3>
+<div class="paragraph">
+<p>"Wenn man heute einen Computer kauft, ist er morgen schon
+veraltet". Kaum ein anderes Gerücht hält sich so stark in der
+Informatik, wie das über die Kurzlebigkeit. Jedoch gibt es gerade im
+Bereich der Softwareentwicklung Programmiertechniken und -konzepte,
+die seit Jahrzehnten nichts von ihrer Aktualität eingebüßt haben. Ein
+Beispiel dafür ist die Objektorientierung. Sie wurde bereits Mitte der
+80er Jahre entwickelt und ist auch heute noch das Grundkonzept
+moderner Programmiersprachen.</p>
+</div>
+<div class="sect3">
+<h4 id="idee-der-objektorientierung">Idee der Objektorientierung</h4>
+<div class="paragraph">
+<p>Die Idee der Objektorientierung ist, die Daten und die Funktionen, die
+auf diese Daten zugreifen, in einer Komponente zu bündeln. Auf die Daten
+kann man nur über die entsprechenden Funktionen (die man <em>Methoden</em>
+nennt) zugreifen.</p>
+</div>
+<div class="sect4">
+<h5 id="vorgehensweise-ohne-objektorientierung">Vorgehensweise ohne Objektorientierung</h5>
+<div class="paragraph">
+<p>Möchte man zum Beispiel ein Konto ohne Objektorientierung schreiben, so
+braucht man eine Integer-Variable <code>int kontostand = 0;</code>, die Auskunft
+über den verfügbaren Saldo (z.B. in Cent) gibt. Ein- und Auszahlungen
+lassen sich durch direkte Wertzuweisungen vornehmen:
+<code>kontostand = kontostand + 30;</code>. Soweit sogut, aber wie werden
+Auszahlungen gehandhabt? Eine Auszahlung soll nur möglich sein, wenn das
+Konto ausreichend gedeckt ist:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-c1">// Beispiel um 40 Geldeinheiten abzuheben</span>
+<span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">kontostand</span> <span class="tok-o">&gt;=</span> <span class="tok-mi">40</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+    <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">-</span> <span class="tok-mi">40</span><span class="tok-o">;</span>
+<span class="tok-o">}</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p><a href="xml-dokumentation.pdf">PDF-Version dieses Dokumentes</a></p>
+<p>Jedes Mal, wenn Geld abgehoben werden soll, muss erst überprüft werden,
+ob das Konto ausreichend gedeckt ist. Sollte man die if-Abfrage nur an
+einer Stelle vergessen, läuft man Gefahr, dass der Saldo negativ wird,
+was nicht möglich sein soll.</p>
 </div>
 <div class="paragraph">
-<p>Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
-Dokumentation kann
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs">direkt auf
-GitHub editiert</a> werden, einzige Voraussetzung ist eine kostenlose
-Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
-auswählen (ein guter Startpunkt ist die Datei
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc">index.adoc</a>
-welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
-auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
-<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
+<p>Es gibt aber noch weitere Probleme: Durch
+<code>kontostand = kontostand + (-25);</code> kann man quasi durch Einzahlung
+eines negativen Betrages den Saldo ins Negative treiben. Dies ist in
+zweifacher Weise kritisch, da zum einen der Kontostand negativ werden
+kann und es zum anderen keine negativen Einzahlungen geben soll. Also
+müssen auch Einzahlungen auf ihre Gültigkeit überprüft werden.</p>
+</div>
+<div class="paragraph">
+<p>Ein weiteres Problem könnte z.B. entstehen, wenn man dem Kontoinhaber
+einen Dispokredit einräumen will. Dann muss man in jeder if-Abfrage den
+Dispobetrag hinzufügen. Sollte das an einer Stelle vergessen werden,
+kann man unter Umständen nichts abheben, obwohl der Dispo noch nicht
+voll genutzt ist.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="objektorientiert-arbeiten">Objektorientiert arbeiten</h5>
+<div class="paragraph">
+<p>Möchte man ein Konto objektorientiert darstellen, schreibt man zunächst
+eine <em>Klasse</em>, die eine Art Bauplan ist:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">Konto</span> <span class="tok-o">{</span>
+    <span class="tok-kd">private</span> <span class="tok-kt">int</span> <span class="tok-n">kontostand</span><span class="tok-o">;</span>
+
+    <span class="tok-kd">public</span> <span class="tok-nf">Konto</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+        <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-o">;</span>
+    <span class="tok-o">}</span>
+
+    <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">einzahlen</span><span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+        <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">betrag</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+            <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">+</span> <span class="tok-n">betrag</span><span class="tok-o">;</span>
+        <span class="tok-o">}</span>
+    <span class="tok-o">}</span>
+
+    <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">abheben</span><span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+        <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">kontostand</span> <span class="tok-o">&gt;=</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+            <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">-</span> <span class="tok-n">betrag</span><span class="tok-o">;</span>
+            <span class="tok-k">return</span> <span class="tok-kc">true</span><span class="tok-o">;</span>
+        <span class="tok-o">}</span>
+        <span class="tok-k">return</span> <span class="tok-kc">false</span><span class="tok-o">;</span>
+    <span class="tok-o">}</span>
+
+    <span class="tok-kd">public</span> <span class="tok-kt">int</span> <span class="tok-nf">getKontostand</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+        <span class="tok-k">return</span> <span class="tok-n">kontostand</span><span class="tok-o">;</span>
+    <span class="tok-o">}</span>
+<span class="tok-o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Das Wort <code>private</code> vor der Variablen für den Kontostand bedeutet, dass
+der Zugriff darauf nur innerhalb der Klasse gestattet ist, während
+<code>public</code> Zugriff von überall erlaubt. Möchte man also Geld einzahlen
+oder abheben, muss man die entsprechenden Methoden nehmen.</p>
+</div>
+<div class="paragraph">
+<p>Mit dem Schlüsselwort <code>new</code> kann man aus dem Bauplan (also der Klasse)
+ein Objekt erzeugen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">Konto</span> <span class="tok-n">konto1</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span> <span class="tok-c1">// Erzeugt ein Konto-Objekt und speichert es in der Variablen konto1</span>
+<span class="tok-n">Konto</span> <span class="tok-n">konto2</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span> <span class="tok-c1">// Erzeugt noch ein Konto und speichert es in einer anderen Variablen</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Das <code>new</code> führt den Konstruktor aus
+(<code>public Konto() { kontostand = 0; }</code>). Also hat jedes neu erstellte
+Konto zunächst Kontostand von 0 Geldeinheiten. Ein Konstruktor muss
+immer den Klassennamen tragen und darf keinen Rückgabewert (nicht einmal
+<code>void</code>) haben. Analog zu Methoden kann man auch einem Konstruktor
+Argumente übergeben.</p>
+</div>
+<div class="paragraph">
+<p>Um Geld einzuzahlen oder abzuheben ruft man die Methoden mit dem sog.
+Punktoperator auf:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">Konto</span> <span class="tok-n">konto1</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span>            <span class="tok-c1">// konto: 0 Geldeinheiten (GE)</span>
+<span class="tok-n">Konto</span> <span class="tok-n">konto2</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span>            <span class="tok-c1">// konto2: 0 GE</span>
+
+<span class="tok-n">konto1</span><span class="tok-o">.</span><span class="tok-na">einzahlen</span><span class="tok-o">(</span><span class="tok-mi">100</span><span class="tok-o">);</span>                 <span class="tok-c1">// konto1: 100 GE, konto2: 0  GE</span>
+<span class="tok-n">konto2</span><span class="tok-o">.</span><span class="tok-na">einzahlen</span><span class="tok-o">(</span><span class="tok-mi">50</span><span class="tok-o">);</span>                  <span class="tok-c1">// konto1: 100 GE, konto2: 50 GE</span>
+
+<span class="tok-kt">boolean</span> <span class="tok-n">erfolg</span> <span class="tok-o">=</span> <span class="tok-n">konto1</span><span class="tok-o">.</span><span class="tok-na">auszahlen</span><span class="tok-o">(</span><span class="tok-mi">30</span><span class="tok-o">);</span> <span class="tok-c1">// konto1: 70 GE, konto2: 50 GE, erfolg: true</span>
+<span class="tok-n">erfolg</span> <span class="tok-o">=</span> <span class="tok-n">konto2</span><span class="tok-o">.</span><span class="tok-na">auszahlen</span><span class="tok-o">(</span><span class="tok-mi">90</span><span class="tok-o">);</span>         <span class="tok-c1">// konto1: 70 GE, konto2: 50 GE, erfolg: false</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Erweiterung der Klasse um den Dispokredit erweist sich auch als sehr
+einfach, da nur noch Änderungen in der Klasse notwendig sind:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">class</span> <span class="tok-nc">Konto</span> <span class="tok-o">{</span>
+     <span class="tok-kd">private</span> <span class="tok-kt">int</span> <span class="tok-n">kontostand</span><span class="tok-o">;</span>
+     <span class="tok-kd">private</span> <span class="tok-kt">int</span> <span class="tok-n">dispo</span><span class="tok-o">;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+
+     <span class="tok-kd">public</span> <span class="tok-nf">Konto</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+         <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-o">;</span>
+         <span class="tok-n">dispo</span> <span class="tok-o">=</span> <span class="tok-mi">500</span><span class="tok-o">;</span> <i class="conum" data-value="2"></i><b>(2)</b>
+     <span class="tok-o">}</span>
+
+     <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">einzahlen</span><span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+         <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">betrag</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+             <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">+</span> <span class="tok-n">betrag</span><span class="tok-o">;</span>
+         <span class="tok-o">}</span>
+     <span class="tok-o">}</span>
+
+     <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">abheben</span><span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+         <span class="tok-k">if</span> <span class="tok-o">((</span><span class="tok-n">kontostand</span> <span class="tok-o">+</span> <span class="tok-n">dispo</span><span class="tok-o">)</span> <span class="tok-o">&gt;=</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span> <i class="conum" data-value="3"></i><b>(3)</b>
+             <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">-</span> <span class="tok-n">betrag</span><span class="tok-o">;</span>
+             <span class="tok-k">return</span> <span class="tok-kc">true</span><span class="tok-o">;</span>
+         <span class="tok-o">}</span>
+         <span class="tok-k">return</span> <span class="tok-kc">false</span><span class="tok-o">;</span>
+     <span class="tok-o">}</span>
+
+     <span class="tok-kd">public</span> <span class="tok-kt">int</span> <span class="tok-nf">getKontostand</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+         <span class="tok-k">return</span> <span class="tok-n">kontostand</span><span class="tok-o">;</span>
+     <span class="tok-o">}</span>
+<span class="tok-o">}</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Neue private Variable um den Kreditrahmen zu speichern.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Kreditrahmen im Konstruktor initialisieren.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Kreditrahmen beim Abheben mit berücksichtigen.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="referenzierung-von-objekten">Referenzierung von Objekten</h5>
+<div class="paragraph">
+<p>Wenn man mit <code>Konto konto3 = new Konto()</code> ein neues Objekt erzeugt, wird
+dieses im Arbeitsspeicher abgelegt und die Variable <code>konto3</code> enthält die
+Speicheradresse zum entsprechenden Objekt. Mit dem Befehl
+<code>Konto konto4 = konto3</code> wird der Variablen <code>konto4</code> die Speicheradresse
+von <code>konto3</code> zugewiesen. Beide zeigen also auf dieselbe Speicheradresse
+und somit auf das gleiche Objekt. Somit verändert <code>konto3.einzahlen(40)</code>
+auch den Kontostand von <code>konto4</code>, weil beide auf dasselbe Objekt zeigen.
+Statt <em>zeigen</em> sagt man oft auch <em>referenzieren</em>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Merkregel:</strong> Neue Objekte erzeugt man nur mit dem Schlüsselwort <code>new</code>!<br></p>
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="vererbung">Vererbung</h4>
+<div class="paragraph">
+<p>Die Vererbung ist eine Technik, mit der man eine Klasse, durch
+hinzufügen von Methoden und Variablen, einen neuen Bauplan (Klasse)
+erzeugt.</p>
+</div>
+<div class="paragraph">
+<p>Möchte man zum Beispiel zusätzlich auch noch ein Premiumkonto anbieten,
+auf dem der Kontostand verzinst wird, kann man die bestehende Klasse
+nehmen und entsprechend erweitern:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">PremiumKonto</span> <span class="tok-kd">extends</span> <span class="tok-n">Konto</span> <span class="tok-o">{</span>
+     <span class="tok-kd">private</span> <span class="tok-kt">double</span> <span class="tok-n">zinsbetrag</span><span class="tok-o">;</span>
+
+     <span class="tok-kd">public</span> <span class="tok-nf">PremiumKonto</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+         <span class="tok-kd">super</span><span class="tok-o">();</span>
+         <span class="tok-n">zinsbetrag</span> <span class="tok-o">=</span> <span class="tok-mf">2.5d</span><span class="tok-o">;</span> <span class="tok-c1">// 2.5% Zinsen</span>
+     <span class="tok-o">}</span>
+
+     <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">zinsenGutschreiben</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+         <span class="tok-kt">int</span> <span class="tok-n">saldo</span> <span class="tok-o">=</span> <span class="tok-n">getKontostand</span><span class="tok-o">();</span>
+         <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">saldo</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+             <span class="tok-n">einzahlen</span><span class="tok-o">(</span><span class="tok-n">saldo</span> <span class="tok-o">*</span> <span class="tok-n">zinsbetrag</span> <span class="tok-o">/</span> <span class="tok-mi">100</span><span class="tok-o">);</span>
+         <span class="tok-o">}</span>
+     <span class="tok-o">}</span>
+<span class="tok-o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Methoden zum Ein- und Auszahlen brauchen nicht neu geschrieben
+werden, da diese von der Klasse Konto "kopiert" werden. Man kann eine
+Methode aus einer Oberklasse neu schreiben. Dann wird immer die
+geänderte Version genommen. Das Schlüsselwort <code>super()</code> ruft den
+Konstruktor aus der Kontoklasse auf. In Java wird immer der leere
+Konstruktor der Oberklasse aufgerufen, so dass diese Zeile auch
+weggelassen werden darf.</p>
+</div>
+<div class="paragraph">
+<p>Ein neues Objekt erzeugt man auf die gleiche Weise, wie bei einem
+normalen Konto:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">PremiumKonto</span> <span class="tok-n">premium</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">();</span>
+
+<span class="tok-n">premium</span><span class="tok-o">.</span><span class="tok-na">einzahlen</span><span class="tok-o">(</span><span class="tok-mi">50</span><span class="tok-o">);</span> <span class="tok-c1">//geerbte Methode</span>
+<span class="tok-n">premium</span><span class="tok-o">.</span><span class="tok-na">zinsenGutschreiben</span><span class="tok-o">();</span></code></pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="casting-von-objekten">Casting von Objekten</h5>
+<div class="paragraph">
+<p>Da ein Premiumkonto auch ein normales Konto ist, ist der folgende Aufruf
+legal:</p>
+</div>
+<div class="paragraph">
+<p><code>Konto konto5 = new PremiumKonto();</code></p>
+</div>
+<div class="paragraph">
+<p>Weil <code>konto5</code> vom Typ <code>Konto</code> ist, dürfen auch nur die Methoden aus
+dieser Klasse verwendet werden. Möchte man auch Zinsen gutschreiben
+können, so muss aus dem Konto ein Premiumkonto gemacht werden:</p>
+</div>
+<div class="paragraph">
+<p><code>PremiumKonto konto6 = (PremiumKonto) konto5;</code></p>
+</div>
+<div class="paragraph">
+<p>Dieser Cast gelingt jedoch nur, wenn das Konto auch ein Premiumkonto
+ist! Sonst wird eine Fehlermeldung geworfen. Mit dem Schlüsselwort
+<code>instanceof</code> kann man abfragen, ob ein Objekt zu einer gewissen Klasse
+gehört:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">Konto</span> <span class="tok-n">konto7</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">();</span>
+
+<span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">konto6</span> <span class="tok-k">instanceof</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+    <span class="tok-n">Premiumkonto</span> <span class="tok-n">premium2</span> <span class="tok-o">=</span> <span class="tok-o">(</span><span class="tok-n">PremiumKonto</span><span class="tok-o">)</span> <span class="tok-n">konto7</span><span class="tok-o">;</span>
+    <span class="tok-n">premium2</span><span class="tok-o">.</span><span class="tok-na">zinsenGutschreiben</span><span class="tok-o">();</span>
+<span class="tok-o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Wichtig:</strong> Es werden nur Methoden vererbt, jedoch keine Variablen!
+Deshalb wird auf den kontostand nur über die entsprechenden Methoden der
+Oberklasse zugegriffen.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="statische-variablen-und-methoden">Statische Variablen und Methoden</h4>
+<div class="paragraph">
+<p>Gibt es Methoden oder Variablen, die für alle Objekte gültig sind, so
+werden diese als statisch (<code>static</code>) deklariert. Statische Variablen und
+Klassen werden von allen Objekten geteilt.</p>
+</div>
+<div class="paragraph">
+<p>Soll zum Beispiel der Zinssatz beim Premiumkonto für alle Konten gleich
+sein, kann man diesen als statisch deklarieren:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">PremiumKonto</span> <span class="tok-kd">extends</span> <span class="tok-n">Konto</span> <span class="tok-o">{</span>
+     <span class="tok-kd">private</span> <span class="tok-kd">static</span> <span class="tok-kt">double</span> <span class="tok-n">zinsbetrag</span> <span class="tok-o">=</span> <span class="tok-mf">2.5d</span><span class="tok-o">;</span> <span class="tok-c1">// 2.5% Zinsen</span>
+
+     <span class="tok-o">...</span>
+
+     <span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">double</span> <span class="tok-nf">getZinsbetrag</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+         <span class="tok-k">return</span> <span class="tok-n">zinsbetrag</span><span class="tok-o">;</span>
+     <span class="tok-o">}</span>
+
+     <span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">void</span> <span class="tok-nf">setZinsbetrag</span><span class="tok-o">(</span><span class="tok-kt">double</span> <span class="tok-n">wert</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+         <span class="tok-n">zinsbetrag</span> <span class="tok-o">=</span> <span class="tok-n">wert</span><span class="tok-o">;</span>
+     <span class="tok-o">}</span>
+ <span class="tok-o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Von außen kommt man an den Zinsbetrag über die Methode
+<code>setZinsbetrag(double wert)</code>, die man entweder über das Objekt oder über
+den Klassennamen aufrufen darf.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">PremiumKonto</span><span class="tok-o">.</span><span class="tok-na">setZinsbetrag</span><span class="tok-o">(</span><span class="tok-mf">3d</span><span class="tok-o">);</span> <span class="tok-c1">// Zinsen auf 3% erhöhen</span>
+
+<span class="tok-n">PremiumKonto</span> <span class="tok-n">premium3</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">();</span>
+<span class="tok-n">premium3</span><span class="tok-o">.</span><span class="tok-na">setZinsbetrag</span><span class="tok-o">(</span><span class="tok-mf">3d</span><span class="tok-o">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Tipp:</strong> Damit man besser erkennen kann, dass es sich um statische
+Variablen oder Methoden handelt, sollte man auf diese immer über den
+Klassennamen zugreifen.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="weitere-aspekte">Weitere Aspekte</h4>
+<div class="paragraph">
+<p>Die Objektorientierung bietet noch viele weitere Aspekte, wie zum
+Beispiel die Polymorphie. Da es sich hier nur um eine Einführung
+handelt, wurden solche fortgeschrittenen Themen allerdings nicht
+behandelt.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="weiterführende-informationen-oop">Weiterführende Informationen</h4>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="_einleitung.html">Einleitung</a></p>
+<p><a href="http://de.wikipedia.org/wiki/Objektorientierte_Programmierung">Eintrag aus der Wikipedia</a></p>
 </li>
 <li>
-<p><a href="_spiel_betreten.html">Spiel betreten</a></p>
-</li>
-<li>
-<p><a href="_züge_senden.html">Züge senden</a></p>
-</li>
-<li>
-<p><a href="_spielstatus.html">Spielstatus</a></p>
-</li>
-<li>
-<p><a href="zug-anforderung.html">Zug-Anforderung</a></p>
-</li>
-<li>
-<p><a href="_fehler.html">Fehler</a></p>
-</li>
-<li>
-<p><a href="_spiel_verlassen.html">Spiel verlassen</a></p>
-</li>
-<li>
-<p><a href="spielende.html">Spielergebnis</a></p>
-</li>
-<li>
-<p><a href="_spielverlauf.html">Spielverlauf</a></p>
+<p><a href="http://openbook.rheinwerk-verlag.de/oop/">Praxisbuch Objektorientierung (openbook)</a></p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+</div>
 <div class="paragraph nav-footer">
-<p>Next: <a href="_einleitung.html">Einleitung</a> →</p>
+<p>← Previous: <a href="_bedienung_von_eclipse.html">Bedienung von Eclipse</a> | ↑ Up: <a href="getting-started.html">Software-Challenge Einstieg</a> | Next: <a href="der-computerspieler.html">Der Computerspieler (Client)</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-11-02 10:06:04 +0100
+Last updated 2018-09-07 11:40:30 +0200
 </div>
 </div>
 </body>

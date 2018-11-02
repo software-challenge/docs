@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.8">
-<meta name="author" content="Sören Domrös">
-<title>Software Challenge XML-Dokumentation Piranhas</title>
+<meta name="author" content="Sven Koschnicke">
+<title>Software-Challenge Endbenutzer-Dokumentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -507,75 +507,286 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="xml-dokumentation" class="article">
+<body id="_computerspieler_abgabefertig_machen" class="article">
 <div id="header">
-<h1>Software Challenge XML-Dokumentation Piranhas</h1>
+<h1>Software-Challenge Endbenutzer-Dokumentation</h1>
 <div class="details">
-<span id="author" class="author">Sören Domrös</span><br>
-<span id="email" class="email"><a href="mailto:stu114053@mail.uni-kiel.de">stu114053@mail.uni-kiel.de</a></span><br>
+<span id="author" class="author">Sven Koschnicke</span><br>
+<span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
+<span id="revdate">2018-11-02</span>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_computerspieler_abgabefertig_machen">Computerspieler abgabefertig machen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.</p>
+<p>Damit <a href="das-wettkampfsystem.html">das Wettkampfsystem</a> mit dem
+Computerspieler arbeiten kann, muss er zu einem ausführbaren Programm
+gemacht und in ein ZIP-Archiv gepackt werden.</p>
 </div>
 <div class="paragraph">
-<p><a href="xml-dokumentation.pdf">PDF-Version dieses Dokumentes</a></p>
+<p>Je nach Programmiersprache, in der der Computerspieler entwickelt wurde, sind
+unterschiedliche Schritte notwendig.</p>
 </div>
 <div class="paragraph">
-<p>Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
-Dokumentation kann
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs">direkt auf
-GitHub editiert</a> werden, einzige Voraussetzung ist eine kostenlose
-Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
-auswählen (ein guter Startpunkt ist die Datei
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc">index.adoc</a>
-welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
-auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
-<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
+<p>Wie man den abgabefertigen Computerspieler dann im Wettkampfsystem einsendet,
+ist unter <a href="das-wettkampfsystem.html#computerspieler">Wettkampfsystem, Computerspieler</a> beschrieben.</p>
+</div>
+<div class="sect2">
+<h3 id="_java">Java</h3>
+<div class="paragraph">
+<p>Diese Anleitung beschreibt, wie man für den Java-SimpleClient vorgehen muss.</p>
+</div>
+<div class="paragraph">
+<p>Hierzu gibt es zwei Möglichkeiten: Die Jar-Datei selbst erstellen und
+die Verwendung eines Ant-Scripts.</p>
+</div>
+<div class="sect3">
+<h4 id="erste-möglichkeit---jar-erstellen">Erste Möglichkeit - JAR erstellen</h4>
+<div class="sect4">
+<h5 id="_eclipse">Eclipse</h5>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In Eclipse im Menü auf "File" &#8594; "Export". Dann unter "Java" &#8594;
+"Runnable JAR file" wählen</p>
+</li>
+<li>
+<p>Im nächsten Fenster wird die "Run Configuration" ausgewählt (dazu
+muss der SimpleClient mindestens einmal mit Eclipse gestartet worden
+sein). Darunter wird mit "Browse" die Zieldatei (z.B.
+<code>[&#8230;&#8203;]/my_player.jar</code>) ausgewählt. Bei "Library handling" am besten die
+erste Option nehmen. So wird eine einzige JAR Datei erzeugt, in der
+alles nötige drin ist. Mit einem Klick auf Finish wird die JAR-Datei
+erzeugt. Eventuell erhält man einen Hinweis "This operation repacks
+referenced libraries", den man mit "OK" bestätigen muss.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Wenn alles geklappt hat, wurde der Computerspieler in ein auführbares Programm
+überführt. Damit der Wettkampfserver den Client verarbeiten kann, muss er noch
+in ein ZIP-Archiv gepackt werden (auch wenn ein JAR technisch gesehen bereits
+ein ZIP-Archiv ist).</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_netbeans">NetBeans</h5>
+<div class="paragraph">
+<p>Nach einem Rechtsklick auf das Projekt in der Projektansicht kann man
+"Properties" auswählen. Auf der linken Seite unter "Categories" die
+Kategorie "Run" auswählen und dann rechts unter "Main Class" die Klasse
+"Starter" eintragen.</p>
+</div>
+<div class="paragraph">
+<p>Nach einem Rechtsklick auf das Projekt in der Projektansicht kann man
+"Clean and Build" auswählen. Danach gibt es den Ordner
+"Pfad/zur/Project/Loacation//dist". In diesem befindet sich eine
+JAR-Datei und eine Kopie des "lib"-Ordners. Beides zusammen muss jetzt
+mit einem beliebigen Archivierungsprogramm in eine ZIP-Datei
+zusammengepackt werden. Dieses Archiv kann dann hochegeladen werden.</p>
 </div>
 </div>
 </div>
-<div class="ulist">
-<ul>
+<div class="sect3">
+<h4 id="zweite-möglichkeit---das-ant-script">Zweite Möglichkeit - Das ANT Script</h4>
+<div class="paragraph">
+<p>Man kann auch das dem SimpleClient beiliegende Ant Buildscript benutzen.
+Dieses kompiliert den SimpleClient und erzeugt automatisch eine JAR
+Datei sowie ein ZIP-Archiv, das man direkt im Websystem hochladen kann.</p>
+</div>
+<div class="sect4">
+<h5 id="_direkt_ausführen">Direkt ausführen</h5>
+<div class="paragraph">
+<p>Wenn Ant installiert ist, kann man über die Kommandozeile in das
+Verzeichnis des SimpleClients wechseln und mit dem Aufruf "Ant" den
+Build ausführen. Am Ende sollte die Meldung "BUILD SUCCESSFUL"
+erscheinen. Im SimpleClient Ordner findet man dann im Unterordner
+"build" die JAR Datei im Ordner "jar" sowie die fertig gepackte
+ZIP-Datei im Ordner "zipped" die direkt im Wettkampfsystem hochgeladen
+werden kann.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_eclipse_2">Eclipse</h5>
+<div class="paragraph">
+<p>Eclipse kann von Haus aus auch mit Ant-Scripten umgehen.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p><a href="_einleitung.html">Einleitung</a></p>
+<p>Im Menü "Run" &#8594; "External Tools" &#8594; "External Tools Configuration"
+wählen</p>
 </li>
 <li>
-<p><a href="_spiel_betreten.html">Spiel betreten</a></p>
+<p>Links in dem neuen Fenster mit einem Rechtsklick auf "Ant Build" &#8594;
+"New" erstellt man eine neue Konfiguration und wählt diese aus</p>
 </li>
 <li>
-<p><a href="_züge_senden.html">Züge senden</a></p>
+<p>Auf der rechten Seite muss man nun das Buildfile auswählen. Das geht
+entweder mit "Browse Workspace" oder "Browse File System". Das Buildfile
+heißt "build.xml" und liegt direkt in dem SimpleClient Ordner, den man
+auf der Software Challenge Homepage heruntergeladen hat. Anschließend
+mit "Apply" bestätigen und das Fenster schließen</p>
 </li>
 <li>
-<p><a href="_spielstatus.html">Spielstatus</a></p>
+<p>Um den Buildprozess zu starten, muss im Menü "Run" &#8594; "External
+Tools" die gerade erstellte Konfiguration ausgewählt werdem. Der Build
+wird dann durchgeführt (dauert i.d.R. wenige Sekunden).</p>
 </li>
-<li>
-<p><a href="zug-anforderung.html">Zug-Anforderung</a></p>
-</li>
-<li>
-<p><a href="_fehler.html">Fehler</a></p>
-</li>
-<li>
-<p><a href="_spiel_verlassen.html">Spiel verlassen</a></p>
-</li>
-<li>
-<p><a href="spielende.html">Spielergebnis</a></p>
-</li>
-<li>
-<p><a href="_spielverlauf.html">Spielverlauf</a></p>
-</li>
-</ul>
+</ol>
+</div>
+<div class="paragraph">
+<p>Am Ende erhält man die Meldung "BUILD SUCCESSFUL".</p>
+</div>
+<div class="paragraph">
+<p>Im SimpleClient-Ordner findet man dann im Unterordner "build" die JAR
+Datei im Ordner "jar" sowie die fertig gepackte ZIP-Datei im Ordner
+"zipped", die direkt ins Wettkampfsystem hochgeladen werden kann.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ruby">Ruby</h3>
+<div class="paragraph">
+<p>Da Ruby eine interpretierte Sprache ist, muss der Ruby-Quellcode direkt in ein
+ZIP-Archiv gepackt und auf das Wettkampfsystem hochgeladen werden. Auf dem
+Wettkampfsystem ist ein Ruby-Interpreter sowie das aktuellste
+<code>software_challenge_client</code> Gem installiert. Alle weiteren Bibliotheken müssen
+im ZIP-Archiv vorhanden sein. Nach dem Hochladen des ZIP-Archiv muss die
+auszuführende Hauptdatei in Wettkampfsystem ausgewählt werden. Diese wird dann
+zum Start des Computerspielers gestartet. Damit dies richtig funktioniert, ist
+es entscheidend, dass die Hauptdatei mit einer sogenannten "Shebang"-Zeile
+beginnt:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="ruby"><span></span><span class="tok-ch">#!/usr/bin/env ruby</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Weiterhin ist es ratsam, den Magic-Comment zum Encoding direkt unter
+die Shebang-Zeile zu schreiben:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="ruby"><span></span><span class="tok-c1"># encoding: UTF-8</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ein vollständiges Beispiel für einen abgabefertigen
+Ruby-Computerspieler gibt es im
+<a href="https://github.com/CAU-Kiel-Tech-Inf/socha_ruby_client/tree/master/example">example
+Verzeichnis des Client-Gems bei Github</a>. Packt man die beiden Dateien
+<code>client.rb</code> und <code>main.rb</code> in ein ZIP-Archiv, hat man einen
+abgabefertigen Computerspieler. Beim Hochladen wählt man <code>main.rb</code> als
+Hauptdatei.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_andere_programmiersprache">Andere Programmiersprache</h3>
+<div class="paragraph">
+<p>Bei Computerspielern in jeder anderen Programmiersprache muss ein Shell-Script
+dem ZIP-Archiv beigelegt werden, was die genauen Instruktionen zum Start des
+Computerspielers enthält. Dieses muss nach dem Hochladen im Wettkampfystem als
+Hauptdatei ausgewählt werden.</p>
+</div>
+<div class="paragraph">
+<p>Beachten Sie hierbei, dass diesem Script vom Wettkampfsystem Parameter übergeben
+werden, die an Ihr Programm weitergegeben werden müssen. Diese Parameter sind
+mindestens Host und Port des Spielservers sowie die Reservierungsnummer des
+Spiels, dem der Computerspieler beitreten soll. Ein Aufruf sieht also in etwa
+wie folgt aus (falls <code>start.sh</code> als Hauptdatei eingestellt ist):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>start.sh -h gameserver -p <span class="tok-m">13050</span> -r 590e5e6f-cf93-488e-a12d-5c194ecf95c2</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die Parameter folgen dabei den
+<a href="https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html#Argument-Syntax">GNU
+Getopt Konventionen</a>. Das heißt, die drei Parameter können in beliebiger
+Reihenfolge und als kurze oder lange Version übergeben werden. Folgende
+Variante muss also auch von Ihrem Programm korrekt verarbeitet werden können:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>start.sh --reservation 590e5e6f-cf93-488e-a12d-5c194ecf95c2 --host gameserver --port <span class="tok-m">13050</span></code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Auch der Server mit grafischer Oberfläche ruft Ihr Programm mit diesen
+Parametern auf. Ihr Programm wird also nur von der grafischen Oberfläche richtig
+gestartet, wenn es die Parameter richtig verarbeitet.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Für die meisten Programmiersprachen gibt es Bibliotheken, die die
+Kommandozeilenparameter nach diesem Schema verarbeiten können, sie müssen diese
+Funktion also nicht unbedingt selbst implementieren.</p>
+</div>
+<div class="paragraph">
+<p>Weiterhin ist es wichtig, den Interpreter in der ersten Zeile des Script
+anzugeben, da das Script nicht von einer Shell aufgerufen wird. Ein <code>start.sh</code>
+Script sieht also in etwa so aus:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span><span class="tok-ch">#!/bin/sh</span><i class="conum" data-value="1"></i><b>(1)</b>
+chmod +x hauptprogramm_dateiname<i class="conum" data-value="2"></i><b>(2)</b>
+./hauptprogramm_dateiname <span class="tok-s2">&quot;</span><span class="tok-nv">$@</span><span class="tok-s2">&quot;</span><i class="conum" data-value="3"></i><b>(3)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Script soll von <code>/bin/sh</code> interpretiert werden, es ist also ein einfaches Shell-Script.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Die Binärdatei wird ausführbar gemacht (das ist nötig, da in einem ZIP-Archiv das Ausührbar-Attribut nicht gespeichert wird).</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Die Binärdatei wird aufgerufen und alle Parameter, die das Script bekommen hat, werden weitergereicht (<code>"$@"</code>).</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Bei compilierten Sprachen müssen die
+Computerspieler für 64bit Linux compiliert werden, bei interpretierten Sprachen
+muss ein passender Interpreter auf dem Wettkampfsystem vorhanden sein. Weiterhin
+müssen Abhängigkeiten wie z.B. genutzte Bibliotheken vorhanden sein oder
+mitgeliefert werden.</p>
+</div>
+<div class="paragraph">
+<p>Am besten die Verwendung einer anderen Programmiersprache frühzeitig mit der
+Betreuung absprechen, damit sichergestellt ist, dass der Computerspieler auch am
+Wettkampf teilnehmen kann. Wir stellen gern eine passende Laufzeitumgebung auf
+dem Wettkampfsystem für die Programmiersprache zur Verfügung.</p>
+</div>
+</div>
+</div>
 </div>
 <div class="paragraph nav-footer">
-<p>Next: <a href="_einleitung.html">Einleitung</a> →</p>
+<p>← Previous: <a href="_den_simpleclient_erweitern.html">Den SimpleClient erweitern</a> | ↑ Up: <a href="index.html">Software-Challenge Endbenutzer-Dokumentation</a> | Next: <a href="_die_ersten_programmier_schritte.html">Die ersten (Programmier-)Schritte</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-11-02 10:06:04 +0100
+Last updated 2018-11-02 10:23:40 +0100
 </div>
 </div>
 </body>

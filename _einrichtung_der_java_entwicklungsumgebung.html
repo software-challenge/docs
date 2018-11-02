@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.8">
-<meta name="author" content="Sören Domrös">
-<title>Software Challenge XML-Dokumentation Piranhas</title>
+<meta name="author" content="Sven Koschnicke">
+<title>Software-Challenge Einstieg</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -507,75 +507,129 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="xml-dokumentation" class="article">
+<body id="_einrichtung_der_java_entwicklungsumgebung" class="article">
 <div id="header">
-<h1>Software Challenge XML-Dokumentation Piranhas</h1>
+<h1>Software-Challenge Einstieg</h1>
 <div class="details">
-<span id="author" class="author">Sören Domrös</span><br>
-<span id="email" class="email"><a href="mailto:stu114053@mail.uni-kiel.de">stu114053@mail.uni-kiel.de</a></span><br>
+<span id="author" class="author">Sven Koschnicke</span><br>
+<span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
+<span id="revdate">2018-09-05</span>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_einrichtung_der_java_entwicklungsumgebung">Einrichtung der (Java-)Entwicklungsumgebung</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.</p>
+<p>Die Aufgabe einer Entwicklungsumgebung (IDE) ist es, den Programmierer bei
+seiner Arbeit zu unterstützen. Dazu bietet sie neben dem Editor auch viele
+Tools, die das Entwickeln eigener Programme stark erleichtern. Zwei große
+Vertreter an Entwicklungsumgebungen sind Eclipse und IntelliJ.</p>
 </div>
 <div class="paragraph">
-<p><a href="xml-dokumentation.pdf">PDF-Version dieses Dokumentes</a></p>
+<p><strong>Hinweis:</strong> Bevor man sich um die Einrichtung der Entwicklungsumgebung
+kümmert, muss unbedingt <a href="installation-java.html">Java installiert</a>
+sein.</p>
+</div>
+<div class="sect2">
+<h3 id="simpleclient-beschaffen">SimpleClient beschaffen</h3>
+<div class="paragraph">
+<p>Der SimpleClient ist schon ein fertiger Computerspieler. Denn Quellcode kann man
+verwenden, um seinen eigenen Spieler zu programmieren. Den SimpleClient bekommt
+man im Downloadbereich der Software-Challenge
+(<a href="https://www.software-challenge.de/downloads" class="bare">https://www.software-challenge.de/downloads</a>). Man braucht die Version "als
+Quellcode".</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="einrichtung-von-eclipse">Einrichtung von Eclipse</h3>
+<div class="sect3">
+<h4 id="beschaffung-und-installation-der-software">Beschaffung und Installation der Software</h4>
+<div class="paragraph">
+<p>Am einfachsten ist die Installation von Eclipse mittels des Eclipse Installer.
+Dies ist auf folgender Seite erklärt:
+<a href="https://www.eclipse.org/downloads/packages/installer" class="bare">https://www.eclipse.org/downloads/packages/installer</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="simpleclient-in-eclipse-einbinden">SimpleClient in Eclipse einbinden</h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/eclipse_import_project.jpg" alt="eclipse import project">
+</div>
+<div class="title">Figure 1. SimpleClient in Eclipse importieren</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Im Menü auf "File" → "Import…" gehen</p>
+</li>
+<li>
+<p>Im Dialogfenster unter "General" "Projects from Folder or Archive" wählen,
+dann auf den "Next" Button klicken</p>
+</li>
+<li>
+<p>Oben rechts auf "Archive…" klicken und die heruntergeladene ZIP-Datei mit dem
+SimpleClient auswählen. Dann auf "Finish" klicken.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
-Dokumentation kann
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs">direkt auf
-GitHub editiert</a> werden, einzige Voraussetzung ist eine kostenlose
-Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
-auswählen (ein guter Startpunkt ist die Datei
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc">index.adoc</a>
-welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
-auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
-<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
-</div>
-</div>
+<p>Gegebenenfalls ist es notwendig, die mitgelieferte Dokumentation manuell
+hinzuzufügen. Dazu geht man wie folgt vor:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="_einleitung.html">Einleitung</a></p>
+<p>Im Package Explorer unter "Referenced Libraries" das Plugin zum aktuellen
+Spiel suchen. Bei der Software-Challenge 2019 heißt es beispielsweise
+"piranhas_2019.jar"</p>
 </li>
 <li>
-<p><a href="_spiel_betreten.html">Spiel betreten</a></p>
+<p>Rechtsklick auf das Plugin und "Properties" anklicken</p>
 </li>
 <li>
-<p><a href="_züge_senden.html">Züge senden</a></p>
-</li>
-<li>
-<p><a href="_spielstatus.html">Spielstatus</a></p>
-</li>
-<li>
-<p><a href="zug-anforderung.html">Zug-Anforderung</a></p>
-</li>
-<li>
-<p><a href="_fehler.html">Fehler</a></p>
-</li>
-<li>
-<p><a href="_spiel_verlassen.html">Spiel verlassen</a></p>
-</li>
-<li>
-<p><a href="spielende.html">Spielergebnis</a></p>
-</li>
-<li>
-<p><a href="_spielverlauf.html">Spielverlauf</a></p>
+<p>Unter "Javadoc Location" lässt sich der "Javadoc location path" angeben. Dort
+den Ordner "doc" des simple Clients eingeben.</p>
 </li>
 </ul>
 </div>
+</div>
+<div class="sect3">
+<h4 id="simpleclient-aus-eclipse-starten">SimpleClient aus Eclipse starten</h4>
+<div class="paragraph">
+<p>Den SimpleClient kann man starten, indem man im Project-Explorer einen
+Rechtsklick auf die Datei <code>Starter.java</code> macht und dann "Run As" →
+"Java Application" auswählt.</p>
+</div>
+<div class="paragraph">
+<p><strong>Hinweis:</strong> Damit der SimpleClient erfolgreich startet, muss der
+Spielleiter laufen und auf eine Verbindung warten.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="weiterführende-links">Weiterführende Links</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.eclipse.org" class="bare">http://www.eclipse.org</a> Homepage der Eclipse-IDE</p>
+</li>
+<li>
+<p><a href="http://www.netbeans.org" class="bare">http://www.netbeans.org</a> Homepage des NetBeans-Projektes</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="paragraph nav-footer">
-<p>Next: <a href="_einleitung.html">Einleitung</a> →</p>
+<p>← Previous: <a href="installation-java.html">Installation von Java</a> | ↑ Up: <a href="getting-started.html">Software-Challenge Einstieg</a> | Next: <a href="_bedienung_von_eclipse.html">Bedienung von Eclipse</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-11-02 10:06:04 +0100
+Last updated 2018-09-07 11:40:30 +0200
 </div>
 </div>
 </body>

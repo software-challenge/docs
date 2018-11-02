@@ -5,8 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.8">
-<meta name="author" content="Sören Domrös">
-<title>Software Challenge XML-Dokumentation Piranhas</title>
+<meta name="author" content="Sven Koschnicke">
+<title>Dokumentation Piranhas Software Challenge 2019</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -507,23 +507,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="xml-dokumentation" class="article">
+<body id="_spielregeln_piranhas_software_challenge_2019" class="article">
 <div id="header">
-<h1>Software Challenge XML-Dokumentation Piranhas</h1>
+<h1>Dokumentation Piranhas Software Challenge 2019</h1>
 <div class="details">
-<span id="author" class="author">Sören Domrös</span><br>
-<span id="email" class="email"><a href="mailto:stu114053@mail.uni-kiel.de">stu114053@mail.uni-kiel.de</a></span><br>
+<span id="author" class="author">Sven Koschnicke</span><br>
+<span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_spielregeln_piranhas_software_challenge_2019">Spielregeln Piranhas: Software Challenge 2019</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.</p>
+<p>Sven Koschnicke &lt;<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>&gt;</p>
 </div>
 <div class="paragraph">
-<p><a href="xml-dokumentation.pdf">PDF-Version dieses Dokumentes</a></p>
+<p><a href="regeln.pdf">PDF-Version dieses Dokumentes</a></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Beitragen</div>
 <div class="paragraph">
 <p>Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
 Dokumentation kann
@@ -538,44 +542,107 @@ auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 </div>
 </div>
 </div>
+<div class="paragraph">
+<p>Das Spielfeld ist ein Aquarium (10x10 Schachbrett mit Spalten A-J und Zeilen
+0-9), ein Spieler spielt die roten, der andere die blauen Fische.</p>
+</div>
+<div class="sect2">
+<h3 id="_anfangsaufstellung">Anfangsaufstellung</h3>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="_einleitung.html">Einleitung</a></p>
+<p>8 rote Fische auf den (Schachbrett-)Feldern A1-A8</p>
 </li>
 <li>
-<p><a href="_spiel_betreten.html">Spiel betreten</a></p>
+<p>8 rote Fische auf den Feldern J1-J8</p>
 </li>
 <li>
-<p><a href="_züge_senden.html">Züge senden</a></p>
+<p>8 blaue Fische auf den Feldern B0-I0</p>
 </li>
 <li>
-<p><a href="_spielstatus.html">Spielstatus</a></p>
-</li>
-<li>
-<p><a href="zug-anforderung.html">Zug-Anforderung</a></p>
-</li>
-<li>
-<p><a href="_fehler.html">Fehler</a></p>
-</li>
-<li>
-<p><a href="_spiel_verlassen.html">Spiel verlassen</a></p>
-</li>
-<li>
-<p><a href="spielende.html">Spielergebnis</a></p>
-</li>
-<li>
-<p><a href="_spielverlauf.html">Spielverlauf</a></p>
+<p>8 blaue Fische auf den Feldern B9-I9</p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>Auf dem Spielfeld gibt es im inneren 6x6-Bereich zwei zufällig generierte
+Kraken-Felder, die zwar durchschwommen werden können, auf denen jedoch kein Zug
+enden darf. Diese Felder behindern also die Schwarmbildung. Die beiden
+zufällig generierten Felder befinden sich weder in derselben Zeile noch in
+derselben Spalte, noch in derselben Diagonale.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ziel_des_spieles">Ziel des Spieles</h3>
+<div class="paragraph">
+<p>Alle Fische der eigenen Farbe sollen zu einem Schwarm verbunden werden, sie
+sollen also auf einem zusammenhängenden Gebiet auf dem Spielfeld stehen, wobei
+senkrecht, waagerecht und diagonal nebeneinanderliegende Felder als
+zusammenhängend gelten.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_züge">Züge</h3>
+<div class="paragraph">
+<p>Es wird abwechselnd gezogen, wobei Rot beginnt. Jede Runde macht jeder Spieler
+einen Zug. In jedem Zug muss man einen eigenen Fisch auf einer senkrechten,
+waagerechten oder diagonalen Linie genau so viele Felder in eine Richtung bewegen,
+wie insgesamt Fische (beider Farben) auf dieser Linie sind.</p>
+</div>
+<div class="paragraph">
+<p>Dabei muss man auf einem leeren Feld oder auf einem vom Gegner besetzten Feld
+landen. Beim Zug darf man Felder mit eigenen Fischen sowie Kraken überspringen,
+nicht aber Felder mit gegnerischen Fischen. Bei der Anzahl der zu ziehenden Felder
+werden übersprungene Felder mitgezählt. Wenn man auf einem Feld ankommt, auf dem
+ein gegnerischer Fisch schwimmt, wird dieser gefressen (ersatzlos vom Spielfeld
+entfernt).</p>
+</div>
+<div class="paragraph">
+<p>Zum Beispiel kann Rot im 1. Zug einen beliebigen roten Fisch zwei Felder in
+Richtung der Spielfeldmitte bewegen, z.B. von A4 nach C4. Eine andere Möglichkeit
+für den 1. Zug wäre, einen Fisch von A1 nach A9 zu ziehen. Man könnte auch mit dem
+Fisch auf A2 den gegnerischen Fisch auf C0 fressen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spielende">Spielende</h3>
+<div class="paragraph">
+<p>Das Spiel endet, wenn am Ende einer Runde alle auf dem Spielfeld verbliebenen
+Fische einer Farbe zu einem einzigen zusammenhängenden Schwarm verbunden sind,
+spätestens jedoch nach 30 Runden. (Blau könnte also einen roten Schwarm noch
+in der 2. Hälfte einer Runde wieder zerstören.)
+Das Spiel endet ebenfalls, wenn einer der Spieler keinen regulären Zug machen
+kann. In diesem Fall hat dieser Spieler verloren.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gewinner">Gewinner</h3>
+<div class="paragraph">
+<p>Falls beim Spielende die Fische nur eines Spielers zu einem einzigen
+zusammenhängenden Schwarm verbunden sind, hat dieser Spieler gewonnen;
+anderenfalls derjenige Spieler mit dem größeren Schwarm. Falls nach den
+vorgenannten Kriterien kein Gewinner ermittelt werden kann, endet das Spiel
+unentschieden.</p>
+</div>
+<div class="paragraph">
+<p>Nachrangiges Kriterium für das Ranking im Wettkampfsystem:
+Anzahl der Fische im größten Schwarm des Spielers.</p>
+</div>
+<div class="paragraph">
+<p>Beim Final Eight gibt es kein nachrangiges Kriterium. Beim Final Eight gewinnt
+derjenige Spieler eine Begegnung, der nach einer geraden Anzahl von Spielen
+(mindestens 6) mehr Spiele als der Gegner gewonnen hat.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="paragraph nav-footer">
-<p>Next: <a href="_einleitung.html">Einleitung</a> →</p>
+<p>↑ Up: <a href="index.html">Dokumentation Piranhas Software Challenge 2019</a> | Next: <a href="_software_challenge_xml_dokumentation_piranhas.html">Software Challenge XML-Dokumentation Piranhas</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-11-02 10:06:04 +0100
+Last updated 2018-11-02 09:29:22 +0100
 </div>
 </div>
 </body>
