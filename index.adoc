@@ -1,6 +1,4 @@
 :imagesdir: images
-:toc: right
-:toc-title: Inhalt
 :source-highlighter: pygments
 :icons: font
 
@@ -25,6 +23,9 @@ Die Dokumentation zu dem aktuellen Spiel, Piranhas, finden Sie in separaten Doku
 - <<spiele/piranhas/xml-dokumentation.adoc#,Piranhas XML Dokumentation>>
 endif::backend-pdf[]
 
+Die Dokumentation ist in folgende Abschnitte aufgeteilt. Sie können sie gezielt
+oder von Anfang bis Ende lesen. Über die Links am Ende jedes Abschnittes kommen
+Sie zum nächsten Abschnitt oder wieder auf diese Übersichtsseite.
 
 include::allgemein/die-software-challenge.adoc[]
 

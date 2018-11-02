@@ -1,10 +1,6 @@
 :imagesdir: ../images
-:toc: right
-:toc-title: Inhalt
 :source-highlighter: pygments
 :icons: font
-
-:sectnums:
 
 = Software Challenge XML-Dokumentation Piranhas
 Sören Domrös <stu114053@mail.uni-kiel.de>
