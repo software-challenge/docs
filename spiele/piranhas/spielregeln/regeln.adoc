@@ -1,10 +1,6 @@
 :imagesdir: ../images
-:toc: right
-:toc-title: Inhalt
 :source-highlighter: pygments
 :icons: font
-
-:sectnums:
 
 = Spielregeln Piranhas: Software Challenge 2019
 Sven Koschnicke <svk@informatik.uni-kiel.de>

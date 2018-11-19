@@ -21,6 +21,7 @@ if [ "$current_branch" = "$branch_to_deploy" ]; then
   ./docs generate pdf
   echo "putting new version in gh-pages branch"
   cd out
+  touch .nojekyll
   git add -A
   git commit -a -u -m "automatically updated generated files on commit to master"
   echo "deploying to github"
