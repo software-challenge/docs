@@ -11,7 +11,7 @@ setup)
 
   (
   cd ..
-  git clone git@github.com:owenh000/asciidoctor-extensions-lab.git
+  git clone git@github.com:SKoschnicke/asciidoctor-extensions-lab.git
   cd asciidoctor-extensions-lab
   git checkout improve-multipagehtml5
   )
