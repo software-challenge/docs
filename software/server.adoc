@@ -1,5 +1,5 @@
 [[server]]
-== Der Spielleiter (Server)
+= Der Spielleiter (Server)
 
 Die beiden <<der-computerspieler,Computerspieler>> kommunizieren nicht
 direkt miteinander, sondern übertragen ihre Nachrichten über einen
@@ -18,7 +18,7 @@ besitzt eine grafische Oberfläche, durch die man das Spiel gut verfolgen
 und sogar als Mensch mitspielen kann.
 
 [[system-vorbereiten-und-spielleiter-starten]]
-=== System vorbereiten und Spielleiter starten
+== System vorbereiten und Spielleiter starten
 
 Die einzige Vorraussetzung ist, dass auf dem Rechner mindestens die
 Laufzeitumgebung für Java 8 installiert ist. Siehe <<installation-java>>.
@@ -27,7 +27,7 @@ Nach der erfolgreichen Installation kann man den Server durch einen
 Doppelklick auf die Datei `software-challenge-gui` starten.
 
 [[die-programmoberfläche]]
-=== Die Programmoberfläche
+== Die Programmoberfläche
 
 Die Programmoberfläche besteht aus dem Menü links sowie der Spielfläche in der Mitte.
 
@@ -39,7 +39,7 @@ Auf der linken Seite sind alle möglichen Aktionen aufgelistet.
 Zu Beginn ist die Spielfläche leer.
 
 [[ein-neues-spiel-erstellen]]
-=== Ein neues Spiel erstellen
+== Ein neues Spiel erstellen
 
 Um ein Spiel zu spielen, muss zunächst über das Menü links "Neues
 Spiel" die folgende Ansicht aufgerufen werden:
@@ -70,7 +70,7 @@ Nach Eingabe der erforderlichen Werte kann das Spiel mithilfe des
 unteren Knopfs "Start!" erstellt werden.
 
 [[die-spielfeldoberfläche]]
-=== Die Spielfeldoberfläche
+== Die Spielfeldoberfläche
 
 .Die Spielfeldoberfläche (hier mit dem Spiel "Piranhas")
 image::spielfeldoberflaeche.jpg[]
@@ -110,7 +110,7 @@ Für das Spiel Piranhas:
   ziehenden Fisch auswählen.
 
 [[spielwiederholung-laden]]
-=== Spielwiederholungen
+== Spielwiederholungen
 
 Spielwiederholungen oder Replay-Dateien sind aufgezeichnete frühere Spiele, die
 man sich beliebig oft wieder ansehen kann, um beispielsweise einen Fehler des
@@ -125,7 +125,7 @@ Um eine gespeicherte Spielwiederholung zu laden verwendet man den Eintrag
 man das gespeicherte Spiel abspielen oder Schritt für Schritt durchgehen.
 
 [[testdurchläufe]]
-=== Testdurchläufe
+== Testdurchläufe
 
 Wenn man einen grundsätzlich funkionierenden Computerspieler programmiert hat,
 ist es sinnvoll, diesen mit vielen verschiedenen Spielsituationen zu
@@ -136,7 +136,7 @@ unter den Überschrift <<automatische-spiele, Automatische Spiele: Der
 Testserver>> und <<tests-ohne-gui, Massentests>> beschrieben.
 
 [[spielsituation-nachstellen]]
-=== Spielsituation nachstellen
+== Spielsituation nachstellen
 
 Wenn Sie ein Fehlerverhalten Ihres Computerspielers beobachtet haben,
 das nur in einer bestimmten Situation in einem Spiel aufgetreten ist,
@@ -168,7 +168,7 @@ eine Schritt-für-Schritt Anleitung:
   in der XML vorhanden sind.
 
 [[replay-ohne-gui-speichern]]
-=== Replay mit Server ohne graphische Oberfläche speichern
+== Replay mit Server ohne graphische Oberfläche speichern
 
 Wenn der Server ohne die graphische Oberfläche gestartet wird, kann das `--saveReplay`
 Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter `./replays` gespeichert wird.
@@ -177,7 +177,7 @@ Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter
   java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051 --saveReplay true
 
 [[automatische-spiele]]
-=== Automatische Spiele: Der Testserver
+== Automatische Spiele: Der Testserver
 
 Wenn Sie automatisiert Spiele mit Ihrem Computerspieler spielen wollen, um
 bestimmte Verhaltensweisen bei der Weiterentwicklung regelmäßig zu testen,
@@ -216,7 +216,7 @@ werden und optional mit `--turn` ein Zug spezifiziert werden.
   java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051 --loadGameFile ./replay.xml --turn 10
 
 [[soft-timeouts]]
-==== Unerwartete Zugzeitüberschreitungen (Soft-Timeout)
+=== Unerwartete Zugzeitüberschreitungen (Soft-Timeout)
 
 Wenn Sie den Testserver einige Zeit laufen lassen, um eine größere Anzahl von
 Testspielen durchzuführen, kann es dazu kommen, dass Computerspieler wegen
@@ -273,61 +273,66 @@ neuen Problemen führen, auf die man gefasst sein sollte. Dazu gehören erhöhte
 Resourcenverbrauch und Instabilität der Anwendung.
 
 [[tests-ohne-gui]]
-=== Massentests mit Server ohne graphische Oberfläche
+== Massentests mit Server ohne graphische Oberfläche
 
 Wenn Sie Massentests mit ihrem Computerspieler ausführen wollen, um Beispielsweise seine
 Gewinnchance gegenüber einer früheren Version zu testen, wobei sich die beiden Spieler als Startspieler abwechseln,
-dann ist dies mit folgenden Schritten möglich:
+gibt es zwei Varianten:
 
-Starten sie den Server auf dem Port 13051.
+=== Variante mit TestClient
 
-[source,sh]
-....
-java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051
-....
+Starten sie den TestClient.
 
-==== Variante mit TestClient
-
-Starten sie (mit weiterhin laufendem Server, s.o.) den TestClient
+> Sie können hier auch manuell einen Server vorher starten, wie bei der Variante ohne TestClient, allerdings kümmert der
+TestClient sich bei Angabe des Arguments `--start-server` gleich selber darum. Sie sollten lediglich aufpassen, dass
+nicht plötzlich zwei Server auf dem selben Port laufen.
 
 [source,sh]
 java -jar -Dlogback.configurationFile=logback-tests.xml test_client.jar
     --tests 4
     --name1 "displayName1"
     --player1 "./player1.jar"
-    --timeout1 true
     --name2 "displayName2"
     --player2 "./player2.jar"
-    --timeout2 true
+    --start-server
     --port 13051
 
-Argumente des TestClients
+==== Argumente des TestClients
+
+> Boolesche Parameter werden als true gewertet, sobald sie angegeben werden. Ein Wert hinter dem Parameter hat keine Wirkung.
+
 |===
-| Attribut	|  Standardwert	| Kurzbeschreibung
+| Attribut				| Standardwert (Typ)	| Kurzbeschreibung
 
-|--tests 		| 100
-| Anzahl der Tests, die gespielt werden sollen (Integer)
+| --tests 				| 100 (int)
+| Anzahl der Tests, die gespielt werden sollen
 
-|--player1	| "./defaultplayer.jar"
-|Erster Computerspieler (Dateipfad)
+| --player1				| "./defaultplayer.jar" (Dateipfad)
+| Erster Computerspieler
 
-|--player2	| "./defaultplayer.jar"
-|Zweiter Computerspieler (Dateipfad)
+| --player2				| "./defaultplayer.jar" (Dateipfad)
+| Zweiter Computerspieler
 
-|--name1		| "player1"
-| Name des ersten Spielers (String)
+| --name1					| "player1" (String)
+| Name des ersten Spielers
 
-| --name2		| "player2"
-| Name des zweiten Spielers (String)
+| --name2					| "player2" (String)
+| Name des zweiten Spielers
 
-|--timeout1	| true
-|Scheidet der erste Spieler bei einem Timeout aus? (true\|false)
+| --no-timeout		| false (bool)
+| Deaktiviere ausscheiden durch Timeouts. Kann durch `--no-timeout1` bzw. `--no-timeout2` für beide Spieler unabhängig gesetzt werden.
 
-|--timeout2	| true
-|Scheidet der zweite Spieler bei einem Timeout aus? (true\|false)
+| --start-server	| false (bool)
+| Starte einen Server auf dem angegebenen Port vor dem Starten der Clients
 
-|--port			| 13051
-|Der Port, auf dem der TestClient die Clients startet
+| --port					| 13051 (int)
+| Der Port, auf dem der TestClient die Clients startet
+
+| --host					| localhost (IP)
+| Das Gerät, auf dem der Server läuft
+
+| --loglevel			| INFO - as defined in logback XML (https://logback.qos.ch/apidocs/ch/qos/logback/classic/Level.html[Level])
+| Setzt das Loglevel, um ausführliche oder besonders kompakte Ausgaben zu erhalten.
 
 |===
 
@@ -341,9 +346,14 @@ Ergebnisse werden erst zurückgesetzt, wenn der Server neu gestartet wird. Achte
 Sie also darauf, den Server neuzustarten oder einen anderen Spielernamen zu
 verwenden, wenn Sie den Spieler verändern.
 
-==== Variante ohne TestClient
+=== Variante ohne TestClient
 
-Auch hier muss der Server laufen (s.o.).
+Starten sie den Server:
+
+[source,sh]
+....
+java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051
+....
 
 Starten Sie ein Spiel mit Reservierungscode (siehe Spielverlauf in der XML-Dokumentation).
 Aktivieren Sie mit dem erstellten Administratorclient den Testmodus:
