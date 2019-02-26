@@ -1,5 +1,5 @@
 [[server]]
-= Der Spielleiter (Server)
+== Der Spielleiter (Server)
 
 Die beiden <<der-computerspieler,Computerspieler>> kommunizieren nicht
 direkt miteinander, sondern übertragen ihre Nachrichten über einen
@@ -18,7 +18,7 @@ besitzt eine grafische Oberfläche, durch die man das Spiel gut verfolgen
 und sogar als Mensch mitspielen kann.
 
 [[system-vorbereiten-und-spielleiter-starten]]
-== System vorbereiten und Spielleiter starten
+=== System vorbereiten und Spielleiter starten
 
 Die einzige Vorraussetzung ist, dass auf dem Rechner mindestens die
 Laufzeitumgebung für Java 8 installiert ist. Siehe <<installation-java>>.
@@ -27,7 +27,7 @@ Nach der erfolgreichen Installation kann man den Server durch einen
 Doppelklick auf die Datei `software-challenge-gui` starten.
 
 [[die-programmoberfläche]]
-== Die Programmoberfläche
+=== Die Programmoberfläche
 
 Die Programmoberfläche besteht aus dem Menü links sowie der Spielfläche in der Mitte.
 
@@ -39,7 +39,7 @@ Auf der linken Seite sind alle möglichen Aktionen aufgelistet.
 Zu Beginn ist die Spielfläche leer.
 
 [[ein-neues-spiel-erstellen]]
-== Ein neues Spiel erstellen
+=== Ein neues Spiel erstellen
 
 Um ein Spiel zu spielen, muss zunächst über das Menü links "Neues
 Spiel" die folgende Ansicht aufgerufen werden:
@@ -70,7 +70,7 @@ Nach Eingabe der erforderlichen Werte kann das Spiel mithilfe des
 unteren Knopfs "Start!" erstellt werden.
 
 [[die-spielfeldoberfläche]]
-== Die Spielfeldoberfläche
+=== Die Spielfeldoberfläche
 
 .Die Spielfeldoberfläche (hier mit dem Spiel "Piranhas")
 image::spielfeldoberflaeche.jpg[]
@@ -110,7 +110,7 @@ Für das Spiel Piranhas:
   ziehenden Fisch auswählen.
 
 [[spielwiederholung-laden]]
-== Spielwiederholungen
+=== Spielwiederholungen
 
 Spielwiederholungen oder Replay-Dateien sind aufgezeichnete frühere Spiele, die
 man sich beliebig oft wieder ansehen kann, um beispielsweise einen Fehler des
@@ -125,7 +125,7 @@ Um eine gespeicherte Spielwiederholung zu laden verwendet man den Eintrag
 man das gespeicherte Spiel abspielen oder Schritt für Schritt durchgehen.
 
 [[testdurchläufe]]
-== Testdurchläufe
+=== Testdurchläufe
 
 Wenn man einen grundsätzlich funkionierenden Computerspieler programmiert hat,
 ist es sinnvoll, diesen mit vielen verschiedenen Spielsituationen zu
@@ -136,7 +136,7 @@ unter den Überschrift <<automatische-spiele, Automatische Spiele: Der
 Testserver>> und <<tests-ohne-gui, Massentests>> beschrieben.
 
 [[spielsituation-nachstellen]]
-== Spielsituation nachstellen
+=== Spielsituation nachstellen
 
 Wenn Sie ein Fehlerverhalten Ihres Computerspielers beobachtet haben,
 das nur in einer bestimmten Situation in einem Spiel aufgetreten ist,
@@ -168,7 +168,7 @@ eine Schritt-für-Schritt Anleitung:
   in der XML vorhanden sind.
 
 [[replay-ohne-gui-speichern]]
-== Replay mit Server ohne graphische Oberfläche speichern
+=== Replay mit Server ohne graphische Oberfläche speichern
 
 Wenn der Server ohne die graphische Oberfläche gestartet wird, kann das `--saveReplay`
 Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter `./replays` gespeichert wird.
@@ -177,7 +177,7 @@ Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter
   java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051 --saveReplay true
 
 [[automatische-spiele]]
-== Automatische Spiele: Der Testserver
+=== Automatische Spiele: Der Testserver
 
 Wenn Sie automatisiert Spiele mit Ihrem Computerspieler spielen wollen, um
 bestimmte Verhaltensweisen bei der Weiterentwicklung regelmäßig zu testen,
@@ -216,7 +216,7 @@ werden und optional mit `--turn` ein Zug spezifiziert werden.
   java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051 --loadGameFile ./replay.xml --turn 10
 
 [[soft-timeouts]]
-=== Unerwartete Zugzeitüberschreitungen (Soft-Timeout)
+==== Unerwartete Zugzeitüberschreitungen (Soft-Timeout)
 
 Wenn Sie den Testserver einige Zeit laufen lassen, um eine größere Anzahl von
 Testspielen durchzuführen, kann es dazu kommen, dass Computerspieler wegen
@@ -273,13 +273,13 @@ neuen Problemen führen, auf die man gefasst sein sollte. Dazu gehören erhöhte
 Resourcenverbrauch und Instabilität der Anwendung.
 
 [[tests-ohne-gui]]
-== Massentests mit Server ohne graphische Oberfläche
+=== Massentests mit Server ohne graphische Oberfläche
 
 Wenn Sie Massentests mit ihrem Computerspieler ausführen wollen, um Beispielsweise seine
 Gewinnchance gegenüber einer früheren Version zu testen, wobei sich die beiden Spieler als Startspieler abwechseln,
 gibt es zwei Varianten:
 
-=== Variante mit TestClient
+==== Variante mit TestClient
 
 Starten sie den TestClient.
 
@@ -297,7 +297,7 @@ java -jar -Dlogback.configurationFile=logback-tests.xml test_client.jar
     --start-server
     --port 13051
 
-==== Argumente des TestClients
+===== Argumente des TestClients
 
 > Boolesche Parameter werden als true gewertet, sobald sie angegeben werden. Ein Wert hinter dem Parameter hat keine Wirkung.
 
@@ -346,7 +346,7 @@ Ergebnisse werden erst zurückgesetzt, wenn der Server neu gestartet wird. Achte
 Sie also darauf, den Server neuzustarten oder einen anderen Spielernamen zu
 verwenden, wenn Sie den Spieler verändern.
 
-=== Variante ohne TestClient
+==== Variante ohne TestClient
 
 Starten sie den Server:
 
