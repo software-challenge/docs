@@ -126,6 +126,19 @@ Verzeichnis des Client-Gems bei Github]. Packt man die beiden Dateien
 abgabefertigen Computerspieler. Beim Hochladen wählt man `main.rb` als
 Hauptdatei.
 
+=== C#
+
+Geht sicher, dass euer Projekt nur Libraries nutzt, die auch in <<ausfuehrungsumgebungen,Mono 5.4>> enthalten sind.
+Kompiliert bzw. erstellt euer Projekt und fügt zu dem build eine start.sh hinzu, wie <<start-sh-script,hier>> beschrieben, sofern ihr noch keine habt, da der Wettkampfserver eure exe sonst nicht ausführen kann.
+Allerdings muss sie folgenden Inhalt haben um eure exe mit mono zu starten:
+
+[source,sh]
+----
+#!/bin/sh
+chmod +x csharp_exe_dateiname
+mono csharp_exe_dateiname "$@"
+----
+
 === Andere Programmiersprache
 
 Bei Computerspielern in jeder anderen Programmiersprache muss ein Shell-Script
@@ -163,6 +176,9 @@ Für die meisten Programmiersprachen gibt es Bibliotheken, die die
 Kommandozeilenparameter nach diesem Schema verarbeiten können, sie müssen diese
 Funktion also nicht unbedingt selbst implementieren.
 
+[[start-sh-script]]
+===== Das start.sh Script zur ausführung auf dem Wettkampfserver
+
 Weiterhin ist es wichtig, den Interpreter in der ersten Zeile des Script
 anzugeben, da das Script nicht von einer Shell aufgerufen wird. Ein `start.sh`
 Script sieht also in etwa so aus:
@@ -192,3 +208,5 @@ Am besten die Verwendung einer anderen Programmiersprache frühzeitig mit der
 Betreuung absprechen, damit sichergestellt ist, dass der Computerspieler auch am
 Wettkampf teilnehmen kann. Wir stellen gern eine passende Laufzeitumgebung auf
 dem Wettkampfsystem für die Programmiersprache zur Verfügung.
+
+Schaut euch auch genu die https://cau-kiel-tech-inf.github.io/socha-enduser-docs/spiele/piranhas/xml-dokumentation.html[XML-Dokumentation] an, damit ihr wisst auf welche Nachrichten ihr regieren müsst.
