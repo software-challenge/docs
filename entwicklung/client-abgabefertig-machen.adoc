@@ -209,4 +209,5 @@ Betreuung absprechen, damit sichergestellt ist, dass der Computerspieler auch am
 Wettkampf teilnehmen kann. Wir stellen gern eine passende Laufzeitumgebung auf
 dem Wettkampfsystem für die Programmiersprache zur Verfügung.
 
-Schaut euch auch genu die https://cau-kiel-tech-inf.github.io/socha-enduser-docs/spiele/piranhas/xml-dokumentation.html[XML-Dokumentation] an, damit ihr wisst auf welche Nachrichten ihr regieren müsst.
+Wenn ihr euren eigenen Client in einer Sprache eurer Wahl schreiben wollt, dann werdet ihr auch die gesamte Kommunikation mit dem Server implementieren müssen. Schaut euch auch genau die https://cau-kiel-tech-inf.github.io/socha-enduser-docs/spiele/piranhas/xml-dokumentation.html[XML-Dokumentation] an, damit ihr wisst auf welche Nachrichten ihr regieren müsst.
+Außerdem empfehle ich euch als Beispiel den (inoffiziellen) Swift Client anzusehen, dafür müsst ihr auch nicht Swift können. Wenn ihr eine andere procedurale Programmiersprache kennt, dann werdet ihr gut genug verstehen was der Client macht um es in eurer Sprache nachzubauen. Auf ähnliche weise können natürlich auch https://github.com/CAU-Kiel-Tech-Inf/socha[der Java Client source code] und https://github.com/niklasCarstensen/SoftwareChallengeCsharpClient[der C# Client source code] helfen. 
