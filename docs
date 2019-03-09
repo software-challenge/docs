@@ -2,21 +2,24 @@
 action=$1
 case $action in
 setup)
+	echo "Installing required gems"
 	sudo gem install asciidoctor pygments.rb
 	sudo gem install --prerelease asciidoctor-pdf
 
-	cp bin/git-post-commit-hook.sh .git/hooks/post-commit
+	cp -v bin/git-post-commit-hook.sh .git/hooks/post-commit
 	chmod +x .git/hooks/post-commit
-	echo "\nCopied post-commit hook\n"
 
-  (
-  cd ..
-  git clone git@github.com:SKoschnicke/asciidoctor-extensions-lab.git
-  cd asciidoctor-extensions-lab
-  git checkout improve-multipagehtml5
-  )
+	(
+	cd ..
+	git clone git@github.com:SKoschnicke/asciidoctor-extensions-lab.git
+	cd asciidoctor-extensions-lab
+	git checkout improve-multipagehtml5
+	)
 
-	case "$@" in *"live"*) sudo gem install guard guard-shell guard-livereload yajl-ruby;; esac
+	case "$@" in *"live"*)
+		echo "Installing gems required for live-preview"
+		sudo gem install guard guard-shell guard-livereload yajl-ruby;;
+	esac
 	;;
 
 
@@ -75,7 +78,7 @@ update-date)
     setup - install the gems required for generate and setup the post-commit-hook
       └─ live - also install the gems required for a live-preview
     generate - copy the images and convert the adoc to html
-      └─ \e[3mgamename\e[0m - convert a specific game
+      └─ <game> - convert a specific game
       └─ pdf - additionally convert to pdf
     publish - refresh the last update date in the header of the docs and commit
     update-date - update the date in the header of the docs to the date of the last commit"
