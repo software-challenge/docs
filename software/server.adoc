@@ -277,59 +277,64 @@ Resourcenverbrauch und Instabilität der Anwendung.
 
 Wenn Sie Massentests mit ihrem Computerspieler ausführen wollen, um Beispielsweise seine
 Gewinnchance gegenüber einer früheren Version zu testen, wobei sich die beiden Spieler als Startspieler abwechseln,
-dann ist dies mit folgenden Schritten möglich:
-
-Starten sie den Server auf dem Port 13051.
-
-[source,sh]
-....
-java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051
-....
+gibt es zwei Varianten:
 
 ==== Variante mit TestClient
 
-Starten sie (mit weiterhin laufendem Server, s.o.) den TestClient
+Starten sie den TestClient:
 
 [source,sh]
 java -jar -Dlogback.configurationFile=logback-tests.xml test_client.jar
     --tests 4
     --name1 "displayName1"
     --player1 "./player1.jar"
-    --timeout1 true
     --name2 "displayName2"
     --player2 "./player2.jar"
-    --timeout2 true
+    --start-server
     --port 13051
 
-Argumente des TestClients
-|===
-| Attribut	|  Standardwert	| Kurzbeschreibung
+NOTE: Sie können hier auch manuell einen Server vorher starten, wie bei der Variante ohne TestClient, allerdings kümmert der
+TestClient sich bei Angabe des Arguments `--start-server` gleich selber darum. Sie sollten lediglich aufpassen, dass
+nicht zwei Server auf dem selben Port laufen.
 
-|--tests 		| 100
-| Anzahl der Tests, die gespielt werden sollen (Integer)
-
-|--player1	| "./defaultplayer.jar"
-|Erster Computerspieler (Dateipfad)
-
-|--player2	| "./defaultplayer.jar"
-|Zweiter Computerspieler (Dateipfad)
-
-|--name1		| "player1"
-| Name des ersten Spielers (String)
-
-| --name2		| "player2"
-| Name des zweiten Spielers (String)
-
-|--timeout1	| true
-|Scheidet der erste Spieler bei einem Timeout aus? (true\|false)
-
-|--timeout2	| true
-|Scheidet der zweite Spieler bei einem Timeout aus? (true\|false)
-
-|--port			| 13051
-|Der Port, auf dem der TestClient die Clients startet
+===== Argumente des TestClients
 
 |===
+| Attribut				| Standardwert (Typ)	| Kurzbeschreibung
+
+| --tests 				| 100 (int)
+| Anzahl der Tests, die gespielt werden sollen
+
+| --player1				| "./defaultplayer.jar" (Dateipfad)
+| Erster Computerspieler
+
+| --player2				| "./defaultplayer.jar" (Dateipfad)
+| Zweiter Computerspieler
+
+| --name1					| "player1" (String)
+| Name des ersten Spielers
+
+| --name2					| "player2" (String)
+| Name des zweiten Spielers
+
+| --no-timeout		| false (bool)
+| Deaktiviere ausscheiden durch Timeouts. Kann durch `--no-timeout1` bzw. `--no-timeout2` für beide Spieler unabhängig gesetzt werden.
+
+| --start-server	| false (bool)
+| Starte einen Server auf dem angegebenen Port vor dem Starten der Clients
+
+| --port					| 13051 (int)
+| Der Port, auf dem der TestClient die Clients startet
+
+| --host					| localhost (IP)
+| Das Gerät, auf dem der Server läuft
+
+| --loglevel			| INFO - as defined in logback XML (https://logback.qos.ch/apidocs/ch/qos/logback/classic/Level.html[Level])
+| Setzt das Loglevel, um ausführliche oder besonders kompakte Ausgaben zu erhalten.
+
+|===
+
+NOTE: Boolesche Parameter werden als true gewertet, sobald sie angegeben werden. Ein Wert hinter dem Parameter hat keine Wirkung.
 
 Bei Argumenten, die nicht angegeben wurden, werden die Standardwerte aus der Tabelle verwendet.
 Die Ausgabe der Daten erfolgt nach jedem Spiel anhand von gerundeten Werten.
@@ -343,7 +348,12 @@ verwenden, wenn Sie den Spieler verändern.
 
 ==== Variante ohne TestClient
 
-Auch hier muss der Server laufen (s.o.).
+Starten sie den Server:
+
+[source,sh]
+....
+java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051
+....
 
 Starten Sie ein Spiel mit Reservierungscode (siehe Spielverlauf in der XML-Dokumentation).
 Aktivieren Sie mit dem erstellten Administratorclient den Testmodus:
