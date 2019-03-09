@@ -281,11 +281,7 @@ gibt es zwei Varianten:
 
 ==== Variante mit TestClient
 
-Starten sie den TestClient.
-
-NOTE: Sie können hier auch manuell einen Server vorher starten, wie bei der Variante ohne TestClient, allerdings kümmert der
-TestClient sich bei Angabe des Arguments `--start-server` gleich selber darum. Sie sollten lediglich aufpassen, dass
-nicht plötzlich zwei Server auf dem selben Port laufen.
+Starten sie den TestClient:
 
 [source,sh]
 java -jar -Dlogback.configurationFile=logback-tests.xml test_client.jar
@@ -297,9 +293,11 @@ java -jar -Dlogback.configurationFile=logback-tests.xml test_client.jar
     --start-server
     --port 13051
 
-===== Argumente des TestClients
+NOTE: Sie können hier auch manuell einen Server vorher starten, wie bei der Variante ohne TestClient, allerdings kümmert der
+TestClient sich bei Angabe des Arguments `--start-server` gleich selber darum. Sie sollten lediglich aufpassen, dass
+nicht zwei Server auf dem selben Port laufen.
 
-NOTE: Boolesche Parameter werden als true gewertet, sobald sie angegeben werden. Ein Wert hinter dem Parameter hat keine Wirkung.
+===== Argumente des TestClients
 
 |===
 | Attribut				| Standardwert (Typ)	| Kurzbeschreibung
@@ -335,6 +333,8 @@ NOTE: Boolesche Parameter werden als true gewertet, sobald sie angegeben werden.
 | Setzt das Loglevel, um ausführliche oder besonders kompakte Ausgaben zu erhalten.
 
 |===
+
+NOTE: Boolesche Parameter werden als true gewertet, sobald sie angegeben werden. Ein Wert hinter dem Parameter hat keine Wirkung.
 
 Bei Argumenten, die nicht angegeben wurden, werden die Standardwerte aus der Tabelle verwendet.
 Die Ausgabe der Daten erfolgt nach jedem Spiel anhand von gerundeten Werten.
