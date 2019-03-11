@@ -590,24 +590,43 @@ SimpleClient auswählen. Dann auf "Finish" klicken.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Gegebenenfalls ist es notwendig, die mitgelieferte Dokumentation manuell
-hinzuzufügen. Dazu geht man wie folgt vor:</p>
+<p>Nun muss noch das SDK und Spiel-Plugin eingebunden werden, damit Funktionen wie
+Autovervollständigung und Anzeige der Dokumentation richtig arbeiten:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Im Package Explorer unter "Referenced Libraries" das Plugin zum aktuellen
-Spiel suchen. Bei der Software-Challenge 2019 heißt es beispielsweise
-"piranhas_2019.jar"</p>
+<p>Im Package Explorer einen Rechtsklick auf den Eintrag sdk.jar unter
+"Referenced Libraries" machen und Properties wählen</p>
 </li>
 <li>
-<p>Rechtsklick auf das Plugin und "Properties" anklicken</p>
+<p>Links "Java Source Attachment" auswählen</p>
 </li>
 <li>
-<p>Unter "Javadoc Location" lässt sich der "Javadoc location path" angeben. Dort
-den Ordner "doc" des simple Clients eingeben.</p>
+<p>Rechts "Workspace location" aktivieren und den Pfad zu "sdk-sources.jar" (im
+Ordner "lib" des SimpleClient Quellcode Paketes) einstellen</p>
 </li>
-</ul>
+<li>
+<p>Den Dialog mit "Apply and Close" schließen</p>
+</li>
+<li>
+<p>Im Package Explorer einen Rechtsklick auf den Eintrag für das Spiel-Plugin
+unter "Referenced Libraries" machen (Spielname und Jahreszahl, also z.B.
+"piranhas_2019.jar") und Properties wählen</p>
+</li>
+<li>
+<p>Links "Java Source Attachment" auswählen</p>
+</li>
+<li>
+<p>Rechts "Workspace location" aktivieren und den Pfad zur Source-Jar (im Ordner
+"lib" des SimpleClient Quellcode Paketes) einstellen (heißt genau wie das
+Spiel-Plugin mit einem "sources" angehängt, also z.B.
+"piranhas_2019-sources.jar")</p>
+</li>
+<li>
+<p>Den Dialog mit "Apply and Close" schließen</p>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect3">
