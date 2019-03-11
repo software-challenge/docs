@@ -40,15 +40,24 @@ dann auf den "Next" Button klicken
 3. Oben rechts auf "Archive…" klicken und die heruntergeladene ZIP-Datei mit dem
 SimpleClient auswählen. Dann auf "Finish" klicken.
 
-Gegebenenfalls ist es notwendig, die mitgelieferte Dokumentation manuell
-hinzuzufügen. Dazu geht man wie folgt vor:
+Nun muss noch das SDK und Spiel-Plugin eingebunden werden, damit Funktionen wie
+Autovervollständigung und Anzeige der Dokumentation richtig arbeiten:
 
-* Im Package Explorer unter "Referenced Libraries" das Plugin zum aktuellen
-Spiel suchen. Bei der Software-Challenge 2019 heißt es beispielsweise
-"piranhas_2019.jar"
-* Rechtsklick auf das Plugin und "Properties" anklicken
-* Unter "Javadoc Location" lässt sich der "Javadoc location path" angeben. Dort
-den Ordner "doc" des simple Clients eingeben.
+1. Im Package Explorer einen Rechtsklick auf den Eintrag sdk.jar unter
+"Referenced Libraries" machen und Properties wählen
+2. Links "Java Source Attachment" auswählen
+3. Rechts "Workspace location" aktivieren und den Pfad zu "sdk-sources.jar" (im
+Ordner "lib" des SimpleClient Quellcode Paketes) einstellen
+4. Den Dialog mit "Apply and Close" schließen
+5. Im Package Explorer einen Rechtsklick auf den Eintrag für das Spiel-Plugin
+unter "Referenced Libraries" machen (Spielname und Jahreszahl, also z.B.
+"piranhas_2019.jar") und Properties wählen
+6. Links "Java Source Attachment" auswählen
+7. Rechts "Workspace location" aktivieren und den Pfad zur Source-Jar (im Ordner
+"lib" des SimpleClient Quellcode Paketes) einstellen (heißt genau wie das
+Spiel-Plugin mit einem "sources" angehängt, also z.B.
+"piranhas_2019-sources.jar")
+8. Den Dialog mit "Apply and Close" schließen
 
 [[simpleclient-aus-eclipse-starten]]
 ==== SimpleClient aus Eclipse starten
