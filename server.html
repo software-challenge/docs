@@ -934,20 +934,12 @@ Resourcenverbrauch und Instabilität der Anwendung.</p>
 <div class="paragraph">
 <p>Wenn Sie Massentests mit ihrem Computerspieler ausführen wollen, um Beispielsweise seine
 Gewinnchance gegenüber einer früheren Version zu testen, wobei sich die beiden Spieler als Startspieler abwechseln,
-dann ist dies mit folgenden Schritten möglich:</p>
-</div>
-<div class="paragraph">
-<p>Starten sie den Server auf dem Port 13051.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="sh"><span></span>java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar softwarechallenge-server.jar --port <span class="tok-m">13051</span></code></pre>
-</div>
+gibt es zwei Varianten:</p>
 </div>
 <div class="sect3">
 <h4 id="_variante_mit_testclient">Variante mit TestClient</h4>
 <div class="paragraph">
-<p>Starten sie (mit weiterhin laufendem Server, s.o.) den TestClient</p>
+<p>Starten sie den TestClient:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -955,16 +947,28 @@ dann ist dies mit folgenden Schritten möglich:</p>
     --tests <span class="tok-m">4</span>
     --name1 <span class="tok-s2">&quot;displayName1&quot;</span>
     --player1 <span class="tok-s2">&quot;./player1.jar&quot;</span>
-    --timeout1 <span class="tok-nb">true</span>
     --name2 <span class="tok-s2">&quot;displayName2&quot;</span>
     --player2 <span class="tok-s2">&quot;./player2.jar&quot;</span>
-    --timeout2 <span class="tok-nb">true</span>
+    --start-server
     --port <span class="tok-m">13051</span></code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Argumente des TestClients</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Sie können hier auch manuell einen Server vorher starten, wie bei der Variante ohne TestClient, allerdings kümmert der
+TestClient sich bei Angabe des Arguments <code>--start-server</code> gleich selber darum. Sie sollten lediglich aufpassen, dass
+nicht zwei Server auf dem selben Port laufen.
+</td>
+</tr>
+</table>
 </div>
+<div class="sect4">
+<h5 id="_argumente_des_testclients">Argumente des TestClients</h5>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -974,53 +978,75 @@ dann ist dies mit folgenden Schritten möglich:</p>
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Attribut</th>
-<th class="tableblock halign-left valign-top">Standardwert</th>
+<th class="tableblock halign-left valign-top">Standardwert (Typ)</th>
 <th class="tableblock halign-left valign-top">Kurzbeschreibung</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--tests</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">100</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl der Tests, die gespielt werden sollen (Integer)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100 (int)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl der Tests, die gespielt werden sollen</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--player1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"./defaultplayer.jar"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Erster Computerspieler (Dateipfad)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"./defaultplayer.jar" (Dateipfad)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erster Computerspieler</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--player2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"./defaultplayer.jar"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Zweiter Computerspieler (Dateipfad)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"./defaultplayer.jar" (Dateipfad)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zweiter Computerspieler</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--name1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"player1"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name des ersten Spielers (String)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"player1" (String)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des ersten Spielers</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--name2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"player2"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name des zweiten Spielers (String)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"player2" (String)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des zweiten Spielers</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--timeout1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scheidet der erste Spieler bei einem Timeout aus? (true|false)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--no-timeout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false (bool)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deaktiviere ausscheiden durch Timeouts. Kann durch <code>--no-timeout1</code> bzw. <code>--no-timeout2</code> für beide Spieler unabhängig gesetzt werden.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">--timeout2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scheidet der zweite Spieler bei einem Timeout aus? (true|false)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--start-server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false (bool)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Starte einen Server auf dem angegebenen Port vor dem Starten der Clients</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--port</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">13051</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13051 (int)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Der Port, auf dem der TestClient die Clients startet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--host</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">localhost (IP)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Das Gerät, auf dem der Server läuft</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--loglevel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INFO - as defined in logback XML (<a href="https://logback.qos.ch/apidocs/ch/qos/logback/classic/Level.html">Level</a>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Setzt das Loglevel, um ausführliche oder besonders kompakte Ausgaben zu erhalten.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Boolesche Parameter werden als true gewertet, sobald sie angegeben werden. Ein Wert hinter dem Parameter hat keine Wirkung.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Bei Argumenten, die nicht angegeben wurden, werden die Standardwerte aus der Tabelle verwendet.
 Die Ausgabe der Daten erfolgt nach jedem Spiel anhand von gerundeten Werten.
@@ -1034,10 +1060,16 @@ Sie also darauf, den Server neuzustarten oder einen anderen Spielernamen zu
 verwenden, wenn Sie den Spieler verändern.</p>
 </div>
 </div>
+</div>
 <div class="sect3">
 <h4 id="_variante_ohne_testclient">Variante ohne TestClient</h4>
 <div class="paragraph">
-<p>Auch hier muss der Server laufen (s.o.).</p>
+<p>Starten sie den Server:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar softwarechallenge-server.jar --port <span class="tok-m">13051</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>Starten Sie ein Spiel mit Reservierungscode (siehe Spielverlauf in der XML-Dokumentation).
