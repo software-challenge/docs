@@ -31,6 +31,7 @@ svk@informatik.uni-kiel.de.
 * Als Endung fuer Asciidoc wird `.adoc` benutzt.
 * Es wird des ATX-Format fuer Ueberschriften verwendet (also `=`,
   `==`, `===` etc.)
+* Keine Umbrüche innerhalb von Paragraphen. Für eine lesbare Darstellung der Quellen sollte ein Editor mit aktiviertem Soft-Wrap verendet werden.
 
 == Konvertierung
 
