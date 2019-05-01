@@ -6,7 +6,7 @@ kennt, die ihr gerne nutzt, oder die andere Vorteile besitzt, dann kann es sich 
 
 Wenn ihr also genug Erfahrung habt und euch entscheidet den schwereren Weg zu gehen, dann solltet ihr euch die 
 https://cau-kiel-tech-inf.github.io/socha-enduser-docs/spiele/piranhas/xml-dokumentation.html[XML-Dokumentation]
-genau anschauen, da ihr die ganze Kommunikation, sowie das Parsen der XML Nachrichten, implementerien müsst. 
+genau anschauen, da ihr die ganze Kommunikation, sowie das Parsen der XML Nachrichten, implementieren müsst. 
 Außerdem solltet ihr euch als Beispiel den (inoffiziellen) 
 https://github.com/matthesjh/sc19-swift-client[Swift Client] ansehen. Das kann auch helfen, wenn man Swift 
 nicht kann, da die meisten prozeduralen Programmiersprachen viele Ähnlichkeiten haben. Somit sollte es 
