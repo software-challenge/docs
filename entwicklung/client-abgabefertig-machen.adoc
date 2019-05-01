@@ -128,7 +128,7 @@ Hauptdatei.
 
 === C#
 
-Geht sicher, dass euer Projekt nur Libraries nutzt, die auch in <<ausfuehrungsumgebungen,Mono 5.4>> enthalten sind.
+Stellt sicher, dass euer Projekt nur Libraries nutzt, die auch in <<ausfuehrungsumgebungen,Mono 5.4>> enthalten sind.
 Kompiliert bzw. erstellt euer Projekt und fügt zu dem build eine start.sh hinzu, wie <<andere-sprache,hier>> beschrieben, sofern ihr noch keine habt, da der Wettkampfserver eure exe sonst nicht ausführen kann.
 Sie sollte folgenden Inhalt haben, um eure exe mit mono zu starten:
 

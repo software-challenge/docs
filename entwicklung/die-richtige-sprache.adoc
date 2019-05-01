@@ -9,7 +9,7 @@ https://cau-kiel-tech-inf.github.io/socha-enduser-docs/spiele/piranhas/xml-dokum
 genau anschauen, da ihr die ganze Kommunikation, sowie das Parsen der XML Nachrichten, implementerien müsst. 
 Außerdem solltet ihr euch als Beispiel den (inoffiziellen) 
 https://github.com/matthesjh/sc19-swift-client[Swift Client] ansehen. Das kann auch helfen, wenn man Swift 
-nicht kann, da die meisten prozeduralen Programmiersprachen recht ähnlich zu einender sind. Somit sollte es 
+nicht kann, da die meisten prozeduralen Programmiersprachen viele Ähnlichkeiten haben. Somit sollte es 
 nicht allzu schwer sein den Swift code in eure Sprache zu übersetzen. Auf ähnliche Weise können natürlich 
 auch https://github.com/CAU-Kiel-Tech-Inf/socha[der Java Client source code] und 
 https://github.com/niklasCarstensen/SoftwareChallengeCsharpClient[der C# Client source code] helfen.
