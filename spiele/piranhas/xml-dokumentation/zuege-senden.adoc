@@ -12,7 +12,7 @@ Der Move ist die Antwort auf den MoveRequest des Servers.
 [source,xml]
 ----
 <room roomId="ROOM_ID">
-  <data class="sc.framework.plugins.protocol.MoveRequest"/>
+  <data class="sc.framework.plugins.protocol.MoveRequest" />
 </room>
 ----
 
@@ -49,7 +49,7 @@ Richtung, in die der Piranha zieht. Eine von folgenden:
 --
 [source,xml]
 ----
-<data class="move" x="X" y="Y" direction="DIRECTION"/>
+<data class="move" x="X" y="Y" direction="DIRECTION" />
 ----
 
 
@@ -59,7 +59,7 @@ Zügen können Debug-Informationen beigefügt werden:
 
 [source,xml]
 ----
-<hint content="S"/>
+<hint content="S" />
 ----
 
 Damit sieht beispielsweise ein Laufzug so aus:
@@ -68,8 +68,8 @@ Damit sieht beispielsweise ein Laufzug so aus:
 ----
 <room roomId="ROOM_ID">
   <data class="move" x="0" y="0" direction="UP">
-    <hint content="Dies ist ein Hint."/>
-    <hint content="noch ein Hint"/>
+    <hint content="Dies ist ein Hint." />
+    <hint content="noch ein Hint" />
   </data>
 </room>
 ----

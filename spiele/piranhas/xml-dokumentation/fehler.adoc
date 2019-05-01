@@ -13,7 +13,7 @@ Spieles, das im nächsten gesendeten Gamestate erkannt werden kann (siehe xref:s
 <room roomId="RID">
   <error message="MSG">
     <originalRequest>
-	Request, der den Fehler verursacht hat
+      Request, der den Fehler verursacht hat
     </originalRequest>
   </error>
 </room>

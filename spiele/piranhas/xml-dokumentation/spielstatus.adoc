@@ -5,13 +5,13 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 === memento
 --
 * ROOM_ID Id des GameRooms
-* status Gamestate wie in xref:status[]
+* STATUS Gamestate wie in xref:status[]
 --
 [source,xml]
 ----
 <room roomId="ROOM_ID">
   <data class="memento">
-  	status
+    STATUS
   </data>
 </room>
 ----
@@ -41,11 +41,12 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 [[spieler]]
 === Spieler
 --
-* C Farbe (red/blue)
+* c Farbe (red/blue)
+* C Farbe (RED/BLUE)
 --
 [source,xml]
 ----
-<C displayName="N" color="C"/>
+<c displayName="N" color="C" />
 ----
 
 [[spielbrett]]
@@ -56,11 +57,21 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 [source,xml]
 ----
 <board>
-  <fields x="0" y="0" state="EMPTY"/>
-  ..
-  FIELD
-  ..
-  <fields x="9" y="9" state="EMPTY"/>
+  <fields>
+    <field x="0" y="0" state="EMPTY" />
+    ...
+    FIELD
+    ...
+    <field x="0" y="9" state="EMPTY" />
+  </fields>
+  ...
+  <fields>
+    <field x="9" y="0" state="EMPTY" />
+    ...
+    FIELD
+    ...
+    <field x="9" y="9" state="EMPTY" />
+  </fields>
 </board>
 ----
 [[spielfeld]]
@@ -72,7 +83,7 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 --
 [source,xml]
 ----
-<fields x="X" y="Y" type="STATE"/>
+<field x="X" y="Y" state="STATE" />
 ----
 
 [[letzter-zug]]

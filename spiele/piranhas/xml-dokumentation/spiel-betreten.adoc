@@ -1,9 +1,9 @@
 == Spiel betreten
-Wenn begonnen wird mit dem Server zu kommunizieren, muss zuallererst 
+Wenn begonnen wird mit dem Server zu kommunizieren, muss zuallererst
 
 [source,xml]
 ----
-<protocol> 
+<protocol>
 ----
 gesendet werden, um die Kommunikation zu beginnen.
 
@@ -13,7 +13,7 @@ Betritt ein beliebiges offenes Spiel:
 
 [source,xml]
 ----
-<join gameType="swc_2019_piranhas"/>
+<join gameType="swc_2019_piranhas" />
 ----
 Sollte kein Spiel offen sein, wird so ein neues erstellt.
 Je nachdem ob paused in server.properties true oder false ist, wird das Spiel pausiert gestartet oder nicht.
@@ -24,7 +24,7 @@ Der Server antwortet darauf mit:
 --
 [source,xml]
 ----
-<joined roomId="ROOM_ID"/>
+<joined roomId="ROOM_ID" />
 ----
 
 Alle administrativen Clients werden ebenfalls darüber benachrichtigt und erhalten folgende Nachricht:
@@ -34,7 +34,7 @@ Alle administrativen Clients werden ebenfalls darüber benachrichtigt und erhalt
 --
 [source,xml]
 ----
-<joinedGameRoom roomId="ROOM_ID" existing="false"/>
+<joinedGameRoom roomId="ROOM_ID" existing="false" />
 ----
 
 Falls bereits ein GameRoom offen war, ist dementsprechend existing true.
@@ -51,7 +51,7 @@ Ist ein Reservierungscode gegeben, so kann man den durch den Code gegebenen Plat
 --
 [source,xml]
 ----
-<joinPrepared reservationCode="RC"/>
+<joinPrepared reservationCode="RC" />
 ----
 
 [[welcome-message]]
@@ -61,19 +61,17 @@ Der Server antwortet darauf nur, wenn der zweite Client ebenfalls verbunden ist:
 --
 * ROOM_ID Id des GameRooms
 * COLOR Spielerfarbe also red oder blue
-* status GameState wie in xref:status[]
+* STATUS GameState wie in xref:status[]
 --
 [source,xml]
 ----
-<joined roomId="ROOM_ID"/>
+<joined roomId="ROOM_ID" />
 <room roomId="ROOM_ID">
   <data class="welcomeMessage" color="COLOR"></data>
 </room>
 <room roomId="ROOM_ID">
   <data class="memento">
-  	status
+    STATUS
   </data>
 </room>
 ----
-
-
