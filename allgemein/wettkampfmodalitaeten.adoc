@@ -115,6 +115,7 @@ Die Computerspieler können jedoch Text auf die beiden Standard-Ausgabedatenstr�
 
 Zugriff auf das Internet ist nicht möglich. Schreiben auf die Festplatte ist möglich, es kann jedoch nicht auf Daten, die in früheren Spielen geschrieben wurden, zugegriffen werden.
 
+[[ausfuehrungsumgebungen]]
 ==== Weitere Ausführungsumgebung
 
 Der Computerspieler wird in einem sogenannten "Docker Container" ausgeführt, welcher die verfügbaren Bibliotheken und Programme bestimmt. Folgende Container-Images können genutzt werden:

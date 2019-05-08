@@ -126,6 +126,20 @@ Verzeichnis des Client-Gems bei Github]. Packt man die beiden Dateien
 abgabefertigen Computerspieler. Beim Hochladen wählt man `main.rb` als
 Hauptdatei.
 
+=== C#
+
+Stellt sicher, dass euer Projekt nur Libraries nutzt, die auch in <<ausfuehrungsumgebungen,Mono 5.4>> enthalten sind.
+Kompiliert bzw. erstellt euer Projekt und fügt zu dem build eine start.sh hinzu, wie <<andere-sprache,hier>> beschrieben, sofern ihr noch keine habt, da der Wettkampfserver eure exe sonst nicht ausführen kann.
+Sie sollte folgenden Inhalt haben, um eure exe mit mono zu starten:
+
+[source,sh]
+----
+#!/bin/sh
+chmod +x csharp_exe_dateiname
+mono csharp_exe_dateiname "$@"
+----
+
+[[andere-sprache]]
 === Andere Programmiersprache
 
 Bei Computerspielern in jeder anderen Programmiersprache muss ein Shell-Script
@@ -178,13 +192,12 @@ chmod +x hauptprogramm_dateiname# <2>
 <2> Die Binärdatei wird ausführbar gemacht (das ist nötig, da in einem ZIP-Archiv das Ausührbar-Attribut nicht gespeichert wird).
 <3> Die Binärdatei wird aufgerufen und alle Parameter, die das Script bekommen hat, werden weitergereicht (`"$@"`).
 
+WARNING: Die `start.sh` muss in UTF-8 und mit UNIX(LF) Zeilenenden kodiert sein. 
+Andere Kodierungen führen zu Fehlern bei der Ausführung auf dem Server. 
+In Notepad++ kann die Kodierung einfach in dem Tab `Kodierung` angepasst werden, die Zeilenenden in `Bearbeiten > Format Zeilenende`.
+
 Bei compilierten Sprachen müssen die
 Computerspieler für 64bit Linux compiliert werden, bei interpretierten Sprachen
 muss ein passender Interpreter auf dem Wettkampfsystem vorhanden sein. Weiterhin
 müssen Abhängigkeiten wie z.B. genutzte Bibliotheken vorhanden sein oder
 mitgeliefert werden.
-
-Am besten die Verwendung einer anderen Programmiersprache frühzeitig mit der
-Betreuung absprechen, damit sichergestellt ist, dass der Computerspieler auch am
-Wettkampf teilnehmen kann. Wir stellen gern eine passende Laufzeitumgebung auf
-dem Wettkampfsystem für die Programmiersprache zur Verfügung.

@@ -35,6 +35,8 @@ include::software/client.adoc[]
 
 include::software/adminclient.adoc[]
 
+include::entwicklung/die-richtige-sprache.adoc[]
+
 include::entwicklung/installation-von-java.adoc[]
 
 include::entwicklung/einrichtung-der-entwicklungsumgebung.adoc[]
