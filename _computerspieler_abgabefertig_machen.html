@@ -513,7 +513,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="details">
 <span id="author" class="author">Sven Koschnicke</span><br>
 <span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
-<span id="revdate">2019-05-02</span>
+<span id="revdate">2019-09-16</span>
 </div>
 </div>
 <div id="content">
@@ -686,7 +686,22 @@ Hauptdatei.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_andere_programmiersprache">Andere Programmiersprache</h3>
+<h3 id="_c">C#</h3>
+<div class="paragraph">
+<p>Stellt sicher, dass euer Projekt nur Libraries nutzt, die auch in <a href="_wettkampfmodalitäten.html#ausfuehrungsumgebungen">Mono 5.4</a> enthalten sind.
+Kompiliert bzw. erstellt euer Projekt und fügt zu dem build eine start.sh hinzu, wie <a href="_computerspieler_abgabefertig_machen.html#andere-sprache">hier</a> beschrieben, sofern ihr noch keine habt, da der Wettkampfserver eure exe sonst nicht ausführen kann.
+Sie sollte folgenden Inhalt haben, um eure exe mit mono zu starten:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span><span class="tok-ch">#!/bin/sh</span>
+chmod +x csharp_exe_dateiname
+mono csharp_exe_dateiname <span class="tok-s2">&quot;</span><span class="tok-nv">$@</span><span class="tok-s2">&quot;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="andere-sprache">Andere Programmiersprache</h3>
 <div class="paragraph">
 <p>Bei Computerspielern in jeder anderen Programmiersprache muss ein Shell-Script
 dem ZIP-Archiv beigelegt werden, was die genauen Instruktionen zum Start des
@@ -764,18 +779,26 @@ chmod +x hauptprogramm_dateiname<i class="conum" data-value="2"></i><b>(2)</b>
 </tr>
 </table>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Die <code>start.sh</code> muss in UTF-8 und mit UNIX(LF) Zeilenenden kodiert sein.
+Andere Kodierungen führen zu Fehlern bei der Ausführung auf dem Server.
+In Notepad++ kann die Kodierung einfach in dem Tab <code>Kodierung</code> angepasst werden, die Zeilenenden in <code>Bearbeiten &gt; Format Zeilenende</code>.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Bei compilierten Sprachen müssen die
 Computerspieler für 64bit Linux compiliert werden, bei interpretierten Sprachen
 muss ein passender Interpreter auf dem Wettkampfsystem vorhanden sein. Weiterhin
 müssen Abhängigkeiten wie z.B. genutzte Bibliotheken vorhanden sein oder
 mitgeliefert werden.</p>
-</div>
-<div class="paragraph">
-<p>Am besten die Verwendung einer anderen Programmiersprache frühzeitig mit der
-Betreuung absprechen, damit sichergestellt ist, dass der Computerspieler auch am
-Wettkampf teilnehmen kann. Wir stellen gern eine passende Laufzeitumgebung auf
-dem Wettkampfsystem für die Programmiersprache zur Verfügung.</p>
 </div>
 </div>
 </div>
@@ -786,7 +809,7 @@ dem Wettkampfsystem für die Programmiersprache zur Verfügung.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-05-02 16:17:22 +0200
+Last updated 2019-09-16 12:45:51 +0200
 </div>
 </div>
 </body>
