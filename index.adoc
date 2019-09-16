@@ -4,7 +4,7 @@
 
 = Software-Challenge Endbenutzer-Dokumentation
 Sven Koschnicke <svk@informatik.uni-kiel.de>
-2019-05-02
+2019-09-16
 
 Ziel dieser Dokumentation ist es, alle Informationen über die
 Software-Challenge an einer Stelle zu bündeln. Hier können sich Lehrer
@@ -17,10 +17,10 @@ ifndef::backend-pdf[link:index.pdf[PDF-Version dieses Dokumentes]]
 include::allgemein/beitragen.adoc[]
 
 ifndef::backend-pdf[]
-Die Dokumentation zu dem aktuellen Spiel, Piranhas, finden Sie in separaten Dokumenten:
+Die Dokumentation zu dem aktuellen Spiel, Hive, finden Sie in separaten Dokumenten:
 
-- <<spiele/piranhas/regeln.adoc#,Piranhas Spielregeln>>
-- <<spiele/piranhas/xml-dokumentation.adoc#,Piranhas XML Dokumentation>>
+- <<spiele/hive/regeln.adoc#,Hive Spielregeln>>
+- <<spiele/piranhas/xml-dokumentation.adoc#,Piranhas XML Dokumentation (Hive folgt!)>>
 endif::backend-pdf[]
 
 Die Dokumentation ist in folgende Abschnitte aufgeteilt. Sie können sie gezielt
