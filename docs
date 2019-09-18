@@ -22,7 +22,7 @@ setup)
 
 generate)
 	TARGET="out"
-	game="piranhas"
+	game="hive"
 	shift
 	for arg in "$@" ; do
 		[ "$arg" = "pdf" ] && pdf="true" && continue
