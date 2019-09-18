@@ -2,8 +2,9 @@
 action=$1
 case $action in
 setup)
-	sudo gem install asciidoctor pygments.rb
-	sudo gem install --prerelease asciidoctor-pdf
+	gem install asciidoctor -v 1.5.8
+  gem install pygments.rb
+	gem install --prerelease asciidoctor-pdf
 
 	cp bin/git-post-commit-hook.sh .git/hooks/post-commit
 	chmod +x .git/hooks/post-commit
