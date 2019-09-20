@@ -1,4 +1,4 @@
-:imagesdir: ./images
+:imagesdir: ../images
 :source-highlighter: pygments
 :icons: font
 
@@ -103,17 +103,16 @@ dem Bild unten) belegt, so dürften wir nicht auf das Feld oben rechts
 (0,1) von unserem Stein ziehen. (Ausnahmen: Grashüpfer, Käfer). Steine
 dürfen trotzdem auf eingeschlossene Felder gelegt werden.
 
-image:img-2019-09-16-061628-f0be9d71-4b5f-4713-a0be-a69b0594c586.png[image]
+image:move.png[]
 
 In der vorstehenden Grafik sind alle für die rote Biene zulässigen
 Felder gelb markiert.
 
-Abgesehen vom Grashüpfer müssen sich die Steine immer am Rand des
-Schwarms entlang bewegen. Der Käfer auf (-2,2) im unteren Bild darf sich
-also nicht auf das Feld (-2,1) bewegen. Zusätzlich dürfen sich Käfer
-über andere Steine bewegen.
+Abgesehen vom Grashüpfer müssen sich die Steine immer am Rand des Schwarms entlang bewegen. 
+Der Käfer im unteren Bild darf sich also nicht nach unten rechts bewegen. 
+Zusätzlich dürfen sich Käfer über andere Steine bewegen.
 
-image:photo_2019-09-11_13-52-28-37656906-041c-41cd-b81b-24bccbce2d62.jpg[image]
+image:connected.png[]
 
 In der vorstehenden Grafik sind alle für den roten Käfer zulässigen
 Felder gelb markiert.
@@ -125,7 +124,7 @@ Kann ein Spieler nicht ziehen, so muss er die Runde aussetzen!
 Die Königin darf - ähnlich dem König beim Schach - pro Zug nur ein Feld
 weit bewegt werden.
 
-image:img-2019-09-16-062033-beb23b5b-d6cd-4c91-806b-103f281c33e9.png[image]
+image:bee.png[]
 
 ==== Käfer
 
@@ -138,7 +137,7 @@ Spieler ermöglicht, eigene Steine auf benachbarte, freie Felder zu
 legen. Käfer können auch auf Käfer klettern, die auf anderen Steinen
 stehen, es gibt keine Höhenbegrenzung.
 
-image:img-2019-09-16-062230-9344bb78-26f7-45ea-b3ed-4e0a29ebd87b.png[image]
+image:beetle.png[]
 
 ==== Grashüpfer
 
@@ -146,7 +145,7 @@ Der Grashüpfer springt von seinem Feld über eine gerade Reihe
 miteinander verbundener Steine zum nächsten unbesetzten Feld. Er muss
 immer über mindestens einen Stein springen.
 
-image:img-2019-09-16-062931-87439e71-081f-4a93-9278-612b78537790.png[image]
+image:grasshopper.png[]
 
 ==== Spinne
 
@@ -154,19 +153,14 @@ Die Spinne bewegt sich immer genau 3 Felder weit. Während des Zuges darf
 sie allerdings nicht zweimal auf dasselbe Feld ziehen und sie muss in
 Verbindung mit dem Schwarm bleiben.
 
-image:img-2019-09-16-082543-065d7c3c-11a3-4552-9499-61154e305a9b.png[image]
+image:spider.png[]
 
 ==== Ameise
 
-Die Ameise darf beliebig viele Felder am Rand des Schwarms entlang
-gezogen werden.
+Die Ameise darf beliebig viele Felder am Rand des Schwarms entlang gezogen werden. 
+Sie darf sich jedoch nicht über Lücken oder blockierte Felder hinweg bewegen.
 
-image:img-2019-09-16-064542-cd1691a8-8106-432a-98e7-89f7965bafa7.png[image]
-
-Die Ameise darf sich jedoch nicht über Lücken oder blockierte Felder
-hinweg bewegen. Auf dem oberen Bild darf die blaue Ameise auf (1,1)
-nicht von (2,-1) auf (2,-2) ziehen, sondern muss gegen den Uhrzeigersinn
-um den Schwarm laufen, wenn sie auf (2,-2) ziehen will.
+image:ant.png[]
 
 === Spielende
 
