@@ -57,7 +57,7 @@ werden.
 
 === Blockierte Felder (Brombeeren)
 
-image:black-berry-dark-65d040fc-200a-4202-90d9-a9b71b208265.png[image,width=10%]
+image:black-berry-dark-65d040fc-200a-4202-90d9-a9b71b208265.png[image,width=60,height=60,role=left]
 
 Auf die blockierten Felder darf kein Stein gelegt oder bewegt werden.
 Für eine Königin wird ein benachbartes blockiertes Feld wie ein von
