@@ -172,7 +172,8 @@ image:ant.png[image,width=50%]
 
 Wird die Bienenkönigin eines Spielers von allen Seiten von Insekten,
 blockierten Feldern oder dem Rand eingeschlossen, so gewinnt der andere
-Spieler.
+Spieler. Allerdings darf Blau noch einen letzten Zug machen, nachdem
+die blaue Bienenkönigin umstellt wurde.
 
 Wird die 31. Runde erreicht, so gewinnt derjenige Spieler, dessen
 Bienenkönigin die meisten freien angrenzende Felder hat, wobei
