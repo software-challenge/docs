@@ -103,6 +103,7 @@ dem Bild unten) belegt, so dürften wir nicht auf das Feld oben rechts
 (0,1) von unserem Stein ziehen. (Ausnahmen: Grashüpfer, Käfer). Steine
 dürfen trotzdem auf eingeschlossene Felder gelegt werden.
 
+[.text-center]
 image:move.png[image,width=50%]
 
 In der vorstehenden Grafik sind alle für die rote Biene zulässigen
@@ -112,6 +113,7 @@ Abgesehen vom Grashüpfer müssen sich die Steine immer am Rand des Schwarms ent
 Der Käfer im unteren Bild darf sich also nicht nach unten rechts bewegen. 
 Zusätzlich dürfen sich Käfer über andere Steine bewegen.
 
+[.text-center]
 image:connected.png[image,width=50%]
 
 In der vorstehenden Grafik sind alle für den roten Käfer zulässigen
@@ -124,6 +126,7 @@ Kann ein Spieler nicht ziehen, so muss er die Runde aussetzen!
 Die Königin darf - ähnlich dem König beim Schach - pro Zug nur ein Feld
 weit bewegt werden.
 
+[.text-center]
 image:bee.png[image,width=50%]
 
 ==== Käfer
@@ -137,6 +140,7 @@ Spieler ermöglicht, eigene Steine auf benachbarte, freie Felder zu
 legen. Käfer können auch auf Käfer klettern, die auf anderen Steinen
 stehen, es gibt keine Höhenbegrenzung.
 
+[.text-center]
 image:beetle.png[image,width=50%]
 
 ==== Grashüpfer
@@ -153,6 +157,7 @@ Die Spinne bewegt sich immer genau 3 Felder weit. Während des Zuges darf
 sie allerdings nicht zweimal auf dasselbe Feld ziehen und sie muss in
 Verbindung mit dem Schwarm bleiben.
 
+[.text-center]
 image:spider.png[image,width=50%]
 
 ==== Ameise
@@ -160,6 +165,7 @@ image:spider.png[image,width=50%]
 Die Ameise darf beliebig viele Felder am Rand des Schwarms entlang gezogen werden. 
 Sie darf sich jedoch nicht über Lücken oder blockierte Felder hinweg bewegen.
 
+[.text-center]
 image:ant.png[image,width=50%]
 
 === Spielende
