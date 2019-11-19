@@ -149,6 +149,7 @@ Der Grashüpfer springt von seinem Feld über eine gerade Reihe
 miteinander verbundener Steine zum nächsten unbesetzten Feld. Er muss
 immer über mindestens einen Stein springen.
 
+[.text-center]
 image:grasshopper.png[image,width=50%]
 
 ==== Spinne
