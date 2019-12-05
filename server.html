@@ -941,16 +941,35 @@ gibt es zwei Varianten:</p>
 <div class="paragraph">
 <p>Starten sie den TestClient:</p>
 </div>
+<div class="paragraph">
+<p>Unter Linux:</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sh"><span></span>java -jar -Dlogback.configurationFile<span class="tok-o">=</span>logback-tests.xml test_client.jar
-    --tests <span class="tok-m">4</span>
-    --name1 <span class="tok-s2">&quot;displayName1&quot;</span>
-    --player1 <span class="tok-s2">&quot;./player1.jar&quot;</span>
-    --name2 <span class="tok-s2">&quot;displayName2&quot;</span>
-    --player2 <span class="tok-s2">&quot;./player2.jar&quot;</span>
-    --start-server
+<pre class="pygments highlight"><code data-lang="sh"><span></span>java -jar -Dlogback.configurationFile<span class="tok-o">=</span>logback-tests.xml test-client.jar <span class="tok-se">\</span>
+    --tests <span class="tok-m">4</span> <span class="tok-se">\</span>
+    --name1 <span class="tok-s2">&quot;displayName1&quot;</span> <span class="tok-se">\</span>
+    --player1 <span class="tok-s2">&quot;./player1.jar&quot;</span> <span class="tok-se">\</span>
+    --name2 <span class="tok-s2">&quot;displayName2&quot;</span> <span class="tok-se">\</span>
+    --player2 <span class="tok-s2">&quot;./player2.jar&quot;</span> <span class="tok-se">\</span>
+    --start-server <span class="tok-se">\</span>
     --port <span class="tok-m">13051</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Unter Windows (unterscheidet sich nur durch die Art, den langen Befehl auf
+mehrere Zeilen zu verteilen):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="batch"><span></span>java -jar -Dlogback.configurationFile=logback-tests.xml test-client.jar <span class="tok-se">^</span>
+<span class="tok-se"> </span>   --tests 4 <span class="tok-se">^</span>
+<span class="tok-se"> </span>   --name1 <span class="tok-s2">&quot;displayName1&quot;</span> <span class="tok-se">^</span>
+<span class="tok-se"> </span>   --player1 <span class="tok-s2">&quot;./player1.jar&quot;</span> <span class="tok-se">^</span>
+<span class="tok-se"> </span>   --name2 <span class="tok-s2">&quot;displayName2&quot;</span> <span class="tok-se">^</span>
+<span class="tok-se"> </span>   --player2 <span class="tok-s2">&quot;./player2.jar&quot;</span> <span class="tok-se">^</span>
+<span class="tok-se"> </span>   --start-server <span class="tok-se">^</span>
+<span class="tok-se"> </span>   --port 13051</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
