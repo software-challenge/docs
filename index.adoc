@@ -4,7 +4,7 @@
 
 = Software-Challenge Endbenutzer-Dokumentation
 Sven Koschnicke <svk@informatik.uni-kiel.de>
-2019-11-19
+2019-12-05
 
 
 Ziel dieser Dokumentation ist es, alle Informationen über die
