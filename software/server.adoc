@@ -283,14 +283,29 @@ gibt es zwei Varianten:
 
 Starten sie den TestClient:
 
+Unter Linux:
+
 [source,sh]
-java -jar -Dlogback.configurationFile=logback-tests.xml test_client.jar
-    --tests 4
-    --name1 "displayName1"
-    --player1 "./player1.jar"
-    --name2 "displayName2"
-    --player2 "./player2.jar"
-    --start-server
+java -jar -Dlogback.configurationFile=logback-tests.xml test-client.jar \
+    --tests 4 \
+    --name1 "displayName1" \
+    --player1 "./player1.jar" \
+    --name2 "displayName2" \
+    --player2 "./player2.jar" \
+    --start-server \
+    --port 13051
+
+Unter Windows (unterscheidet sich nur durch die Art, den langen Befehl auf
+mehrere Zeilen zu verteilen):
+
+[source,batch]
+java -jar -Dlogback.configurationFile=logback-tests.xml test-client.jar ^
+    --tests 4 ^
+    --name1 "displayName1" ^
+    --player1 "./player1.jar" ^
+    --name2 "displayName2" ^
+    --player2 "./player2.jar" ^
+    --start-server ^
     --port 13051
 
 NOTE: Sie können hier auch manuell einen Server vorher starten, wie bei der Variante ohne TestClient, allerdings kümmert der
