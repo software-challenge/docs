@@ -7,7 +7,7 @@ Verbinden als AdminClient:
 
 [source, xml]
 ----
-<protocol><authenticate passphrase="examplepassword"/>
+<protocol><authenticate password="examplepassword"/>
 ----
 
 Sobald der Client sich authentifiziert hat ist folgendes möglich:
@@ -41,7 +41,7 @@ Ein AdminClient kann einen Zug in einem pausierten Spiel anfordern:
 [source,xml]
 ----
 <step roomId=ROOMID />
----- 
+----
 
 Ein AdminClient kann ein Spiel abbrechen:
 
@@ -120,4 +120,3 @@ In ihr können folgede Werte konfiguriert werden:
 Das lokale Administratorpasswort kann geändert werden. Dazu muss das password Attribut neu gesetzt werden (standardmäßig auf examplepassword).
 Es kann eingestellt werden, ob ein durch einen JoinRequest gestartetes Spiel anfangs pausiert sein soll oder nicht (standardmäßig pausiert),
 indem der entsprechende Wert auf `true` oder `false` gesetzt wird.
-

@@ -10,7 +10,7 @@ Ein Client registriert sich als Administrator mit dem in server.properties festg
 
 [source, xml]
 ----
-<protocol><authenticate passphrase="p" />
+<protocol><authenticate password="p" />
 ----
 
 Dann kann ein Spiel angelegt werden:
@@ -129,7 +129,7 @@ Verbinden des Administratorclients (falls es sich um die erste Kontaktaufnahme z
 [source,xml]
 ----
 <protocol>
-  <authenticate passphrase="examplepassword" />
+  <authenticate password="examplepassword" />
 ----
 Pausierung aufheben:
 
