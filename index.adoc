@@ -18,10 +18,10 @@ ifndef::backend-pdf[link:index.pdf[PDF-Version dieses Dokumentes]]
 include::allgemein/beitragen.adoc[]
 
 ifndef::backend-pdf[]
-Die Dokumentation zu dem aktuellen Spiel, Hive, finden Sie in separaten Dokumenten:
+Die Dokumentation zu dem aktuellen Spiel, Blokus, finden Sie in separaten Dokumenten:
 
-- <<spiele/hive/regeln.adoc#,Hive Spielregeln>>
-- <<spiele/hive/xml-dokumentation.adoc#,Hive XML Dokumentation>>
+- <<spiele/blokus/regeln.adoc#,Blokus Spielregeln>>
+- <<spiele/blokus/xml-dokumentation.adoc#,Blokus XML Dokumentation>>
 endif::backend-pdf[]
 
 Die Dokumentation ist in folgende Abschnitte aufgeteilt. Sie können sie gezielt
