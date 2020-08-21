@@ -38,7 +38,7 @@ jobs:
           echo "Updating date in index.adoc"
           ./docs update-date
           echo "removing output directory ('out')"
-          rm -rf ./out
+          sudo rm -rf ./out
           echo "getting gh-pages repository..."
           old_git_dir="$GIT_DIR"
           unset GIT_DIR
