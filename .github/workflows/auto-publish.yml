@@ -25,8 +25,8 @@ jobs:
     # Setup the docs
     - name: Setup
       run: |
-        ./docs setup
-        ./docs generate
+        sudo ./docs setup
+        sudo ./docs generate
         
 
     # This is the post commit script
