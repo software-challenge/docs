@@ -2,7 +2,7 @@
 :source-highlighter: pygments
 :icons: font
 
-= Software Challenge XML-Dokumentation Piranhas
+= Software Challenge XML-Dokumentation Blokus
 Sören Domrös <stu114053@mail.uni-kiel.de>
 
 Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.
