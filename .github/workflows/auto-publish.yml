@@ -27,15 +27,11 @@ jobs:
       run: |
         sudo ./docs setup
         sudo ./docs generate
-        
-
+      
     # This is the post commit script
     - name: Deploy
       run: |
-        current_branch="$(git rev-parse --abbrev-ref HEAD)"
-        branch_to_deploy="master"
-        if [ "$current_branch" = "$branch_to_deploy" ]; then
-          echo "Updating date in index.adoc"
+        echo "Updating date in index.adoc"
           ./docs update-date
           echo "removing output directory ('out')"
           sudo rm -rf ./out
@@ -50,12 +46,13 @@ jobs:
           echo "putting new version in gh-pages branch"
           cd out
           touch .nojekyll
+          git config user.email "creeper99.mc@gmail.com"
+          git config user.name "niklasCarstensen"
           git add -A
-          git commit -a -u -m "automatically updated generated files on commit to master"
+          git commit -a -u -m "Deploy"
           echo "deploying to github"
-          git push origin
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com:CAU-Kiel-Tech-Inf/socha-enduser-docs.git
           cd ..
           rm -rf ./out
           GIT_DIR="$old_git_dir"
           GIT_WORK_TREE="$old_git_working_dir"
-        fi
