@@ -51,7 +51,7 @@ jobs:
           git add -A
           git commit -a -u -m "Deploy"
           echo "deploying to github"
-          git push https://${{ secrets.GITHUB_TOKEN }}@github.com:CAU-Kiel-Tech-Inf/socha-enduser-docs.git
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs
           cd ..
           rm -rf ./out
           GIT_DIR="$old_git_dir"
