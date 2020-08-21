@@ -562,7 +562,7 @@ Kontrahenten an die Spielregeln halten.</p>
 integriert, so dass alle Turnierspiele regelkonform gespielt werden
 müssen. Zum Testen des eigenen Computerspielers gibt es eine spezielle
 Version des Spielleiters, die im Downloadbereich
-(<a href="https://www.software-challenge.de/downloads" class="bare">https://www.software-challenge.de/downloads</a>) heruntergeladen werden
+(<a href="http://www.software-challenge.de" class="bare">http://www.software-challenge.de</a>) heruntergeladen werden
 kann. Diese Download-Version, die in diesem Abschnitt beschrieben wird,
 besitzt eine grafische Oberfläche, durch die man das Spiel gut verfolgen
 und sogar als Mensch mitspielen kann.</p>
@@ -794,7 +794,7 @@ Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar server.jar --port <span class="tok-m">13051</span> --saveReplay <span class="tok-nb">true</span></code></pre>
+<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar softwarechallenge-server.jar --port <span class="tok-m">13051</span> --saveReplay <span class="tok-nb">true</span></code></pre>
 </div>
 </div>
 </div>
@@ -827,7 +827,7 @@ entpackten Archives.</p>
 <p>Starten Sie den Testserver auf dem Port 13051 mit folgendem Befehl:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar server.jar --port <span class="tok-m">13051</span></code></pre>
+<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar softwarechallenge-server.jar --port <span class="tok-m">13051</span></code></pre>
 </div>
 </div>
 </li>
@@ -857,7 +857,7 @@ werden und optional mit <code>--turn</code> ein Zug spezifiziert werden.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar server.jar --port <span class="tok-m">13051</span> --loadGameFile ./replay.xml --turn <span class="tok-m">10</span></code></pre>
+<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar softwarechallenge-server.jar --port <span class="tok-m">13051</span> --loadGameFile ./replay.xml --turn <span class="tok-m">10</span></code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -888,7 +888,7 @@ folgenden Parameter beim Starten des Servers bewährt:</p>
      -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled <span class="tok-se">\</span>
      -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction<span class="tok-o">=</span><span class="tok-m">70</span> <span class="tok-se">\</span>
      -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark <span class="tok-se">\</span>
-     -jar server.jar --port <span class="tok-m">13051</span></code></pre>
+     -jar softwarechallenge-server.jar --port <span class="tok-m">13051</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -905,7 +905,7 @@ mehrere Zeilen zu verteilen):</p>
 <span class="tok-se"> </span>    -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled <span class="tok-se">^</span>
 <span class="tok-se"> </span>    -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=70 <span class="tok-se">^</span>
 <span class="tok-se"> </span>    -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark <span class="tok-se">^</span>
-<span class="tok-se"> </span>    -jar server.jar --port 13051</code></pre>
+<span class="tok-se"> </span>    -jar softwarechallenge-server.jar --port 13051</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1087,7 +1087,7 @@ verwenden, wenn Sie den Spieler verändern.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sh"><span></span>java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar server.jar --port <span class="tok-m">13051</span></code></pre>
+<pre class="pygments highlight"><code data-lang="sh"><span></span>java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar softwarechallenge-server.jar --port <span class="tok-m">13051</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1161,7 +1161,7 @@ Nun können sie jederzeit die Testdaten der Spieler anhand ihres Anzeigenamens e
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-01-21 13:03:21 +0100
+Last updated 2019-01-10 15:36:13 +0100
 </div>
 </div>
 </body>
