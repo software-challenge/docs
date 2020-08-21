@@ -22,12 +22,40 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
-
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
+    # Setup the docs
+    - name: Setup
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        ./docs setup
+        ./docs generate
+        
+
+    # This is the post commit script
+    - name: Deploy
+      run: |
+        current_branch="$(git rev-parse --abbrev-ref HEAD)"
+        branch_to_deploy="master"
+        if [ "$current_branch" = "$branch_to_deploy" ]; then
+          echo "Updating date in index.adoc"
+          ./docs update-date
+          echo "removing output directory ('out')"
+          rm -rf ./out
+          echo "getting gh-pages repository..."
+          old_git_dir="$GIT_DIR"
+          unset GIT_DIR
+          old_git_working_dir="$GIT_WORK_TREE"
+          unset GIT_WORK_TREE
+          git clone git@github.com:CAU-Kiel-Tech-Inf/socha-enduser-docs.git --branch gh-pages --single-branch out
+          echo "generating static pages..."
+          ./docs generate pdf
+          echo "putting new version in gh-pages branch"
+          cd out
+          touch .nojekyll
+          git add -A
+          git commit -a -u -m "automatically updated generated files on commit to master"
+          echo "deploying to github"
+          git push origin
+          cd ..
+          rm -rf ./out
+          GIT_DIR="$old_git_dir"
+          GIT_WORK_TREE="$old_git_working_dir"
+        fi
