@@ -546,7 +546,7 @@ auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 <h3 id="_spielmaterial">Spielmaterial</h3>
 <div class="paragraph">
 <p>Jeder Spieler verfügt über zwei Sätze von 21 Spielsteinen (Polyominos), die sich aus kleinen Quadraten zusammensetzen. Der eine Spieler hat blaue und rote Steine, der andere gelbe und grüne. Dabei kommt jede Form, die aus 1–5 Quadraten besteht, in jeder Farbe genau einmal vor:
-also 1 Quadrat, 1 Domino, 2 Triominos, 5 Quadraminos und 12 Pentominos.</p>
+also 1 Monomino, 1 Domino, 2 Triominos, 5 Tetrominos und 12 Pentominos.</p>
 </div>
 <div class="paragraph text-center">
 <p><span class="image"><img src="./images/Anleitung_Steinuebersicht.png" alt="image" width="50%"></span></p>
@@ -555,7 +555,7 @@ also 1 Quadrat, 1 Domino, 2 Triominos, 5 Quadraminos und 12 Pentominos.</p>
 <p>Das Brett besteht aus 20 × 20 quadratischen Feldern, welche dieselbe Größe wie die Quadrate der Spielsteine haben.</p>
 </div>
 <div class="paragraph">
-<p>Die Koordinaten der Felder des Brettes beginnen in der linken oberen Ecke bei x=0, y=0 und folgen den Regeln des kartesischen Koordinatensystems, wobei die positive x-Achse nach rechts und die positive y-Achse nach unten verläuft.</p>
+<p>Die Koordinaten der Felder des Brett&#8217;s beginnen in der linken oberen Ecke bei x=0, y=0 und folgen den Regeln des kartesischen Koordinatensystems, wobei die positive x-Achse nach rechts und die positive y-Achse nach unten verläuft.</p>
 </div>
 <div class="paragraph text-center">
 <p><span class="image"><img src="./images/anleitung_beispielfeld.png" alt="image" width="50%"></span></p>
@@ -567,10 +567,10 @@ also 1 Quadrat, 1 Domino, 2 Triominos, 5 Quadraminos und 12 Pentominos.</p>
 <p>Die Spielsteine werden abwechselnd reihum gelegt, wobei in den Ecken begonnen wird. Die Reihenfolge ist: Blau – Gelb – Rot – Grün.</p>
 </div>
 <div class="paragraph">
-<p>Für den ersten Stein jeder Farbe gelten besondere Regeln: Er muss so gesetzt werden, dass ein Eckfeld des Spielbrettes (also (0,0), (19,0), (0,19) oder (19,19)) besetzt wird. Der Stein selbst wird bei jedem Spiel zufällig aus allen Steinen mit fünf Quadraten vorgegeben. Der vorgegebene Stein ist in einem Spiel für alle Farben gleich.</p>
+<p>Für den ersten Stein jeder Farbe gelten besondere Regeln: Er muss so gesetzt werden, dass ein Eckfeld des Spielbrett&#8217;s (also (0,0), (19,0), (0,19) oder (19,19)) besetzt wird. Die Form des ersten Steins wird vom Server vorgegeben. Sie wird zufällig aus allen verfügbaren Formen ausgewählt, die aus 5 Quadraten bestehen. In einem Spiel ist die Form des ersten Steins für alle Farben gleich.</p>
 </div>
 <div class="paragraph">
-<p>Für die Platzierung aller weiteren Steine gilt: Steine derselben Farbe müssen sich immer über Eck berühren, niemals jedoch entlang einer Seite. An Steine anderer Farben kann man dagegen beliebig anlegen.</p>
+<p>Für die Platzierung aller weiteren Steine gilt: Zwei Steine derselben Farbe dürfen sich nur an den Ecken berühren. Wird ein neuer Stein gelegt, muss dieser mindestens einen Stein derselben Farbe an mindestens einer Ecke berühren. Dabei ist es egal, wie Steine anderer Farben berührt werden, solange diese nicht überdeckt werden.</p>
 </div>
 <div class="paragraph">
 <p>Beispielbilder mit gültigen und ungültigen Berührungen</p>
@@ -579,10 +579,10 @@ also 1 Quadrat, 1 Domino, 2 Triominos, 5 Quadraminos und 12 Pentominos.</p>
 <p><span class="image"><img src="./images/anleitung_beruehrungen.png" alt="image" width="50%"></span></p>
 </div>
 <div class="paragraph">
-<p>Die Steine sind frei rotierbar (in 90° Schritten). Die Steine müssen vollständig auf dem Feld liegen und dürfen sich nicht mit anderen Steinen überlappen. Gelegte Steine dürfen nicht mehr bewegt werden.</p>
+<p>Die Steine dürfen umgedreht werden (die Oberseite nach unten) und sind frei rotierbar (in 90° Schritten). Die Steine müssen vollständig auf dem Feld liegen und dürfen sich nicht mit anderen Steinen überlappen. Gelegte Steine dürfen nicht mehr bewegt werden.</p>
 </div>
 <div class="paragraph">
-<p>Ziel ist es, möglichst viele Spielsteine auf dem Brett abzulegen.</p>
+<p>Ziel ist es, möglichst viele Felder auf dem Brett mit den eigenen Farben zu belegen.</p>
 </div>
 <div class="paragraph">
 <p>Es wird so lange gezogen, bis keine Steine mehr gesetzt werden können. Wenn Steine einer Farbe nicht mehr gelegt werden können, wird diese Farbe im weiteren Verlauf des Spiels übersprungen (die gelegten Steine zählen aber mit in die Wertung). Kann kein Stein irgendeiner Farbe mehr gelegt werden, endet das Spiel.</p>
@@ -591,13 +591,16 @@ also 1 Quadrat, 1 Domino, 2 Triominos, 5 Quadraminos und 12 Pentominos.</p>
 <p>Der Computerspieler hat für das Legen eines Spielsteines zwei Sekunden Zeit.</p>
 </div>
 <div class="paragraph">
-<p>Der Spielleiter ruft den Computerspieler nur dann zu einem Zug einer Farbe auf, wenn es auch noch mindestens einen möglichen Zug gibt. Trotzdem hat der Computerspieler immer die Möglichkeit, mit einem "Passen"-Zug zu antworten. Dadurch wird er zwar wegen Regelverletzung disqualifiziert, nicht aber wegen einer Zeitüberschreitung.</p>
+<p>Der Spielleiter ruft den Computerspieler nur dann zu einem Zug einer Farbe auf, wenn es auch noch mindestens einen möglichen Zug gibt. Trotzdem hat der Computerspieler immer die Möglichkeit, mit einem "Passen"-Zug zu antworten. Dadurch wird die aktuelle Farbe in der aktuellen Runde ausgelassen.</p>
+</div>
+<div class="paragraph">
+<p>Eine Runde besteht aus vier Zügen. Pro Zug kann eine Farbe einen Stein setzen oder passen. Das Spiel endet, sobald alle Steine einer Farbe auf das Spielfeld gelegt wurden, spätestens aber nach 25 Runden. In jedem Fall wird die aktuelle Runde noch zu Ende gespielt.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_wertung">Wertung</h3>
 <div class="paragraph">
-<p>Jeder gelegte Stein zählt so viele Punkte, wie er Quadrate hat (ein gelegtes Pentomino zählt z.B. fünf Punkte). Wurden alle Steine einer Farbe gelegt, gibt es 15 zusätzliche Punkte. Wurden alle Steine einer Farbe gelegt und war zusätzlich der letzte gelegte Stein der Einser-Block (Quadrat), gibt es nochmal fünf zusätzliche Punkte (insgesamt also 20). Die Punkte der jeweiligen zwei Farben, die ein Spieler kontrolliert, werden zusammengezählt und sind die Gesamtpunkte des Spielers. Der Spieler mit den meisten Punkten gewinnt das Spiel.</p>
+<p>Jeder gelegte Stein zählt so viele Punkte, wie er Quadrate hat (ein gelegtes Pentomino zählt z.B. fünf Punkte). Wurden alle Steine einer Farbe gelegt, gibt es 15 zusätzliche Punkte. Wurden alle Steine einer Farbe gelegt und war zusätzlich der letzte gelegte Stein der Monomino, gibt es nochmal fünf zusätzliche Punkte (insgesamt also 20). Die Punkte der jeweiligen zwei Farben, die ein Spieler kontrolliert, werden zusammengezählt und sind die Gesamtpunkte des Spielers. Der Spieler mit den meisten Punkten gewinnt das Spiel.</p>
 </div>
 <div class="paragraph">
 <p>In der Meisterschaftsphase ist die durchschnittliche Punktzahl nachrangiges Kriterium. D.h. haben zwei Teams gleich viele Siege, bekommt das Team mit der höheren durchschnittlichen Punktzahl den besseren Tabellenplatz.</p>
@@ -611,7 +614,7 @@ also 1 Quadrat, 1 Domino, 2 Triominos, 5 Quadraminos und 12 Pentominos.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-21 14:34:46 UTC
+Last updated 2020-08-31 09:47:39 UTC
 </div>
 </div>
 </body>

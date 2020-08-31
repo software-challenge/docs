@@ -523,10 +523,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Die Spielsteine werden abwechselnd reihum gelegt, wobei in den Ecken begonnen wird. Die Reihenfolge ist: Blau – Gelb – Rot – Grün.</p>
 </div>
 <div class="paragraph">
-<p>Für den ersten Stein jeder Farbe gelten besondere Regeln: Er muss so gesetzt werden, dass ein Eckfeld des Spielbrettes (also (0,0), (19,0), (0,19) oder (19,19)) besetzt wird. Der Stein selbst wird bei jedem Spiel zufällig aus allen Steinen mit fünf Quadraten vorgegeben. Der vorgegebene Stein ist in einem Spiel für alle Farben gleich.</p>
+<p>Für den ersten Stein jeder Farbe gelten besondere Regeln: Er muss so gesetzt werden, dass ein Eckfeld des Spielbrett&#8217;s (also (0,0), (19,0), (0,19) oder (19,19)) besetzt wird. Die Form des ersten Steins wird vom Server vorgegeben. Sie wird zufällig aus allen verfügbaren Formen ausgewählt, die aus 5 Quadraten bestehen. In einem Spiel ist die Form des ersten Steins für alle Farben gleich.</p>
 </div>
 <div class="paragraph">
-<p>Für die Platzierung aller weiteren Steine gilt: Steine derselben Farbe müssen sich immer über Eck berühren, niemals jedoch entlang einer Seite. An Steine anderer Farben kann man dagegen beliebig anlegen.</p>
+<p>Für die Platzierung aller weiteren Steine gilt: Zwei Steine derselben Farbe dürfen sich nur an den Ecken berühren. Wird ein neuer Stein gelegt, muss dieser mindestens einen Stein derselben Farbe an mindestens einer Ecke berühren. Dabei ist es egal, wie Steine anderer Farben berührt werden, solange diese nicht überdeckt werden.</p>
 </div>
 <div class="paragraph">
 <p>Beispielbilder mit gültigen und ungültigen Berührungen</p>
@@ -535,10 +535,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><span class="image"><img src="./images/anleitung_beruehrungen.png" alt="image" width="50%"></span></p>
 </div>
 <div class="paragraph">
-<p>Die Steine sind frei rotierbar (in 90° Schritten). Die Steine müssen vollständig auf dem Feld liegen und dürfen sich nicht mit anderen Steinen überlappen. Gelegte Steine dürfen nicht mehr bewegt werden.</p>
+<p>Die Steine dürfen umgedreht werden (die Oberseite nach unten) und sind frei rotierbar (in 90° Schritten). Die Steine müssen vollständig auf dem Feld liegen und dürfen sich nicht mit anderen Steinen überlappen. Gelegte Steine dürfen nicht mehr bewegt werden.</p>
 </div>
 <div class="paragraph">
-<p>Ziel ist es, möglichst viele Spielsteine auf dem Brett abzulegen.</p>
+<p>Ziel ist es, möglichst viele Felder auf dem Brett mit den eigenen Farben zu belegen.</p>
 </div>
 <div class="paragraph">
 <p>Es wird so lange gezogen, bis keine Steine mehr gesetzt werden können. Wenn Steine einer Farbe nicht mehr gelegt werden können, wird diese Farbe im weiteren Verlauf des Spiels übersprungen (die gelegten Steine zählen aber mit in die Wertung). Kann kein Stein irgendeiner Farbe mehr gelegt werden, endet das Spiel.</p>
@@ -547,7 +547,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Der Computerspieler hat für das Legen eines Spielsteines zwei Sekunden Zeit.</p>
 </div>
 <div class="paragraph">
-<p>Der Spielleiter ruft den Computerspieler nur dann zu einem Zug einer Farbe auf, wenn es auch noch mindestens einen möglichen Zug gibt. Trotzdem hat der Computerspieler immer die Möglichkeit, mit einem "Passen"-Zug zu antworten. Dadurch wird er zwar wegen Regelverletzung disqualifiziert, nicht aber wegen einer Zeitüberschreitung.</p>
+<p>Der Spielleiter ruft den Computerspieler nur dann zu einem Zug einer Farbe auf, wenn es auch noch mindestens einen möglichen Zug gibt. Trotzdem hat der Computerspieler immer die Möglichkeit, mit einem "Passen"-Zug zu antworten. Dadurch wird die aktuelle Farbe in der aktuellen Runde ausgelassen.</p>
+</div>
+<div class="paragraph">
+<p>Eine Runde besteht aus vier Zügen. Pro Zug kann eine Farbe einen Stein setzen oder passen. Das Spiel endet, sobald alle Steine einer Farbe auf das Spielfeld gelegt wurden, spätestens aber nach 25 Runden. In jedem Fall wird die aktuelle Runde noch zu Ende gespielt.</p>
 </div>
 </div>
 </div>
@@ -557,7 +560,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-21 14:34:46 UTC
+Last updated 2020-08-31 09:47:39 UTC
 </div>
 </div>
 </body>
