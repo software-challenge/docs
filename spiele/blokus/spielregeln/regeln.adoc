@@ -19,7 +19,7 @@ image:Anleitung_Steinuebersicht.png[image,width=50%]
 
 Das Brett besteht aus 20 × 20 quadratischen Feldern, welche dieselbe Größe wie die Quadrate der Spielsteine haben.
 
-Die Koordinaten der Felder des Brett's beginnen in der linken oberen Ecke bei x=0, y=0 und folgen den Regeln des kartesischen Koordinatensystems, wobei die positive x-Achse nach rechts und die positive y-Achse nach unten verläuft.
+Die Koordinaten der Felder des Bretts beginnen in der linken oberen Ecke bei x=0, y=0 und folgen den Regeln des kartesischen Koordinatensystems, wobei die positive x-Achse nach rechts und die positive y-Achse nach unten verläuft.
 
 [.text-center]
 image:anleitung_beispielfeld.png[image,width=50%]
@@ -28,7 +28,7 @@ image:anleitung_beispielfeld.png[image,width=50%]
 
 Die Spielsteine werden abwechselnd reihum gelegt, wobei in den Ecken begonnen wird. Die Reihenfolge ist: Blau – Gelb – Rot – Grün.
 
-Für den ersten Stein jeder Farbe gelten besondere Regeln: Er muss so gesetzt werden, dass ein Eckfeld des Spielbrett's (also (0,0), (19,0), (0,19) oder (19,19)) besetzt wird. Die Form des ersten Steins wird vom Server vorgegeben. Sie wird zufällig aus allen verfügbaren Formen ausgewählt, die aus 5 Quadraten bestehen. In einem Spiel ist die Form des ersten Steins für alle Farben gleich.
+Für den ersten Stein jeder Farbe gelten besondere Regeln: Er muss so gesetzt werden, dass ein Eckfeld des Spielbretts (also (0,0), (19,0), (0,19) oder (19,19)) besetzt wird. Die Form des ersten Steins wird vom Server vorgegeben. Sie wird zufällig aus allen verfügbaren Formen ausgewählt, die aus 5 Quadraten bestehen. In einem Spiel ist die Form des ersten Steins für alle Farben gleich.
 
 Für die Platzierung aller weiteren Steine gilt: Zwei Steine derselben Farbe dürfen sich nur an den Ecken berühren. Wird ein neuer Stein gelegt, muss dieser mindestens einen Stein derselben Farbe an mindestens einer Ecke berühren. Dabei ist es egal, wie Steine anderer Farben berührt werden, solange diese nicht überdeckt werden.
 
