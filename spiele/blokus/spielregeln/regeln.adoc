@@ -26,7 +26,7 @@ image:anleitung_beispielfeld.png[image,width=50%]
 
 == Spielablauf
 
-Die Spielsteine werden abwechselnd gelegt, wobei in den Ecken begonnen wird. Die Reihenfolge ist: Blau – Gelb – Rot – Grün. Der erste Stein des zweiten Spielers darf auch diagonal gegenüber dem ersten Stei ndes ersten Spielers gelegt werden.
+Die Spielsteine werden abwechselnd gelegt, wobei in den Ecken begonnen wird. Die Reihenfolge ist: Blau – Gelb – Rot – Grün. Der erste Stein des zweiten Spielers darf auch diagonal gegenüber dem ersten Stein des ersten Spielers gelegt werden.
 
 Für den ersten Stein jeder Farbe gelten besondere Regeln: Er muss so gesetzt werden, dass ein Eckfeld des Spielbretts (also (0,0), (19,0), (0,19) oder (19,19)) besetzt wird. Die Form des ersten Steins wird vom Server vorgegeben. Sie wird zufällig aus allen verfügbaren Formen ausgewählt, die aus 5 Quadraten bestehen. In einem Spiel ist die Form des ersten Steins für alle Farben gleich.
 
