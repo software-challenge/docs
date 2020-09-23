@@ -95,25 +95,6 @@ http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and
 oder https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei[Chrome]
 installieren.
 
-== Deployment
-
-Um die Dokumentation unter
-https://cau-kiel-tech-inf.github.io/socha-enduser-docs/
-automatisch aktualisieren zu lassen, sind Schreibrechte für dieses
-https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs[GitHub
-Repository] erforderlich.
-
-Wenn `./docs setup` verwendet wurde, kann direkt statt eines commits
-im master-branch `./docs publish` verwendet werden. Es stellt sicher,
-dass das Deployment korrekt vonstatten geht.
-
-Ansonsten muss zuerst der post-commit-hook installiert werden.
-Dazu einfach die Datei `git-post-commit-hook.sh` aus dem Verzeichnis `bin` zu
-`.git/hooks/post-commit` kopieren.
-
-Dann wird nach jedem commit auf master alles automatisch konvertiert und
-online gestellt (inklusive der Bilder).
-
 == Quickstart
 
 * http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc Syntax Quick Reference]
