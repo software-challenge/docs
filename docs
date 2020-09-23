@@ -38,7 +38,7 @@ generate)
 		echo "Converting2 $1"
 		asciidoctor -D "$target" -r ../asciidoctor-extensions-lab/lib/multipage-html5-converter.rb -b multipage_html5 "$1"
 		echo "Converting3 $1"
-		case "$1" in *"hase-und-igel/index.adoc") ;;
+		case "$1" in *"$game/index.adoc") ;;
 			*) test $pdf && asciidoctor-pdf -D "$target" "$1";; esac
 		echo "Converting4 $1"
 	}
