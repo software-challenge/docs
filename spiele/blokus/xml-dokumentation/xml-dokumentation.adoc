@@ -3,7 +3,6 @@
 :icons: font
 
 = Software Challenge XML-Dokumentation Blokus
-Sören Domrös <stu114053@mail.uni-kiel.de>
 
 Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.
 
@@ -21,4 +20,9 @@ auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 svk@informatik.uni-kiel.de.
 
 
-Noch nicht definiert
+include::einleitung-xml.adoc[]
+include::spiel-betreten.adoc[]
+include::zug-anforderung.adoc[]
+include::zuege-senden.adoc[]
+include::spielsteine.adoc[]
+include::spielstatus.adoc[]
