@@ -5,7 +5,7 @@ Eine einfache Nachricht fordert zum Zug auf:
 
 [source,xml]
 ----
-<room roomId="RID">
+<room roomId="ROOM_ID">
   <data class="sc.framework.plugins.protocol.MoveRequest" />
 </room>
 ----

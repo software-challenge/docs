@@ -22,10 +22,10 @@ Der Move ist der allgemeine Zug, der in verschiedenen Varianten gesendet werden 
 [[zug]]
 === ZUG
 --
-`COLOR`:: Farbe des zu setzenden Spielsteines (BLUE/YELLOW/RED/GREEN)
+`COLOR`:: Farbe des zu setzenden Spielsteines (`BLUE`,`YELLOW`,`RED`,`GREEN`)
 `KIND`:: Typ des zu setzenden Spielsteines (siehe xref:spielsteine[])
-`ROTATION` :: Drehung des Spielsteines (NONE/RIGHT/MIRROR/LEFT)
-`FLIPPED` :: Ob der Spielstein umgedreht wurde (true/false)
+`ROTATION` :: Drehung des Spielsteines (`NONE`,`RIGHT`,`MIRROR`,`LEFT`)
+`FLIPPED` :: Ob der Spielstein umgedreht wurde (`true`,`false`)
 `X`:: X-Koordinate des zu ziehenden Spielsteines oder des Zielfeldes
 `Y`:: Y-Koordinate des zu ziehenden Spielsteines oder des Zielfeldes
 --

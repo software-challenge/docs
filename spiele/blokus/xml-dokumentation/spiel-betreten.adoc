@@ -1,3 +1,4 @@
+[[spiel-betreten]]
 == Spiel betreten
 Wenn begonnen wird mit dem Server zu kommunizieren, muss zuallererst
 

@@ -1,12 +1,14 @@
+[[spielstatus]]
 == Spielstatus
+
 Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die Clients gesendet wird. Das Spielstatus-Tag ist dabei noch in einem _data_-Tag der Klasse _memento_ gewrappt:
 
 [[memento]]
 === memento
---
-* ROOM_ID Id des GameRooms
-* STATUS Gamestate wie in xref:status[]
---
+
+* `ROOM_ID` Id des GameRooms
+* `STATUS` Gamestate wie in xref:status[]
+
 [source,xml]
 ----
 <room roomId="ROOM_ID">
@@ -18,16 +20,16 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 
 [[status]]
 === Status
---
-* I Nummer der Farbe, die aktuell an der Reihe ist (1=BLUE, 2=YELLO, 3=RED, 4=GREEN)
-* Z aktuelle Zugzahl
-* R aktuelle Rundenzahl
-* P Spielstein, der in der ersten Runde gelegt werden muss (siehe xref:spielsteine[]
-* T Team, welches beginnt (ONE/TWO)
-* board Das Spielbrett, wie in xref:spielbrett[] definiert
-* blueShapes, yellowShapes, redShapes, greenShapes Noch nicht gesetzte Spielsteine, siehe xref:undeployed[]
-* lastMove der zuletzt ausgeführte Zug, siehe xref:last-move[]
---
+
+* `I` Nummer der Farbe, die aktuell an der Reihe ist (1=BLUE, 2=YELLO, 3=RED, 4=GREEN)
+* `Z` aktuelle Zugzahl
+* `R` aktuelle Rundenzahl
+* `P` Spielstein, der in der ersten Runde gelegt werden muss, siehe xref:spielsteine[]
+* `T` Team, welches beginnt (`ONE`, `TWO`)
+* `board` Das Spielbrett, wie in xref:spielbrett[] definiert
+* `blueShapes`, `yellowShapes`, `redShapes`, `greenShapes` Noch nicht gesetzte Spielsteine, siehe xref:undeployed[]
+* `lastMove` der zuletzt ausgeführte Zug, siehe xref:last-move[]
+
 [source,xml]
 ----
 <state class="state" currentColorIndex="I" turn="Z" round="R" startPiece="P">
@@ -43,65 +45,201 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 
 [[spielbrett]]
 === Spielbrett
---
-* FIELD Ein Spielfeld wie in xref:spielfeld[] definiert.
---
+
+* `X` X-Koordinate
+* `Y` Y-Koordinate
+* `CONTENT` Farbe des Spielsteins, der dieses Feld überdeckt (`BLUE`,`YELLOW`,`RED`,`GREEN`)
+
 [source,xml]
 ----
 <board>
   <fields>
-    <null/>
+    <field x="17" y="0" content="BLUE"/>
     ...
-    <null/>
-    <field x="-5" y="2" z="3" isObstructed="false"/>
-    ...
-    FIELD
-    ...
-    <field x="-5" y="5" z="0" isObstructed="false"/>
+    <field x="17" y="2" content="BLUE"/>
   </fields>
   ...
   </board>
 ----
 
-`<board>` enthaelt 11 `<fields>` Tags die wiederrum 11 Eintraege haben. Das ganze repraesentiert ein 11x11 2D-Array. Da das Spielfeld aber nicht rechteckig ist sondern die Form eines Hexagons hat, sind nicht alle Array-Eintraege durch Felder belegt, sondern manche durch `<null/>`. Das Feld mit den X- und Y-Koordinaten `x` und `y` ist im Array an der Stelle (`x+5`, `y+5`) gespeichert.
+`<board>` enthaelt `<field>` Tags für alle Felder, die bereits belegt sind.
+Leere Felder kommen nicht vor. Grundsätzlich besteht das Spielbrett aber immer
+aus 20x20 Feldern, wobei das Feld links oben die X- und Y-Koordinate 0 hat und
+die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 
-[[spielfeld]]
-=== Spielfeld
---
-* X X-Koordinate
-* Y Y-Koordinate
-* Z Z-Koordinate
-* OBSTRUCTED Blockiert (true) oder nicht (false)
-* PIECES Spielsteine (falls auf dem Feld vorhanden). Oberster Spielstein kommt als letztes in der Liste. Siehe xref:spielstein[].
---
-[source,xml]
-----
-<field x="X" y="Y" z="Z" isObstructed="OBSTRUCTED">
-  PIECES
-</field>
-----
-
-[[spielstein]]
-=== Spielstein
---
-* OWNER Farbe (RED/BLUE)
-* TYPE Insektentyp (ANT, BEE, BEETLE, GRASSHOPPER, SPIDER)
---
-[source,xml]
-----
-<piece owner="OWNER" type="TYPE"/>
-----
 [[undeployed]]
 === Nicht gesetzte Spielsteine
 
 [source,xml]
 ----
-<undeployedRedPieces>
-  <piece owner="RED" type="BEE"/>
-  ...
-</undeployedRedPieces>
-<undeployedBluePieces>
-  <piece owner="BLUE" type="BEE"/>
-  ...
-</undeployedBluePieces>
+<blueShapes class="linked-hash-set">
+  <shape>MONO</shape>
+  <shape>DOMINO</shape>
+  <shape>TRIO_L</shape>
+  <shape>TRIO_I</shape>
+  <shape>TETRO_O</shape>
+  <shape>TETRO_T</shape>
+  <shape>TETRO_I</shape>
+  <shape>TETRO_L</shape>
+  <shape>TETRO_Z</shape>
+  <shape>PENTO_L</shape>
+  <shape>PENTO_T</shape>
+  <shape>PENTO_S</shape>
+  <shape>PENTO_Z</shape>
+  <shape>PENTO_I</shape>
+  <shape>PENTO_P</shape>
+  <shape>PENTO_W</shape>
+  <shape>PENTO_U</shape>
+  <shape>PENTO_R</shape>
+  <shape>PENTO_X</shape>
+  <shape>PENTO_Y</shape>
+</blueShapes>
+----
+
+Die nicht gesetzten Steine werden durch `<shape>` Tags in einem `<blueShapes>`, `<yellowShapes>`, `<redShapes>` und `<greenShapes>` Tag dargestellt.
+
+[[last-move]]
+=== Vorheriger Zug
+
+[source,xml]
+----
+<lastMove class="sc.plugin2021.SetMove">
+  <piece color="BLUE" kind="PENTO_V" rotation="RIGHT" isFlipped="false">
+    <position x="17" y="0"/>
+  </piece>
+</lastMove>
+----
+
+Der vorherige Zug hat die selbe Struktur wie ein xref:zug[], der gesendet wird, ausser dass das Tag `<lastMove>` und nicht `<data>` heisst. Der vorherige Zug wird in jedem Spielstatus angegeben, ausser vor dem ersten Zug.
+
+=== Beispiel kompletter Spielstatus
+
+Hier ist das XML eines kompletten beispielhaften Spielstatus, wie es der Computerspieler vom Server bekommt:
+
+[source,xml]
+----
+<room roomId="cb3bc426-5c70-48b9-9307-943bc328b503">
+  <data class="memento">
+    <state class="state" currentColorIndex="1" turn="1" round="1" startPiece="PENTO_V">
+      <startTeam class="team">ONE</startTeam>
+      <board>
+        <field x="17" y="0" content="BLUE"/>
+        <field x="18" y="0" content="BLUE"/>
+        <field x="19" y="0" content="BLUE"/>
+        <field x="17" y="1" content="BLUE"/>
+        <field x="17" y="2" content="BLUE"/>
+      </board>
+      <blueShapes class="linked-hash-set">
+        <shape>MONO</shape>
+        <shape>DOMINO</shape>
+        <shape>TRIO_L</shape>
+        <shape>TRIO_I</shape>
+        <shape>TETRO_O</shape>
+        <shape>TETRO_T</shape>
+        <shape>TETRO_I</shape>
+        <shape>TETRO_L</shape>
+        <shape>TETRO_Z</shape>
+        <shape>PENTO_L</shape>
+        <shape>PENTO_T</shape>
+        <shape>PENTO_S</shape>
+        <shape>PENTO_Z</shape>
+        <shape>PENTO_I</shape>
+        <shape>PENTO_P</shape>
+        <shape>PENTO_W</shape>
+        <shape>PENTO_U</shape>
+        <shape>PENTO_R</shape>
+        <shape>PENTO_X</shape>
+        <shape>PENTO_Y</shape>
+      </blueShapes>
+      <yellowShapes class="linked-hash-set">
+        <shape>MONO</shape>
+        <shape>DOMINO</shape>
+        <shape>TRIO_L</shape>
+        <shape>TRIO_I</shape>
+        <shape>TETRO_O</shape>
+        <shape>TETRO_T</shape>
+        <shape>TETRO_I</shape>
+        <shape>TETRO_L</shape>
+        <shape>TETRO_Z</shape>
+        <shape>PENTO_L</shape>
+        <shape>PENTO_T</shape>
+        <shape>PENTO_V</shape>
+        <shape>PENTO_S</shape>
+        <shape>PENTO_Z</shape>
+        <shape>PENTO_I</shape>
+        <shape>PENTO_P</shape>
+        <shape>PENTO_W</shape>
+        <shape>PENTO_U</shape>
+        <shape>PENTO_R</shape>
+        <shape>PENTO_X</shape>
+        <shape>PENTO_Y</shape>
+      </yellowShapes>
+      <redShapes class="linked-hash-set">
+        <shape>MONO</shape>
+        <shape>DOMINO</shape>
+        <shape>TRIO_L</shape>
+        <shape>TRIO_I</shape>
+        <shape>TETRO_O</shape>
+        <shape>TETRO_T</shape>
+        <shape>TETRO_I</shape>
+        <shape>TETRO_L</shape>
+        <shape>TETRO_Z</shape>
+        <shape>PENTO_L</shape>
+        <shape>PENTO_T</shape>
+        <shape>PENTO_V</shape>
+        <shape>PENTO_S</shape>
+        <shape>PENTO_Z</shape>
+        <shape>PENTO_I</shape>
+        <shape>PENTO_P</shape>
+        <shape>PENTO_W</shape>
+        <shape>PENTO_U</shape>
+        <shape>PENTO_R</shape>
+        <shape>PENTO_X</shape>
+        <shape>PENTO_Y</shape>
+      </redShapes>
+      <greenShapes class="linked-hash-set">
+        <shape>MONO</shape>
+        <shape>DOMINO</shape>
+        <shape>TRIO_L</shape>
+        <shape>TRIO_I</shape>
+        <shape>TETRO_O</shape>
+        <shape>TETRO_T</shape>
+        <shape>TETRO_I</shape>
+        <shape>TETRO_L</shape>
+        <shape>TETRO_Z</shape>
+        <shape>PENTO_L</shape>
+        <shape>PENTO_T</shape>
+        <shape>PENTO_V</shape>
+        <shape>PENTO_S</shape>
+        <shape>PENTO_Z</shape>
+        <shape>PENTO_I</shape>
+        <shape>PENTO_P</shape>
+        <shape>PENTO_W</shape>
+        <shape>PENTO_U</shape>
+        <shape>PENTO_R</shape>
+        <shape>PENTO_X</shape>
+        <shape>PENTO_Y</shape>
+      </greenShapes>
+      <lastMoveMono class="linked-hash-map"/>
+      <orderedColors>
+        <color>BLUE</color>
+        <color>YELLOW</color>
+        <color>RED</color>
+        <color>GREEN</color>
+      </orderedColors>
+      <first displayName="One">
+        <color class="team">ONE</color>
+      </first>
+      <second displayName="Two">
+        <color class="team">TWO</color>
+      </second>
+      <lastMove class="sc.plugin2021.SetMove">
+        <piece color="BLUE" kind="PENTO_V" rotation="RIGHT" isFlipped="false">
+          <position x="17" y="0"/>
+        </piece>
+      </lastMove>
+      <startColor>BLUE</startColor>
+    </state>
+  </data>
+</room>
 ----
