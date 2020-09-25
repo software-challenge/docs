@@ -520,9 +520,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_software_challenge_xml_dokumentation_blokus">. Software Challenge XML-Dokumentation Blokus</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Sören Domrös &lt;<a href="mailto:stu114053@mail.uni-kiel.de">stu114053@mail.uni-kiel.de</a>&gt;</p>
-</div>
-<div class="paragraph">
 <p>Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.</p>
 </div>
 <div class="paragraph">
@@ -540,8 +537,1028 @@ welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 <a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
 </div>
+<div class="sect2">
+<h3 id="_einleitung">.. Einleitung</h3>
 <div class="paragraph">
-<p>Noch nicht definiert</p>
+<p>Wie in den letzten Jahren wird zur Client-Server Kommunikation ein XML-Protokoll
+genutzt.
+In diesem Dokument wird die Kommunikationsschnittstelle definiert, sodass ein
+komplett eigener Client geschrieben werden kann. Es wird hier nicht die
+vollständige Kommunikation dokumentiert bzw. definiert, dennoch alles, womit ein
+Client umgehen können muss, um spielfähig zu sein.</p>
+</div>
+<div class="sect3">
+<h4 id="an-wen-richtet-sich">... An wen richtet sich dieses Dokument?</h4>
+<div class="paragraph">
+<p>Die Kommunikation mit dem Spielserver ist für diejenigen, die aufbauend auf dem
+Simpleclient programmieren, unwichtig. Dort steht bereits ein funktionierender
+Client bereit und es muss nur die Spiellogik entworfen werden. Nur wer einen
+komplett eigenen Client entwerfen will, beispielsweise um die Programmiersprache
+frei wählen zu können, benötigt die Definitionen.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="hinweise">... Hinweise</h4>
+<div class="paragraph">
+<p>Falls Sie beabsichtigen sollten, diese Kommunikationsschnittstelle zu
+realisieren, sei darauf hingewiesen, dass es im Verlauf des Wettbewerbes möglich
+ist, dass weitere, hier noch nicht aufgeführte Elemente zur
+Kommunikationsschnittstelle hinzugefügt werden. Um auch bei solchen Änderungen
+sicher zu sein, dass ihr Client fehlerfrei mit dem Server kommunizieren kann,
+empfehlen wir Ihnen, beim Auslesen des XML jegliche Daten zu verwerfen, die hier
+nicht weiter definiert sind. Die vom Institut bereitgestellten
+Programme (Server, Simpleclient) nutzen eine Bibliothek um Java-Objekte direkt
+in XML zu konvertieren und umgekehrt. Dabei werden XML-Nachrichten nicht mit
+einem newline abgeschlossen.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spiel-betreten">.. Spiel betreten</h3>
+<div class="paragraph">
+<p>Wenn begonnen wird mit dem Server zu kommunizieren, muss zuallererst</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>gesendet werden, um die Kommunikation zu beginnen.</p>
+</div>
+<div class="sect3">
+<h4 id="ohne-reservierungscode">... Ohne Reservierungscode</h4>
+<div class="paragraph">
+<p>Betritt ein beliebiges offenes Spiel:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;join</span> <span class="tok-na">gameType=</span><span class="tok-s">&quot;swc_2021_blokus&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sollte kein Spiel offen sein, wird so ein neues erstellt.
+Je nachdem ob paused in server.properties true oder false ist, wird das Spiel pausiert gestartet oder nicht.
+Der Server antwortet darauf mit:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>ROOM_ID ID des GameRooms</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joined</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Alle administrativen Clients werden ebenfalls darüber benachrichtigt und erhalten folgende Nachricht:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>ROOM_ID ID des GameRooms</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joinedGameRoom</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span> <span class="tok-na">existing=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Falls bereits ein GameRoom offen war, ist dementsprechend existing true.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="mit-reservierungscode">... Mit Reservierungscode</h4>
+<div class="paragraph">
+<p>Ist ein Reservierungscode gegeben, so kann man den durch den Code gegebenen Platz betreten.</p>
+</div>
+<div class="sect4">
+<h5 id="join-reserved">Join mit Reservierungscode</h5>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>RC Reservierungscode</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joinPrepared</span> <span class="tok-na">reservationCode=</span><span class="tok-s">&quot;RC&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="welcome-message">Welcome Message</h5>
+<div class="paragraph">
+<p>Der Server antwortet darauf erst, wenn der zweite Client ebenfalls verbunden ist:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>ROOM_ID Id des GameRooms</p>
+</li>
+<li>
+<p>COLOR Spielerfarbe. Da bei Blokus jeder Spieler zwei Farben spielt, ist hier nur one oder two angegeben</p>
+</li>
+<li>
+<p>STATUS GameState wie in <a href="_software_challenge_xml_dokumentation_blokus.html#status">Status</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joined</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span> <span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;welcomeMessage&quot;</span> <span class="tok-na">color=</span><span class="tok-s">&quot;COLOR&quot;</span><span class="tok-nt">&gt;&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span>
+<span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  STATUS
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Als erstes kommt eine Bestätigung, dass das Spiel betreten wurde. Hier kann die
+Raum-ID festgestellt und für die weitere Kommunikation gespeichert werden. Nach
+der Willkommensnachricht, welche dem Spieler mitteilt, ob er erster oder zweiter
+Spieler ist, wird der initiale Spielstatus gesendet.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="zug-anforderung">.. Zug-Anforderung</h3>
+<div class="paragraph">
+<p>Eine einfache Nachricht fordert zum Zug auf:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.framework.plugins.protocol.MoveRequest&quot;</span> <span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_züge_senden">.. Züge senden</h3>
+<div class="sect3">
+<h4 id="der-move">... Der Move</h4>
+<div class="paragraph">
+<p>Der Move ist die Antwort auf den MoveRequest des Servers.</p>
+</div>
+<div class="sect4">
+<h5 id="senden">Senden</h5>
+<div class="paragraph">
+<p>Der Move ist der allgemeine Zug, der in verschiedenen Varianten gesendet werden kann.</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>ROOM_ID</code></dt>
+<dd>
+<p>ID des GameRooms, aus dem <code>MoveRequest</code>.</p>
+</dd>
+<dt class="hdlist1"><code>ZUG</code></dt>
+<dd>
+<p>Zug wie in <a href="_software_challenge_xml_dokumentation_blokus.html#zug">ZUG</a></p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  ZUG
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="zug">... ZUG</h4>
+<div class="openblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>COLOR</code></dt>
+<dd>
+<p>Farbe des zu setzenden Spielsteines (<code>BLUE</code>,<code>YELLOW</code>,<code>RED</code>,<code>GREEN</code>)</p>
+</dd>
+<dt class="hdlist1"><code>KIND</code></dt>
+<dd>
+<p>Typ des zu setzenden Spielsteines (siehe <a href="_software_challenge_xml_dokumentation_blokus.html#spielsteine">Spielsteine</a>)</p>
+</dd>
+<dt class="hdlist1"><code>ROTATION</code> </dt>
+<dd>
+<p>Drehung des Spielsteines (<code>NONE</code>,<code>RIGHT</code>,<code>MIRROR</code>,<code>LEFT</code>)</p>
+</dd>
+<dt class="hdlist1"><code>FLIPPED</code> </dt>
+<dd>
+<p>Ob der Spielstein umgedreht wurde (<code>true</code>,<code>false</code>)</p>
+</dd>
+<dt class="hdlist1"><code>X</code></dt>
+<dd>
+<p>X-Koordinate des zu ziehenden Spielsteines oder des Zielfeldes</p>
+</dd>
+<dt class="hdlist1"><code>Y</code></dt>
+<dd>
+<p>Y-Koordinate des zu ziehenden Spielsteines oder des Zielfeldes</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Es gibt drei Arten von Zuegen. Entweder man setzt einen eigenen noch nicht gesetzten Stein auf ein Zielfeld:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.plugin2021.SetMove&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;piece</span> <span class="tok-na">color=</span><span class="tok-s">&quot;COLOR&quot;</span> <span class="tok-na">kind=</span><span class="tok-s">&quot;KIND&quot;</span> <span class="tok-na">rotation=</span><span class="tok-s">&quot;ROTATION&quot;</span> <span class="tok-na">isFlipped=</span><span class="tok-s">&quot;FLIPPED&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;position</span> <span class="tok-na">x=</span><span class="tok-s">&quot;X&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;Y&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;/piece&gt;</span>
+<span class="tok-nt">&lt;/data&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Oder man möchte nicht setzen, dann ist es erlaubt, auszusetzen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.plugin2021.SkipMove&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="debughints">... Debughints</h4>
+<div class="paragraph">
+<p>Zügen können Debug-Informationen beigefügt werden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;hint</span> <span class="tok-na">content=</span><span class="tok-s">&quot;S&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Damit sieht beispielsweise ein Zug so aus:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.plugin2021.SetMove&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;piece</span> <span class="tok-na">color=</span><span class="tok-s">&quot;COLOR&quot;</span> <span class="tok-na">kind=</span><span class="tok-s">&quot;KIND&quot;</span> <span class="tok-na">rotation=</span><span class="tok-s">&quot;ROTATION&quot;</span> <span class="tok-na">isFlipped=</span><span class="tok-s">&quot;FLIPPED&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;position</span> <span class="tok-na">x=</span><span class="tok-s">&quot;X&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;Y&quot;</span><span class="tok-nt">/&gt;</span>
+    <span class="tok-nt">&lt;/piece&gt;</span>
+    <span class="tok-nt">&lt;hint</span> <span class="tok-na">content=</span><span class="tok-s">&quot;Dies ist ein Hint.&quot;</span> <span class="tok-nt">/&gt;</span>
+    <span class="tok-nt">&lt;hint</span> <span class="tok-na">content=</span><span class="tok-s">&quot;noch ein Hint&quot;</span> <span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spielsteine">.. Spielsteine</h3>
+<div class="paragraph">
+<p>Es gibt 21 verschiedene Arten Spielsteine. Alle haben im XML einen Namen. Diese sind:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>MONO</code></p>
+</li>
+<li>
+<p><code>DOMINO</code></p>
+</li>
+<li>
+<p><code>TRIO_L</code></p>
+</li>
+<li>
+<p><code>TRIO_I</code></p>
+</li>
+<li>
+<p><code>TETRO_O</code></p>
+</li>
+<li>
+<p><code>TETRO_T</code></p>
+</li>
+<li>
+<p><code>TETRO_I</code></p>
+</li>
+<li>
+<p><code>TETRO_L</code></p>
+</li>
+<li>
+<p><code>TETRO_Z</code></p>
+</li>
+<li>
+<p><code>PENTO_L</code></p>
+</li>
+<li>
+<p><code>PENTO_T</code></p>
+</li>
+<li>
+<p><code>PENTO_V</code></p>
+</li>
+<li>
+<p><code>PENTO_S</code></p>
+</li>
+<li>
+<p><code>PENTO_Z</code></p>
+</li>
+<li>
+<p><code>PENTO_I</code></p>
+</li>
+<li>
+<p><code>PENTO_P</code></p>
+</li>
+<li>
+<p><code>PENTO_W</code></p>
+</li>
+<li>
+<p><code>PENTO_U</code></p>
+</li>
+<li>
+<p><code>PENTO_R</code></p>
+</li>
+<li>
+<p><code>PENTO_X</code></p>
+</li>
+<li>
+<p><code>PENTO_Y</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spielstatus">.. Spielstatus</h3>
+<div class="paragraph">
+<p>Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die Clients gesendet wird. Das Spielstatus-Tag ist dabei noch in einem <em>data</em>-Tag der Klasse <em>memento</em> gewrappt:</p>
+</div>
+<div class="sect3">
+<h4 id="memento">... memento</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ROOM_ID</code> Id des GameRooms</p>
+</li>
+<li>
+<p><code>STATUS</code> Gamestate wie in <a href="_software_challenge_xml_dokumentation_blokus.html#status">Status</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;memento&quot;</span><span class="tok-nt">&gt;</span>
+    STATUS
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="status">... Status</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>I</code> Nummer der Farbe, die aktuell an der Reihe ist (1=BLUE, 2=YELLO, 3=RED, 4=GREEN)</p>
+</li>
+<li>
+<p><code>Z</code> aktuelle Zugzahl</p>
+</li>
+<li>
+<p><code>R</code> aktuelle Rundenzahl</p>
+</li>
+<li>
+<p><code>P</code> Spielstein, der in der ersten Runde gelegt werden muss, siehe <a href="_software_challenge_xml_dokumentation_blokus.html#spielsteine">Spielsteine</a></p>
+</li>
+<li>
+<p><code>T</code> Team, welches beginnt (<code>ONE</code>, <code>TWO</code>)</p>
+</li>
+<li>
+<p><code>board</code> Das Spielbrett, wie in <a href="_software_challenge_xml_dokumentation_blokus.html#spielbrett">Spielbrett</a> definiert</p>
+</li>
+<li>
+<p><code>blueShapes</code>, <code>yellowShapes</code>, <code>redShapes</code>, <code>greenShapes</code> Noch nicht gesetzte Spielsteine, siehe <a href="_software_challenge_xml_dokumentation_blokus.html#undeployed">Nicht gesetzte Spielsteine</a></p>
+</li>
+<li>
+<p><code>lastMove</code> der zuletzt ausgeführte Zug, siehe <a href="_software_challenge_xml_dokumentation_blokus.html#last-move">Vorheriger Zug</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">currentColorIndex=</span><span class="tok-s">&quot;I&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;Z&quot;</span> <span class="tok-na">round=</span><span class="tok-s">&quot;R&quot;</span> <span class="tok-na">startPiece=</span><span class="tok-s">&quot;P&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;startTeam</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>T<span class="tok-nt">&lt;/startTeam&gt;</span>
+  board
+  blueShapes
+  yellowShapes
+  redShapes
+  greenShapes
+  lastMove
+<span class="tok-nt">&lt;/state&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="spielbrett">... Spielbrett</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>X</code> X-Koordinate</p>
+</li>
+<li>
+<p><code>Y</code> Y-Koordinate</p>
+</li>
+<li>
+<p><code>CONTENT</code> Farbe des Spielsteins, der dieses Feld überdeckt (<code>BLUE</code>,<code>YELLOW</code>,<code>RED</code>,<code>GREEN</code>)</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;board&gt;</span>
+  <span class="tok-nt">&lt;fields&gt;</span>
+    <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
+    ...
+    <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;2&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;/fields&gt;</span>
+  ...
+  <span class="tok-nt">&lt;/board&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>&lt;board&gt;</code> enthaelt <code>&lt;field&gt;</code> Tags für alle Felder, die bereits belegt sind.
+Leere Felder kommen nicht vor. Grundsätzlich besteht das Spielbrett aber immer
+aus 20x20 Feldern, wobei das Feld links oben die X- und Y-Koordinate 0 hat und
+die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="undeployed">... Nicht gesetzte Spielsteine</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;blueShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
+<span class="tok-nt">&lt;/blueShapes&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die nicht gesetzten Steine werden durch <code>&lt;shape&gt;</code> Tags in einem <code>&lt;blueShapes&gt;</code>, <code>&lt;yellowShapes&gt;</code>, <code>&lt;redShapes&gt;</code> und <code>&lt;greenShapes&gt;</code> Tag dargestellt.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="last-move">... Vorheriger Zug</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;lastMove</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.plugin2021.SetMove&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;piece</span> <span class="tok-na">color=</span><span class="tok-s">&quot;BLUE&quot;</span> <span class="tok-na">kind=</span><span class="tok-s">&quot;PENTO_V&quot;</span> <span class="tok-na">rotation=</span><span class="tok-s">&quot;RIGHT&quot;</span> <span class="tok-na">isFlipped=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;position</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;/piece&gt;</span>
+<span class="tok-nt">&lt;/lastMove&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der vorherige Zug hat die selbe Struktur wie ein <a href="_software_challenge_xml_dokumentation_blokus.html#zug">ZUG</a>, der gesendet wird, ausser dass das Tag <code>&lt;lastMove&gt;</code> und nicht <code>&lt;data&gt;</code> heisst. Der vorherige Zug wird in jedem Spielstatus angegeben, ausser vor dem ersten Zug.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_beispiel_kompletter_spielstatus">... Beispiel kompletter Spielstatus</h4>
+<div class="paragraph">
+<p>Hier ist das XML eines kompletten beispielhaften Spielstatus, wie es der Computerspieler vom Server bekommt:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;cb3bc426-5c70-48b9-9307-943bc328b503&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;memento&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">currentColorIndex=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">round=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">startPiece=</span><span class="tok-s">&quot;PENTO_V&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;startTeam</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/startTeam&gt;</span>
+      <span class="tok-nt">&lt;board&gt;</span>
+        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;18&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;19&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;2&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
+      <span class="tok-nt">&lt;/board&gt;</span>
+      <span class="tok-nt">&lt;blueShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
+      <span class="tok-nt">&lt;/blueShapes&gt;</span>
+      <span class="tok-nt">&lt;yellowShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_V<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
+      <span class="tok-nt">&lt;/yellowShapes&gt;</span>
+      <span class="tok-nt">&lt;redShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_V<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
+      <span class="tok-nt">&lt;/redShapes&gt;</span>
+      <span class="tok-nt">&lt;greenShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_V<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
+      <span class="tok-nt">&lt;/greenShapes&gt;</span>
+      <span class="tok-nt">&lt;lastMoveMono</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-map&quot;</span><span class="tok-nt">/&gt;</span>
+      <span class="tok-nt">&lt;orderedColors&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>YELLOW<span class="tok-nt">&lt;/color&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>RED<span class="tok-nt">&lt;/color&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>GREEN<span class="tok-nt">&lt;/color&gt;</span>
+      <span class="tok-nt">&lt;/orderedColors&gt;</span>
+      <span class="tok-nt">&lt;first</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;One&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/color&gt;</span>
+      <span class="tok-nt">&lt;/first&gt;</span>
+      <span class="tok-nt">&lt;second</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;Two&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>TWO<span class="tok-nt">&lt;/color&gt;</span>
+      <span class="tok-nt">&lt;/second&gt;</span>
+      <span class="tok-nt">&lt;lastMove</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.plugin2021.SetMove&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;piece</span> <span class="tok-na">color=</span><span class="tok-s">&quot;BLUE&quot;</span> <span class="tok-na">kind=</span><span class="tok-s">&quot;PENTO_V&quot;</span> <span class="tok-na">rotation=</span><span class="tok-s">&quot;RIGHT&quot;</span> <span class="tok-na">isFlipped=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">&gt;</span>
+          <span class="tok-nt">&lt;position</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;/piece&gt;</span>
+      <span class="tok-nt">&lt;/lastMove&gt;</span>
+      <span class="tok-nt">&lt;startColor&gt;</span>BLUE<span class="tok-nt">&lt;/startColor&gt;</span>
+    <span class="tok-nt">&lt;/state&gt;</span>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spiel_verlassen">.. Spiel verlassen</h3>
+<div class="paragraph">
+<p>Wenn ein Client den Raum verlässt, bekommen die anderen Clients eine entsprechende Meldung vom Server.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ROOM_ID</code> Id des GameRooms</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;left</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spielende">.. Spielergebnis</h3>
+<div class="paragraph">
+<p>Zum Spielende enthält der Spieler das Ergebnis:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>ROOM_ID</code> Id des GameRooms</p>
+</li>
+<li>
+<p><code>R1</code>, <code>R2</code> Text, der den Grund für das Spielende erklärt</p>
+</li>
+<li>
+<p><code>CAUSE1</code>, <code>CAUSE2</code> Grund des Spielendes (<code>REGULAR</code>, <code>LEFT</code>, <code>RULE_VIOLATION</code>, <code>SOFT_TIMEOUT</code>, <code>HARD_TIMEOUT</code>)</p>
+</li>
+<li>
+<p><code>WP1</code>, <code>WP2</code> Siegpunkte der jeweiligen Spieler, 0 verloren, 1 unentschieden, 2 gewonnen</p>
+</li>
+<li>
+<p><code>S1</code>, <code>S2</code> Punkte des jeweiligen Spielers</p>
+</li>
+<li>
+<p><code>NAME</code> Anzeigename des Spielers</p>
+</li>
+<li>
+<p><code>TEAM</code> Team des Siegers (<code>ONE</code>, <code>TWO</code>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;result&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;definition&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Gewinner&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>SUM<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;∅ Punkte&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+    <span class="tok-nt">&lt;/definition&gt;</span>
+    <span class="tok-nt">&lt;score</span> <span class="tok-na">cause=</span><span class="tok-s">&quot;CAUSE1&quot;</span> <span class="tok-na">reason=</span><span class="tok-s">&quot;R1&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>WP1<span class="tok-nt">&lt;/part&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>S1<span class="tok-nt">&lt;/part&gt;</span>
+    <span class="tok-nt">&lt;/score&gt;</span>
+    <span class="tok-nt">&lt;score</span> <span class="tok-na">cause=</span><span class="tok-s">&quot;CAUSE2&quot;</span> <span class="tok-na">reason=</span><span class="tok-s">&quot;R2&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>WP2<span class="tok-nt">&lt;/part&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>S2<span class="tok-nt">&lt;/part&gt;</span>
+    <span class="tok-nt">&lt;/score&gt;</span>
+    <span class="tok-nt">&lt;winner</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;NAME&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>TEAM<span class="tok-nt">&lt;/color&gt;</span>
+    <span class="tok-nt">&lt;/winner&gt;</span>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spielverlauf">.. Spielverlauf</h3>
+<div class="paragraph">
+<p>Der Server startet (StandardIp: localhost 13050).</p>
+</div>
+<div class="paragraph">
+<p>Nun gibt es zwei Varianten ein Spiel zu starten, eine durch einen Administratorclient die andere durch hinzufügen der Spieler zu einen Spieltyp:</p>
+</div>
+<div class="sect3">
+<h4 id="_variante_1_adminclient_mit_reservierungscode">... Variante 1 (AdminClient <a href="mit-reservierungscode.html">Mit Reservierungscode</a>)</h4>
+<div class="paragraph">
+<p>Ein Client registriert sich als Administrator mit dem in server.properties festgelegten Passwort p:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;&lt;authenticate</span> <span class="tok-na">password=</span><span class="tok-s">&quot;p&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dann kann ein Spiel angelegt werden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;prepare</span> <span class="tok-na">gameType=</span><span class="tok-s">&quot;swc_2019_piranhas&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;slot</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p1&quot;</span> <span class="tok-na">canTimeout=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-na">shouldBePaused=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;slot</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p2&quot;</span> <span class="tok-na">canTimeout=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-na">shouldBePaused=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/prepare&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Server antwortet darauf mit einer Nachricht, die die ROOM_ID und Reservierungscodes für die beiden Clients enthält:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;prepared</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;reservation&gt;</span>RC1<span class="tok-nt">&lt;/reservation&gt;</span>
+    <span class="tok-nt">&lt;reservation&gt;</span>RC2<span class="tok-nt">&lt;/reservation&gt;</span>
+  <span class="tok-nt">&lt;/prepared&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Administratorclient kann nur ebenfalls als Observer des Spiels genutzt werden, indem ein entsprechender Request gesendet wird.
+Dadurch wird das derzeitge Spielfeld (<a href="_software_challenge_xml_dokumentation_blokus.html#memento">memento</a>) ebenfalls an den Administratorclient gesendet.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;observe</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Clients die auf dem Serverport (localhost 13050) gestartet werden können so über diesen Code joinen.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;joinPrepared</span> <span class="tok-na">reservationCode=</span><span class="tok-s">&quot;RC1&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;joinPrepared</span> <span class="tok-na">reservationCode=</span><span class="tok-s">&quot;RC2&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_variante_2_eventuell_ohne_adminclient_ohne_reservierungscode">... Variante 2 ((eventuell) ohne AdminClient <a href="ohne-reservierungscode.html">Ohne Reservierungscode</a>)</h4>
+<div class="paragraph">
+<p>Die Clients wurden auf dem Serverport (Standard: localhost 13050) gestartet.</p>
+</div>
+<div class="paragraph">
+<p>Sie können sich mit folgender Anfrage einen bereits offenen Spiel gleichen Typs beitreten oder, falls kein Spiel des Typs vorhanden selbst eines starten:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;join</span> <span class="tok-na">gameType=</span><span class="tok-s">&quot;swc_2019_piranhas&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Server antwortet mit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;joined</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_weiterer_spielverlauf">... Weiterer Spielverlauf</h4>
+<div class="paragraph">
+<p>Der Server antwortet jeweils mit der WelcomeMessage (<a href="_software_challenge_xml_dokumentation_blokus.html#welcome-message">Welcome Message</a>) und dem ersten GameState (<a href="_software_challenge_xml_dokumentation_blokus.html#memento">memento</a>) sobald beide Spieler verbunden sind.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;cb3bc426-5c70-48b9-9307-943bc328b503&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;welcomeMessage&quot;</span> <span class="tok-na">color=</span><span class="tok-s">&quot;two&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span>
+<span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;cb3bc426-5c70-48b9-9307-943bc328b503&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;memento&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">currentColorIndex=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">round=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">startPiece=</span><span class="tok-s">&quot;PENTO_V&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;startTeam</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/startTeam&gt;</span>
+      <span class="tok-nt">&lt;board/&gt;</span>
+      <span class="tok-nt">&lt;blueShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_V<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
+      <span class="tok-nt">&lt;/blueShapes&gt;</span>
+      <span class="tok-nt">&lt;yellowShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_V<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
+      <span class="tok-nt">&lt;/yellowShapes&gt;</span>
+      <span class="tok-nt">&lt;redShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_V<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
+      <span class="tok-nt">&lt;/redShapes&gt;</span>
+      <span class="tok-nt">&lt;greenShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_V<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
+      <span class="tok-nt">&lt;/greenShapes&gt;</span>
+      <span class="tok-nt">&lt;lastMoveMono</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-map&quot;</span><span class="tok-nt">/&gt;</span>
+      <span class="tok-nt">&lt;orderedColors&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>YELLOW<span class="tok-nt">&lt;/color&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>RED<span class="tok-nt">&lt;/color&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>GREEN<span class="tok-nt">&lt;/color&gt;</span>
+      <span class="tok-nt">&lt;/orderedColors&gt;</span>
+      <span class="tok-nt">&lt;first</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;One&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/color&gt;</span>
+      <span class="tok-nt">&lt;/first&gt;</span>
+      <span class="tok-nt">&lt;second</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;Two&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>TWO<span class="tok-nt">&lt;/color&gt;</span>
+      <span class="tok-nt">&lt;/second&gt;</span>
+      <span class="tok-nt">&lt;startColor&gt;</span>BLUE<span class="tok-nt">&lt;/startColor&gt;</span>
+    <span class="tok-nt">&lt;/state&gt;</span>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der erste Spieler erhält dann eine Zugaufforderung (<a href="#move-request">[move-request]</a>), falls in server.properties paused auf false gesetzt wurde.
+Falls das Spiel pausiert ist, muss das Spiel durch einen Administratorclient gestartet werden:</p>
+</div>
+<div class="paragraph">
+<p>Verbinden des Administratorclients (falls es sich um die erste Kontaktaufnahme zum Server handelt, ansonsten &lt;protocol&gt; weglassen).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span>
+  <span class="tok-nt">&lt;authenticate</span> <span class="tok-na">password=</span><span class="tok-s">&quot;examplepassword&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pausierung aufheben:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;pause</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span> <span class="tok-na">pause=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Daraufhin wird der erste Spieler aufgefordert einen Zug zu senden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;871faccb-5190-4e44-82fc-6cdcbb493726&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.framework.plugins.protocol.MoveRequest&quot;</span> <span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Client des CurrentPlayer sendet nun einen Zug (<a href="_software_challenge_xml_dokumentation_blokus.html#zug">ZUG</a>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;cb3bc426-5c70-48b9-9307-943bc328b503&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.plugin2021.SetMove&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;piece</span> <span class="tok-na">color=</span><span class="tok-s">&quot;BLUE&quot;</span> <span class="tok-na">kind=</span><span class="tok-s">&quot;PENTO_V&quot;</span> <span class="tok-na">rotation=</span><span class="tok-s">&quot;RIGHT&quot;</span> <span class="tok-na">isFlipped=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;position</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span><span class="tok-nt">/&gt;</span>
+    <span class="tok-nt">&lt;/piece&gt;</span>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So geht es abwechselnd weiter, bis zum Spielende (<a href="_software_challenge_xml_dokumentation_blokus.html#spielende">Spielergebnis</a>).
+Die letzte Nachricht des Servers endet mit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;/protocol&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Danach wird die Verbindung geschlossen.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -551,7 +1568,7 @@ auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-09-23 10:16:28 UTC
+Last updated 2020-09-25 08:06:12 UTC
 </div>
 </div>
 </body>

@@ -506,155 +506,302 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="xml-dokumentation" class="article">
+<body id="spielstatus" class="article">
 <div id="header">
 <h1>Software Challenge XML-Dokumentation Blokus</h1>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="spielstatus">Spielstatus</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.</p>
+<p>Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die Clients gesendet wird. Das Spielstatus-Tag ist dabei noch in einem <em>data</em>-Tag der Klasse <em>memento</em> gewrappt:</p>
 </div>
-<div class="paragraph">
-<p><a href="xml-dokumentation.pdf">PDF-Version dieses Dokumentes</a></p>
-</div>
-<div class="paragraph">
-<p>Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
-Dokumentation kann
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs">direkt auf
-GitHub editiert</a> werden, einzige Voraussetzung ist eine kostenlose
-Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
-auswählen (ein guter Startpunkt ist die Datei
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc">index.adoc</a>
-welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
-auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
-<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
-</div>
-</div>
-</div>
+<div class="sect2">
+<h3 id="memento">memento</h3>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="_einleitung.html">Einleitung</a></p>
-<ul>
-<li>
-<p><a href="_einleitung.html#an-wen-richtet-sich">An wen richtet sich dieses Dokument?</a></p>
-
+<p><code>ROOM_ID</code> Id des GameRooms</p>
 </li>
 <li>
-<p><a href="_einleitung.html#hinweise">Hinweise</a></p>
-
-</li>
-</ul>
-</li>
-<li>
-<p><a href="spiel-betreten.html">Spiel betreten</a></p>
-<ul>
-<li>
-<p><a href="spiel-betreten.html#ohne-reservierungscode">Ohne Reservierungscode</a></p>
-
-</li>
-<li>
-<p><a href="spiel-betreten.html#mit-reservierungscode">Mit Reservierungscode</a></p>
-<ul>
-<li>
-<p><a href="spiel-betreten.html#join-reserved">Join mit Reservierungscode</a></p>
-</li>
-<li>
-<p><a href="spiel-betreten.html#welcome-message">Welcome Message</a></p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="zug-anforderung.html">Zug-Anforderung</a></p>
-
-</li>
-<li>
-<p><a href="_züge_senden.html">Züge senden</a></p>
-<ul>
-<li>
-<p><a href="_züge_senden.html#der-move">Der Move</a></p>
-<ul>
-<li>
-<p><a href="_züge_senden.html#senden">Senden</a></p>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="_züge_senden.html#zug">ZUG</a></p>
-
-</li>
-<li>
-<p><a href="_züge_senden.html#debughints">Debughints</a></p>
-
-</li>
-</ul>
-</li>
-<li>
-<p><a href="spielsteine.html">Spielsteine</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html">Spielstatus</a></p>
-<ul>
-<li>
-<p><a href="spielstatus.html#memento">memento</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html#status">Status</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html#spielbrett">Spielbrett</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html#undeployed">Nicht gesetzte Spielsteine</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html#last-move">Vorheriger Zug</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html#_beispiel_kompletter_spielstatus">Beispiel kompletter Spielstatus</a></p>
-
-</li>
-</ul>
-</li>
-<li>
-<p><a href="_spiel_verlassen.html">Spiel verlassen</a></p>
-
-</li>
-<li>
-<p><a href="spielende.html">Spielergebnis</a></p>
-
-</li>
-<li>
-<p><a href="_spielverlauf.html">Spielverlauf</a></p>
-<ul>
-<li>
-<p><a href="_spielverlauf.html#_variante_1_adminclient_mit_reservierungscode">Variante 1 (AdminClient &lt;a href="mit-reservierungscode.html"&gt;Mit Reservierungscode&lt;/a&gt;)</a></p>
-
-</li>
-<li>
-<p><a href="_spielverlauf.html#_variante_2_eventuell_ohne_adminclient_ohne_reservierungscode">Variante 2 ((eventuell) ohne AdminClient &lt;a href="ohne-reservierungscode.html"&gt;Ohne Reservierungscode&lt;/a&gt;)</a></p>
-
-</li>
-<li>
-<p><a href="_spielverlauf.html#_weiterer_spielverlauf">Weiterer Spielverlauf</a></p>
-
-</li>
-</ul>
+<p><code>STATUS</code> Gamestate wie in <a href="spielstatus.html#status">Status</a></p>
 </li>
 </ul>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;memento&quot;</span><span class="tok-nt">&gt;</span>
+    STATUS
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="status">Status</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>I</code> Nummer der Farbe, die aktuell an der Reihe ist (1=BLUE, 2=YELLO, 3=RED, 4=GREEN)</p>
+</li>
+<li>
+<p><code>Z</code> aktuelle Zugzahl</p>
+</li>
+<li>
+<p><code>R</code> aktuelle Rundenzahl</p>
+</li>
+<li>
+<p><code>P</code> Spielstein, der in der ersten Runde gelegt werden muss, siehe <a href="spielsteine.html">Spielsteine</a></p>
+</li>
+<li>
+<p><code>T</code> Team, welches beginnt (<code>ONE</code>, <code>TWO</code>)</p>
+</li>
+<li>
+<p><code>board</code> Das Spielbrett, wie in <a href="spielstatus.html#spielbrett">Spielbrett</a> definiert</p>
+</li>
+<li>
+<p><code>blueShapes</code>, <code>yellowShapes</code>, <code>redShapes</code>, <code>greenShapes</code> Noch nicht gesetzte Spielsteine, siehe <a href="spielstatus.html#undeployed">Nicht gesetzte Spielsteine</a></p>
+</li>
+<li>
+<p><code>lastMove</code> der zuletzt ausgeführte Zug, siehe <a href="spielstatus.html#last-move">Vorheriger Zug</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">currentColorIndex=</span><span class="tok-s">&quot;I&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;Z&quot;</span> <span class="tok-na">round=</span><span class="tok-s">&quot;R&quot;</span> <span class="tok-na">startPiece=</span><span class="tok-s">&quot;P&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;startTeam</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>T<span class="tok-nt">&lt;/startTeam&gt;</span>
+  board
+  blueShapes
+  yellowShapes
+  redShapes
+  greenShapes
+  lastMove
+<span class="tok-nt">&lt;/state&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spielbrett">Spielbrett</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><code>X</code> X-Koordinate</p>
+</li>
+<li>
+<p><code>Y</code> Y-Koordinate</p>
+</li>
+<li>
+<p><code>CONTENT</code> Farbe des Spielsteins, der dieses Feld überdeckt (<code>BLUE</code>,<code>YELLOW</code>,<code>RED</code>,<code>GREEN</code>)</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;board&gt;</span>
+  <span class="tok-nt">&lt;fields&gt;</span>
+    <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
+    ...
+    <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;2&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;/fields&gt;</span>
+  ...
+  <span class="tok-nt">&lt;/board&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>&lt;board&gt;</code> enthaelt <code>&lt;field&gt;</code> Tags für alle Felder, die bereits belegt sind.
+Leere Felder kommen nicht vor. Grundsätzlich besteht das Spielbrett aber immer
+aus 20x20 Feldern, wobei das Feld links oben die X- und Y-Koordinate 0 hat und
+die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="undeployed">Nicht gesetzte Spielsteine</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;blueShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
+  <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
+<span class="tok-nt">&lt;/blueShapes&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Die nicht gesetzten Steine werden durch <code>&lt;shape&gt;</code> Tags in einem <code>&lt;blueShapes&gt;</code>, <code>&lt;yellowShapes&gt;</code>, <code>&lt;redShapes&gt;</code> und <code>&lt;greenShapes&gt;</code> Tag dargestellt.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="last-move">Vorheriger Zug</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;lastMove</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.plugin2021.SetMove&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;piece</span> <span class="tok-na">color=</span><span class="tok-s">&quot;BLUE&quot;</span> <span class="tok-na">kind=</span><span class="tok-s">&quot;PENTO_V&quot;</span> <span class="tok-na">rotation=</span><span class="tok-s">&quot;RIGHT&quot;</span> <span class="tok-na">isFlipped=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;position</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;/piece&gt;</span>
+<span class="tok-nt">&lt;/lastMove&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der vorherige Zug hat die selbe Struktur wie ein <a href="_züge_senden.html#zug">ZUG</a>, der gesendet wird, ausser dass das Tag <code>&lt;lastMove&gt;</code> und nicht <code>&lt;data&gt;</code> heisst. Der vorherige Zug wird in jedem Spielstatus angegeben, ausser vor dem ersten Zug.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_beispiel_kompletter_spielstatus">Beispiel kompletter Spielstatus</h3>
+<div class="paragraph">
+<p>Hier ist das XML eines kompletten beispielhaften Spielstatus, wie es der Computerspieler vom Server bekommt:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;cb3bc426-5c70-48b9-9307-943bc328b503&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;memento&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">currentColorIndex=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">round=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">startPiece=</span><span class="tok-s">&quot;PENTO_V&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;startTeam</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/startTeam&gt;</span>
+      <span class="tok-nt">&lt;board&gt;</span>
+        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;18&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;19&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;2&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
+      <span class="tok-nt">&lt;/board&gt;</span>
+      <span class="tok-nt">&lt;blueShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
+      <span class="tok-nt">&lt;/blueShapes&gt;</span>
+      <span class="tok-nt">&lt;yellowShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_V<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
+      <span class="tok-nt">&lt;/yellowShapes&gt;</span>
+      <span class="tok-nt">&lt;redShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_V<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
+      <span class="tok-nt">&lt;/redShapes&gt;</span>
+      <span class="tok-nt">&lt;greenShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_V<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
+        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
+      <span class="tok-nt">&lt;/greenShapes&gt;</span>
+      <span class="tok-nt">&lt;lastMoveMono</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-map&quot;</span><span class="tok-nt">/&gt;</span>
+      <span class="tok-nt">&lt;orderedColors&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>YELLOW<span class="tok-nt">&lt;/color&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>RED<span class="tok-nt">&lt;/color&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>GREEN<span class="tok-nt">&lt;/color&gt;</span>
+      <span class="tok-nt">&lt;/orderedColors&gt;</span>
+      <span class="tok-nt">&lt;first</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;One&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/color&gt;</span>
+      <span class="tok-nt">&lt;/first&gt;</span>
+      <span class="tok-nt">&lt;second</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;Two&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>TWO<span class="tok-nt">&lt;/color&gt;</span>
+      <span class="tok-nt">&lt;/second&gt;</span>
+      <span class="tok-nt">&lt;lastMove</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.plugin2021.SetMove&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;piece</span> <span class="tok-na">color=</span><span class="tok-s">&quot;BLUE&quot;</span> <span class="tok-na">kind=</span><span class="tok-s">&quot;PENTO_V&quot;</span> <span class="tok-na">rotation=</span><span class="tok-s">&quot;RIGHT&quot;</span> <span class="tok-na">isFlipped=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">&gt;</span>
+          <span class="tok-nt">&lt;position</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;/piece&gt;</span>
+      <span class="tok-nt">&lt;/lastMove&gt;</span>
+      <span class="tok-nt">&lt;startColor&gt;</span>BLUE<span class="tok-nt">&lt;/startColor&gt;</span>
+    <span class="tok-nt">&lt;/state&gt;</span>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="paragraph nav-footer">
-<p>Next: <a href="_einleitung.html">Einleitung</a> →</p>
+<p>← Previous: <a href="spielsteine.html">Spielsteine</a> | ↑ Up: <a href="xml-dokumentation.html">Software Challenge XML-Dokumentation Blokus</a> | Next: <a href="_spiel_verlassen.html">Spiel verlassen</a> →</p>
 </div>
 </div>
 <div id="footer">

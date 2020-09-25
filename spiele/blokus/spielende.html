@@ -506,155 +506,79 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="xml-dokumentation" class="article">
+<body id="spielende" class="article">
 <div id="header">
 <h1>Software Challenge XML-Dokumentation Blokus</h1>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="spielende">Spielergebnis</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.</p>
+<p>Zum Spielende enthält der Spieler das Ergebnis:</p>
 </div>
-<div class="paragraph">
-<p><a href="xml-dokumentation.pdf">PDF-Version dieses Dokumentes</a></p>
-</div>
-<div class="paragraph">
-<p>Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
-Dokumentation kann
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs">direkt auf
-GitHub editiert</a> werden, einzige Voraussetzung ist eine kostenlose
-Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
-auswählen (ein guter Startpunkt ist die Datei
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc">index.adoc</a>
-welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
-auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
-<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
-</div>
-</div>
-</div>
+<div class="openblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="_einleitung.html">Einleitung</a></p>
-<ul>
-<li>
-<p><a href="_einleitung.html#an-wen-richtet-sich">An wen richtet sich dieses Dokument?</a></p>
-
+<p><code>ROOM_ID</code> Id des GameRooms</p>
 </li>
 <li>
-<p><a href="_einleitung.html#hinweise">Hinweise</a></p>
-
-</li>
-</ul>
+<p><code>R1</code>, <code>R2</code> Text, der den Grund für das Spielende erklärt</p>
 </li>
 <li>
-<p><a href="spiel-betreten.html">Spiel betreten</a></p>
-<ul>
-<li>
-<p><a href="spiel-betreten.html#ohne-reservierungscode">Ohne Reservierungscode</a></p>
-
+<p><code>CAUSE1</code>, <code>CAUSE2</code> Grund des Spielendes (<code>REGULAR</code>, <code>LEFT</code>, <code>RULE_VIOLATION</code>, <code>SOFT_TIMEOUT</code>, <code>HARD_TIMEOUT</code>)</p>
 </li>
 <li>
-<p><a href="spiel-betreten.html#mit-reservierungscode">Mit Reservierungscode</a></p>
-<ul>
-<li>
-<p><a href="spiel-betreten.html#join-reserved">Join mit Reservierungscode</a></p>
+<p><code>WP1</code>, <code>WP2</code> Siegpunkte der jeweiligen Spieler, 0 verloren, 1 unentschieden, 2 gewonnen</p>
 </li>
 <li>
-<p><a href="spiel-betreten.html#welcome-message">Welcome Message</a></p>
-</li>
-</ul>
-</li>
-</ul>
+<p><code>S1</code>, <code>S2</code> Punkte des jeweiligen Spielers</p>
 </li>
 <li>
-<p><a href="zug-anforderung.html">Zug-Anforderung</a></p>
-
+<p><code>NAME</code> Anzeigename des Spielers</p>
 </li>
 <li>
-<p><a href="_züge_senden.html">Züge senden</a></p>
-<ul>
-<li>
-<p><a href="_züge_senden.html#der-move">Der Move</a></p>
-<ul>
-<li>
-<p><a href="_züge_senden.html#senden">Senden</a></p>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="_züge_senden.html#zug">ZUG</a></p>
-
-</li>
-<li>
-<p><a href="_züge_senden.html#debughints">Debughints</a></p>
-
-</li>
-</ul>
-</li>
-<li>
-<p><a href="spielsteine.html">Spielsteine</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html">Spielstatus</a></p>
-<ul>
-<li>
-<p><a href="spielstatus.html#memento">memento</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html#status">Status</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html#spielbrett">Spielbrett</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html#undeployed">Nicht gesetzte Spielsteine</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html#last-move">Vorheriger Zug</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html#_beispiel_kompletter_spielstatus">Beispiel kompletter Spielstatus</a></p>
-
-</li>
-</ul>
-</li>
-<li>
-<p><a href="_spiel_verlassen.html">Spiel verlassen</a></p>
-
-</li>
-<li>
-<p><a href="spielende.html">Spielergebnis</a></p>
-
-</li>
-<li>
-<p><a href="_spielverlauf.html">Spielverlauf</a></p>
-<ul>
-<li>
-<p><a href="_spielverlauf.html#_variante_1_adminclient_mit_reservierungscode">Variante 1 (AdminClient &lt;a href="mit-reservierungscode.html"&gt;Mit Reservierungscode&lt;/a&gt;)</a></p>
-
-</li>
-<li>
-<p><a href="_spielverlauf.html#_variante_2_eventuell_ohne_adminclient_ohne_reservierungscode">Variante 2 ((eventuell) ohne AdminClient &lt;a href="ohne-reservierungscode.html"&gt;Ohne Reservierungscode&lt;/a&gt;)</a></p>
-
-</li>
-<li>
-<p><a href="_spielverlauf.html#_weiterer_spielverlauf">Weiterer Spielverlauf</a></p>
-
-</li>
-</ul>
+<p><code>TEAM</code> Team des Siegers (<code>ONE</code>, <code>TWO</code>)</p>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;result&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;definition&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Gewinner&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>SUM<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;∅ Punkte&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+    <span class="tok-nt">&lt;/definition&gt;</span>
+    <span class="tok-nt">&lt;score</span> <span class="tok-na">cause=</span><span class="tok-s">&quot;CAUSE1&quot;</span> <span class="tok-na">reason=</span><span class="tok-s">&quot;R1&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>WP1<span class="tok-nt">&lt;/part&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>S1<span class="tok-nt">&lt;/part&gt;</span>
+    <span class="tok-nt">&lt;/score&gt;</span>
+    <span class="tok-nt">&lt;score</span> <span class="tok-na">cause=</span><span class="tok-s">&quot;CAUSE2&quot;</span> <span class="tok-na">reason=</span><span class="tok-s">&quot;R2&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>WP2<span class="tok-nt">&lt;/part&gt;</span>
+      <span class="tok-nt">&lt;part&gt;</span>S2<span class="tok-nt">&lt;/part&gt;</span>
+    <span class="tok-nt">&lt;/score&gt;</span>
+    <span class="tok-nt">&lt;winner</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;NAME&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>TEAM<span class="tok-nt">&lt;/color&gt;</span>
+    <span class="tok-nt">&lt;/winner&gt;</span>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
 <div class="paragraph nav-footer">
-<p>Next: <a href="_einleitung.html">Einleitung</a> →</p>
+<p>← Previous: <a href="_spiel_verlassen.html">Spiel verlassen</a> | ↑ Up: <a href="xml-dokumentation.html">Software Challenge XML-Dokumentation Blokus</a> | Next: <a href="_spielverlauf.html">Spielverlauf</a> →</p>
 </div>
 </div>
 <div id="footer">

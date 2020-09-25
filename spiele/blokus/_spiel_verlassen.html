@@ -506,155 +506,33 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="xml-dokumentation" class="article">
+<body id="_spiel_verlassen" class="article">
 <div id="header">
 <h1>Software Challenge XML-Dokumentation Blokus</h1>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_spiel_verlassen">Spiel verlassen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ziel dieser Dokumentation ist es, die XML-Schnittstelle der Softwarechallenge festzuhalten.</p>
-</div>
-<div class="paragraph">
-<p><a href="xml-dokumentation.pdf">PDF-Version dieses Dokumentes</a></p>
-</div>
-<div class="paragraph">
-<p>Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
-Dokumentation kann
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs">direkt auf
-GitHub editiert</a> werden, einzige Voraussetzung ist eine kostenlose
-Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
-auswählen (ein guter Startpunkt ist die Datei
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc">index.adoc</a>
-welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
-auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
-<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>.</p>
-</div>
-</div>
+<p>Wenn ein Client den Raum verlässt, bekommen die anderen Clients eine entsprechende Meldung vom Server.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="_einleitung.html">Einleitung</a></p>
-<ul>
-<li>
-<p><a href="_einleitung.html#an-wen-richtet-sich">An wen richtet sich dieses Dokument?</a></p>
-
-</li>
-<li>
-<p><a href="_einleitung.html#hinweise">Hinweise</a></p>
-
-</li>
-</ul>
-</li>
-<li>
-<p><a href="spiel-betreten.html">Spiel betreten</a></p>
-<ul>
-<li>
-<p><a href="spiel-betreten.html#ohne-reservierungscode">Ohne Reservierungscode</a></p>
-
-</li>
-<li>
-<p><a href="spiel-betreten.html#mit-reservierungscode">Mit Reservierungscode</a></p>
-<ul>
-<li>
-<p><a href="spiel-betreten.html#join-reserved">Join mit Reservierungscode</a></p>
-</li>
-<li>
-<p><a href="spiel-betreten.html#welcome-message">Welcome Message</a></p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="zug-anforderung.html">Zug-Anforderung</a></p>
-
-</li>
-<li>
-<p><a href="_züge_senden.html">Züge senden</a></p>
-<ul>
-<li>
-<p><a href="_züge_senden.html#der-move">Der Move</a></p>
-<ul>
-<li>
-<p><a href="_züge_senden.html#senden">Senden</a></p>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="_züge_senden.html#zug">ZUG</a></p>
-
-</li>
-<li>
-<p><a href="_züge_senden.html#debughints">Debughints</a></p>
-
-</li>
-</ul>
-</li>
-<li>
-<p><a href="spielsteine.html">Spielsteine</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html">Spielstatus</a></p>
-<ul>
-<li>
-<p><a href="spielstatus.html#memento">memento</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html#status">Status</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html#spielbrett">Spielbrett</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html#undeployed">Nicht gesetzte Spielsteine</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html#last-move">Vorheriger Zug</a></p>
-
-</li>
-<li>
-<p><a href="spielstatus.html#_beispiel_kompletter_spielstatus">Beispiel kompletter Spielstatus</a></p>
-
-</li>
-</ul>
-</li>
-<li>
-<p><a href="_spiel_verlassen.html">Spiel verlassen</a></p>
-
-</li>
-<li>
-<p><a href="spielende.html">Spielergebnis</a></p>
-
-</li>
-<li>
-<p><a href="_spielverlauf.html">Spielverlauf</a></p>
-<ul>
-<li>
-<p><a href="_spielverlauf.html#_variante_1_adminclient_mit_reservierungscode">Variante 1 (AdminClient &lt;a href="mit-reservierungscode.html"&gt;Mit Reservierungscode&lt;/a&gt;)</a></p>
-
-</li>
-<li>
-<p><a href="_spielverlauf.html#_variante_2_eventuell_ohne_adminclient_ohne_reservierungscode">Variante 2 ((eventuell) ohne AdminClient &lt;a href="ohne-reservierungscode.html"&gt;Ohne Reservierungscode&lt;/a&gt;)</a></p>
-
-</li>
-<li>
-<p><a href="_spielverlauf.html#_weiterer_spielverlauf">Weiterer Spielverlauf</a></p>
-
-</li>
-</ul>
+<p><code>ROOM_ID</code> Id des GameRooms</p>
 </li>
 </ul>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;left</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
 <div class="paragraph nav-footer">
-<p>Next: <a href="_einleitung.html">Einleitung</a> →</p>
+<p>← Previous: <a href="spielstatus.html">Spielstatus</a> | ↑ Up: <a href="xml-dokumentation.html">Software Challenge XML-Dokumentation Blokus</a> | Next: <a href="spielende.html">Spielergebnis</a> →</p>
 </div>
 </div>
 <div id="footer">
