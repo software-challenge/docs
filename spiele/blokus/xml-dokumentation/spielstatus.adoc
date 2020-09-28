@@ -28,7 +28,11 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 * `T` Team, welches beginnt (`ONE`, `TWO`)
 * `board` Das Spielbrett, wie in xref:spielbrett[] definiert
 * `blueShapes`, `yellowShapes`, `redShapes`, `greenShapes` Noch nicht gesetzte Spielsteine, siehe xref:undeployed[]
+* `orderedColors` Die Farben in ihrer Zugreihenfolge. Dies beinhaltet nur Farben, die noch im Spiel sind.
+* `first` Name und auch Team des ersten Spielers.
+* `second` Name und auch Team des zweiten Spielers.
 * `lastMove` der zuletzt ausgeführte Zug, siehe xref:last-move[]
+* `startColor` Die Farbe die zuerst gespielt wird.
 
 [source,xml]
 ----
@@ -39,7 +43,11 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
   yellowShapes
   redShapes
   greenShapes
+  orderedColors
+  first
+  second
   lastMove
+  startColor
 </state>
 ----
 
