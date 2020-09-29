@@ -28,7 +28,11 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 * `T` Team, welches beginnt (`ONE`, `TWO`)
 * `board` Das Spielbrett, wie in xref:spielbrett[] definiert
 * `blueShapes`, `yellowShapes`, `redShapes`, `greenShapes` Noch nicht gesetzte Spielsteine, siehe xref:undeployed[]
+* `orderedColors` Die Farben in ihrer Zugreihenfolge. Dies beinhaltet nur Farben, die noch im Spiel sind.
+* `first` Name und auch Team des ersten Spielers.
+* `second` Name und auch Team des zweiten Spielers.
 * `lastMove` der zuletzt ausgeführte Zug, siehe xref:last-move[]
+* `startColor` Die Farbe die zuerst gespielt wird.
 
 [source,xml]
 ----
@@ -39,7 +43,11 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
   yellowShapes
   redShapes
   greenShapes
+  orderedColors
+  first
+  second
   lastMove
+  startColor
 </state>
 ----
 
@@ -98,6 +106,48 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 
 Die nicht gesetzten Steine werden durch `<shape>` Tags in einem `<blueShapes>`, `<yellowShapes>`, `<redShapes>` und `<greenShapes>` Tag dargestellt.
 
+[[orderedColors]]
+=== Farben in Spielreihenfolge
+
+[source,xml]
+----
+<orderedColors>
+  <color>BLUE</color>
+  <color>YELLOW</color>
+  <color>RED</color>
+  <color>GREEN</color>
+</orderedColors>
+----
+
+Dies ist eine beispielhafte Auflistung der Farben, die noch im Spiel sind. Dem Tag `<orderedMoves>` sind Tags vom Typ `<color>` untergeordnet. Diese beinhalten wiederum eine der vier Spielfarben.
+
+[source,xml]
+----
+<orderedColors>
+  <color>BLUE</color>
+  <color>GREEN</color>
+</orderedColors>
+----
+
+Dies ist ein Beispiel für eine Situation in der nur noch blaue Spielsteine und grüne Spielsteine gelegt werden können.
+
+[[first]]
+=== Erster Spieler
+
+[source,xml]
+----
+<first displayName="One">
+  <color class="team">ONE</color>
+</first>
+----
+
+Der erste Spieler wird wird mit dem Tag `<first>` beschrieben. Das Attribut "displayName" beinhaltet den Spielernamen des ersten Spielers. Der untergeordnete Tag `<color>` hält entweder den Wert `ONE` oder `TWO`. Hier ist dies `ONE`, also macht der erste Spieler den ersten Zug.
+
+[[second]]
+=== Zweiter Spieler
+
+Dieser Tag beschreibt den zweiten Spieler. Die Struktur ist wie bei xref:first[].
+
 [[last-move]]
 === Vorheriger Zug
 
@@ -111,6 +161,16 @@ Die nicht gesetzten Steine werden durch `<shape>` Tags in einem `<blueShapes>`, 
 ----
 
 Der vorherige Zug hat die selbe Struktur wie ein xref:zug[], der gesendet wird, ausser dass das Tag `<lastMove>` und nicht `<data>` heisst. Der vorherige Zug wird in jedem Spielstatus angegeben, ausser vor dem ersten Zug.
+
+[[startColor]]
+=== Startende Spielfarbe
+
+[source,xml]
+----
+<startColor>BLUE</startColor>
+----
+
+Der Tag `<startColor>` beinhaltet die Farbe, die im ersten Zug vom ersten Spieler gelegt wird. Hier ist dies die Farbe Blau.
 
 === Beispiel kompletter Spielstatus
 
