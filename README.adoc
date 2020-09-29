@@ -115,3 +115,9 @@ Wobei Sektionslabel über allen Überschriften stehen und die Syntax ist wie fol
 ----
 [[labelname]]
 ----
+
+== Deployment
+
+Das Deployment auf die öffentliche Seite wird automatisch bei jedem push in den
+master-Branch von GitHub durchgeführt. Dafür ist ein GitHub Actions Workflow
+zuständig, siehe `.github/workflows/auto-publish.yml`.

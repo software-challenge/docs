@@ -7,9 +7,6 @@ setup)
   gem install pygments.rb
 	gem install --prerelease asciidoctor-pdf
 
-	cp -v bin/git-post-commit-hook.sh .git/hooks/post-commit
-	chmod +x .git/hooks/post-commit
-
 	(
 	cd ..
 	git clone git@github.com:SKoschnicke/asciidoctor-extensions-lab.git
@@ -64,13 +61,6 @@ generate)
 	;;
 
 
-publish)
-	$0 update-date now
-	git add index.adoc
-	git commit
-	;;
-
-
 update-date)
 	last_commit_date=${2:-$(git log -1 --format=%cd | cut -c5- | cut -c-6)}
 	formatted_date=$(date -d"$last_commit_date" +%Y-%m-%d)
@@ -80,12 +70,11 @@ update-date)
 
 *)
 	echo "Usage: docs <command> [options...]
-    setup - install the gems required for generate and setup the post-commit-hook
+    setup - install the gems required for generate
       └─ live - also install the gems required for a live-preview
     generate - copy the images and convert the adoc to html
       └─ <game> - convert a specific game
       └─ pdf - additionally convert to pdf
-    publish - refresh the last update date in the header of the docs and commit
     update-date - update the date in the header of the docs to the date of the last commit"
 	;;
 
