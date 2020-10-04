@@ -17,7 +17,7 @@ Dann kann ein Spiel angelegt werden:
 
 [source, xml]
 ----
-<prepare gameType="swc_2019_piranhas">
+<prepare gameType="swc_2021_blokus">
   <slot displayName="p1" canTimeout="false" shouldBePaused="true" />
   <slot displayName="p2" canTimeout="false" shouldBePaused="true" />
 </prepare>
