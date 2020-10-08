@@ -46,6 +46,37 @@ Oder man möchte nicht setzen, dann ist es erlaubt, auszusetzen:
 <data class="sc.plugin2021.SkipMove"/>
 ----
 
+[[shape-trans]]
+==== Spielstein Transformationen
+Bei `ROTATION` `NONE` ändern sich die Koordinaten der Teile des Spielsteins nicht.
+`(x, y) => (x, y)`
+
+image:pento_L.png[]
+
+Bei `ROTATION` `RIGHT` wird der Spielstein um den Ursprung nach rechts gedreht.
+`(x, y) => (-y, x)`
+
+image:pento_L_RIGHT.png[]
+
+Bei `ROTATION` `MIRROR` wird der Spielstein zweimal um den Ursprung nach rechts gedreht, oder anders gesagt auf beiden Achsen invertiert.
+`(x, y) => (-x, -y)`
+
+image:pento_L_MIRROR.png[]
+
+Bei `ROTATION` `LEFT` wird der Spielstein um den Ursprung nach links gedreht.
+`(x, y) => (y, -x)`
+
+image:pento_L_LEFT.png[]
+
+Wird zusätzlich `FLIPPED` auf `true` gesetzt, so werden die von der Rotation resultierenden Koordinaten noch auf der X-Achse invertiert. `(x, y) => (-x, y)`
+
+image:pento_L_LEFT_FLIPPED.png[]
+
+Auf dem vorigen Bild ist das resultat von `ROTATION` `LEFT` und  `FLIPPED` `true` zu sehen.
+
+Nach den Transformationen werden die Kooridnaten noch normalisiert, indem sie mit dem minimalen X wert aller Koordinaten und dem minimalen Y wert aller Koordinaten subtrahiert werden. `(x, y) => (x - minX, y - minY)` 
+
+Schließlich werden die Koordinaten noch mit den `X, Y` Werten, die zum Move gehören addiert um die Koordinaten aller Teile des Spielsteins auf dem Board zu erhalten.
 
 [[debughints]]
 === Debughints
