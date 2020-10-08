@@ -30,7 +30,7 @@ Der Move ist der allgemeine Zug, der in verschiedenen Varianten gesendet werden 
 `Y`:: Y-Koordinate des zu ziehenden Spielsteines oder des Zielfeldes
 --
 
-Es gibt drei Arten von Zuegen. Entweder man setzt einen eigenen noch nicht gesetzten Stein auf ein Zielfeld:
+Es gibt zwei Arten von Zuegen. Entweder man setzt einen eigenen noch nicht gesetzten Stein auf ein Zielfeld:
 [source,xml]
 ----
 <data class="sc.plugin2021.SetMove">
