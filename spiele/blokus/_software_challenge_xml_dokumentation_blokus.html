@@ -791,7 +791,7 @@ Spieler ist, wird der initiale Spielstatus gesendet.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Es gibt drei Arten von Zuegen. Entweder man setzt einen eigenen noch nicht gesetzten Stein auf ein Zielfeld:</p>
+<p>Es gibt zwei Arten von Zuegen. Entweder man setzt einen eigenen noch nicht gesetzten Stein auf ein Zielfeld:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -808,6 +808,55 @@ Spieler ist, wird der initiale Spielstatus gesendet.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.plugin2021.SkipMove&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="sect4">
+<h5 id="shape-trans">Spielstein Transformationen</h5>
+<div class="paragraph">
+<p>Bei <code>ROTATION</code> <code>NONE</code> ändern sich die Koordinaten der Teile des Spielsteins nicht.
+<code>(x, y) &#8658; (x, y)</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./images/pento_L.png" alt="pento L"></span></p>
+</div>
+<div class="paragraph">
+<p>Bei <code>ROTATION</code> <code>RIGHT</code> wird der Spielstein um den Ursprung nach rechts gedreht.
+<code>(x, y) &#8658; (-y, x)</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./images/pento_L_RIGHT.png" alt="pento L RIGHT"></span></p>
+</div>
+<div class="paragraph">
+<p>Bei <code>ROTATION</code> <code>MIRROR</code> wird der Spielstein um den Ursprung gespiegelt.
+<code>(x, y) &#8658; (-x, -y)</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./images/pento_L_MIRROR.png" alt="pento L MIRROR"></span></p>
+</div>
+<div class="paragraph">
+<p>Bei <code>ROTATION</code> <code>LEFT</code> wird der Spielstein um den Ursprung nach links gedreht.
+<code>(x, y) &#8658; (y, -x)</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./images/pento_L_LEFT.png" alt="pento L LEFT"></span></p>
+</div>
+<div class="paragraph">
+<p>Wird zusätzlich <code>FLIPPED</code> auf <code>true</code> gesetzt, so werden die von der Rotation resultierenden Koordinaten anschließend noch auf der X-Achse invertiert. <code>(x, y) &#8658; (-x, y)</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./images/pento_L_LEFT_FLIPPED.png" alt="pento L LEFT FLIPPED"></span></p>
+</div>
+<div class="paragraph">
+<p>Auf dem vorigen Bild ist das Resultat von <code>ROTATION</code> <code>LEFT</code> und  <code>FLIPPED</code> <code>true</code> zu sehen.</p>
+</div>
+<div class="paragraph">
+<p>Nach den Transformationen werden die Koordinaten noch normalisiert, d.h. sie werden an die obere linke Ecke angelegt.</p>
+</div>
+<div class="paragraph">
+<p>Dafür werden sie mit dem minimalen X Wert aller Koordinaten und dem minimalen Y Wert aller Koordinaten subtrahiert. <code>(x, y) &#8658; (x - minX, y - minY)</code></p>
+</div>
+<div class="paragraph">
+<p>Schließlich werden die Koordinaten noch mit den <code>X, Y</code> Werten, die zum Move gehören, addiert, um die Koordinaten aller Teile des Spielsteins auf dem Board zu erhalten.</p>
 </div>
 </div>
 </div>
@@ -969,7 +1018,19 @@ Spieler ist, wird der initiale Spielstatus gesendet.</p>
 <p><code>blueShapes</code>, <code>yellowShapes</code>, <code>redShapes</code>, <code>greenShapes</code> Noch nicht gesetzte Spielsteine, siehe <a href="_software_challenge_xml_dokumentation_blokus.html#undeployed">Nicht gesetzte Spielsteine</a></p>
 </li>
 <li>
+<p><code>orderedColors</code> Die Farben in ihrer Zugreihenfolge. Dies beinhaltet nur Farben, die noch im Spiel sind.</p>
+</li>
+<li>
+<p><code>first</code> Name und auch Team des ersten Spielers.</p>
+</li>
+<li>
+<p><code>second</code> Name und auch Team des zweiten Spielers.</p>
+</li>
+<li>
 <p><code>lastMove</code> der zuletzt ausgeführte Zug, siehe <a href="_software_challenge_xml_dokumentation_blokus.html#last-move">Vorheriger Zug</a></p>
+</li>
+<li>
+<p><code>startColor</code> Die Farbe die zuerst gespielt wird.</p>
 </li>
 </ul>
 </div>
@@ -982,7 +1043,11 @@ Spieler ist, wird der initiale Spielstatus gesendet.</p>
   yellowShapes
   redShapes
   greenShapes
+  orderedColors
+  first
+  second
   lastMove
+  startColor
 <span class="tok-nt">&lt;/state&gt;</span></code></pre>
 </div>
 </div>
@@ -1054,6 +1119,52 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 </div>
 </div>
 <div class="sect3">
+<h4 id="orderedColors">... Farben in Spielreihenfolge</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;orderedColors&gt;</span>
+  <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
+  <span class="tok-nt">&lt;color&gt;</span>YELLOW<span class="tok-nt">&lt;/color&gt;</span>
+  <span class="tok-nt">&lt;color&gt;</span>RED<span class="tok-nt">&lt;/color&gt;</span>
+  <span class="tok-nt">&lt;color&gt;</span>GREEN<span class="tok-nt">&lt;/color&gt;</span>
+<span class="tok-nt">&lt;/orderedColors&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dies ist eine beispielhafte Auflistung der Farben, die noch im Spiel sind. Dem Tag <code>&lt;orderedMoves&gt;</code> sind Tags vom Typ <code>&lt;color&gt;</code> untergeordnet. Diese beinhalten wiederum eine der vier Spielfarben.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;orderedColors&gt;</span>
+  <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
+  <span class="tok-nt">&lt;color&gt;</span>GREEN<span class="tok-nt">&lt;/color&gt;</span>
+<span class="tok-nt">&lt;/orderedColors&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dies ist ein Beispiel für eine Situation in der nur noch blaue Spielsteine und grüne Spielsteine gelegt werden können.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="first">... Erster Spieler</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;first</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;One&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/color&gt;</span>
+<span class="tok-nt">&lt;/first&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der erste Spieler wird wird mit dem Tag <code>&lt;first&gt;</code> beschrieben. Das Attribut "displayName" beinhaltet den Spielernamen des ersten Spielers. Der untergeordnete Tag <code>&lt;color&gt;</code> hält entweder den Wert <code>ONE</code> oder <code>TWO</code>. Hier ist dies <code>ONE</code>, also macht der erste Spieler den ersten Zug.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="second">... Zweiter Spieler</h4>
+<div class="paragraph">
+<p>Dieser Tag beschreibt den zweiten Spieler. Die Struktur ist wie bei <a href="_software_challenge_xml_dokumentation_blokus.html#first">Erster Spieler</a>.</p>
+</div>
+</div>
+<div class="sect3">
 <h4 id="last-move">... Vorheriger Zug</h4>
 <div class="listingblock">
 <div class="content">
@@ -1066,6 +1177,17 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 </div>
 <div class="paragraph">
 <p>Der vorherige Zug hat die selbe Struktur wie ein <a href="_software_challenge_xml_dokumentation_blokus.html#zug">ZUG</a>, der gesendet wird, ausser dass das Tag <code>&lt;lastMove&gt;</code> und nicht <code>&lt;data&gt;</code> heisst. Der vorherige Zug wird in jedem Spielstatus angegeben, ausser vor dem ersten Zug.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="startColor">... Startende Spielfarbe</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;startColor&gt;</span>BLUE<span class="tok-nt">&lt;/startColor&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Tag <code>&lt;startColor&gt;</code> beinhaltet die Farbe, die im ersten Zug vom ersten Spieler gelegt wird. Hier ist dies die Farbe Blau.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1308,7 +1430,7 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;prepare</span> <span class="tok-na">gameType=</span><span class="tok-s">&quot;swc_2019_piranhas&quot;</span><span class="tok-nt">&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;prepare</span> <span class="tok-na">gameType=</span><span class="tok-s">&quot;swc_2021_blokus&quot;</span><span class="tok-nt">&gt;</span>
   <span class="tok-nt">&lt;slot</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p1&quot;</span> <span class="tok-na">canTimeout=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-na">shouldBePaused=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-nt">/&gt;</span>
   <span class="tok-nt">&lt;slot</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p2&quot;</span> <span class="tok-na">canTimeout=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-na">shouldBePaused=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-nt">/&gt;</span>
 <span class="tok-nt">&lt;/prepare&gt;</span></code></pre>
@@ -1568,7 +1690,7 @@ Die letzte Nachricht des Servers endet mit:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-08-21 04:39:38 +0200
+Last updated 2020-10-11 16:19:31 UTC
 </div>
 </div>
 </body>

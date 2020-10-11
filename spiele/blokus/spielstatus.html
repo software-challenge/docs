@@ -565,7 +565,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><code>blueShapes</code>, <code>yellowShapes</code>, <code>redShapes</code>, <code>greenShapes</code> Noch nicht gesetzte Spielsteine, siehe <a href="spielstatus.html#undeployed">Nicht gesetzte Spielsteine</a></p>
 </li>
 <li>
+<p><code>orderedColors</code> Die Farben in ihrer Zugreihenfolge. Dies beinhaltet nur Farben, die noch im Spiel sind.</p>
+</li>
+<li>
+<p><code>first</code> Name und auch Team des ersten Spielers.</p>
+</li>
+<li>
+<p><code>second</code> Name und auch Team des zweiten Spielers.</p>
+</li>
+<li>
 <p><code>lastMove</code> der zuletzt ausgeführte Zug, siehe <a href="spielstatus.html#last-move">Vorheriger Zug</a></p>
+</li>
+<li>
+<p><code>startColor</code> Die Farbe die zuerst gespielt wird.</p>
 </li>
 </ul>
 </div>
@@ -578,7 +590,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
   yellowShapes
   redShapes
   greenShapes
+  orderedColors
+  first
+  second
   lastMove
+  startColor
 <span class="tok-nt">&lt;/state&gt;</span></code></pre>
 </div>
 </div>
@@ -650,6 +666,52 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 </div>
 </div>
 <div class="sect2">
+<h3 id="orderedColors">Farben in Spielreihenfolge</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;orderedColors&gt;</span>
+  <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
+  <span class="tok-nt">&lt;color&gt;</span>YELLOW<span class="tok-nt">&lt;/color&gt;</span>
+  <span class="tok-nt">&lt;color&gt;</span>RED<span class="tok-nt">&lt;/color&gt;</span>
+  <span class="tok-nt">&lt;color&gt;</span>GREEN<span class="tok-nt">&lt;/color&gt;</span>
+<span class="tok-nt">&lt;/orderedColors&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dies ist eine beispielhafte Auflistung der Farben, die noch im Spiel sind. Dem Tag <code>&lt;orderedMoves&gt;</code> sind Tags vom Typ <code>&lt;color&gt;</code> untergeordnet. Diese beinhalten wiederum eine der vier Spielfarben.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;orderedColors&gt;</span>
+  <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
+  <span class="tok-nt">&lt;color&gt;</span>GREEN<span class="tok-nt">&lt;/color&gt;</span>
+<span class="tok-nt">&lt;/orderedColors&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dies ist ein Beispiel für eine Situation in der nur noch blaue Spielsteine und grüne Spielsteine gelegt werden können.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="first">Erster Spieler</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;first</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;One&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/color&gt;</span>
+<span class="tok-nt">&lt;/first&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der erste Spieler wird wird mit dem Tag <code>&lt;first&gt;</code> beschrieben. Das Attribut "displayName" beinhaltet den Spielernamen des ersten Spielers. Der untergeordnete Tag <code>&lt;color&gt;</code> hält entweder den Wert <code>ONE</code> oder <code>TWO</code>. Hier ist dies <code>ONE</code>, also macht der erste Spieler den ersten Zug.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="second">Zweiter Spieler</h3>
+<div class="paragraph">
+<p>Dieser Tag beschreibt den zweiten Spieler. Die Struktur ist wie bei <a href="spielstatus.html#first">Erster Spieler</a>.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="last-move">Vorheriger Zug</h3>
 <div class="listingblock">
 <div class="content">
@@ -662,6 +724,17 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 </div>
 <div class="paragraph">
 <p>Der vorherige Zug hat die selbe Struktur wie ein <a href="_züge_senden.html#zug">ZUG</a>, der gesendet wird, ausser dass das Tag <code>&lt;lastMove&gt;</code> und nicht <code>&lt;data&gt;</code> heisst. Der vorherige Zug wird in jedem Spielstatus angegeben, ausser vor dem ersten Zug.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="startColor">Startende Spielfarbe</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;startColor&gt;</span>BLUE<span class="tok-nt">&lt;/startColor&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Tag <code>&lt;startColor&gt;</code> beinhaltet die Farbe, die im ersten Zug vom ersten Spieler gelegt wird. Hier ist dies die Farbe Blau.</p>
 </div>
 </div>
 <div class="sect2">
@@ -806,7 +879,7 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-09-25 10:07:04 +0200
+Last updated 2020-10-11 16:19:31 UTC
 </div>
 </div>
 </body>

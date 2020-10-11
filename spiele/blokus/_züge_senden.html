@@ -584,7 +584,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>Es gibt drei Arten von Zuegen. Entweder man setzt einen eigenen noch nicht gesetzten Stein auf ein Zielfeld:</p>
+<p>Es gibt zwei Arten von Zuegen. Entweder man setzt einen eigenen noch nicht gesetzten Stein auf ein Zielfeld:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -601,6 +601,55 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.plugin2021.SkipMove&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="shape-trans">Spielstein Transformationen</h4>
+<div class="paragraph">
+<p>Bei <code>ROTATION</code> <code>NONE</code> ändern sich die Koordinaten der Teile des Spielsteins nicht.
+<code>(x, y) &#8658; (x, y)</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./images/pento_L.png" alt="pento L"></span></p>
+</div>
+<div class="paragraph">
+<p>Bei <code>ROTATION</code> <code>RIGHT</code> wird der Spielstein um den Ursprung nach rechts gedreht.
+<code>(x, y) &#8658; (-y, x)</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./images/pento_L_RIGHT.png" alt="pento L RIGHT"></span></p>
+</div>
+<div class="paragraph">
+<p>Bei <code>ROTATION</code> <code>MIRROR</code> wird der Spielstein um den Ursprung gespiegelt.
+<code>(x, y) &#8658; (-x, -y)</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./images/pento_L_MIRROR.png" alt="pento L MIRROR"></span></p>
+</div>
+<div class="paragraph">
+<p>Bei <code>ROTATION</code> <code>LEFT</code> wird der Spielstein um den Ursprung nach links gedreht.
+<code>(x, y) &#8658; (y, -x)</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./images/pento_L_LEFT.png" alt="pento L LEFT"></span></p>
+</div>
+<div class="paragraph">
+<p>Wird zusätzlich <code>FLIPPED</code> auf <code>true</code> gesetzt, so werden die von der Rotation resultierenden Koordinaten anschließend noch auf der X-Achse invertiert. <code>(x, y) &#8658; (-x, y)</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./images/pento_L_LEFT_FLIPPED.png" alt="pento L LEFT FLIPPED"></span></p>
+</div>
+<div class="paragraph">
+<p>Auf dem vorigen Bild ist das Resultat von <code>ROTATION</code> <code>LEFT</code> und  <code>FLIPPED</code> <code>true</code> zu sehen.</p>
+</div>
+<div class="paragraph">
+<p>Nach den Transformationen werden die Koordinaten noch normalisiert, d.h. sie werden an die obere linke Ecke angelegt.</p>
+</div>
+<div class="paragraph">
+<p>Dafür werden sie mit dem minimalen X Wert aller Koordinaten und dem minimalen Y Wert aller Koordinaten subtrahiert. <code>(x, y) &#8658; (x - minX, y - minY)</code></p>
+</div>
+<div class="paragraph">
+<p>Schließlich werden die Koordinaten noch mit den <code>X, Y</code> Werten, die zum Move gehören, addiert, um die Koordinaten aller Teile des Spielsteins auf dem Board zu erhalten.</p>
 </div>
 </div>
 </div>
@@ -639,7 +688,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-09-25 10:07:04 +0200
+Last updated 2020-10-11 16:19:31 UTC
 </div>
 </div>
 </body>
