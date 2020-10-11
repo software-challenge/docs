@@ -72,7 +72,7 @@ Wird zusätzlich `FLIPPED` auf `true` gesetzt, so werden die von der Rotation re
 
 image:pento_L_LEFT_FLIPPED.png[]
 
-Auf dem vorigen Bild ist das resultat von `ROTATION` `LEFT` und  `FLIPPED` `true` zu sehen.
+Auf dem vorigen Bild ist das Resultat von `ROTATION` `LEFT` und  `FLIPPED` `true` zu sehen.
 
 Nach den Transformationen werden die Kooridnaten noch normalisiert, indem sie mit dem minimalen X wert aller Koordinaten und dem minimalen Y wert aller Koordinaten subtrahiert werden. `(x, y) => (x - minX, y - minY)` 
 
