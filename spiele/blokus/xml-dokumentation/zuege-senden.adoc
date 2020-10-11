@@ -68,13 +68,15 @@ Bei `ROTATION` `LEFT` wird der Spielstein um den Ursprung nach links gedreht.
 
 image:pento_L_LEFT.png[]
 
-Wird zusätzlich `FLIPPED` auf `true` gesetzt, so werden die von der Rotation resultierenden Koordinaten noch auf der X-Achse invertiert. `(x, y) => (-x, y)`
+Wird zusätzlich `FLIPPED` auf `true` gesetzt, so werden die von der Rotation resultierenden Koordinaten anschließend noch auf der X-Achse invertiert. `(x, y) => (-x, y)`
 
 image:pento_L_LEFT_FLIPPED.png[]
 
 Auf dem vorigen Bild ist das Resultat von `ROTATION` `LEFT` und  `FLIPPED` `true` zu sehen.
 
-Nach den Transformationen werden die Kooridnaten noch normalisiert, indem sie mit dem minimalen X wert aller Koordinaten und dem minimalen Y wert aller Koordinaten subtrahiert werden. `(x, y) => (x - minX, y - minY)` 
+Nach den Transformationen werden die Koordinaten noch normalisiert, d.h. sie werden an die obere linke Ecke angelegt.
+
+Dafür werden sie mit dem minimalen X Wert aller Koordinaten und dem minimalen Y Wert aller Koordinaten subtrahiert. `(x, y) => (x - minX, y - minY)` 
 
 Schließlich werden die Koordinaten noch mit den `X, Y` Werten, die zum Move gehören addiert um die Koordinaten aller Teile des Spielsteins auf dem Board zu erhalten.
 
