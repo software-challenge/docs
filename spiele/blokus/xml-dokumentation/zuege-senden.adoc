@@ -78,7 +78,7 @@ Nach den Transformationen werden die Koordinaten noch normalisiert, d.h. sie wer
 
 Dafür werden sie mit dem minimalen X Wert aller Koordinaten und dem minimalen Y Wert aller Koordinaten subtrahiert. `(x, y) => (x - minX, y - minY)` 
 
-Schließlich werden die Koordinaten noch mit den `X, Y` Werten, die zum Move gehören addiert um die Koordinaten aller Teile des Spielsteins auf dem Board zu erhalten.
+Schließlich werden die Koordinaten noch mit den `X, Y` Werten, die zum Move gehören, addiert, um die Koordinaten aller Teile des Spielsteins auf dem Board zu erhalten.
 
 [[debughints]]
 === Debughints
