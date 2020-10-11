@@ -58,7 +58,7 @@ Bei `ROTATION` `RIGHT` wird der Spielstein um den Ursprung nach rechts gedreht.
 
 image:pento_L_RIGHT.png[]
 
-Bei `ROTATION` `MIRROR` wird der Spielstein zweimal um den Ursprung nach rechts gedreht, oder anders gesagt auf beiden Achsen invertiert.
+Bei `ROTATION` `MIRROR` wird der Spielstein um den Ursprung gespiegelt.
 `(x, y) => (-x, -y)`
 
 image:pento_L_MIRROR.png[]
