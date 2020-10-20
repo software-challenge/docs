@@ -29,20 +29,20 @@ Doppelklick auf die Datei `software-challenge-gui` starten.
 [[die-programmoberfläche]]
 === Die Programmoberfläche
 
-Die Programmoberfläche besteht aus dem Menü links sowie der Spielfläche in der Mitte.
+Die Programmoberfläche besteht aus dem Menü oben sowie der Spielfläche darunter.
 
 .Die Spielleiteroberfläche direkt nach dem Programmstart
 image::spielleiter_direkt_nach-start.jpg[Spielleiter]
 
-Auf der linken Seite sind alle möglichen Aktionen aufgelistet.
+Unter dem ersten Menüpunkt (Symbol der Software-Challenge) findet man alle möglichen Aktionen.
 
 Zu Beginn ist die Spielfläche leer.
 
 [[ein-neues-spiel-erstellen]]
 === Ein neues Spiel erstellen
 
-Um ein Spiel zu spielen, muss zunächst über das Menü links "Neues
-Spiel" die folgende Ansicht aufgerufen werden:
+Um ein Spiel zu spielen, muss zunächst "Neues
+Spiel starten" angeklickt werden.
 
 .Dialog für ein neues Spiel
 image::neues_spiel_dialog.jpg[Neues Spiel]
@@ -50,64 +50,43 @@ image::neues_spiel_dialog.jpg[Neues Spiel]
 In diesem Fenster werden die Spieler ausgewählt, die an dem Spiel
 teilnehmen sollen. Für jeden Spieler gibt es folgende Optionen:
 
-* Name: Hier kann für jeden Spieler ein Name eingegeben werden, der dann
+* Hier kann für jeden Spieler ein Name eingegeben werden, der dann
 im Spiel angezeigt wird.
-* Spielertyp: Es kann zwischen 3 verschiedenen Spielertypen gewählt
+* Spielertyp: Es kann zwischen 4 verschiedenen Spielertypen gewählt
 werden:
 1.  Mensch: Ein menschlicher Spieler, der über die Programmoberfläche
 spielt.
-2.  Computerspieler: Ein Computerspieler in Form eines separaten
+2.  Beispiel-Computerspieler: Ein Computerspieler, der im Server integriert ist.
+3.  Computerspieler, von GUI gestartet: Ein Computerspieler in Form eines separaten
 Programms, das beim Starten des Spiels automatisch vom Server gestartet
 wird.
-3.  Manuell gestarteter Client: Ein Computerspieler in Form eines
+4.  Manuell gestarteter Client: Ein Computerspieler in Form eines
 separaten Programms, das manuell durch den Benutzer gestartet werden
 muss.
-* Wähle ein Programm zum starten (auswählbar für 'Computerspieler'): Bei Spielertyp
-‚Computerspieler’ ist eine Programmdatei auszuwählen, deren Name dann
-hier angezeigt wird.
 
 Nach Eingabe der erforderlichen Werte kann das Spiel mithilfe des
-unteren Knopfs "Start!" erstellt werden.
+unteren Knopfs "Erstellen" erstellt werden.
 
 [[die-spielfeldoberfläche]]
 === Die Spielfeldoberfläche
 
-.Die Spielfeldoberfläche (hier mit dem Spiel "Piranhas")
+.Die Spielfeldoberfläche (hier mit dem Spiel "Blokus")
 image::spielfeldoberflaeche.jpg[]
 
-Die Spielfeldoberfläche setzt sich aus dem Spielbrett (der große
-zentrale Bereich) und den Spielsteuerelementen (unten) zusammen.
-
-Auf dem Spielbrett werden das eigentliche Spiel (hier z.B. "Piranhas"),
+Auf dem Spielbrett werden das eigentliche Spiel (hier z.B. "Blokus"),
 die Züge und weitere für das Spiel wichtige Informationen
 dargestellt. Hier setzt der menschliche Spieler auch seine Züge.
 
 Die Steuerelemente unterscheiden sich je nach Spiel und Spielsituation. Unten
-links gibt es immer die Schaltflächen "Abspielen/Pause", "Vor" und "Zurück". Mit
-diesen kann man die Züge des Spiels durchgehen (das ist am nützlichsten, wenn
-zwei Computerspieler gegeneinander spielen und man sich die Züge genau ansehen
-will). Rechts daneben gibt es noch einen Regler für die Abspielgeschwindigkeit
-und eine Anzeige des aktuellen Zuges. Ganz rechts ist die Schaltfläche zum
-Speichern des aktuellen Spiels als Replay-Datei, die man dann später wieder
-laden und das Spiel erneut ansehen kann.
+gibt es immer die Schaltflächen "Anhalten/Weiter", 
 
-Wenn ein menschlicher Spieler am Zug ist, werden ausserdem Schaltfächen zur
-Eingabe des Spielzuges angezeigt. Diese sind von Spiel zu Spiel sehr
-unterschiedlich.
 
-Für das Spiel Piranhas:
+Für das Spiel Blokus:
 
-* Die Fische, die man ziehen kann, werden mit einem gelben Kasten markiert. Um
-  einen Fisch zum ziehen auszuwählen, klickt man auf ihn. Der ausgewählte Fisch
-  beginnt dann zu springen.
-* Nach Auswahl eines zu ziehenden Fisches werden die möglichen Zielfelder mit
-  einem gelben Kasten markiert. Um den Fisch auf ein mögliches Feld zu ziehen,
-  klickt man es an. Der Fisch zieht auf das angeklickte Feld und der Zug ist
-  beendet.
-* Möchte man nach Auswahl eines Fisches doch einen anderen Fisch ziehen, klickt
-  man irgendwo auf dem Spielbrett, nur nicht auf eines der markierten
-  Zielfelder. Dann wird der Fisch wieder abgewählt und man kann erneut einen zu
-  ziehenden Fisch auswählen.
+* Der aktuell gewähle Spielstein wird unten angezeigt, über das Menü Steurung 
+kann man diesen rotieren (auch über Mausrad) und spiegeln (auch über rechte Maustaste)
+* Aus der Menge noch verfügbarer Spielsteine kann man mit Mausklick einen anderen Spielstein auswählen.
+* Mithilfe der Maus wird der gewählte Spielstein auf dem Feld abgelegt.
 
 [[spielwiederholung-laden]]
 === Spielwiederholungen
