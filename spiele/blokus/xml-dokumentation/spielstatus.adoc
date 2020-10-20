@@ -21,7 +21,7 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 [[status]]
 === Status
 
-* `I` Nummer der Farbe, die aktuell an der Reihe ist (1=BLUE, 2=YELLO, 3=RED, 4=GREEN)
+* `I` Nummer der Farbe, die aktuell an der Reihe ist (1=BLUE, 2=YELLOW, 3=RED, 4=GREEN)
 * `Z` aktuelle Zugzahl
 * `R` aktuelle Rundenzahl
 * `P` Spielstein, der in der ersten Runde gelegt werden muss, siehe xref:spielsteine[]
