@@ -43,7 +43,9 @@ Es gibt zwei Arten von Zuegen. Entweder man setzt einen eigenen noch nicht geset
 Oder man möchte nicht setzen, dann ist es erlaubt, auszusetzen:
 [source,xml]
 ----
-<data class="sc.plugin2021.SkipMove"/>
+<data class="sc.plugin2021.SkipMove">
+  <color>COLOR</color>
+</data>
 ----
 
 [[shape-trans]]
