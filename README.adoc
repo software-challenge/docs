@@ -8,7 +8,19 @@ In diesem Repository befindet sich die Endbenutzer-Dokumentation fuer
 die Software Challenge. Zielgruppe sind Schüler und Lehrer, die an
 der Software Challenge teilnehmen.
 
-include::allgemein/beitragen.adoc[]
+== Beitragen
+
+****
+Wir freuen uns über sämtliche Verbesserungsvorschläge. Die Dokumentation kann
+direkt auf hier auf GitHub editiert werden, einzige Voraussetzung ist eine
+kostenlose Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
+auswählen (ein guter Startpunkt ist die Datei
+https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc[index.adoc]
+welche Verweise auf alle Sektionen der Dokumentation enthält) und dann auf den
+Stift oben rechts klicken. Damit wird von GitHub automatisch ein Fork und ein
+Pull Request erstellt. Alternativ auch gern eine E-Mail an
+svk@informatik.uni-kiel.de.
+****
 
 == Konventionen
 
