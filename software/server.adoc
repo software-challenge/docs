@@ -50,8 +50,8 @@ image::neues_spiel_dialog.jpg[Neues Spiel]
 In diesem Fenster werden die Spieler ausgewählt, die an dem Spiel
 teilnehmen sollen. Für jeden Spieler gibt es folgende Optionen:
 
-* Hier kann für jeden Spieler ein Name eingegeben werden, der dann
-im Spiel angezeigt wird.
+* Text-Eingabefeld: Hier kann für jeden Spieler ein Name eingegeben werden, der
+  dann im Spiel angezeigt wird.
 * Spielertyp: Es kann zwischen 4 verschiedenen Spielertypen gewählt
 werden:
 1.  Mensch: Ein menschlicher Spieler, der über die Programmoberfläche
@@ -78,12 +78,12 @@ die Züge und weitere für das Spiel wichtige Informationen
 dargestellt. Hier setzt der menschliche Spieler auch seine Züge.
 
 Die Steuerelemente unterscheiden sich je nach Spiel und Spielsituation. Unten
-gibt es immer die Schaltflächen "Anhalten/Weiter", 
+gibt es immer die Schaltflächen "Anhalten/Weiter",
 
 
 Für das Spiel Blokus:
 
-* Der aktuell gewähle Spielstein wird unten angezeigt, über das Menü Steurung 
+* Der aktuell gewähle Spielstein wird unten angezeigt, über das Menü Steurung
 kann man diesen rotieren (auch über Mausrad) und spiegeln (auch über rechte Maustaste)
 * Aus der Menge noch verfügbarer Spielsteine kann man mit Mausklick einen anderen Spielstein auswählen.
 * Mithilfe der Maus wird der gewählte Spielstein auf dem Feld abgelegt.
