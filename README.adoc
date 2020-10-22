@@ -8,16 +8,7 @@ In diesem Repository befindet sich die Endbenutzer-Dokumentation fuer
 die Software Challenge. Zielgruppe sind Schüler und Lehrer, die an
 der Software Challenge teilnehmen.
 
-== Beitragen
-
-Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
-Dokumentation kann direkt hier auf GitHub editiert werden, einzige
-Voraussetzung ist eine kostenlose Registrierung bei GitHub. Ist man
-angemeldet, kann man ein Dokument auswählen (ein guter Startpunkt ist
-die Datei link:index.adoc[index.adoc] welche Verweise auf alle
-Sektionen der Dokumentation enthält) und dann auf den Stift oben
-rechts klicken. Alternativ auch gern eine E-Mail an
-svk@informatik.uni-kiel.de.
+include::allgemein/beitragen.adoc[]
 
 == Konventionen
 
