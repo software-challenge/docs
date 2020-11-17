@@ -6,20 +6,20 @@ Nun gibt es zwei Varianten ein Spiel zu starten, eine durch einen Administratorc
 
 === Variante 1 (AdminClient xref:mit-reservierungscode[])
 
-Ein Client registriert sich als Administrator mit dem in server.properties festgelegten Passwort p:
+Ein Client registriert sich als Administrator mit dem in server.properties festgelegten Passwort pw:
 
 [source, xml]
 ----
-<protocol><authenticate password="p" />
+<protocol><authenticate password="pw" />
 ----
 
 Dann kann ein Spiel angelegt werden:
 
 [source, xml]
 ----
-<prepare gameType="swc_2021_blokus">
-  <slot displayName="p1" canTimeout="false" shouldBePaused="true" />
-  <slot displayName="p2" canTimeout="false" shouldBePaused="true" />
+<prepare gameType="swc_2021_blokus" pause="true">
+  <slot displayName="p1" canTimeout="false" />
+  <slot displayName="p2" canTimeout="false" />
 </prepare>
 
 ----
@@ -33,7 +33,8 @@ Der Server antwortet darauf mit einer Nachricht, die die ROOM_ID und Reservierun
     <reservation>RC2</reservation>
   </prepared>
 ----
-Der Administratorclient kann nur ebenfalls als Observer des Spiels genutzt werden, indem ein entsprechender Request gesendet wird.
+
+Der Administratorclient kann dann ebenfalls als Observer des Spiels genutzt werden, indem ein entsprechender Request gesendet wird.
 Dadurch wird das derzeitge Spielfeld (xref:memento[]) ebenfalls an den Administratorclient gesendet.
 
 [source, xml]
@@ -41,7 +42,7 @@ Dadurch wird das derzeitge Spielfeld (xref:memento[]) ebenfalls an den Administr
 <observe roomId="871faccb-5190-4e44-82fc-6cdcbb493726" />
 ----
 
-Clients die auf dem Serverport (localhost 13050) gestartet werden können so über diesen Code joinen.
+Clients, die auf dem Serverport (localhost 13050) gestartet werden, können nun mit den Reservierungscodes beitreten.
 
 [source, xml]
 ----
@@ -54,11 +55,12 @@ Clients die auf dem Serverport (localhost 13050) gestartet werden können so üb
   <joinPrepared reservationCode="RC2" />
 ----
 
-=== Variante 2 ((eventuell) ohne AdminClient xref:ohne-reservierungscode[])
+=== Variante 2 (kein AdminClient notwendig xref:ohne-reservierungscode[])
 
 Die Clients wurden auf dem Serverport (Standard: localhost 13050) gestartet.
 
-Sie können sich mit folgender Anfrage einen bereits offenen Spiel gleichen Typs beitreten oder, falls kein Spiel des Typs vorhanden selbst eines starten:
+Sie können mit folgender Anfrage einem bereits offenen Spiel des entsprechenden Typs beitreten.
+Wenn noch keines vorhanden ist, wird dabei automatisch ein neues gestartet.
 
 [source, xml]
 ----
