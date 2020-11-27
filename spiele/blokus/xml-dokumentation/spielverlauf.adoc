@@ -86,7 +86,7 @@ Der Server antwortet jeweils mit der WelcomeMessage (xref:welcome-message[]) und
 </room>
 <room roomId="cb3bc426-5c70-48b9-9307-943bc328b503">
   <data class="memento">
-    <state class="state" currentColorIndex="0" turn="0" round="1" startPiece="PENTO_V">
+    <state class="state" turn="0" round="1" startPiece="PENTO_V">
       <startTeam class="team">ONE</startTeam>
       <board/>
       <blueShapes class="linked-hash-set">
@@ -182,19 +182,12 @@ Der Server antwortet jeweils mit der WelcomeMessage (xref:welcome-message[]) und
         <shape>PENTO_Y</shape>
       </greenShapes>
       <lastMoveMono class="linked-hash-map"/>
-      <orderedColors>
-        <color>BLUE</color>
-        <color>YELLOW</color>
-        <color>RED</color>
-        <color>GREEN</color>
-      </orderedColors>
       <first displayName="One">
         <color class="team">ONE</color>
       </first>
       <second displayName="Two">
         <color class="team">TWO</color>
       </second>
-      <startColor>BLUE</startColor>
     </state>
   </data>
 </room>
