@@ -614,7 +614,7 @@ Dadurch wird das derzeitge Spielfeld (<a href="spielstatus.html#memento">memento
 <span class="tok-nt">&lt;/room&gt;</span>
 <span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;cb3bc426-5c70-48b9-9307-943bc328b503&quot;</span><span class="tok-nt">&gt;</span>
   <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;memento&quot;</span><span class="tok-nt">&gt;</span>
-    <span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">round=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">startPiece=</span><span class="tok-s">&quot;PENTO_V&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">currentColorIndex=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">round=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">startPiece=</span><span class="tok-s">&quot;PENTO_V&quot;</span><span class="tok-nt">&gt;</span>
       <span class="tok-nt">&lt;startTeam</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/startTeam&gt;</span>
       <span class="tok-nt">&lt;board/&gt;</span>
       <span class="tok-nt">&lt;blueShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
@@ -710,12 +710,19 @@ Dadurch wird das derzeitge Spielfeld (<a href="spielstatus.html#memento">memento
         <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
       <span class="tok-nt">&lt;/greenShapes&gt;</span>
       <span class="tok-nt">&lt;lastMoveMono</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-map&quot;</span><span class="tok-nt">/&gt;</span>
+      <span class="tok-nt">&lt;orderedColors&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>YELLOW<span class="tok-nt">&lt;/color&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>RED<span class="tok-nt">&lt;/color&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>GREEN<span class="tok-nt">&lt;/color&gt;</span>
+      <span class="tok-nt">&lt;/orderedColors&gt;</span>
       <span class="tok-nt">&lt;first</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;One&quot;</span><span class="tok-nt">&gt;</span>
         <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/color&gt;</span>
       <span class="tok-nt">&lt;/first&gt;</span>
       <span class="tok-nt">&lt;second</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;Two&quot;</span><span class="tok-nt">&gt;</span>
         <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>TWO<span class="tok-nt">&lt;/color&gt;</span>
       <span class="tok-nt">&lt;/second&gt;</span>
+      <span class="tok-nt">&lt;startColor&gt;</span>BLUE<span class="tok-nt">&lt;/startColor&gt;</span>
     <span class="tok-nt">&lt;/state&gt;</span>
   <span class="tok-nt">&lt;/data&gt;</span>
 <span class="tok-nt">&lt;/room&gt;</span></code></pre>
@@ -787,7 +794,7 @@ Die letzte Nachricht des Servers endet mit:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-11-27 11:11:23 UTC
+Last updated 2020-11-27 11:12:23 UTC
 </div>
 </div>
 </body>
