@@ -523,11 +523,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect2">
 <h3 id="_variante_1_adminclient_mit_reservierungscode">Variante 1 (AdminClient <a href="mit-reservierungscode.html">Mit Reservierungscode</a>)</h3>
 <div class="paragraph">
-<p>Ein Client registriert sich als Administrator mit dem in server.properties festgelegten Passwort p:</p>
+<p>Ein Client registriert sich als Administrator mit dem in server.properties festgelegten Passwort pw:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;&lt;authenticate</span> <span class="tok-na">password=</span><span class="tok-s">&quot;p&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;&lt;authenticate</span> <span class="tok-na">password=</span><span class="tok-s">&quot;pw&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -535,9 +535,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;prepare</span> <span class="tok-na">gameType=</span><span class="tok-s">&quot;swc_2021_blokus&quot;</span><span class="tok-nt">&gt;</span>
-  <span class="tok-nt">&lt;slot</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p1&quot;</span> <span class="tok-na">canTimeout=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-na">shouldBePaused=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-nt">/&gt;</span>
-  <span class="tok-nt">&lt;slot</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p2&quot;</span> <span class="tok-na">canTimeout=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-na">shouldBePaused=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-nt">/&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;prepare</span> <span class="tok-na">gameType=</span><span class="tok-s">&quot;swc_2021_blokus&quot;</span> <span class="tok-na">pause=</span><span class="tok-s">&quot;true&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;slot</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p1&quot;</span> <span class="tok-na">canTimeout=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;slot</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p2&quot;</span> <span class="tok-na">canTimeout=</span><span class="tok-s">&quot;false&quot;</span> <span class="tok-nt">/&gt;</span>
 <span class="tok-nt">&lt;/prepare&gt;</span></code></pre>
 </div>
 </div>
@@ -554,7 +554,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>Der Administratorclient kann nur ebenfalls als Observer des Spiels genutzt werden, indem ein entsprechender Request gesendet wird.
+<p>Der Administratorclient kann dann ebenfalls als Observer des Spiels genutzt werden, indem ein entsprechender Request gesendet wird.
 Dadurch wird das derzeitge Spielfeld (<a href="spielstatus.html#memento">memento</a>) ebenfalls an den Administratorclient gesendet.</p>
 </div>
 <div class="listingblock">
@@ -563,7 +563,7 @@ Dadurch wird das derzeitge Spielfeld (<a href="spielstatus.html#memento">memento
 </div>
 </div>
 <div class="paragraph">
-<p>Clients die auf dem Serverport (localhost 13050) gestartet werden können so über diesen Code joinen.</p>
+<p>Clients, die auf dem Serverport (localhost 13050) gestartet werden, können nun mit den Reservierungscodes beitreten.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -579,12 +579,13 @@ Dadurch wird das derzeitge Spielfeld (<a href="spielstatus.html#memento">memento
 </div>
 </div>
 <div class="sect2">
-<h3 id="_variante_2_eventuell_ohne_adminclient_ohne_reservierungscode">Variante 2 ((eventuell) ohne AdminClient <a href="ohne-reservierungscode.html">Ohne Reservierungscode</a>)</h3>
+<h3 id="_variante_2_kein_adminclient_notwendig_ohne_reservierungscode">Variante 2 (kein AdminClient notwendig <a href="ohne-reservierungscode.html">Ohne Reservierungscode</a>)</h3>
 <div class="paragraph">
 <p>Die Clients wurden auf dem Serverport (Standard: localhost 13050) gestartet.</p>
 </div>
 <div class="paragraph">
-<p>Sie können sich mit folgender Anfrage einen bereits offenen Spiel gleichen Typs beitreten oder, falls kein Spiel des Typs vorhanden selbst eines starten:</p>
+<p>Sie können mit folgender Anfrage einem bereits offenen Spiel des entsprechenden Typs beitreten.
+Wenn noch keines vorhanden ist, wird dabei automatisch ein neues gestartet.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -794,7 +795,7 @@ Die letzte Nachricht des Servers endet mit:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-11-27 11:12:23 UTC
+Last updated 2020-12-01 16:27:28 UTC
 </div>
 </div>
 </body>
