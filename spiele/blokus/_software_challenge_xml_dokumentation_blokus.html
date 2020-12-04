@@ -999,9 +999,6 @@ Spieler ist, wird der initiale Spielstatus gesendet.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>I</code> Nummer der Farbe, die aktuell an der Reihe ist (1=BLUE, 2=YELLO, 3=RED, 4=GREEN)</p>
-</li>
-<li>
 <p><code>Z</code> aktuelle Zugzahl</p>
 </li>
 <li>
@@ -1020,9 +1017,6 @@ Spieler ist, wird der initiale Spielstatus gesendet.</p>
 <p><code>blueShapes</code>, <code>yellowShapes</code>, <code>redShapes</code>, <code>greenShapes</code> Noch nicht gesetzte Spielsteine, siehe <a href="_software_challenge_xml_dokumentation_blokus.html#undeployed">Nicht gesetzte Spielsteine</a></p>
 </li>
 <li>
-<p><code>orderedColors</code> Die Farben in ihrer Zugreihenfolge. Dies beinhaltet nur Farben, die noch im Spiel sind.</p>
-</li>
-<li>
 <p><code>first</code> Name und auch Team des ersten Spielers.</p>
 </li>
 <li>
@@ -1031,25 +1025,20 @@ Spieler ist, wird der initiale Spielstatus gesendet.</p>
 <li>
 <p><code>lastMove</code> der zuletzt ausgeführte Zug, siehe <a href="_software_challenge_xml_dokumentation_blokus.html#last-move">Vorheriger Zug</a></p>
 </li>
-<li>
-<p><code>startColor</code> Die Farbe die zuerst gespielt wird.</p>
-</li>
 </ul>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">currentColorIndex=</span><span class="tok-s">&quot;I&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;Z&quot;</span> <span class="tok-na">round=</span><span class="tok-s">&quot;R&quot;</span> <span class="tok-na">startPiece=</span><span class="tok-s">&quot;P&quot;</span><span class="tok-nt">&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;Z&quot;</span> <span class="tok-na">round=</span><span class="tok-s">&quot;R&quot;</span> <span class="tok-na">startPiece=</span><span class="tok-s">&quot;P&quot;</span><span class="tok-nt">&gt;</span>
   <span class="tok-nt">&lt;startTeam</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>T<span class="tok-nt">&lt;/startTeam&gt;</span>
   board
   blueShapes
   yellowShapes
   redShapes
   greenShapes
-  orderedColors
   first
   second
   lastMove
-  startColor
 <span class="tok-nt">&lt;/state&gt;</span></code></pre>
 </div>
 </div>
@@ -1121,33 +1110,6 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 </div>
 </div>
 <div class="sect3">
-<h4 id="orderedColors">... Farben in Spielreihenfolge</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;orderedColors&gt;</span>
-  <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
-  <span class="tok-nt">&lt;color&gt;</span>YELLOW<span class="tok-nt">&lt;/color&gt;</span>
-  <span class="tok-nt">&lt;color&gt;</span>RED<span class="tok-nt">&lt;/color&gt;</span>
-  <span class="tok-nt">&lt;color&gt;</span>GREEN<span class="tok-nt">&lt;/color&gt;</span>
-<span class="tok-nt">&lt;/orderedColors&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Dies ist eine beispielhafte Auflistung der Farben, die noch im Spiel sind. Dem Tag <code>&lt;orderedMoves&gt;</code> sind Tags vom Typ <code>&lt;color&gt;</code> untergeordnet. Diese beinhalten wiederum eine der vier Spielfarben.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;orderedColors&gt;</span>
-  <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
-  <span class="tok-nt">&lt;color&gt;</span>GREEN<span class="tok-nt">&lt;/color&gt;</span>
-<span class="tok-nt">&lt;/orderedColors&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Dies ist ein Beispiel für eine Situation in der nur noch blaue Spielsteine und grüne Spielsteine gelegt werden können.</p>
-</div>
-</div>
-<div class="sect3">
 <h4 id="first">... Erster Spieler</h4>
 <div class="listingblock">
 <div class="content">
@@ -1182,17 +1144,6 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 </div>
 </div>
 <div class="sect3">
-<h4 id="startColor">... Startende Spielfarbe</h4>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;startColor&gt;</span>BLUE<span class="tok-nt">&lt;/startColor&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Der Tag <code>&lt;startColor&gt;</code> beinhaltet die Farbe, die im ersten Zug vom ersten Spieler gelegt wird. Hier ist dies die Farbe Blau.</p>
-</div>
-</div>
-<div class="sect3">
 <h4 id="_beispiel_kompletter_spielstatus">... Beispiel kompletter Spielstatus</h4>
 <div class="paragraph">
 <p>Hier ist das XML eines kompletten beispielhaften Spielstatus, wie es der Computerspieler vom Server bekommt:</p>
@@ -1201,7 +1152,7 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 <div class="content">
 <pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;cb3bc426-5c70-48b9-9307-943bc328b503&quot;</span><span class="tok-nt">&gt;</span>
   <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;memento&quot;</span><span class="tok-nt">&gt;</span>
-    <span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">currentColorIndex=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">round=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">startPiece=</span><span class="tok-s">&quot;PENTO_V&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">round=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">startPiece=</span><span class="tok-s">&quot;PENTO_V&quot;</span><span class="tok-nt">&gt;</span>
       <span class="tok-nt">&lt;startTeam</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/startTeam&gt;</span>
       <span class="tok-nt">&lt;board&gt;</span>
         <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
@@ -1302,12 +1253,6 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
         <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
       <span class="tok-nt">&lt;/greenShapes&gt;</span>
       <span class="tok-nt">&lt;lastMoveMono</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-map&quot;</span><span class="tok-nt">/&gt;</span>
-      <span class="tok-nt">&lt;orderedColors&gt;</span>
-        <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
-        <span class="tok-nt">&lt;color&gt;</span>YELLOW<span class="tok-nt">&lt;/color&gt;</span>
-        <span class="tok-nt">&lt;color&gt;</span>RED<span class="tok-nt">&lt;/color&gt;</span>
-        <span class="tok-nt">&lt;color&gt;</span>GREEN<span class="tok-nt">&lt;/color&gt;</span>
-      <span class="tok-nt">&lt;/orderedColors&gt;</span>
       <span class="tok-nt">&lt;first</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;One&quot;</span><span class="tok-nt">&gt;</span>
         <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/color&gt;</span>
       <span class="tok-nt">&lt;/first&gt;</span>
@@ -1319,7 +1264,6 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
           <span class="tok-nt">&lt;position</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span><span class="tok-nt">/&gt;</span>
         <span class="tok-nt">&lt;/piece&gt;</span>
       <span class="tok-nt">&lt;/lastMove&gt;</span>
-      <span class="tok-nt">&lt;startColor&gt;</span>BLUE<span class="tok-nt">&lt;/startColor&gt;</span>
     <span class="tok-nt">&lt;/state&gt;</span>
   <span class="tok-nt">&lt;/data&gt;</span>
 <span class="tok-nt">&lt;/room&gt;</span></code></pre>
@@ -1512,7 +1456,7 @@ Wenn noch keines vorhanden ist, wird dabei automatisch ein neues gestartet.</p>
 <span class="tok-nt">&lt;/room&gt;</span>
 <span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;cb3bc426-5c70-48b9-9307-943bc328b503&quot;</span><span class="tok-nt">&gt;</span>
   <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;memento&quot;</span><span class="tok-nt">&gt;</span>
-    <span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">currentColorIndex=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">round=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">startPiece=</span><span class="tok-s">&quot;PENTO_V&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">round=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">startPiece=</span><span class="tok-s">&quot;PENTO_V&quot;</span><span class="tok-nt">&gt;</span>
       <span class="tok-nt">&lt;startTeam</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/startTeam&gt;</span>
       <span class="tok-nt">&lt;board/&gt;</span>
       <span class="tok-nt">&lt;blueShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
@@ -1608,19 +1552,12 @@ Wenn noch keines vorhanden ist, wird dabei automatisch ein neues gestartet.</p>
         <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
       <span class="tok-nt">&lt;/greenShapes&gt;</span>
       <span class="tok-nt">&lt;lastMoveMono</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-map&quot;</span><span class="tok-nt">/&gt;</span>
-      <span class="tok-nt">&lt;orderedColors&gt;</span>
-        <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
-        <span class="tok-nt">&lt;color&gt;</span>YELLOW<span class="tok-nt">&lt;/color&gt;</span>
-        <span class="tok-nt">&lt;color&gt;</span>RED<span class="tok-nt">&lt;/color&gt;</span>
-        <span class="tok-nt">&lt;color&gt;</span>GREEN<span class="tok-nt">&lt;/color&gt;</span>
-      <span class="tok-nt">&lt;/orderedColors&gt;</span>
       <span class="tok-nt">&lt;first</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;One&quot;</span><span class="tok-nt">&gt;</span>
         <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/color&gt;</span>
       <span class="tok-nt">&lt;/first&gt;</span>
       <span class="tok-nt">&lt;second</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;Two&quot;</span><span class="tok-nt">&gt;</span>
         <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>TWO<span class="tok-nt">&lt;/color&gt;</span>
       <span class="tok-nt">&lt;/second&gt;</span>
-      <span class="tok-nt">&lt;startColor&gt;</span>BLUE<span class="tok-nt">&lt;/startColor&gt;</span>
     <span class="tok-nt">&lt;/state&gt;</span>
   <span class="tok-nt">&lt;/data&gt;</span>
 <span class="tok-nt">&lt;/room&gt;</span></code></pre>
@@ -1693,7 +1630,7 @@ Die letzte Nachricht des Servers endet mit:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-12-01 16:27:28 UTC
+Last updated 2020-12-04 09:35:55 UTC
 </div>
 </div>
 </body>
