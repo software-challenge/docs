@@ -27,6 +27,7 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 * `T` Team, welches beginnt (`ONE`, `TWO`)
 * `board` Das Spielbrett, wie in xref:spielbrett[] definiert
 * `blueShapes`, `yellowShapes`, `redShapes`, `greenShapes` Noch nicht gesetzte Spielsteine, siehe xref:undeployed[]
+* `lastMoveMono` beschreibt, wenn eine Farbe alle Steine gelegt hat, ob der Mono-Stein als letztes gelegt wurde
 * `validColors` alle Farben, die noch im Spiel sind
 * `first` Name und auch Team des ersten Spielers.
 * `second` Name und auch Team des zweiten Spielers.
@@ -41,6 +42,7 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
   yellowShapes
   redShapes
   greenShapes
+  lastMoveMono
   validColors
   first
   second
@@ -102,6 +104,21 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 ----
 
 Die nicht gesetzten Steine werden durch `<shape>` Tags in einem `<blueShapes>`, `<yellowShapes>`, `<redShapes>` und `<greenShapes>` Tag dargestellt.
+
+[[lastMoveMono]]
+=== Letzter Stein
+
+[source,xml]
+----
+<lastMoveMono class="linked-hash-map">
+  <entry>
+    <color>YELLOW</color>
+    <boolean>true</boolean>
+  </entry>
+</lastMoveMono>
+----
+
+Jede Farbe, die alle Steine gesetzt hat, bekommt einen `<entry>` Tag. Dieser beschreibt fuer die Farbe im `<color>` Tag als `<boolean>`, ob der Mono Stein als letztes gesetzt wurde.
 
 [[validColors]]
 === Farben im Spiel
