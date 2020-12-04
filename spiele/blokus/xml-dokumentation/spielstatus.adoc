@@ -27,6 +27,7 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 * `T` Team, welches beginnt (`ONE`, `TWO`)
 * `board` Das Spielbrett, wie in xref:spielbrett[] definiert
 * `blueShapes`, `yellowShapes`, `redShapes`, `greenShapes` Noch nicht gesetzte Spielsteine, siehe xref:undeployed[]
+* `validColors` alle Farben, die noch im Spiel sind
 * `first` Name und auch Team des ersten Spielers.
 * `second` Name und auch Team des zweiten Spielers.
 * `lastMove` der zuletzt ausgeführte Zug, siehe xref:last-move[]
@@ -40,6 +41,7 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
   yellowShapes
   redShapes
   greenShapes
+  validColors
   first
   second
   lastMove
@@ -100,6 +102,22 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 ----
 
 Die nicht gesetzten Steine werden durch `<shape>` Tags in einem `<blueShapes>`, `<yellowShapes>`, `<redShapes>` und `<greenShapes>` Tag dargestellt.
+
+[[validColors]]
+=== Farben im Spiel
+
+[source,xml]
+----
+
+<validColors class="linked-hash-set">
+  <color>BLUE</color>
+  <color>YELLOW</color>
+  <color>RED</color>
+  <color>GREEN</color>
+</validColors>
+----
+
+Alle Farben, die noch Züge durchführen können, werden durch `<color>` Tags dargestellt.
 
 [[first]]
 === Erster Spieler
@@ -241,6 +259,12 @@ Hier ist das XML eines kompletten beispielhaften Spielstatus, wie es der Compute
         <shape>PENTO_Y</shape>
       </greenShapes>
       <lastMoveMono class="linked-hash-map"/>
+      <validColors class="linked-hash-set">
+        <color>BLUE</color>
+        <color>YELLOW</color>
+        <color>RED</color>
+        <color>GREEN</color>
+      </validColors>
       <first displayName="One">
         <color class="team">ONE</color>
       </first>

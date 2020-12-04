@@ -184,6 +184,12 @@ Der Server antwortet jeweils mit der WelcomeMessage (xref:welcome-message[]) und
         <shape>PENTO_Y</shape>
       </greenShapes>
       <lastMoveMono class="linked-hash-map"/>
+      <validColors class="linked-hash-set">
+        <color>BLUE</color>
+        <color>YELLOW</color>
+        <color>RED</color>
+        <color>GREEN</color>
+      </validColors>
       <first displayName="One">
         <color class="team">ONE</color>
       </first>
