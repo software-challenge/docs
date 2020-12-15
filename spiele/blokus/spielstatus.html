@@ -562,6 +562,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><code>blueShapes</code>, <code>yellowShapes</code>, <code>redShapes</code>, <code>greenShapes</code> Noch nicht gesetzte Spielsteine, siehe <a href="spielstatus.html#undeployed">Nicht gesetzte Spielsteine</a></p>
 </li>
 <li>
+<p><code>lastMoveMono</code> beschreibt, wenn eine Farbe alle Steine gelegt hat, ob der Mono-Stein als letztes gelegt wurde</p>
+</li>
+<li>
+<p><code>validColors</code> alle Farben, die noch im Spiel sind</p>
+</li>
+<li>
 <p><code>first</code> Name und auch Team des ersten Spielers.</p>
 </li>
 <li>
@@ -581,6 +587,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
   yellowShapes
   redShapes
   greenShapes
+  lastMoveMono
+  validColors
   first
   second
   lastMove
@@ -652,6 +660,39 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 </div>
 <div class="paragraph">
 <p>Die nicht gesetzten Steine werden durch <code>&lt;shape&gt;</code> Tags in einem <code>&lt;blueShapes&gt;</code>, <code>&lt;yellowShapes&gt;</code>, <code>&lt;redShapes&gt;</code> und <code>&lt;greenShapes&gt;</code> Tag dargestellt.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="lastMoveMono">Letzter Stein</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;lastMoveMono</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-map&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;entry&gt;</span>
+    <span class="tok-nt">&lt;color&gt;</span>YELLOW<span class="tok-nt">&lt;/color&gt;</span>
+    <span class="tok-nt">&lt;boolean&gt;</span>true<span class="tok-nt">&lt;/boolean&gt;</span>
+  <span class="tok-nt">&lt;/entry&gt;</span>
+<span class="tok-nt">&lt;/lastMoveMono&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Jede Farbe, die alle Steine gesetzt hat, bekommt einen <code>&lt;entry&gt;</code> Tag. Dieser beschreibt fuer die Farbe im <code>&lt;color&gt;</code> Tag als <code>&lt;boolean&gt;</code>, ob der Mono Stein als letztes gesetzt wurde.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="validColors">Farben im Spiel</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span>
+<span class="tok-nt">&lt;validColors</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
+  <span class="tok-nt">&lt;color&gt;</span>YELLOW<span class="tok-nt">&lt;/color&gt;</span>
+  <span class="tok-nt">&lt;color&gt;</span>RED<span class="tok-nt">&lt;/color&gt;</span>
+  <span class="tok-nt">&lt;color&gt;</span>GREEN<span class="tok-nt">&lt;/color&gt;</span>
+<span class="tok-nt">&lt;/validColors&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Alle Farben, die noch Züge durchführen können, werden durch <code>&lt;color&gt;</code> Tags dargestellt.</p>
 </div>
 </div>
 <div class="sect2">
@@ -798,6 +839,12 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
         <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
       <span class="tok-nt">&lt;/greenShapes&gt;</span>
       <span class="tok-nt">&lt;lastMoveMono</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-map&quot;</span><span class="tok-nt">/&gt;</span>
+      <span class="tok-nt">&lt;validColors</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>YELLOW<span class="tok-nt">&lt;/color&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>RED<span class="tok-nt">&lt;/color&gt;</span>
+        <span class="tok-nt">&lt;color&gt;</span>GREEN<span class="tok-nt">&lt;/color&gt;</span>
+      <span class="tok-nt">&lt;/validColors&gt;</span>
       <span class="tok-nt">&lt;first</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;One&quot;</span><span class="tok-nt">&gt;</span>
         <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/color&gt;</span>
       <span class="tok-nt">&lt;/first&gt;</span>
@@ -823,7 +870,7 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-12-04 09:35:55 UTC
+Last updated 2020-12-15 13:24:42 UTC
 </div>
 </div>
 </body>
