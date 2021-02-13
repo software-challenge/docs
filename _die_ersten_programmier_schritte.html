@@ -432,8 +432,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+pre { line-height: 125%; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .listingblock .pygments .hll { background-color: #ffffcc }
-.listingblock .pygments, .listingblock .pygments code { background: #f8f8f8; }
+.listingblock .pygments { background: #f8f8f8; }
 .listingblock .pygments .tok-c { color: #408080; font-style: italic } /* Comment */
 .listingblock .pygments .tok-err { border: 1px solid #FF0000 } /* Error */
 .listingblock .pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
@@ -570,9 +575,9 @@ Konto ausreichend gedeckt ist:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-c1">// Beispiel um 40 Geldeinheiten abzuheben</span>
-<span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">kontostand</span> <span class="tok-o">&gt;=</span> <span class="tok-mi">40</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-    <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">-</span> <span class="tok-mi">40</span><span class="tok-o">;</span>
-<span class="tok-o">}</span></code></pre>
+<span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">kontostand</span> <span class="tok-o">&gt;=</span> <span class="tok-mi">40</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+    <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">-</span> <span class="tok-mi">40</span><span class="tok-p">;</span>
+<span class="tok-p">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -605,31 +610,31 @@ eine <em>Klasse</em>, die eine Art Bauplan ist:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">Konto</span> <span class="tok-o">{</span>
-    <span class="tok-kd">private</span> <span class="tok-kt">int</span> <span class="tok-n">kontostand</span><span class="tok-o">;</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">Konto</span> <span class="tok-p">{</span>
+    <span class="tok-kd">private</span> <span class="tok-kt">int</span> <span class="tok-n">kontostand</span><span class="tok-p">;</span>
 
-    <span class="tok-kd">public</span> <span class="tok-nf">Konto</span><span class="tok-o">()</span> <span class="tok-o">{</span>
-        <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-o">;</span>
-    <span class="tok-o">}</span>
+    <span class="tok-kd">public</span> <span class="tok-nf">Konto</span><span class="tok-p">()</span> <span class="tok-p">{</span>
+        <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-p">;</span>
+    <span class="tok-p">}</span>
 
-    <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">einzahlen</span><span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-        <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">betrag</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-            <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">+</span> <span class="tok-n">betrag</span><span class="tok-o">;</span>
-        <span class="tok-o">}</span>
-    <span class="tok-o">}</span>
+    <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">einzahlen</span><span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">betrag</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+        <span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">betrag</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+            <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">+</span> <span class="tok-n">betrag</span><span class="tok-p">;</span>
+        <span class="tok-p">}</span>
+    <span class="tok-p">}</span>
 
-    <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">abheben</span><span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-        <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">kontostand</span> <span class="tok-o">&gt;=</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-            <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">-</span> <span class="tok-n">betrag</span><span class="tok-o">;</span>
-            <span class="tok-k">return</span> <span class="tok-kc">true</span><span class="tok-o">;</span>
-        <span class="tok-o">}</span>
-        <span class="tok-k">return</span> <span class="tok-kc">false</span><span class="tok-o">;</span>
-    <span class="tok-o">}</span>
+    <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">abheben</span><span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">betrag</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+        <span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">kontostand</span> <span class="tok-o">&gt;=</span> <span class="tok-n">betrag</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+            <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">-</span> <span class="tok-n">betrag</span><span class="tok-p">;</span>
+            <span class="tok-k">return</span> <span class="tok-kc">true</span><span class="tok-p">;</span>
+        <span class="tok-p">}</span>
+        <span class="tok-k">return</span> <span class="tok-kc">false</span><span class="tok-p">;</span>
+    <span class="tok-p">}</span>
 
-    <span class="tok-kd">public</span> <span class="tok-kt">int</span> <span class="tok-nf">getKontostand</span><span class="tok-o">()</span> <span class="tok-o">{</span>
-        <span class="tok-k">return</span> <span class="tok-n">kontostand</span><span class="tok-o">;</span>
-    <span class="tok-o">}</span>
-<span class="tok-o">}</span></code></pre>
+    <span class="tok-kd">public</span> <span class="tok-kt">int</span> <span class="tok-nf">getKontostand</span><span class="tok-p">()</span> <span class="tok-p">{</span>
+        <span class="tok-k">return</span> <span class="tok-n">kontostand</span><span class="tok-p">;</span>
+    <span class="tok-p">}</span>
+<span class="tok-p">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -644,8 +649,8 @@ ein Objekt erzeugen:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">Konto</span> <span class="tok-n">konto1</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span> <span class="tok-c1">// Erzeugt ein Konto-Objekt und speichert es in der Variablen konto1</span>
-<span class="tok-n">Konto</span> <span class="tok-n">konto2</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span> <span class="tok-c1">// Erzeugt noch ein Konto und speichert es in einer anderen Variablen</span></code></pre>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">Konto</span> <span class="tok-n">konto1</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-p">();</span> <span class="tok-c1">// Erzeugt ein Konto-Objekt und speichert es in der Variablen konto1</span>
+<span class="tok-n">Konto</span> <span class="tok-n">konto2</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-p">();</span> <span class="tok-c1">// Erzeugt noch ein Konto und speichert es in einer anderen Variablen</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -662,14 +667,14 @@ Punktoperator auf:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">Konto</span> <span class="tok-n">konto1</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span>            <span class="tok-c1">// konto: 0 Geldeinheiten (GE)</span>
-<span class="tok-n">Konto</span> <span class="tok-n">konto2</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-o">();</span>            <span class="tok-c1">// konto2: 0 GE</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">Konto</span> <span class="tok-n">konto1</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-p">();</span>            <span class="tok-c1">// konto: 0 Geldeinheiten (GE)</span>
+<span class="tok-n">Konto</span> <span class="tok-n">konto2</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">Konto</span><span class="tok-p">();</span>            <span class="tok-c1">// konto2: 0 GE</span>
 
-<span class="tok-n">konto1</span><span class="tok-o">.</span><span class="tok-na">einzahlen</span><span class="tok-o">(</span><span class="tok-mi">100</span><span class="tok-o">);</span>                 <span class="tok-c1">// konto1: 100 GE, konto2: 0  GE</span>
-<span class="tok-n">konto2</span><span class="tok-o">.</span><span class="tok-na">einzahlen</span><span class="tok-o">(</span><span class="tok-mi">50</span><span class="tok-o">);</span>                  <span class="tok-c1">// konto1: 100 GE, konto2: 50 GE</span>
+<span class="tok-n">konto1</span><span class="tok-p">.</span><span class="tok-na">einzahlen</span><span class="tok-p">(</span><span class="tok-mi">100</span><span class="tok-p">);</span>                 <span class="tok-c1">// konto1: 100 GE, konto2: 0  GE</span>
+<span class="tok-n">konto2</span><span class="tok-p">.</span><span class="tok-na">einzahlen</span><span class="tok-p">(</span><span class="tok-mi">50</span><span class="tok-p">);</span>                  <span class="tok-c1">// konto1: 100 GE, konto2: 50 GE</span>
 
-<span class="tok-kt">boolean</span> <span class="tok-n">erfolg</span> <span class="tok-o">=</span> <span class="tok-n">konto1</span><span class="tok-o">.</span><span class="tok-na">auszahlen</span><span class="tok-o">(</span><span class="tok-mi">30</span><span class="tok-o">);</span> <span class="tok-c1">// konto1: 70 GE, konto2: 50 GE, erfolg: true</span>
-<span class="tok-n">erfolg</span> <span class="tok-o">=</span> <span class="tok-n">konto2</span><span class="tok-o">.</span><span class="tok-na">auszahlen</span><span class="tok-o">(</span><span class="tok-mi">90</span><span class="tok-o">);</span>         <span class="tok-c1">// konto1: 70 GE, konto2: 50 GE, erfolg: false</span></code></pre>
+<span class="tok-kt">boolean</span> <span class="tok-n">erfolg</span> <span class="tok-o">=</span> <span class="tok-n">konto1</span><span class="tok-p">.</span><span class="tok-na">auszahlen</span><span class="tok-p">(</span><span class="tok-mi">30</span><span class="tok-p">);</span> <span class="tok-c1">// konto1: 70 GE, konto2: 50 GE, erfolg: true</span>
+<span class="tok-n">erfolg</span> <span class="tok-o">=</span> <span class="tok-n">konto2</span><span class="tok-p">.</span><span class="tok-na">auszahlen</span><span class="tok-p">(</span><span class="tok-mi">90</span><span class="tok-p">);</span>         <span class="tok-c1">// konto1: 70 GE, konto2: 50 GE, erfolg: false</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -678,33 +683,33 @@ einfach, da nur noch Änderungen in der Klasse notwendig sind:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">class</span> <span class="tok-nc">Konto</span> <span class="tok-o">{</span>
-     <span class="tok-kd">private</span> <span class="tok-kt">int</span> <span class="tok-n">kontostand</span><span class="tok-o">;</span>
-     <span class="tok-kd">private</span> <span class="tok-kt">int</span> <span class="tok-n">dispo</span><span class="tok-o">;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">class</span> <span class="tok-nc">Konto</span> <span class="tok-p">{</span>
+     <span class="tok-kd">private</span> <span class="tok-kt">int</span> <span class="tok-n">kontostand</span><span class="tok-p">;</span>
+     <span class="tok-kd">private</span> <span class="tok-kt">int</span> <span class="tok-n">dispo</span><span class="tok-p">;</span> <i class="conum" data-value="1"></i><b>(1)</b>
 
-     <span class="tok-kd">public</span> <span class="tok-nf">Konto</span><span class="tok-o">()</span> <span class="tok-o">{</span>
-         <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-o">;</span>
-         <span class="tok-n">dispo</span> <span class="tok-o">=</span> <span class="tok-mi">500</span><span class="tok-o">;</span> <i class="conum" data-value="2"></i><b>(2)</b>
-     <span class="tok-o">}</span>
+     <span class="tok-kd">public</span> <span class="tok-nf">Konto</span><span class="tok-p">()</span> <span class="tok-p">{</span>
+         <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-mi">0</span><span class="tok-p">;</span>
+         <span class="tok-n">dispo</span> <span class="tok-o">=</span> <span class="tok-mi">500</span><span class="tok-p">;</span> <i class="conum" data-value="2"></i><b>(2)</b>
+     <span class="tok-p">}</span>
 
-     <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">einzahlen</span><span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-         <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">betrag</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-             <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">+</span> <span class="tok-n">betrag</span><span class="tok-o">;</span>
-         <span class="tok-o">}</span>
-     <span class="tok-o">}</span>
+     <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">einzahlen</span><span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">betrag</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+         <span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">betrag</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+             <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">+</span> <span class="tok-n">betrag</span><span class="tok-p">;</span>
+         <span class="tok-p">}</span>
+     <span class="tok-p">}</span>
 
-     <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">abheben</span><span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-         <span class="tok-k">if</span> <span class="tok-o">((</span><span class="tok-n">kontostand</span> <span class="tok-o">+</span> <span class="tok-n">dispo</span><span class="tok-o">)</span> <span class="tok-o">&gt;=</span> <span class="tok-n">betrag</span><span class="tok-o">)</span> <span class="tok-o">{</span> <i class="conum" data-value="3"></i><b>(3)</b>
-             <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">-</span> <span class="tok-n">betrag</span><span class="tok-o">;</span>
-             <span class="tok-k">return</span> <span class="tok-kc">true</span><span class="tok-o">;</span>
-         <span class="tok-o">}</span>
-         <span class="tok-k">return</span> <span class="tok-kc">false</span><span class="tok-o">;</span>
-     <span class="tok-o">}</span>
+     <span class="tok-kd">public</span> <span class="tok-kt">boolean</span> <span class="tok-nf">abheben</span><span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">betrag</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+         <span class="tok-k">if</span> <span class="tok-p">((</span><span class="tok-n">kontostand</span> <span class="tok-o">+</span> <span class="tok-n">dispo</span><span class="tok-p">)</span> <span class="tok-o">&gt;=</span> <span class="tok-n">betrag</span><span class="tok-p">)</span> <span class="tok-p">{</span> <i class="conum" data-value="3"></i><b>(3)</b>
+             <span class="tok-n">kontostand</span> <span class="tok-o">=</span> <span class="tok-n">kontostand</span> <span class="tok-o">-</span> <span class="tok-n">betrag</span><span class="tok-p">;</span>
+             <span class="tok-k">return</span> <span class="tok-kc">true</span><span class="tok-p">;</span>
+         <span class="tok-p">}</span>
+         <span class="tok-k">return</span> <span class="tok-kc">false</span><span class="tok-p">;</span>
+     <span class="tok-p">}</span>
 
-     <span class="tok-kd">public</span> <span class="tok-kt">int</span> <span class="tok-nf">getKontostand</span><span class="tok-o">()</span> <span class="tok-o">{</span>
-         <span class="tok-k">return</span> <span class="tok-n">kontostand</span><span class="tok-o">;</span>
-     <span class="tok-o">}</span>
-<span class="tok-o">}</span></code></pre>
+     <span class="tok-kd">public</span> <span class="tok-kt">int</span> <span class="tok-nf">getKontostand</span><span class="tok-p">()</span> <span class="tok-p">{</span>
+         <span class="tok-k">return</span> <span class="tok-n">kontostand</span><span class="tok-p">;</span>
+     <span class="tok-p">}</span>
+<span class="tok-p">}</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -755,21 +760,21 @@ nehmen und entsprechend erweitern:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">PremiumKonto</span> <span class="tok-kd">extends</span> <span class="tok-n">Konto</span> <span class="tok-o">{</span>
-     <span class="tok-kd">private</span> <span class="tok-kt">double</span> <span class="tok-n">zinsbetrag</span><span class="tok-o">;</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">PremiumKonto</span> <span class="tok-kd">extends</span> <span class="tok-n">Konto</span> <span class="tok-p">{</span>
+     <span class="tok-kd">private</span> <span class="tok-kt">double</span> <span class="tok-n">zinsbetrag</span><span class="tok-p">;</span>
 
-     <span class="tok-kd">public</span> <span class="tok-nf">PremiumKonto</span><span class="tok-o">()</span> <span class="tok-o">{</span>
-         <span class="tok-kd">super</span><span class="tok-o">();</span>
-         <span class="tok-n">zinsbetrag</span> <span class="tok-o">=</span> <span class="tok-mf">2.5d</span><span class="tok-o">;</span> <span class="tok-c1">// 2.5% Zinsen</span>
-     <span class="tok-o">}</span>
+     <span class="tok-kd">public</span> <span class="tok-nf">PremiumKonto</span><span class="tok-p">()</span> <span class="tok-p">{</span>
+         <span class="tok-kd">super</span><span class="tok-p">();</span>
+         <span class="tok-n">zinsbetrag</span> <span class="tok-o">=</span> <span class="tok-mf">2.5d</span><span class="tok-p">;</span> <span class="tok-c1">// 2.5% Zinsen</span>
+     <span class="tok-p">}</span>
 
-     <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">zinsenGutschreiben</span><span class="tok-o">()</span> <span class="tok-o">{</span>
-         <span class="tok-kt">int</span> <span class="tok-n">saldo</span> <span class="tok-o">=</span> <span class="tok-n">getKontostand</span><span class="tok-o">();</span>
-         <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">saldo</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-             <span class="tok-n">einzahlen</span><span class="tok-o">(</span><span class="tok-n">saldo</span> <span class="tok-o">*</span> <span class="tok-n">zinsbetrag</span> <span class="tok-o">/</span> <span class="tok-mi">100</span><span class="tok-o">);</span>
-         <span class="tok-o">}</span>
-     <span class="tok-o">}</span>
-<span class="tok-o">}</span></code></pre>
+     <span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">zinsenGutschreiben</span><span class="tok-p">()</span> <span class="tok-p">{</span>
+         <span class="tok-kt">int</span> <span class="tok-n">saldo</span> <span class="tok-o">=</span> <span class="tok-n">getKontostand</span><span class="tok-p">();</span>
+         <span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">saldo</span> <span class="tok-o">&gt;</span> <span class="tok-mi">0</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+             <span class="tok-n">einzahlen</span><span class="tok-p">(</span><span class="tok-n">saldo</span> <span class="tok-o">*</span> <span class="tok-n">zinsbetrag</span> <span class="tok-o">/</span> <span class="tok-mi">100</span><span class="tok-p">);</span>
+         <span class="tok-p">}</span>
+     <span class="tok-p">}</span>
+<span class="tok-p">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -787,10 +792,10 @@ normalen Konto:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">PremiumKonto</span> <span class="tok-n">premium</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">();</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">PremiumKonto</span> <span class="tok-n">premium</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-p">();</span>
 
-<span class="tok-n">premium</span><span class="tok-o">.</span><span class="tok-na">einzahlen</span><span class="tok-o">(</span><span class="tok-mi">50</span><span class="tok-o">);</span> <span class="tok-c1">//geerbte Methode</span>
-<span class="tok-n">premium</span><span class="tok-o">.</span><span class="tok-na">zinsenGutschreiben</span><span class="tok-o">();</span></code></pre>
+<span class="tok-n">premium</span><span class="tok-p">.</span><span class="tok-na">einzahlen</span><span class="tok-p">(</span><span class="tok-mi">50</span><span class="tok-p">);</span> <span class="tok-c1">//geerbte Methode</span>
+<span class="tok-n">premium</span><span class="tok-p">.</span><span class="tok-na">zinsenGutschreiben</span><span class="tok-p">();</span></code></pre>
 </div>
 </div>
 <div class="sect4">
@@ -818,12 +823,12 @@ gehört:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">Konto</span> <span class="tok-n">konto7</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">();</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">Konto</span> <span class="tok-n">konto7</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-p">();</span>
 
-<span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">konto6</span> <span class="tok-k">instanceof</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-    <span class="tok-n">Premiumkonto</span> <span class="tok-n">premium2</span> <span class="tok-o">=</span> <span class="tok-o">(</span><span class="tok-n">PremiumKonto</span><span class="tok-o">)</span> <span class="tok-n">konto7</span><span class="tok-o">;</span>
-    <span class="tok-n">premium2</span><span class="tok-o">.</span><span class="tok-na">zinsenGutschreiben</span><span class="tok-o">();</span>
-<span class="tok-o">}</span></code></pre>
+<span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">konto6</span> <span class="tok-k">instanceof</span> <span class="tok-n">PremiumKonto</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+    <span class="tok-n">Premiumkonto</span> <span class="tok-n">premium2</span> <span class="tok-o">=</span> <span class="tok-p">(</span><span class="tok-n">PremiumKonto</span><span class="tok-p">)</span> <span class="tok-n">konto7</span><span class="tok-p">;</span>
+    <span class="tok-n">premium2</span><span class="tok-p">.</span><span class="tok-na">zinsenGutschreiben</span><span class="tok-p">();</span>
+<span class="tok-p">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -846,19 +851,19 @@ sein, kann man diesen als statisch deklarieren:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">PremiumKonto</span> <span class="tok-kd">extends</span> <span class="tok-n">Konto</span> <span class="tok-o">{</span>
-     <span class="tok-kd">private</span> <span class="tok-kd">static</span> <span class="tok-kt">double</span> <span class="tok-n">zinsbetrag</span> <span class="tok-o">=</span> <span class="tok-mf">2.5d</span><span class="tok-o">;</span> <span class="tok-c1">// 2.5% Zinsen</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">PremiumKonto</span> <span class="tok-kd">extends</span> <span class="tok-n">Konto</span> <span class="tok-p">{</span>
+     <span class="tok-kd">private</span> <span class="tok-kd">static</span> <span class="tok-kt">double</span> <span class="tok-n">zinsbetrag</span> <span class="tok-o">=</span> <span class="tok-mf">2.5d</span><span class="tok-p">;</span> <span class="tok-c1">// 2.5% Zinsen</span>
 
-     <span class="tok-o">...</span>
+     <span class="tok-p">...</span>
 
-     <span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">double</span> <span class="tok-nf">getZinsbetrag</span><span class="tok-o">()</span> <span class="tok-o">{</span>
-         <span class="tok-k">return</span> <span class="tok-n">zinsbetrag</span><span class="tok-o">;</span>
-     <span class="tok-o">}</span>
+     <span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">double</span> <span class="tok-nf">getZinsbetrag</span><span class="tok-p">()</span> <span class="tok-p">{</span>
+         <span class="tok-k">return</span> <span class="tok-n">zinsbetrag</span><span class="tok-p">;</span>
+     <span class="tok-p">}</span>
 
-     <span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">void</span> <span class="tok-nf">setZinsbetrag</span><span class="tok-o">(</span><span class="tok-kt">double</span> <span class="tok-n">wert</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-         <span class="tok-n">zinsbetrag</span> <span class="tok-o">=</span> <span class="tok-n">wert</span><span class="tok-o">;</span>
-     <span class="tok-o">}</span>
- <span class="tok-o">}</span></code></pre>
+     <span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">void</span> <span class="tok-nf">setZinsbetrag</span><span class="tok-p">(</span><span class="tok-kt">double</span> <span class="tok-n">wert</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+         <span class="tok-n">zinsbetrag</span> <span class="tok-o">=</span> <span class="tok-n">wert</span><span class="tok-p">;</span>
+     <span class="tok-p">}</span>
+ <span class="tok-p">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -868,10 +873,10 @@ den Klassennamen aufrufen darf.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">PremiumKonto</span><span class="tok-o">.</span><span class="tok-na">setZinsbetrag</span><span class="tok-o">(</span><span class="tok-mf">3d</span><span class="tok-o">);</span> <span class="tok-c1">// Zinsen auf 3% erhöhen</span>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-n">PremiumKonto</span><span class="tok-p">.</span><span class="tok-na">setZinsbetrag</span><span class="tok-p">(</span><span class="tok-mf">3d</span><span class="tok-p">);</span> <span class="tok-c1">// Zinsen auf 3% erhöhen</span>
 
-<span class="tok-n">PremiumKonto</span> <span class="tok-n">premium3</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-o">();</span>
-<span class="tok-n">premium3</span><span class="tok-o">.</span><span class="tok-na">setZinsbetrag</span><span class="tok-o">(</span><span class="tok-mf">3d</span><span class="tok-o">);</span></code></pre>
+<span class="tok-n">PremiumKonto</span> <span class="tok-n">premium3</span> <span class="tok-o">=</span> <span class="tok-k">new</span> <span class="tok-n">PremiumKonto</span><span class="tok-p">();</span>
+<span class="tok-n">premium3</span><span class="tok-p">.</span><span class="tok-na">setZinsbetrag</span><span class="tok-p">(</span><span class="tok-mf">3d</span><span class="tok-p">);</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -911,7 +916,7 @@ behandelt.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-12-15 13:24:42 UTC
+Last updated 2021-02-13 12:01:19 UTC
 </div>
 </div>
 </body>

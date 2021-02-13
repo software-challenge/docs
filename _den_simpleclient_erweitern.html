@@ -432,8 +432,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+pre { line-height: 125%; }
+td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
+td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .listingblock .pygments .hll { background-color: #ffffcc }
-.listingblock .pygments, .listingblock .pygments code { background: #f8f8f8; }
+.listingblock .pygments { background: #f8f8f8; }
 .listingblock .pygments .tok-c { color: #408080; font-style: italic } /* Comment */
 .listingblock .pygments .tok-err { border: 1px solid #FF0000 } /* Error */
 .listingblock .pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
@@ -557,10 +562,10 @@ neuen Klasse:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">MyLogic</span> <span class="tok-kd">implements</span> <span class="tok-n">IGameHandler</span> <span class="tok-o">{</span>
-    <span class="tok-kd">private</span> <span class="tok-n">Starter</span> <span class="tok-n">client</span><span class="tok-o">;</span>
-    <span class="tok-kd">private</span> <span class="tok-n">GameState</span> <span class="tok-n">gameState</span><span class="tok-o">;</span>
-    <span class="tok-kd">private</span> <span class="tok-n">Player</span> <span class="tok-n">currentPlayer</span><span class="tok-o">;</span></code></pre>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">MyLogic</span> <span class="tok-kd">implements</span> <span class="tok-n">IGameHandler</span> <span class="tok-p">{</span>
+    <span class="tok-kd">private</span> <span class="tok-n">Starter</span> <span class="tok-n">client</span><span class="tok-p">;</span>
+    <span class="tok-kd">private</span> <span class="tok-n">GameState</span> <span class="tok-n">gameState</span><span class="tok-p">;</span>
+    <span class="tok-kd">private</span> <span class="tok-n">Player</span> <span class="tok-n">currentPlayer</span><span class="tok-p">;</span></code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -573,9 +578,9 @@ Diese wird später noch gebraucht</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-nf">MyLogic</span><span class="tok-o">(</span><span class="tok-n">Starter</span> <span class="tok-n">client</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-    <span class="tok-k">this</span><span class="tok-o">.</span><span class="tok-na">client</span> <span class="tok-o">=</span> <span class="tok-n">client</span><span class="tok-o">;</span>
-<span class="tok-o">}</span></code></pre>
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-nf">MyLogic</span><span class="tok-p">(</span><span class="tok-n">Starter</span> <span class="tok-n">client</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+    <span class="tok-k">this</span><span class="tok-p">.</span><span class="tok-na">client</span> <span class="tok-o">=</span> <span class="tok-n">client</span><span class="tok-p">;</span>
+<span class="tok-p">}</span></code></pre>
 </div>
 </div>
 <div class="ulist">
@@ -588,37 +593,37 @@ Diese wird später noch gebraucht</p>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-nd">@Override</span>
-<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">gameEnded</span><span class="tok-o">(</span><span class="tok-n">GameResult</span> <span class="tok-n">result</span><span class="tok-o">,</span> <span class="tok-n">PlayerColor</span> <span class="tok-n">color</span><span class="tok-o">,</span> <span class="tok-n">String</span> <span class="tok-n">errorMessage</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">gameEnded</span><span class="tok-p">(</span><span class="tok-n">GameResult</span> <span class="tok-n">result</span><span class="tok-p">,</span> <span class="tok-n">PlayerColor</span> <span class="tok-n">color</span><span class="tok-p">,</span> <span class="tok-n">String</span> <span class="tok-n">errorMessage</span><span class="tok-p">)</span> <span class="tok-p">{</span>
     <span class="tok-c1">// Hier muss nichts getan werden</span>
-<span class="tok-o">}</span>
+<span class="tok-p">}</span>
 
 <span class="tok-nd">@Override</span>
-<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onUpdate</span><span class="tok-o">(</span><span class="tok-n">Player</span> <span class="tok-n">player</span><span class="tok-o">,</span> <span class="tok-n">Player</span> <span class="tok-n">otherPlayer</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onUpdate</span><span class="tok-p">(</span><span class="tok-n">Player</span> <span class="tok-n">player</span><span class="tok-p">,</span> <span class="tok-n">Player</span> <span class="tok-n">otherPlayer</span><span class="tok-p">)</span> <span class="tok-p">{</span>
     <span class="tok-c1">// Der Spieler wurde aktualisiert</span>
-    <span class="tok-k">this</span><span class="tok-o">.</span><span class="tok-na">player</span> <span class="tok-o">=</span> <span class="tok-n">player</span><span class="tok-o">;</span>
-<span class="tok-o">}</span>
+    <span class="tok-k">this</span><span class="tok-p">.</span><span class="tok-na">player</span> <span class="tok-o">=</span> <span class="tok-n">player</span><span class="tok-p">;</span>
+<span class="tok-p">}</span>
 
 <span class="tok-nd">@Override</span>
-<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onUpdate</span><span class="tok-o">(</span><span class="tok-n">GameState</span> <span class="tok-n">gameState</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onUpdate</span><span class="tok-p">(</span><span class="tok-n">GameState</span> <span class="tok-n">gameState</span><span class="tok-p">)</span> <span class="tok-p">{</span>
     <span class="tok-c1">// Ein neuer Spielstatus, d.h. etwas ist geschehen. Deshalb</span>
     <span class="tok-c1">// alles aktualisieren.</span>
-    <span class="tok-k">this</span><span class="tok-o">.</span><span class="tok-na">gameState</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-o">;</span>
-    <span class="tok-k">this</span><span class="tok-o">.</span><span class="tok-na">player</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-o">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-o">();</span>
-<span class="tok-o">}</span>
+    <span class="tok-k">this</span><span class="tok-p">.</span><span class="tok-na">gameState</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-p">;</span>
+    <span class="tok-k">this</span><span class="tok-p">.</span><span class="tok-na">player</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-p">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-p">();</span>
+<span class="tok-p">}</span>
 
 <span class="tok-nd">@Override</span>
-<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">sendAction</span><span class="tok-o">(</span><span class="tok-n">Move</span> <span class="tok-n">move</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">sendAction</span><span class="tok-p">(</span><span class="tok-n">Move</span> <span class="tok-n">move</span><span class="tok-p">)</span> <span class="tok-p">{</span>
     <span class="tok-c1">// Einen Zug an den Server senden</span>
-    <span class="tok-n">starter</span><span class="tok-o">.</span><span class="tok-na">sendMove</span><span class="tok-o">(</span><span class="tok-n">move</span><span class="tok-o">);</span>
-<span class="tok-o">}</span>
+    <span class="tok-n">starter</span><span class="tok-p">.</span><span class="tok-na">sendMove</span><span class="tok-p">(</span><span class="tok-n">move</span><span class="tok-p">);</span>
+<span class="tok-p">}</span>
 
 <span class="tok-nd">@Override</span>
-<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onRequestAction</span><span class="tok-o">()</span> <span class="tok-o">{</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onRequestAction</span><span class="tok-p">()</span> <span class="tok-p">{</span>
     <span class="tok-c1">// Ich soll einen Zug machen</span>
-    <span class="tok-n">Move</span> <span class="tok-n">move</span><span class="tok-o">;</span>
+    <span class="tok-n">Move</span> <span class="tok-n">move</span><span class="tok-p">;</span>
     <span class="tok-c1">// ... Hier muss die Logik rein, die einen Zug findet.</span>
-    <span class="tok-n">sendAction</span><span class="tok-o">(</span><span class="tok-n">move</span><span class="tok-o">);</span>
-<span class="tok-o">}</span></code></pre>
+    <span class="tok-n">sendAction</span><span class="tok-p">(</span><span class="tok-n">move</span><span class="tok-p">);</span>
+<span class="tok-p">}</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -693,30 +698,30 @@ leicht in ein Programm überführt werden:</p>
 <span class="tok-cm">  *</span>
 <span class="tok-cm">  * start gibt die Position an, wo der Reststapel beginnt (am Anfang: start = 0)</span>
 <span class="tok-cm">  */</span>
- <span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">void</span> <span class="tok-nf">sortiere</span><span class="tok-o">(</span><span class="tok-kt">int</span><span class="tok-o">[]</span> <span class="tok-n">a</span><span class="tok-o">,</span> <span class="tok-kt">int</span> <span class="tok-n">start</span><span class="tok-o">)</span> <span class="tok-o">{</span>
+ <span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">void</span> <span class="tok-nf">sortiere</span><span class="tok-p">(</span><span class="tok-kt">int</span><span class="tok-o">[]</span> <span class="tok-n">a</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">start</span><span class="tok-p">)</span> <span class="tok-p">{</span>
      <span class="tok-c1">//Position der kleinsten Karte</span>
-     <span class="tok-kt">int</span> <span class="tok-n">pos</span> <span class="tok-o">=</span> <span class="tok-n">start</span><span class="tok-o">;</span>
+     <span class="tok-kt">int</span> <span class="tok-n">pos</span> <span class="tok-o">=</span> <span class="tok-n">start</span><span class="tok-p">;</span>
 
      <span class="tok-c1">// Gehe Array durch und merke die Position der kleinsten Karte </span><i class="conum" data-value="1"></i><b>(1)</b>
-     <span class="tok-k">for</span> <span class="tok-o">(</span><span class="tok-kt">int</span> <span class="tok-n">i</span> <span class="tok-o">=</span> <span class="tok-n">start</span><span class="tok-o">+</span><span class="tok-mi">1</span><span class="tok-o">;</span> <span class="tok-n">i</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-o">.</span><span class="tok-na">length</span><span class="tok-o">;</span> <span class="tok-n">i</span><span class="tok-o">++)</span> <span class="tok-o">{</span>
+     <span class="tok-k">for</span> <span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">i</span> <span class="tok-o">=</span> <span class="tok-n">start</span><span class="tok-o">+</span><span class="tok-mi">1</span><span class="tok-p">;</span> <span class="tok-n">i</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-p">.</span><span class="tok-na">length</span><span class="tok-p">;</span> <span class="tok-n">i</span><span class="tok-o">++</span><span class="tok-p">)</span> <span class="tok-p">{</span>
          <span class="tok-c1">// Wenn eine kleinere Karte gefunden wurde...</span>
-         <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">i</span><span class="tok-o">]</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">])</span> <span class="tok-o">{</span>
+         <span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">i</span><span class="tok-o">]</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">]</span><span class="tok-p">)</span> <span class="tok-p">{</span>
 
-             <span class="tok-o">...</span> <span class="tok-n">neue</span> <span class="tok-n">Position</span> <span class="tok-n">merken</span>
-             <span class="tok-n">pos</span> <span class="tok-o">=</span> <span class="tok-n">i</span><span class="tok-o">;</span>
-         <span class="tok-o">}</span>
-     <span class="tok-o">}</span>
+             <span class="tok-p">...</span> <span class="tok-n">neue</span> <span class="tok-n">Position</span> <span class="tok-n">merken</span>
+             <span class="tok-n">pos</span> <span class="tok-o">=</span> <span class="tok-n">i</span><span class="tok-p">;</span>
+         <span class="tok-p">}</span>
+     <span class="tok-p">}</span>
 
      <span class="tok-c1">// kleinste Karte mit erster Karte des Reststapels tauschen  </span><i class="conum" data-value="2"></i><b>(2)</b> <i class="conum" data-value="3"></i><b>(3)</b>
-     <span class="tok-kt">int</span> <span class="tok-n">temp</span> <span class="tok-o">=</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">start</span><span class="tok-o">];</span> <span class="tok-c1">// erste Karte merken</span>
-     <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">start</span><span class="tok-o">]</span> <span class="tok-o">=</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">];</span>   <span class="tok-c1">// kleinste Karte nach vorne bringen</span>
-     <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">]</span> <span class="tok-o">=</span> <span class="tok-n">temp</span><span class="tok-o">;</span>       <span class="tok-c1">// gemerkte Karte in die Mitte des Stapels schreiben</span>
+     <span class="tok-kt">int</span> <span class="tok-n">temp</span> <span class="tok-o">=</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">start</span><span class="tok-o">]</span><span class="tok-p">;</span> <span class="tok-c1">// erste Karte merken</span>
+     <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">start</span><span class="tok-o">]</span> <span class="tok-o">=</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">]</span><span class="tok-p">;</span>   <span class="tok-c1">// kleinste Karte nach vorne bringen</span>
+     <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">]</span> <span class="tok-o">=</span> <span class="tok-n">temp</span><span class="tok-p">;</span>       <span class="tok-c1">// gemerkte Karte in die Mitte des Stapels schreiben</span>
 
      <span class="tok-c1">// Wenn es noch einen Reststapel gibt, soll dieser weitersortiert werden </span><i class="conum" data-value="4"></i><b>(4)</b>
-     <span class="tok-k">if</span> <span class="tok-o">(</span><span class="tok-n">start</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-o">.</span><span class="tok-na">length</span><span class="tok-o">)</span> <span class="tok-o">{</span>
-          <span class="tok-n">sortiere</span><span class="tok-o">(</span><span class="tok-n">a</span><span class="tok-o">,</span> <span class="tok-n">start</span><span class="tok-o">+</span><span class="tok-mi">1</span><span class="tok-o">);</span>
-     <span class="tok-o">}</span>
- <span class="tok-o">}</span></code></pre>
+     <span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">start</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-p">.</span><span class="tok-na">length</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+          <span class="tok-n">sortiere</span><span class="tok-p">(</span><span class="tok-n">a</span><span class="tok-p">,</span> <span class="tok-n">start</span><span class="tok-o">+</span><span class="tok-mi">1</span><span class="tok-p">);</span>
+     <span class="tok-p">}</span>
+ <span class="tok-p">}</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -753,7 +758,7 @@ Karten) aus.</td>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-12-15 13:24:42 UTC
+Last updated 2021-02-13 12:01:19 UTC
 </div>
 </div>
 </body>
