@@ -254,13 +254,13 @@ Resourcenverbrauch und Instabilität der Anwendung.
 [[tests-ohne-gui]]
 === Massentests mit Server ohne graphische Oberfläche
 
-Wenn Sie Massentests mit ihrem Computerspieler ausführen wollen, um Beispielsweise seine
-Gewinnchance gegenüber einer früheren Version zu testen, wobei sich die beiden Spieler als Startspieler abwechseln,
-gibt es zwei Varianten:
+Massentests mit dem eigenen Computerspieler können sehr nützlich sein, beispeilsweise um die Stärke gegenüber einer früheren Version zu Testen.
+Dabei gibt es zwei Varianten:
 
 ==== Variante mit TestClient
 
-Starten sie den TestClient:
+Der TestClient muss vom Terminal mit den entsprechenden Argumenten aufgerufen werden.
+Diese werden unter den Beispielen näher erläutert.
 
 Unter Linux:
 
@@ -287,14 +287,14 @@ java -jar -Dlogback.configurationFile=logback-tests.xml test-client.jar ^
     --start-server ^
     --port 13051
 
-NOTE: Sie können hier auch manuell einen Server vorher starten, wie bei der Variante ohne TestClient, allerdings kümmert der
-TestClient sich bei Angabe des Arguments `--start-server` gleich selber darum. Sie sollten lediglich aufpassen, dass
-nicht zwei Server auf dem selben Port laufen.
+NOTE: Sie können hier auch manuell einen Server vorher starten, wie bei der Variante ohne TestClient,
+allerdings kümmert der TestClient sich bei Angabe des Arguments `--start-server` gleich selber darum.
+Sie sollten lediglich aufpassen, dass nicht versucht wird, zwei Server auf dem selben Port zu starten.
 
 ===== Argumente des TestClients
 
 |===
-| Attribut				| Standardwert (Typ)	| Kurzbeschreibung
+| Attribut				| Standardwert (Typ)	| Beschreibung
 
 | --tests 				| 100 (int)
 | Anzahl der Tests, die gespielt werden sollen
@@ -315,62 +315,65 @@ nicht zwei Server auf dem selben Port laufen.
 | Deaktiviere ausscheiden durch Timeouts. Kann durch `--no-timeout1` bzw. `--no-timeout2` für beide Spieler unabhängig gesetzt werden.
 
 | --start-server	| false (bool)
-| Starte einen Server auf dem angegebenen Port vor dem Starten der Clients
+| Starte einen Server auf dem angegebenen Port vor dem Starten der Clients.
+
+| --server	| 'server.jar aus dem Classpath' (Dateipfad)
+| Gib einen bestimmten server an, der für die tests gestartet werden soll.
 
 | --port					| 13051 (int)
-| Der Port, auf dem der TestClient die Clients startet
+| Der Port, auf dem der Server läuft.
 
 | --host					| localhost (IP)
-| Das Gerät, auf dem der Server läuft
+| Die Adresse, auf dem der Server läuft.
 
-| --loglevel			| INFO - as defined in logback XML (https://logback.qos.ch/apidocs/ch/qos/logback/classic/Level.html[Level])
+| --loglevel			| INFO - ensprechend der logback-tests.xml (https://logback.qos.ch/apidocs/ch/qos/logback/classic/Level.html[Level])
 | Setzt das Loglevel, um ausführliche oder besonders kompakte Ausgaben zu erhalten.
 
 |===
 
-NOTE: Boolesche Parameter werden als true gewertet, sobald sie angegeben werden. Ein Wert hinter dem Parameter hat keine Wirkung.
+NOTE: Boolesche Parameter werden als true gewertet, sobald sie angegeben werden.
+Ein Wert hinter dem Parameter hat keine Wirkung.
 
 Bei Argumenten, die nicht angegeben wurden, werden die Standardwerte aus der Tabelle verwendet.
 Die Ausgabe der Daten erfolgt nach jedem Spiel anhand von gerundeten Werten.
 Der TestClient beendet sich selbst, nachdem alle Spiele gespielt wurden.
 
-Die Ergebnisse der Spiele werden für den jeweiligen Spielernamen vom Server
-zusammengezählt. Dies wird auch über mehrere Starts des TestClients getan. Die
-Ergebnisse werden erst zurückgesetzt, wenn der Server neu gestartet wird. Achten
-Sie also darauf, den Server neuzustarten oder einen anderen Spielernamen zu
-verwenden, wenn Sie den Spieler verändern.
+Die Ergebnisse der Spiele werden für den jeweiligen Spielernamen vom Server zusammengezählt.
+Dies wird auch über mehrere Starts des TestClients getan.
+Die Ergebnisse werden erst zurückgesetzt, wenn der Server neu gestartet wird.
+Achte also nach einer Veränderung der Spieler darauf, den Server neuzustarten oder einen anderen Spielernamen zu verwenden.
 
 ==== Variante ohne TestClient
 
-Starten sie den Server:
+Starte den Server aus dem Terminal:
 
 [source,sh]
 ....
 java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051
 ....
 
-Starten Sie ein Spiel mit Reservierungscode (siehe Spielverlauf in der XML-Dokumentation).
-Aktivieren Sie mit dem erstellten Administratorclient den Testmodus:
+Starte ein Spiel mit Reservierungscode (siehe Spielverlauf in der XML-Dokumentation).
+Aktiviere mit dem erstellten Administratorclient den Testmodus:
 
 [source,xml]
 ....
-<testModus testModus="true"/>
+<testMode testModus="true"/>
 ....
-Dies liefert die Antwort
 
+Darauf antwortet der Server:
 [source,xml]
 ....
 <testing testModus="true"/>
 ....
 Mit false als entsprechenden Parameter kann dieser wieder deaktiviert werden.
-Nun können sie jederzeit die Testdaten der Spieler anhand ihres Anzeigenamens erfragen (es ist zu beachten, dass dafür die Spieler unterschiedliche Anzeigenamen haben müssen):
+Nun können sie jederzeit die Testdaten der Spieler anhand ihres Anzeigenamens erfragen - dazu müssen die Spieler natürlich unterschiedliche Anzeigenamen haben:
 
 [source,xml]
 ....
 <scoreForPlayer displayName="player1" />
 ....
-Der Server antwortet mit:
 
+Der Server antwortet mit:
 [source,xml]
 ....
 <playerScore>
