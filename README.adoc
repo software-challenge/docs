@@ -1,55 +1,45 @@
 = Software Challenge Endbenutzer-Dokumentation-Dokumentation
-Sven Koschnicke <svk@informatik.uni-kiel.de>
-2015-11-04
-:toc:
-:toc-title: Inhalt
 
-In diesem Repository befindet sich die Endbenutzer-Dokumentation fuer
-die Software Challenge. Zielgruppe sind Schüler und Lehrer, die an
-der Software Challenge teilnehmen.
+In diesem Repository befindet sich die Endbenutzer-Dokumentation fuer die Software Challenge.
+Zielgruppe sind Schüler und Lehrer, die an der Software Challenge teilnehmen.
+
+:toc:
 
 == Beitragen
 
-****
-Wir freuen uns über sämtliche Verbesserungsvorschläge. Die Dokumentation kann
-direkt auf hier auf GitHub editiert werden, einzige Voraussetzung ist eine
-kostenlose Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
-auswählen (ein guter Startpunkt ist die Datei
-https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc[index.adoc]
-welche Verweise auf alle Sektionen der Dokumentation enthält) und dann auf den
-Stift oben rechts klicken. Damit wird von GitHub automatisch ein Fork und ein
-Pull Request erstellt. Alternativ auch gern eine E-Mail an
-svk@informatik.uni-kiel.de.
-****
+Wir freuen uns über sämtliche Verbesserungsvorschläge.
+Die Dokumentation kann direkt auf hier auf GitHub editiert werden,
+einzige Voraussetzung ist eine kostenlose Registrierung bei GitHub.
+Ist man angemeldet, kann man ein Dokument auswählen
+(ein guter Startpunkt ist die Datei https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc[index.adoc],
+die Verweise auf alle Sektionen der Dokumentation enthält)
+und dann auf den Stift oben rechts klicken.
+Damit wird von GitHub automatisch ein Fork und ein dazugehöriges Pull Request erstellt.
+Alternativ auch gern eine E-Mail an svk@informatik.uni-kiel.de oder eine Nachricht im https://discord.gg/jhyF7EU[Discord].
 
 == Konventionen
 
-* Die Hauptdatei ist `index.adoc` im Wurzelverzeichnis. Alle
-  anderen Dateien werden per `include`-Anweisung in die Hauptdatei
-  eingebunden.
+* Die Hauptdatei ist `index.adoc` im Wurzelverzeichnis.
+  Alle anderen Dateien werden per `include`-Anweisung in die Hauptdatei eingebunden.
 * Dateinamen und Verzeichnisnahmen sollten nur die Zeichen `a` bis `z`
   sowie Bindestriche (`-`) enthalten.
-* Sprache fuer Dateinamen, Verzeichnisnamen sowie Inhalt ist
-  Deutsch. Sprache fuer Attribute und sonstige Interna ist Englisch.
+* Sprache fuer Dateinamen, Verzeichnisnamen sowie Inhalt ist Deutsch.
+  Sprache fuer Attribute und sonstige Interna ist Englisch.
 * Als Endung fuer Asciidoc wird `.adoc` benutzt.
-* Es wird des ATX-Format fuer Ueberschriften verwendet (also `=`,
-  `==`, `===` etc.)
-* Keine Umbrüche innerhalb von Paragraphen. Für eine lesbare Darstellung der Quellen sollte ein Editor mit aktiviertem Soft-Wrap verendet werden.
+* Es wird des ATX-Format fuer Ueberschriften verwendet (also `=`, `==`, `===` etc.)
+* Zeilenumbrüche jeweils am Ende von Sätzen bzw semantischen Grenzen, orientiert an https://sembr.org[Semantic Line Breaks].
 
 == Konvertierung
 
-Um schnell starten zu können, existiert ein setup, das folgendermaßen aufgerufen werden kann.
+Um schnell starten zu können, existiert ein setup-skript, das folgendermaßen aufgerufen werden kann.
 
-```
+....
 ./docs setup
-```
+....
 
-Dies installiert die beiden Ruby-Gems `asciidoctor` und `pygments.rb` (für
-Syntax-Highlighting der Quellcodes), außerdem das Gem `asciidoctor-pdf`,
-welches aber im Moment nur im "Prerelease"-Status ist, es wird also per
-`gem install --prerelease asciidoctor-pdf` installiert. +
-Schließlich installiert es auch den post-commit-hook,
-sodass pushes zu master automatisch auf der Website landen.
+Dies installiert die beiden Ruby-Gems `asciidoctor` und `pygments.rb` (für Syntax-Highlighting der Quellcodes),
+außerdem das Gem `asciidoctor-pdf`, welches aber im Moment nur im "Prerelease"-Status ist, es wird also per `gem install --prerelease asciidoctor-pdf` installiert. +
+Schließlich installiert es auch den post-commit-hook, sodass pushes zu master automatisch auf der Website landen.
 
 Um alles in HTML zu Übersetzen, sollte folgender Befehl verwendet werden:
 
@@ -57,8 +47,8 @@ Um alles in HTML zu Übersetzen, sollte folgender Befehl verwendet werden:
 ./docs generate
 ....
 
-Wenn zusätzlich die Option `pdf` angehängt wird, wird auch asciidoctor-pdf
-aufgerufen. Aus Geschwindigkeitsgründen wird darauf standardmäßig verzichtet.
+Wenn zusätzlich die Option `pdf` angehängt wird, wird auch asciidoctor-pdf aufgerufen.
+Aus Geschwindigkeitsgründen wird darauf standardmäßig verzichtet.
 
 Intern wird `asciidoctor` verwendet:
 
@@ -68,35 +58,26 @@ asciidoctor -D out index.adoc
 
 Die fertige HTML-Version befindet sich dann unter `out/index.html`.
 
-Bei Bedarf kann die Dokumentation auch in ein anderes Format
-konvertiert werden, Details hierzu finden sich in der
-http://asciidoctor.org/docs/user-manual/#processing-your-content[AsciiDoctor
-Dokumentation].
+Bei Bedarf kann die Dokumentation auch in ein anderes Format konvertiert werden,
+Details hierzu finden sich in der http://asciidoctor.org/docs/user-manual/#processing-your-content[AsciiDoctor Dokumentation].
 
 === Live-Preview
 
-> Noch nicht vollständig getestet. Im Moment sehr langsam, da alles neu
-übersetzt wird.
+> Noch nicht vollständig getestet. Im Moment sehr langsam, da alles neu übersetzt wird.
 
 Einen Live-Preview-Mode gibt es leider nicht direkt, aber es gibt
-http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/[verschiedene
-Wege um ein Live-Preview zu bekommen].
+http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/[verschiedene Wege um ein Live-Preview zu bekommen].
 Einer ist die Nutzung von `guard`. Dies kann durch folgenden Aufruf installiert werden:
 
-```
+....
 ./docs setup live
-```
+....
 Dies installiert dann die folgenden Gems: `guard guard-shell guard-livereload yajl-ruby`
 
-Ein passendes `Guardfile` liegt schon im Repository, man kann `guard` also
-einfach mittels `guard start` starten, und die Ausgabe im Verzeichnis `out` wird
-aktualisiert, sobald man etwas an den Quellen ändert.
+Ein passendes `Guardfile` liegt schon im Repository, man kann `guard` also einfach mittels `guard start` starten,
+und die Ausgabe im Verzeichnis `out` wird aktualisiert, sobald man etwas an den Quellen ändert.
 
-Wenn man dann noch die Browseransicht automatisch aktualisieren lassen will,
-muss man eine LiveReload Extension für
-http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-[Firefox]
-oder https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei[Chrome]
-installieren.
+Um die Browseransicht automatisch zu aktualisieren, installiere zusätzlich http://livereload.com/extensions/[die LiveReload extension].
 
 == Quickstart
 
@@ -105,22 +86,17 @@ installieren.
 * http://asciidoctor.org/docs/user-manual/[AsciiDoctor User Manual]
 * http://asciidoctor.org/docs/asciidoc-recommended-practices/[AsciiDoc Style Guide]
 
-Es werden häufig Links zu anderen Teilen des Dokumentes genutzt (die
-Dokumentation ist ein einzelnes großes Dokument). Diese haben die
-Syntax:
+Es werden häufig Links zu anderen Teilen des Dokumentes genutzt (die Dokumentation ist ein einzelnes großes Dokument).
+Diese haben folgenden Syntax:
 
 [source,asciidoc]
 <<Sektionslabel,anzuzeigender Linktext>>
 
-Wobei Sektionslabel über allen Überschriften stehen und die Syntax ist wie folgt:
+Sektionslabel stehen über allen Überschriften und werden mit doppelten eckigen Klammern definiert:
 
 [source,asciidoc]
-----
 [[labelname]]
-----
 
 == Deployment
 
-Das Deployment auf die öffentliche Seite wird automatisch bei jedem push in den
-master-Branch von GitHub durchgeführt. Dafür ist ein GitHub Actions Workflow
-zuständig, siehe `.github/workflows/auto-publish.yml`.
+Über einen .github/workflows/auto-publish.yml[GitHub Actions Workflow] wird die https://cau-kiel-tech-inf.github.io/socha-enduser-docs[öffentliche Seite] automatisch bei jedem push in den master-Branch auf Github aktualisiert.
