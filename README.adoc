@@ -4,7 +4,7 @@ In diesem Repository befindet sich die Endbenutzer-Dokumentation fuer die Softwa
 Zielgruppe sind Schüler und Lehrer, die an der Software Challenge teilnehmen.
 
 :toc:
-
+:toc-title: Inhalt
 == Beitragen
 
 Wir freuen uns über sämtliche Verbesserungsvorschläge.
@@ -27,15 +27,15 @@ Alternativ auch gern eine E-Mail an svk@informatik.uni-kiel.de oder eine Nachric
   Sprache fuer Attribute und sonstige Interna ist Englisch.
 * Als Endung fuer Asciidoc wird `.adoc` benutzt.
 * Es wird des ATX-Format fuer Ueberschriften verwendet (also `=`, `==`, `===` etc.)
-* Zeilenumbrüche jeweils am Ende von Sätzen bzw semantischen Grenzen, orientiert an https://sembr.org[Semantic Line Breaks].
+* Zeilenumbrüche jeweils am Ende von Sätzen bzw. semantischen Grenzen, orientiert an https://sembr.org[Semantic Line Breaks].
 
 == Konvertierung
 
 Um schnell starten zu können, existiert ein setup-skript, das folgendermaßen aufgerufen werden kann.
 
-....
+----
 ./docs setup
-....
+----
 
 Dies installiert die beiden Ruby-Gems `asciidoctor` und `pygments.rb` (für Syntax-Highlighting der Quellcodes),
 außerdem das Gem `asciidoctor-pdf`, welches aber im Moment nur im "Prerelease"-Status ist, es wird also per `gem install --prerelease asciidoctor-pdf` installiert. +
@@ -43,18 +43,18 @@ Schließlich installiert es auch den post-commit-hook, sodass pushes zu master a
 
 Um alles in HTML zu Übersetzen, sollte folgender Befehl verwendet werden:
 
-....
+----
 ./docs generate
-....
+----
 
 Wenn zusätzlich die Option `pdf` angehängt wird, wird auch asciidoctor-pdf aufgerufen.
 Aus Geschwindigkeitsgründen wird darauf standardmäßig verzichtet.
 
 Intern wird `asciidoctor` verwendet:
 
-....
+----
 asciidoctor -D out index.adoc
-....
+----
 
 Die fertige HTML-Version befindet sich dann unter `out/index.html`.
 
@@ -69,9 +69,9 @@ Einen Live-Preview-Mode gibt es leider nicht direkt, aber es gibt
 http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/[verschiedene Wege um ein Live-Preview zu bekommen].
 Einer ist die Nutzung von `guard`. Dies kann durch folgenden Aufruf installiert werden:
 
-....
+----
 ./docs setup live
-....
+----
 Dies installiert dann die folgenden Gems: `guard guard-shell guard-livereload yajl-ruby`
 
 Ein passendes `Guardfile` liegt schon im Repository, man kann `guard` also einfach mittels `guard start` starten,
@@ -90,12 +90,16 @@ Es werden häufig Links zu anderen Teilen des Dokumentes genutzt (die Dokumentat
 Diese haben folgenden Syntax:
 
 [source,asciidoc]
+----
 <<Sektionslabel,anzuzeigender Linktext>>
+----
 
 Sektionslabel stehen über allen Überschriften und werden mit doppelten eckigen Klammern definiert:
 
 [source,asciidoc]
+----
 [[labelname]]
+----
 
 == Deployment
 
