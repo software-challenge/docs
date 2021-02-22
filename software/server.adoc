@@ -117,13 +117,11 @@ Testserver>> und <<tests-ohne-gui, Massentests>> beschrieben.
 [[spielsituation-nachstellen]]
 === Spielsituation nachstellen
 
-Wenn Sie ein Fehlerverhalten Ihres Computerspielers beobachtet haben,
-das nur in einer bestimmten Situation in einem Spiel aufgetreten ist,
-kann es oft wünschenswert sein, diese Situation erneut nachspielen zu
-können, um den Computerspieler gezielt zu verbessern.
+Wenn ein Fehlerverhalten des Computerspielers nur in einer bestimmten Situation in einem Spiel auftritt,
+kann es oft wünschenswert sein, diese Situation erneut nachzuspielen um den Computerspieler gezielt zu verbessern.
 
-Dies ist zur Zeit nur auf etwas kompliziertem Wege möglich. Es folgt
-eine Schritt-für-Schritt Anleitung:
+Dies ist zur Zeit nur auf etwas kompliziertem Wege möglich.
+Es folgt eine Schritt-für-Schritt Anleitung:
 
 . Laden Sie das betreffende Replay aus dem Wettkampfsystem herunter
   (.xml.gz Datei).
@@ -287,9 +285,9 @@ java -jar -Dlogback.configurationFile=logback-tests.xml test-client.jar ^
     --start-server ^
     --port 13051
 
-NOTE: Sie können hier auch manuell einen Server vorher starten, wie bei der Variante ohne TestClient,
-allerdings kümmert der TestClient sich bei Angabe des Arguments `--start-server` gleich selber darum.
-Sie sollten lediglich aufpassen, dass nicht versucht wird, zwei Server auf dem selben Port zu starten.
+NOTE: Der TestClient kann sich auch mit einem bereits laufenden Server verbinden, wie bei der Variante ohne TestClient,
+bei Angabe des Arguments `--start-server` startet er jedoch einfach selbst einen.
+Wichtig ist, dass nicht versucht wird, zwei Server auf dem selben Port zu starten.
 
 ===== Argumente des TestClients
 
@@ -338,10 +336,9 @@ Bei Argumenten, die nicht angegeben wurden, werden die Standardwerte aus der Tab
 Die Ausgabe der Daten erfolgt nach jedem Spiel anhand von gerundeten Werten.
 Der TestClient beendet sich selbst, nachdem alle Spiele gespielt wurden.
 
-Die Ergebnisse der Spiele werden für den jeweiligen Spielernamen vom Server zusammengezählt.
-Dies wird auch über mehrere Starts des TestClients getan.
+Die Ergebnisse der Spiele werden für den jeweiligen Spielernamen vom Server zusammengezählt, auch über mehrere Starts des TestClients.
 Die Ergebnisse werden erst zurückgesetzt, wenn der Server neu gestartet wird.
-Achte also nach einer Veränderung der Spieler darauf, den Server neuzustarten oder einen anderen Spielernamen zu verwenden.
+Achte also nach einer Veränderung der Spieler darauf, den Server neuzustarten oder andere Spielernamen zu verwenden.
 
 ==== Variante ohne TestClient
 
@@ -366,7 +363,7 @@ Darauf antwortet der Server:
 <testing testModus="true"/>
 ....
 Mit false als entsprechenden Parameter kann dieser wieder deaktiviert werden.
-Nun können sie jederzeit die Testdaten der Spieler anhand ihres Anzeigenamens erfragen - dazu müssen die Spieler natürlich unterschiedliche Anzeigenamen haben:
+Nun können jederzeit die Testdaten der Spieler anhand ihres Anzeigenamens erfragt werden:
 
 [source,xml]
 ....
