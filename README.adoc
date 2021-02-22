@@ -7,14 +7,11 @@ Zielgruppe sind Schüler und Lehrer, die an der Software-Challenge teilnehmen.
 
 == Beitragen
 
-Wir freuen uns über sämtliche Verbesserungsvorschläge.
-Die Dokumentation kann direkt auf hier auf GitHub editiert werden,
-einzige Voraussetzung ist eine kostenlose Registrierung bei GitHub.
-Ist man angemeldet, kann man ein Dokument auswählen
-(ein guter Startpunkt ist die Datei https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc[index.adoc],
-die Verweise auf alle Sektionen der Dokumentation enthält)
-und dann auf den Stift oben rechts klicken.
-Damit wird von GitHub automatisch ein Fork und ein dazugehöriges Pull Request erstellt.
+Wir freuen uns über sämtliche Verbesserungsvorschläge. +
+Die Dokumentation kann direkt hier auf GitHub editiert werden, einzige Voraussetzung ist eine kostenlose Registrierung bei GitHub.
+Ist man angemeldet, kann man ein Dokument auswählen und dann auf den Stift oben rechts klicken.
+Ein guter Startpunkt ist die Datei https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc[index.adoc], die Verweise auf alle Sektionen der Dokumentation enthält.
+Damit wird von GitHub automatisch ein Fork und ein dazugehöriges Pull Request erstellt. +
 Alternativ auch gern eine E-Mail an svk@informatik.uni-kiel.de oder eine Nachricht im https://discord.gg/jhyF7EU[Discord].
 
 == Konventionen
@@ -28,6 +25,8 @@ Alternativ auch gern eine E-Mail an svk@informatik.uni-kiel.de oder eine Nachric
 * Als Endung fuer Asciidoc wird `.adoc` benutzt.
 * Es wird des ATX-Format fuer Ueberschriften verwendet (also `=`, `==`, `===` etc.)
 * Zeilenumbrüche jeweils am Ende von Sätzen bzw. semantischen Grenzen, orientiert an https://sembr.org[Semantic Line Breaks].
+* Commitnachrichten wird der Dateipfad der geänderten Datei oder des Ordners vorangestellt,
+  ggf. gekürzt um überflüssige Elemente (z.B. 'blokus/' statt 'spiele/blokus/').
 
 == Konvertierung
 
