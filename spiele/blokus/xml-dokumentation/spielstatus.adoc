@@ -37,16 +37,16 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 ----
 <state class="state" turn="Z" round="R" startPiece="P">
   <startTeam class="team">T</startTeam>
-  board
   blueShapes
   yellowShapes
   redShapes
   greenShapes
-  lastMoveMono
   validColors
   first
   second
+  board
   lastMove
+  lastMoveMono
 </state>
 ----
 
@@ -62,11 +62,11 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 <board>
   <fields>
     <field x="17" y="0" content="BLUE"/>
-    ...
+    [...]
     <field x="17" y="2" content="BLUE"/>
   </fields>
-  ...
-  </board>
+  [...]
+</board>
 ----
 
 `<board>` enthaelt `<field>` Tags für alle Felder, die bereits belegt sind.
@@ -79,7 +79,7 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 
 [source,xml]
 ----
-<blueShapes class="linked-hash-set">
+<blueShapes>
   <shape>MONO</shape>
   <shape>DOMINO</shape>
   <shape>TRIO_L</shape>
@@ -110,7 +110,7 @@ Die nicht gesetzten Steine werden durch `<shape>` Tags in einem `<blueShapes>`, 
 
 [source,xml]
 ----
-<lastMoveMono class="linked-hash-map">
+<lastMoveMono>
   <entry>
     <color>YELLOW</color>
     <boolean>true</boolean>
@@ -125,8 +125,7 @@ Jede Farbe, die alle Steine gesetzt hat, bekommt einen `<entry>` Tag. Dieser bes
 
 [source,xml]
 ----
-
-<validColors class="linked-hash-set">
+<validColors>
   <color>BLUE</color>
   <color>YELLOW</color>
   <color>RED</color>
@@ -175,124 +174,50 @@ Hier ist das XML eines kompletten beispielhaften Spielstatus, wie es der Compute
 ----
 <room roomId="cb3bc426-5c70-48b9-9307-943bc328b503">
   <data class="memento">
-    <state class="state" turn="1" round="1" startPiece="PENTO_V">
+    <state turn="70" round="18" startPiece="PENTO_L">
       <startTeam class="team">ONE</startTeam>
-      <board>
-        <field x="17" y="0" content="BLUE"/>
-        <field x="18" y="0" content="BLUE"/>
-        <field x="19" y="0" content="BLUE"/>
-        <field x="17" y="1" content="BLUE"/>
-        <field x="17" y="2" content="BLUE"/>
-      </board>
-      <blueShapes class="linked-hash-set">
+      <blueShapes/>
+      <yellowShapes>
         <shape>MONO</shape>
-        <shape>DOMINO</shape>
-        <shape>TRIO_L</shape>
-        <shape>TRIO_I</shape>
-        <shape>TETRO_O</shape>
-        <shape>TETRO_T</shape>
-        <shape>TETRO_I</shape>
-        <shape>TETRO_L</shape>
-        <shape>TETRO_Z</shape>
-        <shape>PENTO_L</shape>
-        <shape>PENTO_T</shape>
-        <shape>PENTO_S</shape>
-        <shape>PENTO_Z</shape>
-        <shape>PENTO_I</shape>
-        <shape>PENTO_P</shape>
-        <shape>PENTO_W</shape>
-        <shape>PENTO_U</shape>
-        <shape>PENTO_R</shape>
-        <shape>PENTO_X</shape>
-        <shape>PENTO_Y</shape>
-      </blueShapes>
-      <yellowShapes class="linked-hash-set">
-        <shape>MONO</shape>
-        <shape>DOMINO</shape>
-        <shape>TRIO_L</shape>
-        <shape>TRIO_I</shape>
-        <shape>TETRO_O</shape>
-        <shape>TETRO_T</shape>
-        <shape>TETRO_I</shape>
-        <shape>TETRO_L</shape>
-        <shape>TETRO_Z</shape>
-        <shape>PENTO_L</shape>
-        <shape>PENTO_T</shape>
-        <shape>PENTO_V</shape>
-        <shape>PENTO_S</shape>
-        <shape>PENTO_Z</shape>
-        <shape>PENTO_I</shape>
-        <shape>PENTO_P</shape>
-        <shape>PENTO_W</shape>
-        <shape>PENTO_U</shape>
-        <shape>PENTO_R</shape>
-        <shape>PENTO_X</shape>
-        <shape>PENTO_Y</shape>
       </yellowShapes>
-      <redShapes class="linked-hash-set">
+      <redShapes>
         <shape>MONO</shape>
         <shape>DOMINO</shape>
-        <shape>TRIO_L</shape>
-        <shape>TRIO_I</shape>
-        <shape>TETRO_O</shape>
-        <shape>TETRO_T</shape>
-        <shape>TETRO_I</shape>
-        <shape>TETRO_L</shape>
-        <shape>TETRO_Z</shape>
-        <shape>PENTO_L</shape>
-        <shape>PENTO_T</shape>
-        <shape>PENTO_V</shape>
-        <shape>PENTO_S</shape>
-        <shape>PENTO_Z</shape>
-        <shape>PENTO_I</shape>
-        <shape>PENTO_P</shape>
-        <shape>PENTO_W</shape>
-        <shape>PENTO_U</shape>
-        <shape>PENTO_R</shape>
-        <shape>PENTO_X</shape>
-        <shape>PENTO_Y</shape>
       </redShapes>
-      <greenShapes class="linked-hash-set">
+      <greenShapes>
         <shape>MONO</shape>
         <shape>DOMINO</shape>
         <shape>TRIO_L</shape>
         <shape>TRIO_I</shape>
-        <shape>TETRO_O</shape>
-        <shape>TETRO_T</shape>
-        <shape>TETRO_I</shape>
-        <shape>TETRO_L</shape>
-        <shape>TETRO_Z</shape>
-        <shape>PENTO_L</shape>
-        <shape>PENTO_T</shape>
-        <shape>PENTO_V</shape>
-        <shape>PENTO_S</shape>
-        <shape>PENTO_Z</shape>
-        <shape>PENTO_I</shape>
-        <shape>PENTO_P</shape>
-        <shape>PENTO_W</shape>
-        <shape>PENTO_U</shape>
-        <shape>PENTO_R</shape>
-        <shape>PENTO_X</shape>
-        <shape>PENTO_Y</shape>
       </greenShapes>
-      <lastMoveMono class="linked-hash-map"/>
-      <validColors class="linked-hash-set">
-        <color>BLUE</color>
+      <validColors>
         <color>YELLOW</color>
         <color>RED</color>
         <color>GREEN</color>
       </validColors>
-      <first displayName="One">
+      <first displayName="">
         <color class="team">ONE</color>
       </first>
-      <second displayName="Two">
+      <second displayName="">
         <color class="team">TWO</color>
       </second>
+      <board>
+        <field x="0" y="0" content="RED"/>
+        <field x="1" y="3" content="GREEN"/>
+        <field x="8" y="6" content="YELLOW"/>
+        <field x="5" y="9" content="BLUE"/>
+      </board>
       <lastMove class="sc.plugin2021.SetMove">
-        <piece color="BLUE" kind="PENTO_V" rotation="RIGHT" isFlipped="false">
-          <position x="17" y="0"/>
+        <piece color="BLUE" kind="MONO" rotation="NONE" isFlipped="false">
+          <position x="0" y="0"/>
         </piece>
       </lastMove>
+      <lastMoveMono>
+        <entry>
+          <color>BLUE</color>
+          <boolean>true</boolean>
+        </entry>
+      </lastMoveMono>
     </state>
   </data>
 </room>
