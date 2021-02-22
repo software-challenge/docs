@@ -1,9 +1,9 @@
-= Software Challenge Endbenutzer-Dokumentation-Dokumentation
+= Software-Challenge Endbenutzer-Dokumentation
 :toc:
 :toc-title: Inhalt
 
-In diesem Repository befindet sich die Endbenutzer-Dokumentation für die Software Challenge.
-Zielgruppe sind Schüler und Lehrer, die an der Software Challenge teilnehmen.
+In diesem Repository befindet sich die Endbenutzer-Dokumentation für die Software-Challenge.
+Zielgruppe sind Schüler und Lehrer, die an der Software-Challenge teilnehmen.
 
 == Beitragen
 
@@ -33,7 +33,6 @@ Alternativ auch gern eine E-Mail an svk@informatik.uni-kiel.de oder eine Nachric
 
 Um schnell starten zu können, existiert ein setup-skript, das folgendermaßen aufgerufen werden kann.
 
-[source,shell]
 ----
 ./docs setup
 ----
@@ -44,7 +43,6 @@ Schließlich installiert es auch den post-commit-hook, sodass pushes zu master a
 
 Um alles in HTML zu Übersetzen, sollte folgender Befehl verwendet werden:
 
-[source,shell]
 ----
 ./docs generate
 ----
@@ -54,7 +52,6 @@ Aus Geschwindigkeitsgründen wird darauf standardmäßig verzichtet.
 
 Intern wird `asciidoctor` verwendet:
 
-[source,shell]
 ----
 asciidoctor -D out index.adoc
 ----
@@ -72,7 +69,6 @@ Einen Live-Preview-Mode gibt es leider nicht direkt, aber es gibt
 http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/[verschiedene Wege um ein Live-Preview zu bekommen].
 Einer ist die Nutzung von `guard`. Dies kann durch folgenden Aufruf installiert werden:
 
-[source,shell]
 ----
 ./docs setup live
 ----
