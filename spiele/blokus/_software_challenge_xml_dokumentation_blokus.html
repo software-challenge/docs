@@ -433,9 +433,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 pre { line-height: 125%; }
-td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
-td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 .listingblock .pygments .hll { background-color: #ffffcc }
 .listingblock .pygments { background: #f8f8f8; }
@@ -1054,16 +1054,16 @@ Spieler ist, wird der initiale Spielstatus gesendet.</p>
 <div class="content">
 <pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;Z&quot;</span> <span class="tok-na">round=</span><span class="tok-s">&quot;R&quot;</span> <span class="tok-na">startPiece=</span><span class="tok-s">&quot;P&quot;</span><span class="tok-nt">&gt;</span>
   <span class="tok-nt">&lt;startTeam</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>T<span class="tok-nt">&lt;/startTeam&gt;</span>
-  board
   blueShapes
   yellowShapes
   redShapes
   greenShapes
-  lastMoveMono
   validColors
   first
   second
+  board
   lastMove
+  lastMoveMono
 <span class="tok-nt">&lt;/state&gt;</span></code></pre>
 </div>
 </div>
@@ -1088,11 +1088,11 @@ Spieler ist, wird der initiale Spielstatus gesendet.</p>
 <pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;board&gt;</span>
   <span class="tok-nt">&lt;fields&gt;</span>
     <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
-    ...
+    [...]
     <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;2&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
   <span class="tok-nt">&lt;/fields&gt;</span>
-  ...
-  <span class="tok-nt">&lt;/board&gt;</span></code></pre>
+  [...]
+<span class="tok-nt">&lt;/board&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1106,7 +1106,7 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 <h4 id="undeployed">... Nicht gesetzte Spielsteine</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;blueShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;blueShapes&gt;</span>
   <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
   <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
   <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
@@ -1138,7 +1138,7 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 <h4 id="lastMoveMono">... Letzter Stein</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;lastMoveMono</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-map&quot;</span><span class="tok-nt">&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;lastMoveMono&gt;</span>
   <span class="tok-nt">&lt;entry&gt;</span>
     <span class="tok-nt">&lt;color&gt;</span>YELLOW<span class="tok-nt">&lt;/color&gt;</span>
     <span class="tok-nt">&lt;boolean&gt;</span>true<span class="tok-nt">&lt;/boolean&gt;</span>
@@ -1154,8 +1154,7 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 <h4 id="validColors">... Farben im Spiel</h4>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span>
-<span class="tok-nt">&lt;validColors</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;validColors&gt;</span>
   <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
   <span class="tok-nt">&lt;color&gt;</span>YELLOW<span class="tok-nt">&lt;/color&gt;</span>
   <span class="tok-nt">&lt;color&gt;</span>RED<span class="tok-nt">&lt;/color&gt;</span>
@@ -1210,124 +1209,50 @@ die positive X-Achste nach rechts und die positive Y-Achse nach unten verläuft.
 <div class="content">
 <pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;cb3bc426-5c70-48b9-9307-943bc328b503&quot;</span><span class="tok-nt">&gt;</span>
   <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;memento&quot;</span><span class="tok-nt">&gt;</span>
-    <span class="tok-nt">&lt;state</span> <span class="tok-na">class=</span><span class="tok-s">&quot;state&quot;</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">round=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">startPiece=</span><span class="tok-s">&quot;PENTO_V&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;state</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;70&quot;</span> <span class="tok-na">round=</span><span class="tok-s">&quot;18&quot;</span> <span class="tok-na">startPiece=</span><span class="tok-s">&quot;PENTO_L&quot;</span><span class="tok-nt">&gt;</span>
       <span class="tok-nt">&lt;startTeam</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/startTeam&gt;</span>
-      <span class="tok-nt">&lt;board&gt;</span>
-        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
-        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;18&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
-        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;19&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
-        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
-        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;2&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
-      <span class="tok-nt">&lt;/board&gt;</span>
-      <span class="tok-nt">&lt;blueShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;blueShapes/&gt;</span>
+      <span class="tok-nt">&lt;yellowShapes&gt;</span>
         <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
-      <span class="tok-nt">&lt;/blueShapes&gt;</span>
-      <span class="tok-nt">&lt;yellowShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_V<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
       <span class="tok-nt">&lt;/yellowShapes&gt;</span>
-      <span class="tok-nt">&lt;redShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;redShapes&gt;</span>
         <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
         <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_V<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
       <span class="tok-nt">&lt;/redShapes&gt;</span>
-      <span class="tok-nt">&lt;greenShapes</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;greenShapes&gt;</span>
         <span class="tok-nt">&lt;shape&gt;</span>MONO<span class="tok-nt">&lt;/shape&gt;</span>
         <span class="tok-nt">&lt;shape&gt;</span>DOMINO<span class="tok-nt">&lt;/shape&gt;</span>
         <span class="tok-nt">&lt;shape&gt;</span>TRIO_L<span class="tok-nt">&lt;/shape&gt;</span>
         <span class="tok-nt">&lt;shape&gt;</span>TRIO_I<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_O<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_T<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_I<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_L<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>TETRO_Z<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_L<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_T<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_V<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_S<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Z<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_I<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_P<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_W<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_U<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_R<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_X<span class="tok-nt">&lt;/shape&gt;</span>
-        <span class="tok-nt">&lt;shape&gt;</span>PENTO_Y<span class="tok-nt">&lt;/shape&gt;</span>
       <span class="tok-nt">&lt;/greenShapes&gt;</span>
-      <span class="tok-nt">&lt;lastMoveMono</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-map&quot;</span><span class="tok-nt">/&gt;</span>
-      <span class="tok-nt">&lt;validColors</span> <span class="tok-na">class=</span><span class="tok-s">&quot;linked-hash-set&quot;</span><span class="tok-nt">&gt;</span>
-        <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
+      <span class="tok-nt">&lt;validColors&gt;</span>
         <span class="tok-nt">&lt;color&gt;</span>YELLOW<span class="tok-nt">&lt;/color&gt;</span>
         <span class="tok-nt">&lt;color&gt;</span>RED<span class="tok-nt">&lt;/color&gt;</span>
         <span class="tok-nt">&lt;color&gt;</span>GREEN<span class="tok-nt">&lt;/color&gt;</span>
       <span class="tok-nt">&lt;/validColors&gt;</span>
-      <span class="tok-nt">&lt;first</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;One&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;first</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;&quot;</span><span class="tok-nt">&gt;</span>
         <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/color&gt;</span>
       <span class="tok-nt">&lt;/first&gt;</span>
-      <span class="tok-nt">&lt;second</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;Two&quot;</span><span class="tok-nt">&gt;</span>
+      <span class="tok-nt">&lt;second</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;&quot;</span><span class="tok-nt">&gt;</span>
         <span class="tok-nt">&lt;color</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>TWO<span class="tok-nt">&lt;/color&gt;</span>
       <span class="tok-nt">&lt;/second&gt;</span>
+      <span class="tok-nt">&lt;board&gt;</span>
+        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;RED&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;3&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;GREEN&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;8&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;6&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;YELLOW&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;field</span> <span class="tok-na">x=</span><span class="tok-s">&quot;5&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;9&quot;</span> <span class="tok-na">content=</span><span class="tok-s">&quot;BLUE&quot;</span><span class="tok-nt">/&gt;</span>
+      <span class="tok-nt">&lt;/board&gt;</span>
       <span class="tok-nt">&lt;lastMove</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.plugin2021.SetMove&quot;</span><span class="tok-nt">&gt;</span>
-        <span class="tok-nt">&lt;piece</span> <span class="tok-na">color=</span><span class="tok-s">&quot;BLUE&quot;</span> <span class="tok-na">kind=</span><span class="tok-s">&quot;PENTO_V&quot;</span> <span class="tok-na">rotation=</span><span class="tok-s">&quot;RIGHT&quot;</span> <span class="tok-na">isFlipped=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">&gt;</span>
-          <span class="tok-nt">&lt;position</span> <span class="tok-na">x=</span><span class="tok-s">&quot;17&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;piece</span> <span class="tok-na">color=</span><span class="tok-s">&quot;BLUE&quot;</span> <span class="tok-na">kind=</span><span class="tok-s">&quot;MONO&quot;</span> <span class="tok-na">rotation=</span><span class="tok-s">&quot;NONE&quot;</span> <span class="tok-na">isFlipped=</span><span class="tok-s">&quot;false&quot;</span><span class="tok-nt">&gt;</span>
+          <span class="tok-nt">&lt;position</span> <span class="tok-na">x=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span><span class="tok-nt">/&gt;</span>
         <span class="tok-nt">&lt;/piece&gt;</span>
       <span class="tok-nt">&lt;/lastMove&gt;</span>
+      <span class="tok-nt">&lt;lastMoveMono&gt;</span>
+        <span class="tok-nt">&lt;entry&gt;</span>
+          <span class="tok-nt">&lt;color&gt;</span>BLUE<span class="tok-nt">&lt;/color&gt;</span>
+          <span class="tok-nt">&lt;boolean&gt;</span>true<span class="tok-nt">&lt;/boolean&gt;</span>
+        <span class="tok-nt">&lt;/entry&gt;</span>
+      <span class="tok-nt">&lt;/lastMoveMono&gt;</span>
     <span class="tok-nt">&lt;/state&gt;</span>
   <span class="tok-nt">&lt;/data&gt;</span>
 <span class="tok-nt">&lt;/room&gt;</span></code></pre>
@@ -1700,7 +1625,7 @@ Die letzte Nachricht des Servers endet mit:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-02-13 12:10:38 UTC
+Last updated 2021-02-22 12:00:10 UTC
 </div>
 </div>
 </body>
