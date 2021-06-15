@@ -1,7 +1,6 @@
 == Einleitung
 
-Wie in den letzten Jahren wird zur Client-Server Kommunikation ein XML-Protokoll
-genutzt.
+Wie in den letzten Jahren wird zur Client-Server Kommunikation ein XML-Protokoll genutzt.
 In diesem Dokument wird die Kommunikationsschnittstelle definiert, sodass ein
 komplett eigener Client geschrieben werden kann. Es wird hier nicht die
 vollständige Kommunikation dokumentiert bzw. definiert, dennoch alles, womit ein
@@ -27,7 +26,7 @@ sicher zu sein, dass ihr Client fehlerfrei mit dem Server kommunizieren kann,
 empfehlen wir Ihnen, beim Auslesen des XML jegliche Daten zu verwerfen, die hier
 nicht weiter definiert sind. Die vom Institut bereitgestellten
 Programme (Server, Simpleclient) nutzen eine Bibliothek um Java-Objekte direkt
-in XML zu konvertieren und umgekehrt. Dabei werden XML-Nachrichten nicht mit
-einem newline abgeschlossen.
+in XML zu konvertieren und umgekehrt.
+Dabei werden XML-Nachrichten nicht unbedingt mit einer newline abgeschlossen.
 
 WARNING: Die XML Dokumentation behandelt ausschließlich die Kommunikation. Falls Sie Dokumentation für den Verbindungsaufbau suchen, so finden Sie diese https://cau-kiel-tech-inf.github.io/socha-enduser-docs/_computerspieler_abgabefertig_machen.html#andere-sprache[hier].
