@@ -21,7 +21,6 @@ jobs:
     - name: Check
       run: |
         if [ ! -d out ]; then echo "No out !"; exit 1; fi
-        if [ ! -d ../asciidoctor-extensions-lab/lib ]; then echo "No asciidoctor-extensions-lab !"; exit 1; fi
       
     # Deploy the docs to the gh-pages website
     - name: Deploy
@@ -41,8 +40,8 @@ jobs:
         echo "putting new version in gh-pages branch"
         cd out
         touch .nojekyll
-        git config user.email "creeper99.mc@gmail.com"
-        git config user.name "niklasCarstensen"
+        git config user.email "info@software-challenge.de"
+        git config user.name "GitHub Publish Action"
         git add -A
         git commit -a -u -m "Deploy"
         echo "deploying to github"
