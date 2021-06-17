@@ -1,0 +1,9 @@
+:80
+
+root * /srv
+file_server
+
+route /update-content {
+    validate_github {$GITHUB_SECRET}
+    exec * /update-content.sh
+}
