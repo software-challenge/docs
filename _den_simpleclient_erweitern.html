@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
 <meta name="author" content="Sven Koschnicke">
-<title>Software-Challenge Einstieg</title>
+<title>Software-Challenge Endbenutzer-Dokumentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -519,24 +519,11 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 </head>
 <body id="_den_simpleclient_erweitern" class="article">
 <div id="header">
-<h1>Software-Challenge Einstieg</h1>
+<h1>Software-Challenge Endbenutzer-Dokumentation</h1>
 <div class="details">
 <span id="author" class="author">Sven Koschnicke</span><br>
 <span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
-<span id="revdate">2018-09-05</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Inhalt</div>
-<p><span class="toc-root"><a href="getting-started.html">Software-Challenge Einstieg</a></span></p><ul class="sectlevel1">
-<li><a href="getting-started.html#_den_simpleclient_erweitern"><span class="toc-current">Den SimpleClient erweitern</span></a>
-<ul class="sectlevel2">
-<li><a href="getting-started.html#erstellen-einer-neuen-strategie">Erstellen einer neuen Strategie</a>
-</li>
-<li><a href="getting-started.html#_eine_idee_implementieren">Eine Idee implementieren</a>
-</li>
-</ul>
-</li>
-</ul>
+<span id="revdate">2021-06-17</span>
 </div>
 </div>
 <div id="content">
@@ -636,134 +623,15 @@ Diese wird später noch gebraucht</p>
 Klassen, die dort verwendet werden) implementiert werden.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_eine_idee_implementieren">Eine Idee implementieren</h3>
-<div class="paragraph">
-<p>Man hat einige Spiele absolviert und sich eine gute Strategie
-ausgedacht. Damit hat man zwar schon einen wichtigen Teil der Arbeit
-geleistet, aber irgendwie muss dem
-<a href="#der-computerspieler">Computerspieler</a> noch beigebracht werden, nach
-dieser Strategie zu spielen.</p>
-</div>
-<div class="paragraph">
-<p>Anhand einer kleinen Aufgabe soll gezeigt werden, wie man eine Idee
-formal beschreiben und in ein Programm überführen kann. Dabei nehmen wir
-an, dass wir einen Stapel mit Karten haben, der sortiert werden soll.</p>
-</div>
-<div class="sect3">
-<h4 id="vorraussetzungen">Vorraussetzungen</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>eine beliebige Anzahl an Spielkarten</p>
-</li>
-<li>
-<p>eine Reihenfolge, in der die Spielkarten sortiert werden sollen</p>
-</li>
-</ul>
-</div>
-<div class="sect4">
-<h5 id="idee-formalisieren">Idee formalisieren</h5>
-<div class="paragraph">
-<p>Als erstes muss die Idee formal beschrieben werden. Oftmals kann man
-zunächst beschreiben, wie man als Mensch vorgehen würde.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Gehe den Stapel durch und merke die Position, an der sich die
-kleinste Karte befindet.</p>
-</li>
-<li>
-<p>Tausche die Position der kleinsten Karte mit der untersten Karte im
-Stapel.</p>
-</li>
-<li>
-<p>Die kleinste Karte ist jetzt an der richtigen Position.</p>
-</li>
-<li>
-<p>Führe die Schritte nochmal für den Reststapel (ohne die sortierten
-Karten) aus.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect4">
-<h5 id="idee-implementieren">Idee implementieren</h5>
-<div class="paragraph">
-<p>Nachdem man seine Idee formal niedergeschrieben hat, kann sie ganz
-leicht in ein Programm überführt werden:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-cm">/**</span>
-<span class="tok-cm">  * Das Array a[] symbolisiert den Stapel der unsortierten Karten. Dabei steht</span>
-<span class="tok-cm">  * eine Zahl immer für eine spezielle Karte. Eine kleinere Zahl bedeutet,</span>
-<span class="tok-cm">  * dass es sich um eine kleinere Karte handelt.</span>
-<span class="tok-cm">  *</span>
-<span class="tok-cm">  * start gibt die Position an, wo der Reststapel beginnt (am Anfang: start = 0)</span>
-<span class="tok-cm">  */</span>
- <span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">void</span> <span class="tok-nf">sortiere</span><span class="tok-p">(</span><span class="tok-kt">int</span><span class="tok-o">[]</span> <span class="tok-n">a</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">start</span><span class="tok-p">)</span> <span class="tok-p">{</span>
-     <span class="tok-c1">//Position der kleinsten Karte</span>
-     <span class="tok-kt">int</span> <span class="tok-n">pos</span> <span class="tok-o">=</span> <span class="tok-n">start</span><span class="tok-p">;</span>
-
-     <span class="tok-c1">// Gehe Array durch und merke die Position der kleinsten Karte </span><i class="conum" data-value="1"></i><b>(1)</b>
-     <span class="tok-k">for</span> <span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">i</span> <span class="tok-o">=</span> <span class="tok-n">start</span><span class="tok-o">+</span><span class="tok-mi">1</span><span class="tok-p">;</span> <span class="tok-n">i</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-p">.</span><span class="tok-na">length</span><span class="tok-p">;</span> <span class="tok-n">i</span><span class="tok-o">++</span><span class="tok-p">)</span> <span class="tok-p">{</span>
-         <span class="tok-c1">// Wenn eine kleinere Karte gefunden wurde...</span>
-         <span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">i</span><span class="tok-o">]</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">]</span><span class="tok-p">)</span> <span class="tok-p">{</span>
-
-             <span class="tok-p">...</span> <span class="tok-n">neue</span> <span class="tok-n">Position</span> <span class="tok-n">merken</span>
-             <span class="tok-n">pos</span> <span class="tok-o">=</span> <span class="tok-n">i</span><span class="tok-p">;</span>
-         <span class="tok-p">}</span>
-     <span class="tok-p">}</span>
-
-     <span class="tok-c1">// kleinste Karte mit erster Karte des Reststapels tauschen  </span><i class="conum" data-value="2"></i><b>(2)</b> <i class="conum" data-value="3"></i><b>(3)</b>
-     <span class="tok-kt">int</span> <span class="tok-n">temp</span> <span class="tok-o">=</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">start</span><span class="tok-o">]</span><span class="tok-p">;</span> <span class="tok-c1">// erste Karte merken</span>
-     <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">start</span><span class="tok-o">]</span> <span class="tok-o">=</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">]</span><span class="tok-p">;</span>   <span class="tok-c1">// kleinste Karte nach vorne bringen</span>
-     <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">]</span> <span class="tok-o">=</span> <span class="tok-n">temp</span><span class="tok-p">;</span>       <span class="tok-c1">// gemerkte Karte in die Mitte des Stapels schreiben</span>
-
-     <span class="tok-c1">// Wenn es noch einen Reststapel gibt, soll dieser weitersortiert werden </span><i class="conum" data-value="4"></i><b>(4)</b>
-     <span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">start</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-p">.</span><span class="tok-na">length</span><span class="tok-p">)</span> <span class="tok-p">{</span>
-          <span class="tok-n">sortiere</span><span class="tok-p">(</span><span class="tok-n">a</span><span class="tok-p">,</span> <span class="tok-n">start</span><span class="tok-o">+</span><span class="tok-mi">1</span><span class="tok-p">);</span>
-     <span class="tok-p">}</span>
- <span class="tok-p">}</span></code></pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>Gehe den Stapel durch und merke die Position, an der sich die
-kleinste Karte befindet.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td>Tausche die Position der kleinsten Karte mit der untersten Karte im
-Stapel.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td>Die kleinste Karte ist jetzt an der richtigen Position.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td>Führe die Schritte nochmal für den Reststapel (ohne die sortierten
-Karten) aus.</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p></p>
+<p>← Previous: <a href="_bedienung_von_eclipse.html">Bedienung von Eclipse</a> | ↑ Up: <a href="index.html">Software-Challenge Endbenutzer-Dokumentation</a> | Next: <a href="_computerspieler_abgabefertig_machen.html">Computerspieler abgabefertig machen</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-06-17 12:01:44 UTC
+Last updated 2021-06-17 13:16:47 UTC
 </div>
 </div>
 </body>

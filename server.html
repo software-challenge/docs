@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
 <meta name="author" content="Sven Koschnicke">
-<title>Software-Challenge Einstieg</title>
+<title>Software-Challenge Endbenutzer-Dokumentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -519,40 +519,11 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 </head>
 <body id="server" class="article">
 <div id="header">
-<h1>Software-Challenge Einstieg</h1>
+<h1>Software-Challenge Endbenutzer-Dokumentation</h1>
 <div class="details">
 <span id="author" class="author">Sven Koschnicke</span><br>
 <span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
-<span id="revdate">2018-09-05</span>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle">Inhalt</div>
-<p><span class="toc-root"><a href="getting-started.html">Software-Challenge Einstieg</a></span></p><ul class="sectlevel1">
-<li><a href="getting-started.html#server"><span class="toc-current">Der Spielleiter (Server)</span></a>
-<ul class="sectlevel2">
-<li><a href="getting-started.html#system-vorbereiten-und-spielleiter-starten">System vorbereiten und Spielleiter starten</a>
-</li>
-<li><a href="getting-started.html#die-programmoberfläche">Die Programmoberfläche</a>
-</li>
-<li><a href="getting-started.html#ein-neues-spiel-erstellen">Ein neues Spiel erstellen</a>
-</li>
-<li><a href="getting-started.html#die-spielfeldoberfläche">Die Spielfeldoberfläche</a>
-</li>
-<li><a href="getting-started.html#spielwiederholung-laden">Spielwiederholungen</a>
-</li>
-<li><a href="getting-started.html#testdurchläufe">Testdurchläufe</a>
-</li>
-<li><a href="getting-started.html#spielsituation-nachstellen">Spielsituation nachstellen</a>
-</li>
-<li><a href="getting-started.html#replay-ohne-gui-speichern">Replay mit Server ohne graphische Oberfläche speichern</a>
-</li>
-<li><a href="getting-started.html#automatische-spiele">Automatische Spiele: Der Testserver</a>
-</li>
-<li><a href="getting-started.html#tests-ohne-gui">Massentests mit Server ohne graphische Oberfläche</a>
-</li>
-</ul>
-</li>
-</ul>
+<span id="revdate">2021-06-17</span>
 </div>
 </div>
 <div id="content">
@@ -560,7 +531,7 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 <h2 id="server">Der Spielleiter (Server)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Die beiden <a href="#der-computerspieler">Computerspieler</a> kommunizieren nicht
+<p>Die beiden <a href="der-computerspieler.html">Computerspieler</a> kommunizieren nicht
 direkt miteinander, sondern übertragen ihre Nachrichten über einen
 Mittelmann: den Spielleiter. Dadurch ist zum einen sichergestellt,
 dass man seinen Gegner nicht mit illegalen Nachrichten belästigen
@@ -568,7 +539,7 @@ kann, zum anderen sorgt der Spielleiter dafür, dass sich die
 Kontrahenten an die Spielregeln halten.</p>
 </div>
 <div class="paragraph">
-<p>Der Spielleiter ist direkt im <a href="#das-wettkampfsystem">Wettkampfsystem</a>
+<p>Der Spielleiter ist direkt im <a href="das-wettkampfsystem.html">Wettkampfsystem</a>
 integriert, so dass alle Turnierspiele regelkonform gespielt werden
 müssen. Zum Testen des eigenen Computerspielers gibt es eine spezielle
 Version des Spielleiters, die im Downloadbereich
@@ -581,7 +552,7 @@ und sogar als Mensch mitspielen kann.</p>
 <h3 id="system-vorbereiten-und-spielleiter-starten">System vorbereiten und Spielleiter starten</h3>
 <div class="paragraph">
 <p>Die einzige Vorraussetzung ist, dass auf dem Rechner mindestens die
-Laufzeitumgebung für Java 8 installiert ist. Siehe <a href="#installation-java">Installation von Java</a>.</p>
+Laufzeitumgebung für Java 8 installiert ist. Siehe <a href="installation-java.html">Installation von Java</a>.</p>
 </div>
 <div class="paragraph">
 <p>Nach der erfolgreichen Installation kann man den Server durch einen
@@ -597,7 +568,7 @@ Doppelklick auf die Datei <code>software-challenge-gui</code> starten.</p>
 <div class="content">
 <img src="images/spielleiter_direkt_nach-start.jpg" alt="Spielleiter">
 </div>
-<div class="title">Figure 3. Die Spielleiteroberfläche direkt nach dem Programmstart</div>
+<div class="title">Figure 1. Die Spielleiteroberfläche direkt nach dem Programmstart</div>
 </div>
 <div class="paragraph">
 <p>Unter dem ersten Menüpunkt (Symbol der Software-Challenge) findet man alle möglichen Aktionen.</p>
@@ -616,7 +587,7 @@ Spiel starten" angeklickt werden.</p>
 <div class="content">
 <img src="images/neues_spiel_dialog.jpg" alt="Neues Spiel">
 </div>
-<div class="title">Figure 4. Dialog für ein neues Spiel</div>
+<div class="title">Figure 2. Dialog für ein neues Spiel</div>
 </div>
 <div class="paragraph">
 <p>In diesem Fenster werden die Spieler ausgewählt, die an dem Spiel
@@ -666,7 +637,7 @@ unteren Knopfs "Erstellen" erstellt werden.</p>
 <div class="content">
 <img src="images/spielfeldoberflaeche.jpg" alt="spielfeldoberflaeche">
 </div>
-<div class="title">Figure 5. Die Spielfeldoberfläche (hier mit dem Spiel "Blokus")</div>
+<div class="title">Figure 3. Die Spielfeldoberfläche (hier mit dem Spiel "Blokus")</div>
 </div>
 <div class="paragraph">
 <p>Auf dem Spielbrett werden das eigentliche Spiel (hier z.B. "Blokus"),
@@ -721,8 +692,8 @@ ist es sinnvoll, diesen mit vielen verschiedenen Spielsituationen zu
 konfrontieren. Dadurch lassen sich Fehler entdecken und die Spielstärke des
 Computerspielers beurteilen. Für solche Testdurchläufe wird ein Testserver und
 TestClient zur Verfügung gestellt. Wie man diese verwendet, ist weiter unten
-unter den Überschrift <a href="#automatische-spiele">Automatische Spiele: Der
-Testserver</a> und <a href="#tests-ohne-gui">Massentests</a> beschrieben.</p>
+unter den Überschrift <a href="server.html#automatische-spiele">Automatische Spiele: Der
+Testserver</a> und <a href="server.html#tests-ohne-gui">Massentests</a> beschrieben.</p>
 </div>
 </div>
 <div class="sect2">
@@ -837,7 +808,7 @@ der teilnehmenden Computerspieler geschehen (z.B. durch Log-Ausgaben).</p>
 <div class="paragraph">
 <p>Es ist ebenfalls möglich, statt eines Zufällig generierten vollständigen
 Spielplanes eine Spielsituation zu laden und zu testen. Die Spielsituation muss
-vorher wie unter <a href="#spielsituation-nachstellen">Spielsituation nachstellen</a>
+vorher wie unter <a href="server.html#spielsituation-nachstellen">Spielsituation nachstellen</a>
 erzeugt werden. Dann kann die Datei mit dem Argument <code>--loadGameFile</code> geladen
 werden und optional mit <code>--turn</code> ein Zug spezifiziert werden.</p>
 </div>
@@ -1142,12 +1113,12 @@ Nun können sie jederzeit die Testdaten der Spieler anhand ihres Anzeigenamens e
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p></p>
+<p>← Previous: <a href="_die_software_challenge.html">Die Software Challenge</a> | ↑ Up: <a href="index.html">Software-Challenge Endbenutzer-Dokumentation</a> | Next: <a href="der-computerspieler.html">Der Computerspieler (Client)</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-06-17 12:01:44 UTC
+Last updated 2021-06-17 13:16:47 UTC
 </div>
 </div>
 </body>
