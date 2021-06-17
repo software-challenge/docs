@@ -3,20 +3,12 @@ action=$1
 case $action in
 setup)
 	echo "Installing required gems"
-	gem install asciidoctor -v 1.5.8
-  gem install pygments.rb
-	gem install --prerelease asciidoctor-pdf
-
-	(
-	cd ..
-	git clone https://github.com/SKoschnicke/asciidoctor-extensions-lab
-	cd asciidoctor-extensions-lab
-	git checkout improve-multipagehtml5
-	)
+  gem install bundler
+  bundle install --without live
 
 	case "$@" in *"live"*)
 		echo "Installing gems required for live-preview"
-		sudo gem install guard guard-shell guard-livereload yajl-ruby;;
+    bundle install --with live
 	esac
 	;;
 
@@ -36,7 +28,7 @@ generate)
 		echo "Converting1 $1"
 		case $1 in *spiele/*) target="$TARGET/spiele/$(echo "$1" | cut -d/ -f2)"; esac
 		echo "Converting2 $1"
-		asciidoctor -D "$target" -r ../asciidoctor-extensions-lab/lib/multipage-html5-converter.rb -b multipage_html5 "$1"
+		bundle exec asciidoctor -D "$target" -r asciidoctor-multipage -b multipage_html5 "$1"
 		echo "Converting3 $1"
 		case "$1" in *"$game/index.adoc") ;;
 			*) test $pdf && asciidoctor-pdf -D "$target" "$1";; esac
@@ -51,7 +43,8 @@ generate)
 	done
 
 	asciid index.adoc
-	asciid getting-started.adoc
+  # getting started is just a different collection of topics, but it breaks the TOC in the main docs
+	#asciid getting-started.adoc
 	find spiele -path "spiele/$game/*" -name "*.adoc" | while read -r adoc; do
 		# save the first word of the file to $word
 		read -r word _<"$adoc";
