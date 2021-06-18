@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -22,30 +22,33 @@ jobs:
       run: |
         if [ ! -d out ]; then echo "No out !"; exit 1; fi
       
-    # Deploy the docs to the gh-pages website
+    # Deploy the docs to the live branch
     - name: Deploy
       run: |
-        echo "Updating date in index.adoc"
+        echo "updating date in index.adoc"
         ./docs update-date
-        echo "removing output directory ('out')"
+        echo "removing output directory 'out'"
         sudo rm -rf ./out
-        echo "getting gh-pages repository..."
+        message="$(git log --format='Deploy %h %<|(50,trunc)%f' -1)"
+
+        echo "getting live branch..."
         old_git_dir="$GIT_DIR"
         unset GIT_DIR
         old_git_working_dir="$GIT_WORK_TREE"
         unset GIT_WORK_TREE
-        git clone https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs --branch gh-pages --single-branch out
+        git clone https://github.com/software-challenge/docs --branch live --single-branch out
+
         echo "generating static pages..."
         ./docs generate pdf
-        echo "putting new version in gh-pages branch"
+        echo "deploying to github..."
         cd out
-        touch .nojekyll
         git config user.email "info@software-challenge.de"
         git config user.name "GitHub Publish Action"
-        git add -A
-        git commit -a -u -m "Deploy"
-        echo "deploying to github"
+        git add --all
+        git commit -m "$message"
         git push https://niklasCarstensen:${{ secrets.GITHUB_TOKEN }}@github.com/software-challenge/docs
+
+        echo "cleaning up"
         cd ..
         rm -rf ./out
         GIT_DIR="$old_git_dir"

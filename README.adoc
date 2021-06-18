@@ -102,5 +102,8 @@ Sektionslabel stehen über allen Überschriften und werden mit doppelten eckigen
 
 == Deployment
 
-Die https://cau-kiel-tech-inf.github.io/socha-enduser-docs[öffentliche Seite] wird automatisch bei jedem push in den master-Branch von GitHub aktualisiert.
-Dies geschieht durch einen GitHub Actions Workflow, siehe `.github/workflows/auto-publish.yml`.
+Die https://docs.software-challenge.de[öffentliche Seite] wird automatisch
+bei jedem push in den main-Branch von GitHub aktualisiert.
+Dies geschieht durch einen GitHub Actions Workflow, siehe `.github/workflows/auto-publish.yml`,
+dessen Ergebnis vom Docker container auf dem Server
+nach Benachrichtigung durch einen Webhook gepullt wird.
