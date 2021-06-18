@@ -15,7 +15,7 @@ COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 COPY Caddyfile /etc/caddy/Caddyfile
 RUN git clone https://github.com/software-challenge/docs.git -b gh-pages --depth 1 /srv
 
-COPY update-content.sh /
+COPY bin/update-content.sh /
 
 # used in the Caddyfile
 ARG GITHUB_SECRET
