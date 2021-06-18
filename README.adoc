@@ -30,15 +30,13 @@ Alternativ auch gern eine E-Mail an svk@informatik.uni-kiel.de oder eine Nachric
 
 == Konvertierung
 
-Um schnell starten zu können, existiert ein setup-skript, das folgendermaßen aufgerufen werden kann.
+Um schnell starten zu können, existiert ein setup-skript.
+Es installiert die benötigten Ruby-Gems anhand des `Gemfile`:
 
 ----
 ./docs setup
 ----
 
-Dies installiert die beiden Ruby-Gems `asciidoctor` und `pygments.rb` (für Syntax-Highlighting der Quellcodes),
-außerdem das Gem `asciidoctor-pdf`, welches aber im Moment nur im "Prerelease"-Status ist, es wird also per `gem install --prerelease asciidoctor-pdf` installiert. +
-Schließlich installiert es auch den post-commit-hook, sodass pushes zu master automatisch auf der Website landen.
 
 Um alles in HTML zu Übersetzen, sollte folgender Befehl verwendet werden:
 

@@ -1,74 +1,81 @@
 #!/bin/sh
 action=$1
+shift 2>/dev/null
+
+outdir="out"
+set -e
+
 case $action in
-setup)
-	echo "Installing required gems"
-  gem install bundler
-  bundle install --without live
+(all)
+  rm -rf "$outdir"
+  $0 setup live
+  $0 generate pdf
+  ;;
 
-	case "$@" in *"live"*)
-		echo "Installing gems required for live-preview"
-    bundle install --with live
-	esac
-	;;
+(setup)
+  echo "Installing required gems"
+  which bundle >/dev/null || gem install bundler
+  test "$1" = "live" && bundle config set --local with 'live' && shift
+  bundle install "$@"
+  ;;
 
 
-generate)
-	TARGET="out"
-	game="blokus"
-	shift
-	for arg in "$@" ; do
-		[ "$arg" = "pdf" ] && pdf="true" && continue
-		game="$arg"
-	done
+(generate)
+  game="blokus"
+  for arg in "$@" ; do
+    [ "$arg" = "pdf" ] && pdf="true" && continue
+    game="$arg"
+  done
+  echo "Processing Game $game (pdf: ${pdf:-no})..."
 
-	asciid() {
-		echo "Converting $1"
-		target="$TARGET/$(dirname "$1")"
-		echo "Converting1 $1"
-		case $1 in *spiele/*) target="$TARGET/spiele/$(echo "$1" | cut -d/ -f2)"; esac
-		echo "Converting2 $1"
-		bundle exec asciidoctor -D "$target" -r asciidoctor-multipage -b multipage_html5 "$1"
-		echo "Converting3 $1"
-		case "$1" in *"$game/index.adoc") ;;
-			*) test $pdf && asciidoctor-pdf -D "$target" "$1";; esac
-		echo "Converting4 $1"
-	}
+  # Images
+  find . -name "images" -not -path "./out/*" -type d | while read -r images; do
+    echo "Copying $(echo $images | cut -c3-1000)"
+    copytarget="$outdir/$(dirname "$images")"
+    mkdir -p "$copytarget"
+    cp -r "$images" "$copytarget"
+  done
 
-	# Images
-	find . -name "images" -not -path "./out/*" -type d | while read -r images; do
-		echo "Copying $(echo $images | cut -c3-1000)"
-		mkdir -p "$TARGET/$(dirname "$images")"
-		cp -r "$images" "$TARGET/$(dirname "$images")"
-	done
+  # HTML & PDF
+  asciid() {
+    target="$outdir/$(dirname "$1")"
+    case $1 in (*spiele/*) target="$outdir/spiele/$(echo "$1" | cut -d/ -f2)"; esac
+    echo "Converting $1 to html"
+    bundle exec asciidoctor -D "$target" -r asciidoctor-multipage -b multipage_html5 "$1"
+    test "$pdf" && case "$1" in
+      (*"$game/index.adoc") ;;
+      (*) echo "Converting $1 to pdf" && bundle exec asciidoctor-pdf -D "$target" "$1";;
+    esac || true
+  }
 
-	asciid index.adoc
+  asciid index.adoc
   # getting started is just a different collection of topics, but it breaks the TOC in the main docs
-	#asciid getting-started.adoc
-	find spiele -path "spiele/$game/*" -name "*.adoc" | while read -r adoc; do
-		# save the first word of the file to $word
-		read -r word _<"$adoc";
-		# do conversion if it starts with a colon
-		case "$word" in :*) asciid "$adoc"; esac;
-	done
-	;;
+  #asciid getting-started.adoc
+  find spiele -path "spiele/$game/*" -name "*.adoc" | while read -r adoc; do
+    # save the first word of the file to $word
+    read -r word _<"$adoc";
+    # do conversion if it starts with a colon
+    case "$word" in :*) asciid "$adoc"; esac;
+  done
+  ;;
 
 
-update-date)
-	last_commit_date=${2:-$(git log -1 --format=%cd | cut -c5- | cut -c-6)}
-	formatted_date=$(date -d"$last_commit_date" +%Y-%m-%d)
-	sed --regexp-extended -i.bak "/[0-9]{4}-[0-9]{2}-[0-9]{2}$/c\\$formatted_date" index.adoc
-	;;
+(update-date)
+  last_commit_date=${1:-$(git log -1 --format=%cd | cut -c5- | cut -c-6)}
+  formatted_date=$(date -d"$last_commit_date" +%Y-%m-%d)
+  sed --regexp-extended -i.bak "/[0-9]{4}-[0-9]{2}-[0-9]{2}$/c\\$formatted_date" index.adoc
+  ;;
 
 
-*)
-	echo "Usage: docs <command> [options...]
+(*)
+  echo "Usage: $0 <command> [options...]
     setup - install the gems required for generate
       └─ live - also install the gems required for a live-preview
     generate - copy the images and convert the adoc to html
       └─ <game> - convert a specific game
       └─ pdf - additionally convert to pdf
-    update-date - update the date in the header of the docs to the date of the last commit"
-	;;
+    update-date - update the date in the header of the docs to the date of the last commit
+    all - setup with live and generate with pdf"
+  ;;
 
 esac
