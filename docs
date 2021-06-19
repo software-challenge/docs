@@ -1,4 +1,7 @@
 #!/bin/sh
+
+game="ostseeschach"
+
 action=$1
 shift 2>/dev/null
 
@@ -12,10 +15,6 @@ case $action in
   $0 generate pdf
   ;;
 
-(clean)
-  rm -rf "$outdir"
-  ;;
-
 (setup)
   echo "Installing required gems"
   which bundle >/dev/null || gem install bundler
@@ -24,7 +23,6 @@ case $action in
   ;;
 
 (generate)
-  game="blokus"
   for arg in "$@" ; do
     [ "$arg" = "pdf" ] && pdf="true" && continue
     [ "$arg" = "-v" ] && verbose="-v" && continue
@@ -67,6 +65,7 @@ case $action in
   $0 generate
   xdg-open "$outdir/index.html"
   bundle exec guard start
+  ;;
 
 (update-date)
   last_commit_date=${1:-$(git log -1 --format=%cd | cut -c5- | cut -c-6)}

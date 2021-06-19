@@ -22,7 +22,7 @@ jobs:
       run: |
         if [ ! -d out ]; then echo "No out !"; exit 1; fi
       
-    # Deploy the docs to the live branch
+    # Push the generated docs to the live branch
     - name: Deploy
       run: |
         echo "updating date in index.adoc"
@@ -40,7 +40,7 @@ jobs:
 
         echo "generating static pages..."
         ./docs generate pdf
-        echo "deploying to github..."
+        echo "pushing to github..."
         cd out
         git config user.email "info@software-challenge.de"
         git config user.name "GitHub Publish Action"

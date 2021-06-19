@@ -9,7 +9,7 @@ gem "pygments.rb"
 gem "asciidoctor-pdf"
 gem "asciidoctor-multipage"
 
-group :live do
+group :live, optional: true do
   gem "guard"
   gem "guard-shell"
   gem "guard-livereload"
