@@ -10,7 +10,7 @@ Zielgruppe sind Schüler und Lehrer, die an der Software-Challenge teilnehmen.
 Wir freuen uns über sämtliche Verbesserungsvorschläge. +
 Die Dokumentation kann direkt hier auf GitHub editiert werden, einzige Voraussetzung ist eine kostenlose Registrierung bei GitHub.
 Ist man angemeldet, kann man ein Dokument auswählen und dann auf den Stift oben rechts klicken.
-Ein guter Startpunkt ist die Datei https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc[index.adoc], die Verweise auf alle Sektionen der Dokumentation enthält.
+Ein guter Startpunkt ist die Datei https://github.com/software-challenge/docs/blob/master/index.adoc[index.adoc], die Verweise auf alle Sektionen der Dokumentation enthält.
 Damit wird von GitHub automatisch ein Fork und ein dazugehöriges Pull Request erstellt. +
 Alternativ auch gern eine E-Mail an svk@informatik.uni-kiel.de oder eine Nachricht im https://discord.gg/jhyF7EU[Discord].
 

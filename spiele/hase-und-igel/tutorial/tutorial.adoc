@@ -4,7 +4,7 @@
 :source-highlighter: pygments
 :icons: font
 
-= Tutorial Hase und Igel Software Challenge 2018
+= Tutorial Hase und Igel Software-Challenge 2018
 Simon Döring
 
 ifndef::backend-pdf[link:tutorial.pdf[PDF-Version dieses Dokumentes]]

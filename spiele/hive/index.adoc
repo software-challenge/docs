@@ -2,7 +2,7 @@
 :source-highlighter: pygments
 :icons: font
 
-= Dokumentation Hive Software Challenge 2020
+= Dokumentation Hive Software-Challenge 2020
 Sven Koschnicke <svk@informatik.uni-kiel.de>
 
 

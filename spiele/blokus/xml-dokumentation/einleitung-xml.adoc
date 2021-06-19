@@ -29,4 +29,4 @@ Programme (Server, Simpleclient) nutzen eine Bibliothek um Java-Objekte direkt
 in XML zu konvertieren und umgekehrt.
 Dabei werden XML-Nachrichten nicht unbedingt mit einer newline abgeschlossen.
 
-WARNING: Die XML Dokumentation behandelt ausschließlich die Kommunikation. Falls Sie Dokumentation für den Verbindungsaufbau suchen, so finden Sie diese https://cau-kiel-tech-inf.github.io/socha-enduser-docs/_computerspieler_abgabefertig_machen.html#andere-sprache[hier].
+WARNING: Die XML Dokumentation behandelt ausschließlich die Kommunikation. Falls Sie Dokumentation für den Verbindungsaufbau suchen, so finden Sie diese https://docs.software-challenge.de/_computerspieler_abgabefertig_machen.html#andere-sprache[hier].

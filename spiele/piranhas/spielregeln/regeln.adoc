@@ -2,7 +2,7 @@
 :source-highlighter: pygments
 :icons: font
 
-= Spielregeln Piranhas: Software Challenge 2019
+= Spielregeln Piranhas: Software-Challenge 2019
 Sven Koschnicke <svk@informatik.uni-kiel.de>
 
 ifndef::backend-pdf[link:regeln.pdf[PDF-Version dieses Dokumentes]]

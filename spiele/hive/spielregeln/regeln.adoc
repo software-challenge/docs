@@ -2,7 +2,7 @@
 :source-highlighter: pygments
 :icons: font
 
-= Spielregeln Hive: Software Challenge 2020
+= Spielregeln Hive: Software-Challenge 2020
 
 == Anfangsaufstellung
 

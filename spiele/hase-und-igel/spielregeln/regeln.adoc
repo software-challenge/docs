@@ -6,7 +6,7 @@
 
 :sectnums:
 
-= Modifizierte Spielregeln Hase und Igel Software Challenge 2018
+= Modifizierte Spielregeln Hase und Igel Software-Challenge 2018
 Sören Domrös <stu114053@mail.uni-kiel.de>
 
 Ziel dieser Dokumentation ist es, die Spielregeln der Softwarechallenge festzuhalten.
@@ -15,11 +15,11 @@ ifndef::backend-pdf[link:regeln.pdf[PDF-Version dieses Dokumentes]]
 
 Wir freuen uns über sämtliche Verbesserungsvorschläge. Die
 Dokumentation kann
-https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs[direkt auf
+https://github.com/software-challenge/docs[direkt auf
 GitHub editiert] werden, einzige Voraussetzung ist eine kostenlose
 Registrierung bei GitHub. Ist man angemeldet, kann man ein Dokument
 auswählen (ein guter Startpunkt ist die Datei
-https://github.com/CAU-Kiel-Tech-Inf/socha-enduser-docs/blob/master/index.adoc[index.adoc]
+https://github.com/software-challenge/docs/blob/master/index.adoc[index.adoc]
 welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 svk@informatik.uni-kiel.de.

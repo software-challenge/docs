@@ -5,7 +5,7 @@ Der Spielleiter kommuniziert mit den Computerspielern über eine
 Netzwerkverbindung. Dadurch ist man aus technischer Sicht komplett
 flexibel, was die Wahl der Programmiersprache angeht. Die
 Computerspieler müssen lediglich das Kommunikationsprotokoll erfüllen,
-das im Dokumentationsbereich der Software Challenge Website
+das im Dokumentationsbereich der Software-Challenge Website
 (http://www.software-challenge.de) eingesehen werden kann.
 
 Anfängern wird allerdings davon abgeraten, einen komplett eigenen

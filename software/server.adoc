@@ -1,27 +1,26 @@
 [[server]]
 == Der Spielleiter (Server)
 
-Die beiden <<der-computerspieler,Computerspieler>> kommunizieren nicht
-direkt miteinander, sondern übertragen ihre Nachrichten über einen
-Mittelmann: den Spielleiter. Dadurch ist zum einen sichergestellt,
-dass man seinen Gegner nicht mit illegalen Nachrichten belästigen
-kann, zum anderen sorgt der Spielleiter dafür, dass sich die
-Kontrahenten an die Spielregeln halten.
+Die beiden <<der-computerspieler,Computerspieler>> kommunizieren nicht direkt miteinander,
+sondern übertragen ihre Nachrichten über einen Mittelmann: den Spielleiter.
+Dadurch ist zum einen sichergestellt,
+dass man seinen Gegner nicht mit illegalen Nachrichten belästigen kann,
+zum anderen sorgt der Spielleiter dafür,
+dass sich die Kontrahenten an die Spielregeln halten.
 
-Der Spielleiter ist direkt im <<das-wettkampfsystem,Wettkampfsystem>>
-integriert, so dass alle Turnierspiele regelkonform gespielt werden
-müssen. Zum Testen des eigenen Computerspielers gibt es eine spezielle
-Version des Spielleiters, die im Downloadbereich
-(http://www.software-challenge.de) heruntergeladen werden
-kann. Diese Download-Version, die in diesem Abschnitt beschrieben wird,
-besitzt eine grafische Oberfläche, durch die man das Spiel gut verfolgen
-und sogar als Mensch mitspielen kann.
+Der Spielleiter ist direkt im <<das-wettkampfsystem,Wettkampfsystem>> integriert,
+so dass alle Turnierspiele regelkonform gespielt werden.
+Zum Testen des eigenen Computerspielers gibt es eine spezielle Version des Spielleiters,
+die im https://software-challenge.de/dokumentation-und-material[Downloadbereich der Website] heruntergeladen werden kann.
+Diese Download-Version enthälft eine grafische Oberfläche,
+durch die man das Spiel gut verfolgen und sogar als Mensch mitspielen kann.
 
 [[system-vorbereiten-und-spielleiter-starten]]
 === System vorbereiten und Spielleiter starten
 
-Die einzige Vorraussetzung ist, dass auf dem Rechner mindestens die
-Laufzeitumgebung für Java 8 installiert ist. Siehe <<installation-java>>.
+Die einzige Vorraussetzung ist,
+dass auf dem Rechner mindestens die Laufzeitumgebung für Java 9 installiert ist.
+Siehe <<installation-java>>.
 
 Nach der erfolgreichen Installation kann man den Server durch einen
 Doppelklick auf die Datei `software-challenge-gui` starten.
@@ -41,8 +40,7 @@ Zu Beginn ist die Spielfläche leer.
 [[ein-neues-spiel-erstellen]]
 === Ein neues Spiel erstellen
 
-Um ein Spiel zu spielen, muss zunächst "Neues
-Spiel starten" angeklickt werden.
+Um ein Spiel zu spielen, muss zunächst "Neues Spiel starten" angeklickt werden.
 
 .Dialog für ein neues Spiel
 image::neues_spiel_dialog.jpg[Neues Spiel]

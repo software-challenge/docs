@@ -10,7 +10,7 @@
 Am einfachsten ist es die KI auf Grundlage des SimpleClients zu schreiben:
 
 * Als erstes muss der SimpleClient heruntergeladen werden (http://www.software-challenge.de/downloads/  bitte den SimpleClient als „Quellcode“ downloaden)
-* Dieser muss nun in Eclips eingebunden werden: https://cau-kiel-tech-inf.github.io/socha-enduser-docs/#einrichtung-von-eclipse
+* Dieser muss nun in Eclips eingebunden werden: https://docs.software-challenge.de/#einrichtung-von-eclipse
 
 == Wo schreibe ich die KI?
 

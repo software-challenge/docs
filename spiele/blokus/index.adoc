@@ -2,7 +2,7 @@
 :source-highlighter: pygments
 :icons: font
 
-= Dokumentation Blokus Software Challenge 2021
+= Dokumentation Blokus Software-Challenge 2021
 Sven Koschnicke <svk@informatik.uni-kiel.de>
 
 

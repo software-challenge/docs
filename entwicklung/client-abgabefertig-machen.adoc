@@ -1,11 +1,10 @@
 == Computerspieler abgabefertig machen
 
-Damit <<das-wettkampfsystem,das Wettkampfsystem>> mit dem
-Computerspieler arbeiten kann, muss er zu einem ausführbaren Programm
-gemacht und in ein ZIP-Archiv gepackt werden.
+Damit <<das-wettkampfsystem,das Wettkampfsystem>> mit dem Computerspieler arbeiten kann,
+muss er als ausführbares Programm in ein ZIP-Archiv gepackt werden.
 
-Je nach Programmiersprache, in der der Computerspieler entwickelt wurde, sind
-unterschiedliche Schritte notwendig.
+Je nach Programmiersprache, in der der Computerspieler entwickelt wurde,
+sind unterschiedliche Schritte notwendig.
 
 Wie man den abgabefertigen Computerspieler dann im Wettkampfsystem einsendet,
 ist unter <<computerspieler,Wettkampfsystem, Computerspieler>> beschrieben.
@@ -15,8 +14,8 @@ ist unter <<computerspieler,Wettkampfsystem, Computerspieler>> beschrieben.
 
 Diese Anleitung beschreibt, wie man für den Java-SimpleClient vorgehen muss.
 
-Hierzu gibt es zwei Möglichkeiten: Die Jar-Datei selbst erstellen und
-die Verwendung eines Ant-Scripts.
+Hierzu gibt es zwei Möglichkeiten:
+Die Jar-Datei selbst erstellen und die Verwendung von Gradle.
 
 [[erste-möglichkeit---jar-erstellen]]
 ==== Erste Möglichkeit - JAR erstellen
@@ -81,7 +80,7 @@ wählen
 3.  Auf der rechten Seite muss man nun das Buildfile auswählen. Das geht
 entweder mit "Browse Workspace" oder "Browse File System". Das Buildfile
 heißt "build.xml" und liegt direkt in dem SimpleClient Ordner, den man
-auf der Software Challenge Homepage heruntergeladen hat. Anschließend
+auf der Software-Challenge Homepage heruntergeladen hat. Anschließend
 mit "Apply" bestätigen und das Fenster schließen
 4.  Um den Buildprozess zu starten, muss im Menü "Run" -> "External
 Tools" die gerade erstellte Konfiguration ausgewählt werdem. Der Build
@@ -118,18 +117,19 @@ die Shebang-Zeile zu schreiben:
 # encoding: UTF-8
 ----
 
-Ein vollständiges Beispiel für einen abgabefertigen
-Ruby-Computerspieler gibt es im
-https://github.com/CAU-Kiel-Tech-Inf/socha_ruby_client/tree/master/example[example
-Verzeichnis des Client-Gems bei Github]. Packt man die beiden Dateien
-`client.rb` und `main.rb` in ein ZIP-Archiv, hat man einen
-abgabefertigen Computerspieler. Beim Hochladen wählt man `main.rb` als
-Hauptdatei.
+Ein vollständiges Beispiel für einen abgabefertigen Ruby-Computerspieler gibt es im
+https://github.com/software-challenge/client-ruby/tree/main/example[example Verzeichnis des Client-Gems bei Github].
+Packt man die beiden Dateien `client.rb` und `main.rb` in ein ZIP-Archiv,
+hat man einen abgabefertigen Computerspieler.
+Beim Hochladen wählt man `main.rb` als Hauptdatei.
 
 === C#
 
-Stellt sicher, dass euer Projekt nur Libraries nutzt, die auch in <<ausfuehrungsumgebungen,Mono 5.4>> enthalten sind.
-Kompiliert bzw. erstellt euer Projekt und fügt zu dem build eine start.sh hinzu, wie <<andere-sprache,hier>> beschrieben, sofern ihr noch keine habt, da der Wettkampfserver eure exe sonst nicht ausführen kann.
+Stellt sicher, dass euer Projekt nur Libraries nutzt,
+die auch in <<ausfuehrungsumgebungen,Mono 5.4>> enthalten sind.
+Kompiliert bzw. erstellt euer Projekt und fügt zu dem build eine start.sh hinzu,
+wie <<andere-sprache,hier>> beschrieben, sofern ihr noch keine habt,
+da der Wettkampfserver eure exe sonst nicht ausführen kann.
 Sie sollte folgenden Inhalt haben, um eure exe mit mono zu starten:
 
 [source,sh]
@@ -142,16 +142,17 @@ mono csharp_exe_dateiname "$@"
 [[andere-sprache]]
 === Andere Programmiersprache
 
-Bei Computerspielern in jeder anderen Programmiersprache muss ein Shell-Script
-dem ZIP-Archiv beigelegt werden, was die genauen Instruktionen zum Start des
-Computerspielers enthält. Dieses muss nach dem Hochladen im Wettkampfystem als
-Hauptdatei ausgewählt werden.
+Bei Computerspielern in einer anderen Programmiersprache
+muss das ZIP-Archiv ein Shell-Script
+mit genauen Instruktionen zum Start des Computerspielers enthalten.
+Dieses muss nach dem Hochladen im Wettkampfystem als Hauptdatei ausgewählt werden.
 
-Beachten Sie hierbei, dass diesem Script vom Wettkampfsystem Parameter übergeben
-werden, die an Ihr Programm weitergegeben werden müssen. Diese Parameter sind
-mindestens Host und Port des Spielservers sowie die Reservierungsnummer des
-Spiels, dem der Computerspieler beitreten soll. Ein Aufruf sieht also in etwa
-wie folgt aus (falls `start.sh` als Hauptdatei eingestellt ist):
+Beachten Sie hierbei, dass diesem Script vom Wettkampfsystem Parameter übergeben werden,
+die an Ihr Programm weitergegeben werden müssen.
+Diese Parameter sind mindestens Host und Port des Spielservers
+sowie die Reservierungsnummer des Spiels, dem der Computerspieler beitreten soll.
+Ein Aufruf sieht also in etwa wie folgt aus
+(falls `start.sh` als Hauptdatei eingestellt ist):
 
 [source,sh]
 ----

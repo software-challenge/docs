@@ -1,4 +1,4 @@
-== Die Software Challenge
+== Die Software-Challenge
 
 Die Software-Challenge ist ein Schulprojekt, das durch das Institut
 für Informatik der CAU Kiel veranstaltet wird und das durch zahlreiche

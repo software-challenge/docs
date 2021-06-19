@@ -2,7 +2,7 @@
 :source-highlighter: pygments
 :icons: font
 
-= Dokumentation Piranhas Software Challenge 2019
+= Dokumentation Piranhas Software-Challenge 2019
 Sven Koschnicke <svk@informatik.uni-kiel.de>
 
 
