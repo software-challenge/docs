@@ -50,9 +50,10 @@ case $action in
     esac || true
   }
 
+  asciid getting-started.adoc
+  
   asciid index.adoc
-  # getting started is just a different collection of topics, but it breaks the TOC in the main docs
-  #asciid getting-started.adoc
+  
   find "$gamedir" -name "*.adoc" | while read -r adoc; do
     # save the first word of the file to $word
     read -r word _<"$adoc";

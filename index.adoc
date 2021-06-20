@@ -1,4 +1,6 @@
 :imagesdir: images
+:toc: left
+:toc-title: Inhalt
 :source-highlighter: pygments
 :icons: font
 
