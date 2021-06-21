@@ -10,14 +10,14 @@ if [[ -z "$GITHUB_SECRET" ]]; then
   read -r -p 'GitHub secret to use: ' GITHUB_SECRET
 fi
 
-ssh -M -S ssh-ctrl-socket -fnNT -L 5000:localhost:5000 $server
-ssh -S ssh-ctrl-socket -O check $server || exit 1
+ssh -M -S /tmp/ssh-ctrl-socket -fnNT -L 5000:localhost:5000 $server
+ssh -S /tmp/ssh-ctrl-socket -O check $server || exit 1
 docker login localhost:5000 || exit 1
 
 docker build -t docs-server --build-arg GITHUB_SECRET="$GITHUB_SECRET" .
 docker tag docs-server localhost:5000/docs-server
 docker push localhost:5000/docs-server
-ssh -S ssh-ctrl-socket -O exit $server
+ssh -S /tmp/ssh-ctrl-socket -O exit $server
 ssh $server 'sudo docker pull localhost:5000/docs-server' && \
 ssh $server "sudo docker stop enduser-docs"
 ssh $server "sudo docker rm enduser-docs"
