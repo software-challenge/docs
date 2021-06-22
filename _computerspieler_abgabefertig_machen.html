@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
-<meta name="author" content="Sven Koschnicke">
-<title>Software-Challenge Endbenutzer-Dokumentation</title>
+<title>Software-Challenge Dokumentation für Teilnehmer</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -519,25 +518,19 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 </head>
 <body id="_computerspieler_abgabefertig_machen" class="article">
 <div id="header">
-<h1>Software-Challenge Endbenutzer-Dokumentation</h1>
-<div class="details">
-<span id="author" class="author">Sven Koschnicke</span><br>
-<span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
-<span id="revdate">2021-06-17</span>
-</div>
+<h1>Software-Challenge Dokumentation für Teilnehmer</h1>
 </div>
 <div id="content">
 <div class="sect1">
 <h2 id="_computerspieler_abgabefertig_machen">Computerspieler abgabefertig machen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Damit <a href="das-wettkampfsystem.html">das Wettkampfsystem</a> mit dem
-Computerspieler arbeiten kann, muss er zu einem ausführbaren Programm
-gemacht und in ein ZIP-Archiv gepackt werden.</p>
+<p>Damit <a href="das-wettkampfsystem.html">das Wettkampfsystem</a> mit dem Computerspieler arbeiten kann,
+muss er als ausführbares Programm in ein ZIP-Archiv gepackt werden.</p>
 </div>
 <div class="paragraph">
-<p>Je nach Programmiersprache, in der der Computerspieler entwickelt wurde, sind
-unterschiedliche Schritte notwendig.</p>
+<p>Je nach Programmiersprache, in der der Computerspieler entwickelt wurde,
+sind unterschiedliche Schritte notwendig.</p>
 </div>
 <div class="paragraph">
 <p>Wie man den abgabefertigen Computerspieler dann im Wettkampfsystem einsendet,
@@ -549,8 +542,8 @@ ist unter <a href="das-wettkampfsystem.html#computerspieler">Wettkampfsystem, Co
 <p>Diese Anleitung beschreibt, wie man für den Java-SimpleClient vorgehen muss.</p>
 </div>
 <div class="paragraph">
-<p>Hierzu gibt es zwei Möglichkeiten: Die Jar-Datei selbst erstellen und
-die Verwendung eines Ant-Scripts.</p>
+<p>Hierzu gibt es zwei Möglichkeiten:
+Die Jar-Datei selbst erstellen und die Verwendung von Gradle.</p>
 </div>
 <div class="sect3">
 <h4 id="erste-möglichkeit---jar-erstellen">Erste Möglichkeit - JAR erstellen</h4>
@@ -637,7 +630,7 @@ wählen</p>
 <p>Auf der rechten Seite muss man nun das Buildfile auswählen. Das geht
 entweder mit "Browse Workspace" oder "Browse File System". Das Buildfile
 heißt "build.xml" und liegt direkt in dem SimpleClient Ordner, den man
-auf der Software Challenge Homepage heruntergeladen hat. Anschließend
+auf der Software-Challenge Homepage heruntergeladen hat. Anschließend
 mit "Apply" bestätigen und das Fenster schließen</p>
 </li>
 <li>
@@ -686,20 +679,21 @@ die Shebang-Zeile zu schreiben:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Ein vollständiges Beispiel für einen abgabefertigen
-Ruby-Computerspieler gibt es im
-<a href="https://github.com/CAU-Kiel-Tech-Inf/socha_ruby_client/tree/master/example">example
-Verzeichnis des Client-Gems bei Github</a>. Packt man die beiden Dateien
-<code>client.rb</code> und <code>main.rb</code> in ein ZIP-Archiv, hat man einen
-abgabefertigen Computerspieler. Beim Hochladen wählt man <code>main.rb</code> als
-Hauptdatei.</p>
+<p>Ein vollständiges Beispiel für einen abgabefertigen Ruby-Computerspieler gibt es im
+<a href="https://github.com/software-challenge/client-ruby/tree/main/example">example Verzeichnis des Client-Gems bei Github</a>.
+Packt man die beiden Dateien <code>client.rb</code> und <code>main.rb</code> in ein ZIP-Archiv,
+hat man einen abgabefertigen Computerspieler.
+Beim Hochladen wählt man <code>main.rb</code> als Hauptdatei.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_c">C#</h3>
 <div class="paragraph">
-<p>Stellt sicher, dass euer Projekt nur Libraries nutzt, die auch in <a href="_wettkampfmodalitäten.html#ausfuehrungsumgebungen">Mono 5.4</a> enthalten sind.
-Kompiliert bzw. erstellt euer Projekt und fügt zu dem build eine start.sh hinzu, wie <a href="_computerspieler_abgabefertig_machen.html#andere-sprache">hier</a> beschrieben, sofern ihr noch keine habt, da der Wettkampfserver eure exe sonst nicht ausführen kann.
+<p>Stellt sicher, dass euer Projekt nur Libraries nutzt,
+die auch in <a href="_wettkampfmodalitäten.html#ausfuehrungsumgebungen">Mono 5.4</a> enthalten sind.
+Kompiliert bzw. erstellt euer Projekt und fügt zu dem build eine start.sh hinzu,
+wie <a href="_computerspieler_abgabefertig_machen.html#andere-sprache">hier</a> beschrieben, sofern ihr noch keine habt,
+da der Wettkampfserver eure exe sonst nicht ausführen kann.
 Sie sollte folgenden Inhalt haben, um eure exe mit mono zu starten:</p>
 </div>
 <div class="listingblock">
@@ -713,17 +707,18 @@ mono csharp_exe_dateiname <span class="tok-s2">&quot;</span><span class="tok-nv"
 <div class="sect2">
 <h3 id="andere-sprache">Andere Programmiersprache</h3>
 <div class="paragraph">
-<p>Bei Computerspielern in jeder anderen Programmiersprache muss ein Shell-Script
-dem ZIP-Archiv beigelegt werden, was die genauen Instruktionen zum Start des
-Computerspielers enthält. Dieses muss nach dem Hochladen im Wettkampfystem als
-Hauptdatei ausgewählt werden.</p>
+<p>Bei Computerspielern in einer anderen Programmiersprache
+muss das ZIP-Archiv ein Shell-Script
+mit genauen Instruktionen zum Start des Computerspielers enthalten.
+Dieses muss nach dem Hochladen im Wettkampfystem als Hauptdatei ausgewählt werden.</p>
 </div>
 <div class="paragraph">
-<p>Beachten Sie hierbei, dass diesem Script vom Wettkampfsystem Parameter übergeben
-werden, die an Ihr Programm weitergegeben werden müssen. Diese Parameter sind
-mindestens Host und Port des Spielservers sowie die Reservierungsnummer des
-Spiels, dem der Computerspieler beitreten soll. Ein Aufruf sieht also in etwa
-wie folgt aus (falls <code>start.sh</code> als Hauptdatei eingestellt ist):</p>
+<p>Beachten Sie hierbei, dass diesem Script vom Wettkampfsystem Parameter übergeben werden,
+die an Ihr Programm weitergegeben werden müssen.
+Diese Parameter sind mindestens Host und Port des Spielservers
+sowie die Reservierungsnummer des Spiels, dem der Computerspieler beitreten soll.
+Ein Aufruf sieht also in etwa wie folgt aus
+(falls <code>start.sh</code> als Hauptdatei eingestellt ist):</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -814,12 +809,12 @@ mitgeliefert werden.</p>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="_den_simpleclient_erweitern.html">Den SimpleClient erweitern</a> | ↑ Up: <a href="index.html">Software-Challenge Endbenutzer-Dokumentation</a> | Next: <a href="_die_ersten_programmier_schritte.html">Die ersten (Programmier-)Schritte</a> →</p>
+<p>← Previous: <a href="_den_simpleclient_erweitern.html">Den SimpleClient erweitern</a> | ↑ Up: <a href="index.html">Software-Challenge Dokumentation für Teilnehmer</a> | Next: <a href="_die_ersten_programmier_schritte.html">Die ersten (Programmier-)Schritte</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-06-17 13:24:06 UTC
+Last updated 2021-06-22 10:15:28 UTC
 </div>
 </div>
 </body>

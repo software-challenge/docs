@@ -5,8 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
-<meta name="author" content="Sven Koschnicke">
-<title>Software-Challenge Endbenutzer-Dokumentation</title>
+<title>Software-Challenge Dokumentation für Teilnehmer</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -519,40 +518,34 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 </head>
 <body id="server" class="article">
 <div id="header">
-<h1>Software-Challenge Endbenutzer-Dokumentation</h1>
-<div class="details">
-<span id="author" class="author">Sven Koschnicke</span><br>
-<span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
-<span id="revdate">2021-06-17</span>
-</div>
+<h1>Software-Challenge Dokumentation für Teilnehmer</h1>
 </div>
 <div id="content">
 <div class="sect1">
 <h2 id="server">Der Spielleiter (Server)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Die beiden <a href="der-computerspieler.html">Computerspieler</a> kommunizieren nicht
-direkt miteinander, sondern übertragen ihre Nachrichten über einen
-Mittelmann: den Spielleiter. Dadurch ist zum einen sichergestellt,
-dass man seinen Gegner nicht mit illegalen Nachrichten belästigen
-kann, zum anderen sorgt der Spielleiter dafür, dass sich die
-Kontrahenten an die Spielregeln halten.</p>
+<p>Die beiden <a href="der-computerspieler.html">Computerspieler</a> kommunizieren nicht direkt miteinander,
+sondern übertragen ihre Nachrichten über einen Mittelmann: den Spielleiter.
+Dadurch ist zum einen sichergestellt,
+dass man seinen Gegner nicht mit illegalen Nachrichten belästigen kann,
+zum anderen sorgt der Spielleiter dafür,
+dass sich die Kontrahenten an die Spielregeln halten.</p>
 </div>
 <div class="paragraph">
-<p>Der Spielleiter ist direkt im <a href="das-wettkampfsystem.html">Wettkampfsystem</a>
-integriert, so dass alle Turnierspiele regelkonform gespielt werden
-müssen. Zum Testen des eigenen Computerspielers gibt es eine spezielle
-Version des Spielleiters, die im Downloadbereich
-(<a href="http://www.software-challenge.de" class="bare">http://www.software-challenge.de</a>) heruntergeladen werden
-kann. Diese Download-Version, die in diesem Abschnitt beschrieben wird,
-besitzt eine grafische Oberfläche, durch die man das Spiel gut verfolgen
-und sogar als Mensch mitspielen kann.</p>
+<p>Der Spielleiter ist direkt im <a href="das-wettkampfsystem.html">Wettkampfsystem</a> integriert,
+so dass alle Turnierspiele regelkonform gespielt werden.
+Zum Testen des eigenen Computerspielers gibt es eine spezielle Version des Spielleiters,
+die im <a href="https://software-challenge.de/dokumentation-und-material">Downloadbereich der Website</a> heruntergeladen werden kann.
+Diese Download-Version enthälft eine grafische Oberfläche,
+durch die man das Spiel gut verfolgen und sogar als Mensch mitspielen kann.</p>
 </div>
 <div class="sect2">
 <h3 id="system-vorbereiten-und-spielleiter-starten">System vorbereiten und Spielleiter starten</h3>
 <div class="paragraph">
-<p>Die einzige Vorraussetzung ist, dass auf dem Rechner mindestens die
-Laufzeitumgebung für Java 8 installiert ist. Siehe <a href="installation-java.html">Installation von Java</a>.</p>
+<p>Die einzige Vorraussetzung ist,
+dass auf dem Rechner mindestens die Laufzeitumgebung für Java 9 installiert ist.
+Siehe <a href="installation-java.html">Installation von Java</a>.</p>
 </div>
 <div class="paragraph">
 <p>Nach der erfolgreichen Installation kann man den Server durch einen
@@ -580,8 +573,7 @@ Doppelklick auf die Datei <code>software-challenge-gui</code> starten.</p>
 <div class="sect2">
 <h3 id="ein-neues-spiel-erstellen">Ein neues Spiel erstellen</h3>
 <div class="paragraph">
-<p>Um ein Spiel zu spielen, muss zunächst "Neues
-Spiel starten" angeklickt werden.</p>
+<p>Um ein Spiel zu spielen, muss zunächst "Neues Spiel starten" angeklickt werden.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -699,14 +691,12 @@ Testserver</a> und <a href="server.html#tests-ohne-gui">Massentests</a> beschrie
 <div class="sect2">
 <h3 id="spielsituation-nachstellen">Spielsituation nachstellen</h3>
 <div class="paragraph">
-<p>Wenn Sie ein Fehlerverhalten Ihres Computerspielers beobachtet haben,
-das nur in einer bestimmten Situation in einem Spiel aufgetreten ist,
-kann es oft wünschenswert sein, diese Situation erneut nachspielen zu
-können, um den Computerspieler gezielt zu verbessern.</p>
+<p>Wenn ein Fehlerverhalten des Computerspielers nur in einer bestimmten Situation in einem Spiel auftritt,
+kann es oft wünschenswert sein, diese Situation erneut nachzuspielen um den Computerspieler gezielt zu verbessern.</p>
 </div>
 <div class="paragraph">
-<p>Dies ist zur Zeit nur auf etwas kompliziertem Wege möglich. Es folgt
-eine Schritt-für-Schritt Anleitung:</p>
+<p>Dies ist zur Zeit nur auf etwas kompliziertem Wege möglich.
+Es folgt eine Schritt-für-Schritt Anleitung:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -889,14 +879,14 @@ Resourcenverbrauch und Instabilität der Anwendung.</p>
 <div class="sect2">
 <h3 id="tests-ohne-gui">Massentests mit Server ohne graphische Oberfläche</h3>
 <div class="paragraph">
-<p>Wenn Sie Massentests mit ihrem Computerspieler ausführen wollen, um Beispielsweise seine
-Gewinnchance gegenüber einer früheren Version zu testen, wobei sich die beiden Spieler als Startspieler abwechseln,
-gibt es zwei Varianten:</p>
+<p>Massentests mit dem eigenen Computerspieler können sehr nützlich sein, beispeilsweise um die Stärke gegenüber einer früheren Version zu Testen.
+Dabei gibt es zwei Varianten:</p>
 </div>
 <div class="sect3">
 <h4 id="_variante_mit_testclient">Variante mit TestClient</h4>
 <div class="paragraph">
-<p>Starten sie den TestClient:</p>
+<p>Der TestClient muss vom Terminal mit den entsprechenden Argumenten aufgerufen werden.
+Diese werden unter den Beispielen näher erläutert.</p>
 </div>
 <div class="paragraph">
 <p>Unter Linux:</p>
@@ -936,9 +926,9 @@ mehrere Zeilen zu verteilen):</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Sie können hier auch manuell einen Server vorher starten, wie bei der Variante ohne TestClient, allerdings kümmert der
-TestClient sich bei Angabe des Arguments <code>--start-server</code> gleich selber darum. Sie sollten lediglich aufpassen, dass
-nicht zwei Server auf dem selben Port laufen.
+Der TestClient kann sich auch mit einem bereits laufenden Server verbinden, wie bei der Variante ohne TestClient,
+bei Angabe des Arguments <code>--start-server</code> startet er jedoch einfach selbst einen.
+Wichtig ist, dass nicht versucht wird, zwei Server auf dem selben Port zu starten.
 </td>
 </tr>
 </table>
@@ -955,7 +945,7 @@ nicht zwei Server auf dem selben Port laufen.
 <tr>
 <th class="tableblock halign-left valign-top">Attribut</th>
 <th class="tableblock halign-left valign-top">Standardwert (Typ)</th>
-<th class="tableblock halign-left valign-top">Kurzbeschreibung</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
 </tr>
 </thead>
 <tbody>
@@ -992,21 +982,26 @@ nicht zwei Server auf dem selben Port laufen.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--start-server</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false (bool)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Starte einen Server auf dem angegebenen Port vor dem Starten der Clients</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Starte einen Server auf dem angegebenen Port vor dem Starten der Clients.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'server.jar aus dem Classpath' (Dateipfad)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gib einen bestimmten server an, der für die tests gestartet werden soll.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--port</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">13051 (int)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Der Port, auf dem der TestClient die Clients startet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Port, auf dem der Server läuft.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--host</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">localhost (IP)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Das Gerät, auf dem der Server läuft</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Adresse, auf dem der Server läuft.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">--loglevel</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">INFO - as defined in logback XML (<a href="https://logback.qos.ch/apidocs/ch/qos/logback/classic/Level.html">Level</a>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INFO - ensprechend der logback-tests.xml (<a href="https://logback.qos.ch/apidocs/ch/qos/logback/classic/Level.html">Level</a>)</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Setzt das Loglevel, um ausführliche oder besonders kompakte Ausgaben zu erhalten.</p></td>
 </tr>
 </tbody>
@@ -1018,7 +1013,8 @@ nicht zwei Server auf dem selben Port laufen.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Boolesche Parameter werden als true gewertet, sobald sie angegeben werden. Ein Wert hinter dem Parameter hat keine Wirkung.
+Boolesche Parameter werden als true gewertet, sobald sie angegeben werden.
+Ein Wert hinter dem Parameter hat keine Wirkung.
 </td>
 </tr>
 </table>
@@ -1029,18 +1025,16 @@ Die Ausgabe der Daten erfolgt nach jedem Spiel anhand von gerundeten Werten.
 Der TestClient beendet sich selbst, nachdem alle Spiele gespielt wurden.</p>
 </div>
 <div class="paragraph">
-<p>Die Ergebnisse der Spiele werden für den jeweiligen Spielernamen vom Server
-zusammengezählt. Dies wird auch über mehrere Starts des TestClients getan. Die
-Ergebnisse werden erst zurückgesetzt, wenn der Server neu gestartet wird. Achten
-Sie also darauf, den Server neuzustarten oder einen anderen Spielernamen zu
-verwenden, wenn Sie den Spieler verändern.</p>
+<p>Die Ergebnisse der Spiele werden für den jeweiligen Spielernamen vom Server zusammengezählt, auch über mehrere Starts des TestClients.
+Die Ergebnisse werden erst zurückgesetzt, wenn der Server neu gestartet wird.
+Achte also nach einer Veränderung der Spieler darauf, den Server neuzustarten oder andere Spielernamen zu verwenden.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_variante_ohne_testclient">Variante ohne TestClient</h4>
 <div class="paragraph">
-<p>Starten sie den Server:</p>
+<p>Starte den Server aus dem Terminal:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1048,16 +1042,16 @@ verwenden, wenn Sie den Spieler verändern.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Starten Sie ein Spiel mit Reservierungscode (siehe Spielverlauf in der XML-Dokumentation).
-Aktivieren Sie mit dem erstellten Administratorclient den Testmodus:</p>
+<p>Starte ein Spiel mit Reservierungscode (siehe Spielverlauf in der XML-Dokumentation).
+Aktiviere mit dem erstellten Administratorclient den Testmodus:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;testModus</span> <span class="tok-na">testModus=</span><span class="tok-s">&quot;true&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;testMode</span> <span class="tok-na">testModus=</span><span class="tok-s">&quot;true&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Dies liefert die Antwort</p>
+<p>Darauf antwortet der Server:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1066,7 +1060,7 @@ Aktivieren Sie mit dem erstellten Administratorclient den Testmodus:</p>
 </div>
 <div class="paragraph">
 <p>Mit false als entsprechenden Parameter kann dieser wieder deaktiviert werden.
-Nun können sie jederzeit die Testdaten der Spieler anhand ihres Anzeigenamens erfragen (es ist zu beachten, dass dafür die Spieler unterschiedliche Anzeigenamen haben müssen):</p>
+Nun können jederzeit die Testdaten der Spieler anhand ihres Anzeigenamens erfragt werden:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1113,12 +1107,12 @@ Nun können sie jederzeit die Testdaten der Spieler anhand ihres Anzeigenamens e
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="_die_software_challenge.html">Die Software Challenge</a> | ↑ Up: <a href="index.html">Software-Challenge Endbenutzer-Dokumentation</a> | Next: <a href="der-computerspieler.html">Der Computerspieler (Client)</a> →</p>
+<p>← Previous: <a href="_die_software_challenge.html">Die Software-Challenge</a> | ↑ Up: <a href="index.html">Software-Challenge Dokumentation für Teilnehmer</a> | Next: <a href="der-computerspieler.html">Der Computerspieler (Client)</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-06-17 13:24:06 UTC
+Last updated 2021-06-22 10:15:28 UTC
 </div>
 </div>
 </body>
