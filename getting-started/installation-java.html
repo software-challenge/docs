@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
-<title>Software-Challenge Dokumentation für Teilnehmer</title>
+<meta name="author" content="Sven Koschnicke">
+<title>Software-Challenge Einstieg</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -440,214 +441,108 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="_bedienung_von_eclipse" class="article toc2 toc-left">
+<body id="installation-java" class="article toc2 toc-left">
 <div id="header">
-<h1>Software-Challenge Dokumentation für Teilnehmer</h1>
+<h1>Software-Challenge Einstieg</h1>
+<div class="details">
+<span id="author" class="author">Sven Koschnicke</span><br>
+<span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
+<span id="revdate">2018-09-05</span>
+</div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhalt</div>
-<p><span class="toc-root"><a href="index.html">Software-Challenge Dokumentation für Teilnehmer</a></span></p><ul class="sectlevel1">
-<li><a href="_die_software_challenge.html">Die Software-Challenge</a>
+<p><span class="toc-root"><a href="getting-started.html">Software-Challenge Einstieg</a></span></p><ul class="sectlevel1">
+<li><a href="_das_spiel_kennenlernen.html">Das Spiel kennenlernen</a>
 </li>
-<li><a href="server.html">Der Spielleiter (Server)</a>
-</li>
-<li><a href="der-computerspieler.html">Der Computerspieler (Client)</a>
-</li>
-<li><a href="der-adminclient.html">Der AdminClient</a>
-</li>
-<li><a href="_die_richtige_programmiersprache.html">Die richtige Programmiersprache</a>
-</li>
-<li><a href="installation-java.html">Installation von Java</a>
-</li>
-<li><a href="_einrichtung_der_java_entwicklungsumgebung.html">Einrichtung der (Java-)Entwicklungsumgebung</a>
-</li>
-<li><a href="_bedienung_von_eclipse.html"><span class="toc-current">Bedienung von Eclipse</span></a>
+<li><a href="installation-java.html"><span class="toc-current">Installation von Java</span></a>
 <ul class="sectlevel2">
-<li><a href="_bedienung_von_eclipse.html#die-oberfläche">Die Oberfläche</a>
+<li><a href="installation-java.html#grundsätzliches">Grundsätzliches</a>
 </li>
-<li><a href="_bedienung_von_eclipse.html#programme-starten">Programme starten</a>
+<li><a href="installation-java.html#_installation">Installation</a>
 </li>
-<li><a href="_bedienung_von_eclipse.html#_tastaturkürzel">Tastaturkürzel</a>
+<li><a href="installation-java.html#weiterführende-informationen">Weiterführende Informationen</a>
 </li>
 </ul>
 </li>
-<li><a href="_den_simpleclient_erweitern.html">Den SimpleClient erweitern</a>
+<li><a href="_einrichtung_der_java_entwicklungsumgebung.html">Einrichtung der (Java-)Entwicklungsumgebung</a>
 </li>
-<li><a href="_computerspieler_abgabefertig_machen.html">Computerspieler abgabefertig machen</a>
+<li><a href="_bedienung_von_eclipse.html">Bedienung von Eclipse</a>
 </li>
 <li><a href="_die_ersten_programmier_schritte.html">Die ersten (Programmier-)Schritte</a>
 </li>
-<li><a href="schnittstelle.html">Die Schnittstelle zum Server</a>
+<li><a href="der-computerspieler.html">Der Computerspieler (Client)</a>
 </li>
-<li><a href="_wettkampfmodalitäten.html">Wettkampfmodalitäten</a>
+<li><a href="server.html">Der Spielleiter (Server)</a>
 </li>
-<li><a href="das-wettkampfsystem.html">Das Wettkampfsystem</a>
+<li><a href="_den_simpleclient_erweitern.html">Den SimpleClient erweitern</a>
 </li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_bedienung_von_eclipse">Bedienung von Eclipse</h2>
+<h2 id="installation-java">Installation von Java</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Wenn man bisher noch nicht mit einer Entwicklungsumgebung gearbeitet
-hat, mag der Anblick erschreckend unübersichtlich sein. Sobald man
-sich jedoch etwas intensiver damit beschäftigt hat, möchte man den
-Bedienkomfort eines solchen Entwicklertools gar nicht mehr
-missen. Dieser Artikel stellt die wichtigsten Komponenten der
-Entwicklungsumgebung Eclipse vor.</p>
+<p>Die meisten Programme, die vom Institut für Informatik
+zur Verfügung gestellt werden, sind in der Programmiersprache Java
+geschrieben. Diese Anleitung soll die Beschaffung und Installation von
+Java erleichtern.</p>
 </div>
 <div class="sect2">
-<h3 id="die-oberfläche">Die Oberfläche</h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/eclipse_desktop.jpg" alt="eclipse desktop">
+<h3 id="grundsätzliches">Grundsätzliches</h3>
+<div class="paragraph">
+<p>Java gibt es in zwei verschiedenen Paketen: Das <em>Java Runtime
+Environment (JRE)</em> und das <em>Java Development Kit (JDK)</em>. Möchte man
+lediglich Java-Programme starten, also nicht selber entwickeln, dann
+reicht das JRE vollkommen aus. Möchte man auch eigene Programme
+schreiben, muss das JDK auf jeden Fall installiert sein. Da im JDK auch
+das JRE integriert ist, kann man aber immer ohne Bedenken gleich zum JDK
+greifen.</p>
 </div>
-<div class="title">Figure 5. Überblick über die wichtigsten Fenster in Eclipse</div>
+</div>
+<div class="sect2">
+<h3 id="_installation">Installation</h3>
+<div class="paragraph">
+<p>Das JDK gibt es auf den Seiten von Oracle
+<a href="http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html#javasejdk" class="bare">http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html#javasejdk</a>
+Dort das aktuelle "JDK" herunterladen. Es gibt auch Installationsanleitungen auf der Seite.</p>
 </div>
 <div class="sect3">
-<h4 id="package-explorer">Package Explorer</h4>
+<h4 id="installation-über-paketquellen">Installation über Paketquellen (Linux)</h4>
 <div class="paragraph">
-<p>Der Package Explorer befindet sich am linken Rand. Er verwaltet alle
-importierten Projekte. Wenn man im Package Exlorer einen Doppelklick auf
-eine Datei macht, wird diese im Editor angezeigt. Mit einem Rechtsklick
-auf eine Datei oder ein Verzeichnis bekommt man viele Optionen, mit
-denen sich das ausgewählte Objekt bearbeiten lässt.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editor">Editor</h4>
-<div class="paragraph">
-<p>Der Editor ist die große Fläche in der Mitte des Eclipse-Fensters. Am
-oberen Rand befindet sich die Tab-Leiste, die alle geöffneten Dateien
-beinhaltet.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="outline">Outline</h4>
-<div class="paragraph">
-<p>Am rechten Bildschirmrand befindet sich die Outine. Sie zeigt alle
-Variablen und Methoden der Klasse an, die gerade im Editor geöffnet ist.
-Mit einem Doppelklick auf einen Eintrag springt der Cursor im Editor an
-die entsprechende Stelle im Code.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="problems">Problems</h4>
-<div class="paragraph">
-<p>Der Tab Problems befindet sich im Fenster, das am unteren Bildschirmrand
-zu sehen ist. Hier werden sowohl Programmierfehler, als auch Warnungen
-angezeigt. Mit einem Doppelklick auf einen Eintrag springt der Cursor im
-Editor an die entsprechende Codezeile.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="console">Console</h4>
-<div class="paragraph">
-<p>Die Console ist nicht sofort sichtbar, sondern erscheint erst, nachdem
-das erste Programm ausgeführt worden ist. In der Console werden alle
-Systemausgaben angezeigt. Falls ein Fehler (Exception) geworfen wird,
-kann man durch einen Klick darauf an die entsprechende Zeile im
-Programmcode gelangen.</p>
+<p>Meistens ist das Java JDK in den Paketquellen der Linux-Distributionen
+enthalten, so dass man es einfach über den Paketmanager installieren
+kann. Sofern möglich, wird diese Art der Installation empfohlen, da es
+oft noch Paketabhängigkeiten gibt, die dann automatisch mitinstalliert
+werden.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="programme-starten">Programme starten</h3>
-<div class="paragraph">
-<div class="title">Dialog um die Starteinstellungen des Programms zu ändern</div>
-<p><span class="image"><img src="images/eclipse_run-configurations.jpg" alt="eclipse run configurations"></span></p>
-</div>
-<div class="paragraph">
-<p>Ein Programm lässt sich starten, indem man im Package Explorer einen
-Rechtsklick auf die Datei mit der Main-Methode macht und dann "Run As"
-→ "Java Application" ausführt.</p>
-</div>
-<div class="paragraph">
-<p>Im Menü kann man unter "Run" → "Run Configurations" im Tab "Arguments"
-noch Optionen angeben.<br></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_tastaturkürzel">Tastaturkürzel</h3>
-<div class="paragraph">
-<p>Eclipse kennt viele Tastenkombinationen, mit Hilfe
-derer einige Eclipse-Funktionen schneller aufgerufen werden können. Die
-wichtigsten Shortcuts kann man der folgenden Tabelle entnehmen:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Aktion</th>
-<th class="tableblock halign-left valign-top">Effekt</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Strg+Shift+F11</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Führt die zuletzt ausgeführte Java-Datei erneut aus</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cursor auf Variablen-, Klassen- oder Methodennamen, dann Alt+Strg+R</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bennennt alle Vorkommen des Namens im ganzen Projekt um</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Strg+F1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wenn man diese Tasenkombination über einen Fehler oder eine
-Warnung eingibt, kriegt man von Eclipse Verbesserungs-, bzw.
-Reparaturvorschläge</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Strg+I</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Rückt den markierten Text sauber ein</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Strg+F7</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kommentiert die markierten Zeilen ein, bzw. aus</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cursor auf Variablen-, Methoden- oder Klassennamen, dann F3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Der Cursor
-springt zur der Stelle, wo die Variable oder Klasse definiert wurde</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Variablen- oder Klassenname teilweise eingegeben, dann Strg+Space</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Eclipse liefert Vorschläge zur Vervollständigung</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Eingabe von <code>syso</code>, dann Strg+Space</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Erzeugt <code>System.out.println</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Eingabe von <code>for</code>, dann Strg+Space</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Eclipse liefert eine Auswahl an
-beliebigen <code>for</code>-Schleifen</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Eingabe von <code>if</code>, dann Strg+Space</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Liefert eine Auswahl an
-<code>if</code>-Dialogen</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p><strong>Hinweis:</strong> Bei Mac OS X wird statt der Strg-Taste meistens die
-Apple-Taste benutzt.</p>
+<h3 id="weiterführende-informationen">Weiterführende Informationen</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.java.sun.com">Die Java-Seiten von Oracle</a></p>
+</li>
+<li>
+<p><a href="http://wiki.ubuntuusers.de/Java/Installation">Installation von Java auf
+Ubuntu Linux</a> (Für andere Distributionen gibt es meist auch Wikis oder
+Foren mit den entsprechenden Anleitungen)</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="_einrichtung_der_java_entwicklungsumgebung.html">Einrichtung der (Java-)Entwicklungsumgebung</a> | ↑ Up: <a href="index.html">Software-Challenge Dokumentation für Teilnehmer</a> | Next: <a href="_den_simpleclient_erweitern.html">Den SimpleClient erweitern</a> →</p>
+<p>← Previous: <a href="_das_spiel_kennenlernen.html">Das Spiel kennenlernen</a> | ↑ Up: <a href="getting-started.html">Software-Challenge Einstieg</a> | Next: <a href="_einrichtung_der_java_entwicklungsumgebung.html">Einrichtung der (Java-)Entwicklungsumgebung</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-06-22 18:28:59 UTC
+Last updated 2021-06-22 18:28:48 UTC
 </div>
 </div>
 </body>

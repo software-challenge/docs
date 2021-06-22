@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
-<title>Software-Challenge Dokumentation für Teilnehmer</title>
+<meta name="author" content="Sven Koschnicke">
+<title>Software-Challenge Einstieg</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -435,219 +436,348 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+pre.pygments .hll { background-color: #ffffcc }
+pre.pygments { background: #f8f8f8; }
+pre.pygments .tok-c { color: #408080; font-style: italic } /* Comment */
+pre.pygments .tok-err { border: 1px solid #FF0000 } /* Error */
+pre.pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
+pre.pygments .tok-o { color: #666666 } /* Operator */
+pre.pygments .tok-ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+pre.pygments .tok-cm { color: #408080; font-style: italic } /* Comment.Multiline */
+pre.pygments .tok-cp { color: #BC7A00 } /* Comment.Preproc */
+pre.pygments .tok-cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+pre.pygments .tok-c1 { color: #408080; font-style: italic } /* Comment.Single */
+pre.pygments .tok-cs { color: #408080; font-style: italic } /* Comment.Special */
+pre.pygments .tok-gd { color: #A00000 } /* Generic.Deleted */
+pre.pygments .tok-ge { font-style: italic } /* Generic.Emph */
+pre.pygments .tok-gr { color: #FF0000 } /* Generic.Error */
+pre.pygments .tok-gh { color: #000080; font-weight: bold } /* Generic.Heading */
+pre.pygments .tok-gi { color: #00A000 } /* Generic.Inserted */
+pre.pygments .tok-go { color: #888888 } /* Generic.Output */
+pre.pygments .tok-gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+pre.pygments .tok-gs { font-weight: bold } /* Generic.Strong */
+pre.pygments .tok-gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+pre.pygments .tok-gt { color: #0044DD } /* Generic.Traceback */
+pre.pygments .tok-kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+pre.pygments .tok-kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+pre.pygments .tok-kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+pre.pygments .tok-kp { color: #008000 } /* Keyword.Pseudo */
+pre.pygments .tok-kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+pre.pygments .tok-kt { color: #B00040 } /* Keyword.Type */
+pre.pygments .tok-m { color: #666666 } /* Literal.Number */
+pre.pygments .tok-s { color: #BA2121 } /* Literal.String */
+pre.pygments .tok-na { color: #7D9029 } /* Name.Attribute */
+pre.pygments .tok-nb { color: #008000 } /* Name.Builtin */
+pre.pygments .tok-nc { color: #0000FF; font-weight: bold } /* Name.Class */
+pre.pygments .tok-no { color: #880000 } /* Name.Constant */
+pre.pygments .tok-nd { color: #AA22FF } /* Name.Decorator */
+pre.pygments .tok-ni { color: #999999; font-weight: bold } /* Name.Entity */
+pre.pygments .tok-ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+pre.pygments .tok-nf { color: #0000FF } /* Name.Function */
+pre.pygments .tok-nl { color: #A0A000 } /* Name.Label */
+pre.pygments .tok-nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+pre.pygments .tok-nt { color: #008000; font-weight: bold } /* Name.Tag */
+pre.pygments .tok-nv { color: #19177C } /* Name.Variable */
+pre.pygments .tok-ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+pre.pygments .tok-w { color: #bbbbbb } /* Text.Whitespace */
+pre.pygments .tok-mb { color: #666666 } /* Literal.Number.Bin */
+pre.pygments .tok-mf { color: #666666 } /* Literal.Number.Float */
+pre.pygments .tok-mh { color: #666666 } /* Literal.Number.Hex */
+pre.pygments .tok-mi { color: #666666 } /* Literal.Number.Integer */
+pre.pygments .tok-mo { color: #666666 } /* Literal.Number.Oct */
+pre.pygments .tok-sa { color: #BA2121 } /* Literal.String.Affix */
+pre.pygments .tok-sb { color: #BA2121 } /* Literal.String.Backtick */
+pre.pygments .tok-sc { color: #BA2121 } /* Literal.String.Char */
+pre.pygments .tok-dl { color: #BA2121 } /* Literal.String.Delimiter */
+pre.pygments .tok-sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+pre.pygments .tok-s2 { color: #BA2121 } /* Literal.String.Double */
+pre.pygments .tok-se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+pre.pygments .tok-sh { color: #BA2121 } /* Literal.String.Heredoc */
+pre.pygments .tok-si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+pre.pygments .tok-sx { color: #008000 } /* Literal.String.Other */
+pre.pygments .tok-sr { color: #BB6688 } /* Literal.String.Regex */
+pre.pygments .tok-s1 { color: #BA2121 } /* Literal.String.Single */
+pre.pygments .tok-ss { color: #19177C } /* Literal.String.Symbol */
+pre.pygments .tok-bp { color: #008000 } /* Name.Builtin.Pseudo */
+pre.pygments .tok-fm { color: #0000FF } /* Name.Function.Magic */
+pre.pygments .tok-vc { color: #19177C } /* Name.Variable.Class */
+pre.pygments .tok-vg { color: #19177C } /* Name.Variable.Global */
+pre.pygments .tok-vi { color: #19177C } /* Name.Variable.Instance */
+pre.pygments .tok-vm { color: #19177C } /* Name.Variable.Magic */
+pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
 <style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
                        font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="_bedienung_von_eclipse" class="article toc2 toc-left">
+<body id="_den_simpleclient_erweitern" class="article toc2 toc-left">
 <div id="header">
-<h1>Software-Challenge Dokumentation für Teilnehmer</h1>
+<h1>Software-Challenge Einstieg</h1>
+<div class="details">
+<span id="author" class="author">Sven Koschnicke</span><br>
+<span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
+<span id="revdate">2018-09-05</span>
+</div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhalt</div>
-<p><span class="toc-root"><a href="index.html">Software-Challenge Dokumentation für Teilnehmer</a></span></p><ul class="sectlevel1">
-<li><a href="_die_software_challenge.html">Die Software-Challenge</a>
-</li>
-<li><a href="server.html">Der Spielleiter (Server)</a>
-</li>
-<li><a href="der-computerspieler.html">Der Computerspieler (Client)</a>
-</li>
-<li><a href="der-adminclient.html">Der AdminClient</a>
-</li>
-<li><a href="_die_richtige_programmiersprache.html">Die richtige Programmiersprache</a>
+<p><span class="toc-root"><a href="getting-started.html">Software-Challenge Einstieg</a></span></p><ul class="sectlevel1">
+<li><a href="_das_spiel_kennenlernen.html">Das Spiel kennenlernen</a>
 </li>
 <li><a href="installation-java.html">Installation von Java</a>
 </li>
 <li><a href="_einrichtung_der_java_entwicklungsumgebung.html">Einrichtung der (Java-)Entwicklungsumgebung</a>
 </li>
-<li><a href="_bedienung_von_eclipse.html"><span class="toc-current">Bedienung von Eclipse</span></a>
-<ul class="sectlevel2">
-<li><a href="_bedienung_von_eclipse.html#die-oberfläche">Die Oberfläche</a>
-</li>
-<li><a href="_bedienung_von_eclipse.html#programme-starten">Programme starten</a>
-</li>
-<li><a href="_bedienung_von_eclipse.html#_tastaturkürzel">Tastaturkürzel</a>
-</li>
-</ul>
-</li>
-<li><a href="_den_simpleclient_erweitern.html">Den SimpleClient erweitern</a>
-</li>
-<li><a href="_computerspieler_abgabefertig_machen.html">Computerspieler abgabefertig machen</a>
+<li><a href="_bedienung_von_eclipse.html">Bedienung von Eclipse</a>
 </li>
 <li><a href="_die_ersten_programmier_schritte.html">Die ersten (Programmier-)Schritte</a>
 </li>
-<li><a href="schnittstelle.html">Die Schnittstelle zum Server</a>
+<li><a href="der-computerspieler.html">Der Computerspieler (Client)</a>
 </li>
-<li><a href="_wettkampfmodalitäten.html">Wettkampfmodalitäten</a>
+<li><a href="server.html">Der Spielleiter (Server)</a>
 </li>
-<li><a href="das-wettkampfsystem.html">Das Wettkampfsystem</a>
+<li><a href="_den_simpleclient_erweitern.html"><span class="toc-current">Den SimpleClient erweitern</span></a>
+<ul class="sectlevel2">
+<li><a href="_den_simpleclient_erweitern.html#erstellen-einer-neuen-strategie">Erstellen einer neuen Strategie</a>
+</li>
+<li><a href="_den_simpleclient_erweitern.html#_eine_idee_implementieren">Eine Idee implementieren</a>
+</li>
+</ul>
 </li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_bedienung_von_eclipse">Bedienung von Eclipse</h2>
+<h2 id="_den_simpleclient_erweitern">Den SimpleClient erweitern</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Wenn man bisher noch nicht mit einer Entwicklungsumgebung gearbeitet
-hat, mag der Anblick erschreckend unübersichtlich sein. Sobald man
-sich jedoch etwas intensiver damit beschäftigt hat, möchte man den
-Bedienkomfort eines solchen Entwicklertools gar nicht mehr
-missen. Dieser Artikel stellt die wichtigsten Komponenten der
-Entwicklungsumgebung Eclipse vor.</p>
+<p>In der Version des Java SimpleClients von der Software-Challenge
+Homepage ist bereits eine Strategie implementiert, die
+RandomLogic. Man kann jedoch auch noch beliebig viele eigene
+Strategien hinzufügen.</p>
 </div>
 <div class="sect2">
-<h3 id="die-oberfläche">Die Oberfläche</h3>
-<div class="imageblock">
+<h3 id="erstellen-einer-neuen-strategie">Erstellen einer neuen Strategie</h3>
+<div class="paragraph">
+<p>Die einfachste Möglichkeit ist, die Klasse <code>Logic</code> des SimpleClient zu kopieren
+und umzubenennen (alle Vorkommen von <code>Logic</code> durch den neuen Klassennamen
+ersetzen). Der Vollständigkeit halber hier noch das Vorgehen bei einer komplett
+neuen Klasse:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Erstellt eine neue Klasse (z.B. <code>MyLogic</code>), die das Interface
+<code>IGameHandler</code> implementiert:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
 <div class="content">
-<img src="images/eclipse_desktop.jpg" alt="eclipse desktop">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">MyLogic</span> <span class="tok-kd">implements</span> <span class="tok-n">IGameHandler</span> <span class="tok-p">{</span>
+    <span class="tok-kd">private</span> <span class="tok-n">Starter</span> <span class="tok-n">client</span><span class="tok-p">;</span>
+    <span class="tok-kd">private</span> <span class="tok-n">GameState</span> <span class="tok-n">gameState</span><span class="tok-p">;</span>
+    <span class="tok-kd">private</span> <span class="tok-n">Player</span> <span class="tok-n">currentPlayer</span><span class="tok-p">;</span></code></pre>
 </div>
-<div class="title">Figure 5. Überblick über die wichtigsten Fenster in Eclipse</div>
 </div>
-<div class="sect3">
-<h4 id="package-explorer">Package Explorer</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Erstellt einen Konstruktor, der eine Instanz des Starters erhält.
+Diese wird später noch gebraucht</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-nf">MyLogic</span><span class="tok-p">(</span><span class="tok-n">Starter</span> <span class="tok-n">client</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+    <span class="tok-k">this</span><span class="tok-p">.</span><span class="tok-na">client</span> <span class="tok-o">=</span> <span class="tok-n">client</span><span class="tok-p">;</span>
+<span class="tok-p">}</span></code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Implementiert die 5 Interface-Methoden</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-nd">@Override</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">gameEnded</span><span class="tok-p">(</span><span class="tok-n">GameResult</span> <span class="tok-n">result</span><span class="tok-p">,</span> <span class="tok-n">PlayerColor</span> <span class="tok-n">color</span><span class="tok-p">,</span> <span class="tok-n">String</span> <span class="tok-n">errorMessage</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+    <span class="tok-c1">// Hier muss nichts getan werden</span>
+<span class="tok-p">}</span>
+
+<span class="tok-nd">@Override</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onUpdate</span><span class="tok-p">(</span><span class="tok-n">Player</span> <span class="tok-n">player</span><span class="tok-p">,</span> <span class="tok-n">Player</span> <span class="tok-n">otherPlayer</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+    <span class="tok-c1">// Der Spieler wurde aktualisiert</span>
+    <span class="tok-k">this</span><span class="tok-p">.</span><span class="tok-na">player</span> <span class="tok-o">=</span> <span class="tok-n">player</span><span class="tok-p">;</span>
+<span class="tok-p">}</span>
+
+<span class="tok-nd">@Override</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onUpdate</span><span class="tok-p">(</span><span class="tok-n">GameState</span> <span class="tok-n">gameState</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+    <span class="tok-c1">// Ein neuer Spielstatus, d.h. etwas ist geschehen. Deshalb</span>
+    <span class="tok-c1">// alles aktualisieren.</span>
+    <span class="tok-k">this</span><span class="tok-p">.</span><span class="tok-na">gameState</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-p">;</span>
+    <span class="tok-k">this</span><span class="tok-p">.</span><span class="tok-na">player</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-p">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-p">();</span>
+<span class="tok-p">}</span>
+
+<span class="tok-nd">@Override</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">sendAction</span><span class="tok-p">(</span><span class="tok-n">Move</span> <span class="tok-n">move</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+    <span class="tok-c1">// Einen Zug an den Server senden</span>
+    <span class="tok-n">starter</span><span class="tok-p">.</span><span class="tok-na">sendMove</span><span class="tok-p">(</span><span class="tok-n">move</span><span class="tok-p">);</span>
+<span class="tok-p">}</span>
+
+<span class="tok-nd">@Override</span>
+<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onRequestAction</span><span class="tok-p">()</span> <span class="tok-p">{</span>
+    <span class="tok-c1">// Ich soll einen Zug machen</span>
+    <span class="tok-n">Move</span> <span class="tok-n">move</span><span class="tok-p">;</span>
+    <span class="tok-c1">// ... Hier muss die Logik rein, die einen Zug findet.</span>
+    <span class="tok-n">sendAction</span><span class="tok-p">(</span><span class="tok-n">move</span><span class="tok-p">);</span>
+<span class="tok-p">}</span></code></pre>
+</div>
+</div>
 <div class="paragraph">
-<p>Der Package Explorer befindet sich am linken Rand. Er verwaltet alle
-importierten Projekte. Wenn man im Package Exlorer einen Doppelklick auf
-eine Datei macht, wird diese im Editor angezeigt. Mit einem Rechtsklick
-auf eine Datei oder ein Verzeichnis bekommt man viele Optionen, mit
-denen sich das ausgewählte Objekt bearbeiten lässt.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editor">Editor</h4>
-<div class="paragraph">
-<p>Der Editor ist die große Fläche in der Mitte des Eclipse-Fensters. Am
-oberen Rand befindet sich die Tab-Leiste, die alle geöffneten Dateien
-beinhaltet.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="outline">Outline</h4>
-<div class="paragraph">
-<p>Am rechten Bildschirmrand befindet sich die Outine. Sie zeigt alle
-Variablen und Methoden der Klasse an, die gerade im Editor geöffnet ist.
-Mit einem Doppelklick auf einen Eintrag springt der Cursor im Editor an
-die entsprechende Stelle im Code.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="problems">Problems</h4>
-<div class="paragraph">
-<p>Der Tab Problems befindet sich im Fenster, das am unteren Bildschirmrand
-zu sehen ist. Hier werden sowohl Programmierfehler, als auch Warnungen
-angezeigt. Mit einem Doppelklick auf einen Eintrag springt der Cursor im
-Editor an die entsprechende Codezeile.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="console">Console</h4>
-<div class="paragraph">
-<p>Die Console ist nicht sofort sichtbar, sondern erscheint erst, nachdem
-das erste Programm ausgeführt worden ist. In der Console werden alle
-Systemausgaben angezeigt. Falls ein Fehler (Exception) geworfen wird,
-kann man durch einen Klick darauf an die entsprechende Zeile im
-Programmcode gelangen.</p>
-</div>
+<p>Nun kann die Strategie in der Methode <code>onRequestAction</code> (oder in eigenen
+Klassen, die dort verwendet werden) implementiert werden.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="programme-starten">Programme starten</h3>
+<h3 id="_eine_idee_implementieren">Eine Idee implementieren</h3>
 <div class="paragraph">
-<div class="title">Dialog um die Starteinstellungen des Programms zu ändern</div>
-<p><span class="image"><img src="images/eclipse_run-configurations.jpg" alt="eclipse run configurations"></span></p>
-</div>
-<div class="paragraph">
-<p>Ein Programm lässt sich starten, indem man im Package Explorer einen
-Rechtsklick auf die Datei mit der Main-Methode macht und dann "Run As"
-→ "Java Application" ausführt.</p>
+<p>Man hat einige Spiele absolviert und sich eine gute Strategie
+ausgedacht. Damit hat man zwar schon einen wichtigen Teil der Arbeit
+geleistet, aber irgendwie muss dem
+<a href="der-computerspieler.html">Computerspieler</a> noch beigebracht werden, nach
+dieser Strategie zu spielen.</p>
 </div>
 <div class="paragraph">
-<p>Im Menü kann man unter "Run" → "Run Configurations" im Tab "Arguments"
-noch Optionen angeben.<br></p>
+<p>Anhand einer kleinen Aufgabe soll gezeigt werden, wie man eine Idee
+formal beschreiben und in ein Programm überführen kann. Dabei nehmen wir
+an, dass wir einen Stapel mit Karten haben, der sortiert werden soll.</p>
 </div>
+<div class="sect3">
+<h4 id="vorraussetzungen">Vorraussetzungen</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>eine beliebige Anzahl an Spielkarten</p>
+</li>
+<li>
+<p>eine Reihenfolge, in der die Spielkarten sortiert werden sollen</p>
+</li>
+</ul>
 </div>
-<div class="sect2">
-<h3 id="_tastaturkürzel">Tastaturkürzel</h3>
+<div class="sect4">
+<h5 id="idee-formalisieren">Idee formalisieren</h5>
 <div class="paragraph">
-<p>Eclipse kennt viele Tastenkombinationen, mit Hilfe
-derer einige Eclipse-Funktionen schneller aufgerufen werden können. Die
-wichtigsten Shortcuts kann man der folgenden Tabelle entnehmen:</p>
+<p>Als erstes muss die Idee formal beschrieben werden. Oftmals kann man
+zunächst beschreiben, wie man als Mensch vorgehen würde.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Gehe den Stapel durch und merke die Position, an der sich die
+kleinste Karte befindet.</p>
+</li>
+<li>
+<p>Tausche die Position der kleinsten Karte mit der untersten Karte im
+Stapel.</p>
+</li>
+<li>
+<p>Die kleinste Karte ist jetzt an der richtigen Position.</p>
+</li>
+<li>
+<p>Führe die Schritte nochmal für den Reststapel (ohne die sortierten
+Karten) aus.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="idee-implementieren">Idee implementieren</h5>
+<div class="paragraph">
+<p>Nachdem man seine Idee formal niedergeschrieben hat, kann sie ganz
+leicht in ein Programm überführt werden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-cm">/**</span>
+<span class="tok-cm">  * Das Array a[] symbolisiert den Stapel der unsortierten Karten. Dabei steht</span>
+<span class="tok-cm">  * eine Zahl immer für eine spezielle Karte. Eine kleinere Zahl bedeutet,</span>
+<span class="tok-cm">  * dass es sich um eine kleinere Karte handelt.</span>
+<span class="tok-cm">  *</span>
+<span class="tok-cm">  * start gibt die Position an, wo der Reststapel beginnt (am Anfang: start = 0)</span>
+<span class="tok-cm">  */</span>
+ <span class="tok-kd">public</span> <span class="tok-kd">static</span> <span class="tok-kt">void</span> <span class="tok-nf">sortiere</span><span class="tok-p">(</span><span class="tok-kt">int</span><span class="tok-o">[]</span> <span class="tok-n">a</span><span class="tok-p">,</span> <span class="tok-kt">int</span> <span class="tok-n">start</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+     <span class="tok-c1">//Position der kleinsten Karte</span>
+     <span class="tok-kt">int</span> <span class="tok-n">pos</span> <span class="tok-o">=</span> <span class="tok-n">start</span><span class="tok-p">;</span>
+
+     <span class="tok-c1">// Gehe Array durch und merke die Position der kleinsten Karte </span><i class="conum" data-value="1"></i><b>(1)</b>
+     <span class="tok-k">for</span> <span class="tok-p">(</span><span class="tok-kt">int</span> <span class="tok-n">i</span> <span class="tok-o">=</span> <span class="tok-n">start</span><span class="tok-o">+</span><span class="tok-mi">1</span><span class="tok-p">;</span> <span class="tok-n">i</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-p">.</span><span class="tok-na">length</span><span class="tok-p">;</span> <span class="tok-n">i</span><span class="tok-o">++</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+         <span class="tok-c1">// Wenn eine kleinere Karte gefunden wurde...</span>
+         <span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">i</span><span class="tok-o">]</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">]</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+
+             <span class="tok-p">...</span> <span class="tok-n">neue</span> <span class="tok-n">Position</span> <span class="tok-n">merken</span>
+             <span class="tok-n">pos</span> <span class="tok-o">=</span> <span class="tok-n">i</span><span class="tok-p">;</span>
+         <span class="tok-p">}</span>
+     <span class="tok-p">}</span>
+
+     <span class="tok-c1">// kleinste Karte mit erster Karte des Reststapels tauschen  </span><i class="conum" data-value="2"></i><b>(2)</b> <i class="conum" data-value="3"></i><b>(3)</b>
+     <span class="tok-kt">int</span> <span class="tok-n">temp</span> <span class="tok-o">=</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">start</span><span class="tok-o">]</span><span class="tok-p">;</span> <span class="tok-c1">// erste Karte merken</span>
+     <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">start</span><span class="tok-o">]</span> <span class="tok-o">=</span> <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">]</span><span class="tok-p">;</span>   <span class="tok-c1">// kleinste Karte nach vorne bringen</span>
+     <span class="tok-n">a</span><span class="tok-o">[</span><span class="tok-n">pos</span><span class="tok-o">]</span> <span class="tok-o">=</span> <span class="tok-n">temp</span><span class="tok-p">;</span>       <span class="tok-c1">// gemerkte Karte in die Mitte des Stapels schreiben</span>
+
+     <span class="tok-c1">// Wenn es noch einen Reststapel gibt, soll dieser weitersortiert werden </span><i class="conum" data-value="4"></i><b>(4)</b>
+     <span class="tok-k">if</span> <span class="tok-p">(</span><span class="tok-n">start</span> <span class="tok-o">&lt;</span> <span class="tok-n">a</span><span class="tok-p">.</span><span class="tok-na">length</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+          <span class="tok-n">sortiere</span><span class="tok-p">(</span><span class="tok-n">a</span><span class="tok-p">,</span> <span class="tok-n">start</span><span class="tok-o">+</span><span class="tok-mi">1</span><span class="tok-p">);</span>
+     <span class="tok-p">}</span>
+ <span class="tok-p">}</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
 <tr>
-<th class="tableblock halign-left valign-top">Aktion</th>
-<th class="tableblock halign-left valign-top">Effekt</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Strg+Shift+F11</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Führt die zuletzt ausgeführte Java-Datei erneut aus</p></td>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Gehe den Stapel durch und merke die Position, an der sich die
+kleinste Karte befindet.</td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cursor auf Variablen-, Klassen- oder Methodennamen, dann Alt+Strg+R</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bennennt alle Vorkommen des Namens im ganzen Projekt um</p></td>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Tausche die Position der kleinsten Karte mit der untersten Karte im
+Stapel.</td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Strg+F1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wenn man diese Tasenkombination über einen Fehler oder eine
-Warnung eingibt, kriegt man von Eclipse Verbesserungs-, bzw.
-Reparaturvorschläge</p></td>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Die kleinste Karte ist jetzt an der richtigen Position.</td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Strg+I</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Rückt den markierten Text sauber ein</p></td>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Führe die Schritte nochmal für den Reststapel (ohne die sortierten
+Karten) aus.</td>
 </tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Strg+F7</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kommentiert die markierten Zeilen ein, bzw. aus</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cursor auf Variablen-, Methoden- oder Klassennamen, dann F3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Der Cursor
-springt zur der Stelle, wo die Variable oder Klasse definiert wurde</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Variablen- oder Klassenname teilweise eingegeben, dann Strg+Space</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Eclipse liefert Vorschläge zur Vervollständigung</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Eingabe von <code>syso</code>, dann Strg+Space</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Erzeugt <code>System.out.println</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Eingabe von <code>for</code>, dann Strg+Space</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Eclipse liefert eine Auswahl an
-beliebigen <code>for</code>-Schleifen</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Eingabe von <code>if</code>, dann Strg+Space</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Liefert eine Auswahl an
-<code>if</code>-Dialogen</p></td>
-</tr>
-</tbody>
 </table>
-<div class="paragraph">
-<p><strong>Hinweis:</strong> Bei Mac OS X wird statt der Strg-Taste meistens die
-Apple-Taste benutzt.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="_einrichtung_der_java_entwicklungsumgebung.html">Einrichtung der (Java-)Entwicklungsumgebung</a> | ↑ Up: <a href="index.html">Software-Challenge Dokumentation für Teilnehmer</a> | Next: <a href="_den_simpleclient_erweitern.html">Den SimpleClient erweitern</a> →</p>
+<p>← Previous: <a href="server.html">Der Spielleiter (Server)</a> | ↑ Up: <a href="getting-started.html">Software-Challenge Einstieg</a></p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-06-22 18:28:59 UTC
+Last updated 2021-06-22 18:28:48 UTC
 </div>
 </div>
 </body>

@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
-<title>Software-Challenge Dokumentation für Teilnehmer</title>
+<meta name="author" content="Sven Koschnicke">
+<title>Software-Challenge Einstieg</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -516,21 +517,18 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="_den_simpleclient_erweitern" class="article toc2 toc-left">
+<body id="server" class="article toc2 toc-left">
 <div id="header">
-<h1>Software-Challenge Dokumentation für Teilnehmer</h1>
+<h1>Software-Challenge Einstieg</h1>
+<div class="details">
+<span id="author" class="author">Sven Koschnicke</span><br>
+<span id="email" class="email"><a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a></span><br>
+<span id="revdate">2018-09-05</span>
+</div>
 <div id="toc" class="toc2">
 <div id="toctitle">Inhalt</div>
-<p><span class="toc-root"><a href="index.html">Software-Challenge Dokumentation für Teilnehmer</a></span></p><ul class="sectlevel1">
-<li><a href="_die_software_challenge.html">Die Software-Challenge</a>
-</li>
-<li><a href="server.html">Der Spielleiter (Server)</a>
-</li>
-<li><a href="der-computerspieler.html">Der Computerspieler (Client)</a>
-</li>
-<li><a href="der-adminclient.html">Der AdminClient</a>
-</li>
-<li><a href="_die_richtige_programmiersprache.html">Die richtige Programmiersprache</a>
+<p><span class="toc-root"><a href="getting-started.html">Software-Challenge Einstieg</a></span></p><ul class="sectlevel1">
+<li><a href="_das_spiel_kennenlernen.html">Das Spiel kennenlernen</a>
 </li>
 <li><a href="installation-java.html">Installation von Java</a>
 </li>
@@ -538,131 +536,632 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 </li>
 <li><a href="_bedienung_von_eclipse.html">Bedienung von Eclipse</a>
 </li>
-<li><a href="_den_simpleclient_erweitern.html"><span class="toc-current">Den SimpleClient erweitern</span></a>
+<li><a href="_die_ersten_programmier_schritte.html">Die ersten (Programmier-)Schritte</a>
+</li>
+<li><a href="der-computerspieler.html">Der Computerspieler (Client)</a>
+</li>
+<li><a href="server.html"><span class="toc-current">Der Spielleiter (Server)</span></a>
 <ul class="sectlevel2">
-<li><a href="_den_simpleclient_erweitern.html#erstellen-einer-neuen-strategie">Erstellen einer neuen Strategie</a>
+<li><a href="server.html#system-vorbereiten-und-spielleiter-starten">System vorbereiten und Spielleiter starten</a>
+</li>
+<li><a href="server.html#die-programmoberfläche">Die Programmoberfläche</a>
+</li>
+<li><a href="server.html#ein-neues-spiel-erstellen">Ein neues Spiel erstellen</a>
+</li>
+<li><a href="server.html#die-spielfeldoberfläche">Die Spielfeldoberfläche</a>
+</li>
+<li><a href="server.html#spielwiederholung-laden">Spielwiederholungen</a>
+</li>
+<li><a href="server.html#testdurchläufe">Testdurchläufe</a>
+</li>
+<li><a href="server.html#spielsituation-nachstellen">Spielsituation nachstellen</a>
+</li>
+<li><a href="server.html#replay-ohne-gui-speichern">Replay mit Server ohne graphische Oberfläche speichern</a>
+</li>
+<li><a href="server.html#automatische-spiele">Automatische Spiele: Der Testserver</a>
+</li>
+<li><a href="server.html#tests-ohne-gui">Massentests mit Server ohne graphische Oberfläche</a>
 </li>
 </ul>
 </li>
-<li><a href="_computerspieler_abgabefertig_machen.html">Computerspieler abgabefertig machen</a>
-</li>
-<li><a href="_die_ersten_programmier_schritte.html">Die ersten (Programmier-)Schritte</a>
-</li>
-<li><a href="schnittstelle.html">Die Schnittstelle zum Server</a>
-</li>
-<li><a href="_wettkampfmodalitäten.html">Wettkampfmodalitäten</a>
-</li>
-<li><a href="das-wettkampfsystem.html">Das Wettkampfsystem</a>
+<li><a href="_den_simpleclient_erweitern.html">Den SimpleClient erweitern</a>
 </li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_den_simpleclient_erweitern">Den SimpleClient erweitern</h2>
+<h2 id="server">Der Spielleiter (Server)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In der Version des Java SimpleClients von der Software-Challenge
-Homepage ist bereits eine Strategie implementiert, die
-RandomLogic. Man kann jedoch auch noch beliebig viele eigene
-Strategien hinzufügen.</p>
+<p>Die beiden <a href="der-computerspieler.html">Computerspieler</a> kommunizieren nicht direkt miteinander,
+sondern übertragen ihre Nachrichten über einen Mittelmann: den Spielleiter.
+Dadurch ist zum einen sichergestellt,
+dass man seinen Gegner nicht mit illegalen Nachrichten belästigen kann,
+zum anderen sorgt der Spielleiter dafür,
+dass sich die Kontrahenten an die Spielregeln halten.</p>
+</div>
+<div class="paragraph">
+<p>Der Spielleiter ist direkt im <a href="#das-wettkampfsystem">Wettkampfsystem</a> integriert,
+so dass alle Turnierspiele regelkonform gespielt werden.
+Zum Testen des eigenen Computerspielers gibt es eine spezielle Version des Spielleiters,
+die im <a href="https://software-challenge.de/dokumentation-und-material">Downloadbereich der Website</a> heruntergeladen werden kann.
+Diese Download-Version enthälft eine grafische Oberfläche,
+durch die man das Spiel gut verfolgen und sogar als Mensch mitspielen kann.</p>
 </div>
 <div class="sect2">
-<h3 id="erstellen-einer-neuen-strategie">Erstellen einer neuen Strategie</h3>
+<h3 id="system-vorbereiten-und-spielleiter-starten">System vorbereiten und Spielleiter starten</h3>
 <div class="paragraph">
-<p>Die einfachste Möglichkeit ist, die Klasse <code>Logic</code> des SimpleClient zu kopieren
-und umzubenennen (alle Vorkommen von <code>Logic</code> durch den neuen Klassennamen
-ersetzen). Der Vollständigkeit halber hier noch das Vorgehen bei einer komplett
-neuen Klasse:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Erstellt eine neue Klasse (z.B. <code>MyLogic</code>), die das Interface
-<code>IGameHandler</code> implementiert:</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">MyLogic</span> <span class="tok-kd">implements</span> <span class="tok-n">IGameHandler</span> <span class="tok-p">{</span>
-    <span class="tok-kd">private</span> <span class="tok-n">Starter</span> <span class="tok-n">client</span><span class="tok-p">;</span>
-    <span class="tok-kd">private</span> <span class="tok-n">GameState</span> <span class="tok-n">gameState</span><span class="tok-p">;</span>
-    <span class="tok-kd">private</span> <span class="tok-n">Player</span> <span class="tok-n">currentPlayer</span><span class="tok-p">;</span></code></pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Erstellt einen Konstruktor, der eine Instanz des Starters erhält.
-Diese wird später noch gebraucht</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-kd">public</span> <span class="tok-nf">MyLogic</span><span class="tok-p">(</span><span class="tok-n">Starter</span> <span class="tok-n">client</span><span class="tok-p">)</span> <span class="tok-p">{</span>
-    <span class="tok-k">this</span><span class="tok-p">.</span><span class="tok-na">client</span> <span class="tok-o">=</span> <span class="tok-n">client</span><span class="tok-p">;</span>
-<span class="tok-p">}</span></code></pre>
-</div>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Implementiert die 5 Interface-Methoden</p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="java"><span></span><span class="tok-nd">@Override</span>
-<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">gameEnded</span><span class="tok-p">(</span><span class="tok-n">GameResult</span> <span class="tok-n">result</span><span class="tok-p">,</span> <span class="tok-n">PlayerColor</span> <span class="tok-n">color</span><span class="tok-p">,</span> <span class="tok-n">String</span> <span class="tok-n">errorMessage</span><span class="tok-p">)</span> <span class="tok-p">{</span>
-    <span class="tok-c1">// Hier muss nichts getan werden</span>
-<span class="tok-p">}</span>
-
-<span class="tok-nd">@Override</span>
-<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onUpdate</span><span class="tok-p">(</span><span class="tok-n">Player</span> <span class="tok-n">player</span><span class="tok-p">,</span> <span class="tok-n">Player</span> <span class="tok-n">otherPlayer</span><span class="tok-p">)</span> <span class="tok-p">{</span>
-    <span class="tok-c1">// Der Spieler wurde aktualisiert</span>
-    <span class="tok-k">this</span><span class="tok-p">.</span><span class="tok-na">player</span> <span class="tok-o">=</span> <span class="tok-n">player</span><span class="tok-p">;</span>
-<span class="tok-p">}</span>
-
-<span class="tok-nd">@Override</span>
-<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onUpdate</span><span class="tok-p">(</span><span class="tok-n">GameState</span> <span class="tok-n">gameState</span><span class="tok-p">)</span> <span class="tok-p">{</span>
-    <span class="tok-c1">// Ein neuer Spielstatus, d.h. etwas ist geschehen. Deshalb</span>
-    <span class="tok-c1">// alles aktualisieren.</span>
-    <span class="tok-k">this</span><span class="tok-p">.</span><span class="tok-na">gameState</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-p">;</span>
-    <span class="tok-k">this</span><span class="tok-p">.</span><span class="tok-na">player</span> <span class="tok-o">=</span> <span class="tok-n">gameState</span><span class="tok-p">.</span><span class="tok-na">getCurrentPlayer</span><span class="tok-p">();</span>
-<span class="tok-p">}</span>
-
-<span class="tok-nd">@Override</span>
-<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">sendAction</span><span class="tok-p">(</span><span class="tok-n">Move</span> <span class="tok-n">move</span><span class="tok-p">)</span> <span class="tok-p">{</span>
-    <span class="tok-c1">// Einen Zug an den Server senden</span>
-    <span class="tok-n">starter</span><span class="tok-p">.</span><span class="tok-na">sendMove</span><span class="tok-p">(</span><span class="tok-n">move</span><span class="tok-p">);</span>
-<span class="tok-p">}</span>
-
-<span class="tok-nd">@Override</span>
-<span class="tok-kd">public</span> <span class="tok-kt">void</span> <span class="tok-nf">onRequestAction</span><span class="tok-p">()</span> <span class="tok-p">{</span>
-    <span class="tok-c1">// Ich soll einen Zug machen</span>
-    <span class="tok-n">Move</span> <span class="tok-n">move</span><span class="tok-p">;</span>
-    <span class="tok-c1">// ... Hier muss die Logik rein, die einen Zug findet.</span>
-    <span class="tok-n">sendAction</span><span class="tok-p">(</span><span class="tok-n">move</span><span class="tok-p">);</span>
-<span class="tok-p">}</span></code></pre>
-</div>
+<p>Die einzige Vorraussetzung ist,
+dass auf dem Rechner mindestens die Laufzeitumgebung für Java 9 installiert ist.
+Siehe <a href="installation-java.html">Installation von Java</a>.</p>
 </div>
 <div class="paragraph">
-<p>Nun kann die Strategie in der Methode <code>onRequestAction</code> (oder in eigenen
-Klassen, die dort verwendet werden) implementiert werden.</p>
+<p>Nach der erfolgreichen Installation kann man den Server durch einen
+Doppelklick auf die Datei <code>software-challenge-gui</code> starten.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="die-programmoberfläche">Die Programmoberfläche</h3>
+<div class="paragraph">
+<p>Die Programmoberfläche besteht aus dem Menü oben sowie der Spielfläche darunter.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/spielleiter_direkt_nach-start.jpg" alt="Spielleiter">
+</div>
+<div class="title">Figure 3. Die Spielleiteroberfläche direkt nach dem Programmstart</div>
+</div>
+<div class="paragraph">
+<p>Unter dem ersten Menüpunkt (Symbol der Software-Challenge) findet man alle möglichen Aktionen.</p>
+</div>
+<div class="paragraph">
+<p>Zu Beginn ist die Spielfläche leer.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ein-neues-spiel-erstellen">Ein neues Spiel erstellen</h3>
+<div class="paragraph">
+<p>Um ein Spiel zu spielen, muss zunächst "Neues Spiel starten" angeklickt werden.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/neues_spiel_dialog.jpg" alt="Neues Spiel">
+</div>
+<div class="title">Figure 4. Dialog für ein neues Spiel</div>
+</div>
+<div class="paragraph">
+<p>In diesem Fenster werden die Spieler ausgewählt, die an dem Spiel
+teilnehmen sollen. Für jeden Spieler gibt es folgende Optionen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Text-Eingabefeld: Hier kann für jeden Spieler ein Name eingegeben werden, der
+dann im Spiel angezeigt wird.</p>
+</li>
+<li>
+<p>Spielertyp: Es kann zwischen 4 verschiedenen Spielertypen gewählt
+werden:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Mensch: Ein menschlicher Spieler, der über die Programmoberfläche
+spielt.</p>
+</li>
+<li>
+<p>Beispiel-Computerspieler: Ein Computerspieler, der im Server integriert ist.</p>
+</li>
+<li>
+<p>Computerspieler, von GUI gestartet: Ein Computerspieler in Form eines separaten
+Programms, das beim Starten des Spiels automatisch vom Server gestartet
+wird.</p>
+</li>
+<li>
+<p>Manuell gestarteter Client: Ein Computerspieler in Form eines
+separaten Programms, das manuell durch den Benutzer gestartet werden
+muss.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Nach Eingabe der erforderlichen Werte kann das Spiel mithilfe des
+unteren Knopfs "Erstellen" erstellt werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="die-spielfeldoberfläche">Die Spielfeldoberfläche</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/spielfeldoberflaeche.jpg" alt="spielfeldoberflaeche">
+</div>
+<div class="title">Figure 5. Die Spielfeldoberfläche (hier mit dem Spiel "Blokus")</div>
+</div>
+<div class="paragraph">
+<p>Auf dem Spielbrett werden das eigentliche Spiel (hier z.B. "Blokus"),
+die Züge und weitere für das Spiel wichtige Informationen
+dargestellt. Hier setzt der menschliche Spieler auch seine Züge.</p>
+</div>
+<div class="paragraph">
+<p>Die Steuerelemente unterscheiden sich je nach Spiel und Spielsituation. Unten
+gibt es immer die Schaltflächen "Anhalten/Weiter",</p>
+</div>
+<div class="paragraph">
+<p>Für das Spiel Blokus:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Der aktuell gewähle Spielstein wird unten angezeigt, über das Menü Steurung
+kann man diesen rotieren (auch über Mausrad) und spiegeln (auch über rechte Maustaste)</p>
+</li>
+<li>
+<p>Aus der Menge noch verfügbarer Spielsteine kann man mit Mausklick einen anderen Spielstein auswählen.</p>
+</li>
+<li>
+<p>Mithilfe der Maus wird der gewählte Spielstein auf dem Feld abgelegt.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spielwiederholung-laden">Spielwiederholungen</h3>
+<div class="paragraph">
+<p>Spielwiederholungen oder Replay-Dateien sind aufgezeichnete frühere Spiele, die
+man sich beliebig oft wieder ansehen kann, um beispielsweise einen Fehler des
+eigenen Spielers zu analysieren oder eine Strategie zu verbessern.</p>
+</div>
+<div class="paragraph">
+<p>Um das aktuelle Spiel als Spielwiederholung zu speichern, klickt man auf das
+Icon ganz rechts unten im Spielbereich. Dann kann man einen Dateinamen und
+Speicherort festlegen.</p>
+</div>
+<div class="paragraph">
+<p>Um eine gespeicherte Spielwiederholung zu laden verwendet man den Eintrag
+"Replay laden" in der linken Leiste. Nachdem man eine Datei ausgewählt hat, kann
+man das gespeicherte Spiel abspielen oder Schritt für Schritt durchgehen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="testdurchläufe">Testdurchläufe</h3>
+<div class="paragraph">
+<p>Wenn man einen grundsätzlich funkionierenden Computerspieler programmiert hat,
+ist es sinnvoll, diesen mit vielen verschiedenen Spielsituationen zu
+konfrontieren. Dadurch lassen sich Fehler entdecken und die Spielstärke des
+Computerspielers beurteilen. Für solche Testdurchläufe wird ein Testserver und
+TestClient zur Verfügung gestellt. Wie man diese verwendet, ist weiter unten
+unter den Überschrift <a href="server.html#automatische-spiele">Automatische Spiele: Der
+Testserver</a> und <a href="server.html#tests-ohne-gui">Massentests</a> beschrieben.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="spielsituation-nachstellen">Spielsituation nachstellen</h3>
+<div class="paragraph">
+<p>Wenn ein Fehlerverhalten des Computerspielers nur in einer bestimmten Situation in einem Spiel auftritt,
+kann es oft wünschenswert sein, diese Situation erneut nachzuspielen um den Computerspieler gezielt zu verbessern.</p>
+</div>
+<div class="paragraph">
+<p>Dies ist zur Zeit nur auf etwas kompliziertem Wege möglich.
+Es folgt eine Schritt-für-Schritt Anleitung:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Laden Sie das betreffende Replay aus dem Wettkampfsystem herunter
+(.xml.gz Datei).</p>
+</li>
+<li>
+<p>Entpacken Sie das Replay, sodass sie eine .xml-Datei erhalten.</p>
+</li>
+<li>
+<p>Starten Sie den Server und erstellen Sie ein neues Spiel. Wählen Sie
+den Computerspieler, der für diese Spielsituation getestet werden soll.
+Dieser Spieler muss als Spieler 1 gestartet werden und ist dann direkt
+als erstes dran. Der Gegenspieler kann dann ein beliebiger Computerspieler
+oder auch ein Mensch sein.</p>
+</li>
+<li>
+<p>Setzen Sie einen Haken bei "Spiel aus Datei laden". Wählen Sie über
+"Datei wählen" das entsprechende Replay aus und spezifizieren sie den Zug in dem gestartet werden soll.
+Starten Sie dann das Spiel. Das Spiel sollte sich nun in genau der Situation befinden, in
+der das Fehlerverhalten aufgetreten ist. Dabei ist der Spieler, der nun
+dran ist immer der rote Spieler. Falls der blaue Spieler eigentlich dran
+war, werden die Farben der Spieler getauscht.</p>
+</li>
+<li>
+<p>Nun kann der nächste Zug beim Spieler angefordert werden und dabei
+durch Debugging kontrolliert werden, wo sich der Spieler falsch verhalten
+hat.
+Achtung: Wenn weitere Züge angefordert werden, kann das Verhalten vom
+normalen Spielverlauf abweichen, da evtl. nicht alle Daten für das Spiel
+in der XML vorhanden sind.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="replay-ohne-gui-speichern">Replay mit Server ohne graphische Oberfläche speichern</h3>
+<div class="paragraph">
+<p>Wenn der Server ohne die graphische Oberfläche gestartet wird, kann das <code>--saveReplay</code>
+Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter <code>./replays</code> gespeichert wird.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar softwarechallenge-server.jar --port <span class="tok-m">13051</span> --saveReplay <span class="tok-nb">true</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="automatische-spiele">Automatische Spiele: Der Testserver</h3>
+<div class="paragraph">
+<p>Wenn Sie automatisiert Spiele mit Ihrem Computerspieler spielen wollen, um
+bestimmte Verhaltensweisen bei der Weiterentwicklung regelmäßig zu testen,
+können Sie dafür einen speziellen Server ohne grafische Oberfläche verwenden,
+den sogenannten Testserver. Hier ist zu beachten, dass der Testserver auf dem Port 13051
+gestartet wird und nicht, wie im normalen Spiel auf Port 13050.</p>
+</div>
+<div class="paragraph">
+<p>Gehen Sie dazu wie folgt vor:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Laden Sie den Testserver von der Download-Seite herunter.</p>
+</li>
+<li>
+<p>Entpacken Sie das heruntergeladene Archiv.</p>
+</li>
+<li>
+<p>Wechseln Sie in einer Kommandozeilenumgebung (Windows: cmd.exe oder
+Powershell, Linux: beliebige Shell oder Terminal) in das Verzeichnis des
+entpackten Archives.</p>
+</li>
+<li>
+<p>Starten Sie den Testserver auf dem Port 13051 mit folgendem Befehl:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar softwarechallenge-server.jar --port <span class="tok-m">13051</span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Starten Sie Ihren Computerspieler und einen zweiten Computerspieler manuell auf dem Port 13051 (im SimpleClient geht dies mit der Option --port 13051)
+in weiteren Kommandozeilenumgebungen. Die Computerspieler verbinden sich
+automatisch zum Testserver und es wird ein Spiel gespielt. Danach sollten sich
+die Computerspieler automatisch beenden.</p>
+</li>
+<li>
+<p>Wenn Sie weitere Testspiele starten wollen, können Sie die Computerspieler
+erneut starten. Der Testserver muss nicht neu gestartet werden.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Beachten Sie, dass der Testserver keine Spielaufzeichnungen anlegt, wie es der
+Server mit grafischer Oberfläche tut. Die Auswertung der Spiele muss in einem
+der teilnehmenden Computerspieler geschehen (z.B. durch Log-Ausgaben).</p>
+</div>
+<div class="paragraph">
+<p>Es ist ebenfalls möglich, statt eines Zufällig generierten vollständigen
+Spielplanes eine Spielsituation zu laden und zu testen. Die Spielsituation muss
+vorher wie unter <a href="server.html#spielsituation-nachstellen">Spielsituation nachstellen</a>
+erzeugt werden. Dann kann die Datei mit dem Argument <code>--loadGameFile</code> geladen
+werden und optional mit <code>--turn</code> ein Zug spezifiziert werden.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar softwarechallenge-server.jar --port <span class="tok-m">13051</span> --loadGameFile ./replay.xml --turn <span class="tok-m">10</span></code></pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="soft-timeouts">Unerwartete Zugzeitüberschreitungen (Soft-Timeout)</h4>
+<div class="paragraph">
+<p>Wenn Sie den Testserver einige Zeit laufen lassen, um eine größere Anzahl von
+Testspielen durchzuführen, kann es dazu kommen, dass Computerspieler wegen
+Zugzeitüberschreitungen vom Server disqualifiziert werden (Soft-Timeout). Dies
+passiert, obwohl sie ihren Zug innerhalb der erlaubten Zugzeit (abhängig vom
+Spiel, bisher aber immer zwei Sekunden) an den Server geschickt haben. Der
+Garbage Collector der Java Virtual Machine löst dieses Verhalten aus. Er
+pausiert die Anwendung, um nicht mehr genutzten Speicher freizugeben. Wenn der
+Server dadurch zu einem ungünstigen Zeitpunkt angehalten wird, bemerkt er den
+Eingang des Zuges vom Computerspieler nicht rechtzeitig und disqualifiziert ihn
+daraufhin. Damit dieses Problem möglichst selten auftritt, haben sich die
+folgenden Parameter beim Starten des Servers bewährt:</p>
+</div>
+<div class="paragraph">
+<p>Unter Linux:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>java -Dfile.encoding<span class="tok-o">=</span>UTF-8 <span class="tok-se">\</span>
+     -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml <span class="tok-se">\</span>
+     -server <span class="tok-se">\</span>
+     -XX:MaxGCPauseMillis<span class="tok-o">=</span><span class="tok-m">100</span> <span class="tok-se">\</span>
+     -XX:GCPauseIntervalMillis<span class="tok-o">=</span><span class="tok-m">2050</span> <span class="tok-se">\</span>
+     -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled <span class="tok-se">\</span>
+     -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction<span class="tok-o">=</span><span class="tok-m">70</span> <span class="tok-se">\</span>
+     -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark <span class="tok-se">\</span>
+     -jar softwarechallenge-server.jar --port <span class="tok-m">13051</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Unter Windows (unterscheidet sich nur durch die Art, den langen Befehl auf
+mehrere Zeilen zu verteilen):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="batch"><span></span>java -Dfile.encoding=UTF-8 <span class="tok-se">^</span>
+<span class="tok-se"> </span>    -Dlogback.configurationFile=logback.xml <span class="tok-se">^</span>
+<span class="tok-se"> </span>    -server <span class="tok-se">^</span>
+<span class="tok-se"> </span>    -XX:MaxGCPauseMillis=100 <span class="tok-se">^</span>
+<span class="tok-se"> </span>    -XX:GCPauseIntervalMillis=2050 <span class="tok-se">^</span>
+<span class="tok-se"> </span>    -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled <span class="tok-se">^</span>
+<span class="tok-se"> </span>    -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=70 <span class="tok-se">^</span>
+<span class="tok-se"> </span>    -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark <span class="tok-se">^</span>
+<span class="tok-se"> </span>    -jar softwarechallenge-server.jar --port 13051</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Um das Verhalten des Garbage Collectors noch weiter zu verbessern, kann man auch
+noch mittels der Optionen</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>-XX:+PrintGCDateStamps -XX:+PrintGC -XX:+PrintGCDetails -Xloggc:"pfad_zum_gc.log"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>eine Logdatei über die Aktivitäten des Garbage Collectors anlegen. Darin sieht
+man genau, wann er wie lange lief. Man kann dann die Einstellungen verändern und
+testen, ob sich das Verhalten verbessert.</p>
+</div>
+<div class="paragraph">
+<p>Die Konfiguration des Garbage Collectors ist kein Allheilmittel und kann zu
+neuen Problemen führen, auf die man gefasst sein sollte. Dazu gehören erhöhter
+Resourcenverbrauch und Instabilität der Anwendung.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tests-ohne-gui">Massentests mit Server ohne graphische Oberfläche</h3>
+<div class="paragraph">
+<p>Massentests mit dem eigenen Computerspieler können sehr nützlich sein, beispeilsweise um die Stärke gegenüber einer früheren Version zu Testen.
+Dabei gibt es zwei Varianten:</p>
+</div>
+<div class="sect3">
+<h4 id="_variante_mit_testclient">Variante mit TestClient</h4>
+<div class="paragraph">
+<p>Der TestClient muss vom Terminal mit den entsprechenden Argumenten aufgerufen werden.
+Diese werden unter den Beispielen näher erläutert.</p>
+</div>
+<div class="paragraph">
+<p>Unter Linux:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>java -jar -Dlogback.configurationFile<span class="tok-o">=</span>logback-tests.xml test-client.jar <span class="tok-se">\</span>
+    --tests <span class="tok-m">4</span> <span class="tok-se">\</span>
+    --name1 <span class="tok-s2">&quot;displayName1&quot;</span> <span class="tok-se">\</span>
+    --player1 <span class="tok-s2">&quot;./player1.jar&quot;</span> <span class="tok-se">\</span>
+    --name2 <span class="tok-s2">&quot;displayName2&quot;</span> <span class="tok-se">\</span>
+    --player2 <span class="tok-s2">&quot;./player2.jar&quot;</span> <span class="tok-se">\</span>
+    --start-server <span class="tok-se">\</span>
+    --port <span class="tok-m">13051</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Unter Windows (unterscheidet sich nur durch die Art, den langen Befehl auf
+mehrere Zeilen zu verteilen):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="batch"><span></span>java -jar -Dlogback.configurationFile=logback-tests.xml test-client.jar <span class="tok-se">^</span>
+<span class="tok-se"> </span>   --tests 4 <span class="tok-se">^</span>
+<span class="tok-se"> </span>   --name1 <span class="tok-s2">&quot;displayName1&quot;</span> <span class="tok-se">^</span>
+<span class="tok-se"> </span>   --player1 <span class="tok-s2">&quot;./player1.jar&quot;</span> <span class="tok-se">^</span>
+<span class="tok-se"> </span>   --name2 <span class="tok-s2">&quot;displayName2&quot;</span> <span class="tok-se">^</span>
+<span class="tok-se"> </span>   --player2 <span class="tok-s2">&quot;./player2.jar&quot;</span> <span class="tok-se">^</span>
+<span class="tok-se"> </span>   --start-server <span class="tok-se">^</span>
+<span class="tok-se"> </span>   --port 13051</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Der TestClient kann sich auch mit einem bereits laufenden Server verbinden, wie bei der Variante ohne TestClient,
+bei Angabe des Arguments <code>--start-server</code> startet er jedoch einfach selbst einen.
+Wichtig ist, dass nicht versucht wird, zwei Server auf dem selben Port zu starten.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect4">
+<h5 id="_argumente_des_testclients">Argumente des TestClients</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribut</th>
+<th class="tableblock halign-left valign-top">Standardwert (Typ)</th>
+<th class="tableblock halign-left valign-top">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--tests</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">100 (int)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Anzahl der Tests, die gespielt werden sollen</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--player1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"./defaultplayer.jar" (Dateipfad)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Erster Computerspieler</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--player2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"./defaultplayer.jar" (Dateipfad)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zweiter Computerspieler</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--name1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"player1" (String)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des ersten Spielers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--name2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"player2" (String)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name des zweiten Spielers</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--no-timeout</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false (bool)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deaktiviere ausscheiden durch Timeouts. Kann durch <code>--no-timeout1</code> bzw. <code>--no-timeout2</code> für beide Spieler unabhängig gesetzt werden.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--start-server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false (bool)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Starte einen Server auf dem angegebenen Port vor dem Starten der Clients.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'server.jar aus dem Classpath' (Dateipfad)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gib einen bestimmten server an, der für die tests gestartet werden soll.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--port</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">13051 (int)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Der Port, auf dem der Server läuft.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--host</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">localhost (IP)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Die Adresse, auf dem der Server läuft.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">--loglevel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INFO - ensprechend der logback-tests.xml (<a href="https://logback.qos.ch/apidocs/ch/qos/logback/classic/Level.html">Level</a>)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Setzt das Loglevel, um ausführliche oder besonders kompakte Ausgaben zu erhalten.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Boolesche Parameter werden als true gewertet, sobald sie angegeben werden.
+Ein Wert hinter dem Parameter hat keine Wirkung.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Bei Argumenten, die nicht angegeben wurden, werden die Standardwerte aus der Tabelle verwendet.
+Die Ausgabe der Daten erfolgt nach jedem Spiel anhand von gerundeten Werten.
+Der TestClient beendet sich selbst, nachdem alle Spiele gespielt wurden.</p>
+</div>
+<div class="paragraph">
+<p>Die Ergebnisse der Spiele werden für den jeweiligen Spielernamen vom Server zusammengezählt, auch über mehrere Starts des TestClients.
+Die Ergebnisse werden erst zurückgesetzt, wenn der Server neu gestartet wird.
+Achte also nach einer Veränderung der Spieler darauf, den Server neuzustarten oder andere Spielernamen zu verwenden.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_variante_ohne_testclient">Variante ohne TestClient</h4>
+<div class="paragraph">
+<p>Starte den Server aus dem Terminal:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="sh"><span></span>java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar softwarechallenge-server.jar --port <span class="tok-m">13051</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Starte ein Spiel mit Reservierungscode (siehe Spielverlauf in der XML-Dokumentation).
+Aktiviere mit dem erstellten Administratorclient den Testmodus:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;testMode</span> <span class="tok-na">testModus=</span><span class="tok-s">&quot;true&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Darauf antwortet der Server:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;testing</span> <span class="tok-na">testModus=</span><span class="tok-s">&quot;true&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Mit false als entsprechenden Parameter kann dieser wieder deaktiviert werden.
+Nun können jederzeit die Testdaten der Spieler anhand ihres Anzeigenamens erfragt werden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;scoreForPlayer</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;player1&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Server antwortet mit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;playerScore&gt;</span>
+  <span class="tok-nt">&lt;score</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;player1&quot;</span> <span class="tok-na">numberOfTests=</span><span class="tok-s">&quot;4&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;values&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Gewinner&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>SUM<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;value&gt;</span>4<span class="tok-nt">&lt;/value&gt;</span>
+    <span class="tok-nt">&lt;/values&gt;</span>
+    <span class="tok-nt">&lt;values&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;∅ Feldnummer&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;value&gt;</span>5.0000013<span class="tok-nt">&lt;/value&gt;</span>
+    <span class="tok-nt">&lt;/values&gt;</span>
+    <span class="tok-nt">&lt;values&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;∅ Karotten&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;value&gt;</span>40.500011<span class="tok-nt">&lt;/value&gt;</span>
+    <span class="tok-nt">&lt;/values&gt;</span>
+  <span class="tok-nt">&lt;/score&gt;</span>
+<span class="tok-nt">&lt;/playerScore&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Bei dieser Variante muss sich selbst um das Starten der Clients gekümmert werden.</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="_bedienung_von_eclipse.html">Bedienung von Eclipse</a> | ↑ Up: <a href="index.html">Software-Challenge Dokumentation für Teilnehmer</a> | Next: <a href="_computerspieler_abgabefertig_machen.html">Computerspieler abgabefertig machen</a> →</p>
+<p>← Previous: <a href="der-computerspieler.html">Der Computerspieler (Client)</a> | ↑ Up: <a href="getting-started.html">Software-Challenge Einstieg</a> | Next: <a href="_den_simpleclient_erweitern.html">Den SimpleClient erweitern</a> →</p>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-06-22 18:28:59 UTC
+Last updated 2021-06-22 18:28:48 UTC
 </div>
 </div>
 </body>
