@@ -1,6 +1,7 @@
 :imagesdir: images
 :toc: left
 :toc-title: Inhalt
+:toclevels: 3
 :source-highlighter: pygments
 :icons: font
 :hide-uri-scheme:
@@ -24,17 +25,16 @@ Die Dokumentation des aktuellen Spiels Ostseeschach finden Sie in separaten Doku
 - <<spiele/ostseeschach/xml-dokumentation.adoc#,Ostseeschach XML Dokumentation>>
 endif::backend-pdf[]
 
-Die Dokumentation ist in folgende Abschnitte aufgeteilt. Sie können sie gezielt
-oder von Anfang bis Ende lesen. Über die Links am Ende jedes Abschnittes kommen
-Sie zum nächsten Abschnitt oder wieder auf diese Übersichtsseite.
+Die Dokumentation ist in mehrere Abschnitte aufgeteilt.
+Sie können sie gezielt oder von Anfang bis Ende lesen.
+Über einen Link am Ende jedes Abschnittes kommen Sie zum nächsten Abschnitt
+oder wieder auf diese Übersichtsseite.
 
 include::allgemein/die-software-challenge.adoc[]
 
 include::software/server.adoc[]
 
 include::software/client.adoc[]
-
-include::software/adminclient.adoc[]
 
 include::entwicklung/die-richtige-sprache.adoc[]
 
@@ -59,8 +59,6 @@ include::entwicklung/eine-idee-implementieren.adoc[]
 include::entwicklung/weiterfuehrende-literatur.adoc[]
 
 include::software/schnittstelle.adoc[]
-
-include::software/einfuehrung-xml.adoc[]
 
 include::allgemein/wettkampfmodalitaeten.adoc[]
 

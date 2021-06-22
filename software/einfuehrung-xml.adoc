@@ -1,9 +1,12 @@
 === Einführung in XML
 
-Die Kommunikation zwischen <<server,Spielleiter>> und <<der-computerspieler,Computerspieler>> wird mittels XML-Nachrichten realisiert.
-XML ist eine Auszeichnungssprache, d.h eine Sprache, die nicht nur die Daten selbst, sondern auch Informationen über die Interpretation oder Bearbeitung liefert.
-Der Vorteil dieser Sprache liegt darin, dass sie sowohl vom Computer, als auch vom Menschen gut gelesen werden kann.
-Dieser Artikel soll den Aufbau einer XML-Datei beschreiben.
+Die Kommunikation zwischen <<server,Spielleiter>> und <<der-computerspieler,Computerspieler>>
+wird mittels XML-Nachrichten realisiert.
+XML ist eine Auszeichnungssprache, d.h eine Sprache,
+die nicht nur die Daten selbst, sondern auch Informationen über die Interpretation oder Bearbeitung liefert.
+Der Vorteil dieser Sprache liegt darin,
+dass sie sowohl vom Computer als auch vom Menschen gut gelesen werden kann.
+Dieser Abschnitt gibt einen Einstieg in die Struktur von XML.
 
 [[tags]]
 ==== Tags
@@ -95,12 +98,11 @@ Man kann im Tag auch Attribute einfügen, in denen Informationen
 
 [source,xml]
 ----
-<Tag attribut="wert">
+<Tag attribut="wert" />
 ----
 
 Auf diese Weise lässt sich das Beispiel mit den komplexen Zahlen etwas
 übersichtlicher gestalten:
-
 
 [source,xml]
 ----
@@ -113,10 +115,10 @@ Auf diese Weise lässt sich das Beispiel mit den komplexen Zahlen etwas
 [[der-header]]
 ==== Der Header
 
-Ganz wichtig ist noch die erste Zeile in einem XML-Dokument. Aus ihr
-kann das Computerprogramm erfahren, wie er mit den Daten umzugehen hat
-(z.B. welcher Zeichensatz benutzt wird). Dieser Header sieht einem Tag
-sehr ähnlich:
+Wichtig ist auch die erste Zeile in einem XML-Dokument.
+Aus ihr kann das Computerprogramm erfahren,
+wie es mit den Daten umzugehen hat (z.B. welcher Zeichensatz benutzt wird).
+Dieser Header sieht einem Tag sehr ähnlich:
 
 [source,xml]
 ----
@@ -125,15 +127,14 @@ sehr ähnlich:
 
 Man nennt so ein Tag, auch _Verarbeitungsinformation_.
 
-Theoretisch darf es in einem XML-Dokument mehrere
-Verarbeitungsinformationen geben, für die Software-Challenge muss man
-aber nur den Header kennen.
+Theoretisch darf es in einem XML-Dokument mehrere Verarbeitungsinformationen geben,
+für die Software-Challenge muss man aber nur den Header kennen.
 
 [[kommentare]]
 ==== Kommentare
 
-Man kann in sein XML-Dokument auch Kommentare einfügen, die beim
-Einlesen dann ignoriert werden:
+Man kann in sein XML-Dokument auch Kommentare einfügen,
+die beim Einlesen dann ignoriert werden:
 
 [source,xml]
 ----
@@ -146,4 +147,4 @@ zwischen Tags stehen.
 [[weiterfuehrende-informationen-xml]]
 ==== Weiterführende Informationen
 
-* http://de.wikipedia.org/wiki/Xml[Artikel über XML aus der Wikipedia]
+* https://de.wikipedia.org/wiki/Extensible_Markup_Language[Wikipedia-Artikel über XML]

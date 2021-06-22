@@ -1,28 +1,31 @@
 [[der-adminclient]]
-== Der AdminClient
+=== Der AdminClient
 
-Der AdminClient dient dazu, um Spiele anzulegen und wenn nötig bestimmte Einstellungen zu ändern:
+Mit dem AdminClient kann man Spiele vorbereiten und Einstellungen ändern.
 
-Verbinden als AdminClient:
+==== Verbindungsaufbau
+
+Zuerst muss sich der AdminClient mit dem entsprechenden Passwort aus `server.properties` authentifizieren:
 
 [source, xml]
 ----
 <protocol><authenticate password="examplepassword"/>
 ----
 
-Sobald der Client sich authentifiziert hat ist folgendes möglich:
-
-Ein AdminClient erhält eine Nachricht, sobald sich ein Client über eine JoinRoomRequest verbindet:
+Ein authentifizierter AdminClient erhält eine Nachricht,
+sobald sich ein Client über ein JoinRoomRequest verbindet:
 
 [source,xml]
 ----
-<joinedGameRoom roomId=ROOMID existing="false" />
+<joinedGameRoom roomId=ROOMID playerCount=X />
 ----
-`existing` gibt hier an, ob der GameRoom bereits existierte bevor der Spieler beigetreten ist. Die ROOMID ist ein
-String der vom Server eindeutig generiert wird und ist wichtig für die genaue Zuordnung zu dem entsprechenden Raum.
+playerCount:: die Anzahl der Spieler im Raum nach dem Beitritt des neuen Spielers
+roomId:: eine vom Server generierte Zeichenfolge, die den Raum identifiziert
 
-Ein AdminClient kann sich als Observer mit einem GameRoom verbinden, dadurch erhält er alle Nachrichten, die das
-Spiel betreffen:
+==== Aktionen in einem Raum
+
+Ein AdminClient kann sich als Observer eines Raums anmelden,
+dadurch erhält er alle Nachrichten, die das Spiel betreffen:
 
 [source,xml]
 ----
@@ -54,11 +57,13 @@ Ein AdminClient kann ein Spiel vorbereiten:
 
 [source,xml]
 ----
-<prepare gameType="pluginUUID">
-  <slot displayName="p1" canTimeout="true" shouldBePaused="false"/>
-  <slot displayName="p2" canTimeout="true" shouldBePaused="false"/>
+<prepare gameType="pluginId" pause="true">
+  <slot displayName="p1" canTimeout="true" reserved="true"/>
+  <slot displayName="p2" canTimeout="true" reserved="true"/>
 </prepare>
 ----
+
+==== Testmodus
 
 Ein AdminClient kann den Testmodus aktivieren/deaktivieren:
 
@@ -73,8 +78,9 @@ Der Server antwortet mit:
 <testing testMode="true/false" />
 ----
 
-Ein AdminClient kann die Punkte und Gewinnkriterien, falls der Testmodus aktiviert wurde, anhand des Anzeigenamens der
-Spieler abfragen:
+Nachdem der Testmodus aktiviert wurde
+kann ein AdminClient die Punkte und Gewinnkriterien eines Spielers
+jederzeit anhand des Anzeigenamens erfragen:
 
 [source,xml]
 ----
@@ -112,11 +118,11 @@ Der Server antwortet darauf mit:
 ----
 
 [[servereinstellungen]]
-=== Servereinstellungen
+==== Servereinstellungen
 
-Die Servereinstellungen liegen in der server.properties Datei, die zusammen mit dem Server heruntergeladen wird.
-In ihr können folgede Werte konfiguriert werden:
+Die Servereinstellungen liegen in der `server.properties` Datei,
+die zusammen mit dem Server heruntergeladen wird.
+In ihr können folgende Werte konfiguriert werden:
 
-Das lokale Administratorpasswort kann geändert werden. Dazu muss das password Attribut neu gesetzt werden (standardmäßig auf examplepassword).
-Es kann eingestellt werden, ob ein durch einen JoinRequest gestartetes Spiel anfangs pausiert sein soll oder nicht (standardmäßig pausiert),
-indem der entsprechende Wert auf `true` oder `false` gesetzt wird.
+password :: lokales Administratorpasswort (standardmäßig auf examplepassword).
+paused :: ob ein durch ein JoinRequest gestartetes Spiel anfangs pausiert sein soll oder nicht (standardmäßig pausiert)

@@ -4,7 +4,7 @@
 Die beiden <<der-computerspieler,Computerspieler>> kommunizieren nicht direkt miteinander,
 sondern übertragen ihre Nachrichten über einen Mittelmann: den Spielleiter.
 Dadurch ist zum einen sichergestellt,
-dass man seinen Gegner nicht mit illegalen Nachrichten belästigen kann,
+dass man seinen Gegner nicht mit invaliden Nachrichten belästigen kann,
 zum anderen sorgt der Spielleiter dafür,
 dass sich die Kontrahenten an die Spielregeln halten.
 
@@ -22,13 +22,14 @@ Die einzige Vorraussetzung ist,
 dass auf dem Rechner mindestens die Laufzeitumgebung für Java 9 installiert ist.
 Siehe <<installation-java>>.
 
-Nach der erfolgreichen Installation kann man den Server durch einen
-Doppelklick auf die Datei `software-challenge-gui` starten.
+Nach der erfolgreichen Installation kann man den Server
+durch einen Doppelklick auf die Datei `software-challenge-gui` starten.
 
 [[die-programmoberfläche]]
 === Die Programmoberfläche
 
-Die Programmoberfläche besteht aus dem Menü oben sowie der Spielfläche darunter.
+Die Programmoberfläche besteht aus dem Menü oben
+sowie der Spielfläche darunter.
 
 .Die Spielleiteroberfläche direkt nach dem Programmstart
 image::spielleiter_direkt_nach-start.jpg[Spielleiter]
@@ -38,7 +39,7 @@ Unter dem ersten Menüpunkt (Symbol der Software-Challenge) findet man alle mög
 Zu Beginn ist die Spielfläche leer.
 
 [[ein-neues-spiel-erstellen]]
-=== Ein neues Spiel erstellen
+==== Ein neues Spiel erstellen
 
 Um ein Spiel zu spielen, muss zunächst "Neues Spiel starten" angeklickt werden.
 
@@ -66,7 +67,7 @@ Nach Eingabe der erforderlichen Werte kann das Spiel mithilfe des
 unteren Knopfs "Erstellen" erstellt werden.
 
 [[die-spielfeldoberfläche]]
-=== Die Spielfeldoberfläche
+==== Die Spielfeldoberfläche
 
 .Die Spielfeldoberfläche (hier mit dem Spiel "Blokus")
 image::spielfeldoberflaeche.jpg[]
@@ -75,45 +76,35 @@ Auf dem Spielbrett werden das eigentliche Spiel (hier z.B. "Blokus"),
 die Züge und weitere für das Spiel wichtige Informationen
 dargestellt. Hier setzt der menschliche Spieler auch seine Züge.
 
-Die Steuerelemente unterscheiden sich je nach Spiel und Spielsituation. Unten
-gibt es immer die Schaltflächen "Anhalten/Weiter",
+Die Steuerelemente unterscheiden sich je nach Spiel und Spielsituation.
+Unten gibt es immer die Schaltflächen "Anhalten/Weiter".
 
-
-Für das Spiel Blokus:
-
-* Der aktuell gewähle Spielstein wird unten angezeigt, über das Menü Steurung
-kann man diesen rotieren (auch über Mausrad) und spiegeln (auch über rechte Maustaste)
-* Aus der Menge noch verfügbarer Spielsteine kann man mit Mausklick einen anderen Spielstein auswählen.
-* Mithilfe der Maus wird der gewählte Spielstein auf dem Feld abgelegt.
+// TODO move this section to the specific game.
 
 [[spielwiederholung-laden]]
-=== Spielwiederholungen
+=== Spielwiederholungen (Replays)
 
-Spielwiederholungen oder Replay-Dateien sind aufgezeichnete frühere Spiele, die
-man sich beliebig oft wieder ansehen kann, um beispielsweise einen Fehler des
-eigenen Spielers zu analysieren oder eine Strategie zu verbessern.
+Spielwiederholungen oder Replay-Dateien sind aufgezeichnete frühere Spiele,
+die man sich beliebig oft wieder ansehen kann,
+um beispielsweise einen Fehler des eigenen Spielers zu analysieren
+oder eine Strategie zu verbessern.
 
-Um das aktuelle Spiel als Spielwiederholung zu speichern, klickt man auf das
-Icon ganz rechts unten im Spielbereich. Dann kann man einen Dateinamen und
-Speicherort festlegen.
+IMPORTANT: Aktuell werden Replay-Dateien automatisch im Unterordner `replays` abgespeichert.
+    Die im Folgenden genannten Anpassungsmöglichkeiten werden noch implementiert.
 
-Um eine gespeicherte Spielwiederholung zu laden verwendet man den Eintrag
-"Replay laden" in der linken Leiste. Nachdem man eine Datei ausgewählt hat, kann
-man das gespeicherte Spiel abspielen oder Schritt für Schritt durchgehen.
+Um das aktuelle Spiel als Spielwiederholung zu speichern,
+klickt man auf das Icon ganz rechts unten im Spielbereich.
+Dann kann man einen Dateinamen und Speicherort festlegen.
 
-[[testdurchläufe]]
-=== Testdurchläufe
-
-Wenn man einen grundsätzlich funkionierenden Computerspieler programmiert hat,
-ist es sinnvoll, diesen mit vielen verschiedenen Spielsituationen zu
-konfrontieren. Dadurch lassen sich Fehler entdecken und die Spielstärke des
-Computerspielers beurteilen. Für solche Testdurchläufe wird ein Testserver und
-TestClient zur Verfügung gestellt. Wie man diese verwendet, ist weiter unten
-unter den Überschrift <<automatische-spiele, Automatische Spiele: Der
-Testserver>> und <<tests-ohne-gui, Massentests>> beschrieben.
+Um eine gespeicherte Spielwiederholung zu laden,
+verwendet man den Eintrag "Replay laden" im linken Punkt der Menüleiste
+Nachdem man eine Datei ausgewählt hat,
+kann man das gespeicherte Spiel abspielen oder Schritt für Schritt durchgehen.
 
 [[spielsituation-nachstellen]]
-=== Spielsituation nachstellen
+==== Spielsituation nachstellen
+
+IMPORTANT: Diese Funktionalität fehlt noch in der neuen GUI und wird dort bald auf einfacherem Wege verfügbar sein.
 
 Wenn ein Fehlerverhalten des Computerspielers nur in einer bestimmten Situation in einem Spiel auftritt,
 kann es oft wünschenswert sein, diese Situation erneut nachzuspielen um den Computerspieler gezielt zu verbessern.
@@ -143,7 +134,7 @@ Es folgt eine Schritt-für-Schritt Anleitung:
   in der XML vorhanden sind.
 
 [[replay-ohne-gui-speichern]]
-=== Replay mit Server ohne graphische Oberfläche speichern
+==== Replay mit Server ohne graphische Oberfläche speichern
 
 Wenn der Server ohne die graphische Oberfläche gestartet wird, kann das `--saveReplay`
 Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter `./replays` gespeichert wird.
@@ -153,6 +144,11 @@ Attribut gesetzt werden, damit bei Ende jedes Spiels das Replay des Spiels unter
 
 [[automatische-spiele]]
 === Automatische Spiele: Der Testserver
+
+Wenn man einen grundsätzlich funkionierenden Computerspieler programmiert hat,
+ist es sinnvoll, diesen mit vielen verschiedenen Spielsituationen zu konfrontieren.
+Dadurch lassen sich Fehler entdecken und die Spielstärke des Computerspielers beurteilen.
+Für solche Testdurchläufe wird ein Testserver und TestClient zur Verfügung gestellt.
 
 Wenn Sie automatisiert Spiele mit Ihrem Computerspieler spielen wollen, um
 bestimmte Verhaltensweisen bei der Weiterentwicklung regelmäßig zu testen,
@@ -193,17 +189,18 @@ werden und optional mit `--turn` ein Zug spezifiziert werden.
 [[soft-timeouts]]
 ==== Unerwartete Zugzeitüberschreitungen (Soft-Timeout)
 
-Wenn Sie den Testserver einige Zeit laufen lassen, um eine größere Anzahl von
-Testspielen durchzuführen, kann es dazu kommen, dass Computerspieler wegen
-Zugzeitüberschreitungen vom Server disqualifiziert werden (Soft-Timeout). Dies
-passiert, obwohl sie ihren Zug innerhalb der erlaubten Zugzeit (abhängig vom
-Spiel, bisher aber immer zwei Sekunden) an den Server geschickt haben. Der
-Garbage Collector der Java Virtual Machine löst dieses Verhalten aus. Er
-pausiert die Anwendung, um nicht mehr genutzten Speicher freizugeben. Wenn der
-Server dadurch zu einem ungünstigen Zeitpunkt angehalten wird, bemerkt er den
-Eingang des Zuges vom Computerspieler nicht rechtzeitig und disqualifiziert ihn
-daraufhin. Damit dieses Problem möglichst selten auftritt, haben sich die
-folgenden Parameter beim Starten des Servers bewährt:
+Wenn Sie den Testserver einige Zeit laufen lassen,
+um eine größere Anzahl von Testspielen durchzuführen, kann es dazu kommen,
+dass Computerspieler wegen Zugzeitüberschreitungen vom Server disqualifiziert werden (Soft-Timeout).
+Dies passiert, obwohl sie ihren Zug innerhalb der erlaubten Zugzeit
+(abhängig vom Spiel, bisher aber immer zwei Sekunden) an den Server geschickt haben.
+Der Garbage Collector der Java Virtual Machine löst dieses Verhalten aus.
+Er pausiert die Anwendung, um nicht mehr genutzten Speicher freizugeben.
+Wenn der Server dadurch zu einem ungünstigen Zeitpunkt angehalten wird,
+bemerkt er den Eingang des Zuges vom Computerspieler nicht rechtzeitig
+und disqualifiziert ihn daraufhin.
+Damit dieses Problem möglichst selten auftritt,
+haben sich die folgenden Parameter beim Starten des Servers bewährt:
 
 Unter Linux:
 
@@ -218,8 +215,8 @@ java -Dfile.encoding=UTF-8 \
      -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark \
      -jar softwarechallenge-server.jar --port 13051
 
-Unter Windows (unterscheidet sich nur durch die Art, den langen Befehl auf
-mehrere Zeilen zu verteilen):
+Unter Windows (unterscheidet sich nur durch die Art,
+den langen Befehl auf mehrere Zeilen zu verteilen):
 
 [source,batch]
 java -Dfile.encoding=UTF-8 ^
@@ -239,21 +236,20 @@ noch mittels der Optionen
 -XX:+PrintGCDateStamps -XX:+PrintGC -XX:+PrintGCDetails -Xloggc:"pfad_zum_gc.log"
 ....
 
-eine Logdatei über die Aktivitäten des Garbage Collectors anlegen. Darin sieht
-man genau, wann er wie lange lief. Man kann dann die Einstellungen verändern und
-testen, ob sich das Verhalten verbessert.
+eine Logdatei über die Aktivitäten des Garbage Collectors anlegen.
+Darin sieht man genau, wann er wie lange lief.
+Man kann dann die Einstellungen verändern und testen, ob sich das Verhalten verbessert.
 
-Die Konfiguration des Garbage Collectors ist kein Allheilmittel und kann zu
-neuen Problemen führen, auf die man gefasst sein sollte. Dazu gehören erhöhter
-Resourcenverbrauch und Instabilität der Anwendung.
+Die Konfiguration des Garbage Collectors ist kein Allheilmittel und kann zu neuen Problemen führen,
+auf die man gefasst sein sollte.
+Dazu gehören erhöhter Resourcenverbrauch und Instabilität der Anwendung.
 
 [[tests-ohne-gui]]
-=== Massentests mit Server ohne graphische Oberfläche
+==== Massentests
 
-Massentests mit dem eigenen Computerspieler können sehr nützlich sein, beispeilsweise um die Stärke gegenüber einer früheren Version zu Testen.
-Dabei gibt es zwei Varianten:
-
-==== Variante mit TestClient
+Massentests mit dem eigenen Computerspieler können sehr nützlich sein,
+beispeilsweise um die Stärke gegenüber einer früheren Version zu Testen.
+Dafür wird ein TestClient bereitgestellt.
 
 Der TestClient muss vom Terminal mit den entsprechenden Argumenten aufgerufen werden.
 Diese werden unter den Beispielen näher erläutert.
@@ -283,7 +279,7 @@ java -jar -Dlogback.configurationFile=logback-tests.xml test-client.jar ^
     --start-server ^
     --port 13051
 
-NOTE: Der TestClient kann sich auch mit einem bereits laufenden Server verbinden, wie bei der Variante ohne TestClient,
+NOTE: Der TestClient kann sich auch mit einem bereits laufenden Server verbinden,
 bei Angabe des Arguments `--start-server` startet er jedoch einfach selbst einen.
 Wichtig ist, dass nicht versucht wird, zwei Server auf dem selben Port zu starten.
 
@@ -328,74 +324,18 @@ Wichtig ist, dass nicht versucht wird, zwei Server auf dem selben Port zu starte
 |===
 
 NOTE: Boolesche Parameter werden als true gewertet, sobald sie angegeben werden.
-Ein Wert hinter dem Parameter hat keine Wirkung.
+    Ein Wert hinter dem Parameter hat keine Wirkung.
 
-Bei Argumenten, die nicht angegeben wurden, werden die Standardwerte aus der Tabelle verwendet.
+Bei Argumenten, die nicht angegeben wurden,
+werden die Standardwerte aus der Tabelle verwendet.
 Die Ausgabe der Daten erfolgt nach jedem Spiel anhand von gerundeten Werten.
 Der TestClient beendet sich selbst, nachdem alle Spiele gespielt wurden.
 
-Die Ergebnisse der Spiele werden für den jeweiligen Spielernamen vom Server zusammengezählt, auch über mehrere Starts des TestClients.
+Die Ergebnisse der Spiele werden für den jeweiligen Spielernamen vom Server zusammengezählt,
+auch über mehrere Starts des TestClients.
 Die Ergebnisse werden erst zurückgesetzt, wenn der Server neu gestartet wird.
-Achte also nach einer Veränderung der Spieler darauf, den Server neuzustarten oder andere Spielernamen zu verwenden.
+Achte also nach einer Veränderung der Spieler darauf,
+den Server neu zu starten oder andere Spielernamen zu verwenden.
 
-==== Variante ohne TestClient
-
-Starte den Server aus dem Terminal:
-
-[source,sh]
-....
-java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051
-....
-
-Starte ein Spiel mit Reservierungscode (siehe Spielverlauf in der XML-Dokumentation).
-Aktiviere mit dem erstellten Administratorclient den Testmodus:
-
-[source,xml]
-....
-<testMode testModus="true"/>
-....
-
-Darauf antwortet der Server:
-[source,xml]
-....
-<testing testModus="true"/>
-....
-Mit false als entsprechenden Parameter kann dieser wieder deaktiviert werden.
-Nun können jederzeit die Testdaten der Spieler anhand ihres Anzeigenamens erfragt werden:
-
-[source,xml]
-....
-<scoreForPlayer displayName="player1" />
-....
-
-Der Server antwortet mit:
-[source,xml]
-....
-<playerScore>
-  <score displayName="player1" numberOfTests="4">
-    <values>
-      <fragment name="Gewinner">
-        <aggregation>SUM</aggregation>
-        <relevantForRanking>true</relevantForRanking>
-      </fragment>
-      <value>4</value>
-    </values>
-    <values>
-      <fragment name="∅ Feldnummer">
-        <aggregation>AVERAGE</aggregation>
-        <relevantForRanking>true</relevantForRanking>
-      </fragment>
-      <value>5.0000013</value>
-    </values>
-    <values>
-      <fragment name="∅ Karotten">
-        <aggregation>AVERAGE</aggregation>
-        <relevantForRanking>true</relevantForRanking>
-      </fragment>
-      <value>40.500011</value>
-    </values>
-  </score>
-</playerScore>
-....
-
-Bei dieser Variante muss sich selbst um das Starten der Clients gekümmert werden.
+NOTE: Dieses Verhalten wird wahrscheinlich bald verändert,
+    indem jeder TestClient unabhängig vom Server die Punkte zählt.

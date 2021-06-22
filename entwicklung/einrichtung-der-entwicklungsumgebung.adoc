@@ -72,5 +72,5 @@ Spielleiter laufen und auf eine Verbindung warten.
 [[weiterführende-links]]
 === Weiterführende Links
 
-* http://www.eclipse.org Homepage der Eclipse-IDE
-* http://www.netbeans.org Homepage des NetBeans-Projektes
+* http://www.eclipse.org[Homepage der Eclipse-IDE]
+* http://www.netbeans.org[Homepage des NetBeans-Projektes]
