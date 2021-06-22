@@ -1,5 +1,5 @@
 :imagesdir: images
-:toc: auto
+:toc: left
 :toc-title: Inhalt
 :source-highlighter: pygments
 :icons: font
