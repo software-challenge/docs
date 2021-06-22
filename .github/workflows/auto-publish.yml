@@ -46,7 +46,7 @@ jobs:
         git config user.name "GitHub Publish Action"
         git add --all
         git commit -m "$message"
-        git push https://niklasCarstensen:${{ secrets.GITHUB_TOKEN }}@github.com/software-challenge/docs
+        git push https://socha-bot:${{ secrets.ACCESS_TOKEN }}@github.com/software-challenge/docs
 
         echo "cleaning up"
         cd ..
