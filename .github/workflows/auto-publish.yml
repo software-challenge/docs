@@ -25,22 +25,20 @@ jobs:
     # Push the generated docs to the live branch
     - name: Deploy
       run: |
-        echo "updating date in index.adoc"
-        ./docs update-date
-        echo "removing output directory 'out'"
+        echo "== removing output directory 'out'"
         sudo rm -rf ./out
         message="$(git log --format='Deploy %h %<|(50,trunc)%f' -1)"
 
-        echo "getting live branch..."
+        echo "== getting live branch..."
         old_git_dir="$GIT_DIR"
         unset GIT_DIR
         old_git_working_dir="$GIT_WORK_TREE"
         unset GIT_WORK_TREE
         git clone https://github.com/software-challenge/docs --branch live --single-branch out
 
-        echo "generating static pages..."
+        echo "== generating static pages..."
         ./docs generate pdf
-        echo "pushing to github..."
+        echo "== pushing to github..."
         cd out
         git config user.email "info@software-challenge.de"
         git config user.name "GitHub Publish Action"
@@ -48,7 +46,7 @@ jobs:
         git commit -m "$message"
         git push https://socha-bot:${{ secrets.ACCESS_TOKEN }}@github.com/software-challenge/docs
 
-        echo "cleaning up"
+        echo "== cleaning up"
         cd ..
         rm -rf ./out
         GIT_DIR="$old_git_dir"
