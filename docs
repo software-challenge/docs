@@ -63,6 +63,7 @@ case $action in
     # do conversion if it starts with a colon
     case "$word" in :*) asciid "$adoc"; esac;
   done
+  ln -sfv -T "$outdir/spiele/ostseeschach" "aktuell"
   ;;
 
 (live)
