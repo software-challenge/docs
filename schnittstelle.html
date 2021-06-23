@@ -528,8 +528,6 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 </li>
 <li><a href="der-computerspieler.html">Der Computerspieler (Client)</a>
 </li>
-<li><a href="der-adminclient.html">Der AdminClient</a>
-</li>
 <li><a href="_die_richtige_programmiersprache.html">Die richtige Programmiersprache</a>
 </li>
 <li><a href="installation-java.html">Installation von Java</a>
@@ -544,9 +542,33 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 </li>
 <li><a href="_die_ersten_programmier_schritte.html">Die ersten (Programmier-)Schritte</a>
 </li>
-<li><a href="schnittstelle.html"><span class="toc-current">Die Schnittstelle zum Server</span></a>
+<li><a href="schnittstelle.html"><span class="toc-current">Die Schnittstelle zum Server (XML)</span></a>
 <ul class="sectlevel2">
 <li><a href="schnittstelle.html#_einführung_in_xml">Einführung in XML</a>
+<ul class="sectlevel3">
+<li><a href="schnittstelle.html#tags">Tags</a>
+</li>
+<li><a href="schnittstelle.html#attribute">Attribute</a>
+</li>
+<li><a href="schnittstelle.html#der-header">Der Header</a>
+</li>
+<li><a href="schnittstelle.html#kommentare">Kommentare</a>
+</li>
+<li><a href="schnittstelle.html#weiterfuehrende-informationen-xml">Weiterführende Informationen</a>
+</li>
+</ul>
+</li>
+<li><a href="schnittstelle.html#der-adminclient">Der AdminClient</a>
+<ul class="sectlevel3">
+<li><a href="schnittstelle.html#_verbindungsaufbau">Verbindungsaufbau</a>
+</li>
+<li><a href="schnittstelle.html#_aktionen_in_einem_raum">Aktionen in einem Raum</a>
+</li>
+<li><a href="schnittstelle.html#_testmodus">Testmodus</a>
+</li>
+<li><a href="schnittstelle.html#servereinstellungen">Servereinstellungen</a>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -559,32 +581,33 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="schnittstelle">Die Schnittstelle zum Server</h2>
+<h2 id="schnittstelle">Die Schnittstelle zum Server (XML)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Der Spielleiter kommuniziert mit den Computerspielern über eine
-Netzwerkverbindung. Dadurch ist man aus technischer Sicht komplett
-flexibel, was die Wahl der Programmiersprache angeht. Die
-Computerspieler müssen lediglich das Kommunikationsprotokoll erfüllen,
-das im Dokumentationsbereich der Software-Challenge Website
-(<a href="http://www.software-challenge.de" class="bare">www.software-challenge.de</a>) eingesehen werden kann.</p>
+<p>Der Spielleiter kommuniziert mit den Computerspielern über eine Netzwerkverbindung.
+Dadurch ist man aus technischer Sicht komplett flexibel,
+was die Wahl der Programmiersprache angeht.
+Die Computerspieler müssen lediglich das Kommunikationsprotokoll erfüllen.</p>
 </div>
 <div class="paragraph">
-<p>Anfängern wird allerdings davon abgeraten, einen komplett eigenen
-Client zu schreiben. Es ist deutlich einfacher, auf dem
-bereitgestellten Simpleclient aufzubauen (Den SimpleClient um eine
-eigene Strategie erweitern). Damit muss man sich nicht um die
-Kommunikation kümmern, sondern kann sich direkt auf die Spiellogik
-konzentrieren. Außerdem wird vom Institut für Informatik die beste
-Unterstützung für Java geboten.</p>
+<p>Anfängern wird allerdings davon abgeraten,
+einen komplett eigenen Client zu schreiben.u
+Es ist deutlich einfacher,
+auf dem bereitgestellten Simpleclient aufzubauen,
+da man sich dabei nur um die Strategie
+und nicht um die Kommunikation kümmern muss.
+Außerdem wird vom Institut für Informatik die beste Unterstützung für Java/Kotlin geboten.</p>
 </div>
 <div class="sect2">
 <h3 id="_einführung_in_xml">Einführung in XML</h3>
 <div class="paragraph">
-<p>Die Kommunikation zwischen <a href="server.html">Spielleiter</a> und <a href="der-computerspieler.html">Computerspieler</a> wird mittels XML-Nachrichten realisiert.
-XML ist eine Auszeichnungssprache, d.h eine Sprache, die nicht nur die Daten selbst, sondern auch Informationen über die Interpretation oder Bearbeitung liefert.
-Der Vorteil dieser Sprache liegt darin, dass sie sowohl vom Computer, als auch vom Menschen gut gelesen werden kann.
-Dieser Artikel soll den Aufbau einer XML-Datei beschreiben.</p>
+<p>Die Kommunikation zwischen <a href="server.html">Spielleiter</a> und <a href="der-computerspieler.html">Computerspieler</a>
+wird mittels XML-Nachrichten realisiert.
+XML ist eine Auszeichnungssprache, d.h eine Sprache,
+die nicht nur die Daten selbst, sondern auch Informationen über die Interpretation oder Bearbeitung liefert.
+Der Vorteil dieser Sprache liegt darin,
+dass sie sowohl vom Computer als auch vom Menschen gut gelesen werden kann.
+Dieser Abschnitt gibt einen Einstieg in die Struktur von XML.</p>
 </div>
 <div class="sect3">
 <h4 id="tags">Tags</h4>
@@ -708,7 +731,7 @@ in dem alle anderen enthalten sind.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;Tag</span> <span class="tok-na">attribut=</span><span class="tok-s">&quot;wert&quot;</span><span class="tok-nt">&gt;</span></code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;Tag</span> <span class="tok-na">attribut=</span><span class="tok-s">&quot;wert&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -727,10 +750,10 @@ in dem alle anderen enthalten sind.</p>
 <div class="sect3">
 <h4 id="der-header">Der Header</h4>
 <div class="paragraph">
-<p>Ganz wichtig ist noch die erste Zeile in einem XML-Dokument. Aus ihr
-kann das Computerprogramm erfahren, wie er mit den Daten umzugehen hat
-(z.B. welcher Zeichensatz benutzt wird). Dieser Header sieht einem Tag
-sehr ähnlich:</p>
+<p>Wichtig ist auch die erste Zeile in einem XML-Dokument.
+Aus ihr kann das Computerprogramm erfahren,
+wie es mit den Daten umzugehen hat (z.B. welcher Zeichensatz benutzt wird).
+Dieser Header sieht einem Tag sehr ähnlich:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -741,16 +764,15 @@ sehr ähnlich:</p>
 <p>Man nennt so ein Tag, auch <em>Verarbeitungsinformation</em>.</p>
 </div>
 <div class="paragraph">
-<p>Theoretisch darf es in einem XML-Dokument mehrere
-Verarbeitungsinformationen geben, für die Software-Challenge muss man
-aber nur den Header kennen.</p>
+<p>Theoretisch darf es in einem XML-Dokument mehrere Verarbeitungsinformationen geben,
+für die Software-Challenge muss man aber nur den Header kennen.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="kommentare">Kommentare</h4>
 <div class="paragraph">
-<p>Man kann in sein XML-Dokument auch Kommentare einfügen, die beim
-Einlesen dann ignoriert werden:</p>
+<p>Man kann in sein XML-Dokument auch Kommentare einfügen,
+die beim Einlesen dann ignoriert werden:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -767,9 +789,175 @@ zwischen Tags stehen.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://de.wikipedia.org/wiki/Xml">Artikel über XML aus der Wikipedia</a></p>
+<p><a href="https://de.wikipedia.org/wiki/Extensible_Markup_Language">Wikipedia-Artikel über XML</a></p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="der-adminclient">Der AdminClient</h3>
+<div class="paragraph">
+<p>Mit dem AdminClient kann man Spiele vorbereiten und Einstellungen ändern.</p>
+</div>
+<div class="sect3">
+<h4 id="_verbindungsaufbau">Verbindungsaufbau</h4>
+<div class="paragraph">
+<p>Zuerst muss sich der AdminClient mit dem entsprechenden Passwort aus <code>server.properties</code> authentifizieren:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;&lt;authenticate</span> <span class="tok-na">password=</span><span class="tok-s">&quot;examplepassword&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ein authentifizierter AdminClient erhält eine Nachricht,
+sobald sich ein Client über ein JoinRoomRequest verbindet:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joinedGameRoom</span> <span class="tok-na">roomId=</span><span class="tok-s">ROOMID</span> <span class="tok-na">playerCount=</span><span class="tok-s">X</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">playerCount</dt>
+<dd>
+<p>die Anzahl der Spieler im Raum nach dem Beitritt des neuen Spielers</p>
+</dd>
+<dt class="hdlist1">roomId</dt>
+<dd>
+<p>eine vom Server generierte Zeichenfolge, die den Raum identifiziert</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_aktionen_in_einem_raum">Aktionen in einem Raum</h4>
+<div class="paragraph">
+<p>Ein AdminClient kann sich als Observer eines Raums anmelden,
+dadurch erhält er alle Nachrichten, die das Spiel betreffen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;observe</span> <span class="tok-na">roomId=</span><span class="tok-s">ROOMID</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ein AdminClient kann ein Spiel pausieren oder fortsetzen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;pause</span> <span class="tok-na">roomId=</span><span class="tok-s">ROOMID</span> <span class="tok-na">pause=</span><span class="tok-s">&quot;true/false&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ein AdminClient kann einen Zug in einem pausierten Spiel anfordern:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;step</span> <span class="tok-na">roomId=</span><span class="tok-s">ROOMID</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ein AdminClient kann ein Spiel abbrechen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;cancel</span> <span class="tok-na">roomId=</span><span class="tok-s">ROOMID</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ein AdminClient kann ein Spiel vorbereiten:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;prepare</span> <span class="tok-na">gameType=</span><span class="tok-s">&quot;pluginId&quot;</span> <span class="tok-na">pause=</span><span class="tok-s">&quot;true&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;slot</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p1&quot;</span> <span class="tok-na">canTimeout=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-na">reserved=</span><span class="tok-s">&quot;true&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;slot</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p2&quot;</span> <span class="tok-na">canTimeout=</span><span class="tok-s">&quot;true&quot;</span> <span class="tok-na">reserved=</span><span class="tok-s">&quot;true&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/prepare&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_testmodus">Testmodus</h4>
+<div class="paragraph">
+<p>Ein AdminClient kann den Testmodus aktivieren/deaktivieren:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;testMode</span> <span class="tok-na">testMode=</span><span class="tok-s">&quot;true/false&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Server antwortet mit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;testing</span> <span class="tok-na">testMode=</span><span class="tok-s">&quot;true/false&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nachdem der Testmodus aktiviert wurde
+kann ein AdminClient die Punkte und Gewinnkriterien eines Spielers
+jederzeit anhand des Anzeigenamens erfragen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;scoreForPlayer</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p1&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Der Server antwortet darauf mit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;playerScore&gt;</span>
+  <span class="tok-nt">&lt;score</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p1&quot;</span> <span class="tok-na">numberOfTests=</span><span class="tok-s">&quot;1&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;values&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Gewinner&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>SUM<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;value&gt;</span>2<span class="tok-nt">&lt;/value&gt;</span>
+    <span class="tok-nt">&lt;/values&gt;</span>
+    <span class="tok-nt">&lt;values&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;∅ Feldnummer&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;value&gt;</span>10.000000<span class="tok-nt">&lt;/value&gt;</span>
+    <span class="tok-nt">&lt;/values&gt;</span>
+    <span class="tok-nt">&lt;values&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;∅ Karotten&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;value&gt;</span>13.000000<span class="tok-nt">&lt;/value&gt;</span>
+    <span class="tok-nt">&lt;/values&gt;</span>
+  <span class="tok-nt">&lt;/score&gt;</span>
+<span class="tok-nt">&lt;/playerScore&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="servereinstellungen">Servereinstellungen</h4>
+<div class="paragraph">
+<p>Die Servereinstellungen liegen in der <code>server.properties</code> Datei,
+die zusammen mit dem Server heruntergeladen wird.
+In ihr können folgende Werte konfiguriert werden:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">password </dt>
+<dd>
+<p>lokales Administratorpasswort (standardmäßig auf examplepassword).</p>
+</dd>
+<dt class="hdlist1">paused </dt>
+<dd>
+<p>ob ein durch ein JoinRequest gestartetes Spiel anfangs pausiert sein soll oder nicht (standardmäßig pausiert)</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -781,7 +969,7 @@ zwischen Tags stehen.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-06-22 18:28:59 UTC
+Last updated 2021-06-23 12:34:34 UTC
 </div>
 </div>
 </body>
