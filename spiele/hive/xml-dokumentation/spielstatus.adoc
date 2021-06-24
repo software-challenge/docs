@@ -7,6 +7,7 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 * ROOM_ID Id des GameRooms
 * STATUS Gamestate wie in xref:status[]
 --
+
 [source,xml]
 ----
 <room roomId="ROOM_ID">
@@ -26,6 +27,7 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 * board Das Spielbrett, wie in xref:spielbrett[] definiert
 * undeployed Noch nicht gesetzte Spielsteine, siehe xref:undeployed[]
 --
+
 [source,xml]
 ----
 <state class="state" turn="Z" startPlayerColor="S" currentPlayerColor="C">
@@ -81,6 +83,7 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 * OBSTRUCTED Blockiert (true) oder nicht (false)
 * PIECES Spielsteine (falls auf dem Feld vorhanden). Oberster Spielstein kommt als letztes in der Liste. Siehe xref:spielstein[].
 --
+
 [source,xml]
 ----
 <field x="X" y="Y" z="Z" isObstructed="OBSTRUCTED">
@@ -94,10 +97,12 @@ Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung an die 
 * OWNER Farbe (RED/BLUE)
 * TYPE Insektentyp (ANT, BEE, BEETLE, GRASSHOPPER, SPIDER)
 --
+
 [source,xml]
 ----
 <piece owner="OWNER" type="TYPE"/>
 ----
+
 [[undeployed]]
 === Nicht gesetzte Spielsteine
 

@@ -5,8 +5,6 @@
 :icons: font
 
 = Software-Challenge Einstieg
-Sven Koschnicke <svk@informatik.uni-kiel.de>
-2018-09-05
 
 include::allgemein/das-spiel-kennenlernen.adoc[]
 
