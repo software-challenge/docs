@@ -102,6 +102,6 @@ Sektionslabel stehen über allen Überschriften und werden mit doppelten eckigen
 
 Die https://docs.software-challenge.de[öffentliche Seite] wird automatisch
 bei jedem push in den main-Branch von GitHub aktualisiert.
-Dies geschieht durch einen GitHub Actions Workflow, siehe `.github/workflows/auto-publish.yml`,
-dessen Ergebnis vom Docker container auf dem Server
-nach Benachrichtigung durch einen Webhook gepullt wird.
+Dies geschieht durch einen GitHub Actions Workflow, siehe `.github/workflows/auto-publish.yml`.
+Der Workflow speichert die generierten Seiten im `live` branch des Repositories, welcher
+nach Benachrichtigung durch einen Webhook im gepullt wird.
