@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
-<title>Software-Challenge Einstieg</title>
+<title>Dokumentation Ostseeschach für die Software-Challenge 2022</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -440,48 +440,170 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="_das_spiel_kennenlernen" class="article toc2 toc-left">
+<body id="_ostseeschach_spielregeln" class="article toc2 toc-left">
 <div id="header">
-<h1>Software-Challenge Einstieg</h1>
+<h1>Dokumentation Ostseeschach für die Software-Challenge 2022</h1>
 <div id="toc" class="toc2">
-<div id="toctitle">Inhalt</div>
-<p><span class="toc-root"><a href="getting-started.html">Software-Challenge Einstieg</a></span></p><ul class="sectlevel1">
-<li><a href="_das_spiel_kennenlernen.html"><span class="toc-current">Das Spiel kennenlernen</span></a>
+<div id="toctitle"></div>
+<p><span class="toc-root"><a href="index.html">Dokumentation Ostseeschach für die Software-Challenge 2022</a></span></p><ul class="sectlevel1">
+<li><a href="_ostseeschach_spielregeln.html"><span class="toc-current">Ostseeschach Spielregeln</span></a>
+<ul class="sectlevel2">
+<li><a href="_ostseeschach_spielregeln.html#_spielaufbau">Spielaufbau</a>
 </li>
-<li><a href="installation-java.html">Installation von Java</a>
+<li><a href="_ostseeschach_spielregeln.html#_spielablauf">Spielablauf</a>
 </li>
-<li><a href="_einrichtung_der_java_entwicklungsumgebung.html">Einrichtung der (Java-)Entwicklungsumgebung</a>
+<li><a href="_ostseeschach_spielregeln.html#_wertung">Wertung</a>
 </li>
-<li><a href="_bedienung_von_eclipse.html">Bedienung von Eclipse</a>
-</li>
-<li><a href="_die_ersten_programmier_schritte.html">Die ersten (Programmier-)Schritte</a>
-</li>
-<li><a href="der-computerspieler.html">Der Computerspieler (Client)</a>
-</li>
-<li><a href="server.html">Der Spielleiter (Server)</a>
-</li>
-<li><a href="_den_simpleclient_erweitern.html">Den SimpleClient erweitern</a>
+</ul>
 </li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_das_spiel_kennenlernen">Das Spiel kennenlernen</h2>
+<h2 id="_ostseeschach_spielregeln">Ostseeschach Spielregeln</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Um ein Computerprogramm zu schreiben, was ein Spiel spielen kann, muss man
-vorher das Spiel selbst verstehen und spielen können. Die Spielregeln finden
-sich unter folgendem Link: <a href="spiele/hive/regeln.html">Hive
-Spielregeln</a>. Das Spiel selbst kann zu zweit oder allein gegen den
-<a href="der-computerspieler.html#der-simpleclient">SimpleClient</a> mit dem <a href="server.html">Spielleiter</a> gespielt
-werden. Es empfielt sich, dies einige Male zu tun, bevor man mit der
-Programmierung beginnt.</p>
+<p><a href="regeln.pdf">PDF-Version dieses Dokumentes</a></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Beitragen</div>
+<div class="paragraph">
+<p>Wir freuen uns über sämtliche Verbesserungsvorschläge.<br>
+Die Dokumentation kann <a href="https://github.com/software-challenge/docs">direkt auf GitHub</a> editiert werden,
+einzige Voraussetzung ist eine kostenlose Registrierung bei GitHub.
+Ist man angemeldet, kann man ein Dokument auswählen
+(ein guter Startpunkt ist die Datei
+<a href="https://github.com/software-challenge/docs/blob/main/index.adoc">index.adoc</a>
+welche Verweise auf alle Sektionen der Dokumentation enthält)
+und dann auf den Stift oben rechts klicken.
+Damit wird von GitHub automatisch ein Fork und ein Pull Request erstellt.<br>
+Alternativ auch gern eine E-Mail an <a href="mailto:info@software-challenge.de">info@software-challenge.de</a>
+oder eine Nachricht im <a href="https://discord.gg/jhyF7EU">Discord</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spielaufbau">Spielaufbau</h3>
+<div class="paragraph">
+<p>Ostseeschach ist ein Brettspiel,
+das mit Figuren auf einem Schachbrett (8x8) gespielt wird.
+Jeder Spieler hat acht Figuren, wobei - wie beim Schach –
+die Art der Figur bestimmt, wie sie setzen kann:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Herzmuschel</dt>
+<dd>
+<p>jeweils ein Feld schräg nach vorne
+(so wie ein Schach-Bauer schlagen kann)</p>
+</dd>
+<dt class="hdlist1">Möwe</dt>
+<dd>
+<p>kann auf ein in horizontaler oder vertikaler Richtung benachbartes Feld ziehen
+(wie ein Turm beim Schach, aber jeweils nur ein Feld weit)</p>
+</dd>
+<dt class="hdlist1">Seestern</dt>
+<dd>
+<p>einen Schritt nach vorne oder in eine der vier Diagonalrichtungen</p>
+</dd>
+<dt class="hdlist1">Robbe</dt>
+<dd>
+<p>kann zwei Schritte in eine (horizontale oder vertikale) Richtung
+und ein Feld senkrecht zu dieser Richtung springen
+(wie ein Springer beim Schach)</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Die Robbe ist die mächtigste Figur,
+weil sie in einem Zug weiter als ein Feld gehen kann.
+Die anderen Figuren bezeichnet man daher als „Leichtfiguren“.</p>
+</div>
+<div class="paragraph">
+<p>Jeder Spieler startet mit zwei Figuren jeder Art.
+Zu Beginn des Spiels werden die roten Figuren zufällig auf der Linie 1 des Schachfeldes verteilt,
+die blauen Figuren werden drehsymmetrisch dazu auf der Linie 8 aufgestellt.
+Rot hat den ersten Zug.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_spielablauf">Spielablauf</h3>
+<div class="paragraph">
+<p>Ziel des Spiels ist, zwei Bernsteine zu erringen.
+Wer das als erster schafft, gewinnt.</p>
+</div>
+<div class="paragraph">
+<p>Es wird abwechselnd jeweils eine Figur bewegt.
+Eine Bewegung muss entweder auf einem freien Feld
+oder einer gegnerischen Figur enden.
+In letzterem Fall wird die Figur auf die dortige gelegt,
+wodurch ein Turm entsteht.
+Ein Turm zieht immer wie die Figur, die oben liegt.
+Wenn eine der beiden am Schlagen beteiligten Figuren
+bereits ein Turm ist,
+so erhält der schlagende Spieler einen Bernstein
+und alle beteiligten Figuren werden vom Feld entfernt.</p>
+</div>
+<div class="paragraph">
+<p>Man kann ebenfalls einen Bernstein bekommen,
+indem man eine der Leichtfiguren (Herzmuschel, Seestern oder Möwe)
+bis zur gegnerischen Startlinie bewegt.</p>
+</div>
+<div class="paragraph">
+<p>Es gibt also zwei Arten,
+einen Bernstein zu bekommen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>einen Turm der Höhe drei oder vier erreichen</p>
+</li>
+<li>
+<p>eine Leichtfigur zur gegnerischen Startlinie bewegen</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Wenn man beide Bedingungen in einem Zug erfüllt,
+erhält man zwei Bernsteine.
+Die Figur, für die man einen Bernstein bekommt,
+wird vom Spielfeld genommen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_wertung">Wertung</h3>
+<div class="paragraph">
+<p>Das Spiel endet in der Runde,
+in der ein Spieler zwei Bernsteine erreicht,
+spätestens jedoch nach 30 Runden.
+Es gewinnt, wer mehr Bernsteine hat.</p>
+</div>
+<div class="paragraph">
+<p>Haben beide Spieler gleich viele Bernsteine,
+gewinnt der Spieler mit der Leichtfigur,
+die den größten Abstand zur eigenen Startlinie hat.
+Bei Gleichstand wird die jeweils darauffolgende Leichtfigur verglichen,
+bis bei mindestens einem Spieler keine Leitfigur mehr übrig ist.
+Wenn sich auf diese Weise keine Entscheidung ergibt,
+endet das Spiel unentschieden.</p>
+</div>
+<div class="paragraph">
+<p>In der Meisterschaftsphase und in der Champions League
+ist die Anzahl der Bernsteine nachrangiges Kriterium,
+also wenn zwei Teams gleich viele Siege errungen haben,
+bekommt das Team mit der höheren durchschnittlichen Anzahl der Bernsteine
+den besseren Tabellenplatz.</p>
+</div>
+<div class="paragraph">
+<p>Unresolved directive in index.adoc - include::xml-dokumentation/xml-dokumentation.adoc[leveloffset=+1]</p>
+</div>
 </div>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>↑ Up: <a href="getting-started.html">Software-Challenge Einstieg</a> | Next: <a href="installation-java.html">Installation von Java</a> →</p>
+<p>↑ Up: <a href="index.html">Dokumentation Ostseeschach für die Software-Challenge 2022</a></p>
 </div>
 </div>
 <div id="footer">

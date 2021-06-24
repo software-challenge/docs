@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
-<title>Software-Challenge Einstieg</title>
+<title>Ostseeschach Spielregeln</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -440,48 +440,59 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="_das_spiel_kennenlernen" class="article toc2 toc-left">
+<body id="_spielablauf" class="article">
 <div id="header">
-<h1>Software-Challenge Einstieg</h1>
-<div id="toc" class="toc2">
-<div id="toctitle">Inhalt</div>
-<p><span class="toc-root"><a href="getting-started.html">Software-Challenge Einstieg</a></span></p><ul class="sectlevel1">
-<li><a href="_das_spiel_kennenlernen.html"><span class="toc-current">Das Spiel kennenlernen</span></a>
-</li>
-<li><a href="installation-java.html">Installation von Java</a>
-</li>
-<li><a href="_einrichtung_der_java_entwicklungsumgebung.html">Einrichtung der (Java-)Entwicklungsumgebung</a>
-</li>
-<li><a href="_bedienung_von_eclipse.html">Bedienung von Eclipse</a>
-</li>
-<li><a href="_die_ersten_programmier_schritte.html">Die ersten (Programmier-)Schritte</a>
-</li>
-<li><a href="der-computerspieler.html">Der Computerspieler (Client)</a>
-</li>
-<li><a href="server.html">Der Spielleiter (Server)</a>
-</li>
-<li><a href="_den_simpleclient_erweitern.html">Den SimpleClient erweitern</a>
-</li>
-</ul>
-</div>
+<h1>Ostseeschach Spielregeln</h1>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_das_spiel_kennenlernen">Das Spiel kennenlernen</h2>
+<h2 id="_spielablauf">Spielablauf</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Um ein Computerprogramm zu schreiben, was ein Spiel spielen kann, muss man
-vorher das Spiel selbst verstehen und spielen können. Die Spielregeln finden
-sich unter folgendem Link: <a href="spiele/hive/regeln.html">Hive
-Spielregeln</a>. Das Spiel selbst kann zu zweit oder allein gegen den
-<a href="der-computerspieler.html#der-simpleclient">SimpleClient</a> mit dem <a href="server.html">Spielleiter</a> gespielt
-werden. Es empfielt sich, dies einige Male zu tun, bevor man mit der
-Programmierung beginnt.</p>
+<p>Ziel des Spiels ist, zwei Bernsteine zu erringen.
+Wer das als erster schafft, gewinnt.</p>
+</div>
+<div class="paragraph">
+<p>Es wird abwechselnd jeweils eine Figur bewegt.
+Eine Bewegung muss entweder auf einem freien Feld
+oder einer gegnerischen Figur enden.
+In letzterem Fall wird die Figur auf die dortige gelegt,
+wodurch ein Turm entsteht.
+Ein Turm zieht immer wie die Figur, die oben liegt.
+Wenn eine der beiden am Schlagen beteiligten Figuren
+bereits ein Turm ist,
+so erhält der schlagende Spieler einen Bernstein
+und alle beteiligten Figuren werden vom Feld entfernt.</p>
+</div>
+<div class="paragraph">
+<p>Man kann ebenfalls einen Bernstein bekommen,
+indem man eine der Leichtfiguren (Herzmuschel, Seestern oder Möwe)
+bis zur gegnerischen Startlinie bewegt.</p>
+</div>
+<div class="paragraph">
+<p>Es gibt also zwei Arten,
+einen Bernstein zu bekommen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>einen Turm der Höhe drei oder vier erreichen</p>
+</li>
+<li>
+<p>eine Leichtfigur zur gegnerischen Startlinie bewegen</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Wenn man beide Bedingungen in einem Zug erfüllt,
+erhält man zwei Bernsteine.
+Die Figur, für die man einen Bernstein bekommt,
+wird vom Spielfeld genommen.</p>
 </div>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>↑ Up: <a href="getting-started.html">Software-Challenge Einstieg</a> | Next: <a href="installation-java.html">Installation von Java</a> →</p>
+<p>← Previous: <a href="_spielaufbau.html">Spielaufbau</a> | ↑ Up: <a href="regeln.html">Ostseeschach Spielregeln</a> | Next: <a href="_wertung.html">Wertung</a> →</p>
 </div>
 </div>
 <div id="footer">
