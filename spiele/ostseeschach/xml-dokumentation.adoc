@@ -1,0 +1,123 @@
+:imagesdir: ./images
+:source-highlighter: pygments
+:icons: font
+:toc: left
+:toc-title: Ostseeschach XML-Dokumentation
+
+= Ostseeschach XML-Dokumentation der Software-Challenge 2022
+
+Ziel dieser Dokumentation ist es,
+die XML-Schnittstelle der Software-Challenge
+für das aktuelle Spiel festzuhalten.
+
+ifndef::backend-pdf[link:xml-dokumentation.pdf[PDF-Version dieses Dokumentes]]
+
+include::../../allgemein/beitragen.adoc[]
+
+[[ziehen]]
+== Ziehen
+
+Eine einfache Nachricht fordert zum Zug auf:
+
+[source,xml]
+----
+<room roomId="ROOMID">
+  <data class="sc.framework.plugins.protocol.MoveRequest" />
+</room>
+----
+
+[[move]]
+=== Der Move
+Die Antwort auf den MoveRequest des Servers.
+
+[[senden]]
+==== Senden
+
+`ROOMID`:: ID des GameRooms aus dem `MoveRequest`.
+`ZUG`:: siehe xref:zug[]
+
+[source,xml]
+----
+<room roomId="ROOMID">
+  ZUG
+</room>
+----
+
+[[zug]]
+==== ZUG
+
+`from`:: Koordinaten des zu ziehenden Spielsteines
+`to`:: Koordinaten des Zielfeldes
+
+[source,xml]
+----
+<Move>
+  <from x="0" y="1"/>
+  <to x="1" y="2"/>
+</Move>
+----
+
+[[spielstatus]]
+== Spielstatus
+
+Es folgt die Beschreibung des Spielstatus,
+der vor jeder Zugaufforderung an die Clients gesendet wird.
+Das Spielstatus-Tag ist dabei noch in einem _data_-Tag der Klasse _memento_ gewrappt:
+
+[[memento]]
+=== memento
+
+ROOM_ID:: Id des Raums, in dem das Spiel stattfindet
+STATUS:: siehe xref:status[]
+
+[source,xml]
+----
+<room roomId="ROOM_ID">
+  <data class="memento">
+    STATUS
+  </data>
+</room>
+----
+
+[[status]]
+=== Status
+
+startTeam:: das Team, das als erstes dran ist
+board:: die Positionen der Spielfiguren - `count` gibt die Turmhöhe an
+lastMove:: der vorherige Zug - hat die selbe Struktur wie ein xref:zug[], der gesendet wird,
+außer dass das Tag `<lastMove>` statt `<move>` heisst.
+Der vorherige Zug wird in jedem Spielstatus angegeben, ausser vor dem ersten Zug.
+ambers:: die Anzahl der Bernsteine pro Team
+
+[source,xml]
+----
+<state turn="27">
+  <startTeam class="team">ONE</startTeam>
+  <board>
+    <pieces>
+      <entry>
+        <coordinates x="0" y="0"/>
+        <piece type="Moewe" team="TWO" count="1"/>
+      </entry>
+      <entry>
+        <coordinates x="5" y="6"/>
+        <piece type="Robbe" team="ONE" count="2"/>
+      </entry>
+    </pieces>
+  </board>
+  <lastMove>
+    <from x="4" y="4"/>
+    <to x="5" y="6"/>
+  </lastMove>
+  <ambers enum-type="team">
+    <entry>
+      <team>ONE</team>
+      <int>1</int>
+    </entry>
+    <entry>
+      <team>TWO</team>
+      <int>0</int>
+    </entry>
+  </ambers>
+</state>
+----
