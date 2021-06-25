@@ -1,6 +1,6 @@
 :imagesdir: images
 :toc: left
-:toc-title: Inhalt
+:toc-title:
 :toclevels: 3
 :source-highlighter: pygments
 :icons: font
@@ -22,7 +22,7 @@ ifndef::backend-pdf[]
 Die Dokumentation des aktuellen Spiels Ostseeschach finden Sie in separaten Dokumenten:
 
 - <<spiele/ostseeschach/regeln.adoc#,Ostseeschach Spielregeln>>
-- <<spiele/ostseeschach/xml-dokumentation.adoc#,Ostseeschach XML Dokumentation>>
+- <<spiele/ostseeschach/xml-dokumentation.adoc#,Ostseeschach XML-Dokumentation>>
 endif::backend-pdf[]
 
 Die Dokumentation ist in mehrere Abschnitte aufgeteilt.

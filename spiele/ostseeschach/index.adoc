@@ -1,8 +1,5 @@
-:toc: left
-:toc-title:
-
 = Dokumentation Ostseeschach für die Software-Challenge 2022
 
-include::regeln.adoc[leveloffset=+1]
+<<regeln.adoc#,Spielregeln>>
 
-include::xml-dokumentation/xml-dokumentation.adoc[leveloffset=+1]
+<<xml-dokumentation.adoc#,XML-Dokumentation>>

@@ -1,8 +1,10 @@
-:imagesdir: ./images
+:imagesdir: images
 :source-highlighter: pygments
 :icons: font
+:toc: left
+:toc-title: Ostseeschach Spielregeln
 
-= Ostseeschach Spielregeln
+= Ostseeschach Spielregeln der Software-Challenge 2022
 
 ifndef::backend-pdf[link:regeln.pdf[PDF-Version dieses Dokumentes]]
 
