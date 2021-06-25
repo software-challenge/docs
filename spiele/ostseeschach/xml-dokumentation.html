@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.15">
-<title>Software-Challenge Dokumentation für Teilnehmer</title>
+<title>Ostseeschach XML-Dokumentation der Software-Challenge 2022</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -435,267 +435,291 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
-                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
-             .nav-footer{text-align: center; margin-top: auto;}
-             .nav-footer > p > a {white-space: nowrap;}</style>
+<style>
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+pre.pygments .hll { background-color: #ffffcc }
+pre.pygments { background: #f8f8f8; }
+pre.pygments .tok-c { color: #408080; font-style: italic } /* Comment */
+pre.pygments .tok-err { border: 1px solid #FF0000 } /* Error */
+pre.pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
+pre.pygments .tok-o { color: #666666 } /* Operator */
+pre.pygments .tok-ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+pre.pygments .tok-cm { color: #408080; font-style: italic } /* Comment.Multiline */
+pre.pygments .tok-cp { color: #BC7A00 } /* Comment.Preproc */
+pre.pygments .tok-cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+pre.pygments .tok-c1 { color: #408080; font-style: italic } /* Comment.Single */
+pre.pygments .tok-cs { color: #408080; font-style: italic } /* Comment.Special */
+pre.pygments .tok-gd { color: #A00000 } /* Generic.Deleted */
+pre.pygments .tok-ge { font-style: italic } /* Generic.Emph */
+pre.pygments .tok-gr { color: #FF0000 } /* Generic.Error */
+pre.pygments .tok-gh { color: #000080; font-weight: bold } /* Generic.Heading */
+pre.pygments .tok-gi { color: #00A000 } /* Generic.Inserted */
+pre.pygments .tok-go { color: #888888 } /* Generic.Output */
+pre.pygments .tok-gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+pre.pygments .tok-gs { font-weight: bold } /* Generic.Strong */
+pre.pygments .tok-gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+pre.pygments .tok-gt { color: #0044DD } /* Generic.Traceback */
+pre.pygments .tok-kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+pre.pygments .tok-kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+pre.pygments .tok-kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+pre.pygments .tok-kp { color: #008000 } /* Keyword.Pseudo */
+pre.pygments .tok-kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+pre.pygments .tok-kt { color: #B00040 } /* Keyword.Type */
+pre.pygments .tok-m { color: #666666 } /* Literal.Number */
+pre.pygments .tok-s { color: #BA2121 } /* Literal.String */
+pre.pygments .tok-na { color: #7D9029 } /* Name.Attribute */
+pre.pygments .tok-nb { color: #008000 } /* Name.Builtin */
+pre.pygments .tok-nc { color: #0000FF; font-weight: bold } /* Name.Class */
+pre.pygments .tok-no { color: #880000 } /* Name.Constant */
+pre.pygments .tok-nd { color: #AA22FF } /* Name.Decorator */
+pre.pygments .tok-ni { color: #999999; font-weight: bold } /* Name.Entity */
+pre.pygments .tok-ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+pre.pygments .tok-nf { color: #0000FF } /* Name.Function */
+pre.pygments .tok-nl { color: #A0A000 } /* Name.Label */
+pre.pygments .tok-nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+pre.pygments .tok-nt { color: #008000; font-weight: bold } /* Name.Tag */
+pre.pygments .tok-nv { color: #19177C } /* Name.Variable */
+pre.pygments .tok-ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+pre.pygments .tok-w { color: #bbbbbb } /* Text.Whitespace */
+pre.pygments .tok-mb { color: #666666 } /* Literal.Number.Bin */
+pre.pygments .tok-mf { color: #666666 } /* Literal.Number.Float */
+pre.pygments .tok-mh { color: #666666 } /* Literal.Number.Hex */
+pre.pygments .tok-mi { color: #666666 } /* Literal.Number.Integer */
+pre.pygments .tok-mo { color: #666666 } /* Literal.Number.Oct */
+pre.pygments .tok-sa { color: #BA2121 } /* Literal.String.Affix */
+pre.pygments .tok-sb { color: #BA2121 } /* Literal.String.Backtick */
+pre.pygments .tok-sc { color: #BA2121 } /* Literal.String.Char */
+pre.pygments .tok-dl { color: #BA2121 } /* Literal.String.Delimiter */
+pre.pygments .tok-sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+pre.pygments .tok-s2 { color: #BA2121 } /* Literal.String.Double */
+pre.pygments .tok-se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+pre.pygments .tok-sh { color: #BA2121 } /* Literal.String.Heredoc */
+pre.pygments .tok-si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+pre.pygments .tok-sx { color: #008000 } /* Literal.String.Other */
+pre.pygments .tok-sr { color: #BB6688 } /* Literal.String.Regex */
+pre.pygments .tok-s1 { color: #BA2121 } /* Literal.String.Single */
+pre.pygments .tok-ss { color: #19177C } /* Literal.String.Symbol */
+pre.pygments .tok-bp { color: #008000 } /* Name.Builtin.Pseudo */
+pre.pygments .tok-fm { color: #0000FF } /* Name.Function.Magic */
+pre.pygments .tok-vc { color: #19177C } /* Name.Variable.Class */
+pre.pygments .tok-vg { color: #19177C } /* Name.Variable.Global */
+pre.pygments .tok-vi { color: #19177C } /* Name.Variable.Instance */
+pre.pygments .tok-vm { color: #19177C } /* Name.Variable.Magic */
+pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
 </head>
-<body id="_wettkampfmodalitäten" class="article toc2 toc-left">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>Software-Challenge Dokumentation für Teilnehmer</h1>
+<h1>Ostseeschach XML-Dokumentation der Software-Challenge 2022</h1>
 <div id="toc" class="toc2">
-<div id="toctitle"></div>
-<p><span class="toc-root"><a href="index.html">Software-Challenge Dokumentation für Teilnehmer</a></span></p><ul class="sectlevel1">
-<li><a href="_die_software_challenge.html">Die Software-Challenge</a>
-</li>
-<li><a href="server.html">Der Spielleiter (Server)</a>
-</li>
-<li><a href="der-computerspieler.html">Der Computerspieler (Client)</a>
-</li>
-<li><a href="_die_richtige_programmiersprache.html">Die richtige Programmiersprache</a>
-</li>
-<li><a href="installation-java.html">Installation von Java</a>
-</li>
-<li><a href="_einrichtung_der_java_entwicklungsumgebung.html">Einrichtung der (Java-)Entwicklungsumgebung</a>
-</li>
-<li><a href="_bedienung_von_eclipse.html">Bedienung von Eclipse</a>
-</li>
-<li><a href="_den_simpleclient_erweitern.html">Den SimpleClient erweitern</a>
-</li>
-<li><a href="_computerspieler_abgabefertig_machen.html">Computerspieler abgabefertig machen</a>
-</li>
-<li><a href="_die_ersten_programmier_schritte.html">Die ersten (Programmier-)Schritte</a>
-</li>
-<li><a href="schnittstelle.html">Die Schnittstelle zum Server (XML)</a>
-</li>
-<li><a href="_wettkampfmodalitäten.html"><span class="toc-current">Wettkampfmodalitäten</span></a>
+<div id="toctitle">Ostseeschach XML-Dokumentation</div>
+<ul class="sectlevel1">
+<li><a href="#ziehen">Ziehen</a>
 <ul class="sectlevel2">
-<li><a href="_wettkampfmodalitäten.html#die-meisterschaftsphase">Die Meisterschaftsphase</a>
-</li>
-<li><a href="_wettkampfmodalitäten.html#die-champions-league">Die Champions-League</a>
-</li>
-<li><a href="_wettkampfmodalitäten.html#das-final-eight">Das Final Eight</a>
-</li>
-<li><a href="_wettkampfmodalitäten.html#die-begegnungen">Die Begegnungen</a>
-</li>
-<li><a href="_wettkampfmodalitäten.html#die-probespieltage">Die Probespieltage</a>
-</li>
-<li><a href="_wettkampfmodalitäten.html#die-konkreten-termine">Die konkreten Termine</a>
-</li>
-<li><a href="_wettkampfmodalitäten.html#technische-daten-ausfuehrung-compuerspieler">Technische Daten für die Ausführung der Computerspieler</a>
-<ul class="sectlevel3">
-<li><a href="_wettkampfmodalitäten.html#_log_ausgabe">Log-Ausgabe</a>
-</li>
-<li><a href="_wettkampfmodalitäten.html#_lesen_von_daten">Lesen von Daten</a>
-</li>
-<li><a href="_wettkampfmodalitäten.html#ausfuehrungsumgebungen">Weitere Ausführungsumgebung</a>
-</li>
+<li><a href="#move">Der Move</a></li>
 </ul>
 </li>
+<li><a href="#spielstatus">Spielstatus</a>
+<ul class="sectlevel2">
+<li><a href="#memento">memento</a></li>
+<li><a href="#status">Status</a></li>
 </ul>
-</li>
-<li><a href="das-wettkampfsystem.html">Das Wettkampfsystem</a>
 </li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_wettkampfmodalitäten">Wettkampfmodalitäten</h2>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Die Software-Challenge wird in drei Phasen ausgespielt. Da wir noch
-nicht einschätzen können, wie viele Teams letztendlich teilnehmen
-werden, kann sich die folgende Ablaufplanung noch ändern.</p>
-</div>
-<div class="sect2">
-<h3 id="die-meisterschaftsphase">Die Meisterschaftsphase</h3>
-<div class="paragraph">
-<p>Für diese erste Phase (Anfang März bis Anfang April) werden wir
-voraussichtlich vier Gruppen mit jeweils ca. 25 Teams bilden. In jeder
-dieser Gruppen wird eine Meisterschaft ausgespielt.</p>
+<p>Ziel dieser Dokumentation ist es,
+die XML-Schnittstelle der Software-Challenge
+für das aktuelle Spiel festzuhalten.</p>
 </div>
 <div class="paragraph">
-<p>Die Meisterschaft ist in Spieltagen organisiert. An jedem Spieltag hat
-jedes Team eine Begegnung mit einem anderen Team. Bei einer ungeraden
-Teamanzahl in einer der Gruppen setzt an jedem Spieltag eines der Teams
-aus.</p>
+<p><a href="xml-dokumentation.pdf">PDF-Version dieses Dokumentes</a></p>
 </div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Beitragen</div>
 <div class="paragraph">
-<p>Vor Beginn des ersten Spieltages soll jedes Team einen funktionsfähigen
-Client über das Online-Abgabesystem eingeschickt haben. Zwischen den
-Spieltagen besteht die Möglichkeit, Clients ebenfalls über dieses System
-zu aktualisieren. Über das Online-Abgabesystem werden auch die
-Ergebnisse, Ranglisten etc. veröffentlicht.</p>
+<p>Wir freuen uns über sämtliche Verbesserungsvorschläge.<br>
+Die Dokumentation kann <a href="https://github.com/software-challenge/docs">direkt auf GitHub</a> editiert werden,
+einzige Voraussetzung ist eine kostenlose Registrierung bei GitHub.
+Ist man angemeldet, kann man ein Dokument auswählen
+(ein guter Startpunkt ist die Datei
+<a href="https://github.com/software-challenge/docs/blob/main/index.adoc">index.adoc</a>
+welche Verweise auf alle Sektionen der Dokumentation enthält)
+und dann auf den Stift oben rechts klicken.
+Damit wird von GitHub automatisch ein Fork und ein Pull Request erstellt.<br>
+Alternativ auch gern eine E-Mail an <a href="mailto:info@software-challenge.de">info@software-challenge.de</a>
+oder eine Nachricht im <a href="https://discord.gg/jhyF7EU">Discord</a>.</p>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ziehen">Ziehen</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Eine Begegnung gewinnt derjenige Spieler mit den meisten gewonnen
-Spielen in dieser Begegnung. Bei gleich vielen Siegen endet die
-Begegnung unentschieden. Eine gewonnene Begegnung zählt für die
-Rangliste zwei Punkte, ein Unentschieden einen Punkt, eine verlorene
-Begegnung null Punkte.</p>
+<p>Eine einfache Nachricht fordert zum Zug auf:</p>
 </div>
-<div class="paragraph">
-<p>In der Rangliste wird als nachrangiges Kriterium ausschließlich die
-Anzahl der Siegpunkte aus den bisherigen Spielen verwendet. Wenn am Ende
-einer Meisterschaft zwei Teams denselben Platz belegen, entscheidet das
-Los.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="die-champions-league">Die Champions-League</h3>
-<div class="paragraph">
-<p>In diese zweite Phase (Mitte April bis Mitte Mai) kommen die besten
-acht Teams einer jeden Gruppe aus der ersten Phase. Die Champions-League
-wird nach dem gleichen Schema wie eine Meisterschaft ausgespielt.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOMID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.framework.plugins.protocol.MoveRequest&quot;</span> <span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="das-final-eight">Das Final Eight</h3>
+<h3 id="move">Der Move</h3>
 <div class="paragraph">
-<p>An der dritten Phase, dem Final Eight, das im Juni in Kiel stattfindet,
-nehmen die ersten acht Mannschaften der Rangliste aus der
-Champions-League teil. Viertelfinale, Halbfinale, Kleines Finale (=
-Spiel um den 3. Platz) und Finale werden im KO-System gespielt.</p>
+<p>Die Antwort auf den MoveRequest des Servers.</p>
 </div>
-<div class="paragraph">
-<p>Jede Begegnung besteht aus jeweils sechs Spielen, wobei das Recht des
-ersten Zuges abwechselt. Anders als bei den vorherigen Phasen kann es
-beim Final Eight keine Begegnung geben, die unentschieden endet. Haben
-beide Teams in einer Begegnung gleich viele Siege errungen, wird als
-nachrangiges Kriterium ausschließlich die Anzahl der am Spielende
-erreichten Punkte berücksichtigt, um den Sieger einer Begegnung zu
-ermitteln. In dem unwahrscheinlichen Fall, dass die Begegnung auch
-dadurch nicht entschieden werden kann, entscheidet das Los.</p>
-</div>
-<div class="paragraph">
-<p>Im Übrigen gelten beim Final Eight die bekannten Regeln der beiden
-vorherigen Phasen. Es wird dabei auch dieselbe Hardware eingesetzt.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="die-begegnungen">Die Begegnungen</h3>
-<div class="paragraph">
-<p>Jede Begegnung besteht aus jeweils sechs Spielen, wobei das Recht des
-ersten Zuges abwechselt.</p>
-</div>
-<div class="paragraph">
-<p>Die Zugzeit ist für jeden Zug auf zwei Sekunden begrenzt. Dabei gilt für
-die Rechenzeit die im Institut verwendete Hardware als Referenz. Jeder
-Client wird dabei auf einer eigenen virtuellen Maschine mit unten
-stehenden Spezifikationen ausgeführt.</p>
-</div>
-<div class="paragraph">
-<p>Sollte ein Spieler einen ungültigen Zug setzen oder die maximale Zugzeit
-überschreiten, so hat dieser Spieler verloren. In allen anderen Fällen
-wird das Spiel gemäß der Spielregeln zu Ende gespielt und der Gewinner
-ermittelt.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="die-probespieltage">Die Probespieltage</h3>
-<div class="paragraph">
-<p>Anfang März, unmittelbar vor der ersten Phase, werden Probespieltage
-stattfinden, die den reibungslosen Ablauf der Meisterschaft
-gewährleisten sollen.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="die-konkreten-termine">Die konkreten Termine</h3>
-<div class="paragraph">
-<p>Befinden sich auf der
-<a href="http://www.software-challenge.de/de/termine">Software-Challenge Website
-unter Termine</a>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="technische-daten-ausfuehrung-compuerspieler">Technische Daten für die Ausführung der Computerspieler</h3>
-<div class="paragraph">
-<p>Für alle im Wettkampfsystem ausgetragenen Spiele laufen die Computerspieler auf den Servern des Wettkampfsystems.</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Betriebssystem:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">64 Bit Linux</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Prozessor:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ein Kern von einem <a href="https://ark.intel.com/de/products/92986/Intel-Xeon-Processor-E5-2620-v4-20M-Cache-2_10-GHz">Intel Xeon E5-2620 v4, 2,1 GHz</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Arbeitsspeicher:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1,5 GB</p></td>
-</tr>
-</tbody>
-</table>
 <div class="sect3">
-<h4 id="_log_ausgabe">Log-Ausgabe</h4>
-<div class="paragraph">
-<p>Die Computerspieler laufen im Wettkampfsystem ohne eine grafische Oberfläche, sie können also keine Fenster oder ähnliches anzeigen. Der Versuch eines Computerspielers, so etwas trotzdem zu tun, wird wahrscheinlich zum Absturz des Computerspielers führen.</p>
+<h4 id="senden">Senden</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>ROOMID</code></dt>
+<dd>
+<p>ID des GameRooms aus dem <code>MoveRequest</code>.</p>
+</dd>
+<dt class="hdlist1"><code>ZUG</code></dt>
+<dd>
+<p>siehe <a href="#zug">ZUG</a></p>
+</dd>
+</dl>
 </div>
-<div class="paragraph">
-<p>Die Computerspieler können jedoch Text auf die beiden Standard-Ausgabedatenströme "stdout" und "stderr" schreiben. Diese Ausgaben finden sich dann in den Log-Dateien wieder, die nach Beenden eines Spiels über das Wettkampfsystem verfügbar sind.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOMID&quot;</span><span class="tok-nt">&gt;</span>
+  ZUG
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_lesen_von_daten">Lesen von Daten</h4>
+<h4 id="zug">ZUG</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>from</code></dt>
+<dd>
+<p>Koordinaten des zu ziehenden Spielsteines</p>
+</dd>
+<dt class="hdlist1"><code>to</code></dt>
+<dd>
+<p>Koordinaten des Zielfeldes</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;Move&gt;</span>
+  <span class="tok-nt">&lt;from</span> <span class="tok-na">x=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;1&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;to</span> <span class="tok-na">x=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;2&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/Move&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="spielstatus">Spielstatus</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Zugriff auf das Internet ist nicht möglich. Schreiben auf die Festplatte ist möglich, es kann jedoch nicht auf Daten, die in früheren Spielen geschrieben wurden, zugegriffen werden.</p>
+<p>Es folgt die Beschreibung des Spielstatus,
+der vor jeder Zugaufforderung an die Clients gesendet wird.
+Das Spielstatus-Tag ist dabei noch in einem <em>data</em>-Tag der Klasse <em>memento</em> gewrappt:</p>
 </div>
+<div class="sect2">
+<h3 id="memento">memento</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">ROOM_ID</dt>
+<dd>
+<p>Id des Raums, in dem das Spiel stattfindet</p>
+</dd>
+<dt class="hdlist1">STATUS</dt>
+<dd>
+<p>siehe <a href="#status">Status</a></p>
+</dd>
+</dl>
 </div>
-<div class="sect3">
-<h4 id="ausfuehrungsumgebungen">Weitere Ausführungsumgebung</h4>
-<div class="paragraph">
-<p>Der Computerspieler wird in einem sogenannten "Docker Container" ausgeführt, welcher die verfügbaren Bibliotheken und Programme bestimmt. Folgende Container-Images können genutzt werden:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Bezeichnung</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Image-Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Beschreibung</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Java 8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://hub.docker.com/_/openjdk/">openjdk:8u151-jre</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Open Source Java Platform, Standard Edition, Version 1.8.0. Für alle Computerspieler auf Basis des Java SimpleClients.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ruby 2</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://hub.docker.com/_/ruby/">ruby:2.4.2</a> mit installiertem Software-Challenge-Client-Gem</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ruby Interpreter, Version 2.4.2. Für alle Computerspieler auf Basis des Ruby SimpleClients.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Python 3</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://hub.docker.com/_/python/">python:3.6.3</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Python Interpreter, Version 3.6.3. Für selbst entwickelte Computerspieler in Python.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mono 5.4 (C# .NET)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://hub.docker.com/_/mono/">mono:5.4.1.6</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mono Laufzeitumgebung, Version 5.4.1.6. Für selbst entwickelte Computerspieler basierend auf dem Microsoft .NET Framework.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Wenn Ihr Computerspieler eine speziellere Umgebung benötigt (zum Beispiel ein hier nicht angebotener Interpreter), nehmen sie bitte mit uns Kontakt auf (<a href="mailto:svk@informatik.uni-kiel.de">svk@informatik.uni-kiel.de</a>). Wir stellen gern weitere Images zur Verfügung.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;memento&quot;</span><span class="tok-nt">&gt;</span>
+    STATUS
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="status">Status</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">startTeam</dt>
+<dd>
+<p>das Team, das als erstes dran ist</p>
+</dd>
+<dt class="hdlist1">board</dt>
+<dd>
+<p>die Positionen der Spielfiguren - <code>count</code> gibt die Turmhöhe an</p>
+</dd>
+<dt class="hdlist1">lastMove</dt>
+<dd>
+<p>der vorherige Zug - hat die selbe Struktur wie ein <a href="#zug">ZUG</a>, der gesendet wird,
+außer dass das Tag <code>&lt;lastMove&gt;</code> statt <code>&lt;move&gt;</code> heisst.
+Der vorherige Zug wird in jedem Spielstatus angegeben, ausser vor dem ersten Zug.</p>
+</dd>
+<dt class="hdlist1">ambers</dt>
+<dd>
+<p>die Anzahl der Bernsteine pro Team</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;state</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;27&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;startTeam</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/startTeam&gt;</span>
+  <span class="tok-nt">&lt;board&gt;</span>
+    <span class="tok-nt">&lt;pieces&gt;</span>
+      <span class="tok-nt">&lt;entry&gt;</span>
+        <span class="tok-nt">&lt;coordinates</span> <span class="tok-na">x=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;0&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;piece</span> <span class="tok-na">type=</span><span class="tok-s">&quot;Moewe&quot;</span> <span class="tok-na">team=</span><span class="tok-s">&quot;TWO&quot;</span> <span class="tok-na">count=</span><span class="tok-s">&quot;1&quot;</span><span class="tok-nt">/&gt;</span>
+      <span class="tok-nt">&lt;/entry&gt;</span>
+      <span class="tok-nt">&lt;entry&gt;</span>
+        <span class="tok-nt">&lt;coordinates</span> <span class="tok-na">x=</span><span class="tok-s">&quot;5&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;6&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;piece</span> <span class="tok-na">type=</span><span class="tok-s">&quot;Robbe&quot;</span> <span class="tok-na">team=</span><span class="tok-s">&quot;ONE&quot;</span> <span class="tok-na">count=</span><span class="tok-s">&quot;2&quot;</span><span class="tok-nt">/&gt;</span>
+      <span class="tok-nt">&lt;/entry&gt;</span>
+    <span class="tok-nt">&lt;/pieces&gt;</span>
+  <span class="tok-nt">&lt;/board&gt;</span>
+  <span class="tok-nt">&lt;lastMove&gt;</span>
+    <span class="tok-nt">&lt;from</span> <span class="tok-na">x=</span><span class="tok-s">&quot;4&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;4&quot;</span><span class="tok-nt">/&gt;</span>
+    <span class="tok-nt">&lt;to</span> <span class="tok-na">x=</span><span class="tok-s">&quot;5&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;6&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;/lastMove&gt;</span>
+  <span class="tok-nt">&lt;ambers</span> <span class="tok-na">enum-type=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;entry&gt;</span>
+      <span class="tok-nt">&lt;team&gt;</span>ONE<span class="tok-nt">&lt;/team&gt;</span>
+      <span class="tok-nt">&lt;int&gt;</span>1<span class="tok-nt">&lt;/int&gt;</span>
+    <span class="tok-nt">&lt;/entry&gt;</span>
+    <span class="tok-nt">&lt;entry&gt;</span>
+      <span class="tok-nt">&lt;team&gt;</span>TWO<span class="tok-nt">&lt;/team&gt;</span>
+      <span class="tok-nt">&lt;int&gt;</span>0<span class="tok-nt">&lt;/int&gt;</span>
+    <span class="tok-nt">&lt;/entry&gt;</span>
+  <span class="tok-nt">&lt;/ambers&gt;</span>
+<span class="tok-nt">&lt;/state&gt;</span></code></pre>
 </div>
 </div>
-<div class="paragraph nav-footer">
-<p>← Previous: <a href="schnittstelle.html">Die Schnittstelle zum Server (XML)</a> | ↑ Up: <a href="index.html">Software-Challenge Dokumentation für Teilnehmer</a> | Next: <a href="das-wettkampfsystem.html">Das Wettkampfsystem</a> →</p>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
