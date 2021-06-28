@@ -1,26 +1,26 @@
-[[der-adminclient]]
-=== Der AdminClient
+[[administration]]
+=== Administration
 
-Mit dem AdminClient kann man Spiele vorbereiten und Einstellungen ändern.
+Mit einem authentifizierten Client kann man den Server steuern.
 
 ==== Verbindungsaufbau
 
-Zuerst muss sich der AdminClient mit dem entsprechenden Passwort aus `server.properties` authentifizieren:
+Zuerst muss sich ein Client mit dem entsprechenden Passwort aus `server.properties` authentifizieren:
 
 [source, xml]
 ----
 <protocol><authenticate password="examplepassword"/>
 ----
 
-Ein authentifizierter AdminClient erhält eine Nachricht,
-sobald sich ein Client über ein JoinRoomRequest verbindet:
+Ein authentifizierter AdminClient wird benachrichtigt,
+wenn sich ein Client über ein `JoinRoomRequest` verbindet:
 
 [source,xml]
 ----
 <joinedGameRoom roomId=ROOMID playerCount=X />
 ----
+roomId:: eine vom Server generierte Zeichenfolge, die die Partie identifiziert
 playerCount:: die Anzahl der Spieler im Raum nach dem Beitritt des neuen Spielers
-roomId:: eine vom Server generierte Zeichenfolge, die den Raum identifiziert
 
 ==== Aktionen in einem Raum
 
@@ -124,5 +124,5 @@ Die Servereinstellungen liegen in der `server.properties` Datei,
 die zusammen mit dem Server heruntergeladen wird.
 In ihr können folgende Werte konfiguriert werden:
 
-password :: lokales Administratorpasswort (standardmäßig auf examplepassword).
-paused :: ob ein durch ein JoinRequest gestartetes Spiel anfangs pausiert sein soll oder nicht (standardmäßig pausiert)
+password:: lokales Administratorpasswort (standardmäßig auf `examplepassword`)
+paused:: ob ein automatisch angelegtes Spiel anfangs pausiert sein soll oder nicht (standardmäßig pausiert)

@@ -58,7 +58,7 @@ include::entwicklung/eine-idee-implementieren.adoc[]
 
 include::entwicklung/weiterfuehrende-literatur.adoc[]
 
-include::software/schnittstelle.adoc[]
+include::xml/index.adoc[]
 
 include::allgemein/wettkampfmodalitaeten.adoc[]
 

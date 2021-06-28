@@ -1,0 +1,57 @@
+== Spielverlauf
+
+=== Start
+
+Der Server eröffnet das Spiel
+mit einer Begrüßung und dem initialen Spielstatus
+sobald beide Spieler verbunden sind.
+
+ROOM_ID:: Identifikationscode der Spielpartie
+COLOR:: Spielerfarbe
+STATUS:: xref:status[] der Partie
+
+[source,xml]
+----
+<room roomId="ROOM_ID">
+  <data class="welcomeMessage" color="COLOR"></data>
+</room>
+<room roomId="ROOM_ID">
+  <data class="memento">
+    STATUS
+  </data>
+</room>
+----
+
+=== Ablauf
+Der erste Spieler erhält dann eine Zugaufforderung:
+
+[source,xml]
+----
+<room roomId="ROOM_ID">
+  <data class="moveRequest" />
+</room>
+----
+
+Worauf dieser innerhalb der gesetzten Zeitbeschränkung mit einem xref:Zug[] antwortet:
+
+[source, xml]
+----
+<room roomId="ROOM_ID">
+  ZUG
+</room>
+----
+
+Nach Erhalt des Zuges sendet der Server den neuen Spielstatus an alle Spieler
+und dem nächsten Spieler eine Zugaufforderung.
+So geht es hin und her bis zum xref:spielende[].
+
+=== Ende der Kommunikation
+
+Die letzte Nachricht des Servers endet mit:
+
+[source, xml]
+----
+</protocol>
+----
+
+Danach wird die Verbindung geschlossen.

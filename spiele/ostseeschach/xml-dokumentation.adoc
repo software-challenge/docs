@@ -2,97 +2,36 @@
 :source-highlighter: pygments
 :icons: font
 :toc: left
-:toc-title: Ostseeschach XML-Dokumentation
+:toc-title: Inhalt
 
 = Ostseeschach XML-Dokumentation der Software-Challenge 2022
 
-Ziel dieser Dokumentation ist es,
+Dieses Dokument erklärt
 die XML-Schnittstelle der Software-Challenge
-für das aktuelle Spiel festzuhalten.
+für das aktuelle Spiel.
 
 ifndef::backend-pdf[link:xml-dokumentation.pdf[PDF-Version dieses Dokumentes]]
 
 include::../../allgemein/beitragen.adoc[]
 
-[[ziehen]]
-== Ziehen
+include::../../xml/spiel/spiel-betreten.adoc[]
 
-Eine einfache Nachricht fordert zum Zug auf:
-
-[source,xml]
-----
-<room roomId="ROOMID">
-  <data class="sc.framework.plugins.protocol.MoveRequest" />
-</room>
-----
-
-[[move]]
-=== Der Move
-Die Antwort auf den MoveRequest des Servers.
-
-[[senden]]
-==== Senden
-
-`ROOMID`:: ID des GameRooms aus dem `MoveRequest`.
-`ZUG`:: siehe xref:zug[]
-
-[source,xml]
-----
-<room roomId="ROOMID">
-  ZUG
-</room>
-----
-
-[[zug]]
-==== ZUG
-
-`from`:: Koordinaten des zu ziehenden Spielsteines
-`to`:: Koordinaten des Zielfeldes
-
-[source,xml]
-----
-<Move>
-  <from x="0" y="1"/>
-  <to x="1" y="2"/>
-</Move>
-----
-
-[[spielstatus]]
-== Spielstatus
-
-Es folgt die Beschreibung des Spielstatus,
-der vor jeder Zugaufforderung an die Clients gesendet wird.
-Das Spielstatus-Tag ist dabei noch in einem _data_-Tag der Klasse _memento_ gewrappt:
-
-[[memento]]
-=== memento
-
-ROOM_ID:: Id des Raums, in dem das Spiel stattfindet
-STATUS:: siehe xref:status[]
-
-[source,xml]
-----
-<room roomId="ROOM_ID">
-  <data class="memento">
-    STATUS
-  </data>
-</room>
-----
+include::../../xml/spiel/spielverlauf.adoc[]
 
 [[status]]
-=== Status
+== Spielstatus
 
 startTeam:: das Team, das als erstes dran ist
 board:: die Positionen der Spielfiguren - `count` gibt die Turmhöhe an
 lastMove:: der vorherige Zug - hat die selbe Struktur wie ein xref:zug[], der gesendet wird,
-außer dass das Tag `<lastMove>` statt `<move>` heisst.
-Der vorherige Zug wird in jedem Spielstatus angegeben, ausser vor dem ersten Zug.
+           außer dass das Tag `<lastMove>` statt `<move>` heisst.
+           Der vorherige Zug wird in jedem Spielstatus angegeben, ausser vor dem ersten Zug.
 ambers:: die Anzahl der Bernsteine pro Team
 
 [source,xml]
 ----
 <state turn="27">
-  <startTeam class="team">ONE</startTeam>
+  <startTeam>ONE</startTeam>
   <board>
     <pieces>
       <entry>
@@ -109,7 +48,7 @@ ambers:: die Anzahl der Bernsteine pro Team
     <from x="4" y="4"/>
     <to x="5" y="6"/>
   </lastMove>
-  <ambers enum-type="team">
+  <ambers>
     <entry>
       <team>ONE</team>
       <int>1</int>
@@ -121,3 +60,19 @@ ambers:: die Anzahl der Bernsteine pro Team
   </ambers>
 </state>
 ----
+
+[[zug]]
+== Zug
+
+`from`:: Koordinaten des zu ziehenden Spielsteines
+`to`:: Koordinaten des Zielfeldes
+
+[source,xml]
+----
+<Move>
+  <from x="0" y="1"/>
+  <to x="1" y="2"/>
+</Move>
+----
+
+include::../../xml/spiel/spielergebnis.adoc[]
