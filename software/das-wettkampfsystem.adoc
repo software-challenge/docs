@@ -44,9 +44,9 @@ ist die aktuellste Saison im System aktiv.
 [[aktuelles]]
 ===== Aktuelles
 
-Hier sind alle News zum Wettkampf einsehbar. Die neusten News werden
-auch immer oben neben dem Logo angezeigt. Alles Wichtige zum Wettkampf
-erscheint hier.
+Hier sind alle News zum Wettkampf einsehbar.
+Die neusten News werden auch immer oben neben dem Logo angezeigt.
+Alles Wichtige zum Wettkampf erscheint hier.
 
 [[wettkampf]]
 ==== Wettkampf

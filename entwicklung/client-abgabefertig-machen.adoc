@@ -22,35 +22,35 @@ Die Jar-Datei selbst erstellen und die Verwendung von Gradle.
 
 ===== Eclipse
 
-1.  In Eclipse im Menü auf "File" -> "Export". Dann unter "Java" ->
-"Runnable JAR file" wählen
-2.  Im nächsten Fenster wird die "Run Configuration" ausgewählt (dazu
-muss der SimpleClient mindestens einmal mit Eclipse gestartet worden
-sein). Darunter wird mit "Browse" die Zieldatei (z.B.
-`[...]/my_player.jar`) ausgewählt. Bei "Library handling" am besten die
-erste Option nehmen. So wird eine einzige JAR Datei erzeugt, in der
-alles nötige drin ist. Mit einem Klick auf Finish wird die JAR-Datei
-erzeugt. Eventuell erhält man einen Hinweis "This operation repacks
-referenced libraries", den man mit "OK" bestätigen muss.
+1.  In Eclipse im Menü auf "File" -> "Export".
+    Dann unter "Java" -> "Runnable JAR file" wählen
+2.  Im nächsten Fenster wird die "Run Configuration" ausgewählt
+    (dazu muss der SimpleClient mindestens einmal mit Eclipse gestartet worden sein).
+    Darunter wird mit "Browse" die Zieldatei (z.B. `[...]/my_player.jar`) ausgewählt.
+    Bei "Library handling" am besten die erste Option nehmen.
+    So wird eine einzige JAR Datei erzeugt, in der alles nötige drin ist.
+    Mit einem Klick auf Finish wird die JAR-Datei erzeugt.
+    Eventuell erhält man einen Hinweis "This operation repacks referenced libraries",
+    den man mit "OK" bestätigen muss.
 
-Wenn alles geklappt hat, wurde der Computerspieler in ein auführbares Programm
-überführt. Damit der Wettkampfserver den Client verarbeiten kann, muss er noch
-in ein ZIP-Archiv gepackt werden (auch wenn ein JAR technisch gesehen bereits
-ein ZIP-Archiv ist).
+Wenn alles geklappt hat, wurde der Computerspieler in ein auführbares Programm überführt.
+Damit der Wettkampfserver den Client verarbeiten kann,
+muss er noch in ein ZIP-Archiv gepackt werden
+(auch wenn ein JAR technisch gesehen bereits ein ZIP-Archiv ist).
 
 ===== NetBeans
 
-Nach einem Rechtsklick auf das Projekt in der Projektansicht kann man
-"Properties" auswählen. Auf der linken Seite unter "Categories" die
-Kategorie "Run" auswählen und dann rechts unter "Main Class" die Klasse
-"Starter" eintragen.
+Nach einem Rechtsklick auf das Projekt in der Projektansicht kann man "Properties" auswählen.
+Auf der linken Seite unter "Categories"
+die Kategorie "Run" auswählen und
+dann rechts unter "Main Class" die Klasse "Starter" eintragen.
 
-Nach einem Rechtsklick auf das Projekt in der Projektansicht kann man
-"Clean and Build" auswählen. Danach gibt es den Ordner
-"Pfad/zur/Project/Loacation//dist". In diesem befindet sich eine
-JAR-Datei und eine Kopie des "lib"-Ordners. Beides zusammen muss jetzt
-mit einem beliebigen Archivierungsprogramm in eine ZIP-Datei
-zusammengepackt werden. Dieses Archiv kann dann hochegeladen werden.
+Nach einem Rechtsklick auf das Projekt in der Projektansicht kann man "Clean and Build" auswählen.
+Danach gibt es den Ordner "Pfad/zum/Projekt/dist".
+In diesem befindet sich eine JAR-Datei und eine Kopie des "lib"-Ordners.
+Beides zusammen muss jetzt mit einem beliebigen Archivierungsprogramm
+in eine ZIP-Datei zusammengepackt werden.
+Dieses Archiv kann dann hochegeladen werden.
 
 [[zweite-möglichkeit---das-ant-script]]
 ==== Zweite Möglichkeit - Das ANT Script
@@ -128,7 +128,7 @@ Beim Hochladen wählt man `main.rb` als Hauptdatei.
 Stellt sicher, dass euer Projekt nur Libraries nutzt,
 die auch in <<ausfuehrungsumgebungen,Mono 5.4>> enthalten sind.
 Kompiliert bzw. erstellt euer Projekt und fügt zu dem build eine start.sh hinzu,
-wie <<andere-sprache,hier>> beschrieben, sofern ihr noch keine habt,
+wie <<andere-sprache,nachfolgend>> beschrieben, sofern ihr noch keine habt,
 da der Wettkampfserver eure exe sonst nicht ausführen kann.
 Sie sollte folgenden Inhalt haben, um eure exe mit mono zu starten:
 
