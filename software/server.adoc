@@ -28,15 +28,11 @@ durch einen Doppelklick auf die Datei `software-challenge-gui` starten.
 [[die-programmoberfläche]]
 === Die Programmoberfläche
 
-Die Programmoberfläche besteht aus dem Menü oben
+Die Programmoberfläche besteht aus einer Menüleiste oben
 sowie der Spielfläche darunter.
 
-.Die Spielleiteroberfläche direkt nach dem Programmstart
-image::spielleiter_direkt_nach-start.jpg[Spielleiter]
-
-Unter dem ersten Menüpunkt (Symbol der Software-Challenge) findet man alle möglichen Aktionen.
-
-Zu Beginn ist die Spielfläche leer.
+Unter dem ersten Menüpunkt (Symbol der Software-Challenge)
+findet man alle grundlegenden Aktionen.
 
 [[ein-neues-spiel-erstellen]]
 ==== Ein neues Spiel erstellen
@@ -44,24 +40,24 @@ Zu Beginn ist die Spielfläche leer.
 Um ein Spiel zu spielen, muss zunächst "Neues Spiel starten" angeklickt werden.
 
 .Dialog für ein neues Spiel
-image::neues_spiel_dialog.jpg[Neues Spiel]
+image::gui/game-creation.png[Neues Spiel]
 
 In diesem Fenster werden die Spieler ausgewählt, die an dem Spiel
 teilnehmen sollen. Für jeden Spieler gibt es folgende Optionen:
 
-* Text-Eingabefeld: Hier kann für jeden Spieler ein Name eingegeben werden, der
-  dann im Spiel angezeigt wird.
-* Spielertyp: Es kann zwischen 4 verschiedenen Spielertypen gewählt
-werden:
-1.  Mensch: Ein menschlicher Spieler, der über die Programmoberfläche
-spielt.
-2.  Beispiel-Computerspieler: Ein Computerspieler, der im Server integriert ist.
-3.  Computerspieler, von GUI gestartet: Ein Computerspieler in Form eines separaten
-Programms, das beim Starten des Spiels automatisch vom Server gestartet
-wird.
-4.  Manuell gestarteter Client: Ein Computerspieler in Form eines
-separaten Programms, das manuell durch den Benutzer gestartet werden
-muss.
+Text-Eingabefeld: Hier kann für jeden Spieler ein Name eingegeben werden,
+  der dann im Spiel angezeigt wird.
+
+Spielertyp: Es kann zwischen 4 verschiedenen Spielertypen gewählt werden:
+
+  Mensch:: Ein menschlicher Spieler, der über die Programmoberfläche spielt.
+  Beispiel-Computerspieler:: Ein Computerspieler, der im Server integriert ist.
+  Computerspieler, von GUI gestartet::
+    Ein Computerspieler in Form eines separaten Programms,
+    das beim Starten des Spiels automatisch vom Server gestartet wird.
+  Manuell gestarteter Client::
+    Ein Computerspieler in Form eines separaten Programms,
+    das manuell durch den Benutzer gestartet werden muss.
 
 Nach Eingabe der erforderlichen Werte kann das Spiel mithilfe des
 unteren Knopfs "Erstellen" erstellt werden.
@@ -69,17 +65,15 @@ unteren Knopfs "Erstellen" erstellt werden.
 [[die-spielfeldoberfläche]]
 ==== Die Spielfeldoberfläche
 
-.Die Spielfeldoberfläche (hier mit dem Spiel "Blokus")
-image::spielfeldoberflaeche.jpg[]
+.Die Spielfeldoberfläche (hier mit dem Spiel "Ostseeschach")
+image::gui/ostseeschach.png[]
 
-Auf dem Spielbrett werden das eigentliche Spiel (hier z.B. "Blokus"),
-die Züge und weitere für das Spiel wichtige Informationen
-dargestellt. Hier setzt der menschliche Spieler auch seine Züge.
+Auf dem Spielbrett wird das eigentliche Spiel,
+die Züge und weitere für das Spiel wichtige Informationen dargestellt.
+Hier setzt der menschliche Spieler auch seine Züge.
 
 Die Steuerelemente unterscheiden sich je nach Spiel und Spielsituation.
 Unten gibt es immer die Schaltflächen "Anhalten/Weiter".
-
-// TODO move this section to the specific game.
 
 [[spielwiederholung-laden]]
 === Spielwiederholungen (Replays)
@@ -150,50 +144,47 @@ ist es sinnvoll, diesen mit vielen verschiedenen Spielsituationen zu konfrontier
 Dadurch lassen sich Fehler entdecken und die Spielstärke des Computerspielers beurteilen.
 Für solche Testdurchläufe wird ein Testserver und TestClient zur Verfügung gestellt.
 
-Wenn Sie automatisiert Spiele mit Ihrem Computerspieler spielen wollen, um
-bestimmte Verhaltensweisen bei der Weiterentwicklung regelmäßig zu testen,
-können Sie dafür einen speziellen Server ohne grafische Oberfläche verwenden,
-den sogenannten Testserver. Hier ist zu beachten, dass der Testserver auf dem Port 13051
-gestartet wird und nicht, wie im normalen Spiel auf Port 13050.
+Der Testserver hat keine grafische Oberfläche
+und läuft, im Gegensatz zum Server mit graphischer Oberfläche (Port 13050),
+standardmäßig auf Port 13051.
+So kannst du ihn nutzen:
 
-Gehen Sie dazu wie folgt vor:
-
-. Laden Sie den Testserver von der Download-Seite herunter.
+. Lade den Testserver von der Download-Seite herunter.
 . Entpacken Sie das heruntergeladene Archiv.
-. Wechseln Sie in einer Kommandozeilenumgebung (Windows: cmd.exe oder
-Powershell, Linux: beliebige Shell oder Terminal) in das Verzeichnis des
-entpackten Archives.
-. Starten Sie den Testserver auf dem Port 13051 mit folgendem Befehl:
+. Öffne eine Kommandozeilenumgebung
+  (Terminal; auf Windows cmd oder Powershell)
+  im Verzeichnis des entpackten Archives.
+. Starte den Testserver auf Port 13051:
 [source,sh]
-  java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051
-. Starten Sie Ihren Computerspieler und einen zweiten Computerspieler manuell auf dem Port 13051 (im SimpleClient geht dies mit der Option --port 13051)
-in weiteren Kommandozeilenumgebungen. Die Computerspieler verbinden sich
-automatisch zum Testserver und es wird ein Spiel gespielt. Danach sollten sich
-die Computerspieler automatisch beenden.
-. Wenn Sie weitere Testspiele starten wollen, können Sie die Computerspieler
-erneut starten. Der Testserver muss nicht neu gestartet werden.
+java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051
+. Starten die Computerspieler in weiteren Kommandozeilenumgebungen auf Port 13051
+  (beim SimpleClient geht dies mit der Option `--port 13051`).
+  Die Computerspieler verbinden sich automatisch zum Testserver und spielen ein Spiel.
+  Danach sollten sich die Computerspieler automatisch beenden.
+. Um weitere Testspiele zu spielen, starte die Computerspieler erneut.
+  Der Testserver muss dabei nicht neu gestartet werden.
 
-Beachten Sie, dass der Testserver keine Spielaufzeichnungen anlegt, wie es der
-Server mit grafischer Oberfläche tut. Die Auswertung der Spiele muss in einem
-der teilnehmenden Computerspieler geschehen (z.B. durch Log-Ausgaben).
+Beachte, dass der Testserver keine Spielaufzeichnungen anlegt,
+wie es der Server mit grafischer Oberfläche tut.
+Die Auswertung der Spiele muss in einem der teilnehmenden Computerspieler geschehen (z.B. durch Log-Ausgaben).
 
-Es ist ebenfalls möglich, statt eines Zufällig generierten vollständigen
-Spielplanes eine Spielsituation zu laden und zu testen. Die Spielsituation muss
-vorher wie unter <<spielsituation-nachstellen,Spielsituation nachstellen>>
-erzeugt werden. Dann kann die Datei mit dem Argument `--loadGameFile` geladen
-werden und optional mit `--turn` ein Zug spezifiziert werden.
+Es ist ebenfalls möglich, statt eines zufällig generierten vollständigen Spielplanes
+eine Spielsituation zu laden und zu testen.
+Die Spielsituation muss vorher wie unter <<spielsituation-nachstellen,Spielsituation nachstellen>> erzeugt werden.
+Dann kann die Datei mit dem Argument `--loadGameFile` geladen werden
+und optional mit `--turn` ein Zug spezifiziert werden.
 
 [source,sh]
   java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051 --loadGameFile ./replay.xml --turn 10
 
-[[soft-timeouts]]
+[[soft-timeout]]
 ==== Unerwartete Zugzeitüberschreitungen (Soft-Timeout)
 
 Wenn Sie den Testserver einige Zeit laufen lassen,
 um eine größere Anzahl von Testspielen durchzuführen, kann es dazu kommen,
 dass Computerspieler wegen Zugzeitüberschreitungen vom Server disqualifiziert werden (Soft-Timeout).
-Dies passiert, obwohl sie ihren Zug innerhalb der erlaubten Zugzeit
-(abhängig vom Spiel, bisher aber immer zwei Sekunden) an den Server geschickt haben.
+Dies passiert, obwohl der Zug innerhalb der erlaubten Zugzeit
+(abhängig vom Spiel, bisher aber immer zwei Sekunden) an den Server geschickt wurde.
 Der Garbage Collector der Java Virtual Machine löst dieses Verhalten aus.
 Er pausiert die Anwendung, um nicht mehr genutzten Speicher freizugeben.
 Wenn der Server dadurch zu einem ungünstigen Zeitpunkt angehalten wird,
@@ -337,5 +328,5 @@ Die Ergebnisse werden erst zurückgesetzt, wenn der Server neu gestartet wird.
 Achte also nach einer Veränderung der Spieler darauf,
 den Server neu zu starten oder andere Spielernamen zu verwenden.
 
-NOTE: Dieses Verhalten wird wahrscheinlich bald verändert,
-    indem jeder TestClient unabhängig vom Server die Punkte zählt.
+WARNING: Dieses Verhalten wird wahrscheinlich bald verändert,
+         wobei dann jeder TestClient unabhängig vom Server die Punkte zählt.
