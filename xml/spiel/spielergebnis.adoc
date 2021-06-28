@@ -1,15 +1,14 @@
 [[spielende]]
 == Spielergebnis
 
-Zum Spielende enthält der Spieler das Ergebnis:
+Zum Spielende erhält jeder Spieler das Ergebnis.
 
-* `ROOM_ID` Id des GameRooms
-* `R1`, `R2` Text, der den Grund für das Spielende erklärt
-* `CAUSE1`, `CAUSE2` Grund des Spielendes (`REGULAR`, `LEFT`, `RULE_VIOLATION`, `SOFT_TIMEOUT`, `HARD_TIMEOUT`)
-* `WP1`, `WP2` Siegpunkte der jeweiligen Spieler, 0 verloren, 1 unentschieden, 2 gewonnen
-* `S1`, `S2` Punkte des jeweiligen Spielers
-* `NAME` Anzeigename des Spielers
-* `TEAM` Team des Siegers (`ONE`, `TWO`)
+R1, R2:: Text, der den Grund für das Spielende erklärt
+CAUSE1, CAUSE2:: Grund des Spielendes (`REGULAR`, `LEFT`, `RULE_VIOLATION`, `SOFT_TIMEOUT`, `HARD_TIMEOUT`)
+WP1, WP2:: Siegpunkte der jeweiligen Spieler (0 verloren, 1 unentschieden, 2 gewonnen)
+S1, S2:: Punkte des jeweiligen Spielers
+NAME:: Anzeigename des Spielers
+TEAM:: Team des Siegers (`ONE`, `TWO`)
 
 [source,xml]
 ----

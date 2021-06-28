@@ -2,7 +2,7 @@
 :source-highlighter: pygments
 :icons: font
 :toc: left
-:toc-title: Ostseeschach Spielregeln
+:toc-title: Inhalt
 
 = Ostseeschach Spielregeln der Software-Challenge 2022
 
