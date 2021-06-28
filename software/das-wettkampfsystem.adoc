@@ -12,7 +12,7 @@ Mitglieder in den einzelnen Teams.
 [[die-weboberfläche]]
 === Die Weboberfläche
 
-image::weboberflaeche_startseite.jpg[Die Startseite der Weboberfläche]
+image::wettkampfsystem_startseite.jpg[Die Startseite der Weboberfläche]
 
 Die Weboberfläche ist unter der URL
 http://contest.software-challenge.de erreichbar. Alle Informationen,
@@ -66,7 +66,7 @@ Spieltagübersicht.
 [[xx.-spieltag]]
 ===== XX. Spieltag
 
-image::wettkampfserver_spieltaguebersicht.jpg[]
+image::wettkampfsystem_spieltaguebersicht.jpg[]
 
 Auf dieser Seite kann man sehen, welche Schulen an dem Spieltag
 aufeinander treffen bzw.  trafen. Wurde der Spieltag schon
@@ -76,7 +76,7 @@ einzelnen Spiele anschauen.
 [[rangliste]]
 ===== Rangliste
 
-image::wettkampfserver_rangliste.jpg[Screenshot der Rangliste]
+image::wettkampfsystem_rangliste.jpg[Screenshot der Rangliste]
 
 Der Link erscheint erst, wenn der Wettkampf gestartet wurde. Auf dieser
 Seite gibt es drei Tabellen:
@@ -103,7 +103,7 @@ verfügbar, wenn die Teilnehmer feststehen.
 [[alle-teams]]
 ===== Alle Teams
 
-image::wettkampfserver_teamtabelle.jpg[Die Teamtabelle]
+image::wettkampfsystem_teamtabelle.jpg[Die Teamtabelle]
 
 Hier werden die teilnehmenden Teams mit ihren Ansprechpartnern und Tutoren
 tabellarisch aufgelistet. Durch einen Klick auf die Lupe gelangt man zur
@@ -140,7 +140,7 @@ Klick auf die Lupe am Ende der Zeile gelangt man in die Teamdetails.
 [[personen]]
 ===== Personen
 
-image::wettkampfserver_neue_person.jpg[Dialog, um neue Personen ins Team aufzunehmen]
+image::wettkampfsystem_neue_person.jpg[Dialog, um neue Personen ins Team aufzunehmen]
 
 Hier werden alle Personen des Teams augelistet.
 
@@ -164,10 +164,10 @@ Wenn man eine neue Person ins Team aufnehmen will, kann man sich
 entscheiden, ob man eine neue Person erstellt oder eine im System
 bekannte Person einlädt.
 
-Ganz unten auf der Personenseite kann man die Schüleranzahl des Teams
-eintragen. Hierzu zählen auch Schüler, die keine eigenen Zugangsdaten
-für den Wettkampfserver haben. Diese Zahl wird sowohl für die Presse als
-auch für statistische Zwecke gebraucht und sollte in jedem Fall stimmen.
+Ganz unten auf der Personenseite kann man die Schüleranzahl des Teams eintragen.
+Hierzu zählen auch Schüler, die keine eigenen Zugangsdaten für das Wettkampfsystem haben.
+Diese Zahl wird sowohl für die Presse als auch für statistische Zwecke gebraucht
+und sollte in jedem Fall stimmen.
 
 [[benachrichtigungen]]
 ====== Benachrichtigungen
