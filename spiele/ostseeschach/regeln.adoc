@@ -69,6 +69,11 @@ erhält man zwei Bernsteine.
 Die Figur, für die man einen Bernstein bekommt,
 wird vom Spielfeld genommen.
 
+Aussetzen ist nicht erlaubt.
+Sollte es vorkommen,
+dass kein Zug möglich ist,
+führt dies automatisch zum Verlust des Spiels.
+
 == Wertung
 
 Das Spiel endet in der Runde,
