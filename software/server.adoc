@@ -240,7 +240,7 @@ Dazu gehören erhöhter Resourcenverbrauch und Instabilität der Anwendung.
 
 Massentests mit dem eigenen Computerspieler können sehr nützlich sein,
 beispeilsweise um die Stärke gegenüber einer früheren Version zu Testen.
-Dafür wird ein TestClient bereitgestellt.
+Dafür wird in jeder Saison ab Version XX.1.0 ein TestClient bereitgestellt.
 
 Der TestClient muss vom Terminal mit den entsprechenden Argumenten aufgerufen werden.
 Diese werden unter den Beispielen näher erläutert.
