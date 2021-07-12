@@ -37,7 +37,9 @@ Worauf dieser innerhalb der gesetzten Zeitbeschränkung mit einem xref:Zug[] ant
 [source, xml]
 ----
 <room roomId="ROOM_ID">
-  ZUG
+  <data class="move">
+    ZUG
+  </data>
 </room>
 ----
 
