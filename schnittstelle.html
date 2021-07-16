@@ -544,6 +544,8 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 </li>
 <li><a href="schnittstelle.html"><span class="toc-current">Die Schnittstelle zum Server (XML)</span></a>
 <ul class="sectlevel2">
+<li><a href="schnittstelle.html#hinweise">Hinweise</a>
+</li>
 <li><a href="schnittstelle.html#_einführung_in_xml">Einführung in XML</a>
 <ul class="sectlevel3">
 <li><a href="schnittstelle.html#tags">Tags</a>
@@ -558,13 +560,21 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 </li>
 </ul>
 </li>
-<li><a href="schnittstelle.html#der-adminclient">Der AdminClient</a>
+<li><a href="schnittstelle.html#_das_spielprotokoll">Das Spielprotokoll</a>
+<ul class="sectlevel3">
+<li><a href="schnittstelle.html#spiel-betreten">Spiel betreten</a>
+</li>
+<li><a href="schnittstelle.html#_spielverlauf">Spielverlauf</a>
+</li>
+<li><a href="schnittstelle.html#spielende">Spielergebnis</a>
+</li>
+</ul>
+</li>
+<li><a href="schnittstelle.html#administration">Administration</a>
 <ul class="sectlevel3">
 <li><a href="schnittstelle.html#_verbindungsaufbau">Verbindungsaufbau</a>
 </li>
 <li><a href="schnittstelle.html#_aktionen_in_einem_raum">Aktionen in einem Raum</a>
-</li>
-<li><a href="schnittstelle.html#_testmodus">Testmodus</a>
 </li>
 <li><a href="schnittstelle.html#servereinstellungen">Servereinstellungen</a>
 </li>
@@ -591,12 +601,28 @@ Die Computerspieler müssen lediglich das Kommunikationsprotokoll erfüllen.</p>
 </div>
 <div class="paragraph">
 <p>Anfängern wird allerdings davon abgeraten,
-einen komplett eigenen Client zu schreiben.u
+einen komplett eigenen Client zu schreiben.
 Es ist deutlich einfacher,
-auf dem bereitgestellten Simpleclient aufzubauen,
+auf einem bereitgestellten Simpleclient aufzubauen,
 da man sich dabei nur um die Strategie
 und nicht um die Kommunikation kümmern muss.
 Außerdem wird vom Institut für Informatik die beste Unterstützung für Java/Kotlin geboten.</p>
+</div>
+<div class="sect2">
+<h3 id="hinweise">Hinweise</h3>
+<div class="paragraph">
+<p>Im Verlauf des Wettbewerbes können Elemente zur Kommunikationsschnittstelle hinzugefügt werden,
+die in dieser Dokumentation nicht aufgeführt sind.
+Um auch bei solchen Änderungen sicher zu sein,
+dass ein Client fehlerfrei mit dem Server kommunizieren kann,
+sollten beim Auslesen des XML jegliche Daten verworfen werden,
+die hier nicht weiter definiert sind.</p>
+</div>
+<div class="paragraph">
+<p>Die vom Institut bereitgestellten Programme (Server, Simpleclient)
+nutzen eine Bibliothek um Java-Objekte direkt in XML zu konvertieren und umgekehrt.
+Dabei werden XML-Nachrichten nicht unbedingt mit einem Zeilenumbruch abgeschlossen.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_einführung_in_xml">Einführung in XML</h3>
@@ -796,14 +822,244 @@ zwischen Tags stehen.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="der-adminclient">Der AdminClient</h3>
+<h3 id="_das_spielprotokoll">Das Spielprotokoll</h3>
 <div class="paragraph">
-<p>Mit dem AdminClient kann man Spiele vorbereiten und Einstellungen ändern.</p>
+<p>In diesem Abschnitt wird die spielunabhängige Kommunikationsschnittstelle für Spieler festgehalten,
+um das Schreiben eines komplett eigenen Clients zu ermöglichen.</p>
+</div>
+<div class="sect3">
+<h4 id="spiel-betreten">Spiel betreten</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Dieses Tag eröffnet die Kommunikation mit dem Server.
+Dann gibt es drei Möglichkeiten,
+einer Spielpartie beizutreten.</p>
+</div>
+<div class="sect4">
+<h5 id="_beliebige_partie">Beliebige Partie</h5>
+<div class="paragraph">
+<p>Betritt ein beliebige offene Spielpartie:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;join</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sollte kein Spiel offen sein, wird automatisch ein neues erstellt.
+Abhängig von der Einstellung <code>paused</code> in <code>server.properties</code> wird das Spiel pausiert gestartet oder nicht.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_bestimmte_partie">Bestimmte Partie</h5>
+<div class="paragraph">
+<p>Einer bestimmten, bereits offenen aber noch nicht gestarteten Partie
+kann durch Angabe der <code>ROOM_ID</code> beigetreten werden:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joinRoom</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_mit_reservierung">Mit Reservierung</h5>
+<div class="paragraph">
+<p>Unter Angabe eines Reservierungscodes kann man einen reservierten Platz
+in einer geplanten Partie einnehmen:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joinPrepared</span> <span class="tok-na">reservationCode=</span><span class="tok-s">&quot;RESERVATION&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_antwort">Antwort</h5>
+<div class="paragraph">
+<p>Der Server antwortet auf einen erfolgreichen Spielbeitritt mit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joined</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">ROOM_ID</dt>
+<dd>
+<p>Identifikationscode der Spielpartie</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_spielverlauf">Spielverlauf</h4>
+<div class="sect4">
+<h5 id="_start">Start</h5>
+<div class="paragraph">
+<p>Der Server eröffnet das Spiel
+mit einer Begrüßung und dem initialen Spielstatus
+sobald beide Spieler verbunden sind.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">ROOM_ID</dt>
+<dd>
+<p>Identifikationscode der Spielpartie</p>
+</dd>
+<dt class="hdlist1">COLOR</dt>
+<dd>
+<p>Spielerfarbe</p>
+</dd>
+<dt class="hdlist1">STATUS</dt>
+<dd>
+<p><a href="#status">[status]</a> der Partie</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;welcomeMessage&quot;</span> <span class="tok-na">color=</span><span class="tok-s">&quot;COLOR&quot;</span><span class="tok-nt">&gt;&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span>
+<span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;memento&quot;</span><span class="tok-nt">&gt;</span>
+    STATUS
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_ablauf">Ablauf</h5>
+<div class="paragraph">
+<p>Der erste Spieler erhält dann eine Zugaufforderung:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;moveRequest&quot;</span> <span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Worauf dieser innerhalb der gesetzten Zeitbeschränkung mit einem <a href="#Zug">[Zug]</a> antwortet:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;move&quot;</span><span class="tok-nt">&gt;</span>
+    ZUG
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nach Erhalt des Zuges sendet der Server den neuen Spielstatus an alle Spieler
+und dem nächsten Spieler eine Zugaufforderung.
+So geht es hin und her bis zum <a href="schnittstelle.html#spielende">Spielergebnis</a>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_ende_der_kommunikation">Ende der Kommunikation</h5>
+<div class="paragraph">
+<p>Die letzte Nachricht des Servers endet mit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;/protocol&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Danach wird die Verbindung geschlossen.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="spielende">Spielergebnis</h4>
+<div class="paragraph">
+<p>Zum Spielende erhält jeder Spieler das Ergebnis.
+Es beginnt mit einer <code>definition</code>,
+die die Interpretation der Ergebnisse erklärt.
+Für jeden Spieler gibt es einen Eintrag in <code>scores</code>.
+Der darin enthaltene <code>score</code> schlüsselt sich auf in:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">cause</dt>
+<dd>
+<p>Beitrag des Spielers zum Spielende (<code>REGULAR</code>, <code>LEFT</code>, <code>RULE_VIOLATION</code>, <code>SOFT_TIMEOUT</code>, <code>HARD_TIMEOUT</code>)</p>
+</dd>
+<dt class="hdlist1">reason</dt>
+<dd>
+<p>Erklärung zu <code>cause</code></p>
+</dd>
+<dt class="hdlist1">part</dt>
+<dd>
+<p>Siegpunkte des Spielers (0 verloren, 1 unentschieden, 2 gewonnen) und weitere Punkteinträge entsprechend <code>definition</code></p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Wenn es einen Sieger gibt,
+endet es mit einem <code>winner</code>-Tag,
+welches das Gewinner-Team angibt.</p>
+</div>
+<div class="paragraph">
+<p>Hier ein Beispiel:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;result&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;definition&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Siegpunkte&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>SUM<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;∅ Punkte&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+    <span class="tok-nt">&lt;/definition&gt;</span>
+    <span class="tok-nt">&lt;scores&gt;</span>
+      <span class="tok-nt">&lt;entry&gt;</span>
+        <span class="tok-nt">&lt;player</span> <span class="tok-na">name=</span><span class="tok-s">&quot;rad&quot;</span> <span class="tok-na">team=</span><span class="tok-s">&quot;ONE&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;score</span> <span class="tok-na">cause=</span><span class="tok-s">&quot;REGULAR&quot;</span> <span class="tok-na">reason=</span><span class="tok-s">&quot;&quot;</span><span class="tok-nt">&gt;</span>
+          <span class="tok-nt">&lt;part&gt;</span>2<span class="tok-nt">&lt;/part&gt;</span>
+          <span class="tok-nt">&lt;part&gt;</span>27<span class="tok-nt">&lt;/part&gt;</span>
+        <span class="tok-nt">&lt;/score&gt;</span>
+      <span class="tok-nt">&lt;/entry&gt;</span>
+      <span class="tok-nt">&lt;entry&gt;</span>
+        <span class="tok-nt">&lt;player</span> <span class="tok-na">name=</span><span class="tok-s">&quot;blues&quot;</span> <span class="tok-na">team=</span><span class="tok-s">&quot;TWO&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;score</span> <span class="tok-na">cause=</span><span class="tok-s">&quot;LEFT&quot;</span> <span class="tok-na">reason=</span><span class="tok-s">&quot;Player left&quot;</span><span class="tok-nt">&gt;</span>
+          <span class="tok-nt">&lt;part&gt;</span>0<span class="tok-nt">&lt;/part&gt;</span>
+          <span class="tok-nt">&lt;part&gt;</span>15<span class="tok-nt">&lt;/part&gt;</span>
+        <span class="tok-nt">&lt;/score&gt;</span>
+      <span class="tok-nt">&lt;/entry&gt;</span>
+    <span class="tok-nt">&lt;/scores&gt;</span>
+    <span class="tok-nt">&lt;winner</span> <span class="tok-na">team=</span><span class="tok-s">&quot;ONE&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="administration">Administration</h3>
+<div class="paragraph">
+<p>Mit einem authentifizierten Client kann man den Server steuern.</p>
 </div>
 <div class="sect3">
 <h4 id="_verbindungsaufbau">Verbindungsaufbau</h4>
 <div class="paragraph">
-<p>Zuerst muss sich der AdminClient mit dem entsprechenden Passwort aus <code>server.properties</code> authentifizieren:</p>
+<p>Zuerst muss sich ein Client mit dem entsprechenden Passwort aus <code>server.properties</code> authentifizieren:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -811,8 +1067,8 @@ zwischen Tags stehen.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Ein authentifizierter AdminClient erhält eine Nachricht,
-sobald sich ein Client über ein JoinRoomRequest verbindet:</p>
+<p>Ein authentifizierter AdminClient wird benachrichtigt,
+wenn sich ein Client über ein <code>JoinRoomRequest</code> verbindet:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -821,13 +1077,13 @@ sobald sich ein Client über ein JoinRoomRequest verbindet:</p>
 </div>
 <div class="dlist">
 <dl>
+<dt class="hdlist1">roomId</dt>
+<dd>
+<p>eine vom Server generierte Zeichenfolge, die die Partie identifiziert</p>
+</dd>
 <dt class="hdlist1">playerCount</dt>
 <dd>
 <p>die Anzahl der Spieler im Raum nach dem Beitritt des neuen Spielers</p>
-</dd>
-<dt class="hdlist1">roomId</dt>
-<dd>
-<p>eine vom Server generierte Zeichenfolge, die den Raum identifiziert</p>
 </dd>
 </dl>
 </div>
@@ -880,67 +1136,6 @@ dadurch erhält er alle Nachrichten, die das Spiel betreffen:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_testmodus">Testmodus</h4>
-<div class="paragraph">
-<p>Ein AdminClient kann den Testmodus aktivieren/deaktivieren:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;testMode</span> <span class="tok-na">testMode=</span><span class="tok-s">&quot;true/false&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Der Server antwortet mit:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;testing</span> <span class="tok-na">testMode=</span><span class="tok-s">&quot;true/false&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Nachdem der Testmodus aktiviert wurde
-kann ein AdminClient die Punkte und Gewinnkriterien eines Spielers
-jederzeit anhand des Anzeigenamens erfragen:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;scoreForPlayer</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p1&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Der Server antwortet darauf mit:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;playerScore&gt;</span>
-  <span class="tok-nt">&lt;score</span> <span class="tok-na">displayName=</span><span class="tok-s">&quot;p1&quot;</span> <span class="tok-na">numberOfTests=</span><span class="tok-s">&quot;1&quot;</span><span class="tok-nt">&gt;</span>
-    <span class="tok-nt">&lt;values&gt;</span>
-      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Gewinner&quot;</span><span class="tok-nt">&gt;</span>
-        <span class="tok-nt">&lt;aggregation&gt;</span>SUM<span class="tok-nt">&lt;/aggregation&gt;</span>
-        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
-      <span class="tok-nt">&lt;/fragment&gt;</span>
-      <span class="tok-nt">&lt;value&gt;</span>2<span class="tok-nt">&lt;/value&gt;</span>
-    <span class="tok-nt">&lt;/values&gt;</span>
-    <span class="tok-nt">&lt;values&gt;</span>
-      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;∅ Feldnummer&quot;</span><span class="tok-nt">&gt;</span>
-        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
-        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
-      <span class="tok-nt">&lt;/fragment&gt;</span>
-      <span class="tok-nt">&lt;value&gt;</span>10.000000<span class="tok-nt">&lt;/value&gt;</span>
-    <span class="tok-nt">&lt;/values&gt;</span>
-    <span class="tok-nt">&lt;values&gt;</span>
-      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;∅ Karotten&quot;</span><span class="tok-nt">&gt;</span>
-        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
-        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
-      <span class="tok-nt">&lt;/fragment&gt;</span>
-      <span class="tok-nt">&lt;value&gt;</span>13.000000<span class="tok-nt">&lt;/value&gt;</span>
-    <span class="tok-nt">&lt;/values&gt;</span>
-  <span class="tok-nt">&lt;/score&gt;</span>
-<span class="tok-nt">&lt;/playerScore&gt;</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
 <h4 id="servereinstellungen">Servereinstellungen</h4>
 <div class="paragraph">
 <p>Die Servereinstellungen liegen in der <code>server.properties</code> Datei,
@@ -949,13 +1144,13 @@ In ihr können folgende Werte konfiguriert werden:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">password </dt>
+<dt class="hdlist1">password</dt>
 <dd>
-<p>lokales Administratorpasswort (standardmäßig auf examplepassword).</p>
+<p>lokales Administratorpasswort (standardmäßig auf <code>examplepassword</code>)</p>
 </dd>
-<dt class="hdlist1">paused </dt>
+<dt class="hdlist1">paused</dt>
 <dd>
-<p>ob ein durch ein JoinRequest gestartetes Spiel anfangs pausiert sein soll oder nicht (standardmäßig pausiert)</p>
+<p>ob ein automatisch angelegtes Spiel anfangs pausiert sein soll oder nicht (standardmäßig pausiert)</p>
 </dd>
 </dl>
 </div>
@@ -969,7 +1164,7 @@ In ihr können folgende Werte konfiguriert werden:</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-07-01 13:27:18 UTC
+Last updated 2021-07-16 18:53:27 UTC
 </div>
 </div>
 </body>

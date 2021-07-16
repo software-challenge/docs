@@ -546,7 +546,7 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 </li>
 <li><a href="server.html#automatische-spiele">Automatische Spiele: Der Testserver</a>
 <ul class="sectlevel3">
-<li><a href="server.html#soft-timeouts">Unerwartete Zugzeitüberschreitungen (Soft-Timeout)</a>
+<li><a href="server.html#soft-timeout">Unerwartete Zugzeitüberschreitungen (Soft-Timeout)</a>
 </li>
 <li><a href="server.html#tests-ohne-gui">Massentests</a>
 </li>
@@ -614,20 +614,12 @@ durch einen Doppelklick auf die Datei <code>software-challenge-gui</code> starte
 <div class="sect2">
 <h3 id="die-programmoberfläche">Die Programmoberfläche</h3>
 <div class="paragraph">
-<p>Die Programmoberfläche besteht aus dem Menü oben
+<p>Die Programmoberfläche besteht aus einer Menüleiste oben
 sowie der Spielfläche darunter.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/spielleiter_direkt_nach-start.jpg" alt="Spielleiter">
-</div>
-<div class="title">Figure 1. Die Spielleiteroberfläche direkt nach dem Programmstart</div>
-</div>
 <div class="paragraph">
-<p>Unter dem ersten Menüpunkt (Symbol der Software-Challenge) findet man alle möglichen Aktionen.</p>
-</div>
-<div class="paragraph">
-<p>Zu Beginn ist die Spielfläche leer.</p>
+<p>Unter dem ersten Menüpunkt (Symbol der Software-Challenge)
+findet man alle grundlegenden Aktionen.</p>
 </div>
 <div class="sect3">
 <h4 id="ein-neues-spiel-erstellen">Ein neues Spiel erstellen</h4>
@@ -636,46 +628,42 @@ sowie der Spielfläche darunter.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/neues_spiel_dialog.jpg" alt="Neues Spiel">
+<img src="images/gui/game-creation.png" alt="Neues Spiel">
 </div>
-<div class="title">Figure 2. Dialog für ein neues Spiel</div>
+<div class="title">Figure 1. Dialog für ein neues Spiel</div>
 </div>
 <div class="paragraph">
 <p>In diesem Fenster werden die Spieler ausgewählt, die an dem Spiel
 teilnehmen sollen. Für jeden Spieler gibt es folgende Optionen:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Text-Eingabefeld: Hier kann für jeden Spieler ein Name eingegeben werden, der
-dann im Spiel angezeigt wird.</p>
-</li>
-<li>
-<p>Spielertyp: Es kann zwischen 4 verschiedenen Spielertypen gewählt
-werden:</p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Mensch: Ein menschlicher Spieler, der über die Programmoberfläche
-spielt.</p>
-</li>
-<li>
-<p>Beispiel-Computerspieler: Ein Computerspieler, der im Server integriert ist.</p>
-</li>
-<li>
-<p>Computerspieler, von GUI gestartet: Ein Computerspieler in Form eines separaten
-Programms, das beim Starten des Spiels automatisch vom Server gestartet
-wird.</p>
-</li>
-<li>
-<p>Manuell gestarteter Client: Ein Computerspieler in Form eines
-separaten Programms, das manuell durch den Benutzer gestartet werden
-muss.</p>
-</li>
-</ol>
+<div class="paragraph">
+<p>Text-Eingabefeld: Hier kann für jeden Spieler ein Name eingegeben werden,
+  der dann im Spiel angezeigt wird.</p>
 </div>
-</li>
-</ul>
+<div class="paragraph">
+<p>Spielertyp: Es kann zwischen 4 verschiedenen Spielertypen gewählt werden:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Mensch</dt>
+<dd>
+<p>Ein menschlicher Spieler, der über die Programmoberfläche spielt.</p>
+</dd>
+<dt class="hdlist1">Beispiel-Computerspieler</dt>
+<dd>
+<p>Ein Computerspieler, der im Server integriert ist.</p>
+</dd>
+<dt class="hdlist1">Computerspieler, von GUI gestartet</dt>
+<dd>
+<p>Ein Computerspieler in Form eines separaten Programms,
+das beim Starten des Spiels automatisch vom Server gestartet wird.</p>
+</dd>
+<dt class="hdlist1">Manuell gestarteter Client</dt>
+<dd>
+<p>Ein Computerspieler in Form eines separaten Programms,
+das manuell durch den Benutzer gestartet werden muss.</p>
+</dd>
+</dl>
 </div>
 <div class="paragraph">
 <p>Nach Eingabe der erforderlichen Werte kann das Spiel mithilfe des
@@ -686,14 +674,14 @@ unteren Knopfs "Erstellen" erstellt werden.</p>
 <h4 id="die-spielfeldoberfläche">Die Spielfeldoberfläche</h4>
 <div class="imageblock">
 <div class="content">
-<img src="images/spielfeldoberflaeche.jpg" alt="spielfeldoberflaeche">
+<img src="images/gui/ostseeschach.png" alt="ostseeschach">
 </div>
-<div class="title">Figure 3. Die Spielfeldoberfläche (hier mit dem Spiel "Blokus")</div>
+<div class="title">Figure 2. Die Spielfeldoberfläche (hier mit dem Spiel "Ostseeschach")</div>
 </div>
 <div class="paragraph">
-<p>Auf dem Spielbrett werden das eigentliche Spiel (hier z.B. "Blokus"),
-die Züge und weitere für das Spiel wichtige Informationen
-dargestellt. Hier setzt der menschliche Spieler auch seine Züge.</p>
+<p>Auf dem Spielbrett wird das eigentliche Spiel,
+die Züge und weitere für das Spiel wichtige Informationen dargestellt.
+Hier setzt der menschliche Spieler auch seine Züge.</p>
 </div>
 <div class="paragraph">
 <p>Die Steuerelemente unterscheiden sich je nach Spiel und Spielsituation.
@@ -812,59 +800,55 @@ Dadurch lassen sich Fehler entdecken und die Spielstärke des Computerspielers b
 Für solche Testdurchläufe wird ein Testserver und TestClient zur Verfügung gestellt.</p>
 </div>
 <div class="paragraph">
-<p>Wenn Sie automatisiert Spiele mit Ihrem Computerspieler spielen wollen, um
-bestimmte Verhaltensweisen bei der Weiterentwicklung regelmäßig zu testen,
-können Sie dafür einen speziellen Server ohne grafische Oberfläche verwenden,
-den sogenannten Testserver. Hier ist zu beachten, dass der Testserver auf dem Port 13051
-gestartet wird und nicht, wie im normalen Spiel auf Port 13050.</p>
-</div>
-<div class="paragraph">
-<p>Gehen Sie dazu wie folgt vor:</p>
+<p>Der Testserver hat keine grafische Oberfläche
+und läuft, im Gegensatz zum Server mit graphischer Oberfläche (Port 13050),
+standardmäßig auf Port 13051.
+So kannst du ihn nutzen:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Laden Sie den Testserver von der Download-Seite herunter.</p>
+<p>Lade den Testserver von der Download-Seite herunter.</p>
 </li>
 <li>
 <p>Entpacken Sie das heruntergeladene Archiv.</p>
 </li>
 <li>
-<p>Wechseln Sie in einer Kommandozeilenumgebung (Windows: cmd.exe oder
-Powershell, Linux: beliebige Shell oder Terminal) in das Verzeichnis des
-entpackten Archives.</p>
+<p>Öffne eine Kommandozeilenumgebung
+(Terminal; auf Windows cmd oder Powershell)
+im Verzeichnis des entpackten Archives.</p>
 </li>
 <li>
-<p>Starten Sie den Testserver auf dem Port 13051 mit folgendem Befehl:</p>
+<p>Starte den Testserver auf Port 13051:</p>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="sh"><span></span>  java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar softwarechallenge-server.jar --port <span class="tok-m">13051</span></code></pre>
+<pre class="pygments highlight"><code data-lang="sh"><span></span>java -Dfile.encoding<span class="tok-o">=</span>UTF-8 -Dlogback.configurationFile<span class="tok-o">=</span>logback.xml -jar softwarechallenge-server.jar --port <span class="tok-m">13051</span></code></pre>
 </div>
 </div>
 </li>
 <li>
-<p>Starten Sie Ihren Computerspieler und einen zweiten Computerspieler manuell auf dem Port 13051 (im SimpleClient geht dies mit der Option --port 13051)
-in weiteren Kommandozeilenumgebungen. Die Computerspieler verbinden sich
-automatisch zum Testserver und es wird ein Spiel gespielt. Danach sollten sich
-die Computerspieler automatisch beenden.</p>
+<p>Starten die Computerspieler in weiteren Kommandozeilenumgebungen auf Port 13051
+(beim SimpleClient geht dies mit der Option <code>--port 13051</code>).
+Die Computerspieler verbinden sich automatisch zum Testserver und spielen ein Spiel.
+Danach sollten sich die Computerspieler automatisch beenden.</p>
 </li>
 <li>
-<p>Wenn Sie weitere Testspiele starten wollen, können Sie die Computerspieler
-erneut starten. Der Testserver muss nicht neu gestartet werden.</p>
+<p>Um weitere Testspiele zu spielen, starte die Computerspieler erneut.
+Der Testserver muss dabei nicht neu gestartet werden.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Beachten Sie, dass der Testserver keine Spielaufzeichnungen anlegt, wie es der
-Server mit grafischer Oberfläche tut. Die Auswertung der Spiele muss in einem
-der teilnehmenden Computerspieler geschehen (z.B. durch Log-Ausgaben).</p>
+<p>Beachte, dass der Testserver keine Spielaufzeichnungen anlegt,
+wie es der Server mit grafischer Oberfläche tut.
+Die Auswertung der Spiele muss in einem der teilnehmenden Computerspieler geschehen (z.B. durch Log-Ausgaben).</p>
 </div>
 <div class="paragraph">
-<p>Es ist ebenfalls möglich, statt eines Zufällig generierten vollständigen
-Spielplanes eine Spielsituation zu laden und zu testen. Die Spielsituation muss
-vorher wie unter <a href="server.html#spielsituation-nachstellen">Spielsituation nachstellen</a>
-erzeugt werden. Dann kann die Datei mit dem Argument <code>--loadGameFile</code> geladen
-werden und optional mit <code>--turn</code> ein Zug spezifiziert werden.</p>
+<p>Es ist ebenfalls möglich, statt eines zufällig generierten vollständigen Spielplanes
+eine Spielsituation zu laden und zu testen.
+Die Spielsituation muss vorher wie unter <a href="server.html#spielsituation-nachstellen">Spielsituation nachstellen</a> erzeugt werden.
+Dann kann die Datei mit dem Argument <code>--loadGameFile</code> geladen werden
+und optional mit <code>--turn</code> ein Zug spezifiziert werden.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -872,13 +856,13 @@ werden und optional mit <code>--turn</code> ein Zug spezifiziert werden.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="soft-timeouts">Unerwartete Zugzeitüberschreitungen (Soft-Timeout)</h4>
+<h4 id="soft-timeout">Unerwartete Zugzeitüberschreitungen (Soft-Timeout)</h4>
 <div class="paragraph">
 <p>Wenn Sie den Testserver einige Zeit laufen lassen,
 um eine größere Anzahl von Testspielen durchzuführen, kann es dazu kommen,
 dass Computerspieler wegen Zugzeitüberschreitungen vom Server disqualifiziert werden (Soft-Timeout).
-Dies passiert, obwohl sie ihren Zug innerhalb der erlaubten Zugzeit
-(abhängig vom Spiel, bisher aber immer zwei Sekunden) an den Server geschickt haben.
+Dies passiert, obwohl der Zug innerhalb der erlaubten Zugzeit
+(abhängig vom Spiel, bisher aber immer zwei Sekunden) an den Server geschickt wurde.
 Der Garbage Collector der Java Virtual Machine löst dieses Verhalten aus.
 Er pausiert die Anwendung, um nicht mehr genutzten Speicher freizugeben.
 Wenn der Server dadurch zu einem ungünstigen Zeitpunkt angehalten wird,
@@ -945,7 +929,7 @@ Dazu gehören erhöhter Resourcenverbrauch und Instabilität der Anwendung.</p>
 <div class="paragraph">
 <p>Massentests mit dem eigenen Computerspieler können sehr nützlich sein,
 beispeilsweise um die Stärke gegenüber einer früheren Version zu Testen.
-Dafür wird ein TestClient bereitgestellt.</p>
+Dafür wird in jeder Saison ab Version XX.1.0 ein TestClient bereitgestellt.</p>
 </div>
 <div class="paragraph">
 <p>Der TestClient muss vom Terminal mit den entsprechenden Argumenten aufgerufen werden.
@@ -1095,15 +1079,15 @@ Die Ergebnisse werden erst zurückgesetzt, wenn der Server neu gestartet wird.
 Achte also nach einer Veränderung der Spieler darauf,
 den Server neu zu starten oder andere Spielernamen zu verwenden.</p>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
 Dieses Verhalten wird wahrscheinlich bald verändert,
-    indem jeder TestClient unabhängig vom Server die Punkte zählt.
+         wobei dann jeder TestClient unabhängig vom Server die Punkte zählt.
 </td>
 </tr>
 </table>
@@ -1119,7 +1103,7 @@ Dieses Verhalten wird wahrscheinlich bald verändert,
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-07-01 13:27:18 UTC
+Last updated 2021-07-16 18:53:27 UTC
 </div>
 </div>
 </body>

@@ -516,19 +516,26 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 <div id="header">
 <h1>Ostseeschach XML-Dokumentation der Software-Challenge 2022</h1>
 <div id="toc" class="toc2">
-<div id="toctitle">Ostseeschach XML-Dokumentation</div>
+<div id="toctitle">Inhalt</div>
 <ul class="sectlevel1">
-<li><a href="#ziehen">Ziehen</a>
+<li><a href="#spiel-betreten">Spiel betreten</a>
 <ul class="sectlevel2">
-<li><a href="#move">Der Move</a></li>
+<li><a href="#_beliebige_partie">Beliebige Partie</a></li>
+<li><a href="#_bestimmte_partie">Bestimmte Partie</a></li>
+<li><a href="#_mit_reservierung">Mit Reservierung</a></li>
+<li><a href="#_antwort">Antwort</a></li>
 </ul>
 </li>
-<li><a href="#spielstatus">Spielstatus</a>
+<li><a href="#_spielverlauf">Spielverlauf</a>
 <ul class="sectlevel2">
-<li><a href="#memento">memento</a></li>
-<li><a href="#status">Status</a></li>
+<li><a href="#_start">Start</a></li>
+<li><a href="#_ablauf">Ablauf</a></li>
+<li><a href="#_ende_der_kommunikation">Ende der Kommunikation</a></li>
 </ul>
 </li>
+<li><a href="#status">Spielstatus</a></li>
+<li><a href="#zug">Zug</a></li>
+<li><a href="#spielende">Spielergebnis</a></li>
 </ul>
 </div>
 </div>
@@ -536,9 +543,9 @@ pre.pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ziel dieser Dokumentation ist es,
+<p>Dieses Dokument erklärt
 die XML-Schnittstelle der Software-Challenge
-für das aktuelle Spiel festzuhalten.</p>
+für das aktuelle Spiel.</p>
 </div>
 <div class="paragraph">
 <p><a href="xml-dokumentation.pdf">PDF-Version dieses Dokumentes</a></p>
@@ -564,96 +571,110 @@ oder eine Nachricht im <a href="https://discord.gg/jhyF7EU">Discord</a>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ziehen">Ziehen</h2>
+<h2 id="spiel-betreten">Spiel betreten</h2>
 <div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;protocol&gt;</span></code></pre>
+</div>
+</div>
 <div class="paragraph">
-<p>Eine einfache Nachricht fordert zum Zug auf:</p>
+<p>Dieses Tag eröffnet die Kommunikation mit dem Server.
+Dann gibt es drei Möglichkeiten,
+einer Spielpartie beizutreten.</p>
+</div>
+<div class="sect2">
+<h3 id="_beliebige_partie">Beliebige Partie</h3>
+<div class="paragraph">
+<p>Betritt ein beliebige offene Spielpartie:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOMID&quot;</span><span class="tok-nt">&gt;</span>
-  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;sc.framework.plugins.protocol.MoveRequest&quot;</span> <span class="tok-nt">/&gt;</span>
-<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;join</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sollte kein Spiel offen sein, wird automatisch ein neues erstellt.
+Abhängig von der Einstellung <code>paused</code> in <code>server.properties</code> wird das Spiel pausiert gestartet oder nicht.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="move">Der Move</h3>
+<h3 id="_bestimmte_partie">Bestimmte Partie</h3>
 <div class="paragraph">
-<p>Die Antwort auf den MoveRequest des Servers.</p>
-</div>
-<div class="sect3">
-<h4 id="senden">Senden</h4>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>ROOMID</code></dt>
-<dd>
-<p>ID des GameRooms aus dem <code>MoveRequest</code>.</p>
-</dd>
-<dt class="hdlist1"><code>ZUG</code></dt>
-<dd>
-<p>siehe <a href="#zug">ZUG</a></p>
-</dd>
-</dl>
+<p>Einer bestimmten, bereits offenen aber noch nicht gestarteten Partie
+kann durch Angabe der <code>ROOM_ID</code> beigetreten werden:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOMID&quot;</span><span class="tok-nt">&gt;</span>
-  ZUG
-<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joinRoom</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="zug">ZUG</h4>
-<div class="dlist">
-<dl>
-<dt class="hdlist1"><code>from</code></dt>
-<dd>
-<p>Koordinaten des zu ziehenden Spielsteines</p>
-</dd>
-<dt class="hdlist1"><code>to</code></dt>
-<dd>
-<p>Koordinaten des Zielfeldes</p>
-</dd>
-</dl>
+<div class="sect2">
+<h3 id="_mit_reservierung">Mit Reservierung</h3>
+<div class="paragraph">
+<p>Unter Angabe eines Reservierungscodes kann man einen reservierten Platz
+in einer geplanten Partie einnehmen:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;Move&gt;</span>
-  <span class="tok-nt">&lt;from</span> <span class="tok-na">x=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;1&quot;</span><span class="tok-nt">/&gt;</span>
-  <span class="tok-nt">&lt;to</span> <span class="tok-na">x=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;2&quot;</span><span class="tok-nt">/&gt;</span>
-<span class="tok-nt">&lt;/Move&gt;</span></code></pre>
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joinPrepared</span> <span class="tok-na">reservationCode=</span><span class="tok-s">&quot;RESERVATION&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_antwort">Antwort</h3>
+<div class="paragraph">
+<p>Der Server antwortet auf einen erfolgreichen Spielbeitritt mit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;joined</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span> <span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">ROOM_ID</dt>
+<dd>
+<p>Identifikationscode der Spielpartie</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="spielstatus">Spielstatus</h2>
+<h2 id="_spielverlauf">Spielverlauf</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Es folgt die Beschreibung des Spielstatus,
-der vor jeder Zugaufforderung an die Clients gesendet wird.
-Das Spielstatus-Tag ist dabei noch in einem <em>data</em>-Tag der Klasse <em>memento</em> gewrappt:</p>
-</div>
 <div class="sect2">
-<h3 id="memento">memento</h3>
+<h3 id="_start">Start</h3>
+<div class="paragraph">
+<p>Der Server eröffnet das Spiel
+mit einer Begrüßung und dem initialen Spielstatus
+sobald beide Spieler verbunden sind.</p>
+</div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">ROOM_ID</dt>
 <dd>
-<p>Id des Raums, in dem das Spiel stattfindet</p>
+<p>Identifikationscode der Spielpartie</p>
+</dd>
+<dt class="hdlist1">COLOR</dt>
+<dd>
+<p>Spielerfarbe</p>
 </dd>
 <dt class="hdlist1">STATUS</dt>
 <dd>
-<p>siehe <a href="#status">Status</a></p>
+<p><a href="#status">Spielstatus</a> der Partie</p>
 </dd>
 </dl>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;welcomeMessage&quot;</span> <span class="tok-na">color=</span><span class="tok-s">&quot;COLOR&quot;</span><span class="tok-nt">&gt;&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span>
+<span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
   <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;memento&quot;</span><span class="tok-nt">&gt;</span>
     STATUS
   <span class="tok-nt">&lt;/data&gt;</span>
@@ -662,7 +683,54 @@ Das Spielstatus-Tag ist dabei noch in einem <em>data</em>-Tag der Klasse <em>mem
 </div>
 </div>
 <div class="sect2">
-<h3 id="status">Status</h3>
+<h3 id="_ablauf">Ablauf</h3>
+<div class="paragraph">
+<p>Der erste Spieler erhält dann eine Zugaufforderung:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;moveRequest&quot;</span> <span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Worauf dieser innerhalb der gesetzten Zeitbeschränkung mit einem <a href="#zug">Zug</a> antwortet:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;move&quot;</span><span class="tok-nt">&gt;</span>
+    ZUG
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Nach Erhalt des Zuges sendet der Server den neuen Spielstatus an alle Spieler
+und dem nächsten Spieler eine Zugaufforderung.
+So geht es hin und her bis zum <a href="#spielende">Spielergebnis</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ende_der_kommunikation">Ende der Kommunikation</h3>
+<div class="paragraph">
+<p>Die letzte Nachricht des Servers endet mit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;/protocol&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Danach wird die Verbindung geschlossen.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="status">Spielstatus</h2>
+<div class="sectionbody">
 <div class="dlist">
 <dl>
 <dt class="hdlist1">startTeam</dt>
@@ -675,7 +743,7 @@ Das Spielstatus-Tag ist dabei noch in einem <em>data</em>-Tag der Klasse <em>mem
 </dd>
 <dt class="hdlist1">lastMove</dt>
 <dd>
-<p>der vorherige Zug - hat die selbe Struktur wie ein <a href="#zug">ZUG</a>, der gesendet wird,
+<p>der vorherige Zug - hat die selbe Struktur wie ein <a href="#zug">Zug</a>, der gesendet wird,
 außer dass das Tag <code>&lt;lastMove&gt;</code> statt <code>&lt;move&gt;</code> heisst.
 Der vorherige Zug wird in jedem Spielstatus angegeben, ausser vor dem ersten Zug.</p>
 </dd>
@@ -688,7 +756,7 @@ Der vorherige Zug wird in jedem Spielstatus angegeben, ausser vor dem ersten Zug
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;state</span> <span class="tok-na">turn=</span><span class="tok-s">&quot;27&quot;</span><span class="tok-nt">&gt;</span>
-  <span class="tok-nt">&lt;startTeam</span> <span class="tok-na">class=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>ONE<span class="tok-nt">&lt;/startTeam&gt;</span>
+  <span class="tok-nt">&lt;startTeam&gt;</span>ONE<span class="tok-nt">&lt;/startTeam&gt;</span>
   <span class="tok-nt">&lt;board&gt;</span>
     <span class="tok-nt">&lt;pieces&gt;</span>
       <span class="tok-nt">&lt;entry&gt;</span>
@@ -705,7 +773,7 @@ Der vorherige Zug wird in jedem Spielstatus angegeben, ausser vor dem ersten Zug
     <span class="tok-nt">&lt;from</span> <span class="tok-na">x=</span><span class="tok-s">&quot;4&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;4&quot;</span><span class="tok-nt">/&gt;</span>
     <span class="tok-nt">&lt;to</span> <span class="tok-na">x=</span><span class="tok-s">&quot;5&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;6&quot;</span><span class="tok-nt">/&gt;</span>
   <span class="tok-nt">&lt;/lastMove&gt;</span>
-  <span class="tok-nt">&lt;ambers</span> <span class="tok-na">enum-type=</span><span class="tok-s">&quot;team&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;ambers&gt;</span>
     <span class="tok-nt">&lt;entry&gt;</span>
       <span class="tok-nt">&lt;team&gt;</span>ONE<span class="tok-nt">&lt;/team&gt;</span>
       <span class="tok-nt">&lt;int&gt;</span>1<span class="tok-nt">&lt;/int&gt;</span>
@@ -720,11 +788,104 @@ Der vorherige Zug wird in jedem Spielstatus angegeben, ausser vor dem ersten Zug
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="zug">Zug</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>from</code></dt>
+<dd>
+<p>Koordinaten des zu ziehenden Spielsteines</p>
+</dd>
+<dt class="hdlist1"><code>to</code></dt>
+<dd>
+<p>Koordinaten des Zielfeldes</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;from</span> <span class="tok-na">x=</span><span class="tok-s">&quot;0&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;1&quot;</span><span class="tok-nt">/&gt;</span>
+<span class="tok-nt">&lt;to</span> <span class="tok-na">x=</span><span class="tok-s">&quot;1&quot;</span> <span class="tok-na">y=</span><span class="tok-s">&quot;2&quot;</span><span class="tok-nt">/&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="spielende">Spielergebnis</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Zum Spielende erhält jeder Spieler das Ergebnis.
+Es beginnt mit einer <code>definition</code>,
+die die Interpretation der Ergebnisse erklärt.
+Für jeden Spieler gibt es einen Eintrag in <code>scores</code>.
+Der darin enthaltene <code>score</code> schlüsselt sich auf in:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">cause</dt>
+<dd>
+<p>Beitrag des Spielers zum Spielende (<code>REGULAR</code>, <code>LEFT</code>, <code>RULE_VIOLATION</code>, <code>SOFT_TIMEOUT</code>, <code>HARD_TIMEOUT</code>)</p>
+</dd>
+<dt class="hdlist1">reason</dt>
+<dd>
+<p>Erklärung zu <code>cause</code></p>
+</dd>
+<dt class="hdlist1">part</dt>
+<dd>
+<p>Siegpunkte des Spielers (0 verloren, 1 unentschieden, 2 gewonnen) und weitere Punkteinträge entsprechend <code>definition</code></p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Wenn es einen Sieger gibt,
+endet es mit einem <code>winner</code>-Tag,
+welches das Gewinner-Team angibt.</p>
+</div>
+<div class="paragraph">
+<p>Hier ein Beispiel:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="xml"><span></span><span class="tok-nt">&lt;room</span> <span class="tok-na">roomId=</span><span class="tok-s">&quot;ROOM_ID&quot;</span><span class="tok-nt">&gt;</span>
+  <span class="tok-nt">&lt;data</span> <span class="tok-na">class=</span><span class="tok-s">&quot;result&quot;</span><span class="tok-nt">&gt;</span>
+    <span class="tok-nt">&lt;definition&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;Siegpunkte&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>SUM<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+      <span class="tok-nt">&lt;fragment</span> <span class="tok-na">name=</span><span class="tok-s">&quot;∅ Punkte&quot;</span><span class="tok-nt">&gt;</span>
+        <span class="tok-nt">&lt;aggregation&gt;</span>AVERAGE<span class="tok-nt">&lt;/aggregation&gt;</span>
+        <span class="tok-nt">&lt;relevantForRanking&gt;</span>true<span class="tok-nt">&lt;/relevantForRanking&gt;</span>
+      <span class="tok-nt">&lt;/fragment&gt;</span>
+    <span class="tok-nt">&lt;/definition&gt;</span>
+    <span class="tok-nt">&lt;scores&gt;</span>
+      <span class="tok-nt">&lt;entry&gt;</span>
+        <span class="tok-nt">&lt;player</span> <span class="tok-na">name=</span><span class="tok-s">&quot;rad&quot;</span> <span class="tok-na">team=</span><span class="tok-s">&quot;ONE&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;score</span> <span class="tok-na">cause=</span><span class="tok-s">&quot;REGULAR&quot;</span> <span class="tok-na">reason=</span><span class="tok-s">&quot;&quot;</span><span class="tok-nt">&gt;</span>
+          <span class="tok-nt">&lt;part&gt;</span>2<span class="tok-nt">&lt;/part&gt;</span>
+          <span class="tok-nt">&lt;part&gt;</span>27<span class="tok-nt">&lt;/part&gt;</span>
+        <span class="tok-nt">&lt;/score&gt;</span>
+      <span class="tok-nt">&lt;/entry&gt;</span>
+      <span class="tok-nt">&lt;entry&gt;</span>
+        <span class="tok-nt">&lt;player</span> <span class="tok-na">name=</span><span class="tok-s">&quot;blues&quot;</span> <span class="tok-na">team=</span><span class="tok-s">&quot;TWO&quot;</span><span class="tok-nt">/&gt;</span>
+        <span class="tok-nt">&lt;score</span> <span class="tok-na">cause=</span><span class="tok-s">&quot;LEFT&quot;</span> <span class="tok-na">reason=</span><span class="tok-s">&quot;Player left&quot;</span><span class="tok-nt">&gt;</span>
+          <span class="tok-nt">&lt;part&gt;</span>0<span class="tok-nt">&lt;/part&gt;</span>
+          <span class="tok-nt">&lt;part&gt;</span>15<span class="tok-nt">&lt;/part&gt;</span>
+        <span class="tok-nt">&lt;/score&gt;</span>
+      <span class="tok-nt">&lt;/entry&gt;</span>
+    <span class="tok-nt">&lt;/scores&gt;</span>
+    <span class="tok-nt">&lt;winner</span> <span class="tok-na">team=</span><span class="tok-s">&quot;ONE&quot;</span><span class="tok-nt">/&gt;</span>
+  <span class="tok-nt">&lt;/data&gt;</span>
+<span class="tok-nt">&lt;/room&gt;</span></code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-07-01 13:27:18 UTC
+Last updated 2021-07-16 18:53:27 UTC
 </div>
 </div>
 </body>
