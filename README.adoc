@@ -20,10 +20,10 @@ Alternativ auch gern eine E-Mail an svk@informatik.uni-kiel.de oder eine Nachric
   Alle anderen Dateien werden per `include`-Anweisung in die Hauptdatei eingebunden.
 * Dateinamen und Verzeichnisnahmen sollten nur die Zeichen `a` bis `z`
   sowie Bindestriche (`-`) enthalten.
-* Sprache fuer Dateinamen, Verzeichnisnamen sowie Inhalt ist Deutsch.
-  Sprache fuer Attribute und sonstige Interna ist Englisch.
-* Als Endung fuer Asciidoc wird `.adoc` benutzt.
-* Es wird des ATX-Format fuer Ueberschriften verwendet (also `=`, `==`, `===` etc.)
+* Sprache für Dateinamen, Verzeichnisnamen sowie Inhalt ist Deutsch.
+  Sprache für Attribute und sonstige Interna ist Englisch.
+* Als Endung für Asciidoc wird `.adoc` benutzt.
+* Es wird des ATX-Format für Überschriften verwendet (also `=`, `==`, `===` etc.)
 * Zeilenumbrüche jeweils am Ende von Sätzen bzw. semantischen Grenzen, orientiert an https://sembr.org[Semantic Line Breaks].
 * Commitnachrichten wird der Dateipfad der geänderten Datei oder des Ordners vorangestellt,
   ggf. gekürzt um überflüssige Elemente (z.B. 'blokus/' statt 'spiele/blokus/').
