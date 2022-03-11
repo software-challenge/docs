@@ -62,6 +62,7 @@ Ein AdminClient kann ein Spiel vorbereiten:
   <slot displayName="p2" canTimeout="true" reserved="true"/>
 </prepare>
 ----
+pluginId:: identifiziert das Spiel (für Ostseeschach: `swc_2022_ostseeschach`)
 
 [[servereinstellungen]]
 ==== Servereinstellungen
