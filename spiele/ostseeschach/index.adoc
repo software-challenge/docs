@@ -1,5 +1,0 @@
-= Dokumentation Ostseeschach für die Software-Challenge 2022
-
-<<regeln.adoc#,Spielregeln>>
-
-<<xml-dokumentation.adoc#,XML-Dokumentation>>
