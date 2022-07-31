@@ -7,7 +7,7 @@ besonders gerne nutzt oder Vorteile seht, dann kann es sich lohnen!
 
 Wenn ihr also genug Erfahrung habt und euch entscheidet den schwereren
 Weg zu gehen, dann solltet ihr euch die
-[XML-Dokumentation](spiele/ostseeschach/xml-dokumentation.xml) genau
+[XML-Dokumentation](spiele/ostseeschach/xml-dokumentation.md) genau
 anschauen, da ihr die ganze Kommunikation, sowie das Parsen der XML
 Nachrichten, implementieren müsst. Außerdem solltet ihr euch als
 Beispiel den (inoffiziellen) [Swift

@@ -9,7 +9,7 @@ Die Dokumentation kann direkt hier auf GitHub editiert werden, einzige
 Voraussetzung ist eine kostenlose Registrierung bei GitHub. Ist man
 angemeldet, kann man ein Dokument auswählen und dann auf den Stift oben
 rechts klicken. Ein guter Startpunkt ist die Datei
-[index.adoc](https://github.com/software-challenge/docs/blob/master/index.adoc),
+[index.md](https://github.com/software-challenge/docs/blob/master/index.md),
 die Verweise auf alle Sektionen der Dokumentation enthält. Damit wird
 von GitHub automatisch ein Fork und ein dazugehöriges Pull Request
 erstellt.  
@@ -18,7 +18,7 @@ eine Nachricht im [Discord](https://discord.gg/jhyF7EU).
 
 # Konventionen
 
--   Die Hauptdatei ist `index.adoc` im Wurzelverzeichnis. Alle anderen
+-   Die Hauptdatei ist `index.md` im Wurzelverzeichnis. Alle anderen
     Dateien werden per `include`-Anweisung in die Hauptdatei
     eingebunden.
 
@@ -28,7 +28,7 @@ eine Nachricht im [Discord](https://discord.gg/jhyF7EU).
 -   Sprache für Dateinamen, Verzeichnisnamen sowie Inhalt ist Deutsch.
     Sprache für Attribute und sonstige Interna ist Englisch.
 
--   Als Endung für Asciidoc wird `.adoc` benutzt.
+-   Als Endung für Asciidoc wird `.md` benutzt.
 
 -   Es wird des ATX-Format für Überschriften verwendet (also `=`, `==`,
     `===` etc.)
@@ -58,7 +58,7 @@ standardmäßig verzichtet.
 
 Intern wird `asciidoctor` verwendet:
 
-    asciidoctor -D out index.adoc
+    asciidoctor -D out index.md
 
 Die fertige HTML-Version befindet sich dann unter `out/index.html`.
 

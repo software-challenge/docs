@@ -51,22 +51,22 @@ case $action in
       $(case $1 in (spiele/*);; (*) echo "-r asciidoctor-multipage -b multipage_html5";; esac) \
       "$1"
     test "$pdf" && case "$1" in
-      (*"$game/index.adoc") ;;
+      (*"$game/index.md") ;;
       (*) echo "Converting $1 to pdf" && bundle exec asciidoctor-pdf $verbose -D "$target" "$1";;
     esac || true
   }
 
-  asciid index.adoc
+  asciid index.md
   # Separate folder to not mess up main ToC
-  asciid getting-started.adoc "getting-started"
+  asciid getting-started.md "getting-started"
 
-  find "$gamedir" -name "*.adoc" | while read -r adoc; do
-    test "$(basename "$adoc")" = "index.adoc" &&
-      asciid "$adoc" && continue
+  find "$gamedir" -name "*.md" | while read -r.md; do
+    test "$(basename ".md")" = "index.md" &&
+      asciid ".md" && continue
     # save the first word of the file to $word
-    read -r word _<"$adoc";
+    read -r word _<".md";
     # do conversion if it starts with a colon i.e. has export configuration
-    case "$word" in :*) asciid "$adoc"; esac;
+    case "$word" in :*) asciid ".md"; esac;
   done
   ln -sfvT "$game" "$outdir/spiele/aktuell"
   ;;
@@ -81,7 +81,7 @@ case $action in
   echo "Usage: $0 <command> [options...]
     setup - install the gems required for generate
       └─ live - also install the gems required for a live-preview
-    generate - copy the images and convert the adoc to html
+    generate - copy the images and convert the.md to html
       └─ <game> - convert a specific game
       └─ pdf - additionally convert to pdf
       └─ -v - run verbosely
