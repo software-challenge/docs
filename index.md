@@ -12,7 +12,7 @@ GitHub](https://github.com/software-challenge/docs) editiert werden,
 einzige Voraussetzung ist eine kostenlose Registrierung bei GitHub. Ist
 man angemeldet, kann man ein Dokument auswählen (ein guter Startpunkt
 ist die Datei
-[index.adoc](https://github.com/software-challenge/docs/blob/main/index.adoc)
+[index.md](https://github.com/software-challenge/docs/blob/main/index.md)
 welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Damit wird von GitHub automatisch ein
 Fork und ein Pull Request erstellt.  
@@ -22,10 +22,10 @@ eine Nachricht im [Discord](https://discord.gg/jhyF7EU).
 Die Dokumentation des aktuellen Spiels Ostseeschach finden Sie in
 separaten Dokumenten:
 
--   [Ostseeschach Spielregeln](spiele/ostseeschach/regeln.xml)
+-   [Ostseeschach Spielregeln](spiele/ostseeschach/regeln.md)
 
 -   [Ostseeschach
-    XML-Dokumentation](spiele/ostseeschach/xml-dokumentation.xml)
+    XML-Dokumentation](spiele/ostseeschach/xml-dokumentation.md)
 
 Die Dokumentation ist in mehrere Abschnitte aufgeteilt. Sie können sie
 gezielt oder von Anfang bis Ende lesen. Über einen Link am Ende jedes
@@ -553,7 +553,7 @@ besonders gerne nutzt oder Vorteile seht, dann kann es sich lohnen!
 
 Wenn ihr also genug Erfahrung habt und euch entscheidet den schwereren
 Weg zu gehen, dann solltet ihr euch die
-[XML-Dokumentation](spiele/ostseeschach/xml-dokumentation.xml) genau
+[XML-Dokumentation](spiele/ostseeschach/xml-dokumentation.md) genau
 anschauen, da ihr die ganze Kommunikation, sowie das Parsen der XML
 Nachrichten, implementieren müsst. Außerdem solltet ihr euch als
 Beispiel den (inoffiziellen) [Swift

@@ -5,7 +5,7 @@ require 'erb'
 LAST_REBUILD = Time.now
 DEBOUNCE = 2 #seconds
 guard 'shell' do
-  watch(/^[^\.].*\.adoc$/) do |m|
+  watch(/^[^\.].*\.md$/) do |m|
     since_last = Time.now - LAST_REBUILD
     if since_last > DEBOUNCE
       puts "REBUILDING #{m[0].inspect}"

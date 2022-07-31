@@ -22,7 +22,7 @@ editiert](https://github.com/software-challenge/docs) werden, einzige
 Voraussetzung ist eine kostenlose Registrierung bei GitHub. Ist man
 angemeldet, kann man ein Dokument auswählen (ein guter Startpunkt ist
 die Datei
-[index.adoc](https://github.com/software-challenge/docs/blob/master/index.adoc)
+[index.md](https://github.com/software-challenge/docs/blob/master/index.md)
 welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 <svk@informatik.uni-kiel.de>.
@@ -254,7 +254,7 @@ editiert](https://github.com/software-challenge/docs) werden, einzige
 Voraussetzung ist eine kostenlose Registrierung bei GitHub. Ist man
 angemeldet, kann man ein Dokument auswählen (ein guter Startpunkt ist
 die Datei
-[index.adoc](https://github.com/software-challenge/docs/blob/master/index.adoc)
+[index.md](https://github.com/software-challenge/docs/blob/master/index.md)
 welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
 <svk@informatik.uni-kiel.de>.
