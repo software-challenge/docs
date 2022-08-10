@@ -1,6 +1,6 @@
-In diesem Repository befindet sich die Endbenutzer-Dokumentation für die
-Software-Challenge. Zielgruppe sind Schüler und Lehrer, die an der
-Software-Challenge teilnehmen.
+>In diesem Repository befindet sich die Endbenutzer-Dokumentation für die
+>Software-Challenge. Zielgruppe sind Schüler und Lehrer, die an der
+>Software-Challenge teilnehmen.
 
 # Beitragen
 
@@ -18,9 +18,7 @@ eine Nachricht im [Discord](https://discord.gg/jhyF7EU).
 
 # Konventionen
 
--   Die Hauptdatei ist `index.md` im Wurzelverzeichnis. Alle anderen
-    Dateien werden per `include`-Anweisung in die Hauptdatei
-    eingebunden.
+-   Die Hauptdatei ist `index.md` im Wurzelverzeichnis.
 
 -   Dateinamen und Verzeichnisnahmen sollten nur die Zeichen `a` bis `z`
     sowie Bindestriche (`-`) enthalten.
@@ -28,10 +26,7 @@ eine Nachricht im [Discord](https://discord.gg/jhyF7EU).
 -   Sprache für Dateinamen, Verzeichnisnamen sowie Inhalt ist Deutsch.
     Sprache für Attribute und sonstige Interna ist Englisch.
 
--   Als Endung für Asciidoc wird `.md` benutzt.
-
--   Es wird des ATX-Format für Überschriften verwendet (also `=`, `==`,
-    `===` etc.)
+-   Als Endung für Marcdown wird `.md` benutzt.
 
 -   Zeilenumbrüche jeweils am Ende von Sätzen bzw. semantischen Grenzen,
     orientiert an [Semantic Line Breaks](https://sembr.org).
@@ -40,80 +35,21 @@ eine Nachricht im [Discord](https://discord.gg/jhyF7EU).
     Ordners vorangestellt, ggf. gekürzt um überflüssige Elemente (z.B.
     'blokus/' statt 'spiele/blokus/').
 
-# Konvertierung
+# Hyperbook
+Die Dokumentation wird mit der Software [Hyperbook](https://hyperbook.openpatch.org/) bereitgestellt und die einzelnen Seiten sind in der Repository in der Auszeichnungssprache "Markdown" hinterlegt und können mit einem entsprechenden Editor bearbeitet werden.
+### Node.js und NPM
+Um Hyperbook zu nutzen, muss die Laufzeitumgebung [Node.js](https://nodejs.org/en/) installiert sein. Dies kann unter Linux mit dem Kommando `sudo apt install nodejs npm` getan werden.
 
-Um schnell starten zu können, existiert ein setup-skript. Es installiert
-die benötigten Ruby-Gems anhand des `Gemfile`:
+### Live-Preview
+Wenn die eigenen Änderung bereits lokal betrachtet und getestet werden möchten, dann ist dies möglich.
 
-    ./docs setup
+Es kann in dem Ordner `./hyperbook`, das Kommando `npx hyperbook dev` ausgeführt werden, um den Entwicklungsserver zu starten. Dieser wird dann unter `http://localhost:3000/` zur Verfügung stehen.
 
-Um alles in HTML zu Übersetzen, sollte folgender Befehl verwendet
-werden:
+### Build
+Wenn Hyperbook deployt werden soll, dann ist vorher notwendig dieses zu bauen. Dies wird getan, indem zuerst das Kommando `npx --force hyperbook setup` und dann `npx hyperbook build` in dem Ordner `./hyperbook` ausgeführt wird.
 
-    ./docs generate
-
-Wenn zusätzlich die Option `pdf` angehängt wird, wird auch
-asciidoctor-pdf aufgerufen. Aus Geschwindigkeitsgründen wird darauf
-standardmäßig verzichtet.
-
-Intern wird `asciidoctor` verwendet:
-
-    asciidoctor -D out index.md
-
-Die fertige HTML-Version befindet sich dann unter `out/index.html`.
-
-Bei Bedarf kann die Dokumentation auch in ein anderes Format konvertiert
-werden, Details hierzu finden sich in der [AsciiDoctor
-Dokumentation](http://asciidoctor.org/docs/user-manual/#processing-your-content).
-
-## Live-Preview
-
-> Noch nicht vollständig getestet. Im Moment sehr langsam, da alles neu
-> übersetzt wird.
-
-Einen Live-Preview-Mode gibt es leider nicht direkt, aber es gibt
-[verschiedene Wege um ein Live-Preview zu
-bekommen](http://asciidoctor.org/docs/editing-asciidoc-with-live-preview/).
-Einer ist die Nutzung von `guard`. Dies kann durch folgenden Aufruf
-installiert werden:
-
-    ./docs setup live
-
-Dies installiert dann die folgenden Gems:
-`guard guard-shell guard-livereload yajl-ruby`
-
-Ein passendes `Guardfile` liegt schon im Repository, man kann `guard`
-also einfach mittels `guard start` starten, und die Ausgabe im
-Verzeichnis `out` wird aktualisiert, sobald man etwas an den Quellen
-ändert.
-
-Um die Browseransicht automatisch zu aktualisieren, installiere
-zusätzlich [die LiveReload
-extension](http://livereload.com/extensions/).
-
-# Quickstart
-
--   [AsciiDoc Syntax Quick
-    Reference](http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/)
-
--   [AsciiDoc Writer’s
-    Guide](http://asciidoctor.org/docs/asciidoc-writers-guide/)
-
--   [AsciiDoctor User Manual](http://asciidoctor.org/docs/user-manual/)
-
--   [AsciiDoc Style
-    Guide](http://asciidoctor.org/docs/asciidoc-recommended-practices/)
-
-Es werden häufig Links zu anderen Teilen des Dokumentes genutzt (die
-Dokumentation ist ein einzelnes großes Dokument). Diese haben folgenden
-Syntax:
-
-    <<Sektionslabel,anzuzeigender Linktext>>
-
-Sektionslabel stehen über allen Überschriften und werden mit doppelten
-eckigen Klammern definiert:
-
-    [[labelname]]
+Die Website wird dann in `./hyperbook/.hyperbook/out` ausgegeben und kann dann kopiert und zum Beispiel mit *nginx* deployt werden.
+Ein Beispiel findet sich im `Dockerfile`.
 
 # Deployment
 

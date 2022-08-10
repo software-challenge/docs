@@ -1,0 +1,149 @@
+{
+  "draft": false,
+  "description": "",
+  "language": "de",
+  "visibility": "public",
+  "edges": [
+    {
+      "id": "edge-1",
+      "source": "start-node",
+      "target": "task1"
+    },
+    {
+      "id": "edge-2",
+      "source": "task1",
+      "target": "task2"
+    },
+    {
+      "id": "edge-3",
+      "source": "task2",
+      "target": "end-node"
+    }
+  ],
+  "name": "Example",
+  "nodes": [
+    {
+      "id": "start-node",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "type": "start",
+      "data": {
+        "subtype": "simple",
+        "description": "",
+        "name": "Start",
+        "view": {
+          "markdown": "Dieses Quiz soll euch ein paar häufig vorkommene Fehler, welche auch *Bugs* genannt werden, näher bringen und wie ihr diese lösen könnt.",
+          "title": "Bug Hunting"
+        }
+      }
+    },
+    {
+      "type": "task",
+      "id": "task1",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "description": "",
+        "evaluation": {
+          "correct": ["a"],
+          "enableRetry": true,
+          "mode": "auto",
+          "showFeedback": true
+        },
+        "feedback": {
+          "patterns": {},
+          "choices": {
+            "c": {
+              "checkedFeedback": {
+                "message": "It is a trap!",
+                "severity": "warning"
+              }
+            }
+          }
+        },
+        "name": "Logischer Fehler",
+        "subtype": "choice",
+        "view": {
+          "instruction": "Der Code soll die Zahlen von 0 bis 10 ausgeben. Warum tut er das nicht? \n ```java\nint i;\n for (i = 0; i <= 10; i++); {\n System.out.println(i);\n } \n ```",
+          "variant": "single",
+          "choices": [
+            {
+              "markdown": "Antwort 1"
+            },
+            {
+              "markdown": "Antwort 2"
+            },
+            {
+              "markdown": "Antwort 3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "task",
+      "id": "task2",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "description": "",
+        "evaluation": {
+          "correct": ["a"],
+          "enableRetry": true,
+          "mode": "auto",
+          "showFeedback": true
+        },
+        "feedback": {
+          "patterns": {},
+          "choices": {
+            "c": {
+              "checkedFeedback": {
+                "message": "It is a trap!",
+                "severity": "warning"
+              }
+            }
+          }
+        },
+        "name": "Logischer Fehler",
+        "subtype": "choice",
+        "view": {
+          "instruction": "Der Code soll die Zahlen von 0 bis 10 ausgeben. Warum tut er das nicht? \n ```java\nint i;\n for (i = 0; i <= 10; i++); {\n System.out.println(i);\n } \n ```",
+          "variant": "single",
+          "choices": [
+            {
+              "markdown": "Antwort 1"
+            },
+            {
+              "markdown": "Antwort 2"
+            },
+            {
+              "markdown": "Antwort 3"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "end-node",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "type": "end",
+      "data": {
+        "subtype": "tries",
+        "description": "",
+        "name": "End",
+        "view": {
+          "markdown": "# Your results"
+        }
+      }
+    }
+  ]
+}
