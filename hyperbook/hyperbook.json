@@ -1,0 +1,16 @@
+{
+  "name": "Software-Challenge Dokumentation",
+  "version": "0.0.1",
+  "description": "Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen.",
+  "license": "cc-by-nc-sa",
+  "author": {
+    "name": "Software-Challenge Germany",
+    "url": "https://software-challenge.de/"
+  },
+  "language": "de",
+  "repo": "https://github.com/software-challenge/docs",
+  "logo": "/logo.svg",
+  "colors":{
+    "brand": "#3276AD"
+  }
+}
