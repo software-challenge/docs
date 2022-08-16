@@ -1,4 +1,4 @@
 ---
-name: Hey, Danke für den Fisch!
+name: Spiele
 index: 3
 ---
