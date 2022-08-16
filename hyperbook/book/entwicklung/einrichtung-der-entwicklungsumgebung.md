@@ -18,9 +18,10 @@ kümmert, muss unbedingt [Java installiert](installation-von-java) sein.
 
 Der SimpleClient ist schon ein fertiger Computerspieler. Denn Quellcode
 kann man verwenden, um seinen eigenen Spieler zu programmieren. Den
-SimpleClient bekommt man im Downloadbereich der Software-Challenge
-(<https://www.software-challenge.de/downloads>). Man braucht die Version
-"als Quellcode".
+SimpleClient bekommt man im 
+[Downloadbereich der Software-Challenge](https://software-challenge.de/dokumentation-und-material).
+Man braucht die Version
+*als Quellcode*.
 
 ## Einrichtung von Eclipse
 
