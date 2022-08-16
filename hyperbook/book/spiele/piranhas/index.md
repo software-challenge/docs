@@ -7,8 +7,6 @@ hide: true
 
 Sven Koschnicke &lt;<svk@informatik.uni-kiel.de>&gt;
 
-[PDF-Version dieses Dokumentes](regeln.pdf)
-
 Wir freuen uns über sämtliche Verbesserungsvorschläge.  
 Die Dokumentation kann [direkt auf
 GitHub](https://github.com/software-challenge/docs) editiert werden,
@@ -102,8 +100,6 @@ Sören Domrös &lt;<stu114053@mail.uni-kiel.de>&gt;
 
 Ziel dieser Dokumentation ist es, die XML-Schnittstelle der
 Softwarechallenge festzuhalten.
-
-[PDF-Version dieses Dokumentes](xml-dokumentation.pdf)
 
 Wir freuen uns über sämtliche Verbesserungsvorschläge. Die Dokumentation
 kann [direkt auf GitHub
