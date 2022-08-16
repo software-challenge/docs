@@ -50,7 +50,8 @@ muss die Laufzeitumgebung [Node.js](https://nodejs.org/en/) installiert sein.
 Dies geht unter Debian-basierten Distributionen mit `sudo apt install nodejs npm`.
 Unter Arch: `sudo pacman -S npm`
 
-Anschließend installiere die Abhängigkeiten mit `npx hyperbook setup`.
+Anschließend installiere die Abhängigkeiten mit 
+`npx --legacy-peer-deps hyperbook setup`.
 
 ### Live-Preview
 Eine Vorschau lokaler Änderungen kann direkt mit dem Befehl `npx hyperbook dev` 
