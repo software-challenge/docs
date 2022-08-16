@@ -48,7 +48,7 @@ Schülerinnen und Schüler vergeben.
 
 Das Anmeldeverfahren sieht etwa wie folgt aus. Genaue Termine des
 aktuellen Zeitraumes finden sich auf der [Website unter
-Termine](http://www.software-challenge.de/de/termine).
+Ablauf und Termine](https://software-challenge.de/ablauf-und-termine).
 
 Ab April können interessierte SchulleiterInnen, Lehrkräfte und
 SchülerInnen ihre Schulen und Teams für die Teilnahme an der
