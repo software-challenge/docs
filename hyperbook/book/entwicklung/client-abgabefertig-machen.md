@@ -5,7 +5,7 @@ index: 9
 
 # Computerspieler abgabefertig machen
 
-Damit [das Wettkampfsystem](software/das-wettkampfsystem) mit dem
+Damit [das Wettkampfsystem](glossary/das-wettkampfsystem) mit dem
 Computerspieler arbeiten kann, muss er als ausführbares Programm in ein
 ZIP-Archiv gepackt werden.
 
@@ -13,7 +13,7 @@ Je nach Programmiersprache, in der der Computerspieler entwickelt wurde,
 sind unterschiedliche Schritte notwendig.
 
 Wie man den abgabefertigen Computerspieler dann im Wettkampfsystem
-einsendet, ist unter [Wettkampfsystem, Computerspieler](software/das-wettkampfsystem#computerspieler) beschrieben.
+einsendet, ist unter [Wettkampfsystem, Computerspieler](glossary/das-wettkampfsystem#computerspieler) beschrieben.
 
 ## Java
 
