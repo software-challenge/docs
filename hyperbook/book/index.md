@@ -27,8 +27,11 @@ Im Folgenden findet ihr das Verzeichnis der kompletten Dokumentation. Die sind a
 ### Allgeimeine Informationen
 -  [Die Software-Challenge Germany](allgemein/die-software-challenge)
 -  [Wettkampfmodalitäten](allgemein/wettkampfmodalitaeten)
-### Spielregeln, der Software-Challenge 2022
--  [Hey, Danke für den Fisch](allgemein/wettkampfmodalitaeten)
+### Das Spiel
+#### Spielregeln, der Software-Challenge 2022
+-  [Hey, Danke für den Fisch](spiele/penguins_spielregeln)
+#### XML-Schnittstelle zu dem Spiel
+- [Die Schnittstelle zum Server (XML)](spiele/penguins_xml)
 ### Entwicklung
 -  [Erste Schritte](entwicklung/erste-schritte)
 -  [Richtige Sprache](entwicklung/die-richtige-sprache)
@@ -46,8 +49,3 @@ Im Folgenden findet ihr das Verzeichnis der kompletten Dokumentation. Die sind a
 -  [Computerspieler (Client)](software/client)
 -  [Spielleiter (Server)](software/server)
 -  [Wettkampfsystem](software/das-wettkampfsystem)
-### XML
--  [Die Schnittstelle zum Server](xml/schnittstelle)
--  [Einführung in XML](xml/einfuehrung-xml)
--  [Das Spielprotokoll](xml/spielprotokoll)
--  [Administration](xml/administration)
