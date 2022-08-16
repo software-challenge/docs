@@ -17,7 +17,7 @@ besonders gerne nutzt oder Vorteile seht, dann kann es sich lohnen!
 
 Wenn ihr also genug Erfahrung habt und euch entscheidet den schwereren
 Weg zu gehen, dann solltet ihr euch die
-[XML-Dokumentation](xml/spielprotokoll) genau
+[XML-Dokumentation](spiele/penguins_xml) genau
 anschauen, da ihr die ganze Kommunikation, sowie das Parsen der XML
 Nachrichten, implementieren müsst. Außerdem solltet ihr euch als
 Beispiel den (inoffiziellen) [Swift Client](https://github.com/matthesjh/sc20-swift-client) ansehen. Das
