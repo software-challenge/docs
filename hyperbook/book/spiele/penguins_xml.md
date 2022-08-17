@@ -174,7 +174,7 @@ Unter Angabe eines Reservierungscodes kann man einen reservierten Platz in einer
 <joinPrepared reservationCode="RESERVATION" />
 ```
 
-#### Antwort
+#### Antwort nach der Verbindung
 
 Der Server antwortet auf einen erfolgreichen Spielbeitritt mit:
 
@@ -200,9 +200,8 @@ TEAMNUMBER
 
 Spielernummer, eg. `ONE`, `TWO`
 
-#### Antwort
+#### Syntax der Willkommensnachricht
 
-[[status]](https://docs.software-challenge.de/schnittstelle.html#status) der Partie
 
 ```xml
 <room roomId="ROOM_ID">
@@ -215,7 +214,7 @@ Spielernummer, eg. `ONE`, `TWO`
 </room>
 ```
 
-#### STATUS
+#### Status nach der Willkommensnachricht
 
 Der Status der oben in dem data memento objekt enthalten ist, ist beispielsweise der folgenden Form:
 ```xml
@@ -241,7 +240,7 @@ Der Status der oben in dem data memento objekt enthalten ist, ist beispielsweise
 Es enthält die Zugnummer in ``turn``, das anfangende Team in ``startTeam``, eine Liste an Feldern in ``board`` und die Anzahl Fishe jedes Spielers in ``fishes``.
 In `board` entsprechen die Positionen der Felder auf dem Spielfeld ihrer Positionen in der Liste => `x` Koordinate und der Position ihrer Liste im Board => `y` Koordinate. Die Zahl innerhalb der `field` objekte steht für die Anzahl Fishe auf dem Feld.
 
-#### Ablauf
+#### Spielablauf
 
 Der erste Spieler erhält dann eine Zugaufforderung:
 
@@ -251,7 +250,7 @@ Der erste Spieler erhält dann eine Zugaufforderung:
 </room>
 ```
 
-Worauf dieser innerhalb der gesetzten Zeitbeschränkung mit einem [[Zug]](https://docs.software-challenge.de/schnittstelle.html#Zug) antwortet:
+Worauf dieser innerhalb der gesetzten Zeitbeschränkung mit einem [[Zug]](spiele/penguins_xml#zug) antwortet:
 
 ```xml
 <room roomId="ROOM_ID">
@@ -271,7 +270,7 @@ Beispiel:
 <to x="17" y="5"/>
 ```
 
-Nach Erhalt des Zuges sendet der Server den neuen Spielstatus an alle Spieler und dem nächsten Spieler eine Zugaufforderung. So geht es hin und her bis zum [Spielergebnis](https://docs.software-challenge.de/schnittstelle.html#spielende).
+Nach Erhalt des Zuges sendet der Server den neuen Spielstatus an alle Spieler und dem nächsten Spieler eine Zugaufforderung. So geht es hin und her bis zum [Spielergebnis](spiele/penguins_xml#spielergebnis).
 
 #### Ende der Kommunikation
 
