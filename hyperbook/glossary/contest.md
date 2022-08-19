@@ -173,7 +173,7 @@ Optionen:
 #### Computerspieler
 
 In dieser Rubrik kann man die Computerspieler hochladen und verwalten.
-Bevor man einen Computerspieler hochlädt, muss [der Computerspieler abgabefertig gemacht werden](#Computerspieler abgabefertig machen).
+Bevor man einen Computerspieler hochlädt, muss [der Computerspieler abgabefertig gemacht werden](/entwicklung/abgabe).
 
 ![Übersicht der eingesendeten Computerspieler](/images/computerspieler_uebersicht.jpg)
 

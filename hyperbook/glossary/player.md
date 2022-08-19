@@ -5,20 +5,22 @@ index: 1
 
 # Der Computerspieler
 
-Der Computerspieler ist ein Programm, dass sich mit dem [Spielleiter](software/server) verbindet 
-und die gestellte Aufgabe selbständig lösen kann.
+Der Computerspieler ist ein Programm, 
+dass sich mit dem :t[Spielleiter]{#server} verbindet 
+und die gestellte Aufgabe selbständig löst.
 Die Aufgabe der Schüler ist es,
 sich eine Strategie zu überlegen und zu implementieren,
 mit der sie gegen die Spieler der anderen Schulen gewinnen können.
 
 Der Computerspieler kann in einer beliebigen Programmiersprache geschrieben sein,
-jedoch gibt es Muster-Computerspieler nur in Java und Ruby.
+für einige Sprachen werden aber bereits Muster-Computerspieler 
+im [Downloadbereich der Software-Challenge Website](https://software-challenge.de/dokumentation-und-material) bereitgestellt,
+die für Neulinge sehr zu empfehlen sind,
+da so die :t[XML-Schnittstelle]{#xml} nicht beachtet werden muss.
 
-Die Muster-Computerspieler können im Downloadbereich der [Software-Challenge Website](http://www.software-challenge.de) heruntergeladen
-werden.
-
-**Hinweis:** Das Spielleiter-Programm (siehe [Server](software/server)) benötigt
-Java. Deshalb muss auf den ausführenden Rechnern auch das [Java SDK installiert](entwicklung/installation-von-java) sein.
+**Hinweis:** Das :t[Spielleiter-Programm]{#server} benötigt :t[Java]{#java}.
+Deshalb muss auf den ausführenden Rechnern 
+auch das [Java SDK installiert](entwicklung/installation-von-java) sein.
 
 ## Der SimpleClient
 

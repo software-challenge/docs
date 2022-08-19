@@ -83,7 +83,7 @@ Unten gibt es immer die Schaltflächen "Anhalten/Weiter".
 
 ## Spielwiederholungen (Replays)
 
-<!-- TODO Ins Glossar -->
+<!-- TODO Replay-Sektion im Glossar -->
 
 Spielwiederholungen oder Replay-Dateien sind aufgezeichnete frühere
 Spiele, die man sich beliebig oft wieder ansehen kann, um beispielsweise

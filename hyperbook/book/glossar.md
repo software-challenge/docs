@@ -1,12 +1,16 @@
 ---
-name: Glossar
+name: Technische Grundlagen
 index: 10
 ---
-# Glossar
 
-#### P
-:t[Player]{#player}
-#### S
-:t[Server]{#server}
-#### W
+## Grundlagen
+
+:t[Einführung in XML]{#xml}
+
+## Spielinfrastruktur
+
+:t[Computerspieler]{#player}
+
+:t[Spielleiter]{#server}
+
 :t[Wettkampfsystem]{#contest}
