@@ -5,23 +5,21 @@ index: 9
 
 # Computerspieler abgabefertig machen
 
-Damit [das Wettkampfsystem](glossary/das-wettkampfsystem) mit dem
-Computerspieler arbeiten kann, muss er als ausführbares Programm in ein
-ZIP-Archiv gepackt werden.
+Damit das :t[Wettkampfsystem]{#contest} mit dem Computerspieler arbeiten kann,
+muss er als ausführbares Programm in ein ZIP-Archiv gepackt werden.
 
 Je nach Programmiersprache, in der der Computerspieler entwickelt wurde,
 sind unterschiedliche Schritte notwendig.
 
-Wie man den abgabefertigen Computerspieler dann im Wettkampfsystem
-einsendet, ist unter [Wettkampfsystem, Computerspieler](glossary/das-wettkampfsystem#computerspieler) beschrieben.
+Wie man den abgabefertigen Computerspieler dann im :t[Wettkampfsystem]{#contest} einsendet,
+ist unter [Wettkampfsystem>Computerspieler](/glossary/contest#computerspieler) beschrieben.
 
 ## Java
 
-Diese Anleitung beschreibt, wie man für den Java-SimpleClient vorgehen
-muss.
+Diese Anleitung beschreibt, wie man für den Java-SimpleClient vorgehen muss.
 
-Hierzu gibt es zwei Möglichkeiten: Die Jar-Datei selbst erstellen und
-die Verwendung von Gradle.
+Hierzu gibt es zwei Möglichkeiten: 
+Die Jar-Datei selbst erstellen oder die Verwendung von Gradle (empfohlen).
 
 ### Erste Möglichkeit - JAR erstellen
 
@@ -72,7 +70,7 @@ Verzeichnis des SimpleClients wechseln und mit dem Aufruf "Ant" den
 Build ausführen. Am Ende sollte die Meldung "BUILD SUCCESSFUL"
 erscheinen. Im SimpleClient Ordner findet man dann im Unterordner
 "build" die JAR Datei im Ordner "jar" sowie die fertig gepackte
-ZIP-Datei im Ordner "zipped" die direkt im Wettkampfsystem hochgeladen
+ZIP-Datei im Ordner "zipped" die direkt im :t[Wettkampfsystem]{#contest} hochgeladen
 werden kann.
 
 #### Eclipse
@@ -99,16 +97,16 @@ Am Ende erhält man die Meldung "BUILD SUCCESSFUL".
 
 Im SimpleClient-Ordner findet man dann im Unterordner "build" die JAR
 Datei im Ordner "jar" sowie die fertig gepackte ZIP-Datei im Ordner
-"zipped", die direkt ins Wettkampfsystem hochgeladen werden kann.
+"zipped", die direkt ins :t[Wettkampfsystem]{#contest} hochgeladen werden kann.
 
 ## Ruby
 
 Da Ruby eine interpretierte Sprache ist, muss der Ruby-Quellcode direkt
-in ein ZIP-Archiv gepackt und auf das Wettkampfsystem hochgeladen
-werden. Auf dem Wettkampfsystem ist ein Ruby-Interpreter sowie das
+in ein ZIP-Archiv gepackt und auf das :t[Wettkampfsystem]{#contest} hochgeladen
+werden. Auf dem :t[Wettkampfsystem]{#contest} ist ein Ruby-Interpreter sowie das
 aktuellste `software_challenge_client` Gem installiert. Alle weiteren
 Bibliotheken müssen im ZIP-Archiv vorhanden sein. Nach dem Hochladen des
-ZIP-Archiv muss die auszuführende Hauptdatei in Wettkampfsystem
+ZIP-Archiv muss die auszuführende Hauptdatei in :t[Wettkampfsystem]{#contest}
 ausgewählt werden. Diese wird dann zum Start des Computerspielers
 gestartet. Damit dies richtig funktioniert, ist es entscheidend, dass
 die Hauptdatei mit einer sogenannten "Shebang"-Zeile beginnt:
@@ -147,7 +145,7 @@ ZIP-Archiv ein Shell-Script mit genauen Instruktionen zum Start des
 Computerspielers enthalten. Dieses muss nach dem Hochladen im
 Wettkampfystem als Hauptdatei ausgewählt werden.
 
-Beachten Sie hierbei, dass diesem Script vom Wettkampfsystem Parameter
+Beachten Sie hierbei, dass diesem Script vom :t[Wettkampfsystem]{#contest} Parameter
 übergeben werden, die an Ihr Programm weitergegeben werden müssen. Diese
 Parameter sind mindestens Host und Port des Spielservers sowie die
 Reservierungsnummer des Spiels, dem der Computerspieler beitreten soll.
@@ -196,6 +194,6 @@ werden, die Zeilenenden in `Bearbeiten > Format Zeilenende`.
 
 Bei compilierten Sprachen müssen die Computerspieler für 64bit Linux
 compiliert werden, bei interpretierten Sprachen muss ein passender
-Interpreter auf dem Wettkampfsystem vorhanden sein. Weiterhin müssen
+Interpreter auf dem :t[Wettkampfsystem]{#contest} vorhanden sein. Weiterhin müssen
 Abhängigkeiten wie z.B. genutzte Bibliotheken vorhanden sein oder
 mitgeliefert werden.
