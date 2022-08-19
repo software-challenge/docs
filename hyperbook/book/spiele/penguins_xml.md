@@ -12,11 +12,20 @@ Anfängern wird allerdings davon abgeraten, einen komplett eigenen Client zu sch
 
 Im Verlauf des Wettbewerbes können Elemente zur Kommunikationsschnittstelle hinzugefügt werden, die in dieser Dokumentation nicht aufgeführt sind. Um auch bei solchen Änderungen sicher zu sein, dass ein Client fehlerfrei mit dem Server kommunizieren kann, sollten beim Auslesen des XML jegliche Daten verworfen werden, die hier nicht weiter definiert sind.
 
-Die vom Institut bereitgestellten Programme (Server, Simpleclient) nutzen eine Bibliothek um Java-Objekte direkt in XML zu konvertieren und umgekehrt. Dabei werden XML-Nachrichten nicht unbedingt mit einem Zeilenumbruch abgeschlossen.
+Die bereitgestellten Programme 
+(:t[Server]{#server}, :t[Java-Spieler]{#player}) nutzen eine Bibliothek,
+um Java-Objekte direkt in XML zu konvertieren und umgekehrt.
+Dabei werden XML-Nachrichten nicht unbedingt mit einem Zeilenumbruch abgeschlossen.
 
 ## Einführung in XML
 
-Die Kommunikation zwischen [Spielleiter](https://docs.software-challenge.de/server.html) und [Computerspieler](https://docs.software-challenge.de/der-computerspieler.html) wird mittels XML-Nachrichten realisiert. XML ist eine Auszeichnungssprache, d.h eine Sprache, die nicht nur die Daten selbst, sondern auch Informationen über die Interpretation oder Bearbeitung liefert. Der Vorteil dieser Sprache liegt darin, dass sie sowohl vom Computer als auch vom Menschen gut gelesen werden kann. Dieser Abschnitt gibt einen Einstieg in die Struktur von XML.
+Die Kommunikation zwischen [Spielleiter](https://docs.software-challenge.de/server.html) und [Computerspieler](https://docs.software-challenge.de/der-computerspieler.html) 
+wird mittels XML-Nachrichten realisiert.
+XML ist eine Auszeichnungssprache, d.h eine Sprache,
+die nicht nur die Daten selbst, sondern auch Informationen über die Interpretation oder Bearbeitung liefert.
+Der Vorteil dieser Sprache liegt darin,
+dass sie sowohl vom Computer als auch vom Menschen gut gelesen werden kann.
+Dieser Abschnitt gibt einen Einstieg in die Struktur von XML.
 
 ### Tags
 
@@ -270,7 +279,9 @@ Beispiel:
 <to x="17" y="5"/>
 ```
 
-Nach Erhalt des Zuges sendet der Server den neuen Spielstatus an alle Spieler und dem nächsten Spieler eine Zugaufforderung. So geht es hin und her bis zum [Spielergebnis](spiele/penguins_xml#spielergebnis).
+Nach Erhalt des Zuges sendet der Server den neuen Spielstatus an alle Spieler 
+und dem nächsten Spieler eine Zugaufforderung.
+So geht es hin und her bis zum [Spielergebnis](#spielergebnis).
 
 #### Ende der Kommunikation
 

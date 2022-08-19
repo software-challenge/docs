@@ -5,52 +5,53 @@ index: 2
 
 # Der Spielleiter (Server)
 
-Die beiden [Computerspieler](software/client) kommunizieren nicht
-direkt miteinander, sondern übertragen ihre Nachrichten über einen
-Mittelmann: den Spielleiter. Dadurch ist zum einen sichergestellt, dass
-man seinen Gegner nicht mit invaliden Nachrichten belästigen kann, zum
-anderen sorgt der Spielleiter dafür, dass sich die Kontrahenten an die
-Spielregeln halten.
+Die beiden [Computerspieler](player) kommunizieren nicht direkt miteinander,
+sondern spielen über einen Mittelsmann: den Spielleiter.
+Dadurch ist zum einen sichergestellt,
+dass man seinen Gegner nicht mit invaliden Nachrichten belästigen kann,
+zum anderen sorgt der Spielleiter dafür,
+dass sich die Kontrahenten an die Spielregeln halten.
 
-Der Spielleiter ist direkt im [Wettkampfsystem](software/das-wettkampfsystem)
-integriert, so dass alle Turnierspiele regelkonform gespielt werden. Zum
-Testen des eigenen Computerspielers gibt es eine spezielle Version des
-Spielleiters, die im [Downloadbereich der Website](https://software-challenge.de/dokumentation-und-material)
-heruntergeladen werden kann. Diese Download-Version enthälft eine
-grafische Oberfläche, durch die man das Spiel gut verfolgen und sogar
-als Mensch mitspielen kann.
+Der Spielleiter ist direkt im [Wettkampfsystem](wettkampfsystem) integriert,
+so dass alle Turnierspiele regelkonform gespielt werden.
+Zum Testen des eigenen Computerspielers gibt es eine spezielle Version des Spielleiters,
+die im [Downloadbereich der Website](https://software-challenge.de/dokumentation-und-material) heruntergeladen werden kann.
+Diese Download-Version enthält eine grafische Oberfläche,
+durch die man das Spiel gut verfolgen 
+und sogar als Mensch mitspielen kann.
 
 ## System vorbereiten und Spielleiter starten
 
-Die einzige Vorraussetzung ist, dass auf dem Rechner mindestens die
-Laufzeitumgebung für Java 9 installiert ist. Siehe [Installation von Java](entwicklung/installation-von-java).
+Die einzige Vorraussetzung ist, 
+dass auf dem Rechner mindestens die Laufzeitumgebung für Java 9 installiert ist.
+Siehe [Installation von Java](/entwicklung/installation-von-java).
+Die herunter
 
-Nach der erfolgreichen Installation kann man den Server durch einen
-Doppelklick auf die Datei `software-challenge-gui` starten.
+Nach der erfolgreichen Installation kann man den Server 
+durch einen Doppelklick auf die Datei `software-challenge-gui` starten.
 
 ## Die Programmoberfläche
 
-Die Programmoberfläche besteht aus einer Menüleiste oben sowie der
-Spielfläche darunter.
+Die Programmoberfläche besteht aus einer Menüleiste oben 
+sowie der Spielfläche darunter.
 
-Unter dem ersten Menüpunkt (Symbol der Software-Challenge) findet man
-alle grundlegenden Aktionen.
+Unter dem ersten Menüpunkt (Symbol der Software-Challenge) 
+findet man alle grundlegenden Aktionen.
 
 ### Ein neues Spiel erstellen
 
-Um ein Spiel zu spielen, muss zunächst "Neues Spiel starten" angeklickt
-werden.
+Starte ein neues Spiel mit Klick auf "Neues Spiel starten":
 
 ![Dialog für ein neues Spiel](/images/gui/game-creation.png)
 
-In diesem Fenster werden die Spieler ausgewählt, die an dem Spiel
-teilnehmen sollen. Für jeden Spieler gibt es folgende Optionen:
+In diesem Fenster werden die Spieler ausgewählt, 
+die an dem Spiel teilnehmen sollen.
+Für jeden Spieler gibt es folgende Optionen:
 
-- **Text-Eingabefeld**: Hier kann für jeden Spieler ein Name eingegeben
-werden, der dann im Spiel angezeigt wird.
+- **Text-Eingabefeld**: Hier kann für jeden Spieler ein Name eingegeben werden,
+  der dann im Spiel angezeigt wird.
 
-- **Spielertyp**: Es kann zwischen 4 verschiedenen Spielertypen gewählt
-werden:
+- **Spielertyp**: Es kann zwischen 4 verschiedenen Spielertypen gewählt werden:
 
     - *Mensch*  
 Ein menschlicher Spieler, der über die Programmoberfläche spielt.
@@ -73,14 +74,16 @@ unteren Knopfs "Erstellen" erstellt werden.
 
 ![Die Spielfeldoberfläche (hier mit dem Spiel "Hey, Danke für den Fisch")](/images/spiele/penguins/penguins_spielfeld.png "Spielfeld")
 
-Auf dem Spielbrett wird das eigentliche Spiel, die Züge und weitere für
-das Spiel wichtige Informationen dargestellt. Hier setzt der menschliche
-Spieler auch seine Züge.
+Auf dem Spielbrett wird das eigentliche Spiel,
+die Züge und weitere für das Spiel wichtige Informationen dargestellt.
+Hier setzt der menschliche Spieler auch seine Züge.
 
 Die Steuerelemente unterscheiden sich je nach Spiel und Spielsituation.
 Unten gibt es immer die Schaltflächen "Anhalten/Weiter".
 
 ## Spielwiederholungen (Replays)
+
+<!-- TODO Ins Glossar -->
 
 Spielwiederholungen oder Replay-Dateien sind aufgezeichnete frühere
 Spiele, die man sich beliebig oft wieder ansehen kann, um beispielsweise
@@ -243,9 +246,12 @@ eine Logdatei über die Aktivitäten des Garbage Collectors anlegen. Darin
 sieht man genau, wann er wie lange lief. Man kann dann die Einstellungen
 verändern und testen, ob sich das Verhalten verbessert.
 
-Die Konfiguration des Garbage Collectors ist kein Allheilmittel und kann
-zu neuen Problemen führen, auf die man gefasst sein sollte. Dazu gehören
-erhöhter Resourcenverbrauch und Instabilität der Anwendung.
+Die Konfiguration des Garbage Collectors ist kein Allheilmittel 
+und kann zu neuen Problemen führen, auf die man gefasst sein sollte.
+Dazu gehören erhöhter Resourcenverbrauch und Instabilität der Anwendung.
+
+Eine Auflistung möglicher nützlicher Parameter für Computerspieler findet sich unter
+https://stackoverflow.com/questions/48989515/java-garbage-collector-time-limit.
 
 ### Massentests
 
@@ -316,5 +322,5 @@ Ergebnisse werden erst zurückgesetzt, wenn der Server neu gestartet
 wird. Achte also nach einer Veränderung der Spieler darauf, den Server
 neu zu starten oder andere Spielernamen zu verwenden.
 
-Dieses Verhalten wird wahrscheinlich bald verändert, wobei dann jeder
-TestClient unabhängig vom Server die Punkte zählt.
+Dieses Verhalten wird wahrscheinlich bald verändert, 
+wobei dann jeder TestClient unabhängig vom Server die Punkte zählt.
