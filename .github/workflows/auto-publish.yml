@@ -1,8 +1,6 @@
-name: CI
+name: Build
 
-on:
-  push:
-    branches: [ main, *-ci ]
+on: push
 
 jobs:
   build:
@@ -14,37 +12,38 @@ jobs:
     # Setup the docs
     - name: Setup
       run: |
+        pwd
         cd hyperbook
         npx hyperbook setup
-
-    # Check for errors
-    - name: Check
-      run: |
         if test ! -d .hyperbook; then echo "No output!"; exit 1; fi
       
-    # Push the generated docs to the live branch
-    - name: Deploy
+    - name: Generate
+      if: github.ref == 'refs/heads/main'
       run: |
+        pwd
         message="$(git log --format='Deploy %h %<|(50,trunc)%f' -1)"
 
         echo "== getting live branch..."
-        old_git_dir="$GIT_DIR"
-        unset GIT_DIR
-        old_git_working_dir="$GIT_WORK_TREE"
-        unset GIT_WORK_TREE
         git clone https://github.com/software-challenge/docs --branch live --single-branch .hyperbook/out
         npx hyperbook build
 
-        echo "== pushing to github"
+        echo "== creating commit..."
         cd .hyperbook/out
         git config user.email "info@software-challenge.de"
         git config user.name "GitHub Publish Action"
         git add --all
         git commit -m "$message"
+
+    # Push the generated docs to the live branch
+    - name: Deploy
+      if: github.ref == 'refs/heads/main'
+      run: |
+        pwd
         git push https://socha-bot:${{ secrets.ACCESS_TOKEN }}@github.com/software-challenge/docs
 
+    - name: Cleanup
+      run: |
+        pwd
         echo "== cleaning up"
         cd ../..
         rm -rf ./.hyperbook
-        GIT_DIR="$old_git_dir"
-        GIT_WORK_TREE="$old_git_working_dir"
