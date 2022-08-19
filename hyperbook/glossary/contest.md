@@ -5,13 +5,13 @@ index: 3
 
 # Das Wettkampfsystem
 
-Das Wettkampfsystem ist die Plattform, auf der die
-[Computerspieler](software/client) der einzelnen Schulen
-gegeneinander antreten. Die Teams können sich dabei nicht nur im
-Wettkampf, sondern auch in Freundschaftsspielen, mit ihren Gegnern
-messen. Außerdem liefert er alle Informationen rund um den Wettkampf,
-wie z.B. die Ergebnisse der einzelnen Spieltage oder die Anzahl der
-Mitglieder in den einzelnen Teams.
+Das Wettkampfsystem ist die Plattform,
+auf der die [Computerspieler](software/client) der einzelnen Schulen gegeneinander antreten.
+Die Teams können sich dabei nicht nur im Wettkampf,
+sondern auch in Freundschaftsspielen mit ihren Gegnern messen.
+Außerdem liefert es alle Informationen rund um den Wettkampf,
+wie z.B. die Ergebnisse der einzelnen Spieltage 
+oder die Anzahl der Mitglieder in den einzelnen Teams.
 
 ## Die Weboberfläche
 

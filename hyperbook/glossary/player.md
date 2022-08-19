@@ -3,17 +3,16 @@ name: Computerspieler
 index: 1
 ---
 
-# Der Computerspieler (Client)
+# Der Computerspieler
 
-Der Computerspieler ist ein Programm, dass sich mit dem Spielleiter
-(siehe [Server](software/server) verbindet und die gestellte Aufgabe selbständig
-lösen kann. Die Aufgabe der Schüler ist es, sich eine Strategie zu
-überlegen und zu implementieren, mit der sie gegen die Clients der
-anderen Schulen gewinnen können.
+Der Computerspieler ist ein Programm, dass sich mit dem [Spielleiter](software/server) verbindet 
+und die gestellte Aufgabe selbständig lösen kann.
+Die Aufgabe der Schüler ist es,
+sich eine Strategie zu überlegen und zu implementieren,
+mit der sie gegen die Spieler der anderen Schulen gewinnen können.
 
-Der Computerspieler kann in einer beliebigen Programmiersprache
-geschrieben sein, jedoch gibt es Muster-Computerspieler nur in Java und
-Ruby.
+Der Computerspieler kann in einer beliebigen Programmiersprache geschrieben sein,
+jedoch gibt es Muster-Computerspieler nur in Java und Ruby.
 
 Die Muster-Computerspieler können im Downloadbereich der [Software-Challenge Website](http://www.software-challenge.de) heruntergeladen
 werden.
