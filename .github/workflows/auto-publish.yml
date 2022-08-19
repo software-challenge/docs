@@ -10,15 +10,11 @@ jobs:
     - uses: actions/checkout@v3
 
     # Setup the docs
-    - name: Setup
+    - name: Generate
       run: |
-        pwd
         cd hyperbook
         npx hyperbook setup
 
-    - name: Generate
-      run: |
-        pwd
         message="$(git log --format='Deploy %h %<|(50,trunc)%f' -1)"
 
         echo "== getting live branch..."
@@ -36,12 +32,10 @@ jobs:
     - name: Deploy
       if: github.ref == 'refs/heads/main'
       run: |
-        pwd
+        cd hyperbook/.hyperbook/out
         git push https://socha-bot:${{ secrets.ACCESS_TOKEN }}@github.com/software-challenge/docs
 
     - name: Cleanup
       run: |
-        pwd
         echo "== cleaning up"
-        cd ../..
         rm -rf ./.hyperbook
