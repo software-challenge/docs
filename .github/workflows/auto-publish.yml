@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, *-ci ]
 
 jobs:
   build:
@@ -14,19 +14,17 @@ jobs:
     # Setup the docs
     - name: Setup
       run: |
-        sudo ./docs setup
-        sudo ./docs generate
-        
+        cd hyperbook
+        npx hyperbook setup
+
     # Check for errors
     - name: Check
       run: |
-        if [ ! -d out ]; then echo "No out !"; exit 1; fi
+        if test ! -d .hyperbook; then echo "No output!"; exit 1; fi
       
     # Push the generated docs to the live branch
     - name: Deploy
       run: |
-        echo "== removing output directory 'out'"
-        sudo rm -rf ./out
         message="$(git log --format='Deploy %h %<|(50,trunc)%f' -1)"
 
         echo "== getting live branch..."
@@ -34,12 +32,11 @@ jobs:
         unset GIT_DIR
         old_git_working_dir="$GIT_WORK_TREE"
         unset GIT_WORK_TREE
-        git clone https://github.com/software-challenge/docs --branch live --single-branch out
+        git clone https://github.com/software-challenge/docs --branch live --single-branch .hyperbook/out
+        npx hyperbook build
 
-        echo "== generating static pages..."
-        ./docs generate pdf
-        echo "== pushing to github..."
-        cd out
+        echo "== pushing to github"
+        cd .hyperbook/out
         git config user.email "info@software-challenge.de"
         git config user.name "GitHub Publish Action"
         git add --all
@@ -47,7 +44,7 @@ jobs:
         git push https://socha-bot:${{ secrets.ACCESS_TOKEN }}@github.com/software-challenge/docs
 
         echo "== cleaning up"
-        cd ..
-        rm -rf ./out
+        cd ../..
+        rm -rf ./.hyperbook
         GIT_DIR="$old_git_dir"
         GIT_WORK_TREE="$old_git_working_dir"
