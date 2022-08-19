@@ -90,8 +90,8 @@ Termine](http://www.software-challenge.de/de/termine).
 
 ## Technische Daten für die Ausführung der Computerspieler
 
-Für alle im Wettkampfsystem ausgetragenen Spiele laufen die
-Computerspieler auf den Servern des Wettkampfsystems.
+Bei allen im :t[Wettkampfsystem]{#contest} ausgetragenen Spielen
+laufen die :t[Computerspieler]{#player} auf den Servern des Wettkampfsystems.
 
 |                  |                                                   |
 |------------------|---------------------------------------------------|
@@ -101,7 +101,7 @@ Computerspieler auf den Servern des Wettkampfsystems.
 
 ### Log-Ausgabe
 
-Die Computerspieler laufen im Wettkampfsystem ohne eine grafische
+Die Computerspieler laufen im :t[Wettkampfsystem]{#contest} ohne eine grafische
 Oberfläche, sie können also keine Fenster oder ähnliches anzeigen. Der
 Versuch eines Computerspielers, so etwas trotzdem zu tun, wird
 wahrscheinlich zum Absturz des Computerspielers führen.
@@ -109,7 +109,7 @@ wahrscheinlich zum Absturz des Computerspielers führen.
 Die Computerspieler können jedoch Text auf die beiden
 Standard-Ausgabedatenströme "stdout" und "stderr" schreiben. Diese
 Ausgaben finden sich dann in den Log-Dateien wieder, die nach Beenden
-eines Spiels über das Wettkampfsystem verfügbar sind.
+eines Spiels über das :t[Wettkampfsystem]{#contest} verfügbar sind.
 
 ### Lesen von Daten
 
