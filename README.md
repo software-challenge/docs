@@ -58,7 +58,7 @@ Dies geht unter Debian-basierten Distributionen mit `sudo apt install nodejs npm
 Unter Arch: `sudo pacman -S npm`
 
 Anschließend installiere die Abhängigkeiten mit 
-`npx --legacy-peer-deps hyperbook setup`.
+`npx hyperbook setup`.
 
 ### Live-Preview
 Eine Vorschau lokaler Änderungen kann direkt mit dem Befehl `npx hyperbook dev` 
