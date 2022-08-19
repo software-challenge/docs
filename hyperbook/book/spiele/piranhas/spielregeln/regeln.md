@@ -80,7 +80,7 @@ anderenfalls derjenige Spieler mit dem größeren Schwarm. Falls nach den
 vorgenannten Kriterien kein Gewinner ermittelt werden kann, endet das
 Spiel unentschieden.
 
-Nachrangiges Kriterium für das Ranking im Wettkampfsystem: Anzahl der
+Nachrangiges Kriterium für das Ranking im :t[Wettkampfsystem]{#contest}: Anzahl der
 Fische im größten Schwarm des Spielers.
 
 Beim Final Eight gibt es kein nachrangiges Kriterium. Beim Final Eight
