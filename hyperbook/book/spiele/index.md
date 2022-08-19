@@ -1,4 +1,4 @@
 ---
-name: Hey, Danke für den Fisch!
-index: 1
+name: Spiele
+virtual: true
 ---
