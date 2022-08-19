@@ -2,21 +2,28 @@
 
 In diesem Repository befindet sich die Endbenutzer-Dokumentation 
 für die [Software-Challenge](https://software-challenge.de).
-Zielgruppe sind Schüler und Lehrer, die an der Software-Challenge teilnehmen.
+Zielgruppe sind Schüler und Lehrer,
+die an der Software-Challenge teilnehmen.
+
+Ziel dieser Dokumentation ist es,
+alle Informationen über die Software-Challenge an einer Stelle zu bündeln.
+Hier können sich Lehrer und Kursleiter über den Zweck der Software-Challenge informieren.
+Für die teilnehmenden Teams ist hier alles dokumentiert,
+was für die Teilnahme am Wettbewerb benötigt wird.
 
 ## Beitragen
 
 Wir freuen uns über sämtliche Verbesserungsvorschläge.  
-Die Dokumentation kann direkt hier auf GitHub editiert werden,
+Die Dokumentation kann direkt hier auf [GitHub](https://github.com/software-challenge/docs/blob/main/hyperbook/book) editiert werden,
 einzige Voraussetzung ist eine kostenlose Registrierung bei GitHub.
 Ist man angemeldet,
-kann man ein Dokument auswählen und dann auf den Stift oben rechts klicken.
-Ein guter Startpunkt ist die Datei
-[index.md](https://github.com/software-challenge/docs/blob/main/index.md),
-die Verweise auf alle Sektionen der Dokumentation enthält.
-Damit wird von GitHub automatisch ein Fork und ein dazugehöriges Pull Request erstellt.  
-Alternativ auch gern eine E-Mail an <tech@software-challenge.de> 
-oder eine Nachricht im [Discord](https://discord.gg/jhyF7EU).
+kann man ein Dokument auswählen 
+und dann auf den Stift oben rechts klicken.
+Die relevanten Dokumente finden sich im Verzeichnis [hyperbook/book](./hyperbook/book).
+Damit wird von GitHub automatisch ein Fork 
+und ein dazugehöriges Pull Request erstellt.  
+Alternativ auch gerne per E-Mail an <tech@software-challenge.de> 
+oder als Nachricht im [Discord](https://discord.gg/jhyF7EU).
 
 ## Konventionen
 
