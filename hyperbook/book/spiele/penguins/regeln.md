@@ -3,11 +3,12 @@ name: Spielregeln
 index: 1
 ---
 
-# Hey, Danke für den Fisch Spielregeln der Software-Challenge 2022
+# Hey, Danke für den Fisch! - Spielregeln der Software-Challenge 2023
 
 ## Spielaufbau
 
-Hey, Danke für den Fisch ist ein Brettspiel, welches mit Figuren auf einem Hexagon-Feld (8x8) gespielt wird. Am Anfang werden Fische zufällig auf alle hexagonalen Eisschollen verteilt, wobei es immer mindestens einen Fisch auf jeder Eisscholle gibt.
+Hey, Danke für den Fisch ist ein Brettspiel, welches mit Figuren auf einem Hexagon-Feld (8x8) gespielt wird.
+Am Anfang werden Fische zufällig auf alle hexagonalen Eisschollen verteilt, wobei es immer mindestens einen Fisch auf jeder Eisscholle gibt.
 
 ## Spielablauf
 
