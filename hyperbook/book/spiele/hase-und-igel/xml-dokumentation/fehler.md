@@ -1,6 +1,6 @@
 # Fehler
 
-Ein “spielfähiger” Client muss nicht mit Fehlern umgehen können.
+Ein “spielfähiger” :t[Computerspieler]{#player} muss nicht mit Fehlern umgehen können.
 Fehlerhafte Züge beispielsweise resultieren in einem vorzeitigen Ende
 des Spieles, das im nächsten gesendeten Gamestate erkannt werden kann
 (siehe [???](#spielende)).

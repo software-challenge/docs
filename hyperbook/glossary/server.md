@@ -60,11 +60,11 @@ Ein menschlicher Spieler, der über die Programmoberfläche spielt.
 Ein Computerspieler, der im Server integriert ist.
 
     - *Computerspieler, von GUI gestartet*  
-Ein Computerspieler in Form eines separaten Programms, das beim Starten
+Ein :t[Computerspieler]{#player} in Form eines separaten Programms, das beim Starten
 des Spiels automatisch vom Server gestartet wird.
 
-    - *Manuell gestarteter Client*  
-Ein Computerspieler in Form eines separaten Programms, das manuell durch
+    - *Manuell gestarteter Computerspieler*  
+Ein :t[Computerspieler]{#player} in Form eines separaten Programms, das manuell durch
 den Benutzer gestartet werden muss.
 
 Nach Eingabe der erforderlichen Werte kann das Spiel mithilfe des
@@ -110,13 +110,13 @@ einfacherem Wege verfügbar sein.
 
 Wenn ein Fehlerverhalten des Computerspielers nur in einer bestimmten
 Situation in einem Spiel auftritt, kann es oft wünschenswert sein, diese
-Situation erneut nachzuspielen um den Computerspieler gezielt zu
+Situation erneut nachzuspielen um den :t[Computerspieler]{#player} gezielt zu
 verbessern.
 
 Dies ist zur Zeit nur auf etwas kompliziertem Wege möglich. Es folgt
 eine Schritt-für-Schritt Anleitung:
 
-1.  Laden Sie das betreffende Replay aus dem Wettkampfsystem herunter
+1.  Laden Sie das betreffende Replay aus dem :t[Wettkampfsystem]{#contest}herunter
     (.xml.gz Datei).
 
 2.  Entpacken Sie das Replay, sodass sie eine .xml-Datei erhalten.
@@ -125,7 +125,7 @@ eine Schritt-für-Schritt Anleitung:
     den Computerspieler, der für diese Spielsituation getestet werden
     soll. Dieser Spieler muss als Spieler 1 gestartet werden und ist
     dann direkt als erstes dran. Der Gegenspieler kann dann ein
-    beliebiger Computerspieler oder auch ein Mensch sein.
+    beliebiger :t[Computerspieler]{#player} oder auch ein Mensch sein.
 
 4.  Setzen Sie einen Haken bei "Spiel aus Datei laden". Wählen Sie über
     "Datei wählen" das entsprechende Replay aus und spezifizieren sie
@@ -173,18 +173,18 @@ Port 13051. So kannst du ihn nutzen:
 
         java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051
 
-5.  Starten die Computerspieler in weiteren Kommandozeilenumgebungen auf
-    Port 13051 (beim SimpleClient geht dies mit der Option
-    `--port 13051`). Die Computerspieler verbinden sich automatisch zum
+5.  Starten die :t[Computerspieler]{#player} in weiteren Kommandozeilenumgebungen auf
+    Port 13051 (beim Zufallsspieler geht dies mit der Option
+    `--port 13051`). Die :t[Computerspieler]{#player} verbinden sich automatisch zum
     Testserver und spielen ein Spiel. Danach sollten sich die
-    Computerspieler automatisch beenden.
+    :t[Computerspieler]{#player} automatisch beenden.
 
-6.  Um weitere Testspiele zu spielen, starte die Computerspieler erneut.
+6.  Um weitere Testspiele zu spielen, starte die :t[Computerspieler]{#player} erneut.
     Der Testserver muss dabei nicht neu gestartet werden.
 
 Beachte, dass der Testserver keine Spielaufzeichnungen anlegt, wie es
 der Server mit grafischer Oberfläche tut. Die Auswertung der Spiele muss
-in einem der teilnehmenden Computerspieler geschehen (z.B. durch
+in einem der teilnehmenden :t[Computerspieler]{#player} geschehen (z.B. durch
 Log-Ausgaben).
 
 Es ist ebenfalls möglich, statt eines zufällig generierten vollständigen
@@ -201,14 +201,14 @@ Datei mit dem Argument `--loadGameFile` geladen werden und optional mit
 
 Wenn Sie den Testserver einige Zeit laufen lassen, um eine größere
 Anzahl von Testspielen durchzuführen, kann es dazu kommen, dass
-Computerspieler wegen Zugzeitüberschreitungen vom Server disqualifiziert
+:t[Computerspieler]{#player} wegen Zugzeitüberschreitungen vom Server disqualifiziert
 werden (Soft-Timeout). Dies passiert, obwohl der Zug innerhalb der
 erlaubten Zugzeit (abhängig vom Spiel, bisher aber immer zwei Sekunden)
 an den Server geschickt wurde. Der Garbage Collector der Java Virtual
 Machine löst dieses Verhalten aus. Er pausiert die Anwendung, um nicht
 mehr genutzten Speicher freizugeben. Wenn der Server dadurch zu einem
 ungünstigen Zeitpunkt angehalten wird, bemerkt er den Eingang des Zuges
-vom Computerspieler nicht rechtzeitig und disqualifiziert ihn daraufhin.
+vom :t[Computerspieler]{#player} nicht rechtzeitig und disqualifiziert ihn daraufhin.
 Damit dieses Problem möglichst selten auftritt, haben sich die folgenden
 Parameter beim Starten des Servers bewährt:
 
@@ -250,12 +250,12 @@ Die Konfiguration des Garbage Collectors ist kein Allheilmittel
 und kann zu neuen Problemen führen, auf die man gefasst sein sollte.
 Dazu gehören erhöhter Resourcenverbrauch und Instabilität der Anwendung.
 
-Eine Auflistung möglicher nützlicher Parameter für Computerspieler findet sich unter
+Eine Auflistung möglicher nützlicher Parameter für :t[Computerspieler]{#player} findet sich unter
 https://stackoverflow.com/questions/48989515/java-garbage-collector-time-limit.
 
 ### Massentests
 
-Massentests mit dem eigenen Computerspieler können sehr nützlich sein,
+Massentests mit dem eigenen :t[Computerspieler]{#player} können sehr nützlich sein,
 beispeilsweise um die Stärke gegenüber einer früheren Version zu Testen.
 Dafür wird in jeder Saison ab Version XX.1.0 ein TestClient
 bereitgestellt.
@@ -297,8 +297,8 @@ auf dem selben Port zu starten.
 | Attribut       | Standardwert (Typ)                               | Beschreibung                                                                                                                     |
 | -------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- |
 | `--tests`        | 100 (`int`)                                        | Anzahl der Tests, die gespielt werden sollen                                                                                     |
-| `--player1`      | "./defaultplayer.jar" (Dateipfad)                | Erster Computerspieler                                                                                                           |
-| `--player2`      | "./defaultplayer.jar" (Dateipfad)                | Zweiter Computerspieler                                                                                                          |
+| `--player1`      | "./defaultplayer.jar" (Dateipfad)                | Erster :t[Computerspieler]{#player}                                                                                                           |
+| `--player2`      | "./defaultplayer.jar" (Dateipfad)                | Zweiter :t[Computerspieler]{#player}                                                                                                          |
 | `--name1`        | "player1" (`String`)                               | Name des ersten Spielers                                                                                                         |
 | `--name2`        | "player2" (`String`)                               | Name des zweiten Spielers                                                                                                        |
 | `--no-timeout`   | false (`bool`)                                     | Deaktiviere ausscheiden durch Timeouts. Kann durch `--no-timeout1` bzw. `--no-timeout2` für beide Spieler unabhängig gesetzt werden. |

@@ -48,7 +48,7 @@ gegebenen Platz betreten.
 
 ### Welcome Message
 
-Der Server antwortet darauf nur, wenn der zweite Client ebenfalls
+Der Server antwortet darauf nur, wenn der zweite :t[Computerspieler]{#player} ebenfalls
 verbunden ist:
 
 -   ROOM\_ID Id des GameRooms

@@ -3,20 +3,20 @@ name: Computerspieler abgabefertig machen
 index: 9
 ---
 
-# Computerspieler abgabefertig machen
+# :t[Computerspieler]{#player} abgabefertig machen
 
-Damit das :t[Wettkampfsystem]{#contest} mit dem Computerspieler arbeiten kann,
+Damit das :t[Wettkampfsystem]{#contest} mit dem :t[Computerspieler]{#player} arbeiten kann,
 muss er als ausführbares Programm in ein ZIP-Archiv gepackt werden.
 
-Je nach Programmiersprache, in der der Computerspieler entwickelt wurde,
+Je nach Programmiersprache, in der der :t[Computerspieler]{#player} entwickelt wurde,
 sind unterschiedliche Schritte notwendig.
 
-Wie man den abgabefertigen Computerspieler dann im :t[Wettkampfsystem]{#contest} einsendet,
+Wie man den abgabefertigen :t[Computerspieler]{#player} dann im :t[Wettkampfsystem]{#contest} einsendet,
 ist unter [Wettkampfsystem>Computerspieler](/glossary/contest#computerspieler) beschrieben.
 
 ## Java
 
-Diese Anleitung beschreibt, wie man für den Java-SimpleClient vorgehen muss.
+Diese Anleitung beschreibt, wie man für den Java-Zufallsspieler vorgehen muss.
 
 Hierzu gibt es zwei Möglichkeiten: 
 Die Jar-Datei selbst erstellen oder die Verwendung von Gradle (empfohlen).
@@ -29,7 +29,7 @@ Die Jar-Datei selbst erstellen oder die Verwendung von Gradle (empfohlen).
     "Runnable JAR file" wählen
 
 2.  Im nächsten Fenster wird die "Run Configuration" ausgewählt (dazu
-    muss der SimpleClient mindestens einmal mit Eclipse gestartet worden
+    muss der Zufallsspieler mindestens einmal mit Eclipse gestartet worden
     sein). Darunter wird mit "Browse" die Zieldatei (z.B.
     `[…​]/my_player.jar`) ausgewählt. Bei "Library handling" am besten
     die erste Option nehmen. So wird eine einzige JAR Datei erzeugt, in
@@ -38,8 +38,8 @@ Die Jar-Datei selbst erstellen oder die Verwendung von Gradle (empfohlen).
     operation repacks referenced libraries", den man mit "OK" bestätigen
     muss.
 
-Wenn alles geklappt hat, wurde der Computerspieler in ein auführbares
-Programm überführt. Damit der Wettkampfserver den Client verarbeiten
+Wenn alles geklappt hat, wurde der :t[Computerspieler]{#player} in ein auführbares
+Programm überführt. Damit der Wettkampfserver den :t[Computerspieler]{#player} verarbeiten
 kann, muss er noch in ein ZIP-Archiv gepackt werden (auch wenn ein JAR
 technisch gesehen bereits ein ZIP-Archiv ist).
 
@@ -59,8 +59,8 @@ Archiv kann dann hochegeladen werden.
 
 ### Zweite Möglichkeit - Das ANT Script
 
-Man kann auch das dem SimpleClient beiliegende Ant Buildscript benutzen.
-Dieses kompiliert den SimpleClient und erzeugt automatisch eine JAR
+Man kann auch das dem Zufallsspieler beiliegende Ant Buildscript benutzen.
+Dieses kompiliert den Zufallsspieler und erzeugt automatisch eine JAR
 Datei sowie ein ZIP-Archiv, das man direkt im Websystem hochladen kann.
 
 #### Direkt ausführen
@@ -68,7 +68,7 @@ Datei sowie ein ZIP-Archiv, das man direkt im Websystem hochladen kann.
 Wenn Ant installiert ist, kann man über die Kommandozeile in das
 Verzeichnis des SimpleClients wechseln und mit dem Aufruf "Ant" den
 Build ausführen. Am Ende sollte die Meldung "BUILD SUCCESSFUL"
-erscheinen. Im SimpleClient Ordner findet man dann im Unterordner
+erscheinen. Im Zufallsspieler Ordner findet man dann im Unterordner
 "build" die JAR Datei im Ordner "jar" sowie die fertig gepackte
 ZIP-Datei im Ordner "zipped" die direkt im :t[Wettkampfsystem]{#contest} hochgeladen
 werden kann.
@@ -85,7 +85,7 @@ Eclipse kann von Haus aus auch mit Ant-Scripten umgehen.
 
 3.  Auf der rechten Seite muss man nun das Buildfile auswählen. Das geht
     entweder mit "Browse Workspace" oder "Browse File System". Das
-    Buildfile heißt "build.xml" und liegt direkt in dem SimpleClient
+    Buildfile heißt "build.xml" und liegt direkt in dem Zufallsspieler
     Ordner, den man auf der Software-Challenge Homepage heruntergeladen
     hat. Anschließend mit "Apply" bestätigen und das Fenster schließen
 
@@ -95,7 +95,7 @@ Eclipse kann von Haus aus auch mit Ant-Scripten umgehen.
 
 Am Ende erhält man die Meldung "BUILD SUCCESSFUL".
 
-Im SimpleClient-Ordner findet man dann im Unterordner "build" die JAR
+Im Zufallsspieler-Ordner findet man dann im Unterordner "build" die JAR
 Datei im Ordner "jar" sowie die fertig gepackte ZIP-Datei im Ordner
 "zipped", die direkt ins :t[Wettkampfsystem]{#contest} hochgeladen werden kann.
 
@@ -119,7 +119,7 @@ Shebang-Zeile zu schreiben:
     # encoding: UTF-8
 
 Ein vollständiges Beispiel für einen abgabefertigen Ruby-Computerspieler
-gibt es im [example Verzeichnis des Client-Gems bei
+gibt es im [example Verzeichnis des Computerspieler-Gems bei
 Github](https://github.com/software-challenge/client-ruby/tree/main/example).
 Packt man die beiden Dateien `client.rb` und `main.rb` in ein
 ZIP-Archiv, hat man einen abgabefertigen Computerspieler. Beim Hochladen
@@ -148,7 +148,7 @@ Wettkampfystem als Hauptdatei ausgewählt werden.
 Beachten Sie hierbei, dass diesem Script vom :t[Wettkampfsystem]{#contest} Parameter
 übergeben werden, die an Ihr Programm weitergegeben werden müssen. Diese
 Parameter sind mindestens Host und Port des Spielservers sowie die
-Reservierungsnummer des Spiels, dem der Computerspieler beitreten soll.
+Reservierungsnummer des Spiels, dem der :t[Computerspieler]{#player} beitreten soll.
 Ein Aufruf sieht also in etwa wie folgt aus (falls `start.sh` als
 Hauptdatei eingestellt ist):
 
@@ -192,7 +192,7 @@ Andere Kodierungen führen zu Fehlern bei der Ausführung auf dem Server.
 In Notepad++ kann die Kodierung einfach in dem Tab `Kodierung` angepasst
 werden, die Zeilenenden in `Bearbeiten > Format Zeilenende`.
 
-Bei compilierten Sprachen müssen die Computerspieler für 64bit Linux
+Bei compilierten Sprachen müssen die :t[Computerspieler]{#player} für 64bit Linux
 compiliert werden, bei interpretierten Sprachen muss ein passender
 Interpreter auf dem :t[Wettkampfsystem]{#contest} vorhanden sein. Weiterhin müssen
 Abhängigkeiten wie z.B. genutzte Bibliotheken vorhanden sein oder

@@ -5,9 +5,9 @@
 Am einfachsten ist es die KI auf Grundlage des SimpleClients zu
 schreiben:
 
--   Als erstes muss der SimpleClient heruntergeladen werden
+-   Als erstes muss der Zufallsspieler heruntergeladen werden
     (<http://www.software-challenge.de/downloads/> bitte den
-    SimpleClient als „Quellcode“ downloaden)
+    Zufallsspieler als „Quellcode“ downloaden)
 
 -   Dieser muss nun in Eclips eingebunden werden:
     <https://docs.software-challenge.de/#einrichtung-von-eclipse>
@@ -63,7 +63,7 @@ des SimpleClients.
 
 1.  Arbeite alle anderen Dokumente durch.
 
-2.  Analysiere die Herangehensweise der SimpleClient-KI.
+2.  Analysiere die Herangehensweise der Zufallsspieler-KI.
 
 3.  Schreibe eine KI.
 

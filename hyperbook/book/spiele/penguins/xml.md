@@ -4,146 +4,18 @@ name: XML-Schnittstelle
 
 # Die Schnittstelle zum Server (XML)
 
-Der Spielleiter kommuniziert mit den Computerspielern über eine Netzwerkverbindung. Dadurch ist man aus technischer Sicht komplett flexibel, was die Wahl der Programmiersprache angeht. Die Computerspieler müssen lediglich das Kommunikationsprotokoll erfüllen.
+Der :t[Spielleiter]{#server} kommuniziert mit den Computerspielern über eine Netzwerkverbindung. Dadurch ist man aus technischer Sicht komplett flexibel, was die Wahl der Programmiersprache angeht. Die :t[Computerspieler]{#player} müssen lediglich das Kommunikationsprotokoll erfüllen.
 
-Anfängern wird allerdings davon abgeraten, einen komplett eigenen Client zu schreiben. Es ist deutlich einfacher, auf einem bereitgestellten Simpleclient aufzubauen, da man sich dabei nur um die Strategie und nicht um die Kommunikation kümmern muss. Außerdem wird vom Institut für Informatik die beste Unterstützung für Java/Kotlin geboten.
+Anfängern wird allerdings davon abgeraten, einen komplett eigenen :t[Computerspieler]{#player} zu schreiben. Es ist deutlich einfacher, auf einem bereitgestellten Simpleclient aufzubauen, da man sich dabei nur um die Strategie und nicht um die Kommunikation kümmern muss. Außerdem wird vom Institut für Informatik die beste Unterstützung für Java/Kotlin geboten.
 
 ## Hinweise
 
-Im Verlauf des Wettbewerbes können Elemente zur Kommunikationsschnittstelle hinzugefügt werden, die in dieser Dokumentation nicht aufgeführt sind. Um auch bei solchen Änderungen sicher zu sein, dass ein Client fehlerfrei mit dem Server kommunizieren kann, sollten beim Auslesen des XML jegliche Daten verworfen werden, die hier nicht weiter definiert sind.
+Im Verlauf des Wettbewerbes können Elemente zur Kommunikationsschnittstelle hinzugefügt werden, die in dieser Dokumentation nicht aufgeführt sind. Um auch bei solchen Änderungen sicher zu sein, dass ein :t[Computerspieler]{#player} fehlerfrei mit dem Server kommunizieren kann, sollten beim Auslesen des :t[XML]{#xml} jegliche Daten verworfen werden, die hier nicht weiter definiert sind.
 
 Die bereitgestellten Programme 
 (:t[Server]{#server}, :t[Java-Spieler]{#player}) nutzen eine Bibliothek,
-um Java-Objekte direkt in XML zu konvertieren und umgekehrt.
+um Java-Objekte direkt in :t[XML]{#xml} zu konvertieren und umgekehrt.
 Dabei werden XML-Nachrichten nicht unbedingt mit einem Zeilenumbruch abgeschlossen.
-
-## Einführung in XML
-
-Die Kommunikation zwischen [Spielleiter](https://docs.software-challenge.de/server.html) und [Computerspieler](https://docs.software-challenge.de/der-computerspieler.html) 
-wird mittels XML-Nachrichten realisiert.
-XML ist eine Auszeichnungssprache, d.h eine Sprache,
-die nicht nur die Daten selbst, sondern auch Informationen über die Interpretation oder Bearbeitung liefert.
-Der Vorteil dieser Sprache liegt darin,
-dass sie sowohl vom Computer als auch vom Menschen gut gelesen werden kann.
-Dieser Abschnitt gibt einen Einstieg in die Struktur von XML.
-
-### Tags
-
-Die Grundelemente von XML sind _Tags_. Ein Tag liefert Informationen über die Art der Daten, die verarbeitet werden sollen. In XML wird ein Tag gebildet, indem man den Tagnamen zwischen spitze Klammern setzt. Dabei kennt XML drei verschiedene Tag-Arten:
-
--   Öffnendes Tag: `<Tag>`
-    
--   Schließendes Tag: `</Tag>`
-    
--   Leeres Tag: `<Tag />`
-    
-
-Der Schrägstrich bedeuted, dass das Tag geschlossen wird. Durch den Schrägstrich am Ende wird das soeben geöffnete Tag direkt wieder geschlossen.
-
-Zwischen den öffnenden und schliessenden Tag steht die Information, die mitgeteilt werden soll.
-
-**Hinweis:** XML unterscheidet strikt zwischen Groß- und Kleinschreibung.
-
-#### Bildungsregeln
-
-Die Tags dürfen nicht beliebig in Dokumenten verwendet werden. Es gelten hier die folgenden Regeln:
-
--   Zu jedem öffnenden Tag muss ein schließendes Tag existieren.
-    
--   Man kann Tags ineinander schachteln. Die einzelnen Tags dürfen sich jedoch nicht überkreuzen.
-    
--   Es darf nur ein Root-Tag geben, d.h. es gibt auf oberster Ebene genau ein Tag, in dem alle anderen enthalten sind.
-    
-
-#### Beispiel für korrekte XML-Syntax
-
-```xml
-<addiere>
-    <komplexe_zahl>
-        <realteil>3.5</realteil>
-        <imaginaerteil>4.2</imaginaerteil>
-    </komplexe_zahl>
-    <komplexe_zahl>
-        <realteil>1</realteil>
-        <imaginaerteil>6.9</imaginaerteil>
-    </komplexe_zahl>
-</addiere>
-```
-
-#### Beispiele für fehlerhafte XML-Syntax
-
--   Fehlerhaft, da es mehrere Elemente auf oberster Ebene gibt:
-    
-
-```xml
-<ueberschrift>
-    Beispieldokument
-</ueberschrift>
-<text>
-    Dies ist ein <unterstrichen>Beispieltext</unterstrichen>
-    <absatz />
-    Noch mehr Text
-</text>
-```
-
--   Fehlerhaft, da Tags sich kreuzen:
-    
-
-```xml
-<dokument>
-    <ueberschrift>
-        Beispieldokument
-    </ueberschrift>
-    <text>
-        <kursiv>Dies <unterstrichen>ist </kursiv>ein Beispieltext</unterstrichen>
-        <absatz />
-        Noch mehr Text
-    </text>
-</dokument>
-```
-
-### Attribute
-
-Man kann im Tag auch Attribute einfügen, in denen Informationen übertragen werden:
-
-```xml
-<Tag attribut="wert" />
-```
-
-Auf diese Weise lässt sich das Beispiel mit den komplexen Zahlen etwas übersichtlicher gestalten:
-
-```xml
-<addiere>
-    <komplexe_zahl realteil="3.5" imaginaerteil="4.2" />
-    <komplexe_zahl realteil="1" imaginaerteil="6.9" />
-</addiere>
-```
-
-### Der Header
-
-Wichtig ist auch die erste Zeile in einem XML-Dokument. Aus ihr kann das Computerprogramm erfahren, wie es mit den Daten umzugehen hat (z.B. welcher Zeichensatz benutzt wird). Dieser Header sieht einem Tag sehr ähnlich:
-
-```xml
-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-```
-
-Man nennt so ein Tag, auch _Verarbeitungsinformation_.
-
-Theoretisch darf es in einem XML-Dokument mehrere Verarbeitungsinformationen geben, für die Software-Challenge muss man aber nur den Header kennen.
-
-### Kommentare
-
-Man kann in sein XML-Dokument auch Kommentare einfügen, die beim Einlesen dann ignoriert werden:
-
-```xml
-<!-- Ich bin ein XML-Kommentar -->
-```
-
-Es darf beliebig viele solcher Kommentare geben und sie dürfen nur zwischen Tags stehen.
-
-### Weiterführende Informationen
-
--   [Wikipedia-Artikel über XML](https://de.wikipedia.org/wiki/Extensible_Markup_Language)
 
 ## Das Spielprotokoll
 
@@ -191,9 +63,8 @@ Der Server antwortet auf einen erfolgreichen Spielbeitritt mit:
 <joined roomId="ROOM_ID" />
 ```
 
-ROOM_ID
-
-Identifikationscode der Spielpartie
+- **ROOM_ID**
+  - Identifikationscode der Spielpartie
 
 ### Spielverlauf
 
@@ -201,13 +72,11 @@ Identifikationscode der Spielpartie
 
 Der Server eröffnet das Spiel mit einer Begrüßung und dem initialen Spielstatus sobald beide Spieler verbunden sind.
 
-ROOM_ID
+- **ROOM_ID**
+  - Identifikationscode der Spielpartie
 
-Identifikationscode der Spielpartie
-
-TEAMNUMBER
-
-Spielernummer, eg. `ONE`, `TWO`
+- **TEAMNUMBER**
+  - Spielernummer, eg. `ONE`, `TWO`
 
 #### Syntax der Willkommensnachricht
 
@@ -297,19 +166,14 @@ Danach wird die Verbindung geschlossen.
 
 Zum Spielende erhält jeder Spieler das Ergebnis. Es beginnt mit einer `definition`, die die Interpretation der Ergebnisse erklärt. Für jeden Spieler gibt es einen Eintrag in `scores`. Der darin enthaltene `score` schlüsselt sich auf in:
 
-cause
-
-Beitrag des Spielers zum Spielende (`REGULAR`, `LEFT`, `RULE_VIOLATION`, `SOFT_TIMEOUT`, `HARD_TIMEOUT`)
-
-reason
-
-Erklärung zu `cause`
-
-part
-
-Siegpunkte des Spielers (0 verloren, 1 unentschieden, 2 gewonnen) und weitere Punkteinträge entsprechend `definition`
-
-Wenn es einen Sieger gibt, endet es mit einem `winner`-Tag, welches das Gewinner-Team angibt.
+- **cause**
+  - Beitrag des Spielers zum Spielende (`REGULAR`, `LEFT`, `RULE_VIOLATION`, `SOFT_TIMEOUT`, `HARD_TIMEOUT`).
+- **reason**
+  - Erklärung zu `cause`.
+- **part**
+  - Siegpunkte des Spielers (0 verloren, 1 unentschieden, 2 gewonnen) und weitere Punkteinträge entsprechend `definition`.
+- **winner**
+  - Gibt das Gewinner-Team an, wenn es eines gibt.
 
 Hier ein Beispiel:
 
@@ -349,17 +213,17 @@ Hier ein Beispiel:
 
 ## Administration
 
-Mit einem authentifizierten Client kann man den Server steuern.
+Mit einem authentifizierten :t[Computerspieler]{#player} kann man den Server steuern.
 
 ### Verbindungsaufbau
 
-Zuerst muss sich ein Client mit dem entsprechenden Passwort aus `server.properties` authentifizieren:
+Zuerst muss sich ein :t[Computerspieler]{#player} mit dem entsprechenden Passwort aus `server.properties` authentifizieren:
 
 ```xml
 <protocol><authenticate password="examplepassword"/>
 ```
 
-Ein authentifizierter AdminClient wird benachrichtigt, wenn sich ein Client über ein `JoinRoomRequest` verbindet:
+Ein authentifizierter AdminClient wird benachrichtigt, wenn sich ein :t[Computerspieler]{#player} über ein `JoinRoomRequest` verbindet:
 
 ```xml
 <joinedGameRoom roomId=ROOMID playerCount=X />
@@ -408,18 +272,15 @@ Ein AdminClient kann ein Spiel vorbereiten:
 </prepare>
 ```
 
-pluginId
-
-identifiziert das Spiel (für Hey, Danke für dne Fisch: `swc_2023_pengins`)
+- **pluginId**
+  - identifiziert das Spiel (für Hey, Danke für dne Fisch: `swc_2023_pengins`)
 
 ### Servereinstellungen
 
 Die Servereinstellungen liegen in der `server.properties` Datei, die zusammen mit dem Server heruntergeladen wird. In ihr können folgende Werte konfiguriert werden:
 
-password
+- **password**
+  - lokales Administratorpasswort (standardmäßig auf `examplepassword`)
 
-lokales Administratorpasswort (standardmäßig auf `examplepassword`)
-
-paused
-
-ob ein automatisch angelegtes Spiel anfangs pausiert sein soll oder nicht (standardmäßig pausiert)
+- **paused**
+  - ob ein automatisch angelegtes Spiel anfangs pausiert sein soll oder nicht (standardmäßig pausiert)

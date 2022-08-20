@@ -1,6 +1,6 @@
 # Spielsteine
 
-Es gibt 21 verschiedene Arten Spielsteine. Alle haben im XML einen
+Es gibt 21 verschiedene Arten Spielsteine. Alle haben im :t[XML]{#xml} einen
 Namen. Diese sind:
 
 -   `MONO`

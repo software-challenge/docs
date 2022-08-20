@@ -5,7 +5,7 @@ hide: true
 
 # Spielregeln Blokus: Software-Challenge 2021
 
-Sven Koschnicke &lt;<svk@informatik.uni-kiel.de>&gt;
+ &lt;<tech@software-challenge.de>&gt;
 
 [PDF-Version dieses Dokumentes](regeln.pdf)
 
@@ -80,12 +80,12 @@ Farbe im weiteren Verlauf des Spiels übersprungen (die gelegten Steine
 zählen aber mit in die Wertung). Kann kein Stein irgendeiner Farbe mehr
 gelegt werden, endet das Spiel.
 
-Der Computerspieler hat für das Legen eines Spielsteines zwei Sekunden
+Der :t[Computerspieler]{#player} hat für das Legen eines Spielsteines zwei Sekunden
 Zeit.
 
-Der Spielleiter ruft den Computerspieler nur dann zu einem Zug einer
+Der :t[Spielleiter]{#server} ruft den :t[Computerspieler]{#player} nur dann zu einem Zug einer
 Farbe auf, wenn es auch noch mindestens einen möglichen Zug gibt. Der
-Computerspieler hat dann jedoch auch die Möglichkeit, mit einem
+:t[Computerspieler]{#player} hat dann jedoch auch die Möglichkeit, mit einem
 "Passen"-Zug zu antworten. Dadurch wird die aktuelle Farbe in der
 aktuellen Runde ausgelassen. "Passen" ist erst nach dem ersten Zug
 erlaubt.
@@ -128,23 +128,23 @@ die Datei
 [index.md](https://github.com/software-challenge/docs/blob/master/index.md)
 welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
-<svk@informatik.uni-kiel.de>.
+<tech@software-challenge.de>.
 
 ## Einleitung
 
-Wie in den letzten Jahren wird zur Client-Server Kommunikation ein
+Wie in den letzten Jahren wird zur Computerspieler-Server Kommunikation ein
 XML-Protokoll genutzt. In diesem Dokument wird die
 Kommunikationsschnittstelle definiert, sodass ein komplett eigener
-Client geschrieben werden kann. Es wird hier nicht die vollständige
+:t[Computerspieler]{#player} geschrieben werden kann. Es wird hier nicht die vollständige
 Kommunikation dokumentiert bzw. definiert, dennoch alles, womit ein
-Client umgehen können muss, um spielfähig zu sein.
+:t[Computerspieler]{#player} umgehen können muss, um spielfähig zu sein.
 
 ### An wen richtet sich dieses Dokument?
 
 Die Kommunikation mit dem Spielserver ist für diejenigen, die aufbauend
 auf dem Simpleclient programmieren, unwichtig. Dort steht bereits ein
-funktionierender Client bereit und es muss nur die Spiellogik entworfen
-werden. Nur wer einen komplett eigenen Client entwerfen will,
+funktionierender :t[Computerspieler]{#player} bereit und es muss nur die Spiellogik entworfen
+werden. Nur wer einen komplett eigenen :t[Computerspieler]{#player} entwerfen will,
 beispielsweise um die Programmiersprache frei wählen zu können, benötigt
 die Definitionen.
 
@@ -154,15 +154,15 @@ Falls Sie beabsichtigen sollten, diese Kommunikationsschnittstelle zu
 realisieren, sei darauf hingewiesen, dass es im Verlauf des Wettbewerbes
 möglich ist, dass weitere, hier noch nicht aufgeführte Elemente zur
 Kommunikationsschnittstelle hinzugefügt werden. Um auch bei solchen
-Änderungen sicher zu sein, dass ihr Client fehlerfrei mit dem Server
-kommunizieren kann, empfehlen wir Ihnen, beim Auslesen des XML jegliche
+Änderungen sicher zu sein, dass ihr :t[Computerspieler]{#player} fehlerfrei mit dem Server
+kommunizieren kann, empfehlen wir Ihnen, beim Auslesen des :t[XML]{#xml} jegliche
 Daten zu verwerfen, die hier nicht weiter definiert sind. Die vom
 Institut bereitgestellten Programme (Server, Simpleclient) nutzen eine
-Bibliothek um Java-Objekte direkt in XML zu konvertieren und umgekehrt.
+Bibliothek um Java-Objekte direkt in :t[XML]{#xml} zu konvertieren und umgekehrt.
 Dabei werden XML-Nachrichten nicht unbedingt mit einer newline
 abgeschlossen.
 
-Die XML Dokumentation behandelt ausschließlich die Kommunikation. Falls
+Die :t[XML]{#xml} Dokumentation behandelt ausschließlich die Kommunikation. Falls
 Sie Dokumentation für den Verbindungsaufbau suchen, so finden Sie diese
 [hier](https://docs.software-challenge.de/_computerspieler_abgabefertig_machen.html#andere-sprache).
 
@@ -216,7 +216,7 @@ gegebenen Platz betreten.
 
 #### Welcome Message
 
-Der Server antwortet darauf erst, wenn der zweite Client ebenfalls
+Der Server antwortet darauf erst, wenn der zweite :t[Computerspieler]{#player} ebenfalls
 verbunden ist:
 
 -   ROOM\_ID Id des GameRooms
@@ -370,7 +370,7 @@ Damit sieht beispielsweise ein Zug so aus:
 
 ## Spielsteine
 
-Es gibt 21 verschiedene Arten Spielsteine. Alle haben im XML einen
+Es gibt 21 verschiedene Arten Spielsteine. Alle haben im :t[XML]{#xml} einen
 Namen. Diese sind:
 
 -   `MONO`
@@ -591,8 +591,8 @@ vor dem ersten Zug.
 
 ### Beispiel kompletter Spielstatus
 
-Hier ist das XML eines kompletten beispielhaften Spielstatus, wie es der
-Computerspieler vom Server bekommt:
+Hier ist das :t[XML]{#xml} eines kompletten beispielhaften Spielstatus, wie es der
+:t[Computerspieler]{#player} vom Server bekommt:
 
     <room roomId="cb3bc426-5c70-48b9-9307-943bc328b503">
       <data class="memento">
@@ -646,7 +646,7 @@ Computerspieler vom Server bekommt:
 
 ## Spiel verlassen
 
-Wenn ein Client den Raum verlässt, bekommen die anderen Clients eine
+Wenn ein :t[Computerspieler]{#player} den Raum verlässt, bekommen die anderen Clients eine
 entsprechende Meldung vom Server.
 
 -   `ROOM_ID` Id des GameRooms
@@ -713,7 +713,7 @@ Spieltyp:
 
 ### Variante 1 (AdminClient [Mit Reservierungscode](#mit-reservierungscode))
 
-Ein Client registriert sich als Administrator mit dem in
+Ein :t[Computerspieler]{#player} registriert sich als Administrator mit dem in
 server.properties festgelegten Passwort pw:
 
     <protocol><authenticate password="pw" />
@@ -912,7 +912,7 @@ Daraufhin wird der erste Spieler aufgefordert einen Zug zu senden:
       <data class="sc.framework.plugins.protocol.MoveRequest" />
     </room>
 
-Der Client des CurrentPlayer sendet nun einen Zug ([ZUG](#zug)):
+Der :t[Computerspieler]{#player} des CurrentPlayer sendet nun einen Zug ([ZUG](#zug)):
 
     <room roomId="cb3bc426-5c70-48b9-9307-943bc328b503">
       <data class="sc.plugin2021.SetMove">

@@ -12,7 +12,7 @@ die Datei
 [index.md](https://github.com/software-challenge/docs/blob/master/index.md)
 welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
-<svk@informatik.uni-kiel.de>.
+<tech@software-challenge.de>.
 
 # Spielbeginn
 

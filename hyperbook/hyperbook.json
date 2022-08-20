@@ -8,7 +8,7 @@
     "url": "https://software-challenge.de"
   },
   "language": "de",
-  "repo": "https://github.com/software-challenge/docs",
+  "repo": "https://github.com/software-challenge/docs/tree/main/hyperbook",
   "logo": "/logo.svg",
   "colors":{
     "brand": "#3276AD"

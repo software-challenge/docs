@@ -22,9 +22,9 @@ da so die :t[XML-Schnittstelle]{#xml} nicht beachtet werden muss.
 Deshalb muss auf den ausführenden Rechnern 
 auch das [Java SDK installiert](entwicklung/installation-von-java) sein.
 
-## Der SimpleClient
+## Der Zufallsspieler
 
-Der SimpleClient ist ein Computerspieler, den das Institut für
+Der Zufallsspieler ist ein Computerspieler, den das Institut für
 Informatik ins Rennen schickt. Er stellt zwar eine korrekte Lösung der
 gestellten Aufgabe dar, ist aber nicht besonders intelligent. Neben dem
 eigentlichen Programm ist auch der Quellcode des SimpleClients
@@ -35,13 +35,13 @@ nicht den ganzen Computerspieler selbst entwickeln, sondern können sich
 auf den Entwurf und die Implementierung ihrer eigenen Strategie
 konzentrieren.
 
-## Der NotSoSimpleClient
+## Der Fortgeschrittener Spieler
 
 Wenn die aktuelle Saison der Software-Challenge etwas weiter
 fortgeschritten ist, stellt das Institut einen stärkeren Computerspieler
-zur Verfügung: den NotSoSimpleClient. Das ist ein Spieler, der eine
-effizientere Strategie zur Lösung der Aufgabe als der SimpleClient
+zur Verfügung: den Fortgeschrittener Spieler. Das ist ein Spieler, der eine
+effizientere Strategie zur Lösung der Aufgabe als der Zufallsspieler
 verfolgt und dadurch nicht mehr so leicht zu schlagen ist. Dieser
 Spieler wird ohne den Quellcode veröffentlicht, so dass die Schüler den
-NotSoSimpleClient zwar als Gegenspieler für Testspiele nehmen, jedoch
+Fortgeschrittener Spieler zwar als Gegenspieler für Testspiele nehmen, jedoch
 nicht den Quellcode für den eigenen Spieler weiterverwenden können.
