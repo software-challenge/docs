@@ -259,6 +259,7 @@ In `board` entsprechen die Positionen der Felder auf dem Spielfeld in [odd-r Koo
 Der Inhalt der `field` Objekte steht für die Anzahl Fishe auf dem Feld, oder für einen Pinguin eines Spielers. In ersterem Fall steht eine Zahl in dem XML-Objekt und in letzterem Fall der Name des Spielers der den Pinguin gehört.
 
 `x`: `<field>` index in `<list>`
+
 `y`: `<list>` index in `<board>`
 
 Beachtet, dass der XML-Status [odd-r Koordinaten](https://www.redblobgames.com/grids/hexagons/#neighbors-offset) nutzt, und dass die Koordinaten in Zügen als [doubled Koordinaten](https://www.redblobgames.com/grids/hexagons/#neighbors-doubled) interpretiert werden.
