@@ -28,8 +28,9 @@ jobs:
         npx hyperbook build
 
         echo "== creating commit..."
+        unset GIT_DIR
+        unset GIT_WORK_TREE
         cd .hyperbook/out
-        pwd
         git config user.email "info@software-challenge.de"
         git config user.name "GitHub Publish Action"
         git add --all
@@ -39,6 +40,7 @@ jobs:
     - name: Deploy
       if: github.ref == 'refs/heads/main'
       run: |
+        pwd
         cd hyperbook/.hyperbook/out
         git push https://socha-bot:${{ secrets.ACCESS_TOKEN }}@github.com/software-challenge/docs
 
