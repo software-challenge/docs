@@ -9,7 +9,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    # Setup the docs
+    - name: Checkout live branch
+      uses: actions/checkout@v3
+      with:
+        ref: live
+        path: hyperbook/.hyperbook/out
+
+    # Setup the doc
     - name: Generate
       run: |
         cd hyperbook
@@ -17,12 +23,13 @@ jobs:
 
         message="$(git log --format='Deploy %h %<|(50,trunc)%f' -1)"
 
-        echo "== getting live branch..."
-        git clone https://github.com/software-challenge/docs --branch live --single-branch .hyperbook/out
+        echo "== updating live branch..."
+        rm -rf .hyperbook/out/*
         npx hyperbook build
 
         echo "== creating commit..."
         cd .hyperbook/out
+        pwd
         git config user.email "info@software-challenge.de"
         git config user.name "GitHub Publish Action"
         git add --all
