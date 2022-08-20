@@ -31,6 +31,8 @@ jobs:
         unset GIT_DIR
         unset GIT_WORK_TREE
         cd .hyperbook/out
+        pwd
+        ls --all -l
         git config user.email "info@software-challenge.de"
         git config user.name "GitHub Publish Action"
         git add --all
