@@ -15,32 +15,19 @@ jobs:
         cd hyperbook
         npx hyperbook setup
 
-    - name: Checkout live branch
-      uses: actions/checkout@v3
-      with:
-        ref: live
-        path: hyperbook/live
-
     - name: Build documentation
+      id: build
       run: |
-        cd hyperbook/
+        cd hyperbook
         npx hyperbook build
-        rm -rf live/* .hyperbook/out/_next
-        cp -r .hyperbook/out/* live/
-
-    - name: Commit changes
-      run: |
-        cd hyperbook/
-        message="$(git log --format='Deploy %h %<|(50,trunc)%f' -1)"
-        cd live/
-        git config user.email "info@software-challenge.de"
-        git config user.name "GitHub Publish Action"
-        git add --all
-        git commit -m "$message"
+        echo "::set-output name=message::$(git log --format='Deploy %h %<|(50,trunc)%f' -1)"
 
     - name: Push generated documentation to live branch
-      env:
-        pushtoken: ${{ secrets.PUSH_TOKEN }}
-      run: |
-        cd hyperbook/live/
-        git push https://socha-bot:$pushtoken@github.com/software-challenge/docs
+      uses: peaceiris/actions-gh-pages@v3
+      #if: ${{ github.ref == 'refs/heads/main' }}
+      with:
+        github_token: ${{ secrets.PUSH_TOKEN }}
+        publish_dir: hyperbook/.hyperbook/out
+        user_name: "GitHub Publish Action"
+        user_email: info@software-challenge.de
+        full_commit_message: ${{steps.build.outputs.message}}
