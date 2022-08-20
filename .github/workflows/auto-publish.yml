@@ -39,6 +39,8 @@ jobs:
         git commit -m "$message"
 
     - name: Push generated documentation to live branch
+      env:
+        pushtoken: ${{ secrets.ACCESS_TOKEN }}
       run: |
         cd hyperbook/live/
-        git push https://socha-bot:${{ secrets.ACCESS_TOKEN }}@github.com/software-challenge/docs
+        git push https://socha-bot:$pushtoken@github.com/software-challenge/docs
