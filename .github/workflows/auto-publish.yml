@@ -29,6 +29,8 @@ jobs:
 
         echo "== updating live branch..."
         npx hyperbook build
+        rm -rf live/*
+        ls -al live/
         cp -r .hyperbook/out/* live/
         cd live/
 
