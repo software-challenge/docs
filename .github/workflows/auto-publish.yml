@@ -29,8 +29,7 @@ jobs:
 
         echo "== updating live branch..."
         npx hyperbook build
-        rm -rf live/*
-        ls -al live/
+        rm -rf live/* .hyperbook/out/_next
         cp -r .hyperbook/out/* live/
         cd live/
 
@@ -42,8 +41,6 @@ jobs:
 
     # Push the generated docs to the live branch
     - name: Deploy
-      if: github.ref == 'refs/heads/main'
       run: |
-        pwd
-        cd hyperbook/.hyperbook/out
+        cd hyperbook/live
         git push https://socha-bot:${{ secrets.ACCESS_TOKEN }}@github.com/software-challenge/docs
