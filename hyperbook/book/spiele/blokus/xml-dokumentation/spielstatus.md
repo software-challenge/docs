@@ -174,8 +174,8 @@ vor dem ersten Zug.
 
 ## Beispiel kompletter Spielstatus
 
-Hier ist das XML eines kompletten beispielhaften Spielstatus, wie es der
-Computerspieler vom Server bekommt:
+Hier ist das :t[XML]{#xml} eines kompletten beispielhaften Spielstatus, wie es der
+:t[Computerspieler]{#player} vom Server bekommt:
 
     <room roomId="cb3bc426-5c70-48b9-9307-943bc328b503">
       <data class="memento">

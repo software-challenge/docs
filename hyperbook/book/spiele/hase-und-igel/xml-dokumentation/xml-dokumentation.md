@@ -12,23 +12,23 @@ die Datei
 [index.md](https://github.com/software-challenge/docs/blob/master/index.md)
 welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
 auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
-<svk@informatik.uni-kiel.de>.
+<tech@software-challenge.de>.
 
 # Einleitung
 
-Wie in den letzten Jahren wird zur Client-Server Kommunikation ein
+Wie in den letzten Jahren wird zur Computerspieler-Server Kommunikation ein
 XML-Protokoll genutzt. In diesem Dokument wird die
 Kommunikationsschnittstelle definiert, sodass ein komplett eigener
-Client geschrieben werden kann. Es wird hier nicht die vollständige
+:t[Computerspieler]{#player} geschrieben werden kann. Es wird hier nicht die vollständige
 Kommunikation dokumentiert bzw. definiert, dennoch alles, womit ein
-Client umgehen können muss, um spielfähig zu sein.
+:t[Computerspieler]{#player} umgehen können muss, um spielfähig zu sein.
 
 ## An wen richtet sich dieses Dokument?
 
 Die Kommunikation mit dem Spielserver ist für diejenigen, die aufbauend
 auf dem Simpleclient programmieren, unwichtig. Dort steht bereits ein
-funktionierender Client bereit und es muss nur die Spiellogik entworfen
-werden. \\\\ Nur wer einen komplett eigenen Client entwerfen will,
+funktionierender :t[Computerspieler]{#player} bereit und es muss nur die Spiellogik entworfen
+werden. \\\\ Nur wer einen komplett eigenen :t[Computerspieler]{#player} entwerfen will,
 beispielsweise um die Programmiersprache frei wählen zu können, benötigt
 die Definitionen.
 
@@ -38,11 +38,11 @@ Falls Sie beabsichtigen sollten, diese Kommunikationsschnittstelle zu
 realisieren, sei darauf hingewiesen, dass es im Verlauf des Wettbewerbes
 möglich ist, dass weitere, hier noch nicht aufgeführte Elemente zur
 Kommunikationsschnittstelle hinzugefügt werden. Um auch bei solchen
-Änderungen sicher zu sein, dass ihr Client fehlerfrei mit dem Server
-kommunizieren kann, empfehlen wir Ihnen, beim Auslesen des XML jegliche
+Änderungen sicher zu sein, dass ihr :t[Computerspieler]{#player} fehlerfrei mit dem Server
+kommunizieren kann, empfehlen wir Ihnen, beim Auslesen des :t[XML]{#xml} jegliche
 Daten zu verwerfen, die hier nicht weiter definiert sind. Die vom
 Institut bereitgestellten Programme (Server, Simpleclient) nutzen eine
-Bibliothek um Java-Objekte direkt in XML zu konvertieren und umgekehrt.
+Bibliothek um Java-Objekte direkt in :t[XML]{#xml} zu konvertieren und umgekehrt.
 Dabei werden XML-Nachrichten nicht mit einem newline abgeschlossen.
 
 # Spiel betreten
@@ -95,7 +95,7 @@ gegebenen Platz betreten.
 
 ### Welcome Message
 
-Der Server antwortet darauf nur, wenn der zweite Client ebenfalls
+Der Server antwortet darauf nur, wenn der zweite :t[Computerspieler]{#player} ebenfalls
 verbunden ist:
 
 -   ROOM\_ID Id des GameRooms
@@ -317,7 +317,7 @@ Eine einfache Nachricht fordert zum Zug auf:
 
 # Fehler
 
-Ein “spielfähiger” Client muss nicht mit Fehlern umgehen können.
+Ein “spielfähiger” :t[Computerspieler]{#player} muss nicht mit Fehlern umgehen können.
 Fehlerhafte Züge beispielsweise resultieren in einem vorzeitigen Ende
 des Spieles, das im nächsten gesendeten Gamestate erkannt werden kann
 (siehe [Spielergebnis](#spielende)).
@@ -336,7 +336,7 @@ des Spieles, das im nächsten gesendeten Gamestate erkannt werden kann
 
 # Spiel verlassen
 
-Wenn ein Client den Raum verlässt, bekommen die anderen Clients eine
+Wenn ein :t[Computerspieler]{#player} den Raum verlässt, bekommen die anderen Clients eine
 entsprechende Meldung vom Server.
 
 -   ROOM\_ID Id des GameRooms
@@ -423,7 +423,7 @@ Spieltyp:
 
 ## Variante 1 (AdminClient [Mit Reservierungscode](#mit-reservierungscode))
 
-Ein Client registriert sich als Administrator mit dem in
+Ein :t[Computerspieler]{#player} registriert sich als Administrator mit dem in
 server.properties festgelegten Passwort p:
 
     <protocol><authenticate passphrase="p"/>
@@ -563,7 +563,7 @@ Daraufhin wird der erste Spieler aufgefordert einen Zug zu senden:
       <data class="sc.framework.plugins.protocol.MoveRequest"/>
     </room>
 
-Der Client des CurrentPlayer sendet nun einen Zug ([ZUG](#zug)):
+Der :t[Computerspieler]{#player} des CurrentPlayer sendet nun einen Zug ([ZUG](#zug)):
 
     <room roomId="871faccb-5190-4e44-82fc-6cdcbb493726">
       <data class="move">

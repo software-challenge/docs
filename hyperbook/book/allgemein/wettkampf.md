@@ -21,7 +21,7 @@ Teamanzahl in einer der Gruppen setzt an jedem Spieltag eines der Teams
 aus.
 
 Vor Beginn des ersten Spieltages soll jedes Team einen funktionsfähigen
-Client über das Online-Abgabesystem eingeschickt haben. Zwischen den
+:t[Computerspieler]{#player} über das Online-Abgabesystem eingeschickt haben. Zwischen den
 Spieltagen besteht die Möglichkeit, Clients ebenfalls über dieses System
 zu aktualisieren. Über das Online-Abgabesystem werden auch die
 Ergebnisse, Ranglisten etc. veröffentlicht.
@@ -37,17 +37,17 @@ Anzahl der Siegpunkte aus den bisherigen Spielen verwendet. Wenn am Ende
 einer Meisterschaft zwei Teams denselben Platz belegen, entscheidet das
 Los.
 
-## Die Champions-League
+## Die Champions League
 
 In diese zweite Phase (Mitte April bis Mitte Mai) kommen die besten acht
-Teams einer jeden Gruppe aus der ersten Phase. Die Champions-League wird
+Teams einer jeden Gruppe aus der ersten Phase. Die Champions League wird
 nach dem gleichen Schema wie eine Meisterschaft ausgespielt.
 
 ## Das Final Eight
 
 An der dritten Phase, dem Final Eight, das im Juni in Kiel stattfindet,
 nehmen die ersten acht Mannschaften der Rangliste aus der
-Champions-League teil. Viertelfinale, Halbfinale, Kleines Finale (=
+Champions League teil. Viertelfinale, Halbfinale, Kleines Finale (=
 Spiel um den 3. Platz) und Finale werden im KO-System gespielt.
 
 Jede Begegnung besteht aus jeweils sechs Spielen, wobei das Recht des
@@ -69,7 +69,7 @@ ersten Zuges abwechselt.
 
 Die Zugzeit ist für jeden Zug auf zwei Sekunden begrenzt. Dabei gilt für
 die Rechenzeit die im Institut verwendete Hardware als Referenz. Jeder
-Client wird dabei auf einer eigenen virtuellen Maschine mit unten
+:t[Computerspieler]{#player} wird dabei auf einer eigenen virtuellen Maschine mit unten
 stehenden Spezifikationen ausgeführt.
 
 Sollte ein Spieler einen ungültigen Zug setzen oder die maximale Zugzeit
@@ -101,12 +101,12 @@ laufen die :t[Computerspieler]{#player} auf den Servern des Wettkampfsystems.
 
 ### Log-Ausgabe
 
-Die Computerspieler laufen im :t[Wettkampfsystem]{#contest} ohne eine grafische
+Die :t[Computerspieler]{#player} laufen im :t[Wettkampfsystem]{#contest} ohne eine grafische
 Oberfläche, sie können also keine Fenster oder ähnliches anzeigen. Der
 Versuch eines Computerspielers, so etwas trotzdem zu tun, wird
 wahrscheinlich zum Absturz des Computerspielers führen.
 
-Die Computerspieler können jedoch Text auf die beiden
+Die :t[Computerspieler]{#player} können jedoch Text auf die beiden
 Standard-Ausgabedatenströme "stdout" und "stderr" schreiben. Diese
 Ausgaben finden sich dann in den Log-Dateien wieder, die nach Beenden
 eines Spiels über das :t[Wettkampfsystem]{#contest} verfügbar sind.
@@ -119,18 +119,18 @@ geschrieben wurden, zugegriffen werden.
 
 ### Weitere Ausführungsumgebung
 
-Der Computerspieler wird in einem sogenannten "Docker Container"
+Der :t[Computerspieler]{#player} wird in einem sogenannten "Docker Container"
 ausgeführt, welcher die verfügbaren Bibliotheken und Programme bestimmt.
 Folgende Container-Images können genutzt werden:
 
 | Bezeichnung        | Image-Name                                                                                   | Beschreibung                                                                                                               |
 | ------------------ | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Java 8             | [openjdk:8u151-jre](https://hub.docker.com/_/openjdk/)                                       | Open Source Java Platform, Standard Edition, Version 1.8.0. Für alle Computerspieler auf Basis des Java SimpleClients.     |
-| Ruby 2             | [ruby:2.4.2](https://hub.docker.com/_/ruby/) mit installiertem Software-Challenge-Client-Gem | Ruby Interpreter, Version 2.4.2. Für alle Computerspieler auf Basis des Ruby SimpleClients.                                |
-| Python 3           | [python:3.6.3](https://hub.docker.com/_/python/)                                             | Python Interpreter, Version 3.6.3. Für selbst entwickelte Computerspieler in Python.                                       |
-| Mono 5.4 (C# .NET) | [mono:5.4.1.6](https://hub.docker.com/_/mono/)                                               | Mono Laufzeitumgebung, Version 5.4.1.6. Für selbst entwickelte Computerspieler basierend auf dem Microsoft .NET Framework. |
+| Java 8             | [openjdk:8u151-jre](https://hub.docker.com/_/openjdk/)                                       | Open Source Java Platform, Standard Edition, Version 1.8.0. Für alle :t[Computerspieler]{#player} auf Basis des Java SimpleClients.     |
+| Ruby 2             | [ruby:2.4.2](https://hub.docker.com/_/ruby/) mit installiertem Software-Challenge-Computerspieler-Gem | Ruby Interpreter, Version 2.4.2. Für alle :t[Computerspieler]{#player} auf Basis des Ruby SimpleClients.                                |
+| Python 3           | [python:3.6.3](https://hub.docker.com/_/python/)                                             | Python Interpreter, Version 3.6.3. Für selbst entwickelte :t[Computerspieler]{#player} in Python.                                       |
+| Mono 5.4 (C# .NET) | [mono:5.4.1.6](https://hub.docker.com/_/mono/)                                               | Mono Laufzeitumgebung, Version 5.4.1.6. Für selbst entwickelte :t[Computerspieler]{#player} basierend auf dem Microsoft .NET Framework. |
 
-Wenn Ihr Computerspieler eine speziellere Umgebung benötigt (zum
+Wenn Ihr :t[Computerspieler]{#player} eine speziellere Umgebung benötigt (zum
 Beispiel ein hier nicht angebotener Interpreter), nehmen sie bitte mit
-uns Kontakt auf (<svk@informatik.uni-kiel.de>). Wir stellen gern weitere
+uns Kontakt auf (<tech@software-challenge.de>). Wir stellen gern weitere
 Images zur Verfügung.

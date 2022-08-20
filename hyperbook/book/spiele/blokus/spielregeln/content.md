@@ -56,12 +56,12 @@ Farbe im weiteren Verlauf des Spiels übersprungen (die gelegten Steine
 zählen aber mit in die Wertung). Kann kein Stein irgendeiner Farbe mehr
 gelegt werden, endet das Spiel.
 
-Der Computerspieler hat für das Legen eines Spielsteines zwei Sekunden
+Der :t[Computerspieler]{#player} hat für das Legen eines Spielsteines zwei Sekunden
 Zeit.
 
-Der Spielleiter ruft den Computerspieler nur dann zu einem Zug einer
+Der :t[Spielleiter]{#server} ruft den :t[Computerspieler]{#player} nur dann zu einem Zug einer
 Farbe auf, wenn es auch noch mindestens einen möglichen Zug gibt. Der
-Computerspieler hat dann jedoch auch die Möglichkeit, mit einem
+:t[Computerspieler]{#player} hat dann jedoch auch die Möglichkeit, mit einem
 "Passen"-Zug zu antworten. Dadurch wird die aktuelle Farbe in der
 aktuellen Runde ausgelassen. "Passen" ist erst nach dem ersten Zug
 erlaubt.

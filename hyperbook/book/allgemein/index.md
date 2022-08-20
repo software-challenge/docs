@@ -18,7 +18,7 @@ gesamten Schuljahres läuft, und der den Schülerinnen und Schülern die
 Möglichkeit bietet, mit Spaß und Spannung sowie mit kompetenter
 Begleitung in die Welt der Informatik einzusteigen. Am Ende der
 Entwicklungsphase schickt jedes Team (Kurs oder AG) einen selbst
-programmierten Computerspieler für das Spiel in den Wettkampf. Dieser
+programmierten :t[Computerspieler]{#player} für das Spiel in den Wettkampf. Dieser
 Wettkampf besteht zunächst aus einer kompletten Meisterschaft (jeder
 gegen jeden) und anschließend aus einem Finale der 8 führenden Teams
 (Final Eight). Als Preise winken neben zahlreichen Sachpreisen auch
@@ -35,8 +35,8 @@ mindestens 3 SchülerInnen und einer betreuenden Lehrkraft bestehen.
 Jeder Kurs bzw. jede AG darf nur ein Team anmelden. Dabei kann es in der
 Anfangsphase durchaus Sinn machen, intern in einem Team mehrere Gruppen
 zu bilden, um z.B. unterschiedliche Strategien zu testen und
-Computerspieler zu entwickeln. Spätestens zu Beginn der Wettkampfphase
-muss sich das Team jedoch auf einen Computerspieler einigen, der dann in
+:t[Computerspieler]{#player} zu entwickeln. Spätestens zu Beginn der Wettkampfphase
+muss sich das Team jedoch auf einen :t[Computerspieler]{#player} einigen, der dann in
 den Wettkampf geschickt und dann eventuell noch gemeinsam
 weiterentwickelt wird. In begründeten Einzelfällen kann die
 Wettkampfleitung Ausnahmen von den zuvor genannten Regeln zulassen.
@@ -71,13 +71,13 @@ aktualisieren.
 ## Die Aufgabe
 
 Die Software-Challenge basiert jedes Jahr auf einem Brettspiel, für das
-ein Computerspieler geschrieben werden soll und das entweder selbst
+ein :t[Computerspieler]{#player} geschrieben werden soll und das entweder selbst
 entwickelt oder auf Basis eines existierenden Brettspiels modifiziert
 wird. Im letzteren Fall werden wir durch die Spiel-Verlage unterstützt,
 indem diese uns die Genehmigung erteilen und Grafiken zur Verfügung
 stellen. Bei der Entwicklung bzw. Modifizierung der Spiele versuchen wir
 zu erreichen, dass die Spiele interessant, abwechslungsreich und nicht
 zu kompliziert sind und dass die Glückskomponente nicht dominiert. Ein
-sehr guter Computerspieler soll sich also langfristig gegen schwächere
+sehr guter :t[Computerspieler]{#player} soll sich also langfristig gegen schwächere
 durchsetzen, wobei es durchaus vorkommen darf, dass er bei viel Pech
 auch mal verliert.

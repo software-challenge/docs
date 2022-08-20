@@ -8,7 +8,7 @@ Spieltyp:
 
 ## Variante 1 (AdminClient [???](#mit-reservierungscode))
 
-Ein Client registriert sich als Administrator mit dem in
+Ein :t[Computerspieler]{#player} registriert sich als Administrator mit dem in
 server.properties festgelegten Passwort pw:
 
     <protocol><authenticate password="pw" />
@@ -207,7 +207,7 @@ Daraufhin wird der erste Spieler aufgefordert einen Zug zu senden:
       <data class="sc.framework.plugins.protocol.MoveRequest" />
     </room>
 
-Der Client des CurrentPlayer sendet nun einen Zug ([???](#zug)):
+Der :t[Computerspieler]{#player} des CurrentPlayer sendet nun einen Zug ([???](#zug)):
 
     <room roomId="cb3bc426-5c70-48b9-9307-943bc328b503">
       <data class="sc.plugin2021.SetMove">
