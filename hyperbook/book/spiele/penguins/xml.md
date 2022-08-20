@@ -233,10 +233,17 @@ Der Status der oben in dem data memento objekt enthalten ist, ist beispielsweise
 	<list>
 	  <field>1</field>
 	  <field>2</field>
+	  <field>2</field>
 	</list>
 	<list>
 	  <field>2</field>
-	  <field>3</field>
+	  <field>ONE</field>
+	  <field>2</field>
+	</list>
+	<list>
+	  <field>TWO</field>
+	  <field>4</field>
+	  <field>1</field>
 	</list>
   </board>
   <fishes>
@@ -246,8 +253,15 @@ Der Status der oben in dem data memento objekt enthalten ist, ist beispielsweise
 </state>
 ```
 
-Es enthält die Zugnummer in ``turn``, das anfangende Team in ``startTeam``, eine Liste an Feldern in ``board`` und die Anzahl Fishe jedes Spielers in ``fishes``.
-In `board` entsprechen die Positionen der Felder auf dem Spielfeld ihrer Positionen in der Liste => `x` Koordinate und der Position ihrer Liste im Board => `y` Koordinate. Die Zahl innerhalb der `field` objekte steht für die Anzahl Fishe auf dem Feld.
+Es enthält die Zugnummer in ``turn``, das anfangende Team in ``startTeam``, eine Liste an Feldern in ``board`` und die Anzahl Fishe beider Spielers in ``fishes``, zuerst die von ONE und danach die von TWO.
+
+In `board` entsprechen die Positionen der Felder auf dem Spielfeld in [odd-r Koordinaten](https://www.redblobgames.com/grids/hexagons/#neighbors-offset) ihrer Positionen in der XML Struktur. Von oben bei null anfangend werden die `<list>` Objekte in `<board>` durchgezählt. Die Nummer der List in dem das Field Objekt ist, ist seine `y` Kooridnate.  Auf die gleiche Weise entspricht die `x` Koordinate eines Felds seiner Nummer innerhalb des `<list>` Objekts.  
+Der Inhalt der `field` Objekte steht für die Anzahl Fishe auf dem Feld, oder für einen Pinguin eines Spielers. In ersterem Fall steht eine Zahl in dem XML-Objekt und in letzterem Fall der Name des Spielers der den Pinguin gehört.
+
+`x`: `<field>` index in `<list>`
+`y`: `<list>` index in `<board>`
+
+Beachtet, dass der XML-Status [odd-r Koordinaten](https://www.redblobgames.com/grids/hexagons/#neighbors-offset) nutzt, und dass die Koordinaten in Zügen als [doubled Koordinaten](https://www.redblobgames.com/grids/hexagons/#neighbors-doubled) interpretiert werden.
 
 #### Spielablauf
 
@@ -259,25 +273,34 @@ Der erste Spieler erhält dann eine Zugaufforderung:
 </room>
 ```
 
-Worauf dieser innerhalb der gesetzten Zeitbeschränkung mit einem [[Zug]](spiele/penguins_xml#zug) antwortet:
+Worauf dieser innerhalb der gesetzten Zeitbeschränkung mit einem der folgenden Zug-Typen antwortet:
+
+##### Normaler Zug
 
 ```xml
 <room roomId="ROOM_ID">
   <data class="move">
-    ZUG
+    <from x="0" y="7"/>
+    <to x="4" y="5"/>
   </data>
 </room>
 ```
 
-#### Zug
+Ein normaler Zug besteht aus einem ``from`` und einem ``to`` Vektor, welche beide `x` und `y` Werte in [doubled Koordinaten](https://www.redblobgames.com/grids/hexagons/#neighbors-doubled) enthalten.
 
-Ein Zug besteht aus einem ``from`` und einem ``to`` Vektor, welche beide `x` und `y` Werte enthalten.
+##### Lege Zug
 
-Beispiel:
 ```xml
-<from x="0" y="7"/>
-<to x="17" y="5"/>
+<room roomId="ROOM_ID">
+  <data class="move">
+    <to x="1" y="2"/>
+  </data>
+</room>
 ```
+
+Ein Lege-Zug besteht aus einem ``to`` Vektor, welcher `x` und `y` Werte in [doubled Koordinaten](https://www.redblobgames.com/grids/hexagons/#neighbors-doubled) enthält.
+
+##### Weiteres
 
 Nach Erhalt des Zuges sendet der Server den neuen Spielstatus an alle Spieler 
 und dem nächsten Spieler eine Zugaufforderung.
