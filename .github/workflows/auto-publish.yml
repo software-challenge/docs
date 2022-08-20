@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         ref: live
-        path: hyperbook/.hyperbook/out
+        path: hyperbook/live
 
     # Setup the doc
     - name: Generate
@@ -28,16 +28,11 @@ jobs:
         cd hyperbook
 
         echo "== updating live branch..."
-        ls --all -l .hyperbook/out
-        # rm -vrf .hyperbook/out/*
         npx hyperbook build
+        cp -r .hyperbook/out/* live/
+        cd live/
 
         echo "== creating commit..."
-        unset GIT_DIR
-        unset GIT_WORK_TREE
-        cd .hyperbook/out
-        pwd
-        ls --all -l
         git config user.email "info@software-challenge.de"
         git config user.name "GitHub Publish Action"
         git add --all
@@ -50,8 +45,3 @@ jobs:
         pwd
         cd hyperbook/.hyperbook/out
         git push https://socha-bot:${{ secrets.ACCESS_TOKEN }}@github.com/software-challenge/docs
-
-    - name: Cleanup
-      run: |
-        echo "== cleaning up"
-        rm -rf ./.hyperbook
