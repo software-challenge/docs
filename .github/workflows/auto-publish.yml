@@ -10,7 +10,7 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v3
 
-    - name: Setup
+    - name: Setup Hyperbook
       run: |
         cd hyperbook
         npx hyperbook setup
@@ -21,26 +21,24 @@ jobs:
         ref: live
         path: hyperbook/live
 
-    # Setup the doc
-    - name: Generate
+    - name: Build documentation
       run: |
-        message="$(git log --format='Deploy %h %<|(50,trunc)%f' -1)"
-        cd hyperbook
-
-        echo "== updating live branch..."
+        cd hyperbook/
         npx hyperbook build
         rm -rf live/* .hyperbook/out/_next
         cp -r .hyperbook/out/* live/
-        cd live/
 
-        echo "== creating commit..."
+    - name: Commit changes
+      run: |
+        cd hyperbook/
+        message="$(git log --format='Deploy %h %<|(50,trunc)%f' -1)"
+        cd live/
         git config user.email "info@software-challenge.de"
         git config user.name "GitHub Publish Action"
         git add --all
         git commit -m "$message"
 
-    # Push the generated docs to the live branch
-    - name: Deploy
+    - name: Push generated documentation to live branch
       run: |
-        cd hyperbook/live
+        cd hyperbook/live/
         git push https://socha-bot:${{ secrets.ACCESS_TOKEN }}@github.com/software-challenge/docs
