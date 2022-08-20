@@ -27,6 +27,7 @@ jobs:
       #if: ${{ github.ref == 'refs/heads/main' }}
       with:
         github_token: ${{ secrets.PUSH_TOKEN }}
+        publish_branch: live
         publish_dir: hyperbook/.hyperbook/out
         user_name: "GitHub Publish Action"
         user_email: info@software-challenge.de
