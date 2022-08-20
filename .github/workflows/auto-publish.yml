@@ -7,7 +7,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Setup
+      run: |
+        cd hyperbook
+        npx hyperbook setup
 
     - name: Checkout live branch
       uses: actions/checkout@v3
@@ -18,13 +24,12 @@ jobs:
     # Setup the doc
     - name: Generate
       run: |
-        cd hyperbook
-        npx hyperbook setup
-
         message="$(git log --format='Deploy %h %<|(50,trunc)%f' -1)"
+        cd hyperbook
 
         echo "== updating live branch..."
-        rm -rf .hyperbook/out/*
+        ls --all -l .hyperbook/out
+        # rm -vrf .hyperbook/out/*
         npx hyperbook build
 
         echo "== creating commit..."
