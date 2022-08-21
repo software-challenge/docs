@@ -9,7 +9,7 @@ Eventuell hat manche(r) schon erlebt, dass man von einer/m Bekannten ein
 Stück Programmcode bekommen hat, den man gar nicht versteht. Oft
 versteht man sogar nach einiger Zeit seine eigenen Codezeilen nicht
 mehr. Meistens liegt das gar nicht an den komplizierten Algorithmen,
-sondern an einen schlechten Programmierstil. Deshalb gibt es für alle
+sondern an einem schlechten Programmierstil. Deshalb gibt es für alle
 Programmiersprachen sog. Style Guides, also Regeln für den Aufbau von
 Quelltexten.
 
@@ -21,13 +21,13 @@ werden.
 
 -   Keine Zeile sollte länger als 80 Zeichen sein. Gerade in Zeiten
     großer Breitbildschirme ist das wohl eine der schwierigsten Regeln
-    überhaupt. Man muss aber davon ausgehen, das nicht jeder, der den
+    überhaupt. Man muss aber davon ausgehen, dass nicht jeder, der den
     Code lesen will, auch einen ähnlich breiten Bildschirm hat. Außerdem
     ist meistens die Schriftgröße zum Drucken so eingestellt, dass
     höchstens 80 Zeichen in eine Zeile passen
 
--   In einer Klasse sollten immer als erstes die globalen Variablen,
-    dann die Konstruktoren und als letztes die Methoden auftauchen
+-   In einer Klasse sollten immer als Erstes die globalen Variablen,
+    dann die Konstruktoren und als Letztes die Methoden auftauchen
 
 -   Klassennamen sollten im *CamelCase* geschrieben werden, also jedes
     Teilwort wird mit einem Großbuchstaben geschrieben (z.B.

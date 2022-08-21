@@ -41,7 +41,7 @@ die entsprechende Stelle im Code.
 ### Problems
 
 Der Tab Problems befindet sich im Fenster, das am unteren Bildschirmrand
-zu sehen ist. Hier werden sowohl Programmierfehler, als auch Warnungen
+zu sehen ist. Hier werden sowohl Programmierfehler als auch Warnungen
 angezeigt. Mit einem Doppelklick auf einen Eintrag springt der Cursor im
 Editor an die entsprechende Codezeile.
 
@@ -75,11 +75,11 @@ Shortcuts kann man der folgenden Tabelle entnehmen:
 | Aktion                                                              | Effekt                                                                                                                                       |
 | ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | Strg+Shift+F11                                                      | Führt die zuletzt ausgeführte Java-Datei erneut aus                                                                                          |
-| Cursor auf Variablen-, Klassen- oder Methodennamen, dann Alt+Strg+R | Bennennt alle Vorkommen des Namens im ganzen Projekt um                                                                                      |
-| Strg+F1                                                             | Wenn man diese Tasenkombination über einen Fehler oder eine Warnung eingibt, kriegt man von Eclipse Verbesserungs-, bzw. Reparaturvorschläge |
+| Cursor auf Variablen-, Klassen- oder Methodennamen, dann Alt+Strg+R | Benennt alle Vorkommen des Namens im ganzen Projekt um                                                                                      |
+| Strg+F1                                                             | Wenn man diese Tastenkombination über einen Fehler oder eine Warnung eingibt, kriegt man von Eclipse Verbesserungs-, bzw. Reparaturvorschläge |
 | Strg+I                                                              | Rückt den markierten Text sauber ein                                                                                                         |
 | Strg+F7                                                             | Kommentiert die markierten Zeilen ein, bzw. aus                                                                                              |
-| Cursor auf Variablen-, Methoden- oder Klassennamen, dann F3         | Der Cursor springt zur der Stelle, wo die Variable oder Klasse definiert wurde                                                               |
+| Cursor auf Variablen-, Methoden- oder Klassennamen, dann F3         | Der Cursor springt zu der Stelle, wo die Variable oder Klasse definiert wurde                                                               |
 | Variablen- oder Klassenname teilweise eingegeben, dann Strg+Space   | Eclipse liefert Vorschläge zur Vervollständigung                                                                                             |
 | Eingabe von `syso`, dann Strg+Space                                   | Erzeugt `System.out.println`                                                                                                                   |
 | Eingabe von `for`, dann Strg+Space                                    | Eclipse liefert eine Auswahl an beliebigen `for`-Schleifen                                                                                     |

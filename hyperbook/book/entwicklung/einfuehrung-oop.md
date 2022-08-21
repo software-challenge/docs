@@ -107,7 +107,7 @@ immer den Klassennamen tragen und darf keinen Rückgabewert (nicht einmal
 `void`) haben. Analog zu Methoden kann man auch einem Konstruktor
 Argumente übergeben.
 
-Um Geld einzuzahlen oder abzuheben ruft man die Methoden mit dem sog.
+Um Geld einzuzahlen oder abzuheben, ruft man die Methoden mit dem sog.
 Punktoperator auf:
 
 ```java
@@ -175,7 +175,7 @@ Statt *zeigen* sagt man oft auch *referenzieren*.
 ## Vererbung
 
 Die Vererbung ist eine Technik, mit der man eine Klasse, durch
-hinzufügen von Methoden und Variablen, einen neuen Bauplan (Klasse)
+Hinzufügen von Methoden und Variablen, einen neuen Bauplan (Klasse)
 erzeugt.
 
 Möchte man zum Beispiel zusätzlich auch noch ein Premiumkonto anbieten,
@@ -205,7 +205,7 @@ werden, da diese von der Klasse Konto "kopiert" werden. Man kann eine
 Methode aus einer Oberklasse neu schreiben. Dann wird immer die
 geänderte Version genommen. Das Schlüsselwort `super()` ruft den
 Konstruktor aus der Kontoklasse auf. In Java wird immer der leere
-Konstruktor der Oberklasse aufgerufen, so dass diese Zeile auch
+Konstruktor der Oberklasse aufgerufen, sodass diese Zeile auch
 weggelassen werden darf.
 
 Ein neues Objekt erzeugt man auf die gleiche Weise, wie bei einem
@@ -246,7 +246,7 @@ gehört:
 ```
 
 **Wichtig:** Es werden nur Methoden vererbt, jedoch keine Variablen!
-Deshalb wird auf den kontostand nur über die entsprechenden Methoden der
+Deshalb wird auf den Kontostand nur über die entsprechenden Methoden der
 Oberklasse zugegriffen.
 
 ## Statische Variablen und Methoden

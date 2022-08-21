@@ -27,7 +27,7 @@ auch das [Java SDK installiert](entwicklung/installation-von-java) sein.
 Der Zufallsspieler ist ein Computerspieler, den das Institut für
 Informatik ins Rennen schickt. Er stellt zwar eine korrekte Lösung der
 gestellten Aufgabe dar, ist aber nicht besonders intelligent. Neben dem
-eigentlichen Programm ist auch der Quellcode des SimpleClients
+eigentlichen Programm ist auch der Quellcode des Zufallspielers
 verfügbar. Auf diese Weise können sich die Schüler anschauen und lernen,
 wie man die gestellte Aufgabe lösen kann. Außerdem darf der Code um die
 eigene Strategie erweitert werden. Auf diese Weise müssen die Schüler
