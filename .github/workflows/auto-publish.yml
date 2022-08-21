@@ -1,53 +1,34 @@
-name: CI
+name: Build
 
-on:
-  push:
-    branches: [ main ]
+on: push
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repo
+      uses: actions/checkout@v3
 
-    # Setup the docs
-    - name: Setup
+    - name: Setup Hyperbook
       run: |
-        sudo ./docs setup
-        sudo ./docs generate
-        
-    # Check for errors
-    - name: Check
+        cd hyperbook
+        npx hyperbook setup
+
+    - name: Build documentation
+      id: build
       run: |
-        if [ ! -d out ]; then echo "No out !"; exit 1; fi
-      
-    # Push the generated docs to the live branch
-    - name: Deploy
-      run: |
-        echo "== removing output directory 'out'"
-        sudo rm -rf ./out
-        message="$(git log --format='Deploy %h %<|(50,trunc)%f' -1)"
+        cd hyperbook
+        npx hyperbook build
+        echo "::set-output name=message::$(git log --format='Deploy %h %<|(50,trunc)%f' -1)"
 
-        echo "== getting live branch..."
-        old_git_dir="$GIT_DIR"
-        unset GIT_DIR
-        old_git_working_dir="$GIT_WORK_TREE"
-        unset GIT_WORK_TREE
-        git clone https://github.com/software-challenge/docs --branch live --single-branch out
-
-        echo "== generating static pages..."
-        ./docs generate pdf
-        echo "== pushing to github..."
-        cd out
-        git config user.email "info@software-challenge.de"
-        git config user.name "GitHub Publish Action"
-        git add --all
-        git commit -m "$message"
-        git push https://socha-bot:${{ secrets.ACCESS_TOKEN }}@github.com/software-challenge/docs
-
-        echo "== cleaning up"
-        cd ..
-        rm -rf ./out
-        GIT_DIR="$old_git_dir"
-        GIT_WORK_TREE="$old_git_working_dir"
+    - name: Push generated documentation to live branch
+      uses: peaceiris/actions-gh-pages@v3
+      if: ${{ github.ref == 'refs/heads/main' }}
+      with:
+        github_token: ${{ secrets.PUSH_TOKEN }}
+        publish_branch: live
+        publish_dir: hyperbook/.hyperbook/out
+        user_name: "GitHub Publish Action"
+        user_email: info@software-challenge.de
+        full_commit_message: ${{steps.build.outputs.message}}
