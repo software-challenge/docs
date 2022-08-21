@@ -35,13 +35,13 @@ nicht den ganzen Computerspieler selbst entwickeln, sondern können sich
 auf den Entwurf und die Implementierung ihrer eigenen Strategie
 konzentrieren.
 
-## Der Fortgeschrittener Spieler
+## Der Fortgeschrittene Spieler
 
 Wenn die aktuelle Saison der Software-Challenge etwas weiter
 fortgeschritten ist, stellt das Institut einen stärkeren Computerspieler
-zur Verfügung: den Fortgeschrittener Spieler. Das ist ein Spieler, der eine
+zur Verfügung: den Fortgeschrittenen Spieler. Das ist ein Spieler, der eine
 effizientere Strategie zur Lösung der Aufgabe als der Zufallsspieler
 verfolgt und dadurch nicht mehr so leicht zu schlagen ist. Dieser
 Spieler wird ohne den Quellcode veröffentlicht, so dass die Schüler den
-Fortgeschrittener Spieler zwar als Gegenspieler für Testspiele nehmen, jedoch
+Fortgeschrittenen Spieler zwar als Gegenspieler für Testspiele nehmen, jedoch
 nicht den Quellcode für den eigenen Spieler weiterverwenden können.

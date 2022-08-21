@@ -229,13 +229,11 @@ Ein authentifizierter AdminClient wird benachrichtigt, wenn sich ein :t[Computer
 <joinedGameRoom roomId=ROOMID playerCount=X />
 ```
 
-roomId
+- **roomId**
+  - eine vom Server generierte Zeichenfolge, die die Partie identifiziert
 
-eine vom Server generierte Zeichenfolge, die die Partie identifiziert
-
-playerCount
-
-die Anzahl der Spieler im Raum nach dem Beitritt des neuen Spielers
+- **playerCount**
+  - die Anzahl der Spieler im Raum nach dem Beitritt des neuen Spielers
 
 ### Aktionen in einem Raum
 

@@ -12,7 +12,7 @@ Je nach Programmiersprache, in der der :t[Computerspieler]{#player} entwickelt w
 sind unterschiedliche Schritte notwendig.
 
 Wie man den abgabefertigen :t[Computerspieler]{#player} dann im :t[Wettkampfsystem]{#contest} einsendet,
-ist unter [Wettkampfsystem>Computerspieler](/glossary/contest#computerspieler) beschrieben.
+ist unter :t[Wettkampfsystem->Computerspieler]{#contest.computerspieler} beschrieben.
 
 ## Java
 
