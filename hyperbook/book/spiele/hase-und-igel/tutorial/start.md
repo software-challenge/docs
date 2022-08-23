@@ -1,4 +1,4 @@
-Am einfachsten ist es die KI auf Grundlage des SimpleClients zu
+Am einfachsten ist es die KI auf Grundlage des Zufallspielers zu
 schreiben:
 
 -   Als erstes muss der Zufallsspieler heruntergeladen werden
@@ -53,7 +53,7 @@ gezeigt. Hierbei werden wir oft die Variablen **gameState** und
 **currentPlayer** verwenden.
 
 Die **API-Dokumentation** befindet sich im Ordner „doc“ im Verzeichnis
-des SimpleClients.
+des Zufallspielers.
 
 # Aufgaben
 

@@ -41,7 +41,7 @@ den Wettkampf geschickt und dann eventuell noch gemeinsam
 weiterentwickelt wird. In begründeten Einzelfällen kann die
 Wettkampfleitung Ausnahmen von den zuvor genannten Regeln zulassen.
 
-Zur Zeit nehmen pro Schuljahr etwa 100 Teams bundesweit an der
+Zurzeit nehmen pro Schuljahr etwa 100 Teams bundesweit an der
 Software-Challenge teil. Es werden dabei neben zahlreichen Sachpreisen
 auch etwa 100 Stipendien (6 Monate je 300 Euro) an die besten 100
 Schülerinnen und Schüler vergeben.
@@ -57,7 +57,7 @@ dann über wichtige Termine und andere relevanten Dinge informiert.
 
 Gegen Ende der Anmeldungsphase werden wir dann mit den registrierten
 Interessenten in Verbindung treten. Dann soll eine (relativ)
-verbindliche Anmeldung erfolgen, so dass wir darauf aufbauend unsere
+verbindliche Anmeldung erfolgen, sodass wir darauf aufbauend unsere
 Ressourcen planen können.
 
 Die endgültige Anmeldung soll dann zu Beginn des Schuljahres erfolgen.

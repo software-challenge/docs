@@ -6,7 +6,7 @@ name: XML-Schnittstelle
 
 Der :t[Spielleiter]{#server} kommuniziert mit den Computerspielern über eine Netzwerkverbindung. Dadurch ist man aus technischer Sicht komplett flexibel, was die Wahl der Programmiersprache angeht. Die :t[Computerspieler]{#player} müssen lediglich das Kommunikationsprotokoll erfüllen.
 
-Anfängern wird allerdings davon abgeraten, einen komplett eigenen :t[Computerspieler]{#player} zu schreiben. Es ist deutlich einfacher, auf einem bereitgestellten Simpleclient aufzubauen, da man sich dabei nur um die Strategie und nicht um die Kommunikation kümmern muss. Außerdem wird vom Institut für Informatik die beste Unterstützung für Java/Kotlin geboten.
+Anfängern wird allerdings davon abgeraten, einen komplett eigenen :t[Computerspieler]{#player} zu schreiben. Es ist deutlich einfacher, auf einem bereitgestellten Zufallspieler aufzubauen, da man sich dabei nur um die Strategie und nicht um die Kommunikation kümmern muss. Außerdem wird vom Institut für Informatik die beste Unterstützung für Java/Kotlin geboten.
 
 ## Hinweise
 
@@ -19,7 +19,7 @@ Dabei werden XML-Nachrichten nicht unbedingt mit einem Zeilenumbruch abgeschloss
 
 ## Das Spielprotokoll
 
-In diesem Abschnitt wird die spielunabhängige Kommunikationsschnittstelle für Spieler festgehalten, um das Schreiben eines komplett eigenen Clients zu ermöglichen.
+In diesem Abschnitt wird die spielunabhängige unabhängige Kommunikationsschnittstelle für Spieler festgehalten, um das Schreiben eines komplett eigenen Clients zu ermöglichen.
 
 ### Spiel betreten
 
@@ -31,7 +31,7 @@ Dieses Tag eröffnet die Kommunikation mit dem Server. Dann gibt es drei Möglic
 
 #### Beliebige Partie
 
-Betritt ein beliebige offene Spielpartie:
+Betritt eine beliebige offene Spielpartie:
 
 ```xml
 <join />
@@ -41,7 +41,7 @@ Sollte kein Spiel offen sein, wird automatisch ein neues erstellt. Abhängig von
 
 #### Bestimmte Partie
 
-Einer bestimmten, bereits offenen aber noch nicht gestarteten Partie kann durch Angabe der `ROOM_ID` beigetreten werden:
+Einer bestimmten, bereits offenen, aber noch nicht gestarteten Partie kann durch Angabe der `ROOM_ID` beigetreten werden:
 
 ```xml
 <joinRoom roomId="ROOM_ID" />
@@ -70,7 +70,7 @@ Der Server antwortet auf einen erfolgreichen Spielbeitritt mit:
 
 #### Start
 
-Der Server eröffnet das Spiel mit einer Begrüßung und dem initialen Spielstatus sobald beide Spieler verbunden sind.
+Der Server eröffnet das Spiel mit einer Begrüßung und dem initialen Spielstatus, sobald beide Spieler verbunden sind.
 
 - **ROOM_ID**
   - Identifikationscode der Spielpartie
@@ -102,17 +102,10 @@ Der Status der oben in dem data memento objekt enthalten ist, ist beispielsweise
 	<list>
 	  <field>1</field>
 	  <field>2</field>
-	  <field>2</field>
 	</list>
 	<list>
 	  <field>2</field>
-	  <field>ONE</field>
-	  <field>2</field>
-	</list>
-	<list>
-	  <field>TWO</field>
-	  <field>4</field>
-	  <field>1</field>
+	  <field>3</field>
 	</list>
   </board>
   <fishes>
@@ -122,16 +115,8 @@ Der Status der oben in dem data memento objekt enthalten ist, ist beispielsweise
 </state>
 ```
 
-Es enthält die Zugnummer in ``turn``, das anfangende Team in ``startTeam``, eine Liste an Feldern in ``board`` und die Anzahl Fishe beider Spielers in ``fishes``, zuerst die von ONE und danach die von TWO.
-
-In `board` entsprechen die Positionen der Felder auf dem Spielfeld in [odd-r Koordinaten](https://www.redblobgames.com/grids/hexagons/#neighbors-offset) ihrer Positionen in der XML Struktur. Von oben bei null anfangend werden die `<list>` Objekte in `<board>` durchgezählt. Die Nummer der List in dem das Field Objekt ist, ist seine `y` Kooridnate.  Auf die gleiche Weise entspricht die `x` Koordinate eines Felds seiner Nummer innerhalb des `<list>` Objekts.  
-Der Inhalt der `field` Objekte steht für die Anzahl Fishe auf dem Feld, oder für einen Pinguin eines Spielers. In ersterem Fall steht eine Zahl in dem XML-Objekt und in letzterem Fall der Name des Spielers der den Pinguin gehört.
-
-`x`: `<field>` index in `<list>`
-
-`y`: `<list>` index in `<board>`
-
-Beachtet, dass der XML-Status [odd-r Koordinaten](https://www.redblobgames.com/grids/hexagons/#neighbors-offset) nutzt, und dass die Koordinaten in Zügen als [doubled Koordinaten](https://www.redblobgames.com/grids/hexagons/#neighbors-doubled) interpretiert werden.
+Es enthält die Zugnummer in ``turn``, das anfangende Team in ``startTeam``, eine Liste an Feldern in ``board`` und die Anzahl Fische jedes Spielers in ``fishes``.
+In `board` entsprechen die Positionen der Felder auf dem Spielfeld ihrer Positionen in der Liste => `x` Koordinate und der Position ihrer Liste im Board => `y` Koordinate. Die Zahl innerhalb der `field` Objekte steht für die Anzahl Fische auf dem Feld.
 
 #### Spielablauf
 
@@ -143,34 +128,25 @@ Der erste Spieler erhält dann eine Zugaufforderung:
 </room>
 ```
 
-Worauf dieser innerhalb der gesetzten Zeitbeschränkung mit einem der folgenden Zug-Typen antwortet:
-
-##### Normaler Zug
+Worauf dieser innerhalb der gesetzten Zeitbeschränkung mit einem [[Zug]](spiele/penguins_xml#zug) antwortet:
 
 ```xml
 <room roomId="ROOM_ID">
   <data class="move">
-    <from x="0" y="7"/>
-    <to x="4" y="5"/>
+    ZUG
   </data>
 </room>
 ```
 
-Ein normaler Zug besteht aus einem ``from`` und einem ``to`` Vektor, welche beide `x` und `y` Werte in [doubled Koordinaten](https://www.redblobgames.com/grids/hexagons/#neighbors-doubled) enthalten.
+#### Zug
 
-##### Lege Zug
+Ein Zug besteht aus einem ``from`` und einem ``to`` Vektor, welche beide `x` und `y` Werte enthalten.
 
+Beispiel:
 ```xml
-<room roomId="ROOM_ID">
-  <data class="move">
-    <to x="1" y="2"/>
-  </data>
-</room>
+<from x="0" y="7"/>
+<to x="17" y="5"/>
 ```
-
-Ein Lege-Zug besteht aus einem ``to`` Vektor, welcher `x` und `y` Werte in [doubled Koordinaten](https://www.redblobgames.com/grids/hexagons/#neighbors-doubled) enthält.
-
-##### Weiteres
 
 Nach Erhalt des Zuges sendet der Server den neuen Spielstatus an alle Spieler 
 und dem nächsten Spieler eine Zugaufforderung.
@@ -253,13 +229,11 @@ Ein authentifizierter AdminClient wird benachrichtigt, wenn sich ein :t[Computer
 <joinedGameRoom roomId=ROOMID playerCount=X />
 ```
 
-roomId
+- **roomId**
+  - eine vom Server generierte Zeichenfolge, die die Partie identifiziert
 
-eine vom Server generierte Zeichenfolge, die die Partie identifiziert
-
-playerCount
-
-die Anzahl der Spieler im Raum nach dem Beitritt des neuen Spielers
+- **playerCount**
+  - die Anzahl der Spieler im Raum nach dem Beitritt des neuen Spielers
 
 ### Aktionen in einem Raum
 
@@ -297,7 +271,7 @@ Ein AdminClient kann ein Spiel vorbereiten:
 ```
 
 - **pluginId**
-  - identifiziert das Spiel (für Hey, Danke für dne Fisch: `swc_2023_pengins`)
+  - identifiziert das Spiel (für Hey, Danke für den Fisch: `swc_2023_pengins`)
 
 ### Servereinstellungen
 

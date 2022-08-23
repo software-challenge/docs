@@ -53,7 +53,7 @@ richtig arbeiten:
 2.  Links "Java Source Attachment" auswählen
 
 3.  Rechts "Workspace location" aktivieren und den Pfad zu
-    "sdk-sources.jar" (im Ordner "lib" des Zufallsspieler Quellcode
+    "sdk-sources.jar" (im Ordner "lib" des Zufallsspielerquellcode
     Paketes) einstellen
 
 4.  Den Dialog mit "Apply and Close" schließen
@@ -65,8 +65,8 @@ richtig arbeiten:
 6.  Links "Java Source Attachment" auswählen
 
 7.  Rechts "Workspace location" aktivieren und den Pfad zur Source-Jar
-    (im Ordner "lib" des Zufallsspieler Quellcode Paketes) einstellen
-    (heißt genau wie das Spiel-Plugin mit einem "sources" angehängt,
+    (im Ordner "lib" des Zufallsspielerquellcode Paketes) einstellen
+    (heißt genau wie das Spiel-Plugin, mit einem "sources" angehängt,
     also z.B. "piranhas\_2019-sources.jar")
 
 8.  Den Dialog mit "Apply and Close" schließen

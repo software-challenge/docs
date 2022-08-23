@@ -27,7 +27,7 @@ auch das [Java SDK installiert](entwicklung/installation-von-java) sein.
 Der Zufallsspieler ist ein Computerspieler, den das Institut für
 Informatik ins Rennen schickt. Er stellt zwar eine korrekte Lösung der
 gestellten Aufgabe dar, ist aber nicht besonders intelligent. Neben dem
-eigentlichen Programm ist auch der Quellcode des SimpleClients
+eigentlichen Programm ist auch der Quellcode des Zufallspielers
 verfügbar. Auf diese Weise können sich die Schüler anschauen und lernen,
 wie man die gestellte Aufgabe lösen kann. Außerdem darf der Code um die
 eigene Strategie erweitert werden. Auf diese Weise müssen die Schüler
@@ -35,13 +35,13 @@ nicht den ganzen Computerspieler selbst entwickeln, sondern können sich
 auf den Entwurf und die Implementierung ihrer eigenen Strategie
 konzentrieren.
 
-## Der Fortgeschrittener Spieler
+## Der Fortgeschrittene Spieler
 
 Wenn die aktuelle Saison der Software-Challenge etwas weiter
 fortgeschritten ist, stellt das Institut einen stärkeren Computerspieler
-zur Verfügung: den Fortgeschrittener Spieler. Das ist ein Spieler, der eine
+zur Verfügung: den Fortgeschrittenen Spieler. Das ist ein Spieler, der eine
 effizientere Strategie zur Lösung der Aufgabe als der Zufallsspieler
 verfolgt und dadurch nicht mehr so leicht zu schlagen ist. Dieser
 Spieler wird ohne den Quellcode veröffentlicht, so dass die Schüler den
-Fortgeschrittener Spieler zwar als Gegenspieler für Testspiele nehmen, jedoch
+Fortgeschrittenen Spieler zwar als Gegenspieler für Testspiele nehmen, jedoch
 nicht den Quellcode für den eigenen Spieler weiterverwenden können.

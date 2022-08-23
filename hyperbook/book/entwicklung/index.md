@@ -14,7 +14,7 @@ die den Start mit der Entwicklung erleichtern soll.
 Am einfachsten ist es natürlich den Java/Ruby Zufallsspieler als Basis zu nutzen,
 allerdings könnt ihr auch eigene Clients in anderen Sprachen schreiben.
 Das ist mit mehr Arbeit verbunden,
-aber wenn ihr eine Sprache besonders gerne nutzt oder Vorteile seht,
+aber wenn ihr eine Sprache besonders gerne nutzt oder Vorteile sieht,
 dann kann es sich lohnen!
 
 Wenn ihr also genug Erfahrung habt und euch entscheidet den schwereren Weg zu gehen,
@@ -25,14 +25,14 @@ Außerdem solltet ihr euch als Beispiel
 den (inoffiziellen) [Swift Computerspieler](https://github.com/matthesjh/sc20-swift-client) ansehen.
 Das kann auch helfen, wenn man Swift nicht kann,
 da die meisten prozeduralen Programmiersprachen viele Ähnlichkeiten haben.
-Somit sollte es nicht allzu schwer sein den Swift code in eure Sprache zu übersetzen.
+Somit sollte es nicht allzu schwer sein, den Swift code in eure Sprache zu übersetzen.
 Auf ähnliche Weise können natürlich auch
 [der Java :t[Computerspieler]{#player} source code](https://github.com/software-challenge/backend/tree/main/player/src)
 und [der C# :t[Computerspieler]{#player} source code](https://github.com/niklasCarstensen/socha-client-csharp) helfen.
 
 Am besten sprecht ihr die Verwendung einer anderen Programmiersprache frühzeitig mit eurem Tutor ab,
 damit sichergestellt ist, dass der :t[Computerspieler]{#player} auch am Wettkampf teilnehmen kann.
-Wir stellen gern eine passende Laufzeitumgebung auf dem :t[Wettkampfsystem]{#contest}
+Wir stellen gerne eine passende Laufzeitumgebung auf dem :t[Wettkampfsystem]{#contest}
 für die Programmiersprache zur Verfügung.
 
 ## Weiterführende Literatur
@@ -49,4 +49,4 @@ Als deutschsprachiges Referenzwerk ist das Buch "Java ist auch eine Insel" empfe
 welches man bei Galileo Computing als
 [Open-Book](http://openbook.galileocomputing.de/javainsel)
 kostenlos online betrachten oder auch herunterladen kann.
-Man kann es auf der selben Seite auch als gedruckte Ausgabe bestellen.
+Man kann es auf derselben Seite auch als gedruckte Ausgabe bestellen.
