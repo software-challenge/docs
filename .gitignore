@@ -4,3 +4,4 @@ out
 # created when updating the date with the docs script:
 index.md.bak
 .bundle
+.vscode
