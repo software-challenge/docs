@@ -1,3 +1,8 @@
+---
+name: Einführung in XML
+index: 4
+---
+
 ## Einführung in XML
 
 Die Kommunikation zwischen [Spielleiter](glossary/server) und [Computerspieler](glossary/player) 

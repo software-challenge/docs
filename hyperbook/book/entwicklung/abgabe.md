@@ -12,7 +12,7 @@ Je nach Programmiersprache, in der der :t[Computerspieler]{#player} entwickelt w
 sind unterschiedliche Schritte notwendig.
 
 Wie man den abgabefertigen :t[Computerspieler]{#player} dann im :t[Wettkampfsystem]{#contest} einsendet,
-ist unter [Wettkampfsystem>Computerspieler](/glossary/contest#computerspieler) beschrieben.
+ist unter :t[Wettkampfsystem->Computerspieler]{#contest.computerspieler} beschrieben.
 
 ## Java
 
@@ -38,7 +38,7 @@ Die Jar-Datei selbst erstellen oder die Verwendung von Gradle (empfohlen).
     operation repacks referenced libraries", den man mit "OK" bestätigen
     muss.
 
-Wenn alles geklappt hat, wurde der :t[Computerspieler]{#player} in ein auführbares
+Wenn alles geklappt hat, wurde der :t[Computerspieler]{#player} in ein ausführbares
 Programm überführt. Damit der Wettkampfserver den :t[Computerspieler]{#player} verarbeiten
 kann, muss er noch in ein ZIP-Archiv gepackt werden (auch wenn ein JAR
 technisch gesehen bereits ein ZIP-Archiv ist).
@@ -55,7 +55,7 @@ Nach einem Rechtsklick auf das Projekt in der Projektansicht kann man
 "Pfad/zum/Projekt/dist". In diesem befindet sich eine JAR-Datei und eine
 Kopie des "lib"-Ordners. Beides zusammen muss jetzt mit einem beliebigen
 Archivierungsprogramm in eine ZIP-Datei zusammengepackt werden. Dieses
-Archiv kann dann hochegeladen werden.
+Archiv kann dann hochgeladen werden.
 
 ### Zweite Möglichkeit - Das ANT Script
 
@@ -66,11 +66,11 @@ Datei sowie ein ZIP-Archiv, das man direkt im Websystem hochladen kann.
 #### Direkt ausführen
 
 Wenn Ant installiert ist, kann man über die Kommandozeile in das
-Verzeichnis des SimpleClients wechseln und mit dem Aufruf "Ant" den
+Verzeichnis des Zufallsspielers wechseln und mit dem Aufruf "Ant" den
 Build ausführen. Am Ende sollte die Meldung "BUILD SUCCESSFUL"
 erscheinen. Im Zufallsspieler Ordner findet man dann im Unterordner
 "build" die JAR Datei im Ordner "jar" sowie die fertig gepackte
-ZIP-Datei im Ordner "zipped" die direkt im :t[Wettkampfsystem]{#contest} hochgeladen
+ZIP-Datei im Ordner "zipped", die direkt im :t[Wettkampfsystem]{#contest} hochgeladen
 werden kann.
 
 #### Eclipse
@@ -90,7 +90,7 @@ Eclipse kann von Haus aus auch mit Ant-Scripten umgehen.
     hat. Anschließend mit "Apply" bestätigen und das Fenster schließen
 
 4.  Um den Buildprozess zu starten, muss im Menü "Run" → "External
-    Tools" die gerade erstellte Konfiguration ausgewählt werdem. Der
+    Tools" die gerade erstellte Konfiguration ausgewählt werden. Der
     Build wird dann durchgeführt (dauert i.d.R. wenige Sekunden).
 
 Am Ende erhält man die Meldung "BUILD SUCCESSFUL".
@@ -105,8 +105,7 @@ Da Ruby eine interpretierte Sprache ist, muss der Ruby-Quellcode direkt
 in ein ZIP-Archiv gepackt und auf das :t[Wettkampfsystem]{#contest} hochgeladen
 werden. Auf dem :t[Wettkampfsystem]{#contest} ist ein Ruby-Interpreter sowie das
 aktuellste `software_challenge_client` Gem installiert. Alle weiteren
-Bibliotheken müssen im ZIP-Archiv vorhanden sein. Nach dem Hochladen des
-ZIP-Archiv muss die auszuführende Hauptdatei in :t[Wettkampfsystem]{#contest}
+Bibliotheken müssen im ZIP-Archiv vorhanden sein. Nach dem Hochladen des ZIP-Archivs muss die auszuführende Hauptdatei in :t[Wettkampfsystem]{#contest}
 ausgewählt werden. Diese wird dann zum Start des Computerspielers
 gestartet. Damit dies richtig funktioniert, ist es entscheidend, dass
 die Hauptdatei mit einer sogenannten "Shebang"-Zeile beginnt:
@@ -182,7 +181,7 @@ anzugeben, da das Script nicht von einer Shell aufgerufen wird. Ein
     einfaches Shell-Script.
 
 -   Die Binärdatei wird ausführbar gemacht (das ist nötig, da in einem
-    ZIP-Archiv das Ausührbar-Attribut nicht gespeichert wird).
+    ZIP-Archiv das Ausführbar-Attribut nicht gespeichert wird).
 
 -   Die Binärdatei wird aufgerufen und alle Parameter, die das Script
     bekommen hat, werden weitergereicht (`"$@"`).

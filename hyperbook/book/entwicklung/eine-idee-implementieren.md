@@ -15,7 +15,7 @@ Anhand einer kleinen Aufgabe soll gezeigt werden, wie man eine Idee
 formal beschreiben und in ein Programm überführen kann. Dabei nehmen wir
 an, dass wir einen Stapel mit Karten haben, der sortiert werden soll.
 
-## Vorraussetzungen
+## Voraussetzungen
 
 -   eine beliebige Anzahl an Spielkarten
 
@@ -23,7 +23,7 @@ an, dass wir einen Stapel mit Karten haben, der sortiert werden soll.
 
 ### Idee formalisieren
 
-Als erstes muss die Idee formal beschrieben werden. Oftmals kann man
+Als Erstes muss die Idee formal beschrieben werden. Oftmals kann man
 zunächst beschreiben, wie man als Mensch vorgehen würde.
 
 1.  Gehe den Stapel durch und merke die Position, an der sich die

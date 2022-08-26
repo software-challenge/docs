@@ -46,7 +46,7 @@ nach dem gleichen Schema wie eine Meisterschaft ausgespielt.
 ## Das Final Eight
 
 An der dritten Phase, dem Final Eight, das im Juni in Kiel stattfindet,
-nehmen die ersten acht Mannschaften der Rangliste aus der
+nehmen die ersten acht Mannschaften der Rangliste, aus der
 Champions League teil. Viertelfinale, Halbfinale, Kleines Finale (=
 Spiel um den 3. Platz) und Finale werden im KO-System gespielt.
 
@@ -125,12 +125,12 @@ Folgende Container-Images können genutzt werden:
 
 | Bezeichnung        | Image-Name                                                                                   | Beschreibung                                                                                                               |
 | ------------------ | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Java 8             | [openjdk:8u151-jre](https://hub.docker.com/_/openjdk/)                                       | Open Source Java Platform, Standard Edition, Version 1.8.0. Für alle :t[Computerspieler]{#player} auf Basis des Java SimpleClients.     |
-| Ruby 2             | [ruby:2.4.2](https://hub.docker.com/_/ruby/) mit installiertem Software-Challenge-Computerspieler-Gem | Ruby Interpreter, Version 2.4.2. Für alle :t[Computerspieler]{#player} auf Basis des Ruby SimpleClients.                                |
+| Java 8             | [openjdk:8u151-jre](https://hub.docker.com/_/openjdk/)                                       | Open Source Java Platform, Standard Edition, Version 1.8.0. Für alle :t[Computerspieler]{#player} auf Basis des Java Zufallsspielers.     |
+| Ruby 2             | [ruby:2.4.2](https://hub.docker.com/_/ruby/) mit installiertem Software-Challenge-Computerspieler-Gem | Ruby Interpreter, Version 2.4.2. Für alle :t[Computerspieler]{#player} auf Basis des Ruby Zufallsspielers.                                |
 | Python 3           | [python:3.6.3](https://hub.docker.com/_/python/)                                             | Python Interpreter, Version 3.6.3. Für selbst entwickelte :t[Computerspieler]{#player} in Python.                                       |
 | Mono 5.4 (C# .NET) | [mono:5.4.1.6](https://hub.docker.com/_/mono/)                                               | Mono Laufzeitumgebung, Version 5.4.1.6. Für selbst entwickelte :t[Computerspieler]{#player} basierend auf dem Microsoft .NET Framework. |
 
 Wenn Ihr :t[Computerspieler]{#player} eine speziellere Umgebung benötigt (zum
-Beispiel ein hier nicht angebotener Interpreter), nehmen sie bitte mit
+Beispiel ein hier nicht angebotener Interpreter), nehmen Sie bitte mit
 uns Kontakt auf (<tech@software-challenge.de>). Wir stellen gern weitere
 Images zur Verfügung.

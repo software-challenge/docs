@@ -3,12 +3,15 @@ name: Start
 index: 1
 ---
 
-Willkommen in der offiziellen, neuen Dokumentation der [Software-Challenge](https://software-challenge.de)!
+# Willkommen 
+Das ist die offizielle und neue Dokumentation der
+[Software-Challenge Germany](https://software-challenge.de)!
 
 In den verschiedenen Abschnitten findest du 
-zuerst Erläuterungen zum Wettkampf und technischen Grundlagen,
-dann die Dokumentation des aktuellen Spiels
-und Erklärungen zur Entwicklung eines eigenen Computerspielers.
+- die Erläuterungen zum Wettkampf,
+- den technischen Grundlagen,
+- die Dokumentation des aktuellen Spiels und 
+- eine Erklärung zur Entwicklung eines eigenen Computerspielers.
 
 ### Lesezeichen
 

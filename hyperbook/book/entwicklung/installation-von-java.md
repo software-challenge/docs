@@ -28,9 +28,9 @@ Installationsanleitungen auf der Seite.
 ### Installation über Paketquellen (Linux)
 
 Meistens ist das Java JDK in den Paketquellen der Linux-Distributionen
-enthalten, so dass man es einfach über den Paketmanager installieren
+enthalten, sodass man es einfach über den Paketmanager installieren
 kann. Sofern möglich, wird diese Art der Installation empfohlen, da es
-oft noch Paketabhängigkeiten gibt, die dann automatisch mitinstalliert
+oft noch Paketabhängigkeiten gibt, die dann automatisch mit installiert
 werden.
 
 ## Weiterführende Informationen
