@@ -94,7 +94,7 @@ Der Server eröffnet das Spiel mit einer Begrüßung und dem initialen Spielstat
 
 #### Status nach der Willkommensnachricht
 
-Der Status der oben in dem data memento objekt enthalten ist, ist beispielsweise der folgenden Form:
+Der Status der oben in dem data memento Objekt enthalten ist, ist beispielsweise der folgenden Form:
 ```xml
 <state turn="0">
   <startTeam>ONE</startTeam>
