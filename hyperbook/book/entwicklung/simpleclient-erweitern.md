@@ -5,7 +5,7 @@ index: 7
 
 # Den Zufallsspieler erweitern
 
-In der Version des Java Zufallspielers von der Software-Challenge
+In der Version des Java Zufallsspielers von der Software-Challenge
 Homepage ist bereits eine Strategie implementiert, die RandomLogic. Man
 kann jedoch auch noch beliebig viele eigene Strategien hinzufügen.
 

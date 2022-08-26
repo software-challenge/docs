@@ -66,7 +66,7 @@ Datei sowie ein ZIP-Archiv, das man direkt im Websystem hochladen kann.
 #### Direkt ausführen
 
 Wenn Ant installiert ist, kann man über die Kommandozeile in das
-Verzeichnis des Zufallspielers wechseln und mit dem Aufruf "Ant" den
+Verzeichnis des Zufallsspielers wechseln und mit dem Aufruf "Ant" den
 Build ausführen. Am Ende sollte die Meldung "BUILD SUCCESSFUL"
 erscheinen. Im Zufallsspieler Ordner findet man dann im Unterordner
 "build" die JAR Datei im Ordner "jar" sowie die fertig gepackte

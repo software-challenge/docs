@@ -26,7 +26,7 @@ Kommunikation dokumentiert bzw. definiert, dennoch alles, womit ein
 ## An wen richtet sich dieses Dokument?
 
 Die Kommunikation mit dem Spielserver ist für diejenigen, die aufbauend
-auf dem Zufallspieler programmieren, unwichtig. Dort steht bereits ein
+auf dem Zufallsspieler programmieren, unwichtig. Dort steht bereits ein
 funktionierender :t[Computerspieler]{#player} bereit und es muss nur die Spiellogik entworfen
 werden. Nur wer einen komplett eigenen :t[Computerspieler]{#player} entwerfen will,
 beispielsweise um die Programmiersprache frei wählen zu können, benötigt
@@ -41,7 +41,7 @@ Kommunikationsschnittstelle hinzugefügt werden. Um auch bei solchen
 Änderungen sicher zu sein, dass ihr :t[Computerspieler]{#player} fehlerfrei mit dem Server
 kommunizieren kann, empfehlen wir Ihnen, beim Auslesen des :t[XML]{#xml} jegliche
 Daten zu verwerfen, die hier nicht weiter definiert sind. Die vom
-Institut bereitgestellten Programme (Server, Zufallspieler) nutzen eine
+Institut bereitgestellten Programme (Server, Zufallsspieler) nutzen eine
 Bibliothek um Java-Objekte direkt in :t[XML]{#xml} zu konvertieren und umgekehrt.
 Dabei werden XML-Nachrichten nicht unbedingt mit einer newline
 abgeschlossen.
