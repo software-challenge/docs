@@ -39,9 +39,9 @@ konzentrieren.
 
 Wenn die aktuelle Saison der Software-Challenge etwas weiter
 fortgeschritten ist, stellt das Institut einen stärkeren Computerspieler
-zur Verfügung: den Fortgeschrittenen Spieler. Das ist ein Spieler, der eine
+zur Verfügung: den fortgeschrittenen Spieler. Das ist ein Spieler, der eine
 effizientere Strategie zur Lösung der Aufgabe als der Zufallsspieler
 verfolgt und dadurch nicht mehr so leicht zu schlagen ist. Dieser
 Spieler wird ohne den Quellcode veröffentlicht, so dass die Schüler den
-Fortgeschrittenen Spieler zwar als Gegenspieler für Testspiele nehmen, jedoch
+fortgeschrittenen Spieler zwar als Gegenspieler für Testspiele nehmen, jedoch
 nicht den Quellcode für den eigenen Spieler weiterverwenden können.
