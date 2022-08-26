@@ -133,8 +133,8 @@ Hier werden alle Personen des Teams augelistet.
 ##### Person hinzufügen
 
 Neue Personen kann man über die Schaltfläche "Person hinzufügen" am
-oberen Bildschirmrand einladen. Dabei können Tutoren sowohl Lehrerinnen, Lehrer, Schülerinnen und
-Schüler hinzufügen, während Lehrerinnen und Lehrer nur Schülerinnen und Schüler hinzufügen dürfen.
+oberen Bildschirmrand einladen. Dabei können Tutoren sowohl Lehrkräfte, als auch Schülerinnen und
+Schüler hinzufügen, während Lehrkräfte nur Schülerinnen und Schüler hinzufügen dürfen.
 Schülerinnen und Schüler haben in dieser Hinsicht keinerlei Rechte.
 
 **Hinweis:** Es muss nicht jede Schülerin und jeder Schüler eingetragen werden und über
