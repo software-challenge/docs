@@ -1,5 +1,5 @@
 ---
-name: Saubere Programmierstil
+name: Sauberer Programmierstil
 index: 4
 ---
 
