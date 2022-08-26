@@ -2,7 +2,7 @@
 
 In diesem Repository befindet sich die Endbenutzer-Dokumentation 
 für die [Software-Challenge](https://software-challenge.de).
-Zielgruppe sind Schüler und Lehrer,
+Zielgruppe sind Schülerinnen, Schüler, Lehrerinnen und Lehrer,
 die an der Software-Challenge teilnehmen.
 
 Ziel dieser Dokumentation ist es,

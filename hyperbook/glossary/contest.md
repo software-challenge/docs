@@ -133,11 +133,11 @@ Hier werden alle Personen des Teams augelistet.
 ##### Person hinzufügen
 
 Neue Personen kann man über die Schaltfläche "Person hinzufügen" am
-oberen Bildschirmrand einladen. Dabei können Tutoren sowohl Lehrer und
-Schüler hinzufügen, während Lehrer nur Schüler hinzufügen dürfen.
-Schüler haben in dieser Hinsicht keinerlei Rechte.
+oberen Bildschirmrand einladen. Dabei können Tutoren sowohl Lehrerinnen, Lehrer, Schülerinnen und
+Schüler hinzufügen, während Lehrerinnen und Lehrer nur Schülerinnen und Schüler hinzufügen dürfen.
+Schülerinnen und Schüler haben in dieser Hinsicht keinerlei Rechte.
 
-**Hinweis:** Es muss nicht jeder Schüler eingetragen werden und über
+**Hinweis:** Es muss nicht jede Schülerin und jeder Schüler eingetragen werden und über
 Zugangsdaten erhalten. Es reicht, wenn sich die Teammitglieder am Server
 anmelden können, die den :t[Computerspieler]{#player} hochladen.
 
@@ -149,8 +149,8 @@ Wenn man eine neue Person ins Team aufnehmen will, kann man sich
 entscheiden, ob man eine neue Person erstellt oder eine im System
 bekannte Person einlädt.
 
-Ganz unten auf der Personenseite kann man die Schüleranzahl des Teams
-eintragen. Hierzu zählen auch Schüler, die keine eigenen Zugangsdaten
+Ganz unten auf der Personenseite kann man die Schülerinnen- und Schüler-Anzahl des Teams
+eintragen. Hierzu zählen auch Schülerinnen und Schüler, die keine eigenen Zugangsdaten
 für das Wettkampfsystem haben. Diese Zahl wird sowohl für die Presse als
 auch für statistische Zwecke gebraucht und sollte in jedem Fall stimmen.
 
