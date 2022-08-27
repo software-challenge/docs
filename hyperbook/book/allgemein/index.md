@@ -50,10 +50,10 @@ Das Anmeldeverfahren sieht etwa wie folgt aus. Genaue Termine des
 aktuellen Zeitraumes finden sich auf der [Website unter
 Ablauf und Termine](https://software-challenge.de/ablauf-und-termine).
 
-Ab April können interessierte Schulleiterinnen, Schulleiter, Lehrkräfte,
-Schülerinnen und Schüler ihre Schulen und Teams für die Teilnahme an der
-Software-Challenge unverbindlich anmelden. Diese Interessenten werden
-dann über wichtige Termine und andere relevanten Dinge informiert.
+Ab April können interessierte Lehrkräfte, Schülerinnen und Schüler 
+ihre Schulen und Teams für die Teilnahme an der Software-Challenge 
+unverbindlich anmelden. Diese Interessenten werden dann über 
+wichtige Termine und andere relevanten Dinge informiert.
 
 Gegen Ende der Anmeldungsphase werden wir dann mit den registrierten
 Interessenten in Verbindung treten. Dann soll eine (relativ)
