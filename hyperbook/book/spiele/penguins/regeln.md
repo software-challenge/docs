@@ -10,6 +10,10 @@ index: 1
 Hey, Danke für den Fisch ist ein Brettspiel, welches mit Figuren auf einem Hexagonal-Feld (8x8) gespielt wird.
 Am Anfang werden Fische zufällig auf alle hexagonalen Eisschollen verteilt, wobei es immer mindestens einen Fisch auf jeder Eisscholle gibt.
 
+:::alert{info}
+Auf dem Spielserver werden ``BOARD_SIZE * (BOARD_SIZE + 1)`` aka `8 * 9` viele Fische gleichmäßig auf dem Board verteilt, wobei es auch zu Beginn Felder ohne Fische geben kann.
+:::
+
 ## Spielablauf
 
 #### Die ersten 8 Züge
@@ -24,6 +28,10 @@ Pinguine können in geraden Bahnen über die 3 Achsen des hexagonalen Feldes bel
 ![Spielfeld](/images/spiele/penguins/penguins_spielfeld.png "Spielfeld")
 
 Wenn ein Pinguin von einem Feld herunterrutscht, sammelt er die Fische des Felds automatisch auf. Dabei zerfällt die Eisscholle auf dem Feld. Das gilt allerdings nur für Felder, von denen aus man einen Zug startet und *nicht* für Felder, über die ein Pinguin rutscht / zieht.
+
+:::alert{info}
+Auf dem Spielserver ist der Zug so implementiert, dass Fische bereits eingesammelt werden sobald das Pinguin auf ein Feld zieht.
+:::
 
 Dieses Mal gibt es kein Rundenlimit, aber da bei jedem Zug genau eine Eisscholle zerstört wird, kann es nie mehr Züge als Eisschollen geben.
 
