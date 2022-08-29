@@ -30,7 +30,7 @@ Pinguine können in geraden Bahnen über die 3 Achsen des hexagonalen Feldes bel
 Wenn ein Pinguin von einem Feld herunterrutscht, sammelt er die Fische des Felds automatisch auf. Dabei zerfällt die Eisscholle auf dem Feld. Das gilt allerdings nur für Felder, von denen aus man einen Zug startet und *nicht* für Felder, über die ein Pinguin rutscht / zieht.
 
 :::alert{info}
-Auf dem Spielserver ist der Zug so implementiert, dass Fische bereits eingesammelt werden sobald das Pinguin auf ein Feld zieht.
+Auf dem Spielserver ist der Zug so implementiert, dass Fische bereits eingesammelt werden sobald ein Pinguin auf das Feld zieht.
 :::
 
 Dieses Mal gibt es kein Rundenlimit, aber da bei jedem Zug genau eine Eisscholle zerstört wird, kann es nie mehr Züge als Eisschollen geben.
