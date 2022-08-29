@@ -30,8 +30,8 @@ Stand berichtet.
 
 Teilnahmeberechtigt sind alle zur Hochschulreife führenden Schulen der
 Bundesrepublik Deutschland. Jede Schule kann sich dabei mit mehreren
-Kursen oder AGs (höchstens 3 Teams) anmelden. Jedes Team soll dabei aus
-mindestens 3 SchülerInnen und einer betreuenden Lehrkraft bestehen.
+Kursen oder AGs (höchstens 3 Teams) anmelden. Jedes Team sollte dabei aus
+mindestens 3 Schülerinnen und Schülern und einer betreuenden Lehrkraft bestehen.
 Jeder Kurs bzw. jede AG darf nur ein Team anmelden. Dabei kann es in der
 Anfangsphase durchaus Sinn machen, intern in einem Team mehrere Gruppen
 zu bilden, um z.B. unterschiedliche Strategien zu testen und
@@ -50,10 +50,10 @@ Das Anmeldeverfahren sieht etwa wie folgt aus. Genaue Termine des
 aktuellen Zeitraumes finden sich auf der [Website unter
 Ablauf und Termine](https://software-challenge.de/ablauf-und-termine).
 
-Ab April können interessierte SchulleiterInnen, Lehrkräfte und
-SchülerInnen ihre Schulen und Teams für die Teilnahme an der
-Software-Challenge unverbindlich anmelden. Diese Interessenten werden
-dann über wichtige Termine und andere relevanten Dinge informiert.
+Ab April können interessierte Lehrkräfte, Schülerinnen und Schüler 
+ihre Schulen und Teams für die Teilnahme an der Software-Challenge 
+unverbindlich anmelden. Diese Interessenten werden dann über 
+wichtige Termine und andere relevanten Dinge informiert.
 
 Gegen Ende der Anmeldungsphase werden wir dann mit den registrierten
 Interessenten in Verbindung treten. Dann soll eine (relativ)
@@ -64,7 +64,7 @@ Die endgültige Anmeldung soll dann zu Beginn des Schuljahres erfolgen.
 
 Um eine gute Planung und damit einen erfolgreichen Ablauf zu
 ermöglichen, sind wir darauf angewiesen, dass die interessierten
-SchulleiterInnen, Lehrkräfte und SchülerInnen ihre Schulen und Teams
+Schulleiterinnen, Schulleiter, Lehrkräfte, Schülerinnen und Schüler ihre Schulen und Teams
 möglichst frühzeitig registrieren und erforderlichenfalls ihre Daten
 aktualisieren.
 
