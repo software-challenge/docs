@@ -122,7 +122,7 @@ Der Status der oben in dem data memento Objekt enthalten ist, ist beispielsweise
 </state>
 ```
 
-Es enthält die Zugnummer in ``turn``, das anfangende Team in ``startTeam``, eine Liste an Feldern in ``board`` und die Anzahl Fishe beider Spielers in ``fishes``, zuerst die von ONE und danach die von TWO.
+Es enthält die Zugnummer in ``turn``, das anfangende Team in ``startTeam``, eine Liste an Feldern in ``board`` und die Anzahl Fische beider Spielers in ``fishes``, zuerst die von ONE und danach die von TWO.
 
 In `board` entsprechen die Positionen der Felder auf dem Spielfeld in [odd-r Koordinaten](https://www.redblobgames.com/grids/hexagons/#neighbors-offset) ihrer Positionen in der XML Struktur. Von oben bei null anfangend werden die `<list>` Objekte in `<board>` durchgezählt. Die Nummer der List in dem das Field Objekt ist, ist seine `y` Koordinate.  Auf die gleiche Weise entspricht die `x` Koordinate eines Felds seiner Nummer innerhalb des `<list>` Objekts.  
 Der Inhalt der `field` Objekte steht für die Anzahl Fische auf dem Feld, oder für einen Pinguin eines Spielers. In ersterem Fall steht eine Zahl in dem XML-Objekt und in letzterem Fall der Name des Spielers der den Pinguin gehört.
