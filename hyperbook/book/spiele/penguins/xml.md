@@ -131,7 +131,21 @@ Der Inhalt der `field` Objekte steht für die Anzahl Fische auf dem Feld, oder f
 
 `y`: `<list>` index in `<board>`
 
+##### Koordinatensysteme
+
 Beachtet, dass der XML-Status [odd-r Koordinaten](https://www.redblobgames.com/grids/hexagons/#neighbors-offset) nutzt, und dass die Koordinaten in Zügen als [doubled Koordinaten](https://www.redblobgames.com/grids/hexagons/#neighbors-doubled) interpretiert werden.
+
+Die Formeln für die Transformation von dem einen System in das andere sind folgendermaßen:
+
+odd-r zu doubled: ``(x, y) => (x * 2 + y % 2, y)``
+
+doubled zu odd-r: ``(x, y) => (Ceiling(x / 2.0) - y % 2, y)``
+
+Beachtet, dass `x / 2` hier durch `Ceiling(x / 2.0)` aufgerundet wird.
+
+:::alert{warn}
+Beachtet weiter, dass im doubled Koordinatensystem unabhängig der Größe (0, 1), (0, 3), (0, 5), etc. immer out of bounds sind, da sie in odd-r zu (-1, y) übersetzt werden.
+:::
 
 #### Spielablauf
 
