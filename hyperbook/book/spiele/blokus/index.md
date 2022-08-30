@@ -1,5 +1,5 @@
 ---
-name: BLokus
+name: Blokus
 hide: true
 ---
 
