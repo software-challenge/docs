@@ -14,10 +14,10 @@ was für die Teilnahme am Wettbewerb benötigt wird.
 ## Beitragen
 
 Wir freuen uns über sämtliche Verbesserungsvorschläge.  
-Die Dokumentation kann direkt hier auf [GitHub](https://github.com/software-challenge/docs/blob/main/hyperbook/book) editiert werden,
+Die Dokumentation kann direkt hier 
+auf [GitHub](https://github.com/software-challenge/docs/blob/main/hyperbook/book) editiert werden,
 einzige Voraussetzung ist eine kostenlose Registrierung bei GitHub.
-Ist man angemeldet,
-kann man ein Dokument auswählen 
+Nach der Anmeldung ein Dokument auswählen 
 und dann auf den Stift oben rechts klicken.
 Die relevanten Dokumente finden sich im Verzeichnis [hyperbook/book](./hyperbook/book).
 Damit wird von GitHub automatisch ein Fork 
@@ -69,8 +69,6 @@ dessen Ergebnisse unter `http://localhost:3000/` einsehbar sind.
 ### Build
 Um das Hyperbook zu veröffentlichen,
 generiert `npx hyperbook build` die Website in `./hyperbook/.hyperbook/out`.
-Diese kann zum Beispiel mit *nginx* veröffentlicht werden.
-Ein Beispiel findet sich im `Dockerfile`.
 
 ## Veröffentlichung
 
@@ -79,4 +77,9 @@ wird automatisch bei jedem push in den `main`-Branch von GitHub aktualisiert.
 Dies geschieht durch einen GitHub Actions Workflow,
 siehe `.github/workflows/auto-publish.yml`. 
 Der Workflow speichert die generierten Seiten im `live` branch des Repositories,
-welcher nach Benachrichtigung durch einen Webhook im gepullt wird.
+welcher nach Benachrichtigung durch einen Webhook von [caddy](./Caddyfile) gepullt wird.
+
+Bei Änderungen am Caddyfile oder dem Docker image 
+muss [push_production.sh](./bin/push_production.sh) mit dem GITHUB_SECRET des Webhooks ausgeführt werden.
+Das setup des Docker containers lässt sich auch lokal mit [test_production.sh](./bin/test_production.sh) testen,
+wobei der Caddy Webserver auf port 80 via [localhost](http://localhost) erreichbar wird.
