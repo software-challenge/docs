@@ -11,13 +11,13 @@ Hey, Danke für den Fisch ist ein Brettspiel, welches mit Figuren auf einem Hexa
 Am Anfang werden Fische zufällig auf alle hexagonalen Eisschollen verteilt, wobei es immer mindestens einen Fisch auf jeder Eisscholle gibt.
 
 :::alert{info}
-Für die Erstellung des Spielfeldes gelten folgende Bedingungen:
+Für die Erstellung des Spielbrett gelten folgende Bedingungen:
 
-- Sei $x$ die Seitenlänge des zwei dimensionalen Spielfeldes, dann ist $x = 8$.
-- Das Spielfeld $S$ ist dann $S = x \times x = 8 \times 8 = 64$ Felder groß.
-- Auf dem Spielfeld können $\le140$ Fische platziert werden, wobei stets auf $\ge4$ Feldern keine Fische am Anfang sein werden.
-    - Es werden nur auf einer Hälfte des $64$ Felder großen Spielfeldes die Fische zufällig gelegt. 
-    - Um eine symethrische Spielerfahrung zu bieten, wird diese Hälfte dupliziertd und dann an seiner horizontalen und vertikalen Achse gespiegelt und den restlichen $32$ Feldern hinzugefügt.
+- Sei $x$ die Seitenlänge des zwei dimensionalen Spielbretts, dann ist $x = 8$.
+- Das Spielbrett $S$ ist dann $S = x \times x = 8 \times 8 = 64$ Felder groß.
+- Auf dem Spielbrett können $\le 136$ Fische platziert werden, wobei stets auf $\ge4$ Feldern keine Fische am Anfang sein werden.
+    - Es werden nur auf einer Hälfte des $64$ Felder großen Spielbretts die Fische zufällig gelegt. 
+    - Um eine symethrische Spielerfahrung zu bieten, wird diese Hälfte dupliziert und dann an seiner horizontalen und vertikalen Achse gespiegelt und den restlichen $32$ Feldern hinzugefügt.
 - Wenn $F_n$ ein Feld auf dem Spielbrett is, mit $0\le n\le 63$, dann sei $f_{F_n}$ die Zahl an Fischen auf einem Feld, mit $0\le f_{F_n}\le 4$.
 :::
 
