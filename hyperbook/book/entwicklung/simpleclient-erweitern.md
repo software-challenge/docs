@@ -1,9 +1,9 @@
 ---
-name: Zufallsspieler erweitern
+name: Spielervorlage erweitern
 index: 7
 ---
 
-# Den Zufallsspieler erweitern
+# Die Spielervorlage erweitern
 
 In der Version des Java Zufallsspielers von der Software-Challenge
 Homepage ist bereits eine Strategie implementiert, die RandomLogic. Man
