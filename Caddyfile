@@ -1,8 +1,22 @@
+{
+  # debug
+}
+
 :80
+
+redir /spiele/ /spiele
+redir /spiele /spiele/aktuell
+
+@game path_regexp game ^\/spiele\/aktuell(.*)$
+rewrite @game /spiele/penguins{re.game.1}
 
 root * /srv
 try_files {path}.html {path}
 file_server
+handle_errors {
+  redir * /
+  file_server
+}
 
 route /update-content {
     validate_github {$GITHUB_SECRET}

@@ -13,7 +13,8 @@ RUN apk add --no-cache git
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 
 COPY Caddyfile /etc/caddy/Caddyfile
-RUN git clone https://github.com/software-challenge/docs.git -b live --depth 1 /srv
+COPY hyperbook/.hyperbook/out /srv
+#RUN git clone https://github.com/software-challenge/docs.git -b live --depth 1 /srv
 
 COPY bin/update-content.sh /
 
