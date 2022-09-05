@@ -11,7 +11,7 @@ die den Start mit der Entwicklung erleichtern soll.
 
 ## Die richtige Programmiersprache
 
-Am einfachsten ist es natürlich den Java/Ruby Zufallsspieler als Basis zu nutzen,
+Am einfachsten ist es natürlich die Java-, Ruby-Spielervorlage als Basis zu nutzen,
 allerdings könnt ihr auch eigene Clients in anderen Sprachen schreiben.
 Das ist mit mehr Arbeit verbunden,
 aber wenn ihr eine Sprache besonders gerne nutzt oder Vorteile sieht,

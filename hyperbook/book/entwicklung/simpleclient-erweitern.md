@@ -1,17 +1,17 @@
 ---
-name: Zufallsspieler erweitern
+name: Spielervorlage erweitern
 index: 7
 ---
 
-# Den Zufallsspieler erweitern
+# Die Spielervorlage erweitern
 
-In der Version des Java Zufallsspielers von der Software-Challenge
+In der Version der Java-Spielervorlages von der Software-Challenge
 Homepage ist bereits eine Strategie implementiert, die RandomLogic. Man
 kann jedoch auch noch beliebig viele eigene Strategien hinzufügen.
 
 ## Erstellen einer neuen Strategie
 
-Die einfachste Möglichkeit ist, die Klasse `Logic` des Zufallsspielers zu
+Die einfachste Möglichkeit ist, die Klasse `Logic` der Spielervorlages zu
 kopieren und umzubenennen (alle Vorkommen von `Logic` durch den neuen
 Klassennamen ersetzen). Der Vollständigkeit halber hier noch das
 Vorgehen bei einer komplett neuen Klasse:
