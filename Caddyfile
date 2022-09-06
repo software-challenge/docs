@@ -13,12 +13,13 @@ rewrite @game /spiele/penguins{re.game.1}
 root * /srv
 try_files {path}.html {path}
 file_server
-handle_errors {
-  redir * /
-  file_server
-}
 
 route /update-content {
     validate_github {$GITHUB_SECRET}
     exec * /update-content.sh
+}
+
+handle_errors {
+  redir * /
+  file_server
 }
