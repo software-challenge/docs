@@ -16,9 +16,9 @@ kümmert, muss unbedingt [Java installiert](installation-von-java) sein.
 
 ## Spielervorlage beschaffen
 
-Die Spielervorlage ist schon ein fertiger Computerspieler. Denn Quellcode
-kann man verwenden, um seinen eigenen Spieler zu programmieren. Die
-Spielervorlage bekommt man im 
+Die Spielervorlage ist schon ein fertiger Computerspieler. Den Quellcode kann man verwenden, 
+um seinen eigenen Spieler zu programmieren. 
+Die Spielervorlage bekommt man im 
 [Downloadbereich der Software-Challenge](https://software-challenge.de/dokumentation-und-material).
 Man braucht die Version
 *als Quellcode*.
@@ -65,7 +65,7 @@ richtig arbeiten:
 6.  Links "Java Source Attachment" auswählen
 
 7.  Rechts "Workspace location" aktivieren und den Pfad zur Source-Jar
-    (im Ordner "lib" des Spielervorlagequellcode Paketes) einstellen
+    (im Ordner "lib" des Spielervorlagen-Quellcode-Pakets) einstellen
     (heißt genau wie das Spiel-Plugin, mit einem "sources" angehängt,
     also z.B. "piranhas\_2019-sources.jar")
 
@@ -73,7 +73,7 @@ richtig arbeiten:
 
 ### Spielervorlage aus Eclipse starten
 
-DIe Spielervorlage kann man starten, indem man im Project-Explorer einen
+Die Spielervorlage kann man starten, indem man im Project-Explorer einen
 Rechtsklick auf die Datei `Starter.java` macht und dann "Run As" → "Java
 Application" auswählt.
 

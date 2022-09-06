@@ -16,7 +16,7 @@ ist unter :t[Wettkampfsystem->Computerspieler]{#contest.computerspieler} beschri
 
 ## Java
 
-Diese Anleitung beschreibt, wie man für die Java-Spielervorlage vorgehen muss.
+Diese Anleitung beschreibt, wie man mit der Java-Spielervorlage umgehen sollte.
 
 Hierzu gibt es zwei Möglichkeiten: 
 Die Jar-Datei selbst erstellen oder die Verwendung von Gradle (empfohlen).
@@ -59,14 +59,15 @@ Archiv kann dann hochgeladen werden.
 
 ### Zweite Möglichkeit - Das ANT Script
 
-Man kann auch das der Spielervorlage beiliegende Ant Buildscript benutzen.
-Dieses kompiliert die Spielervorlage und erzeugt automatisch eine JAR
-Datei sowie ein ZIP-Archiv, das man direkt im Websystem hochladen kann.
+Man kann auch das Ant-Buildscript benutzen, 
+welches der Spielervorlage beiliegt.
+Dieses kompiliert die Spielervorlage und erzeugt automatisch eine JAR-Datei sowie ein ZIP-Archiv,
+das man direkt im Websystem hochladen kann.
 
 #### Direkt ausführen
 
 Wenn Ant installiert ist, kann man über die Kommandozeile in das
-Verzeichnis der Spielervorlages wechseln und mit dem Aufruf "Ant" den
+Verzeichnis der Spielervorlage wechseln und mit dem Aufruf "Ant" den
 Build ausführen. Am Ende sollte die Meldung "BUILD SUCCESSFUL"
 erscheinen. Im Spielervorlage-Ordner findet man dann im Unterordner
 "build" die JAR Datei im Ordner "jar" sowie die fertig gepackte
@@ -85,8 +86,8 @@ Eclipse kann von Haus aus auch mit Ant-Scripten umgehen.
 
 3.  Auf der rechten Seite muss man nun das Buildfile auswählen. Das geht
     entweder mit "Browse Workspace" oder "Browse File System". Das
-    Buildfile heißt "build.xml" und liegt direkt in der Spielervorlage
-    Ordner, den man auf der Software-Challenge Homepage heruntergeladen
+    Buildfile heißt "build.xml" und liegt direkt in dem Spielervorlage-Ordner, 
+    den man auf der Software-Challenge Homepage heruntergeladen
     hat. Anschließend mit "Apply" bestätigen und das Fenster schließen
 
 4.  Um den Buildprozess zu starten, muss im Menü "Run" → "External
