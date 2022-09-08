@@ -12,14 +12,6 @@ In den verschiedenen Abschnitten findest du
 - den technischen Grundlagen,
 - die Dokumentation des aktuellen Spiels und 
 - eine Erklärung zur Entwicklung eines eigenen Computerspielers.
-
-### Lesezeichen
-
-Du kannst dir an jeder beliebigen Überschrift ein Lesezeichen setzen,
-was du dann direkt hier auf der Startseite wiederfindest:
-:::alert
-::bookmarks
-:::
 ---
 :::alert{info}
 ### Beitragen
