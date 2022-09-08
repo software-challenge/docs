@@ -5,7 +5,7 @@ index: 10
 
 ## Grundlagen
 
-:t[Einführung-in-XML]{#xml}
+:t[Einführung in XML]{#xml}
 
 ## Spielinfrastruktur
 
