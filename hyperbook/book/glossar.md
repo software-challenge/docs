@@ -7,6 +7,8 @@ index: 10
 
 :t[Einführung in XML]{#xml}
 
+:t[Administration der Spiele mit XML]{#xml-administration.md}
+
 ## Spielinfrastruktur
 
 :t[Computerspieler]{#player}
