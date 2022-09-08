@@ -25,11 +25,25 @@ Man braucht die Version
 
 ## Einrichtung von Eclipse
 
-### Beschaffung und Installation der Software
+#### Windows
 
-Am einfachsten ist die Installation von Eclipse mittels des Eclipse
-Installer. Dies ist auf folgender Seite erklärt:
-<https://www.eclipse.org/downloads/packages/installer>
+Am einfachsten ist die Installation von Eclipse unter Windows mittels des Eclipse Installer. 
+Dies ist auf der [Eclipse-Website](https://www.eclipse.org/downloads/packages/installer) gut erklärt.
+
+#### Debian
+Unter Debian basierenden Distributionen ist die Installation sehr einfach mit `snap`.
+```shell
+$ sudo snap install eclipse --classic
+```
+
+#### Arch
+Mit einer Arch-Distribution lässt sich Eclipse ebenso einfach mit `snap` installieren. Allerdings ist oftmals `snap` noch nicht installiert.
+```shell
+$ sudo pacman -S snapd
+$ sudo systemctl enable --now snapd.socket
+$ sudo ln -s /var/lib/snapd/snap /snap
+$ sudo snap install eclipse --classic
+```
 
 ### Spielervorlage in Eclipse einbinden
 
@@ -85,5 +99,3 @@ Damit die Spielervorlage erfolgreich startet, muss der
 ## Weiterführende Links
 
 -   [Homepage der Eclipse-IDE](http://www.eclipse.org)
-
--   [Homepage des NetBeans-Projektes](http://www.netbeans.org)
