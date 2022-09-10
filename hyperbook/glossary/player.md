@@ -6,11 +6,11 @@ index: 1
 # Der Computerspieler
 
 Der Computerspieler ist ein Programm, 
-dass sich mit dem :t[Spielleiter]{#server} verbindet 
-und die gestellte Aufgabe selbständig löst.
+das sich mit dem :t[Spielleiter]{#server} verbindet 
+und die gestellte Aufgabe selbstständig löst.
 Die Aufgabe der Schülerinnen und Schüler ist es,
 sich eine Strategie zu überlegen und zu implementieren,
-mit der sie gegen die Spieler der anderen Schulen gewinnen können.
+mit der sie gegen die Spieler der anderen Teams gewinnen können.
 
 Der Computerspieler kann in einer beliebigen Programmiersprache geschrieben sein,
 für einige Sprachen werden aber bereits Muster-Computerspieler 
