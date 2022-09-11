@@ -14,3 +14,5 @@ index: 2
 ## Grundlagen
 
 :t[Einführung in XML]{#xml}
+
+:t[Administration der Spiele mit XML]{#xml-administration.md}
