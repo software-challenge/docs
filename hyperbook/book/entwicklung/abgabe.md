@@ -19,86 +19,60 @@ ist unter :t[Wettkampfsystem->Computerspieler]{#contest.computerspieler} beschri
 Diese Anleitung beschreibt, wie man mit der Java-Spielervorlage umgehen sollte.
 
 Hierzu gibt es zwei Möglichkeiten: 
-Die Jar-Datei selbst erstellen oder die Verwendung von Gradle (empfohlen).
+Die JAR-Datei selbst erstellen oder die Verwendung von Gradle, was wir empfehlen.
 
 ### Erste Möglichkeit - JAR erstellen
 
 #### Eclipse
 
-1.  In Eclipse im Menü auf "File" → "Export". Dann unter "Java" →
-    "Runnable JAR file" wählen
+1.  In Eclipse im Menü auf *File* → *Export*. Dann unter *Java* →
+    *Runnable JAR file* wählen
 
-2.  Im nächsten Fenster wird die "Run Configuration" ausgewählt (dazu
-    muss die Spielervorlage mindestens einmal mit Eclipse gestartet worden
-    sein). Darunter wird mit "Browse" die Zieldatei (z.B.
-    `[…​]/my_player.jar`) ausgewählt. Bei "Library handling" am besten
+2.  Im nächsten Fenster wird die *Run Configuration* ausgewählt, 
+    dazu muss die Spielervorlage mindestens einmal mit Eclipse gestartet worden sein.
+
+    Darunter wird mit *Browse* die Zieldatei, z.B.
+    `[…​]/my_player.jar`, ausgewählt. Bei *Library handling* am besten
     die erste Option nehmen. So wird eine einzige JAR Datei erzeugt, in
     der alles nötige drin ist. Mit einem Klick auf Finish wird die
-    JAR-Datei erzeugt. Eventuell erhält man einen Hinweis "This
-    operation repacks referenced libraries", den man mit "OK" bestätigen
+    JAR-Datei erzeugt. Eventuell erhält man einen Hinweis *This
+    operation repacks referenced libraries*, den man mit *OK* bestätigen
     muss.
 
 Wenn alles geklappt hat, wurde der :t[Computerspieler]{#player} in ein ausführbares
 Programm überführt. Damit der Wettkampfserver den :t[Computerspieler]{#player} verarbeiten
-kann, muss er noch in ein ZIP-Archiv gepackt werden (auch wenn ein JAR
-technisch gesehen bereits ein ZIP-Archiv ist).
+kann, muss er noch in ein ZIP-Archiv gepackt werden, auch wenn ein JAR
+technisch gesehen bereits ein ZIP-Archiv ist.
 
-#### NetBeans
+### Zweite Möglichkeit - Gradle
 
-Nach einem Rechtsklick auf das Projekt in der Projektansicht kann man
-"Properties" auswählen. Auf der linken Seite unter "Categories" die
-Kategorie "Run" auswählen und dann rechts unter "Main Class" die Klasse
-"Starter" eintragen.
-
-Nach einem Rechtsklick auf das Projekt in der Projektansicht kann man
-"Clean and Build" auswählen. Danach gibt es den Ordner
-"Pfad/zum/Projekt/dist". In diesem befindet sich eine JAR-Datei und eine
-Kopie des "lib"-Ordners. Beides zusammen muss jetzt mit einem beliebigen
-Archivierungsprogramm in eine ZIP-Datei zusammengepackt werden. Dieses
-Archiv kann dann hochgeladen werden.
-
-### Zweite Möglichkeit - Das ANT Script
-
-Man kann auch das Ant-Buildscript benutzen, 
+Man kann auch das Gradle-Buildscript benutzen, 
 welches der Spielervorlage beiliegt.
-Dieses kompiliert die Spielervorlage und erzeugt automatisch eine JAR-Datei sowie ein ZIP-Archiv,
-das man direkt im Websystem hochladen kann.
+Dieses kompiliert die Spielervorlage und erzeugt automatisch eine JAR-Datei,
+welche man dann noch in einer ZIP-Datei verpacken muss
+und dann im :t[Wettkampfsystem]{#contest} hochladen kann.
 
-#### Direkt ausführen
+#### Gradle direkt ausführen
 
-Wenn Ant installiert ist, kann man über die Kommandozeile in das
-Verzeichnis der Spielervorlage wechseln und mit dem Aufruf "Ant" den
-Build ausführen. Am Ende sollte die Meldung "BUILD SUCCESSFUL"
-erscheinen. Im Spielervorlage-Ordner findet man dann im Unterordner
-"build" die JAR Datei im Ordner "jar" sowie die fertig gepackte
-ZIP-Datei im Ordner "zipped", die direkt im :t[Wettkampfsystem]{#contest} hochgeladen
-werden kann.
-
-#### Eclipse
-
-Eclipse kann von Haus aus auch mit Ant-Scripten umgehen.
-
-1.  Im Menü "Run" → "External Tools" → "External Tools Configuration"
-    wählen
-
-2.  Links in dem neuen Fenster mit einem Rechtsklick auf "Ant Build" →
-    "New" erstellt man eine neue Konfiguration und wählt diese aus
-
-3.  Auf der rechten Seite muss man nun das Buildfile auswählen. Das geht
-    entweder mit "Browse Workspace" oder "Browse File System". Das
-    Buildfile heißt "build.xml" und liegt direkt in dem Spielervorlage-Ordner, 
-    den man auf der Software-Challenge Homepage heruntergeladen
-    hat. Anschließend mit "Apply" bestätigen und das Fenster schließen
-
-4.  Um den Buildprozess zu starten, muss im Menü "Run" → "External
-    Tools" die gerade erstellte Konfiguration ausgewählt werden. Der
-    Build wird dann durchgeführt (dauert i.d.R. wenige Sekunden).
-
-Am Ende erhält man die Meldung "BUILD SUCCESSFUL".
-
-Im Spielervorlage-Ordner findet man dann im Unterordner "build" die JAR
-Datei im Ordner "jar" sowie die fertig gepackte ZIP-Datei im Ordner
-"zipped", die direkt ins :t[Wettkampfsystem]{#contest} hochgeladen werden kann.
+Angenommen Gradle ist installiert, 
+so kann man über die Kommandozeile in das Verzeichnis der Spielervorlage wechseln 
+und mit folgenden das Gradle-Projekt initialisieren.
+```shell
+$ gradle init
+```
+Wenn du dies getan hast, dann hast du von hier aus die Möglichkeit
+den Spieler direkt zu starten.
+```shell
+$ ./gradlew run
+```
+Oder du baust den Spieler, um ihn dann auf das :t[Wettkampfsystem]{#contest} zu laden.
+```shell
+$ ./gradlew build
+```
+Wenn das Bauen der JAR erfolgreich war, 
+dann solltest du im selben Ordner nun eine neue JAR-Datei vorfinden.
+Diese muss dann nur noch in eine ZIP-Datei gepackt werden
+und kann dann auch schon auf das :t[Wettkampfsystem]{#contest} hochgeladen werden.
 
 ## Ruby
 
