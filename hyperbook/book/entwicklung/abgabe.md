@@ -74,50 +74,17 @@ dann solltest du im selben Ordner nun eine neue JAR-Datei vorfinden.
 Diese muss dann nur noch in eine ZIP-Datei gepackt werden
 und kann dann auch schon auf das :t[Wettkampfsystem]{#contest} hochgeladen werden.
 
-## Ruby
-
-Da Ruby eine interpretierte Sprache ist, muss der Ruby-Quellcode direkt
-in ein ZIP-Archiv gepackt und auf das :t[Wettkampfsystem]{#contest} hochgeladen
-werden. Auf dem :t[Wettkampfsystem]{#contest} ist ein Ruby-Interpreter sowie das
-aktuellste `software_challenge_client` Gem installiert. Alle weiteren
-Bibliotheken müssen im ZIP-Archiv vorhanden sein. Nach dem Hochladen des ZIP-Archivs muss die auszuführende Hauptdatei in :t[Wettkampfsystem]{#contest}
-ausgewählt werden. Diese wird dann zum Start des Computerspielers
-gestartet. Damit dies richtig funktioniert, ist es entscheidend, dass
-die Hauptdatei mit einer sogenannten "Shebang"-Zeile beginnt:
-
-    #!/usr/bin/env ruby
-
-Weiterhin ist es ratsam, den Magic-Comment zum Encoding direkt unter die
-Shebang-Zeile zu schreiben:
-
-    # encoding: UTF-8
-
-Ein vollständiges Beispiel für einen abgabefertigen Ruby-Computerspieler
-gibt es im [example Verzeichnis des Computerspieler-Gems bei
-Github](https://github.com/software-challenge/client-ruby/tree/main/example).
-Packt man die beiden Dateien `client.rb` und `main.rb` in ein
-ZIP-Archiv, hat man einen abgabefertigen Computerspieler. Beim Hochladen
-wählt man `main.rb` als Hauptdatei.
-
-## C#
-
-Stellt sicher, dass euer Projekt nur Libraries nutzt, die auch in [Mono
-5.4](#ausfuehrungsumgebungen) enthalten sind. Kompiliert bzw. erstellt
-euer Projekt und fügt zu dem build eine start.sh hinzu, wie
-[nachfolgend](#andere-sprache) beschrieben, sofern ihr noch keine habt,
-da der Wettkampfserver eure exe sonst nicht ausführen kann. Sie sollte
-folgenden Inhalt haben, um eure exe mit mono zu starten:
-
-    #!/bin/sh
-    chmod +x csharp_exe_dateiname
-    mono csharp_exe_dateiname "$@"
-
 ## Andere Programmiersprache
 
 Bei Computerspielern in einer anderen Programmiersprache muss das
 ZIP-Archiv ein Shell-Script mit genauen Instruktionen zum Start des
 Computerspielers enthalten. Dieses muss nach dem Hochladen im
 Wettkampfystem als Hauptdatei ausgewählt werden.
+
+:::alert{info}
+In der Regel sollte jede Spielervorlage eine Beschreibung beinhalten, 
+die aussagt, wie diese im :t[Wettkampfsystem]{#contest} genutzt werden kann.
+:::
 
 Beachten Sie hierbei, dass diesem Script vom :t[Wettkampfsystem]{#contest} Parameter
 übergeben werden, die an Ihr Programm weitergegeben werden müssen. Diese
