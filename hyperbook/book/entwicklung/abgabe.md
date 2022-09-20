@@ -3,13 +3,18 @@ name: Computerspieler abgabefertig machen
 index: 9
 ---
 
-# :t[Computerspieler]{#player} abgabefertig machen
+# Computerspieler abgabefertig machen
 
 Damit das :t[Wettkampfsystem]{#contest} mit dem :t[Computerspieler]{#player} arbeiten kann,
 muss er als ausführbares Programm in ein ZIP-Archiv gepackt werden.
 
 Je nach Programmiersprache, in der der :t[Computerspieler]{#player} entwickelt wurde,
 sind unterschiedliche Schritte notwendig.
+
+:::alert{info}
+In der Regel sollte jede Spielervorlage eine Beschreibung beinhalten, 
+die aussagt, wie diese im :t[Wettkampfsystem]{#contest} genutzt werden kann.
+:::
 
 Wie man den abgabefertigen :t[Computerspieler]{#player} dann im :t[Wettkampfsystem]{#contest} einsendet,
 ist unter :t[Wettkampfsystem->Computerspieler]{#contest.computerspieler} beschrieben.
@@ -80,11 +85,6 @@ Bei Computerspielern in einer anderen Programmiersprache muss das
 ZIP-Archiv ein Shell-Script mit genauen Instruktionen zum Start des
 Computerspielers enthalten. Dieses muss nach dem Hochladen im
 Wettkampfystem als Hauptdatei ausgewählt werden.
-
-:::alert{info}
-In der Regel sollte jede Spielervorlage eine Beschreibung beinhalten, 
-die aussagt, wie diese im :t[Wettkampfsystem]{#contest} genutzt werden kann.
-:::
 
 Beachten Sie hierbei, dass diesem Script vom :t[Wettkampfsystem]{#contest} Parameter
 übergeben werden, die an Ihr Programm weitergegeben werden müssen. Diese
