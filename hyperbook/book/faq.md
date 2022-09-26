@@ -10,7 +10,7 @@ Wir versuchen diese stets auktuell
 und ausführlich zu halten.
 
 Wenn du dennoch nicht fündig wirst,
-dann frage uns gerne auf unseren [Discord](https://discord.gg/jhyF7EU),
+dann frage uns gerne auf unserem [Discord](https://discord.gg/jhyF7EU),
 oder schreibe uns eine [E-Mail](mailto:tech@software-challenge.de).
 
 ## Technisch
@@ -21,15 +21,13 @@ Eine grundlegende Regelung bei der Software-Challenge ist,
 dass ein jeder Spieler maximal zwei Sekunden Zeit hat, 
 eine Antwort an den Spielleiter zu senden.
 
-Die Zeit wird von Erhalt der Nachricht des Spielleiters bis zum Erreichen der Antwort des Spielers gezählt.
+Die Zeit wird von Erhalt der Nachricht des Spielleiters
+bis zum Erreichen der Antwort des Spielers gezählt.
 
 #### Allgemein
-Es kann nun versucht werden, 
-den Algorithmus zu optimieren, 
-welcher genutzt wird, 
-um den Zug zu berechnen. Beachtet werden kann dabei, 
-wo Schleifen durchlaufen werden, 
-welche optimiert werden können. 
+Es kann nun versucht werden, den Algorithmus zu optimieren, 
+welcher genutzt wird, um den Zug zu berechnen. Beachtet werden kann dabei, 
+wo Schleifen durchlaufen werden, welche optimiert werden können. 
 Des Weiteren ist es ganz gut zu schauen, 
 ob der Spieler häufige redundante oder doppelnde Zugriffe auf Methoden, 
 Objekte oder Variablen macht 
@@ -80,31 +78,25 @@ und die Sprache einen Garbage Collector hat.
 Der [Garbage Collector](https://de.wikipedia.org/wiki/Garbage_Collection) ist ein System, welches den Speicher automatisch verwaltet, sodass kein manuelles Speichermanagement von Nöten ist. Das bedeutet, sobald zum Beispiel eine Variable, die zuvor initialisiert wurde, nicht mehr im Scope der Anwendung liegt, wird der Garbage Collector von Zeit zu Zeit anlaufen und den Speicher freigeben, welche diese Variable belegt hat.
 
 ##### Java
-Allerdings kann in Java der Garbage Collector oft zu sehr unpassenden Zeiten anspringen, 
-wie zum Beispiel bevor der Zug an den Spielleiter verschickt wird. 
-Auch die Arbeit des Garbage Collector fällt mit in die Zeit ein, 
-die der Spieler hat, 
-um den Zug zu berechnen.
+Allerdings kann in Java der Garbage Collector oft zu sehr unpassenden Zeiten anspringen, wie zum Beispiel bevor der Zug an den Spielleiter verschickt wird. 
+Auch die Arbeit des Garbage Collector wird mit in die Zeit einberechnet, 
+die der Spieler hat, um den Zug zu berechnen.
 
-Um die Zeit, 
-die der Garbage Collector braucht, 
-zu optimieren, 
+Um die Zeit, die der Garbage Collector braucht, zu optimieren,
 kann man dem Spieler ein paar Startargumente mitgeben:
 
 :::alert{warn}
-Bitte beachte, dass die folgenden Argumente nicht allgemeingültig sind. Bedeutet das für jeden Spieler separat die optimale Kombination herausgefunden werden muss.
+Bitte beachte, dass die folgenden Argumente nicht allgemeingültig sind.
+Für jeden Spieler kann eine etwas andere Kombination optimal sein.
 :::
 
 ```shell
--XX:+UseConcMarkSweepGC
-```
-Es wird der *Concurrent Mark Sweep*-Algorithmus genutzt, 
-um die Garbage Collection durchzuführen. 
-Dieser *kann* kürzere Pausen trotz nur eines Threads bieten.
-```shell
 -XX:+ExplicitGCInvokesConcurrent
 ```
-Der volle Effekt vom Garbage Collector von `System.gc()` wird gemildert.
+Der volle Effekt vom Garbage Collector von `System.gc()` wird gemildert,
+da es kein *Stop the World Event* Garbage Collector ist.
+Das bedeutet, dass alle Anwendungs-Threads angehalten würden, 
+bis der Garbage Collector seine Arbeit getan hat.
 ```shell
 -XX:NewRatio=1
 ```
