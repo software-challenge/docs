@@ -11,8 +11,8 @@ index: 2
 
 :t[Wettkampfsystem]{#contest}
 
-## Grundlagen
+## Extensible Markup Language (XML)
 
 :t[Einführung in XML]{#xml}
 
-:t[Administration der Spiele mit XML]{#xml-administration.md}
+:t[Administration der Spiele mit XML]{#xml-administration}
