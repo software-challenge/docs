@@ -26,8 +26,8 @@ bis zum Erreichen der Antwort des Spielers gezählt.
 
 #### Allgemein
 Es kann nun versucht werden, den Algorithmus zu optimieren, 
-welcher genutzt wird, um den Zug zu berechnen. Beachtet werden kann dabei, 
-wo Schleifen durchlaufen werden, welche optimiert werden können. 
+welcher genutzt wird, um den Zug zu berechnen. 
+Beachtet werden kann dabei, wo Schleifen durchlaufen werden, welche optimiert werden können. 
 Des Weiteren ist es ganz gut zu schauen, 
 ob der Spieler häufige redundante oder doppelnde Zugriffe auf Methoden, 
 Objekte oder Variablen macht 
