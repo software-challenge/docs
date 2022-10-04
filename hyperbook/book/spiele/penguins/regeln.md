@@ -13,18 +13,17 @@ Am Anfang werden Fische zufällig auf alle hexagonalen Eisschollen verteilt, wob
 :::alert{info}
 Für die Erstellung des Spielbretts gelten folgende Bedingungen:
 
-- Das Spielbrett ist $8\times8=64$ Felder groß.
+- Das Spielbrett ist $8\times8$ Felder groß.
 - Auf dem Spielbrett können maximal $130$ Fische platziert werden.
-    -   Es kann $0$ oder mehr Felder geben, 
+    -   Es wird nur eine Hälfte des Spielbretts generiert.
+    -   Es kann Felder geben, 
         welche am Anfang keine Fische haben,
         wobei es wahrscheinlicher ist, 
         dass diese Felder zu der Mitte hin auftauchen.
-    -   Es werden nur auf einer Hälfte des $64$ Felder großen Spielbretts die Fische zufällig gelegt, 
-        wobei es an den Rändern mehr Fisch gibt als zu der Mitte hin.
+    -   Es gibt an den Rändern mehr Fisch als zu der Mitte hin.
     -   Auf jedem Feld können $0$ bis $4$ Fische sein.
-    -   Damit das Spielbrett symmetrisch ist, 
-        wird diese Hälfte dupliziert, 
-        um $180°$ gedreht und den restlichen $32$ Feldern hinzugefügt.
+    -   Das Spielbrett wird dupliziert, um $180°$ gedreht 
+    und den restlichen $32$ Feldern hinzugefügt.
 :::
 
 ## Spielablauf
