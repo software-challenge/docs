@@ -16,68 +16,19 @@ In der Regel sollte jede Spielervorlage eine Beschreibung beinhalten,
 die aussagt, wie diese im :t[Wettkampfsystem]{#contest} genutzt werden kann.
 :::
 
+### Offizielle Spielervorlagen
+- [Java](https://github.com/software-challenge/backend/blob/main/player/configuration/README.md)
+- [Ruby](https://github.com/software-challenge/client-ruby/blob/main/README.md)
+
+### Inoffizielle Spielervorlage
+- [C#](https://github.com/jnccd/socha-client-csharp/blob/master/README.md)
+- [C++](https://github.com/Estugon/sc-penguins-cpp/blob/main/README.md)
+- [Python](https://github.com/FalconsSky/socha-python-client/blob/master/README.md)
+- [Rust](https://github.com/fwcd/socha-client-rust-2023/blob/main/README.md)
+- [Swift](https://github.com/matthesjh/sc23-swift-client/blob/main/README.md)
+
 Wie man den abgabefertigen :t[Computerspieler]{#player} dann im :t[Wettkampfsystem]{#contest} einsendet,
 ist unter :t[Wettkampfsystem->Computerspieler]{#contest.computerspieler} beschrieben.
-
-## Java
-
-Diese Anleitung beschreibt, wie man mit der Java-Spielervorlage umgehen sollte.
-
-Hierzu gibt es zwei Möglichkeiten: 
-Die JAR-Datei selbst erstellen oder die Verwendung von Gradle, was wir empfehlen.
-
-### Erste Möglichkeit - JAR erstellen
-
-#### Eclipse
-
-1.  In Eclipse im Menü auf *File* → *Export*. Dann unter *Java* →
-    *Runnable JAR file* wählen
-
-2.  Im nächsten Fenster wird die *Run Configuration* ausgewählt, 
-    dazu muss die Spielervorlage mindestens einmal mit Eclipse gestartet worden sein.
-
-    Darunter wird mit *Browse* die Zieldatei, z.B.
-    `[…​]/my_player.jar`, ausgewählt. Bei *Library handling* am besten
-    die erste Option nehmen. So wird eine einzige JAR Datei erzeugt, in
-    der alles nötige drin ist. Mit einem Klick auf Finish wird die
-    JAR-Datei erzeugt. Eventuell erhält man einen Hinweis *This
-    operation repacks referenced libraries*, den man mit *OK* bestätigen
-    muss.
-
-Wenn alles geklappt hat, wurde der :t[Computerspieler]{#player} in ein ausführbares
-Programm überführt. Damit der Wettkampfserver den :t[Computerspieler]{#player} verarbeiten
-kann, muss er noch in ein ZIP-Archiv gepackt werden, auch wenn ein JAR
-technisch gesehen bereits ein ZIP-Archiv ist.
-
-### Zweite Möglichkeit - Gradle
-
-Man kann auch das Gradle-Buildscript benutzen, 
-welches der Spielervorlage beiliegt.
-Dieses kompiliert die Spielervorlage und erzeugt automatisch eine JAR-Datei,
-welche man dann noch in einer ZIP-Datei verpacken muss
-und dann im :t[Wettkampfsystem]{#contest} hochladen kann.
-
-#### Gradle direkt ausführen
-
-Angenommen Gradle ist installiert, 
-so kann man über die Kommandozeile in das Verzeichnis der Spielervorlage wechseln 
-und mit folgenden das Gradle-Projekt initialisieren.
-```shell
-$ gradle init
-```
-Wenn du dies getan hast, dann hast du von hier aus die Möglichkeit
-den Spieler direkt zu starten.
-```shell
-$ ./gradlew run
-```
-Oder du baust den Spieler, um ihn dann auf das :t[Wettkampfsystem]{#contest} zu laden.
-```shell
-$ ./gradlew build
-```
-Wenn das Bauen der JAR erfolgreich war, 
-dann solltest du im selben Ordner nun eine neue JAR-Datei vorfinden.
-Diese muss dann nur noch in eine ZIP-Datei gepackt werden
-und kann dann auch schon auf das :t[Wettkampfsystem]{#contest} hochgeladen werden.
 
 ## Andere Programmiersprache
 
