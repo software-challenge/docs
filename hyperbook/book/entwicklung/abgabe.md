@@ -20,7 +20,7 @@ die aussagt, wie diese im :t[Wettkampfsystem]{#contest} genutzt werden kann.
 - [Java](https://github.com/software-challenge/backend/blob/main/player/configuration/README.md)
 - [Ruby](https://github.com/software-challenge/client-ruby/blob/main/README.md)
 
-### Inoffizielle Spielervorlage
+### Inoffizielle Spielervorlagen
 - [C#](https://github.com/jnccd/socha-client-csharp/blob/master/README.md)
 - [C++](https://github.com/Estugon/sc-penguins-cpp/blob/main/README.md)
 - [Python](https://github.com/FalconsSky/socha-python-client/blob/master/README.md)
