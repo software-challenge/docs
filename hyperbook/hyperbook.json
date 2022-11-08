@@ -1,6 +1,5 @@
 {
   "name": "Software-Challenge Dokumentation",
-  "version": "0.0.1",
   "description": "Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen.",
   "license": "cc-by-nc-sa",
   "author": {
@@ -12,5 +11,10 @@
   "logo": "/logo.svg",
   "colors":{
     "brand": "#3276AD"
+  },
+  "fonts": {
+    "heading": "/fonts/Inter-Regular.ttf",
+    "body": "/fonts/Inter-Regular.ttf",
+    "code": "/fonts/SourceCodePro-Regular.ttf"
   }
 }
