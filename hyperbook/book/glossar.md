@@ -1,13 +1,7 @@
 ---
 name: Technische Grundlagen
-index: 10
+index: 2
 ---
-
-## Grundlagen
-
-:t[Einführung in XML]{#xml}
-
-:t[Administration der Spiele mit XML]{#xml-administration.md}
 
 ## Spielinfrastruktur
 
@@ -16,3 +10,9 @@ index: 10
 :t[Spielleiter]{#server}
 
 :t[Wettkampfsystem]{#contest}
+
+## Extensible Markup Language (XML)
+
+:t[Einführung in XML]{#xml}
+
+:t[Administration der Spiele mit XML]{#xml-administration}
