@@ -15,15 +15,15 @@ Für die Erstellung des Spielbretts gelten folgende Bedingungen:
 
 - Das Spielbrett ist $8\times8$ Felder groß.
 - Auf dem Spielbrett können maximal $130$ Fische platziert werden.
-    -   Es wird nur eine Hälfte des Spielbretts generiert.
     -   Es kann Felder geben, 
         welche am Anfang keine Fische haben,
         wobei es wahrscheinlicher ist, 
         dass diese Felder zu der Mitte hin auftauchen.
     -   Es gibt an den Rändern mehr Fisch als zu der Mitte hin.
     -   Auf jedem Feld können $0$ bis $4$ Fische sein.
-    -   Das Spielbrett wird dupliziert, um $180°$ gedreht 
-    und den restlichen $32$ Feldern hinzugefügt.
+    -   Es wird nur eine Hälfte des Spielbretts generiert, 
+        dann dupliziert, um $180°$ gedreht 
+        und den restlichen $32$ Feldern hinzugefügt.
 :::
 
 ## Spielablauf
