@@ -107,7 +107,7 @@ Dadurch *kann* der Garbage Collector im Einzelnen Durchlauf weniger zu tun haben
 -mx800m -ms800m
 ```
 Verringert und fixiert die Speichergröße, 
-so dass die Garbage Collection häufiger erfolgen und weniger Zeit in Anspruch nehmen.
+so dass die Garbage Collection häufiger erfolgt und weniger Zeit in Anspruch nimmt.
 ```shell
 -XX:-UseParNewGC
 ```
