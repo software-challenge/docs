@@ -7,21 +7,12 @@ index: 1
 
 ## Spielaufbau
 
-Hey, Danke für den Fisch ist ein Brettspiel, welches mit Figuren auf einem Hexagonal-Feld (8x8) gespielt wird.
-Am Anfang werden Fische zufällig auf alle hexagonalen Eisschollen verteilt, wobei es immer mindestens einen Fisch auf jeder Eisscholle gibt.
-
-:::alert{info}
-Für die Erstellung des Spielbretts gelten folgende Bedingungen:
-
-- Sei $x$ die Seitenlänge des zweidimensionalen Spielbretts, dann ist $x = 8$.
-- Das Spielbrett $S$ ist dann $S = x \times x = 8 \times 8 = 64$ Felder groß.
-- Auf dem Spielbrett können maximal $\le 134$ Fische platziert werden.
-    - Es kann $\geq0$ Felder geben, welche am Anfang keine Fische haben,
-    wobei es wahrscheinlicher ist, dass diese Felder in der Mitte auftauchen.
-    - Es werden nur auf einer Hälfte des $64$ Felder großen Spielbretts die Fische zufällig gelegt, wobei es an den Rändern mehr Fisch gibt als zu der Mitte hin.
-    - Auf jedem Feld können $0-4$ Fische sein.
-    - Um eine symmetrische Spielerfahrung zu bieten, wird diese Hälfte dupliziert, um $180°$ gedreht und den restlichen $32$ Feldern hinzugefügt.
-:::
+Hey, Danke für den Fisch! wird mit Figuren 
+auf einem 8x8 Hexagonal-Feld gespielt.
+Jedes Feld ist entweder eine Eisscholle mit ein bis vier Fischen
+(letzteres höchstselten) oder ein Loch.
+Während es am Rand tendenziell mehr Fische gibt,
+gibt es in der Mitte tendenziell mehr Löcher.
 
 ## Spielablauf
 
