@@ -47,8 +47,7 @@ Bewegungspunkt.
 
 ### 2.2 Die Insel
 
-Die Insel kann nicht überquert werden. Fährt ein Dampfer auf eine Insel
-(z.B. weil er nicht rechtzeitig bremsen kann), hat er das Spiel verloren.
+Die Insel kann nicht überquert werden. Fährt ein Dampfer auf oder durch eine Insel, gilt dies als illegaler Zug und führt zu einer Disqualifikation, wodurch der Spieler das Spiel verloren hat.
 
 ### 2.3 Das Passagierfeld mit Anleger in verschiedene Richtungen
 
@@ -63,7 +62,7 @@ Ein Dampfer, der so abgedrängt wird, dass er an einem Anleger landet,
 kann einen Passagier aufnehmen, sofern der Dampfer die Geschwindigkeit
 1 hat.
 
-### (2.4 Die Sandbank)
+### 2.4 Die Sandbank
 
 ![](Sandbank.png)
 
@@ -91,9 +90,9 @@ Landet ein Dampfer durch abdrängen auf einem Zielfeld, reicht dies nicht
 zum Gewinnen des Spiels, selbst wenn der abgedrängte Dampfer zwei
 Passagiere an Bord hat und Geschwindigkeit 1 besitzt.
 
-### 2.6 Das Gegenströmungssegment
+### 2.6 Die Gegenströmung
 
-Es handelt sich hierbei um ein ganzes Segment in der Mitte des Spielfeldes, welches desto weiter man in die Mitte ziehen möchte umso mehr Kohle benötigt. Um genau zu sein wird um n Felder in die Mitte zu ziehen, die Geschwindigkeit n + 1 benötigt. (finde n * 2 - 1 besser)
+Über das ganze Spielbrett hinweg zieht sich durch jedes Segment mittig eine Gegenströmung, die zum passieren eine erhöhte Geschwindigkeit benötigt. Die Geschwindigkeit wird wie folgt berechnet: Um n Felder in die Mitte zu ziehen, benötigt man die Geschwindigkeit n+1.
 
 ## 3 Spielablauf
 
@@ -188,6 +187,7 @@ Segment in ein noch nicht aufgedecktes Feld zu ziehen.
 
 Solange die Regeln der einzelnen Aktionsarten eingehalten werden, können
 mehrere Aktionen innerhalb eines Zuges beliebig kombiniert werden.
+Der Aktionsablauf in einem Zug ist also: Beschleunigungsaktion -> Erzeugung der Bewegungspunkte -> Beliebige Kombination der restlichen Aktionen, solange die Aktionspunkte ausreichen und die Regeln eingehalten werden.
 
 ## 5 Spielende
 
