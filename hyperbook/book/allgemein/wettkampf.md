@@ -111,7 +111,8 @@ zugegriffen werden.
 Der :t[Computerspieler]{#player} wird in einem Docker container ausgeführt,
 welcher die verfügbaren Bibliotheken und Programme bestimmt.
 Die verfügbaren Container-Vorlagen sind im Wettkampfsystem einsehbar,
-unter anderem:
+und bieten unter anderem Java, Python, Ruby, Node.js, Swift, .NET, C++ Boost, Tensorflow
+oft in mehreren Versionen.
 
 | Bezeichnung        | Image-Name                                                                                   | Beschreibung                                                                                                               |
 | ------------------ | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |

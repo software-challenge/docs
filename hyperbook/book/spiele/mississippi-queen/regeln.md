@@ -22,11 +22,10 @@ und veraltete Grafiken und Koordinatenangaben enthält.
 
 ## 2. Das Spielbrett
 
-![](Spielbrett.PNG)
+![Spielbrett](/images/spiele/mississippi-queen/Spielbrett.png)
 
 Ein mögliches Spielbrett zu Beginn des Spiels sieht man oben.
-Das gesamte Spielbrett besteht
-aus 8 Spielsegmenten mit jeweils 20 Feldern.
+Das gesamte Spielbrett besteht aus 8 Spielsegmenten mit jeweils 20 Feldern.
 <!--
 Die Segmente kann man durch die Farbe der Koordinaten auf den Feldern erkennen:
 Die Segmente haben abwechselnd schwarze und weiße Koordinaten auf den Feldern.
@@ -57,12 +56,18 @@ die den Seiten des Hexagon-Feldes entsprechen,
 aus denen die Segmente aufgebaut sind.
 Die Geschwindigkeit eines Dampfers bestimmt,
 wie viele Bewegungspunkte er in einer Runde zur Verfügung hat.
-Den Kohlevorrat kann man nutzen, um besondere Aktionen durchzuführen 
-und die Bewegungsrichtung bestimmt, wohin der Dampfer gerade fährt.
+Den Kohlevorrat kann man nutzen, um besondere Aktionen durchzuführen.
+
+Die Koordinaten der Felder werden global mithilfe Kubischer Koordinaten erfasst,
+wobei die Dampfer auf (-1,-1,2) und (-2,1,1) starten,
+da die Mitte des ersten Segments immer (0,0,0) ist
+(und damit die des zweiten `(4,0,-4)`).
+Erklärungen und Veranschaulichungen dieses Systems finden sich hier:
+https://www.redblobgames.com/grids/hexagons/#coordinates-cube
 
 ### 2.1 Wasserfelder
 
-![](Wasserfeld.PNG)
+![Wasserfeld](/images/spiele/mississippi-queen/Wasserfeld.png)
 
 Das Wasserfeld kann ganz normal befahren werden.
 Auf ein zum Spieler in der aktuellen Bewegungsrichtung
@@ -88,7 +93,7 @@ wodurch der Spieler das Spiel verloren hat.
 
 ### 2.3 Das Passagierfeld mit Anleger
 
-![](Passagierfeld.PNG)
+![Passagierfeld](/images/spiele/mississippi-queen/Passagierfeld.png)
 
 Auf dem Passagierfeld mit Anleger wartet ein Passagier,
 der am Anleger abgeholt werden kann.
@@ -105,7 +110,7 @@ sofern der Dampfer die Geschwindigkeit 1 hat.
 <!--
 ### 2.4 Die Sandbank
 
-![](Sandbank.png)
+![Sandbank](/images/spiele/mississippi-queen/Sandbank.png)
 
 Eine Sandbank stoppt einen Dampfer,
 sollte er darauf
@@ -127,7 +132,7 @@ abgedrängt werden.
 
 ### 2.4 Das Zielfeld
 
-![](Zielfeld.png)
+![Zielfeld](/images/spiele/mississippi-queen/Zielfeld.png)
 
 Ein Zielfeld ist ein Feld,
 das erreicht werden kann,
@@ -183,8 +188,6 @@ sodass der Spieler in der
 nächsten Runde als erstes dran ist.
 Diese Überhollinie wird nach den oben
 genannten Regeln bestimmt.
-
-![](Orangene_Linie.png) 
 -->
 
 
@@ -298,8 +301,6 @@ eines jeden Spielers folgendermaßen:
 - Anhand der Position innerhalb eines Segments werden 0 bis 3 Punkte vergeben.
   Ein Segment ist aufgeteilt in 4 Spalten.
   Je weiter vorne man ist, desto mehr Punkte bekommt man.
-
-![Segment](Segment.png)
 
 Bei Spielende gewinnt der Spieler mit den meisten Punkten.
 Sollten beide Spieler gleich viele Punkte haben,
