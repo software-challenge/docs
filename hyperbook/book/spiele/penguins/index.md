@@ -1,6 +1,7 @@
 ---
 name: Hey, Danke für den Fisch!
-index: 1
+hide: true
+expanded: true
 ---
 
 # Hey, Danke für den Fisch!

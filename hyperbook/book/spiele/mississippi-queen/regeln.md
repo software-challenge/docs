@@ -1,3 +1,8 @@
+---
+name: Spielregeln
+index: 2
+---
+
 ## 1. Einleitung
 
 In dieser Anleitung werden die Elemente und Regeln des Spiels Mississippi
@@ -10,8 +15,10 @@ Der Spieler,
 dessen Dampfer das Ziel mit zwei Passagieren an Bord zuerst erreicht,
 gewinnt das Spiel.
 
-Bitte beachtet, dass diese Dokumentation noch nicht vollständig aktualisiert ist
+:::alert{warn}
+Beachte, dass diese Dokumentation noch nicht vollständig aktuell ist
 und veraltete Grafiken und Koordinatenangaben enthält.
+:::
 
 ## 2. Das Spielbrett
 
@@ -197,7 +204,7 @@ Die Beschleunigung um eine Geschwindigkeitseinheit pro Zug ist frei,
 jede Beschleunigung um mehr als 1 kostet für jeden
 weiteren Geschwindigkeitspunkt eine Kohleeinheit.
 Möchte ein Spieler beispielsweise mit einer aktuellen Geschwindigkeit von 2 
-auf Geschwindigkeit◀ 4 beschleunigen,
+auf Geschwindigkeit 4 beschleunigen,
 kostet dies eine Kohleeinheit.
 Die maximale Geschwindigkeit ist 6,
 die niedrigste 1.
@@ -290,9 +297,9 @@ eines jeden Spielers folgendermaßen:
 
 - Anhand der Position innerhalb eines Segments werden 0 bis 3 Punkte vergeben.
   Ein Segment ist aufgeteilt in 4 Spalten.
-  Je weiter vorne man ist, desto mehr Punkte bekommt man (siehe Abbildung unten).
+  Je weiter vorne man ist, desto mehr Punkte bekommt man.
 
-![](Segment.png)
+![Segment](Segment.png)
 
 Bei Spielende gewinnt der Spieler mit den meisten Punkten.
 Sollten beide Spieler gleich viele Punkte haben,
