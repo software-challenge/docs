@@ -79,8 +79,7 @@ welcher nach Benachrichtigung durch einen Webhook von [caddy](./Caddyfile) gepul
 
 Bei Änderungen am Caddyfile oder dem Docker image 
 muss [push-production.sh](./bin/push-production.sh) mit dem GITHUB_SECRET des Webhooks ausgeführt werden.
-Der Docker container 
-lässt sich auch lokal mit [test-production.sh](./bin/test-production.sh) testen,
+Der Docker container lässt sich auch lokal mit [test-production.sh](./bin/test-production.sh) testen,
 wobei der Caddy Webserver auf port 80 via [localhost](http://localhost) erreichbar wird.
 
 TODO: Eigenes Caddyfile mit "debug" und Dockerfile mit lokalem build für testing
