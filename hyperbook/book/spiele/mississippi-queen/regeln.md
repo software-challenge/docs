@@ -283,7 +283,7 @@ Das Spiel ist beendet, sobald:
 - ein Dampfer mit 2 Passagieren ein Zielfeld mit Geschwindigkeit 1
 erreicht hat.
 
-- ein Spieler einen unültigen Zug macht.
+- ein Spieler einen ungültigen Zug macht.
 
 - am Ende einer Runde ein Dampfer mehr als 3 Spielsegmente zurückliegt.
 
