@@ -74,6 +74,8 @@ Auf ein zum Spieler in der aktuellen Bewegungsrichtung
 benachbartes Wasserfeld ziehen,
 kostet einen Bewegungspunkt.
 
+![Strömungsfeld](/images/spiele/mississippi-queen/Strömungsfeld.png)
+
 Über das ganze Spielbrett hinweg zieht sich durch jedes Segment mittig eine Gegenströmung,
 die zum passieren eine erhöhte Geschwindigkeit benötigt.
 Jedes mal, wenn man eine Bewegungsaktion in die Strömung macht,
@@ -85,6 +87,8 @@ und an Passagierfeldern, die zur Mitte ausgerichtet sind,
 auch mit Geschwindigkeit 2 anlegen kann.
 
 ### 2.2 Die Insel
+
+![Insel](/images/spiele/mississippi-queen/Insel.png)
 
 Die Insel kann nicht überquert werden.
 Fährt ein Dampfer auf oder durch eine Insel,
