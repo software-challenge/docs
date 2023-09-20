@@ -98,14 +98,12 @@ wodurch der Spieler das Spiel verloren hat.
 Auf dem Passagierfeld mit Anleger wartet ein Passagier,
 der am Anleger abgeholt werden kann.
 Um den Passagier abzuholen,
-muss der Dampfer mit Geschwindigkeit 1 am Anleger ankommen.
+muss der Dampfer mit Geschwindigkeit 1 (2 auf Strömungsfeldern) am Anleger ankommen.
 Es verwandelt sich in ein normales Inselfeld,
 sobald der Passagier abgeholt wurde (siehe Insel, 2.2).
-Ein Dampfer kann höchstens 2 Passagiere aufnehmen.
-Ein Dampfer, der so abgedrängt wird,
-dass er an einem Anleger landet,
-kann einen Passagier aufnehmen,
-sofern der Dampfer die Geschwindigkeit 1 hat.
+Wenn ein Dampfer durch Abdrängen an einem Anleger landet,
+kann er einen Passagier aufnehmen,
+sofern die Geschwindigkeit stimmt.
 
 <!--
 ### 2.4 Die Sandbank
@@ -149,8 +147,8 @@ Passagiere an Bord hat und Geschwindigkeit 1 besitzt.
 
 ## 3 Spielablauf
 
-Beide Spieler starten mit Geschwindigkeit 1 und 6 Kohleeinheiten und
-ziehen dann jeweils einmal pro Runde.
+Beide Spieler starten mit Geschwindigkeit 1 und 6 Kohleeinheiten 
+und ziehen im Spielverlauf jeweils einmal pro Runde.
 In der ersten Runde beginnt der rote Spieler.
 In allen weiteren Runden wird der beginnende Spieler wie folgt ermittelt:
 
@@ -163,6 +161,8 @@ beginnt der Dampfer mit der höheren Geschwindigkeit.
 
 3. Sollten beide Dampfer gleich schnell sein,
 beginnt der Dampfer mit dem höheren Kohlevorrat.
+
+Ansonsten beginnt der Startspieler.
 
 <!--
 4. Sollten beide Dampfer gleich viel Kohle besitzen,
@@ -193,9 +193,9 @@ genannten Regeln bestimmt.
 
 ## 4 Der Zug
 
-Ein Zug besteht aus einer oder mehreren Aktionen.
+Ein Zug besteht aus mindestens einer Aktion.
 In einem Zug müssen
-(falls der Zug nicht auf einer Sandbank endet) 
+<!-- (falls der Zug nicht durch Auffahren auf eine Sandbank vorzeitig endet) -->
 durch die Aktionen insgesamt alle Bewegungspunkte 
 (bestimmt durch die Geschwindigkeit des Schiffes) verbraucht werden.
 Die verschiedenen Aktionen sind:
@@ -219,18 +219,16 @@ mit negativer Beschleunigung behandelt.
 ### 4.2 Erzeugung der Bewegungspunkte
 
 Bevor nun eine der folgenden Aktionen durchgeführt werden kann,
-bekommt der Dampfer entsprechend seiner aktuellen Geschwindigkeit
-Bewegungspunkte. Diese Bewegungspunkte müssen durch die folgenden
-Aktionen aufgebraucht werden,
-am Ende des Zuges dürfen also keine
-Bewegungspunkte mehr vorhanden sein.
+bekommt der Dampfer entsprechend seiner aktuellen Geschwindigkeit Bewegungspunkte.
+Diese Bewegungspunkte müssen durch die folgenden Aktionen aufgebraucht werden,
+am Ende des Zuges dürfen also keine Bewegungspunkte mehr vorhanden sein.
 
 ### 4.3 Drehaktion
 
-Eine Drehaktion je Zug des Spielers um eine Einheit (also um 60◦
-) ist frei.
-Jede weitere Drehung erfordert eine Kohleeinheit (Ausnahme Abdrängen,
-siehe 4.4). Auf Sandbänken kann nicht gedreht werden.
+Eine Drehaktion je Zug des Spielers um eine Einheit 
+(also um 60◦) ist frei.
+Jede weitere Drehung erfordert eine Kohleeinheit (Ausnahme Abdrängen, siehe 4.4).
+<!-- Auf Sandbänken kann nicht gedreht werden. -->
 
 ### 4.4 Abdrängaktion
 
@@ -238,66 +236,53 @@ Endet eine Aktion auf einem Feld mit dem gegnerischen Dampfer,
 muss darauf eine Abdrängaktion folgen.
 Ein Spieler kann den Gegner
 auf ein beliebig angrenzendes,
-jedoch nicht direkt hinter dem Spieler
-liegendes, begehbares Feld abdrängen (Wasserfelder,
-Sändbänke und
-Baumstammfelder gelten als begehbar).
-Eine Abdrängaktion kostet einen
-Bewegungspunkt, zwei,
-falls auf ein Baumstammfeld abgedrängt wird.
+jedoch nicht direkt hinter dem abdrängenden Spieler liegendes,
+begehbares Feld (keine Insel) abdrängen.
+Eine Abdrängaktion kostet einen Bewegungspunkt,
+<!-- zwei, falls auf ein Baumstammfeld abgedrängt wird.
 Ist die Geschwindigkeit des auf ein Baumstammfeld abgedrängten Bootes
 größer als 1, wird dessen Geschwindigkeit um 1 reduziert.
 Es darf nicht
-von einer Sandbank aus abgedrängt werden.
-Der abgedrängte Spieler
-bekommt eine zusätzliche freie Drehung für seinen nächsten Zug.
-Wurde
-der Spieler auf eine Sandbank abgedrängt,
-entfällt diese freie Drehung und
-die Geschwindigkeit des abgedrängten Spielers wird auf 1 reduziert.
+von einer Sandbank aus abgedrängt werden.  -->
+Der abgedrängte Spieler bekommt eine zusätzliche freie Drehung für seinen nächsten Zug.
+<!-- Wurde der Spieler auf eine Sandbank abgedrängt,
+entfällt diese freie Drehung 
+und die Geschwindigkeit des abgedrängten Spielers wird auf 1 reduziert. -->
 
 ### 4.5 Bewegungsaktion
 
-Eine Bewegungsaktion erfolgt in die derzeitige Bewegungsrichtung des
-Schiffes. Sie kann nur über und auf passierbare (siehe 4.4) Felder erfolgen.
-Sie darf niemals durch ein vom Gegner besetztes Feld oder eine Sandbank
-gehen, darf jedoch auf dem Feld des Gegners oder einer Sandbank enden.
+Eine Bewegungsaktion erfolgt in die derzeitige Bewegungsrichtung des Schiffes.
+Sie kann nur entlang passierbarer (siehe 4.4) Felder erfolgen.
+Sie darf niemals durch ein vom Gegner besetztes Feld oder eine Sandbank gehen,
+darf jedoch auf dem Feld des Gegners oder einer Sandbank enden.
 Es ist weiterhin nicht erlaubt,
-durch das gesamte, zuletzt aufgedeckte
-Segment in ein noch nicht aufgedecktes Feld zu ziehen.
+durch das gesamte, zuletzt aufgedeckte Segment
+auf ein noch nicht aufgedecktes Feld zu ziehen.
 
 ### 4.6 Kombination von Aktionen
 
 Solange die Regeln der einzelnen Aktionsarten eingehalten werden,
-können
-mehrere Aktionen innerhalb eines Zuges beliebig kombiniert werden.
+können mehrere Aktionen innerhalb eines Zuges beliebig kombiniert werden.
 Der Aktionsablauf in einem Zug ist also: 
 - Beschleunigungsaktion (optional)
 - Erzeugung der Bewegungspunkte 
-- Beliebige Kombination der restlichen Aktionen (Bewegung, Drehung, Abdrängen), solange die Aktionspunkte ausreichen und die Regeln eingehalten werden
+- Beliebige Kombination der restlichen Aktionen (Bewegung, Drehung, Abdrängen),
+  solange die Aktionspunkte ausreichen und die Regeln eingehalten werden
 
 ## 5 Spielende
 
 Das Spiel ist beendet, sobald:
-
-- ein Dampfer mit 2 Passagieren ein Zielfeld mit Geschwindigkeit 1
-erreicht hat.
-
-- ein Spieler einen unültigen Zug macht.
-
+- ein Dampfer mit 2 Passagieren ein Zielfeld mit Geschwindigkeit 1 erreicht hat.
+- ein Spieler einen ungültigen Zug macht.
 - am Ende einer Runde ein Dampfer mehr als 3 Spielsegmente zurückliegt.
-
 - das Rundenlimit von 30 Runden erreicht ist.
 
 Ein Spieler, der einen ungültigen Zug macht,
 erhält für das Spiel insgesamt 0 Punkte.
 In allen anderen Fällen berechnet sich der Punktestand 
 eines jeden Spielers folgendermaßen:
-
 - Jeder eingesammelte Passagier bringt 5 Punkte.
-
 - Jedes überwundene Segment bringt 5 Punkte.
-
 - Anhand der Position innerhalb eines Segments werden 0 bis 3 Punkte vergeben.
   Ein Segment ist aufgeteilt in 4 Spalten.
   Je weiter vorne man ist, desto mehr Punkte bekommt man.
