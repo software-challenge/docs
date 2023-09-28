@@ -5,8 +5,8 @@ index: 2
 
 ## 1. Einleitung
 
-In dieser Anleitung werden die Elemente und Regeln des Spiels Mississippi
-Queen der Software-Challenge 2024 erläutert.
+In dieser Anleitung werden die Elemente und Regeln 
+des Spiels Mississippi Queen der Software-Challenge 2024 erläutert.
 Bei Mississippi Queen versuchen zwei Spieler,
 durch abwechselndes Setzen von Raddampfern
 schnellstmöglich einen Fluss bis zum Ziel entlangzufahren
@@ -14,11 +14,6 @@ und dabei unterwegs zwei Passagiere mitzunehmen.
 Der Spieler,
 dessen Dampfer das Ziel mit zwei Passagieren an Bord zuerst erreicht,
 gewinnt das Spiel.
-
-:::alert{warn}
-Beachte, dass diese Dokumentation noch nicht vollständig aktuell ist
-und veraltete Grafiken und Koordinatenangaben enthält.
-:::
 
 ## 2. Das Spielbrett
 
@@ -47,20 +42,20 @@ werden vom Spielplan entfernt, auch wenn sich darauf noch Inseln mit Passagieren
 -->
 Die Spielsegmente bestehen aus verschiedenen Typen hexagonaler Felder,
 die zufällig verteilt sind.
-Neben Wasserfeldern, Inseln, Sandbänken und Baumstämmen 
+Neben Wasserfeldern und Inseln <!--, Sandbänken und Baumstämmen -->
 gibt es pro Spiel insgesamt 5 Passagierfelder.
 Jeder Dampfer beginnt das Spiel 
 mit einer Geschwindigkeit von 1 und einem Kohlevorrat von 6.
 Der Dampfer hat außerdem eine von sechs Bewegungsrichtungen,
-die den Seiten des Hexagon-Feldes entsprechen,
+die den Kanten der Hexagon-Felder entsprechen,
 aus denen die Segmente aufgebaut sind.
 Die Geschwindigkeit eines Dampfers bestimmt,
 wie viele Bewegungspunkte er in einer Runde zur Verfügung hat.
-Den Kohlevorrat kann man nutzen, um besondere Aktionen durchzuführen.
+Den Kohlevorrat kann man nutzen, um Extra=Aktionen durchzuführen.
 
 Die Koordinaten der Felder werden global mithilfe Kubischer Koordinaten erfasst,
-wobei die Dampfer auf (-1,-1,2) und (-2,1,1) starten,
-da die Mitte des ersten Segments immer (0,0,0) ist
+wobei die Dampfer auf `(-1,-1,2)` und `(-2,1,1)` starten,
+da die Mitte des ersten Segments immer `(0,0,0)` ist
 (und damit die des zweiten `(4,0,-4)`).
 Erklärungen und Veranschaulichungen dieses Systems finden sich hier:
 https://www.redblobgames.com/grids/hexagons/#coordinates-cube
@@ -77,7 +72,7 @@ kostet einen Bewegungspunkt.
 ![Strömungsfeld](/images/spiele/mississippi-queen/Strömungsfeld.png)
 
 Über das ganze Spielbrett hinweg zieht sich durch jedes Segment mittig eine Gegenströmung,
-die zum passieren eine erhöhte Geschwindigkeit benötigt.
+die zum Passieren eine erhöhte Geschwindigkeit benötigt.
 Jedes mal, wenn man eine Bewegungsaktion in die Strömung macht,
 zahlt man einen Bewegungspunkt extra.
 
@@ -93,7 +88,7 @@ auch mit Geschwindigkeit 2 anlegen kann.
 Die Insel kann nicht überquert werden.
 Fährt ein Dampfer auf oder durch eine Insel,
 gilt dies als illegaler Zug und führt zu einer Disqualifikation,
-wodurch der Spieler das Spiel verloren hat.
+wodurch der Spieler das Spiel verliert.
 
 ### 2.3 Das Passagierfeld mit Anleger
 
@@ -136,22 +131,15 @@ abgedrängt werden.
 
 ![Zielfeld](/images/spiele/mississippi-queen/Zielfeld.png)
 
-Ein Zielfeld ist ein Feld,
-das erreicht werden kann,
-um das Spiel zu gewinnen.
-Ein Zielfeld muss mit Geschwindigkeit 1 angelaufen werden 
-und es müssen sich zwei Passagiere an Bord befinden,
+Ein Zielfeld muss mit effektiver Geschwindigkeit 1 angelaufen werden 
+und es müssen sich mindestens zwei Passagiere an Bord befinden,
 damit der Dampfer das Spiel gewinnt.
 Sind diese Bedingungen nicht erfüllt,
 kann ein Zielfeld wie ein Wasserfeld befahren werden.
-Landet ein Dampfer durch Abdrängen auf einem Zielfeld,
-reicht dies nicht zum Gewinnen des Spiels,
-selbst wenn der abgedrängte Dampfer zwei
-Passagiere an Bord hat und Geschwindigkeit 1 besitzt.
 
 ## 3 Spielablauf
 
-Beide Spieler starten mit Geschwindigkeit 1 und 6 Kohleeinheiten 
+Beide Spieler starten mit Geschwindigkeit 1 und 6 Kohleeinheiten
 und ziehen im Spielverlauf jeweils einmal pro Runde.
 In der ersten Runde beginnt der rote Spieler.
 In allen weiteren Runden wird der beginnende Spieler wie folgt ermittelt:
@@ -276,7 +264,7 @@ Der Aktionsablauf in einem Zug ist also:
 ## 5 Spielende
 
 Das Spiel ist beendet, sobald:
-- ein Dampfer mit 2 Passagieren ein Zielfeld mit Geschwindigkeit 1 erreicht hat.
+- ein Dampfer mit mindestens 2 Passagieren ein Zielfeld mit Geschwindigkeit 1 erreicht hat (die Runde wird noch beendet).
 - ein Spieler einen ungültigen Zug macht.
 - am Ende einer Runde ein Dampfer mehr als 3 Spielsegmente zurückliegt.
 - das Rundenlimit von 30 Runden erreicht ist.
