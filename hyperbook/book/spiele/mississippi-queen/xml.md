@@ -154,7 +154,8 @@ Ein Zug kann beispielhaft wie folgt aussehen:
 </room>
 ```
 
-Ein Zug besteht immer aus einer Liste aus Aktionen. Die Reihenfolge dieser Liste bestimmt auch, in welcher Reihenfolge die Aktionen ausgeführt werden. Das ist besonders wichtig zu beachten, da einige Aktionen nur erlaubt sind, wenn andere bereits ausgeführt wurden, oder Aktionen wie, die Beschleunigungsaktion, ist stets immer als erste Aktion erlaubt.
+Ein Zug besteht immer aus einer Liste aus Aktionen. Die Reihenfolge dieser Liste bestimmt auch, in welcher Reihenfolge die Aktionen ausgeführt werden. 
+Insbesondere muss die Beschleunigungsaktion immer als **erstes** kommen.
 
 ### Weiterführende Informationen
 
