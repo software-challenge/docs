@@ -45,9 +45,9 @@ Ansonsten folgend wir soweit sinnvoll der [Kull Konvention](https://kull.jfische
 
 ## Hyperbook
 Die Dokumentation wird mit der Software [Hyperbook](https://hyperbook.openpatch.org/) bereitgestellt.
-Die einzelnen Seiten sind im Ordner `hyperbook` in der Auszeichnungssprache "Markdown" hinterlegt 
+Die einzelnen Seiten sind im Ordner `hyperbook` im Markdown-Syntax hinterlegt 
 und können mit einem entsprechenden Editor bearbeitet werden.
-In diesem Ordner sollte auch jeder folgende Befehl ausgeführt werden.
+Im `hyperbook`-Ordner sollte auch jeder folgende Befehl ausgeführt werden.
 
 ### Node.js und NPM
 Um Hyperbook zu HTML zu konvertieren, 
@@ -56,7 +56,7 @@ Dies geht unter Debian-basierten Distributionen mit `sudo apt install nodejs npm
 Unter Arch: `sudo pacman -S npm`
 
 Anschließend installiere die Abhängigkeiten mit 
-`npx hyperbook setup`.
+`npx hyperbook setup` oder `make -B setup`.
 
 ### Live-Preview
 Eine Vorschau lokaler Änderungen kann direkt mit dem Befehl `npx hyperbook dev` 
