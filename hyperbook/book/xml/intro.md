@@ -1,11 +1,12 @@
 ---
 name: Einführung in XML
-index: 4
+index: 1
 ---
 
 ## Einführung in XML
 
-Die Kommunikation zwischen [Spielleiter](glossary/server) und [Computerspieler](glossary/player) 
+Die Kommunikation zwischen [Spielleiter](glossary/server)
+und [Computerspieler](glossary/player)
 wird mittels XML-Nachrichten realisiert.
 XML ist eine Auszeichnungssprache, d.h eine Sprache,
 die nicht nur die Daten selbst, sondern auch Informationen über die Interpretation oder Bearbeitung liefert.
@@ -15,7 +16,8 @@ Dieser Abschnitt gibt einen Einstieg in die Struktur von XML.
 
 ### Tags
 
-Die Grundelemente von XML sind _Tags_. Ein Tag liefert Informationen über die Art der Daten, die verarbeitet werden sollen. In XML wird ein Tag gebildet, indem man den Tagnamen zwischen spitze Klammern setzt. Dabei kennt XML drei verschiedene Tag-Arten:
+Die Grundelemente von XML sind _Tags_.
+Ein Tag liefert Informationen über die Art der Daten, die verarbeitet werden sollen. In XML wird ein Tag gebildet, indem man den Tagnamen zwischen spitze Klammern setzt. Dabei kennt XML drei verschiedene Tag-Arten:
 
 -   Öffnendes Tag: `<Tag>`
     

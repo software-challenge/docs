@@ -1,6 +1,6 @@
 ---
 name: Spielregeln
-index: 2
+index: 1
 ---
 
 ## 1. Einleitung
