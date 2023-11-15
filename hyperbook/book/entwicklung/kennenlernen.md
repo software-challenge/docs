@@ -1,6 +1,6 @@
 ---
 name: Das Spiel kennenlernen
-index: 3
+index: 1
 ---
 
 # Das Spiel kennenlernen

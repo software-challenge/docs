@@ -1,9 +1,9 @@
 ---
 name: Wettkampfmodalitäten
-index: 2
+index: 3
 ---
 
-# Wettkampfmodalitäten
+# Ablauf des Wettkampfs
 
 Die Software-Challenge wird in drei Phasen ausgespielt.
 
@@ -76,7 +76,7 @@ Anfang März, unmittelbar vor der ersten Phase,
 finden Probespieltage statt,
 die den reibungslosen Ablauf der Meisterschaft gewährleisten sollen.
 
-## Technische Daten für die Ausführung der Computerspieler
+# Technische Daten für die Ausführung der Computerspieler
 
 Bei allen im :t[Wettkampfsystem]{#contest} ausgetragenen Spielen
 laufen die :t[Computerspieler]{#player} auf den Servern des Wettkampfsystems.
@@ -87,7 +87,7 @@ laufen die :t[Computerspieler]{#player} auf den Servern des Wettkampfsystems.
 | Prozessor:       | Ein Kern von einem [Intel Xeon E5-2620 v4, 2,1 GHz](https://ark.intel.com/de/products/92986/Intel-Xeon-Processor-E5-2620-v4-20M-Cache-2_10-GHz) |
 | Arbeitsspeicher: | 1,5 GB                                            |
 
-### Log-Ausgabe
+## Log-Ausgabe
 
 Die :t[Computerspieler]{#player} laufen im :t[Wettkampfsystem]{#contest} ohne eine grafische Oberfläche,
 sie können also keine Fenster oder ähnliches anzeigen.
@@ -99,14 +99,14 @@ Standard-Ausgabedatenströme "stdout" und "stderr" schreiben.
 Diese Ausgaben finden sich dann in den Log-Dateien wieder,
 die nach Beenden eines Spiels über das :t[Wettkampfsystem]{#contest} verfügbar sind.
 
-### Lesen von Daten
+## Lesen von Daten
 
 Zugriff auf das Internet ist nicht möglich.
 Schreiben auf die Festplatte ist möglich,
 es kann jedoch nicht auf Daten, die in früheren Spielen geschrieben wurden,
 zugegriffen werden.
 
-### Weitere Ausführungsumgebung
+## Weitere Ausführungsumgebung
 
 Der :t[Computerspieler]{#player} wird in einem Docker container ausgeführt,
 welcher die verfügbaren Bibliotheken und Programme bestimmt.

@@ -1,6 +1,6 @@
 ---
 name: Die Software-Challenge
-index: 0
+index: 3
 expanded: true
 ---
 
