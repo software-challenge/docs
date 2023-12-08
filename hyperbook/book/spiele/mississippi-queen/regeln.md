@@ -73,8 +73,10 @@ kostet einen Bewegungspunkt.
 
 Über das ganze Spielbrett hinweg zieht sich durch jedes Segment mittig eine Gegenströmung,
 die zum Passieren eine erhöhte Geschwindigkeit benötigt.
-Jedes mal, wenn man eine Bewegungsaktion in die Strömung macht,
-zahlt man einen Bewegungspunkt extra.
+Bei jeder Bewegungsaktion in oder durch die Strömung
+(unabhängig davon, ob man schon auf einem Strömungsfeld ist)
+zahlt man einen Bewegungspunkt extra,
+wobei direkt aufeinanderfolgende Bewegungsaktionen als eine zählen.
 
 Innerhalb der Strömung ist somit die "effektive" Geschwindigkeit um 1 verringert,
 wodurch man im mittleren Zielfeld
