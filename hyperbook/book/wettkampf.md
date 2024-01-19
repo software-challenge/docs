@@ -55,21 +55,6 @@ um den Sieger einer Begegnung zu ermitteln.
 Im Übrigen gelten beim Final Eight die bekannten Regeln der beiden vorherigen Phasen.
 Es wird dabei auch dieselbe Hardware eingesetzt.
 
-## Die Begegnungen
-
-Jede Begegnung besteht aus jeweils sechs Spielen,
-wobei das Recht des ersten Zuges abwechselt.
-
-Die Zugzeit ist für jeden Zug auf zwei Sekunden begrenzt.
-Dabei gilt für die Rechenzeit die im Institut verwendete Hardware als Referenz.
-Jeder :t[Computerspieler]{#player} wird dabei auf einer eigenen virtuellen Maschine
-mit unten stehenden Spezifikationen ausgeführt.
-
-Sollte ein Spieler einen ungültigen Zug setzen oder die maximale Zugzeit überschreiten,
-so hat dieser Spieler verloren.
-In allen anderen Fällen wird das Spiel gemäß der Spielregeln zu Ende gespielt
-und der Gewinner ermittelt.
-
 ## Die Probespieltage
 
 Anfang März, unmittelbar vor der ersten Phase,

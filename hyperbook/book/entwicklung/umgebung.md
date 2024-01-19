@@ -14,6 +14,21 @@ laufen die :t[Computerspieler]{#player} auf den Servern des Wettkampfsystems.
 | Prozessor:       | Ein Kern von einem [Intel Xeon E5-2620 v4, 2,1 GHz](https://ark.intel.com/de/products/92986/Intel-Xeon-Processor-E5-2620-v4-20M-Cache-2_10-GHz) |
 | Arbeitsspeicher: | 1,5 GB                                            |
 
+## Die Begegnungen
+
+Jede Begegnung besteht aus jeweils sechs Spielen,
+wobei das Recht des ersten Zuges abwechselt.
+
+Die Zugzeit ist für jeden Zug auf zwei Sekunden begrenzt.
+Dabei gilt für die Rechenzeit die im Institut verwendete Hardware als Referenz.
+Jeder :t[Computerspieler]{#player} wird dabei auf einer eigenen virtuellen Maschine
+mit unten stehenden Spezifikationen ausgeführt.
+
+Sollte ein Spieler einen ungültigen Zug setzen oder die maximale Zugzeit überschreiten,
+so hat dieser Spieler verloren.
+In allen anderen Fällen wird das Spiel gemäß der Spielregeln zu Ende gespielt
+und der Gewinner ermittelt.
+
 ## Log-Ausgabe
 
 Die :t[Computerspieler]{#player} laufen im :t[Wettkampfsystem]{#contest} ohne eine grafische Oberfläche,
