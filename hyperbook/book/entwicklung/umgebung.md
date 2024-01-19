@@ -3,7 +3,37 @@ name: Computerspieler Anführungsumgebung
 index: 10
 ---
 
-# Ausführungsumgebung
+# Technische Daten für die Ausführung der Computerspieler
+
+Bei allen im :t[Wettkampfsystem]{#contest} ausgetragenen Spielen
+laufen die :t[Computerspieler]{#player} auf den Servern des Wettkampfsystems.
+
+|                  |                                                   |
+|------------------|---------------------------------------------------|
+| Betriebssystem:  | 64 Bit Linux                                      |
+| Prozessor:       | Ein Kern von einem [Intel Xeon E5-2620 v4, 2,1 GHz](https://ark.intel.com/de/products/92986/Intel-Xeon-Processor-E5-2620-v4-20M-Cache-2_10-GHz) |
+| Arbeitsspeicher: | 1,5 GB                                            |
+
+## Log-Ausgabe
+
+Die :t[Computerspieler]{#player} laufen im :t[Wettkampfsystem]{#contest} ohne eine grafische Oberfläche,
+sie können also keine Fenster oder ähnliches anzeigen.
+Der Versuch eines Computerspielers, so etwas trotzdem zu tun,
+wird wahrscheinlich zum Absturz des Computerspielers führen.
+
+Die :t[Computerspieler]{#player} können jedoch Text auf die beiden
+Standard-Ausgabedatenströme "stdout" und "stderr" schreiben.
+Diese Ausgaben finden sich dann in den Log-Dateien wieder,
+die nach Beenden eines Spiels über das :t[Wettkampfsystem]{#contest} verfügbar sind.
+
+## Lesen von Daten
+
+Zugriff auf das Internet ist nicht möglich.
+Schreiben auf die Festplatte ist möglich,
+es kann jedoch nicht auf Daten, die in früheren Spielen geschrieben wurden,
+zugegriffen werden.
+
+## Ausführungsumgebung
 
 Der :t[Computerspieler]{#player} wird in einem Docker container ausgeführt,
 welcher die verfügbaren Bibliotheken und Programme bestimmt.
