@@ -71,7 +71,7 @@ folgen daraus die sechs Richtungen:
 Ein Zug kann beispielhaft wie folgt aussehen:
 ```xml
 <room roomId="ROOM_ID">
-  <data class=\"move\">
+  <data class="move">
     <actions>
       <acceleration acc="1" />
       <advance distance="2" />
