@@ -1,5 +1,5 @@
 ---
-name: Computerspieler Anführungsumgebung
+name: Spielmodalitäten im Wettkampfsystem
 index: 10
 ---
 
