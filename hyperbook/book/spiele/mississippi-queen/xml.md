@@ -11,29 +11,28 @@ für das Spiel Mississippi Queen.
 ## Spielstatus
 
 Die folgende XML-Struktur beschreibt den regelmäßig mitgeteilten Spielstatus,
-der ein Spielfeld aus hexagonalen Feldern mittels [kubischer Koordinaten](https://www.redblobgames.com/grids/hexagons/#coordinates-cube) sowie eine Liste der darauf verorteten Schiffe beschreibt.
+der ein Spielfeld aus hexagonalen Feldern mittels [kubischer Koordinaten](https://www.redblobgames.com/grids/hexagons/#coordinates-cube)
+sowie eine Liste der darauf verorteten Schiffe beschreibt.
 Das Spielfeld wird in Segmente unterteilt, wobei jedes Segment durch eine Richtung und ein Zentrum charakterisiert wird.
-Die Cube-Koordinaten ($q$, $r$ und $s$) ermöglichen die eindeutige Positionierung der Segmente im hexagonalen Raster und eine einfache Nutzung verschiedener Algorithmen innerhalb dieses Systems.
+Die Cube-Koordinaten ($q$, $r$ und $s$) ermöglichen die eindeutige Positionierung der Segmente im hexagonalen Raster
+und eine einfache Nutzung verschiedener Algorithmen innerhalb dieses Systems.
 
 
 ```xml
 <state turn="0" currentTeam="ONE">
 	<board nextDirection="RICHTUNG">
-		<segments>
-			<segment direction="RICHTUNG">
-				<center q="INT" r="INT" s="INT" />
-				<fields>
-					<array>
-						<water/>
-						<island/>
-						<passenger direction="RICHTUNG" passenger="INT"/>
-						<!-- usw. für andere Felder -->
-					</array>
-					<!-- usw. für andere Arrays -->
-				</fields>
-			</segment>
-			<!-- usw. für andere Segmente -->
-		</segments>
+		<segment direction="RICHTUNG">
+			<center q="INT" r="INT" s="INT" />
+			<column>
+				<water/>
+				<water/>
+				<island/>
+				<passenger direction="RICHTUNG" passenger="INT"/>
+				<water/>
+			</column>
+			<!-- 3 weitere Spalten -->
+		</segment>
+		<!-- usw. für andere Segmente -->
 	</board>
 	<ships>
 		<ship team="TEAM" points="INT" direction="RICHTUNG" speed="INT" coal="INT" passengers="INT" freeTurns="INT">
@@ -46,7 +45,8 @@ Die Cube-Koordinaten ($q$, $r$ und $s$) ermöglichen die eindeutige Positionieru
 
 - Die ``<state>``-Ebene gibt Auskunft über den aktuellen Spielzustand, einschließlich des Spielzugs (``turn``) und des Teams (``currentTeam``), das gerade am Zug ist.
 - Die ``<board>``-Ebene enthält Informationen über das Spielfeld, darunter die Richtung des nächsten Segments (``nextDirection``), um die Strömung zuverlässig zu kalkulieren.
-- Die ``<segments>``-Ebene enthält eine Liste von Segmenten, die jeweils eine bestimmte Richtung und ein Zentrum haben. Jedes Segment kann verschiedene Feldtypen enthalten, wie Wasser, Inseln, Passagiere usw., die in Arrays organisiert sind.
+- Die ``<segments>``-Ebene enthält eine Liste von Segmenten, die jeweils eine bestimmte Richtung und ein Zentrum haben.
+  Jedes Segment enthält verschiedene Feldtypen wie Wasser, Inseln und Passagiere, die in 4 Spalten zu je 5 Feldern übergeben werden.
 
 :::alert{info}
 Das Passagier-Feld nimmt eine besondere Stellung gegenüber den anderen Feldern ein,
@@ -66,22 +66,62 @@ folgen daraus die sechs Richtungen:
 - UP_LEFT    : q+0, r-1, s+1
 - UP_RIGHT   : q+1, r-1, s+0
 
-### Spielzug
+## Spielzug
 
-Ein Zug kann beispielhaft wie folgt aussehen:
+Ein Zug kann wie folgt aussehen:
 ```xml
 <room roomId="ROOM_ID">
-  <data class="move">
-    <actions>
-      <acceleration acc="1" />
-      <advance distance="2" />
-      <push direction="RIGHT" />
-      <turn direction="DOWN_RIGHT" />
-    </actions>
-  </data>
+	<data class="move">
+		<acceleration acc="1" />
+		<advance distance="2" />
+		<push direction="RIGHT" />
+		<turn direction="DOWN_RIGHT" />
+	</data>
 </room>
 ```
 
 Ein Zug besteht immer aus einer Liste aus Aktionen.
 Die Reihenfolge dieser Liste bestimmt auch, in welcher Reihenfolge die Aktionen ausgeführt werden.
 Insbesondere muss die Beschleunigungsaktion immer als **erstes** kommen.
+
+## Spielergebnis
+
+```xml
+<result>
+  <definition>
+    <fragment name="Siegpunkte">
+      <aggregation>SUM</aggregation>
+      <relevantForRanking>true</relevantForRanking>
+    </fragment>
+    <fragment name="Punkte">
+      <aggregation>AVERAGE</aggregation>
+      <relevantForRanking>true</relevantForRanking>
+    </fragment>
+    <fragment name="Passagiere">
+      <aggregation>AVERAGE</aggregation>
+      <relevantForRanking>true</relevantForRanking>
+    </fragment>
+  </definition>
+  <scores>
+    <entry>
+      <player name="Alice" team="ONE"/>
+      <score>
+        <part>0</part>
+        <part>0</part>
+        <part>0</part>
+      </score>
+    </entry>
+    <entry>
+      <player name="Bob" team="TWO"/>
+      <score>
+        <part>2</part>
+        <part>2</part>
+        <part>0</part>
+      </score>
+    </entry>
+  </scores>
+  <winner team="TWO" regular="false" reason="Regelverletzung von Alice: Der Zug enthält keine Aktionen bei &apos;Move[]&apos;"/>
+</result>
+```
+
+In diesem Beispiel erhält Alice aufgrund der Regelverletzung keine Punkte.
