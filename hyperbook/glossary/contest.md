@@ -15,7 +15,7 @@ oder die Anzahl der Mitglieder in den einzelnen Teams.
 
 ## Die Weboberfläche
 
-![Die Startseite der Weboberfläche](/images/wettkampfsystem_startseite.jpg)
+![Die Startseite der Weboberfläche](/images/wettkampfsystem_neu_startseite.png)
 
 Die Weboberfläche ist unter der URL <http://contest.software-challenge.de> erreichbar.
 Alle Informationen, die den Ablauf des Wettkampfs betreffen
@@ -26,113 +26,69 @@ Im Wettkampfsystem findet die gesamte Wettkampfverwaltung statt.
 Hier können die Clients abgegeben, getestet und aktiviert werden
 und es kann der aktuelle Wettkampfstand abgerufen werden (Rangliste, Spieltage, etc.).
 
-## Auswahl
+### Auswahl
 
-Bevor man Informationen über den Wettkampf bekommt, muss man die
-betreffende Saison und die Wettkampfgruppe auswählen. Dies ist auch wenn
-man sich anmeldet zu beachten. Über die beiden Buttons in der oberen
-Leiste, bekommt man alle verfügbaren Saisons angezeigt, und wenn man
-eine ausgewählt hat, sieht man auch die Gruppen dazu. Anschließend kann
-man die Informationen einsehen. Standardmäßig ist die aktuellste Saison
-im System aktiv.
-
-## Frei verfügbare Informationen
-
-### Saison
-
-#### Aktuelles
-
-Hier sind alle News zum Wettkampf einsehbar. Die neusten News werden
-auch immer oben neben dem Logo angezeigt. Alles Wichtige zum Wettkampf
-erscheint hier.
-
-### Wettkampf
-
-#### Spieltage
-
-![Screenshot des Terminplans](/images/wettkampfsystem_terminplan.jpg)
-
-Der Terminplan kann erst aufgerufen werden, wenn die einzelnen Spieltage
-für den Wettkampf feststehen und eine Gruppe ausgewählt wurde. Die
-blauen Einträge im Kalender zeigen an, welche Spieltage noch austehen,
-wärend die grünen schon gespielt sind. Mit einem Klick auf einen Eintrag
-gelangt man direkt zur Spieltagübersicht.
-
-#### XX. Spieltag
-
-![wettkampfsystem spieltaguebersicht](/images/wettkampfsystem_spieltaguebersicht.jpg)
-
-Auf dieser Seite kann man sehen, welche Schulen an dem Spieltag
-aufeinander treffen bzw. trafen. Wurde der Spieltag schon ausgetragen,
-kann man sich die Ergebnisse und den Verlauf der einzelnen Spiele
-anschauen.
-
-#### Rangliste
-
-![Screenshot der Rangliste](/images/wettkampfsystem_rangliste.jpg)
-
-Der Link erscheint erst, wenn der Wettkampf gestartet wurde. Auf dieser
-Seite gibt es drei Tabellen:
-
--   Die Hauptrangliste: Hier können die einzelnen Teams sehen, wo sie im
-    Vergleich zu allen Kontrahenten stehen.
-
--   Aufteilung nach Teamerfahrung: Zu Beginn einer neuen Runde der
-    Software-Challenge werden die Teams von den Organisatoren nach
-    Rücksprache mit den Lehrkräften in Einsteiger oder Fortgeschritten
-    eingestuft. So kann für die Einsteiger eine separate Rangliste
-    angezeigt werden und die Teams können ihre Leistung besser
-    einschätzen. Diese Einstufung hat weder Auswirkungen auf den Verlauf
-    der Software-Challenge, noch auf die Vergabe der Preise.
-
-#### Finale
-
-Hier findet sich die Übersicht über die Finalteilnehmer. Diese ist erst
-verfügbar, wenn die Teilnehmer feststehen.
+Standardmäßig ist die aktuellste Saison im System aktiv. Über den 
+Button in der oberen Leiste bekommt man alle verfügbaren 
+Saisons angezeigt und, wenn man eine ausgewählt hat, sieht man auch die 
+Gruppen dazu. Anschließend kann man die Informationen einsehen. 
 
 ### Teams
 
 #### Alle Teams
 
-![Die Teamtabelle](/images/wettkampfsystem_teamtabelle.jpg)
+![Die Teamtabelle](/images/wettkampfsystem_neu_teams.png)
 
 Hier werden die teilnehmenden Teams mit ihren Ansprechpartnern und
-Tutoren tabellarisch aufgelistet. Durch einen Klick auf die Lupe gelangt
-man zur Begegnungsliste für das entsprechende Team.
+Tutoren tabellarisch aufgelistet.
 
 #### Meine Teams
 
-Angemeldete Benutzer können hier eine Übersicht über die von Ihnen
-betreuten Teams finden.
+Angemeldete Benutzer können hier eine Übersicht über Teams der aktuellen Saison 
+finden mit denen sie zu tun haben.
+
+## Frei verfügbare Informationen
+
+### News
+
+Hier sind alle News zum Wettkampf einsehbar. Alles Wichtige zum Wettkampf
+erscheint hier.
+
+### Gruppen
+
+![Screenshot der Gruppen](/images/wettkampfsystem_neu_gruppe.png)
+
+Die Teams jeder Wettkampfsaison sind in der ersten Meisterschaftsphase in Gruppen 
+aufgeteilt. Auf der Seite einer Gruppe kann man auf die einzelnen Spieltage zugreifen 
+und die aktuelle Rangliste sehen.
+
+### Spieltag
+
+![Screenshot der Spieltagsuebersicht](/images/wettkampfsystem_neu_spieltag.png)
+
+Auf dieser Seite kann man sehen, welche Schulen an dem Spieltag
+aufeinander treffen. Wurde der Spieltag schon ausgetragen,
+kann man sich die Ergebnisse und den Verlauf der einzelnen Spiele
+anschauen.
+
+### Finale
+
+Hier findet sich die Übersicht über die Finalteilnehmer. Diese ist erst
+verfügbar, wenn die Teilnehmer feststehen.
 
 ## Nur mit Anmeldung verfügbar
 
-### Verbindlich anmelden
+### Mitglieder
 
-![Link zur verbindlichen Anmeldung](/images/wettkampfsystem_verbindliche_anmeldung.jpg)
+![Dialog](/images/wettkampfsystem_neu_mitglieder.png)
 
-Vor der Wettkampfphase muss man ein oder mehrere vorangemeldete Teams
-verbindlich anmelden. Hierzu klickt man nach dem Login auf den Link
-"Teams verbindlich anmelden" unten auf der Startseite (siehe Bild). Auf
-der folgenden Seite wird eine Liste der eigenen Teams angezeigt. Um ein
-Team verbindlich anzumelden, klickt man in der Spalte "Teilnahme" auf
-die Checkbox (![Checkbox zur verbindlichen Anmeldung](/images/wettkampfsystem_unchecked.png)).
+Hier werden alle Mitglieder des Teams aufgelistet. Mit den Buttons rechts neben den 
+Teammitgliedern kann man sie aus dem Team werfen.
 
-### Meine Teams
+#### Mitglieder hinzufügen
 
-Hier sind alle Teams aufgelistet, auf die man Zugriff hat. Mit einem
-Klick auf die Lupe am Ende der Zeile gelangt man in die Teamdetails.
-
-#### Personen
-
-![Dialog](/images/wettkampfsystem_neue_person.jpg)
-
-Hier werden alle Personen des Teams augelistet.
-
-##### Person hinzufügen
-
-Neue Personen kann man über die Schaltfläche "Person hinzufügen" am
-oberen Bildschirmrand einladen. Dabei können Tutoren sowohl Lehrkräfte, als auch Schülerinnen und
+Neue Mitglieder kann man über die Schaltfläche "Bestehenden Benutzer einladen" unten einladen. 
+Dabei können Tutoren sowohl Lehrkräfte, als auch Schülerinnen und
 Schüler hinzufügen, während Lehrkräfte nur Schülerinnen und Schüler hinzufügen dürfen.
 Schülerinnen und Schüler haben in dieser Hinsicht keinerlei Rechte.
 
@@ -140,15 +96,10 @@ Schülerinnen und Schüler haben in dieser Hinsicht keinerlei Rechte.
 Zugangsdaten erhalten. Es reicht, wenn sich die Teammitglieder am Server
 anmelden können, die den :t[Computerspieler]{#player} hochladen.
 
-Mit den Symbolen neben den Teammitgliedern kann man sich die
-Personendetails anschauen, sie bearbeiten oder das Mitglied aus dem Team
-werfen.
+Wenn man eine neue Person ins Team aufnehmen will, kann man eine im System
+bekannte Person einladen.
 
-Wenn man eine neue Person ins Team aufnehmen will, kann man sich
-entscheiden, ob man eine neue Person erstellt oder eine im System
-bekannte Person einlädt.
-
-Ganz unten auf der Personenseite kann man die Schülerinnen- und Schüler-Anzahl des Teams
+Darüber kann man die Schülerinnen- und Schüler-Anzahl des Teams
 eintragen. Hierzu zählen auch Schülerinnen und Schüler, die keine eigenen Zugangsdaten
 für das Wettkampfsystem haben. Diese Zahl wird sowohl für die Presse als
 auch für statistische Zwecke gebraucht und sollte in jedem Fall stimmen.
@@ -169,18 +120,17 @@ Optionen:
 
 -   Eines ihrer Tickets wurde geändert
 
-#### Computerspieler
+### Computerspieler
 
 In dieser Rubrik kann man die :t[Computerspieler]{#player} hochladen und verwalten.
 Bevor man einen Computerspieler hochlädt, muss [er abgabefertig gemacht werden](/entwicklung/abgabe).
 
-![Übersicht der eingesendeten Computerspieler](/images/computerspieler_uebersicht.jpg)
+![Übersicht der eingesendeten Computerspieler](/images/wettkampfsystem_neu_hochladen.png)
 
-Oben am rechten Rand befindet sich die Schaltfläche, um neue
-Computerspieler hinzuzufügen. Diese führt zu einem Formular, mit dem man
-das ZIP-Archiv des Computerspielers hochladen kann.
-
-![Forumlar zum Einsenden eines Computerspielers](/images/computerspieler_hochladen.jpg)
+Oben am rechten Rand befindet sich die Schaltfläche,
+um neue Computerspieler hinzuzufügen.
+Diese führt zu einem Formular,
+mit dem man das ZIP-Archiv des Computerspielers hochladen kann.
 
 Man kann dem Spieler einen **Namen** geben, damit man ihn in der Liste
 der hochgeladenen Spieler später besser erkennt. Man kann auch noch
@@ -224,7 +174,7 @@ am Spieltag teilnimmt. Ist an einem Spieltag kein Computerspieler
 aktiviert, nimmt das Team nicht an der Begegnung dieses Spieltages teil
 und die betreffenden Spiele zählen als verloren.
 
-### Freundschaftsspiele
+## Freundschaftsspiele
 
 Um sich schon vor dem Wettkampf einen Eindruck von der Stärke des
 eigenen Teams zu machen, kann man mit seinen Gegnern Freundschaftsspiele
