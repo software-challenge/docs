@@ -23,13 +23,13 @@ und eine einfache Nutzung verschiedener Algorithmen innerhalb dieses Systems.
 	<board nextDirection="RICHTUNG">
 		<segment direction="RICHTUNG">
 			<center q="INT" r="INT" s="INT" />
-			<column>
+			<field-array>
 				<water/>
 				<water/>
 				<island/>
 				<passenger direction="RICHTUNG" passenger="INT"/>
 				<water/>
-			</column>
+			</field-array>
 			<!-- 3 weitere Spalten -->
 		</segment>
 		<!-- usw. für andere Segmente -->
@@ -46,13 +46,10 @@ und eine einfache Nutzung verschiedener Algorithmen innerhalb dieses Systems.
 - Die ``<state>``-Ebene gibt Auskunft über den aktuellen Spielzustand, einschließlich des Spielzugs (``turn``) und des Teams (``currentTeam``), das gerade am Zug ist.
 - Die ``<board>``-Ebene enthält Informationen über das Spielfeld, darunter die Richtung des nächsten Segments (``nextDirection``), um die Strömung zuverlässig zu kalkulieren.
 - Die ``<segments>``-Ebene enthält eine Liste von Segmenten, die jeweils eine bestimmte Richtung und ein Zentrum haben.
-  Jedes Segment enthält verschiedene Feldtypen wie Wasser, Inseln und Passagiere, die in 4 Spalten zu je 5 Feldern übergeben werden.
-
-:::alert{info}
-Das Passagier-Feld nimmt eine besondere Stellung gegenüber den anderen Feldern ein,
-da dieses eine Richtung und eine Passagieranzahl hat.
-:::
-
+  Jedes Segment enthält 4 Spalten zu je 5 Felder aus den Feldtypen Wasser, Insel und Passagiere.
+  Passagierfelder enhalten zusätzlich eine Richtung des Anliegers und eine Anzahl,
+  letztere ändert sich durch Abholung vom Anlieger.
+  Es gibt maximal ein Passagierfeld pro Segment.
 - Die ``<ship>``-Ebene enthält Informationen über Schiffe im Spiel. Jedes Schiff wird durch Teamzugehörigkeit (``team``), Punktzahl (``points``), Blickrichtung (``direction``), Geschwindigkeit (``speed``), Kohlebestand (``coal``), Anzahl der Passagiere (``passengers``) und verbleibende Runden mit freier Bewegung (freeTurns) charakterisiert. Die Position des Schiffs wird durch Cube-Koordinaten ($q$, $r$ und $s$) angegeben.
 
 ## Richtungen
@@ -72,16 +69,18 @@ Ein Zug kann wie folgt aussehen:
 ```xml
 <room roomId="ROOM_ID">
 	<data class="move">
-		<acceleration acc="1" />
-		<advance distance="2" />
-		<push direction="RIGHT" />
-		<turn direction="DOWN_RIGHT" />
+    <actions>
+		  <acceleration acc="1" />
+		  <advance distance="2" />
+		  <push direction="RIGHT" />
+		  <turn direction="DOWN_RIGHT" />
+    <actions/>
 	</data>
 </room>
 ```
 
 Ein Zug besteht immer aus einer Liste aus Aktionen.
-Die Reihenfolge dieser Liste bestimmt auch, in welcher Reihenfolge die Aktionen ausgeführt werden.
+Die Reihenfolge bestimmt, in welcher Reihenfolge die Aktionen ausgeführt werden.
 Insbesondere muss die Beschleunigungsaktion immer als **erstes** kommen.
 
 ## Spielergebnis
@@ -124,4 +123,5 @@ Insbesondere muss die Beschleunigungsaktion immer als **erstes** kommen.
 </result>
 ```
 
-In diesem Beispiel erhält Alice aufgrund der Regelverletzung keine Punkte.
+In diesem Beispiel erhält Alice aufgrund der Regelverletzung keine Punkte
+und Bob (Team Zwei) gewinnt.
