@@ -20,33 +20,33 @@ und eine einfache Nutzung verschiedener Algorithmen innerhalb dieses Systems.
 
 ```xml
 <state turn="0" currentTeam="ONE">
-	<board nextDirection="RICHTUNG">
-		<segment direction="RICHTUNG">
-			<center q="INT" r="INT" s="INT" />
-			<field-array>
-				<water/>
-				<water/>
-				<island/>
-				<passenger direction="RICHTUNG" passenger="INT"/>
-				<water/>
-			</field-array>
-			<!-- 3 weitere Spalten -->
-		</segment>
-		<!-- usw. für andere Segmente -->
-	</board>
-	<ships>
-		<ship team="TEAM" points="INT" direction="RICHTUNG" speed="INT" coal="INT" passengers="INT" freeTurns="INT">
-			<position q="INT" r="INT" s="INT" />
-		</ship>
-		<!-- usw. für das andere Schiff -->
-	</ships>
+  <board nextDirection="RICHTUNG">
+    <segment direction="RICHTUNG">
+      <center q="INT" r="INT" s="INT" />
+      <field-array>
+        <water/>
+        <water/>
+        <island/>
+        <passenger direction="RICHTUNG" passenger="INT"/>
+        <water/>
+      </field-array>
+      <!-- 3 weitere Spalten -->
+    </segment>
+    <!-- usw. für andere Segmente -->
+  </board>
+  <ships>
+    <ship team="TEAM" points="INT" direction="RICHTUNG" speed="INT" coal="INT" passengers="INT" freeTurns="INT">
+      <position q="INT" r="INT" s="INT" />
+    </ship>
+    <!-- usw. für das andere Schiff -->
+  </ships>
 </state>
 ```
 
 - Die ``<state>``-Ebene gibt Auskunft über den aktuellen Spielzustand, einschließlich des Spielzugs (``turn``) und des Teams (``currentTeam``), das gerade am Zug ist.
 - Die ``<board>``-Ebene enthält Informationen über das Spielfeld, darunter die Richtung des nächsten Segments (``nextDirection``), um die Strömung zuverlässig zu kalkulieren.
 - Die ``<segments>``-Ebene enthält eine Liste von Segmenten, die jeweils eine bestimmte Richtung und ein Zentrum haben.
-  Jedes Segment enthält 4 Spalten zu je 5 Felder aus den Feldtypen Wasser, Insel und Passagiere.
+  Jedes Segment enthält 4 Spalten zu je 5 Feldern aus den Feldtypen Wasser, Insel und Passagiere.
   Passagierfelder enhalten zusätzlich eine Richtung des Anliegers und eine Anzahl,
   letztere ändert sich durch Abholung vom Anlieger.
   Es gibt maximal ein Passagierfeld pro Segment.
@@ -55,27 +55,30 @@ und eine einfache Nutzung verschiedener Algorithmen innerhalb dieses Systems.
 ## Richtungen
 
 Da Mississippi-Queen auf einem hexagonalen Spielfeld gespielt wird,
-folgen daraus die sechs Richtungen:
-- RIGHT      : q+1, r+0, s-1
-- DOWN_RIGHT : q+0, r+1, s-1
-- DOWN_LEFT  : q-1, r+1, s+0
-- LEFT       : q-1, r+0, s+1
-- UP_LEFT    : q+0, r-1, s+1
-- UP_RIGHT   : q+1, r-1, s+0
+gibt es sechs Bewegungsrichtungen:
+
+| Direction   |  q  |  r  |  s  |
+|-------------|-----|-----|-----|
+| RIGHT       | q+1 | r+0 | s-1 |
+| DOWN_RIGHT  | q+0 | r+1 | s-1 |
+| DOWN_LEFT   | q-1 | r+1 | s+0 |
+| LEFT        | q-1 | r+0 | s+1 |
+| UP_LEFT     | q+0 | r-1 | s+1 |
+| UP_RIGHT    | q+1 | r-1 | s+0 |
 
 ## Spielzug
 
 Ein Zug kann wie folgt aussehen:
 ```xml
 <room roomId="ROOM_ID">
-	<data class="move">
+  <data class="move">
     <actions>
-		  <acceleration acc="1" />
-		  <advance distance="2" />
-		  <push direction="RIGHT" />
-		  <turn direction="DOWN_RIGHT" />
+      <acceleration acc="1" />
+      <advance distance="2" />
+      <push direction="RIGHT" />
+      <turn direction="DOWN_RIGHT" />
     <actions/>
-	</data>
+  </data>
 </room>
 ```
 
@@ -123,5 +126,6 @@ Insbesondere muss die Beschleunigungsaktion immer als **erstes** kommen.
 </result>
 ```
 
-In diesem Beispiel erhält Alice aufgrund der Regelverletzung keine Punkte
-und Bob (Team Zwei) gewinnt.
+In diesem Beispiel erhält Alice aufgrund der Regelverletzung keine Punkte und Bob (Team Zwei) gewinnt.
+Das Feld `winner.team` fehlt bei einem Unentschieden.
+Ein nicht-Vorhandensein des `winner`-tags ist ebenfalls als Unentschieden zu werten.

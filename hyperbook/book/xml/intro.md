@@ -20,11 +20,8 @@ Die Grundelemente von XML sind _Tags_.
 Ein Tag liefert Informationen über die Art der Daten, die verarbeitet werden sollen. In XML wird ein Tag gebildet, indem man den Tagnamen zwischen spitze Klammern setzt. Dabei kennt XML drei verschiedene Tag-Arten:
 
 -   Öffnendes Tag: `<Tag>`
-    
 -   Schließendes Tag: `</Tag>`
-    
 -   Leeres Tag: `<Tag />`
-    
 
 Der Schrägstrich bedeuted, dass das Tag geschlossen wird. Durch den Schrägstrich am Ende wird das soeben geöffnete Tag direkt wieder geschlossen.
 
@@ -37,56 +34,51 @@ Zwischen den öffnenden und schliessenden Tag steht die Information, die mitgete
 Die Tags dürfen nicht beliebig in Dokumenten verwendet werden. Es gelten hier die folgenden Regeln:
 
 -   Zu jedem öffnenden Tag muss ein schließendes Tag existieren.
-    
 -   Man kann Tags ineinander schachteln. Die einzelnen Tags dürfen sich jedoch nicht überkreuzen.
-    
 -   Es darf nur ein Root-Tag geben, d.h. es gibt auf oberster Ebene genau ein Tag, in dem alle anderen enthalten sind.
-    
 
 #### Beispiel für korrekte XML-Syntax
 
 ```xml
 <addiere>
-    <komplexe_zahl>
-        <realteil>3.5</realteil>
-        <imaginaerteil>4.2</imaginaerteil>
-    </komplexe_zahl>
-    <komplexe_zahl>
-        <realteil>1</realteil>
-        <imaginaerteil>6.9</imaginaerteil>
-    </komplexe_zahl>
+  <komplexe_zahl>
+    <realteil>3.5</realteil>
+    <imaginaerteil>4.2</imaginaerteil>
+  </komplexe_zahl>
+  <komplexe_zahl>
+    <realteil>1</realteil>
+    <imaginaerteil>6.9</imaginaerteil>
+  </komplexe_zahl>
 </addiere>
 ```
 
 #### Beispiele für fehlerhafte XML-Syntax
 
--   Fehlerhaft, da es mehrere Elemente auf oberster Ebene gibt:
-    
+Fehlerhaft, da es mehrere Elemente auf oberster Ebene gibt:
 
 ```xml
 <ueberschrift>
-    Beispieldokument
+  Beispieldokument
 </ueberschrift>
 <text>
-    Dies ist ein <unterstrichen>Beispieltext</unterstrichen>
-    <absatz />
-    Noch mehr Text
+  Dies ist ein <unterstrichen>Beispieltext</unterstrichen>
+  <absatz />
+  Noch mehr Text
 </text>
 ```
 
--   Fehlerhaft, da Tags sich kreuzen:
-    
+Fehlerhaft, da Tags sich kreuzen:
 
 ```xml
 <dokument>
-    <ueberschrift>
-        Beispieldokument
-    </ueberschrift>
-    <text>
-        <kursiv>Dies <unterstrichen>ist </kursiv>ein Beispieltext</unterstrichen>
-        <absatz />
-        Noch mehr Text
-    </text>
+  <ueberschrift>
+    Beispieldokument
+  </ueberschrift>
+  <text>
+    <kursiv>Dies <unterstrichen>ist </kursiv>ein Beispieltext</unterstrichen>
+    <absatz />
+    Noch mehr Text
+  </text>
 </dokument>
 ```
 
@@ -102,8 +94,8 @@ Auf diese Weise lässt sich das Beispiel mit den komplexen Zahlen etwas übersic
 
 ```xml
 <addiere>
-    <komplexe_zahl realteil="3.5" imaginaerteil="4.2" />
-    <komplexe_zahl realteil="1" imaginaerteil="6.9" />
+  <komplexe_zahl realteil="3.5" imaginaerteil="4.2" />
+  <komplexe_zahl realteil="1" imaginaerteil="6.9" />
 </addiere>
 ```
 
