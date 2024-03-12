@@ -15,7 +15,7 @@ oder die Anzahl der Mitglieder in den einzelnen Teams.
 
 ## Die Weboberfläche
 
-![Die Startseite der Weboberfläche](/images/wettkmapfsystem_neu_startseite.png)
+![Die Startseite der Weboberfläche](/images/wettkampfsystem_neu_startseite.png)
 
 Die Weboberfläche ist unter der URL
 <http://contest.software-challenge.de> erreichbar. Alle Informationen,
@@ -38,7 +38,7 @@ Gruppen dazu. Anschließend kann man die Informationen einsehen.
 
 #### Alle Teams
 
-![Die Teamtabelle](/images/wettkmapfsystem_neu_teams.png)
+![Die Teamtabelle](/images/wettkampfsystem_neu_teams.png)
 
 Hier werden die teilnehmenden Teams mit ihren Ansprechpartnern und
 Tutoren tabellarisch aufgelistet.
@@ -57,7 +57,7 @@ erscheint hier.
 
 ### Gruppen
 
-![Screenshot der Gruppen](/images/wettkmapfsystem_neu_gruppe.png)
+![Screenshot der Gruppen](/images/wettkampfsystem_neu_gruppe.png)
 
 Die Teams jeder Wettkampfsaison sind in der ersten Meisterschaftsphase in Gruppen 
 aufgeteilt. Auf der Seite einer Gruppe kann man auf die einzelnen Spieltage zugreifen 
@@ -65,7 +65,7 @@ und die aktuelle Rangliste sehen.
 
 ### Spieltag
 
-![Screenshot der Spieltagsuebersicht](/images/wettkmapfsystem_neu_spieltag.png)
+![Screenshot der Spieltagsuebersicht](/images/wettkampfsystem_neu_spieltag.png)
 
 Auf dieser Seite kann man sehen, welche Schulen an dem Spieltag
 aufeinander treffen. Wurde der Spieltag schon ausgetragen,
@@ -81,7 +81,7 @@ verfügbar, wenn die Teilnehmer feststehen.
 
 ### Mitglieder
 
-![Dialog](/images/wettkmapfsystem_neu_mitglieder.png)
+![Dialog](/images/wettkampfsystem_neu_mitglieder.png)
 
 Hier werden alle Mitglieder des Teams aufgelistet. Mit den Buttons rechts neben den 
 Teammitgliedern kann man sie aus dem Team werfen.
@@ -126,7 +126,7 @@ Optionen:
 Auf dieser Seite kann man die :t[Computerspieler]{#player} hochladen und verwalten.
 Bevor man einen :t[Computerspieler]{#player} hochlädt, muss [der :t[Computerspieler]{#player} abgabefertig gemacht werden](/entwicklung/abgabe).
 
-![Übersicht der eingesendeten Computerspieler](/images/wettkmapfsystem_neu_hochladen.png)
+![Übersicht der eingesendeten Computerspieler](/images/wettkampfsystem_neu_hochladen.png)
 
 Oben links befindet sich die Schaltfläche, um neue
 :t[Computerspieler]{#player} hinzuzufügen. Diese führt zu einem Formular, mit dem man
