@@ -10,22 +10,21 @@ auf der die [Computerspieler](glossary/player) der einzelnen Schulen gegeneinand
 Die Teams können sich dabei nicht nur im Wettkampf,
 sondern auch in Freundschaftsspielen mit ihren Gegnern messen.
 Außerdem liefert es alle Informationen rund um den Wettkampf,
-wie z.B. die Ergebnisse der einzelnen Spieltage 
+wie z.B. die Ergebnisse der einzelnen Spieltage
 oder die Anzahl der Mitglieder in den einzelnen Teams.
 
 ## Die Weboberfläche
 
 ![Die Startseite der Weboberfläche](/images/wettkampfsystem_neu_startseite.png)
 
-Die Weboberfläche ist unter der URL
-<http://contest.software-challenge.de> erreichbar. Alle Informationen,
-die den Ablauf des Wettkampfs betreffen (z.B. Terminplan, News oder
-Rangliste) sind auch ohne Anmeldung verfügbar. Man muss sich nur am
-System anmelden, wenn man auf seinen Kurs, bzw. auf seinen Computerspieler
-zugreifen möchte. Im Wettkampfsystem findet die gesamte
-Wettkampfverwaltung statt. Hier können die Clients abgegeben, getestet
-und aktiviert werden und es kann der aktuelle Wettkampfstand abgerufen
-werden (Rangliste, Spieltage, etc.).
+Die Weboberfläche ist unter der URL <http://contest.software-challenge.de> erreichbar.
+Alle Informationen, die den Ablauf des Wettkampfs betreffen
+(z.B. Terminplan, News oder Rangliste) sind auch ohne Anmeldung verfügbar.
+Man muss sich nur am System anmelden, wenn man auf seinen Kurs,
+bzw. auf seinen Computerspieler zugreifen möchte.
+Im Wettkampfsystem findet die gesamte Wettkampfverwaltung statt.
+Hier können die Clients abgegeben, getestet und aktiviert werden
+und es kann der aktuelle Wettkampfstand abgerufen werden (Rangliste, Spieltage, etc.).
 
 ### Auswahl
 
@@ -123,27 +122,28 @@ Optionen:
 
 ### Computerspieler
 
-Auf dieser Seite kann man die :t[Computerspieler]{#player} hochladen und verwalten.
-Bevor man einen :t[Computerspieler]{#player} hochlädt, muss [der :t[Computerspieler]{#player} abgabefertig gemacht werden](/entwicklung/abgabe).
+In dieser Rubrik kann man die :t[Computerspieler]{#player} hochladen und verwalten.
+Bevor man einen Computerspieler hochlädt, muss [er abgabefertig gemacht werden](/entwicklung/abgabe).
 
 ![Übersicht der eingesendeten Computerspieler](/images/wettkampfsystem_neu_hochladen.png)
 
-Oben links befindet sich die Schaltfläche, um neue
-:t[Computerspieler]{#player} hinzuzufügen. Diese führt zu einem Formular, mit dem man
-das ZIP-Archiv des Computerspielers hochladen kann.
+Oben am rechten Rand befindet sich die Schaltfläche,
+um neue Computerspieler hinzuzufügen.
+Diese führt zu einem Formular,
+mit dem man das ZIP-Archiv des Computerspielers hochladen kann.
 
 Man kann dem Spieler einen **Namen** geben, damit man ihn in der Liste
 der hochgeladenen Spieler später besser erkennt. Man kann auch noch
-zusätzliche **Parameter** festlegen, die dem :t[Computerspieler]{#player} beim Start
+zusätzliche **Parameter** festlegen, die dem Computerspieler beim Start
 übergeben werden. Dies ist nützlich, wenn der Computerspieler
 verschiedene Spielstrategien unterstützt und man diese per Parameter
-auswählen kann. Dann muss man den :t[Computerspieler]{#player} nur einmal hochladen
+auswählen kann. Dann muss man den Computerspieler nur einmal hochladen
 (die Parameter kann man auch später verändern). Die Angabe eines Namens
 und von Parametern ist optional.
 
 Als letztes muss noch die Umgebung (das **Docker Image**) gewählt
-werden, in der der :t[Computerspieler]{#player} auf dem Wettkampfsystem ausgeführt
-werden soll. Verwendet der :t[Computerspieler]{#player} eine der beiden offiziell
+werden, in der der Computerspieler auf dem Wettkampfsystem ausgeführt
+werden soll. Verwendet der Computerspieler eine der beiden offiziell
 unterstützten Programmiersprachen Java und Ruby, kann hier einfach das
 entsprechende ausgewählt werden. Ansonsten hängt es von der gewählten
 Programmiersprache ab, ob eine passende Umgebung angeboten wird. Sollte
@@ -159,14 +159,14 @@ Startdatei eingestellt werden. Dafür kann man rechts in der Spalte
 "Hauptdatei" auf den entsprechenden Link klicken und im folgenden
 Dateimenü die richtige Startdatei auswählen.
 
-Mit dem '+' kann man einen Kommentar an den :t[Computerspieler]{#player} heften, so dass man
-ihn besser von den anderen unterscheiden kann.
+Mit dem '+' kann man einen Kommentar an den Computerspieler heften,
+so dass man ihn besser von den anderen unterscheiden kann.
 
 Mit dem Link "Aktivieren" markiert man den Spieler als denjenigen, der
 das nächste Spiel auf dem Wettkampfsystem spielen soll. Dies kann ein
 Freundschaftsspiel oder ein Spiel des Wettkampfes sein.
 
-**Hinweis:** Es nimmt der jeweils aktive :t[Computerspieler]{#player} am Spieltag
+**Hinweis:** Es nimmt der jeweils aktive Computerspieler am Spieltag
 teil. Die Frist für das Aktivieren eines Clients, der an einem Spieltag
 teilnehmen soll, endet am Spieltag um 0 Uhr. Bei späterer Aktivierung
 kann nicht garantiert werden, dass der neue statt des bisherigen Clients
