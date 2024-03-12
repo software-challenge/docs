@@ -79,7 +79,81 @@ Andere Kodierungen führen zu Fehlern bei der Ausführung auf dem Server.
 In Notepad++ kann die Kodierung einfach in dem Tab `Kodierung` angepasst werden,
 die Zeilenenden in `Bearbeiten > Format Zeilenende`.
 
-Bei kompilierten Sprachen müssen die Spieler für 64bit Linux kompiliert werden,
-bei interpretierten Sprachen muss ein passender Interpreter 
-auf dem :t[Wettkampfsystem]{#contest} vorhanden sein.
-Weiterhin müssen Abhängigkeiten wie z.B. genutzte Bibliotheken vorhanden sein oder mitgeliefert werden.
+Bei kompilierten Sprachen müssen die :t[Computerspieler]{#player} für 64bit Linux kompiliert werden,
+bei interpretierten Sprachen muss ein passender Interpreter auf dem :t[Wettkampfsystem]{#contest} vorhanden sein.
+Weiterhin müssen Abhängigkeiten wie z.B. genutzte Bibliotheken vorhanden sein
+oder mitgeliefert werden.
+
+## Technische Daten für die Ausführung der Computerspieler
+
+Bei allen im :t[Wettkampfsystem]{#contest} ausgetragenen Spielen
+laufen die :t[Computerspieler]{#player} auf den Servern des Wettkampfsystems.
+
+|                  |                                                   |
+|------------------|---------------------------------------------------|
+| Betriebssystem:  | 64 Bit Linux                                      |
+| Prozessor:       | Ein Kern von einem [Intel Xeon E5-2620 v4, 2,1 GHz](https://ark.intel.com/de/products/92986/Intel-Xeon-Processor-E5-2620-v4-20M-Cache-2_10-GHz) |
+| Arbeitsspeicher: | 1,5 GB                                            |
+
+### Die Begegnungen
+
+Jede Begegnung besteht aus jeweils sechs Spielen,
+wobei das Recht des ersten Zuges abwechselt.
+
+Die Zugzeit ist für jeden Zug auf zwei Sekunden begrenzt.
+Dabei gilt für die Rechenzeit die im Institut verwendete Hardware als Referenz.
+Jeder :t[Computerspieler]{#player} wird dabei auf einer eigenen virtuellen Maschine
+mit unten stehenden Spezifikationen ausgeführt.
+
+Sollte ein Spieler einen ungültigen Zug setzen oder die maximale Zugzeit überschreiten,
+so hat dieser Spieler verloren.
+In allen anderen Fällen wird das Spiel gemäß der Spielregeln zu Ende gespielt
+und der Gewinner ermittelt.
+
+### Log-Ausgabe
+
+Die :t[Computerspieler]{#player} laufen im :t[Wettkampfsystem]{#contest} ohne eine grafische Oberfläche,
+sie können also keine Fenster oder ähnliches anzeigen.
+Der Versuch eines Computerspielers, so etwas trotzdem zu tun,
+wird wahrscheinlich zum Absturz des Computerspielers führen.
+
+Die :t[Computerspieler]{#player} können jedoch Text auf die beiden
+Standard-Ausgabedatenströme "stdout" und "stderr" schreiben.
+Diese Ausgaben finden sich dann in den Log-Dateien wieder,
+die nach Beenden eines Spiels über das :t[Wettkampfsystem]{#contest} verfügbar sind.
+
+### Lesen von Daten
+
+Zugriff auf das Internet ist nicht möglich.
+Schreiben auf die Festplatte ist möglich,
+es kann jedoch nicht auf Daten, die in früheren Spielen geschrieben wurden,
+zugegriffen werden.
+
+### Ausführungsumgebung
+
+Der :t[Computerspieler]{#player} wird in einem Docker container ausgeführt,
+welcher die verfügbaren Bibliotheken und Programme bestimmt.
+Die verfügbaren Container-Vorlagen sind im Wettkampfsystem einsehbar,
+und bieten unter anderem Java, Python, Ruby, Node.js, Swift, .NET, C++ Boost, Tensorflow
+oft in mehreren Versionen.
+
+| Bezeichnung        | Image-Name                                                                                   | Beschreibung                                                                                                               |
+| ------------------ | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Java 17            | [openjdk:17](https://hub.docker.com/_/openjdk/)                                              | Open Source Java Platform, Standard Edition, Version 17 (bzw. 1.17). Für alle :t[Computerspieler]{#player} auf Basis des Java Zufallsspielers.     |
+| Java 8             | [openjdk:8u151-jre](https://hub.docker.com/_/openjdk/)                                       | Open Source Java Platform, Standard Edition, Version 1.8.        |
+| Java 18            | [openjdk:18](https://hub.docker.com/_/openjdk/)                                              | Open Source Java Platform, Standard Edition, Version 18 (bzw. 1.18)     |
+| Ruby 2             | [ruby:2.7.5](https://hub.docker.com/_/ruby/) | Ruby Interpreter, Version 2.7.5 mit installiertem Software-Challenge-Gem. Für alle :t[Computerspieler]{#player} auf Basis des Ruby Zufallsspielers.                                |
+| Python 3           | [python:3.10.1](https://hub.docker.com/_/python/)                                             | Python Interpreter, Version 3.10.1. Für selbst entwickelte :t[Computerspieler]{#player} in Python.                                       |
+| .NET Runtime | [	mcr.microsoft.com/dotnet/runtime:6.0](https://hub.docker.com/_/microsoft-dotnet-runtime/)                                               | Offizielle Microsoft .NET Laufzeitumgebung, Version 6.0. Für selbst entwickelte :t[Computerspieler]{#player} basierend auf dem Microsoft .NET Framework. |
+| Mono 5.4 (C# .NET) | [mono:6.12.0](https://hub.docker.com/_/mono/)                                               | Mono Laufzeitumgebung, Version 6.12.0. Für selbst entwickelte :t[Computerspieler]{#player} basierend auf dem Microsoft .NET Framework. |
+| Swift 5.5.1 | [swift:5.5.1](https://hub.docker.com/_/swift/)                                               | Swift (core libraries), Version 5.1.3. Für selbst entwickelte :t[Computerspieler]{#player} in der Programmiersprache Swift. |
+| Node.js 17.2.0 | [node:17.2.0](https://hub.docker.com/_/node/)                                               | Node.js, Version 17.2.0. Für selbst entwickelte :t[Computerspieler]{#player} in der Programmiersprache Javascript. |
+| C++ Boost Library | cpp-boost basierend auf [ubuntu:20.04](https://hub.docker.com/_/ubuntu/)                                               | Container mit vorinstallierten C++ Boost Bibliotheken (libboost-program-options1.71.0, libboost-atomic1.71.0, libboost-system1.71.0) |
+| Deep Learning | [floydhub/dl-docker](https://hub.docker.com/r/floydhub/dl-docker)                                               | Image mit Bibliotheken für diverse deep learning Ansätze (TensorFlow, Caffe, Theano, Keras, Lasagne und Torch). **Bitte das Wettkampfsystem nicht zum trainieren verwenden.** Das Image soll nur verhindern, dass die für den Betrieb des fertig trainierten Clients notwendigen Bibliotheken jedesmal mit hochgeladen werden müssen. |
+| Python Tensorflow | [sc-tensorflow](https://github.com/software-challenge/client-docker-images/blob/master/tensorflow/Dockerfile)                                               | Python 3 mit Tensorflow Bibliotheken. **Bitte das Wettkampfsystem nicht zum trainieren verwenden.** Das Image soll nur verhindern, dass die für den Betrieb des fertig trainierten Clients notwendigen Bibliotheken jedesmal mit hochgeladen werden müssen. |
+| PyPy | [pypy:3.9](https://hub.docker.com/_/pypy)                                               | PyPy is a fast, compliant alternative implementation of the Python language. Version 3.9 |
+
+Wenn Ihr :t[Computerspieler]{#player} eine speziellere Umgebung benötigt
+(zum Beispiel ein hier nicht angebotener Interpreter),
+nehmen Sie bitte mit uns Kontakt auf (<tech@software-challenge.de>).
+Wir stellen gern weitere Images zur Verfügung.
