@@ -35,7 +35,7 @@ und eine einfache Nutzung verschiedener Algorithmen innerhalb dieses Systems.
     <!-- usw. für andere Segmente -->
   </board>
   <ships>
-    <ship team="TEAM" points="INT" direction="RICHTUNG" speed="INT" coal="INT" passengers="INT" freeTurns="INT">
+    <ship team="TEAM" points="INT" direction="RICHTUNG" speed="INT" coal="INT" passengers="INT" freeTurns="INT" stuck="BOOL">
       <position q="INT" r="INT" s="INT" />
     </ship>
     <!-- usw. für das andere Schiff -->
@@ -50,7 +50,8 @@ und eine einfache Nutzung verschiedener Algorithmen innerhalb dieses Systems.
   Passagierfelder enhalten zusätzlich eine Richtung des Anliegers und eine Anzahl,
   letztere ändert sich durch Abholung vom Anlieger.
   Es gibt maximal ein Passagierfeld pro Segment.
-- Die ``<ship>``-Ebene enthält Informationen über Schiffe im Spiel. Jedes Schiff wird durch Teamzugehörigkeit (``team``), Punktzahl (``points``), Blickrichtung (``direction``), Geschwindigkeit (``speed``), Kohlebestand (``coal``), Anzahl der Passagiere (``passengers``) und verbleibende Runden mit freier Bewegung (freeTurns) charakterisiert. Die Position des Schiffs wird durch Cube-Koordinaten ($q$, $r$ und $s$) angegeben.
+- Die ``<ship>``-Ebene enthält Informationen über Schiffe im Spiel.
+  Jedes Schiff wird durch Teamzugehörigkeit (``team``), Punktzahl (``points``), Blickrichtung (``direction``), Geschwindigkeit (``speed``), Kohlebestand (``coal``), Anzahl der Passagiere (``passengers``) und freie Derhungen im kommenden Zug (`freeTurns`) charakterisiert. Die Position des Schiffs wird durch Cube-Koordinaten ($q$, $r$ und $s$) angegeben. Der Wahrheitswert `stuck` gibt an, ob das Schiff festgefahren und damit ausgeschieden ist.
 
 ## Richtungen
 
