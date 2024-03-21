@@ -5,7 +5,7 @@ index: 1
 
 ## 1. Einleitung
 
-In dieser Anleitung werden die Elemente und Regeln 
+In dieser Anleitung werden die Elemente und Regeln
 des Spiels Mississippi Queen der Software-Challenge 2024 erläutert.
 Bei Mississippi Queen versuchen zwei Spieler,
 durch abwechselndes Setzen von Raddampfern
@@ -44,7 +44,7 @@ Die Spielsegmente bestehen aus verschiedenen Typen hexagonaler Felder,
 die zufällig verteilt sind.
 Neben Wasserfeldern und Inseln <!--, Sandbänken und Baumstämmen -->
 gibt es pro Spiel insgesamt 5 Passagierfelder.
-Jeder Dampfer beginnt das Spiel 
+Jeder Dampfer beginnt das Spiel
 mit einer Geschwindigkeit von 1 und einem Kohlevorrat von 6.
 Der Dampfer hat außerdem eine von sechs Bewegungsrichtungen,
 die den Kanten der Hexagon-Felder entsprechen,
@@ -126,14 +126,14 @@ Auf einer Sandbank kann nicht gedreht oder
 beschleunigt werden und ein Dampfer,
 der sich darauf befindet,
 kann nicht
-abgedrängt werden. 
+abgedrängt werden.
 -->
 
 ### 2.4 Das Zielfeld
 
 ![Zielfeld](/images/spiele/mississippi-queen/Zielfeld.png)
 
-Ein Zielfeld muss mit effektiver Geschwindigkeit 1 angelaufen werden 
+Ein Zielfeld muss mit effektiver Geschwindigkeit 1 angelaufen werden
 und es müssen sich mindestens zwei Passagiere an Bord befinden,
 damit der Dampfer das Spiel gewinnt.
 Sind diese Bedingungen nicht erfüllt,
@@ -147,7 +147,7 @@ In der ersten Runde beginnt der rote Spieler.
 In allen weiteren Runden wird der beginnende Spieler wie folgt ermittelt:
 
 1. Es beginnt der Spieler,
-dessen Dampfer sich am dichtesten am Ziel befindet, 
+dessen Dampfer sich am dichtesten am Ziel befindet,
 also am weitesten vorne auf dem befahrenen Segment.
 
 2. Sollten beide Dampfer gleich dicht am Ziel sein,
@@ -165,7 +165,7 @@ der am weitesten rechts steht (höchste X-Koordinate).
 
 5. Sollten beide Dampfer gleich weit rechts stehen,
 beginnt der Dampfer,
-der am weitesten unten steht (höchste Y-Koordinate). 
+der am weitesten unten steht (höchste Y-Koordinate).
 -->
 
 Die fünf Felder ganz links beginnen das Koordinatensystem,
@@ -190,7 +190,7 @@ genannten Regeln bestimmt.
 Ein Zug besteht aus mindestens einer Aktion.
 In einem Zug müssen
 <!-- (falls der Zug nicht durch Auffahren auf eine Sandbank vorzeitig endet) -->
-durch die Aktionen insgesamt alle Bewegungspunkte 
+durch die Aktionen insgesamt alle Bewegungspunkte
 (bestimmt durch die Geschwindigkeit des Schiffes) verbraucht werden.
 Die verschiedenen Aktionen sind:
 
@@ -200,14 +200,14 @@ Eine Beschleunigung kann nur als erste Aktion eines Zuges ausgeführt werden.
 Die Beschleunigung um eine Geschwindigkeitseinheit pro Zug ist frei,
 jede Beschleunigung um mehr als 1 kostet für jeden
 weiteren Geschwindigkeitspunkt eine Kohleeinheit.
-Möchte ein Spieler beispielsweise mit einer aktuellen Geschwindigkeit von 2 
+Möchte ein Spieler beispielsweise mit einer aktuellen Geschwindigkeit von 2
 auf Geschwindigkeit 4 beschleunigen,
 kostet dies eine Kohleeinheit.
 Die maximale Geschwindigkeit ist 6,
 die niedrigste 1.
 Auf gleiche Weise kann auch abgebremst,
 also die Geschwindigkeit verringert werden.
-Dies wird der Einfachheit halber als Beschleunigungsaktion 
+Dies wird der Einfachheit halber als Beschleunigungsaktion
 mit negativer Beschleunigung behandelt.
 
 ### 4.2 Erzeugung der Bewegungspunkte
@@ -219,7 +219,7 @@ am Ende des Zuges dürfen also keine Bewegungspunkte mehr vorhanden sein.
 
 ### 4.3 Drehaktion
 
-Eine Drehaktion je Zug des Spielers um eine Einheit 
+Eine Drehaktion je Zug des Spielers um eine Einheit
 (also um 60◦) ist frei.
 Jede weitere Drehung erfordert eine Kohleeinheit (Ausnahme Abdrängen, siehe 4.4).
 <!-- Auf Sandbänken kann nicht gedreht werden. -->
@@ -240,7 +240,7 @@ Es darf nicht
 von einer Sandbank aus abgedrängt werden.  -->
 Der abgedrängte Spieler bekommt eine zusätzliche freie Drehung für seinen nächsten Zug.
 <!-- Wurde der Spieler auf eine Sandbank abgedrängt,
-entfällt diese freie Drehung 
+entfällt diese freie Drehung
 und die Geschwindigkeit des abgedrängten Spielers wird auf 1 reduziert. -->
 
 ### 4.5 Bewegungsaktion
@@ -257,9 +257,9 @@ auf ein noch nicht aufgedecktes Feld zu ziehen.
 
 Solange die Regeln der einzelnen Aktionsarten eingehalten werden,
 können mehrere Aktionen innerhalb eines Zuges beliebig kombiniert werden.
-Der Aktionsablauf in einem Zug ist also: 
+Der Aktionsablauf in einem Zug ist also:
 - Beschleunigungsaktion (optional)
-- Erzeugung der Bewegungspunkte 
+- Erzeugung der Bewegungspunkte
 - Beliebige Kombination der restlichen Aktionen (Bewegung, Drehung, Abdrängen),
   solange die Aktionspunkte ausreichen und die Regeln eingehalten werden
 
@@ -274,7 +274,7 @@ Das Spiel ist beendet, sobald:
 
 Ein Spieler, der einen ungültigen Zug macht,
 erhält für das Spiel insgesamt 0 Punkte.
-In allen anderen Fällen berechnet sich der Punktestand 
+In allen anderen Fällen berechnet sich der Punktestand
 eines jeden Spielers folgendermaßen:
 - Jeder eingesammelte Passagier bringt 5 Punkte.
 - Jedes überwundene Segment bringt 5 Punkte.
@@ -282,7 +282,9 @@ eines jeden Spielers folgendermaßen:
   Ein Segment ist aufgeteilt in 4 Spalten.
   Je weiter vorne man ist, desto mehr Punkte bekommt man.
 
-Bei Spielende gewinnt der Spieler mit den meisten Punkten.
+Bei Spielende gewinnt der Spieler,
+der das Ziel mit mindestens 2 Passagieren erreicht hat.
+Ansonsten gewinnt der Spieler mit den meisten Punkten.
 Sollten beide Spieler gleich viele Punkte haben,
 gewinnt der Spieler, der mehr Passagiere eingesammelt hat.
 Sollte auch diese Zahl gleich sein,
