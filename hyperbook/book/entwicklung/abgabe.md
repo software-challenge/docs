@@ -92,7 +92,7 @@ laufen die :t[Computerspieler]{#player} auf den Servern des Wettkampfsystems.
 |                  |                                                   |
 |------------------|---------------------------------------------------|
 | Betriebssystem:  | 64 Bit Linux                                      |
-| Prozessor:       | Ein Kern von einem [Intel Xeon E5-2620 v4, 2,1 GHz](https://ark.intel.com/de/products/92986/Intel-Xeon-Processor-E5-2620-v4-20M-Cache-2_10-GHz) |
+| Prozessor:       | Ein Thread eines [Intel Xeon E5-2620 v4, 2,1 GHz](https://ark.intel.com/de/products/92986/Intel-Xeon-Processor-E5-2620-v4-20M-Cache-2_10-GHz) |
 | Arbeitsspeicher: | 1,5 GB                                            |
 
 ### Die Begegnungen

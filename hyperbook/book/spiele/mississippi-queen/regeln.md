@@ -267,8 +267,7 @@ Der Aktionsablauf in einem Zug ist also:
 
 Das Spiel ist beendet, sobald:
 - ein Dampfer mit mindestens 2 Passagieren ein Zielfeld mit Geschwindigkeit 1 erreicht hat (die Runde wird noch beendet)
-- beide Spieler keinen gültigen Zug mehr machen können
-  (wenn einer ausscheidet, kann der andere aber noch weiter Punkte sammeln)
+- ein Spieler keinen gültigen Zug mehr machen kann
 - am Ende einer Runde ein Dampfer mehr als 3 Spielsegmente zurückliegt
 - das Rundenlimit von 30 Runden erreicht ist
 
