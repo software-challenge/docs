@@ -76,6 +76,8 @@ Bei jeder Bewegungsaktion in oder durch die Strömung
 (unabhängig davon, ob man schon auf einem Strömungsfeld ist)
 zahlt man einen Bewegungspunkt extra,
 wobei direkt aufeinanderfolgende Bewegungsaktionen als eine zählen.
+Wenn zwischen den Bewegungsaktionen eine Abdräng- oder Drehaktion ist, 
+zahlt man also erneut den Aufschlag!
 
 Innerhalb der Strömung ist somit die "effektive" Geschwindigkeit um 1 verringert,
 wodurch man im mittleren Zielfeld
