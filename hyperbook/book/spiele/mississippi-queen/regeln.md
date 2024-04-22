@@ -7,12 +7,11 @@ index: 1
 
 In dieser Anleitung werden die Elemente und Regeln
 des Spiels Mississippi Queen der Software-Challenge 2024 erläutert.
-Bei Mississippi Queen versuchen zwei Spieler,
-durch abwechselndes Setzen von Raddampfern
-schnellstmöglich einen Fluss bis zum Ziel entlangzufahren
-und dabei unterwegs zwei Passagiere mitzunehmen.
+Bei Mississippi Queen versuchen zwei Spieler ihre Raddampfer
+schnellstmöglich den Fluss bis zum Ziel entlangzufahren,
+und dabei auf die reißende Strömung und Passagiere Acht zu geben.
 Der Spieler,
-dessen Dampfer das Ziel mit zwei Passagieren an Bord zuerst erreicht,
+dessen Dampfer das Ziel mit mindestens zwei Passagieren an Bord zuerst erreicht,
 gewinnt das Spiel.
 
 ## 2. Das Spielbrett
@@ -100,8 +99,10 @@ Auf dem Passagierfeld mit Anleger wartet ein Passagier,
 der am Anleger abgeholt werden kann.
 Um den Passagier abzuholen,
 muss der Dampfer mit Geschwindigkeit 1 (2 auf Strömungsfeldern) am Anleger ankommen.
-Es verwandelt sich in ein normales Inselfeld,
-sobald der Passagier abgeholt wurde (siehe Insel, 2.2).
+Es verwandelt sich in ein normales Inselfeld (siehe 2.2.),
+sobald der Passagier abgeholt wurde.
+Ein Dampfer kann beliebig viele Passagiere aufnehmen,
+jedoch maximal einen pro Zug.
 Wenn ein Dampfer durch Abdrängen an einem Anleger landet,
 kann er einen Passagier aufnehmen,
 sofern die Geschwindigkeit stimmt.
@@ -266,7 +267,8 @@ Der Aktionsablauf in einem Zug ist also:
 ## 5 Spielende
 
 Das Spiel ist beendet, sobald:
-- ein Dampfer mit mindestens 2 Passagieren ein Zielfeld mit Geschwindigkeit 1 erreicht hat (die Runde wird noch beendet)
+- ein Dampfer mit mindestens 2 Passagieren ein Zielfeld mit Geschwindigkeit 1 erreicht hat
+  (die Runde wird noch beendet)
 - ein Spieler keinen gültigen Zug mehr machen kann
 - am Ende einer Runde ein Dampfer mehr als 3 Spielsegmente zurückliegt
 - das Rundenlimit von 30 Runden erreicht ist
