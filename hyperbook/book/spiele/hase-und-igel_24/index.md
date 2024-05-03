@@ -180,10 +180,10 @@ Salatfeld zu betreten, ohne mindestens einen Salat zu besitzen.
 
 ### Karotten tauschen
 
-Kann nur ausgeführt werden, wenn sich der Spieler auf einem Karottenfeld
-befindet. Es können entweder zehn Karotten abgegeben werden (dabei muss
-der Spieler mindestens zehn Karotten besitzen) oder 10 Karotten
-aufgenommen werden. Nach dieser Aktion endet der Zug.
+Befindet sich ein Spieler auf einem Karottenfeld,
+so kann dieser (aber muss nicht) die Aktion „Karotten tauschen“ durchführen.
+Dabei muss der Spieler entweder 10 Karotten abgeben (dafür muss der Spieler mindestens 10 Karotten besitzen) oder nehmen. 
+Die Aktion „Karotten tauschen“ kann auch in mehreren unmittelbar aufeinanderfolgenden Runden ausgeführt werden.
 
 ### Salat fressen
 
@@ -246,12 +246,8 @@ aber nicht erlaubt ist, weil er dafür dann keinen Hasenjoker mehr hat.
 
 # Software-Challenge XML-Dokumentation Hase und Igel
 
-Sören Domrös &lt;<stu114053@mail.uni-kiel.de>&gt;
-
 Ziel dieser Dokumentation ist es, die XML-Schnittstelle der
 Softwarechallenge festzuhalten.
-
-[PDF-Version dieses Dokumentes](xml-dokumentation.pdf)
 
 Wir freuen uns über sämtliche Verbesserungsvorschläge. Die Dokumentation
 kann [direkt auf GitHub

@@ -8,7 +8,7 @@ redir /spiele/ /spiele
 redir /spiele /spiele/aktuell
 
 @game path_regexp game ^\/spiele\/aktuell(.*)$
-rewrite @game /spiele/mississippi-queen{re.game.1}
+rewrite @game /spiele/hase-und-igel_24{re.game.1}
 
 root * /srv
 try_files {path}.html {path}
