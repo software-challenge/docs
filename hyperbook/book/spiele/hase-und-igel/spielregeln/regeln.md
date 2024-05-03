@@ -23,7 +23,7 @@ Mit den Karotten bezahlt der Spieler das Vorrücken. Die Anzahl der
 Karotten, die benötigt werden, um eine bestimmte Anzahl von Zügen zu
 ziehen, ist dabei der folgenden Rennkarte zu entnehmen.
 
-![hui bilder 003](../images/hui-bilder-003.png)
+![Hase und Igel Rennkarte](/images/spiele/hase-und-igel/rennkarte.png)
 
 Das Spielfeld besteht aus 65 Feldern. Ziel des Spiels ist es das
 Zielfeld (Feld 65) mit weniger als zehn Karotten und keinem Salat zu
@@ -224,4 +224,4 @@ nicht einsetzen, noch darf er auf ein Hasenfeld hinter Jasper setzen
 Position vor“ einsetzen würde, käme er wieder auf ein Hasenfeld, was
 aber nicht erlaubt ist, weil er dafür dann keinen Hasenjoker mehr hat.
 
-![hui bilder 004](../images/hui-bilder-004.png)
+![Hase und Igel Spielbrett](/images/spiele/hase-und-igel/spielbrett.png)

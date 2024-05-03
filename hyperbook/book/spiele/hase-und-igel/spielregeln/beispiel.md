@@ -9,4 +9,4 @@ nicht einsetzen, noch darf er auf ein Hasenfeld hinter Jasper setzen
 Position vor“ einsetzen würde, käme er wieder auf ein Hasenfeld, was
 aber nicht erlaubt ist, weil er dafür dann keinen Hasenjoker mehr hat.
 
-![hui bilder 004](hui-bilder-004.png)
+![Hase und Igel Spielbrett](hui-bilder-004.png)

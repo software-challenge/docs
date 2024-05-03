@@ -1,4 +1,0 @@
----
-name: Spielregeln
-hide: true
----
