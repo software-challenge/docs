@@ -222,9 +222,7 @@ sich mindestens ein Spieler am Ende einer Runde im Ziel befindet.
 Sollte der erste Spieler im Ziel sein, hat der zweite Spieler einen
 Nachzug. Der erste Spieler bekommt keinen Nachzug. Es gewinnt der
 Spieler, der sich am nächsten am Ziel befindet.
-Sollten beide Spieler sich im Ziel befinden, gewinnt der Spieler mit weniger Karotten.
-Sollten beide Spieler gleich viele Karotten besitzen, gewinnt der Startspieler,
-da er zuerst das Ziel erreicht hat.
+Sollten beide Spieler sich im Ziel befinden, gewinnt der Spieler mit weniger Karotten; bei gleicher Karottenzahl endet das Spiel unentschieden.
 
 ## Beispiel
 
