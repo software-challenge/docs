@@ -11,15 +11,14 @@ Das Spielfeld der Version 2008 vom Ravensburger Spieleverlag wird folgendermaße
    Die Felder zwischen 2 Igelfeldern mit Ausnahme der Salatfelder werden zufällig permutiert. 
 2. Das Zahlenfeld 1-5-6 wird durch das Zahlenfeld 1 ersetzt.
 3. Das Zahlenfeld 3 wird durch das Karottenfeld ersetzt. 
-4. Das Zahlenfeld 4 wird durch das Zufallsfeld ersetzt.
+4. Das Zahlenfeld 4 wird durch das Marktfeld ersetzt.
 
 # Modifizierte Spielregeln Hase und Igel für Software-Challenge 2025
 
 ## Spielbeginn
 
-Jeder Spieler erhält zu Beginn 68 Karotten und 5 Salate als Wegzehrung,
-sowie je eine Karte „Rücke eine Position vor“, „Falle eine Position
-zurück“, „Friss sofort einen Salat“ und „Karotten nehmen oder abgeben“.
+Jeder Spieler erhält zu Beginn 68 Karotten und 5 Salate als Wegzehrung.
+Im Laufe des Spiels können die Spieler Karten kaufen, mit denen dann beim Betreten eines Hasenfeldes besondere Aktionen ausgeführt werden können. 
 Mit den Karotten bezahlt der Spieler das Vorrücken.
 Die Anzahl der Karotten, die benötigt werden,
 um eine bestimmte Anzahl von Zügen zu ziehen, 
@@ -38,15 +37,15 @@ Es gibt neun verschiedene Spielfelder:
 
 ### Startfeld
 
-Beide Spieler stehen anfänglich auf dem Startfeld,
-es ist das einzige Feld wo dies erlaubt ist.
+Beide Spieler stehen anfänglich auf dem Startfeld. 
+Nur hier und auf dem Zielfeld dürfen beide Spieler gleichzeitig stehen.
 Das Startfeld darf nur verlassen werden.
 Es ist nicht erlaubt das Startfeld erneut zu betreten.
 
 ### Karottenfeld
 
 Ein Karottenfeld darf durch jede Bewegungsaktion (Vorwärtszug, Karten) betreten werden. 
-ur auf ihm darf ein Zug "Karotten tauschen" stattfinden (nicht die Karte).
+Nur auf ihm darf ein Zug "Karotten tauschen" stattfinden (nicht die Karte).
 
 ### Hasenfeld
 
@@ -59,12 +58,12 @@ und dann durch die Nutzung von Karten wieder zu betreten).
 ### Salatfeld
 
 Darf nur mit mindestens einem Salat betreten werden.
-In dem Zug nach dem Betreten muss ein Salat gefressen werden.
+In der Runde nach dem Betreten muss der Spieler einen Salat fressen.
 Abgesehen von der entsprechenden Karte
-daruf nur auf einem Salatfeld ein Salat gefressen werden.
-Im darauffolgenden Zug muss das Salatfeld verlassen werden
+darf nur auf einem Salatfeld ein Salat gefressen werden.
+In der darauffolgenden Runde muss das Salatfeld verlassen werden
 (es ist innerhalb des Spiels trotzdem durch Rückwärtszüge oder Karten möglich, 
-auf demselben Salatfeld mehrere Salate zu essen).
+auf demselben Salatfeld mehrere Salate zu fressen).
 
 ### Igelfeld
 
@@ -82,21 +81,19 @@ Das Position-2-Feld darf uneingeschränkt betreten werden.
 Sollte sich ein Spieler am Anfang seines Zuges auf diesem Feld befinden 
 und an zweiter Stelle stehen, so erhält er 30 Karotten.
 
-### Zufallsfeld
+### Marktfeld
 
-Der Spieler, der ein solches Feld betritt, muss sofort (also im selben Zug) eine der vom Server zufällig ausgewählten Anweisungen befolgen:\
-a)    Ziehe sofort zurück zum nächsten Karottenfeld. Muss nur ausgeführt werden, wenn es ein entsprechendes Karottenfeld gibt. Anderenfalls wird diese Anweisung ignoriert.\
-b)    Der letzte Zug kostet nichts. Der Spieler erhält die Karotten zurück, die er für diesen Zug bezahlt hat.\
-c)    Tausche Deinen Karottenvorrat mit dem des Gegners.
+Betritt ein Spieler ein Marktfeld, muss dieser unmittelbar 10 Karotten zahlen (er darf dieses Feld nur betreten, wenn er mindestens 10 Karotten besitzt) und erhält dafür eine Karte, die er frei auswählen und später beim Betreten eines Hasenfeldes nutzen kann.
+Im Laufe des Spiels darf ein Spieler einen Kartenvorrat anlegen, auch mit mehreren Karten desselben Typs.
 
 ### Zielfeld
 
 Das Zielfeld darf nur betreten werden,
-wenn der Spieler höchstens zehn Karotten und keine Salate besitzt.
+wenn der Spieler höchstens zehn Karotten und keinen Salat besitzt.
 
 ## Karte ausspielen
 
-Eine Karte muss ausgespielt werden, wenn ein Hasenfeld betreten wird
+Eine Karte muss ausgespielt werden, wenn ein Hasenfeld betreten wird,
 und darf auch nur auf einem Hasenfeld ausgespielt werden. Das Betreten
 eines Hasenfeldes ist entweder durch einen Vorwärtszug oder das
 Ausspielen einer Karte möglich. Sollte es nicht möglich sein, eine Karte
@@ -105,24 +102,22 @@ Das Ausspielen einer Karte ist also immer Teil eines Zuges.
 Sofern durch das Ausspielen einer Karte ein weiteres Hasenfeld betreten wird, muss eine weitere Karte ausgespielt werden.
 Sollte durch das Ausspielen einer Karte kein weiteres Hasenfeld betreten werden, endet der Zug.
 
-Ein Spieler hat zu Beginn folgende Karten:
+Folgende Karten gibt es:
 
 ### Friss sofort einen Salat
 
 Es wird ein Salat vom Spieler entfernt.
-Je nach Position des Spielers (Erster/Zweiter) erhält der Spieler Karotten (10/30).
+Je nach der aktuellen Position des Spielers (Erster/Zweiter) erhält der Spieler Karotten (10/30).
 Diese Karte darf nur eingesetzt werden, wenn der Spieler mindestens einen Salat hat.
-In dem nächsten Zug muss das betretene Hasenfeld verlassen werden.
 
 ### Karotten nehmen oder abgeben
 
-Der Spieler darf 20 Karotten abgeben (dafür muss der Spieler mindestens 20 Karotten besitzen) oder aufnehmen oder nichts tun. In dem
-nächsten Zug muss das betretene Hasenfeld verlassen werden.
+Der Spieler darf 20 Karotten abgeben (dafür muss der Spieler mindestens 20 Karotten besitzen) oder aufnehmen oder nichts tun.
 
 ### Rücke eine Position vor
 
 Kann nur ausgespielt werden, wenn der Spieler sich an zweiter Position
-befindet. Der Spieler rückt auf das Feld vor dem gegnerischen Spieler
+befindet. Der Spieler rückt auf das Feld unmittelbar vor dem gegnerischen Spieler
 vor. Dies ist nicht erlaubt, sollte es sich bei dem so betretenen Feld
 um ein Igelfeld handeln oder sollte der gegnerische Spieler sich im Ziel
 befinden. Es ist außerdem nicht erlaubt, so ein Salatfeld zu betreten,
@@ -132,11 +127,17 @@ werden, wenn die Siegbedingungen erfüllt sind.
 ### Falle eine Position zurück
 
 Kann nur ausgespielt werden, wenn der Spieler sich an erster Position
-befindet. Der Spieler fällt auf das Feld hinter dem gegnerischen Spieler
+befindet. Der Spieler fällt auf das Feld unmittelbar hinter dem gegnerischen Spieler
 zurück. Dies ist nicht erlaubt, sollte es sich bei dem so betretenen
 Feld um ein Igelfeld handeln oder sollte der gegnerische Spieler sich
 auf dem Startfeld befinden. Es ist außerdem nicht erlaubt, so ein
 Salatfeld zu betreten, ohne mindestens einen Salat zu besitzen.
+
+### Karottenvorat mit dem Gegner tauschen
+
+Tausche Deinen Karottenvorrat mit dem des Gegners. 
+Diese Karte darf nur eingesetzt werden, solange beide Spieler noch vor dem letzten Salatfeld stehen 
+und nur, wenn die letzte gleichartige Tauschkarte nicht in einer der beiden letzten Runden eingesetzt wurde.
 
 ## Zugmöglichkeiten
 
@@ -149,22 +150,20 @@ Zahl von Feldern nach vorne (mindestens 1). Dabei werden Karotten
 entsprechend der Rennkarte verbraucht. Ein Spieler darf nicht
 auf ein Feld ziehen, das bereits durch den Gegner besetzt ist, außer es
 handelt sich um das Zielfeld. Durch einen Vorwärtszug dürfen alle Felder
-außer dem Igelfeld direkt betreten werden. Es ist nicht erlaubt das
+außer dem Igelfeld direkt betreten werden. Es ist nicht erlaubt, das
 Zielfeld zu betreten, wenn die Siegbedingungen (höchstens 10 Karotten
 und 0 Salate) nicht erfüllt sind. Wenn durch einen Vorwärtszug ein
-Salatfeld betreten wird, muss im nächsten Zug ein Salat gefressen werden
+Salatfeld betreten wird, muss in der nächsten Runde ein Salat gefressen werden
 (sollte kein Salat vorhanden sein, ist das Betreten nicht erlaubt). Wenn
 durch einen Vorwärtszug ein Hasenfeld betreten wird, muss unmittelbar danach (also im selben Zug) eine
 Karte ausgespielt werden (wenn keine spielbare Karte vorhanden ist, ist das
-Betreten nicht erlaubt). Sollte durch einen Vorwärtszug kein Hasenfeld
-betreten werden, endet der Zug.
+Betreten nicht erlaubt).
 
 ### Rückwärtszug
 
 Durch einen Rückwärtszug zieht der Spieler zu dem nächsten Igelfeld mit
 kleinerem Index. Gibt es kein solches Igelfeld oder ist es besetzt, darf kein Rückwärtszug gemacht werden. 
-Durch einen Rückwärtszug werden 10 mal so viele Karotten aufgenommen wie Felder zurückgezogen wurden. Nach
-einem Rückwärtszug endet der Zug.
+Durch einen Rückwärtszug werden 10 mal so viele Karotten aufgenommen wie Felder zurückgezogen wurden.
 
 ### Karotten tauschen
 
@@ -187,21 +186,9 @@ Nach dieser Aktion endet der Zug.
 ### Aussetzen
 
 Ein Spieler darf nur aussetzen, wenn kein anderer Zug möglich ist.
-Nach dieser Aktion endet der Zug.
 
-### Zusammenfassung
+### Beispiel, dass mehrere Aktionen innerhalb eines Zuges ausgeführt werden
 
-Folgende Aktionen sind immer die alleinige des Zuges:
-Rückwärtszug, Karotten tauschen, Salat fressen oder Aussetzen
-(nicht zu verwechseln mit dem Ausspielen einer Karte, die teilweise ähnlich heißen). 
-
-Beim Betreten eines Hasenfeldes muss eine Karte gespielt werden.
-Nur auf Hasenfeldern dürfen Karten gespielt werden.
-Ein Vorwärtszug, der auf kein Hasenfeld führt,
-kann nur die einzige Aktion eines Zuges sein.
-Nur durch Karten können mehrere Aktionen pro Zug ausgeführt werden.
-Dies kann z.B. folgendermaßen passieren:
- 
 Unmittelbar hinter (kleinerer Index) und vor Lotta befindet sich jeweils ein Hasenfeld.
 Michel selbst befindet sich weiter dahinter.
 - Michel zieht mit einem Vorwärtszug auf das Hasenfeld hinter Lotta.
@@ -217,11 +204,9 @@ So ist es möglich, maximal vier Aktionen in einem Zug zu machen.
 
 ## Spielende
 
-Das Spiel endet, sobald das Rundenlimit von 30 Runden erreicht ist oder
-sich mindestens ein Spieler am Ende einer Runde im Ziel befindet.
-Sollte der erste Spieler im Ziel sein, hat der zweite Spieler einen
-Nachzug. Der erste Spieler bekommt keinen Nachzug. Es gewinnt der
-Spieler, der sich am nächsten am Ziel befindet.
+Das Spiel endet, sobald sich mindestens ein Spieler am Ende einer Runde im Ziel befindet (die Runde wird also immer zu Ende gespielt).
+Das Spiel endet auch, wenn das Rundenlimit von 30 Runden erreicht ist.
+Es gewinnt der Spieler, der sich am nächsten am Ziel befindet.
 Sollten beide Spieler sich im Ziel befinden, gewinnt der Spieler mit weniger Karotten; bei gleicher Karottenzahl endet das Spiel unentschieden.
 
 ## Beispiel
