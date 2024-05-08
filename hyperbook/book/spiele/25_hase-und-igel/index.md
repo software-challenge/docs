@@ -211,9 +211,11 @@ So ist es möglich, maximal vier Aktionen in einem Zug zu machen.
 
 ## Spielende
 
-Das Spiel endet, sobald sich mindestens ein Spieler am Ende einer Runde im Ziel befindet
-(die Runde wird also immer zu Ende gespielt).
-Das Spiel endet auch, wenn das Rundenlimit von 30 Runden erreicht ist.
+Das Spiel endet, wenn
+- sich mindestens ein Spieler am Ende einer Runde im Ziel befindet (die Runde wird also immer zu Ende gespielt),
+- das Rundenlimit von 30 Runden erreicht ist oder
+- beide Spieler unmittelbar nacheinander einmal aussetzen, d.h. bewegungsunfähig sind.
+
 Es gewinnt der Spieler, der sich am nächsten am Ziel befindet.
 Sollten beide Spieler sich im Ziel befinden, gewinnt der Spieler mit weniger Karotten;
 bei gleicher Karottenzahl endet das Spiel unentschieden.
