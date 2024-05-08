@@ -3,14 +3,13 @@ name: Hase und Igel
 hide: true
 ---
 
-Die Nutzung des Spielkonzeptes "Hase und Igel" 
-(Name, Spielregeln und Grafik)
+Die Nutzung des Spielkonzeptes "Hase und Igel" (Name, Spielregeln und Grafik)
 erfolgt mit freundlicher Genehmigung der Ravensburger Spieleverlag GmbH.
 Das Spielfeld der Version 2008 vom Ravensburger Spieleverlag wird folgendermaßen modifiziert:
-1. Die Igel- und Salatfelder werden so angeordnet wie im Original. 
-   Die Felder zwischen 2 Igelfeldern mit Ausnahme der Salatfelder werden zufällig permutiert. 
+1. Die Igel- und Salatfelder werden so angeordnet wie im Original.
+   Die Felder zwischen 2 Igelfeldern mit Ausnahme der Salatfelder werden zufällig permutiert.
 2. Das Zahlenfeld 1-5-6 wird durch das Zahlenfeld 1 ersetzt.
-3. Das Zahlenfeld 3 wird durch das Karottenfeld ersetzt. 
+3. Das Zahlenfeld 3 wird durch das Karottenfeld ersetzt.
 4. Das Zahlenfeld 4 wird durch das Marktfeld ersetzt.
 
 # Modifizierte Spielregeln Hase und Igel für Software-Challenge 2025
@@ -18,17 +17,19 @@ Das Spielfeld der Version 2008 vom Ravensburger Spieleverlag wird folgendermaße
 ## Spielbeginn
 
 Jeder Spieler erhält zu Beginn 68 Karotten und 5 Salate als Wegzehrung.
-Im Laufe des Spiels können die Spieler Karten kaufen, mit denen dann beim Betreten eines Hasenfeldes besondere Aktionen ausgeführt werden können. 
-Mit den Karotten bezahlt der Spieler das Vorrücken.
+Im Laufe des Spiels können die Spieler mit Karotten Karten kaufen,
+mit denen dann beim Betreten eines Hasenfeldes besondere Aktionen ausgeführt werden können.
+
+Mit den Karotten bezahlt der Spieler auch das Vorrücken.
 Die Anzahl der Karotten, die benötigt werden,
-um eine bestimmte Anzahl von Zügen zu ziehen, 
+um eine bestimmte Anzahl von Zügen zu ziehen,
 ist der folgenden Rennkarte zu entnehmen:
 
 ![Hase und Igel Rennkarte](/images/spiele/hase-und-igel/rennkarte.png)
 
 Das Spielfeld besteht aus 65 Feldern.
 Ziel des Spiels ist,
-das Zielfeld (Feld 65) mit weniger als zehn Karotten 
+das Zielfeld (Feld 65) mit weniger als zehn Karotten
 und keinem Salat zu erreichen.
 
 ## Felder
@@ -37,14 +38,14 @@ Es gibt neun verschiedene Spielfelder:
 
 ### Startfeld
 
-Beide Spieler stehen anfänglich auf dem Startfeld. 
+Beide Spieler stehen anfänglich auf dem Startfeld.
 Nur hier und auf dem Zielfeld dürfen beide Spieler gleichzeitig stehen.
 Das Startfeld darf nur verlassen werden.
 Es ist nicht erlaubt das Startfeld erneut zu betreten.
 
 ### Karottenfeld
 
-Ein Karottenfeld darf durch jede Bewegungsaktion (Vorwärtszug, Karten) betreten werden. 
+Ein Karottenfeld darf durch jede Bewegungsaktion (Vorwärtszug, Karten) betreten werden.
 Nur auf ihm darf ein Zug "Karotten tauschen" stattfinden (nicht die Karte).
 
 ### Hasenfeld
@@ -62,7 +63,7 @@ In der Runde nach dem Betreten muss der Spieler einen Salat fressen.
 Abgesehen von der entsprechenden Karte
 darf nur auf einem Salatfeld ein Salat gefressen werden.
 In der darauffolgenden Runde muss das Salatfeld verlassen werden
-(es ist innerhalb des Spiels trotzdem durch Rückwärtszüge oder Karten möglich, 
+(es ist innerhalb des Spiels trotzdem durch Rückwärtszüge oder Karten möglich,
 auf demselben Salatfeld mehrere Salate zu fressen).
 
 ### Igelfeld
@@ -72,19 +73,24 @@ Darf nur durch einen Rückwärtszug betreten werden.
 ### Position-1-Feld
 
 Das Position-1-Feld darf uneingeschränkt betreten werden.
-Sollte sich ein Spieler am Anfang seines Zuges auf diesem Feld befinden 
+Sollte sich ein Spieler am Anfang seines Zuges auf diesem Feld befinden
 und an erster Stelle stehen, so erhält er 10 Karotten.
 
 ### Position-2-Feld
 
 Das Position-2-Feld darf uneingeschränkt betreten werden.
-Sollte sich ein Spieler am Anfang seines Zuges auf diesem Feld befinden 
+Sollte sich ein Spieler am Anfang seines Zuges auf diesem Feld befinden
 und an zweiter Stelle stehen, so erhält er 30 Karotten.
 
 ### Marktfeld
 
-Betritt ein Spieler ein Marktfeld, muss dieser unmittelbar 10 Karotten zahlen (er darf dieses Feld nur betreten, wenn er mindestens 10 Karotten besitzt) und erhält dafür eine Karte, die er frei auswählen und später beim Betreten eines Hasenfeldes nutzen kann.
-Im Laufe des Spiels darf ein Spieler einen Kartenvorrat anlegen, auch mit mehreren Karten desselben Typs.
+Betritt ein Spieler ein Marktfeld,
+zahlt er unmittelbar 10 Karotten
+(er darf dieses Feld nur betreten, wenn er mindestens 10 Karotten besitzt)
+und erhält eine frei auswählbare Hasenkarte,
+die er später beim Betreten eines Hasenfeldes nutzen kann.
+Im Laufe des Spiels darf ein Spieler einen Kartenvorrat anlegen,
+auch mit mehreren Karten desselben Typs.
 
 ### Zielfeld
 
@@ -97,7 +103,7 @@ Eine Karte muss ausgespielt werden, wenn ein Hasenfeld betreten wird,
 und darf auch nur auf einem Hasenfeld ausgespielt werden. Das Betreten
 eines Hasenfeldes ist entweder durch einen Vorwärtszug oder das
 Ausspielen einer Karte möglich. Sollte es nicht möglich sein, eine Karte
-auszuspielen, ist das Betreten eines Hasenfeldes nicht erlaubt. 
+auszuspielen, ist das Betreten eines Hasenfeldes nicht erlaubt.
 Das Ausspielen einer Karte ist also immer Teil eines Zuges.
 Sofern durch das Ausspielen einer Karte ein weiteres Hasenfeld betreten wird, muss eine weitere Karte ausgespielt werden.
 Sollte durch das Ausspielen einer Karte kein weiteres Hasenfeld betreten werden, endet der Zug.
@@ -106,7 +112,7 @@ Folgende Karten gibt es:
 
 ### Friss sofort einen Salat
 
-Es wird ein Salat vom Spieler entfernt.
+Es wird ein Salat vom Spieler verbraucht.
 Je nach der aktuellen Position des Spielers (Erster/Zweiter) erhält der Spieler Karotten (10/30).
 Diese Karte darf nur eingesetzt werden, wenn der Spieler mindestens einen Salat hat.
 
@@ -135,8 +141,8 @@ Salatfeld zu betreten, ohne mindestens einen Salat zu besitzen.
 
 ### Karottenvorat mit dem Gegner tauschen
 
-Tausche Deinen Karottenvorrat mit dem des Gegners. 
-Diese Karte darf nur eingesetzt werden, solange beide Spieler noch vor dem letzten Salatfeld stehen 
+Tausche Deinen Karottenvorrat mit dem des Gegners.
+Diese Karte darf nur eingesetzt werden, solange beide Spieler noch vor dem letzten Salatfeld stehen
 und nur, wenn die letzte gleichartige Tauschkarte nicht in einer der beiden letzten Runden eingesetzt wurde.
 
 ## Zugmöglichkeiten
@@ -162,15 +168,15 @@ Betreten nicht erlaubt).
 ### Rückwärtszug
 
 Durch einen Rückwärtszug zieht der Spieler zu dem nächsten Igelfeld mit
-kleinerem Index. Gibt es kein solches Igelfeld oder ist es besetzt, darf kein Rückwärtszug gemacht werden. 
+kleinerem Index. Gibt es kein solches Igelfeld oder ist es besetzt, darf kein Rückwärtszug gemacht werden.
 Durch einen Rückwärtszug werden 10 mal so viele Karotten aufgenommen wie Felder zurückgezogen wurden.
 
 ### Karotten tauschen
 
 Befindet sich ein Spieler auf einem Karottenfeld,
 so kann dieser (aber muss nicht) die Aktion „Karotten tauschen“ durchführen.
-Dabei muss der Spieler entweder 10 Karotten abgeben 
-(dafür muss der Spieler mindestens 10 Karotten besitzen) oder aufnehmen. 
+Dabei muss der Spieler entweder 10 Karotten abgeben
+(dafür muss der Spieler mindestens 10 Karotten besitzen) oder aufnehmen.
 Die Aktion „Karotten tauschen“ kann auch in mehreren unmittelbar aufeinanderfolgenden Runden ausgeführt werden.
 
 ### Salat fressen
@@ -178,14 +184,15 @@ Die Aktion „Karotten tauschen“ kann auch in mehreren unmittelbar aufeinander
 Wenn sich der Spieler auf einem Salatfeld befindet und er in seiner
 letzten Aktion, die kein Aussetzzug war, keinen Salat gefressen hat,
 muss er einen Salat fressen.
-Der Spieler verliert einen Salat
+Der Spieler verbraucht einen Salat
 (dies ist immer möglich, da ein Spieler nur mit mindestens einem Salat ein Salatfeld betreten kann)
 und erhält je nach Position (Erster/Zweiter) Karotten (10/30).
 Nach dieser Aktion endet der Zug.
 
 ### Aussetzen
 
-Ein Spieler darf nur aussetzen, wenn kein anderer Zug möglich ist.
+Ein Spieler setzt aus, wenn kein anderer Zug möglich ist.
+(Beispiel: Kein Karotten mehr und das vorherige Igelfeld ist vom anderen Spieler besetzt)
 
 ### Beispiel, dass mehrere Aktionen innerhalb eines Zuges ausgeführt werden
 
@@ -199,15 +206,17 @@ Michel selbst befindet sich weiter dahinter.
   Dadurch steht er auf dem Hasenfeld direkt hinter Lotta und muss erneut eine Karte spielen.
 - Er spielt "Friss sofort einen Salat".
   Es wird kein Hasenfeld neu betreten, also endet der Zug.
-  
+
 So ist es möglich, maximal vier Aktionen in einem Zug zu machen.
 
 ## Spielende
 
-Das Spiel endet, sobald sich mindestens ein Spieler am Ende einer Runde im Ziel befindet (die Runde wird also immer zu Ende gespielt).
+Das Spiel endet, sobald sich mindestens ein Spieler am Ende einer Runde im Ziel befindet
+(die Runde wird also immer zu Ende gespielt).
 Das Spiel endet auch, wenn das Rundenlimit von 30 Runden erreicht ist.
 Es gewinnt der Spieler, der sich am nächsten am Ziel befindet.
-Sollten beide Spieler sich im Ziel befinden, gewinnt der Spieler mit weniger Karotten; bei gleicher Karottenzahl endet das Spiel unentschieden.
+Sollten beide Spieler sich im Ziel befinden, gewinnt der Spieler mit weniger Karotten;
+bei gleicher Karottenzahl endet das Spiel unentschieden.
 
 ## Beispiel
 
