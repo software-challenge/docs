@@ -42,7 +42,7 @@ findet man alle grundlegenden Aktionen.
 
 Starte ein neues Spiel mit Klick auf "Neues Spiel starten":
 
-![Dialog für ein neues Spiel](/images/gui/game-creation.png)
+![Dialog für ein neues Spiel](/images/game-creation.png)
 
 In diesem Fenster werden die Spieler ausgewählt, 
 die an dem Spiel teilnehmen sollen.
