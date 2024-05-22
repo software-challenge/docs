@@ -16,7 +16,7 @@ jobs:
     - name: Setup Hyperbook
       run: |
         cd hyperbook
-        npx hyperbook setup
+        npx --yes --legacy-peer-deps hyperbook setup
 
     - name: Build documentation
       id: build
