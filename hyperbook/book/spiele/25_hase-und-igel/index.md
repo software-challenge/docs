@@ -17,7 +17,7 @@ Das Spielfeld der Version 2008 vom Ravensburger Spieleverlag wird folgendermaße
 ## Spielbeginn
 
 Jeder Spieler erhält zu Beginn 68 Karotten und 5 Salate als Wegzehrung.
-Im Laufe des Spiels können die Spieler mit Karottenkarten kaufen,
+Im Laufe des Spiels können die Spieler mit Karotten Karten kaufen,
 mit denen dann beim Betreten eines Hasenfeldes besondere Aktionen ausgeführt werden können.
 
 Mit den Karotten bezahlt der Spieler auch das Vorrücken.
@@ -46,15 +46,11 @@ Es ist nicht erlaubt das Startfeld erneut zu betreten.
 ### Karottenfeld
 
 Ein Karottenfeld darf durch jede Bewegungsaktion (Vorwärtszug, Karten) betreten werden.
-Nur auf ihm darf ein Zug "Karotten tauschen" stattfinden (nicht die Karte).
+Nur auf ihm darf ein Zug "Karotten tauschen" stattfinden.
 
 ### Hasenfeld
 
 Darf nur betreten werden, wenn eine Karte gespielt werden kann.
-Sollte sich ein Spieler am Ende seines Zuges auf einem Hasenfeld befinden,
-muss dieses im nächsten Zug (wenn möglich) verlassen werden
-(es ist erlaubt, das Hasenfeld zu verlassen
-und dann durch die Nutzung von Karten wieder zu betreten).
 
 ### Salatfeld
 
@@ -84,10 +80,10 @@ und an zweiter Stelle stehen, so erhält er 30 Karotten.
 
 ### Marktfeld
 
+Darf nur mit mindestens 10 Karotten betreten werden.
 Betritt ein Spieler ein Marktfeld,
 zahlt er unmittelbar 10 Karotten
-(er darf dieses Feld nur betreten, wenn er mindestens 10 Karotten besitzt)
-und erhält eine frei auswählbare Hasenkarte,
+und erhält eine frei auswählbare Karte,
 die er später beim Betreten eines Hasenfeldes nutzen kann.
 Im Laufe des Spiels darf ein Spieler einen Kartenvorrat anlegen,
 auch mit mehreren Karten desselben Typs.
@@ -97,15 +93,17 @@ auch mit mehreren Karten desselben Typs.
 Das Zielfeld darf nur betreten werden,
 wenn der Spieler höchstens zehn Karotten und keinen Salat besitzt.
 
-## Karte ausspielen
+## Karten ausspielen auf einem Hasenfeld
 
-Eine Karte muss ausgespielt werden, wenn ein Hasenfeld betreten wird,
-und darf auch nur auf einem Hasenfeld ausgespielt werden. Das Betreten
-eines Hasenfeldes ist entweder durch einen Vorwärtszug oder das
-Ausspielen einer Karte möglich. Sollte es nicht möglich sein, eine Karte
-auszuspielen, ist das Betreten eines Hasenfeldes nicht erlaubt.
+Beim Betreten eines Hasenfeldes muss eine Karte ausgespielt werden.
+Eine Karte darf nur auf einem Hasenfeld ausgespielt werden.
+Das Betreten eines Hasenfeldes ist entweder durch einen Vorwärtszug
+oder das Ausspielen einer Karte möglich.
+Sollte es nicht möglich sein, eine Karte auszuspielen,
+ist das Betreten eines Hasenfeldes nicht erlaubt.
 Das Ausspielen einer Karte ist also immer Teil eines Zuges.
-Sofern durch das Ausspielen einer Karte ein weiteres Hasenfeld betreten wird, muss eine weitere Karte ausgespielt werden.
+Sofern durch das Ausspielen einer Karte ein weiteres Hasenfeld betreten wird,
+muss eine weitere Karte ausgespielt werden.
 Sollte durch das Ausspielen einer Karte kein weiteres Hasenfeld betreten werden, endet der Zug.
 
 Folgende Karten gibt es:
@@ -122,22 +120,16 @@ Der Spieler darf 20 Karotten abgeben (dafür muss der Spieler mindestens 20 Karo
 
 ### Rücke eine Position vor
 
-Kann nur ausgespielt werden, wenn der Spieler sich an zweiter Position
-befindet. Der Spieler rückt auf das Feld unmittelbar vor dem gegnerischen Spieler
-vor. Dies ist nicht erlaubt, sollte es sich bei dem so betretenen Feld
-um ein Igelfeld handeln oder sollte der gegnerische Spieler sich im Ziel
-befinden. Es ist außerdem nicht erlaubt, so ein Salatfeld zu betreten,
-ohne mindestens einen Salat zu besitzen. Es kann so das Ziel erreicht
-werden, wenn die Siegbedingungen erfüllt sind.
+Kann nur ausgespielt werden, wenn der Spieler sich an zweiter Position befindet.
+Der Spieler rückt auf das Feld unmittelbar vor dem gegnerischen Spieler vor.
+Das Feld muss regelkonform betretbar sein.
+Es kann so das Ziel erreicht werden, wenn die Siegbedingungen erfüllt sind.
 
 ### Falle eine Position zurück
 
-Kann nur ausgespielt werden, wenn der Spieler sich an erster Position
-befindet. Der Spieler fällt auf das Feld unmittelbar hinter dem gegnerischen Spieler
-zurück. Dies ist nicht erlaubt, sollte es sich bei dem so betretenen
-Feld um ein Igelfeld handeln oder sollte der gegnerische Spieler sich
-auf dem Startfeld befinden. Es ist außerdem nicht erlaubt, so ein
-Salatfeld zu betreten, ohne mindestens einen Salat zu besitzen.
+Kann nur ausgespielt werden, wenn der Spieler sich an erster Position befindet.
+Der Spieler fällt auf das Feld unmittelbar hinter dem gegnerischen Spieler zurück.
+Das Feld muss regelkonform betretbar sein.
 
 ### Karottenvorat mit dem Gegner tauschen
 
@@ -194,7 +186,7 @@ Nach dieser Aktion endet der Zug.
 Ein Spieler setzt aus, wenn kein anderer Zug möglich ist.
 (Beispiel: Keine Karotten mehr und das vorherige Igelfeld ist vom anderen Spieler besetzt)
 
-### Beispiel, dass mehrere Aktionen innerhalb eines Zuges ausgeführt werden
+### Beispiel eines Vorwärtszuges mit ausgespielten Karten
 
 Unmittelbar hinter (kleinerer Index) und vor Lotta befindet sich jeweils ein Hasenfeld.
 Michel selbst befindet sich weiter dahinter.
@@ -212,9 +204,8 @@ So ist es möglich, maximal vier Aktionen in einem Zug zu machen.
 ## Spielende
 
 Das Spiel endet, wenn
-- sich mindestens ein Spieler am Ende einer Runde im Ziel befindet (die Runde wird also immer zu Ende gespielt),
-- das Rundenlimit von 30 Runden erreicht ist oder
-- beide Spieler unmittelbar nacheinander einmal aussetzen, d.h. bewegungsunfähig sind.
+- sich mindestens ein Spieler am Ende einer Runde im Ziel befindet (die Runde wird also immer zu Ende gespielt)
+- das Rundenlimit von 30 Runden erreicht ist
 
 Es gewinnt der Spieler, der sich am nächsten am Ziel befindet.
 Sollten beide Spieler sich im Ziel befinden, gewinnt der Spieler mit weniger Karotten;
@@ -223,13 +214,13 @@ bei gleicher Karottenzahl endet das Spiel unentschieden.
 ## Beispiel
 
 Lotta steht unmittelbar vor einem Hasenfeld (Feld 34).
-Michel steht weit hinter Lotta (Feld 22) und hat nur noch den Hasenjoker „Rücke eine Position vor“.
+Michel steht weit hinter Lotta (Feld 22) und hat nur noch die Karte „Rücke eine Position vor“.
 Dann darf Michel weder auf ein Hasenfeld vor Lotta setzen (z. B. Feld 35),
-denn dort darf er seinen einzigen Hasenjoker nicht einsetzen,
+denn dort darf er seine einzige Karte nicht einsetzen,
 noch darf er auf ein Hasenfeld hinter Lotta setzen (z. B. Feld 25),
-denn wenn er dort seinen Hasenjoker „Rücke eine Position vor“ einsetzen würde,
+denn wenn er dort seine Karte „Rücke eine Position vor“ einsetzen würde,
 käme er wieder auf ein Hasenfeld,
 was aber nicht erlaubt ist,
-weil er dafür dann keinen Hasenjoker mehr hat.
+weil er dafür dann keine Karte mehr hat.
 
 ![Hase und Igel Spielbrett](/images/spiele/hase-und-igel/spielbrett.png)
