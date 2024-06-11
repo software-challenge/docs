@@ -62,6 +62,16 @@ In der darauffolgenden Runde muss das Salatfeld verlassen werden
 (es ist innerhalb des Spiels trotzdem durch Rückwärtszüge oder Karten möglich,
 auf demselben Salatfeld mehrere Salate zu fressen).
 
+### Marktfeld
+
+Darf nur mit mindestens 10 Karotten betreten werden.
+Betritt ein Spieler ein Marktfeld,
+zahlt er unmittelbar 10 Karotten
+und erhält eine frei auswählbare Karte,
+die er später beim Betreten eines Hasenfeldes nutzen kann.
+Im Laufe des Spiels darf ein Spieler einen Kartenvorrat anlegen,
+auch mit mehreren Karten desselben Typs.
+
 ### Igelfeld
 
 Darf nur durch einen Rückwärtszug betreten werden.
@@ -77,16 +87,6 @@ und an erster Stelle stehen, so erhält er 10 Karotten.
 Das Position-2-Feld darf uneingeschränkt betreten werden.
 Sollte sich ein Spieler am Anfang seines Zuges auf diesem Feld befinden
 und an zweiter Stelle stehen, so erhält er 30 Karotten.
-
-### Marktfeld
-
-Darf nur mit mindestens 10 Karotten betreten werden.
-Betritt ein Spieler ein Marktfeld,
-zahlt er unmittelbar 10 Karotten
-und erhält eine frei auswählbare Karte,
-die er später beim Betreten eines Hasenfeldes nutzen kann.
-Im Laufe des Spiels darf ein Spieler einen Kartenvorrat anlegen,
-auch mit mehreren Karten desselben Typs.
 
 ### Zielfeld
 
@@ -113,10 +113,6 @@ Folgende Karten gibt es:
 Es wird ein Salat vom Spieler verbraucht.
 Je nach der aktuellen Position des Spielers (Erster/Zweiter) erhält der Spieler Karotten (10/30).
 Diese Karte darf nur eingesetzt werden, wenn der Spieler mindestens einen Salat hat.
-
-### Karotten nehmen oder abgeben
-
-Der Spieler darf 20 Karotten abgeben (dafür muss der Spieler mindestens 20 Karotten besitzen) oder aufnehmen oder nichts tun.
 
 ### Rücke eine Position vor
 
@@ -173,8 +169,8 @@ Die Aktion „Karotten tauschen“ kann auch in mehreren unmittelbar aufeinander
 
 ### Salat fressen
 
-Wenn sich der Spieler auf einem Salatfeld befindet und er in seiner
-letzten Aktion, die kein Aussetzzug war, keinen Salat gefressen hat,
+Wenn sich der Spieler auf einem Salatfeld befindet
+und er in seinem letzten Zug keinen Salat gefressen hat,
 muss er einen Salat fressen.
 Der Spieler verbraucht einen Salat
 (dies ist immer möglich, da ein Spieler nur mit mindestens einem Salat ein Salatfeld betreten kann)
