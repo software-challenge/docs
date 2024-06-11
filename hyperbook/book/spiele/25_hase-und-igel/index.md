@@ -17,7 +17,7 @@ Das Spielfeld der Version 2008 vom Ravensburger Spieleverlag wird folgendermaße
 ## Spielbeginn
 
 Jeder Spieler erhält zu Beginn 68 Karotten und 5 Salate als Wegzehrung.
-Im Laufe des Spiels können die Spieler mit Karotten Karten kaufen,
+Im Laufe des Spiels können die Spieler mit Karottenkarten kaufen,
 mit denen dann beim Betreten eines Hasenfeldes besondere Aktionen ausgeführt werden können.
 
 Mit den Karotten bezahlt der Spieler auch das Vorrücken.
@@ -192,7 +192,7 @@ Nach dieser Aktion endet der Zug.
 ### Aussetzen
 
 Ein Spieler setzt aus, wenn kein anderer Zug möglich ist.
-(Beispiel: Kein Karotten mehr und das vorherige Igelfeld ist vom anderen Spieler besetzt)
+(Beispiel: Keine Karotten mehr und das vorherige Igelfeld ist vom anderen Spieler besetzt)
 
 ### Beispiel, dass mehrere Aktionen innerhalb eines Zuges ausgeführt werden
 
