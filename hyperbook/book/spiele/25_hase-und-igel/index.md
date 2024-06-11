@@ -101,7 +101,7 @@ Das Betreten eines Hasenfeldes ist entweder durch einen Vorwärtszug
 oder das Ausspielen einer Karte möglich.
 Sollte es nicht möglich sein, eine Karte auszuspielen,
 ist das Betreten eines Hasenfeldes nicht erlaubt.
-Das Ausspielen einer Karte ist also immer Teil eines Zuges.
+Das Ausspielen einer Karte ist also immer Teil eines Vorwärtszuges.
 Sofern durch das Ausspielen einer Karte ein weiteres Hasenfeld betreten wird,
 muss eine weitere Karte ausgespielt werden.
 Sollte durch das Ausspielen einer Karte kein weiteres Hasenfeld betreten werden, endet der Zug.
@@ -135,28 +135,34 @@ und nur, wenn die letzte gleichartige Tauschkarte nicht in einer der beiden letz
 
 ## Zugmöglichkeiten
 
-In jeder Runde muss jeder Spieler einen der folgenden Züge ausführen:
+In jeder Runde führt jeder Spieler einen der folgenden Züge aus:
 
 ### Vorwärtszug
 
-Durch einen Vorwärtszug bewegt sich der Spieler um die entsprechende
-Zahl von Feldern nach vorne (mindestens 1). Dabei werden Karotten
-entsprechend der Rennkarte verbraucht. Ein Spieler darf nicht
-auf ein Feld ziehen, das bereits durch den Gegner besetzt ist, außer es
-handelt sich um das Zielfeld. Durch einen Vorwärtszug dürfen alle Felder
-außer dem Igelfeld direkt betreten werden. Es ist nicht erlaubt, das
-Zielfeld zu betreten, wenn die Siegbedingungen (höchstens 10 Karotten
-und 0 Salate) nicht erfüllt sind. Wenn durch einen Vorwärtszug ein
-Salatfeld betreten wird, muss in der nächsten Runde ein Salat gefressen werden
-(sollte kein Salat vorhanden sein, ist das Betreten nicht erlaubt). Wenn
-durch einen Vorwärtszug ein Hasenfeld betreten wird, muss unmittelbar danach (also im selben Zug) eine
-Karte ausgespielt werden (wenn keine spielbare Karte vorhanden ist, ist das
-Betreten nicht erlaubt).
+Durch einen Vorwärtszug bewegt sich der Spieler
+um die entsprechende Zahl von Feldern nach vorne (mindestens 1).
+Dabei werden Karotten entsprechend der Rennkarte verbraucht.
+Ein Spieler darf nicht auf ein Feld ziehen,
+das bereits durch den Gegner besetzt ist,
+außer es handelt sich um das Zielfeld.
+Durch einen Vorwärtszug dürfen alle Felder
+außer dem Igelfeld direkt betreten werden.
+
+Es ist nicht erlaubt,
+das Zielfeld zu betreten,
+wenn die Siegbedingungen (höchstens 10 Karotten und 0 Salate) nicht erfüllt sind.
+Wenn durch einen Vorwärtszug ein Salatfeld betreten wird,
+muss in der nächsten Runde ein Salat gefressen werden
+(ohne Salat ist das Betreten nicht erlaubt).
+Wenn durch einen Vorwärtszug ein Hasenfeld betreten wird,
+muss unmittelbar danach (also im selben Zug)
+eine Karte ausgespielt werden
+(ohne spielbare Karte ist das Betreten nicht erlaubt).
 
 ### Rückwärtszug
 
-Durch einen Rückwärtszug zieht der Spieler zu dem nächsten Igelfeld mit
-kleinerem Index. Gibt es kein solches Igelfeld oder ist es besetzt, darf kein Rückwärtszug gemacht werden.
+Durch einen Rückwärtszug zieht der Spieler zu dem nächsten Igelfeld mit kleinerem Index.
+Gibt es kein solches Igelfeld oder ist es besetzt, darf kein Rückwärtszug gemacht werden.
 Durch einen Rückwärtszug werden 10 mal so viele Karotten aufgenommen wie Felder zurückgezogen wurden.
 
 ### Karotten tauschen
