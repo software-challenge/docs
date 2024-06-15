@@ -1,7 +1,9 @@
 ---
 name: Hase und Igel
-hide: true
+expanded: true
 ---
+
+# Modifizierte Spielregeln Hase und Igel für die Software-Challenge 2025
 
 Die Nutzung des Spielkonzeptes "Hase und Igel" (Name, Spielregeln und Grafik)
 erfolgt mit freundlicher Genehmigung der Ravensburger Spieleverlag GmbH.
@@ -11,8 +13,6 @@ Das Spielfeld der Version 2008 vom Ravensburger Spieleverlag wird folgendermaße
 2. Das Zahlenfeld 1-5-6 wird durch das Zahlenfeld 1 ersetzt.
 3. Das Zahlenfeld 3 wird durch das Karottenfeld ersetzt.
 4. Das Zahlenfeld 4 wird durch das Marktfeld ersetzt.
-
-# Modifizierte Spielregeln Hase und Igel für Software-Challenge 2025
 
 ## Spielbeginn
 

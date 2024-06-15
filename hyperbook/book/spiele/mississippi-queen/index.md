@@ -1,6 +1,6 @@
 ---
 name: Mississippi Queen
-expanded: true
+hide: true
 ---
 
 Mississippi Queen ist das Brettspiel der Software-Challenge 2024.
