@@ -1,3 +1,8 @@
+---
+name: XML-Dokumentation
+hide: true
+---
+
 # Software-Challenge XML-Dokumentation Hase und Igel
 
 Ziel dieser Dokumentation ist es,
