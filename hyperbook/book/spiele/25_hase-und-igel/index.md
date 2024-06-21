@@ -3,7 +3,7 @@ name: Hase und Igel
 expanded: true
 ---
 
-# Modifizierte Spielregeln Hase und Igel für die Software-Challenge 2025
+# Modifizierte Spielregeln "Hase und Igel" für die Software-Challenge 2025
 
 Die Nutzung des Spielkonzeptes "Hase und Igel" (Name, Spielregeln und Grafik)
 erfolgt mit freundlicher Genehmigung der Ravensburger Spieleverlag GmbH.
@@ -12,7 +12,7 @@ Das Spielfeld der Version 2008 vom Ravensburger Spieleverlag wird folgendermaße
    Die Felder zwischen 2 Igelfeldern mit Ausnahme der Salatfelder werden zufällig permutiert.
 2. Das Zahlenfeld 1-5-6 wird durch das Zahlenfeld 1 ersetzt.
 3. Das Zahlenfeld 3 wird durch das Karottenfeld ersetzt.
-4. Das Zahlenfeld 4 wird durch das Marktfeld ersetzt.
+4. Das Zahlenfeld 4 wird durch das neu eingeführte Marktfeld ersetzt.
 
 ## Spielbeginn
 
@@ -40,12 +40,11 @@ Es gibt neun verschiedene Spielfelder:
 
 Beide Spieler stehen anfänglich auf dem Startfeld.
 Nur hier und auf dem Zielfeld dürfen beide Spieler gleichzeitig stehen.
-Das Startfeld darf nur verlassen werden.
-Es ist nicht erlaubt das Startfeld erneut zu betreten.
+Es ist nicht erlaubt, das Startfeld erneut zu betreten.
 
 ### Karottenfeld
 
-Ein Karottenfeld darf durch jede Bewegungsaktion (Vorwärtszug, Karten) betreten werden.
+Ein Karottenfeld darf durch jede reguläre Bewegungsaktion (Vorwärtszug, Karten) betreten werden.
 Nur auf ihm darf ein Zug "Karotten tauschen" stattfinden.
 
 ### Hasenfeld
@@ -131,7 +130,7 @@ Das Feld muss regelkonform betretbar sein.
 
 Tausche Deinen Karottenvorrat mit dem des Gegners.
 Diese Karte darf nur eingesetzt werden, solange beide Spieler noch vor dem letzten Salatfeld stehen
-und nur, wenn die letzte gleichartige Tauschkarte nicht in einer der beiden letzten Runden eingesetzt wurde.
+und nur, wenn die letzte gleichartige Tauschkarte nicht in einer der beiden letzten Züge eingesetzt wurde.
 
 ## Zugmöglichkeiten
 
