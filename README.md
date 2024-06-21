@@ -78,7 +78,8 @@ Der Workflow speichert die generierten Seiten im `live` branch des Repositories,
 welcher nach Benachrichtigung durch einen Webhook von [caddy](./Caddyfile) gepullt wird.
 
 Bei Änderungen am Caddyfile oder dem Docker image 
-muss [push-production.sh](./bin/push-production.sh) mit dem GITHUB_SECRET des Webhooks ausgeführt werden.
+muss [push-production.sh](./bin/push-production.sh) mit dem GITHUB_SECRET des Webhooks ausgeführt werden
+(bei credential-abfrage beliebigen Text eingeben).
 Der Docker container lässt sich auch lokal mit [test-production.sh](./bin/test-production.sh) testen,
 wobei der Caddy Webserver auf port 80 via [localhost](http://localhost) erreichbar wird.
 

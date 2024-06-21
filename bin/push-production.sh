@@ -5,12 +5,16 @@ port=8200
 
 if test -z "$GITHUB_SECRET"; then
   echo "No github secret set. Start with GITHUB_SECRET=<some secret>, or enter below."
-  LC_ALL=C tr -dc '[:alnum:]' < /dev/urandom | head -c32 | cat
-  echo ""
+  #LC_ALL=C tr -dc '[:alnum:]' < /dev/urandom | head -c32 | cat
+  #echo ""
   read -r -p 'GitHub secret to use: ' GITHUB_SECRET
 fi
 
+
 ssh -M -S /tmp/ssh-ctrl-socket -fnNT -L 5000:localhost:5000 $server
+onkill() { ssh -S /tmp/ssh-ctrl-socket -O exit $server; }
+trap onkill SIGTERM
+
 ssh -S /tmp/ssh-ctrl-socket -O check $server || exit 1
 docker login localhost:5000 || exit 1
 
