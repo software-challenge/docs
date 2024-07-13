@@ -187,20 +187,21 @@ Nach dieser Aktion endet der Zug.
 Ein Spieler setzt aus, wenn kein anderer Zug möglich ist.
 (Beispiel: Keine Karotten mehr und das vorherige Igelfeld ist vom anderen Spieler besetzt)
 
-### Beispiel eines Vorwärtszuges mit ausgespielten Karten
+### Beispiel, wie mehrere Hasenkarten eingesetzt werden können
 
-Unmittelbar hinter (kleinerer Index) und vor Lotta befindet sich jeweils ein Hasenfeld.
-Michel selbst befindet sich weiter dahinter.
-- Michel zieht mit einem Vorwärtszug auf das Hasenfeld hinter Lotta.
-  Daraufhin muss Michel eine Karte spielen.
-- Er spielt die Karte "Rücke eine Position vor".
-  Dadurch steht er auf dem Hasenfeld direkt vor Lotta und muss erneut eine Karte spielen.
-- Er spielt die Karte "Falle eine Position zurück".
-  Dadurch steht er auf dem Hasenfeld direkt hinter Lotta und muss erneut eine Karte spielen.
-- Er spielt "Friss sofort einen Salat".
-  Es wird kein Hasenfeld neu betreten, also endet der Zug.
+Lotta steht auf Feld 36 und verfügt über die 3 Hasenkarten „Vorrücken“,
+„Zurückfallen“ und „Salat fressen“.
+Michel steht auf Feld 32 zwischen 2 Hasenfeldern.
 
-So ist es möglich, maximal vier Aktionen in einem Zug zu machen.
+Lotta kann nun durch den Einsatz von 6 Karotten auf das Hasenfeld 39 ziehen,
+dort zunächst seine Hasenkarte „Zurückfallen“ einsetzen.
+Dadurch kommt Lotta auf das Hasenfeld 31,
+kann dort seine Hasenkarte „Vorrücken“ einsetzen und gelangt damit auf das Hasenfeld 33,
+wo Lotta seine Hasenkarte „Salat fressen“ einsetzen kann und dafür 10 Karotten erhält.
+
+Insgesamt steigt der Karottenvorrat von 64 auf 64 - 6 + 10 = 68 Karotten.
+
+![Hase und Igel Spielbrett](/images/spiele/hase-und-igel/forwaerts-spielzug-spielbrett.png)
 
 ## Spielende
 
@@ -214,11 +215,14 @@ bei gleicher Karottenzahl endet das Spiel unentschieden.
 
 ## Beispiel
 
-Lotta steht unmittelbar vor einem Hasenfeld (Feld 34).
-Michel steht weit hinter Lotta (Feld 22) und hat nur noch die Karte „Rücke eine Position vor“.
-Dann darf Michel weder auf ein Hasenfeld vor Lotta setzen (z. B. Feld 35),
+Lotta steht auf Feld 32,
+unmittelbar vor einem Hasenfeld.
+Michel steht auf Feld 24,
+also hinter Lotta,
+und hat nur noch die Karte „Rücke eine Position vor“.
+Dann darf Michel weder auf ein Hasenfeld vor Lotta setzen (z. B. Feld 33),
 denn dort darf er seine einzige Karte nicht einsetzen,
-noch darf er auf ein Hasenfeld hinter Lotta setzen (z. B. Feld 25),
+noch darf er auf ein Hasenfeld hinter Lotta setzen (z. B. Feld 26),
 denn wenn er dort seine Karte „Rücke eine Position vor“ einsetzen würde,
 käme er wieder auf ein Hasenfeld,
 was aber nicht erlaubt ist,
