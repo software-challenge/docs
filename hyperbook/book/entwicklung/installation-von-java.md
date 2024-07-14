@@ -11,19 +11,23 @@ Anleitung soll die Beschaffung und Installation von Java erleichtern.
 
 ## Grundsätzliches
 
-Java gibt es in zwei verschiedenen Paketen: Das *Java Runtime
-Environment (JRE)* und das *Java Development Kit (JDK)*. Möchte man
-lediglich Java-Programme starten, also nicht selber entwickeln, dann
-reicht das JRE vollkommen aus. Möchte man auch eigene Programme
-schreiben, muss das JDK auf jeden Fall installiert sein. Da im JDK auch
-das JRE integriert ist, kann man aber immer ohne Bedenken gleich zum JDK
-greifen.
+Java gibt es in zwei verschiedenen Paketen: Das *Java Runtime Environment (JRE)*
+und das *Java Development Kit (JDK)*.
+Möchte man lediglich Java-Programme starten, also nicht selber entwickeln,
+dann reicht das JRE vollkommen aus. Möchte man auch eigene Programme schreiben,
+muss das JDK auf jeden Fall installiert sein. Da im JDK auch das JRE integriert ist,
+kann man aber immer ohne Bedenken gleich zum JDK greifen.
 
 ## Installation
 
-Das JDK gibt es auf den [Seiten von Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html#javasejdk)
-Dort das aktuelle "JDK" herunterladen. Es gibt auch
-Installationsanleitungen auf der Seite.
+Um Java 11 JRE auf einem Windows-System mit `winget` zu installieren, führen Sie den folgenden Befehl im Windows Terminal aus:
+
+```bash
+winget install -e --id EclipseAdoptium.Temurin.11.JRE
+```
+
+Dieser Befehl sucht nach dem Paket mit der ID `EclipseAdoptium.Temurin.11.JRE`,
+das die Java Runtime Environment (JRE) für Java 11 bereitstellt, und installiert es auf dem Computer.
 
 ### Installation über Paketquellen (Linux)
 
@@ -32,12 +36,3 @@ enthalten, sodass man es einfach über den Paketmanager installieren
 kann. Sofern möglich, wird diese Art der Installation empfohlen, da es
 oft noch Paketabhängigkeiten gibt, die dann automatisch mit installiert
 werden.
-
-## Weiterführende Informationen
-
--   [Die Java-Seiten von Oracle](http://www.java.sun.com)
-
--   [Installation von Java auf Ubuntu
-    Linux](http://wiki.ubuntuusers.de/Java/Installation) (Für andere
-    Distributionen gibt es meist auch Wikis oder Foren mit den
-    entsprechenden Anleitungen)

@@ -107,8 +107,3 @@ Bei einem `switch` sollte die folgende Form gewahrt werden:
 Wenn nach einem `case`-Fall nicht aus dem `switch` herausgesprungen
 wird, soll das durch einen Kommentar gekennzeichnet werden. Wenn ein
 `default` benutzt wird, wird dieses als letzte Klausel geschrieben.
-
-## Weiterführende Informationen
-
--   [Die Richtlinien von den
-    Java-Entwicklern](http://www.oracle.com/technetwork/java/codeconv-138413.html)
