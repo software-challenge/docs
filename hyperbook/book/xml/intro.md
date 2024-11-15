@@ -8,7 +8,7 @@ index: 1
 Die Kommunikation zwischen [Spielleiter](glossary/server)
 und [Computerspieler](glossary/player)
 wird mittels XML-Nachrichten realisiert.
-XML ist eine Auszeichnungssprache, d.h eine Sprache,
+XML ist eine Auszeichnungssprache, d. h. eine Sprache,
 die nicht nur die Daten selbst, sondern auch Informationen über die Interpretation oder Bearbeitung liefert.
 Der Vorteil dieser Sprache liegt darin,
 dass sie sowohl vom Computer als auch vom Menschen gut gelesen werden kann.
@@ -17,7 +17,7 @@ Dieser Abschnitt gibt einen Einstieg in die Struktur von XML.
 ### Tags
 
 Die Grundelemente von XML sind _Tags_.
-Ein Tag liefert Informationen über die Art der Daten, die verarbeitet werden sollen. In XML wird ein Tag gebildet, indem man den Tagnamen zwischen spitze Klammern setzt. Dabei kennt XML drei verschiedene Tag-Arten:
+Ein Tag liefert Informationen über die Art der Daten, die verarbeitet werden sollen. In XML wird ein Tag gebildet, indem der Tagname zwischen spitze Klammern gesetzt wird. Dabei kennt XML drei verschiedene Tag-Arten:
 
 -   Öffnendes Tag: `<Tag>`
 -   Schließendes Tag: `</Tag>`
@@ -25,7 +25,7 @@ Ein Tag liefert Informationen über die Art der Daten, die verarbeitet werden so
 
 Der Schrägstrich bedeuted, dass das Tag geschlossen wird. Durch den Schrägstrich am Ende wird das soeben geöffnete Tag direkt wieder geschlossen.
 
-Zwischen den öffnenden und schliessenden Tag steht die Information, die mitgeteilt werden soll.
+Zwischen dem öffnenden und schliessenden Tag steht die Information, die mitgeteilt werden soll.
 
 **Hinweis:** XML unterscheidet strikt zwischen Groß- und Kleinschreibung.
 
@@ -34,7 +34,7 @@ Zwischen den öffnenden und schliessenden Tag steht die Information, die mitgete
 Die Tags dürfen nicht beliebig in Dokumenten verwendet werden. Es gelten hier die folgenden Regeln:
 
 -   Zu jedem öffnenden Tag muss ein schließendes Tag existieren.
--   Man kann Tags ineinander schachteln. Die einzelnen Tags dürfen sich jedoch nicht überkreuzen.
+-   Tags dürfen ineinander verschachtelt werden, die einzelnen Tags dürfen sich jedoch nicht überkreuzen.
 -   Es darf nur ein Root-Tag geben, d.h. es gibt auf oberster Ebene genau ein Tag, in dem alle anderen enthalten sind.
 
 #### Beispiel für korrekte XML-Syntax
@@ -107,13 +107,13 @@ Wichtig ist auch die erste Zeile in einem XML-Dokument. Aus ihr kann das Compute
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 ```
 
-Man nennt so ein Tag, auch _Verarbeitungsinformation_.
+Man nennt so ein Tag auch _Verarbeitungsinformation_.
 
-Theoretisch darf es in einem XML-Dokument mehrere Verarbeitungsinformationen geben, für die Software-Challenge muss man aber nur den Header kennen.
+Theoretisch darf es in einem XML-Dokument mehrere Verarbeitungsinformationen geben, für die Software-Challenge ist aber nur der Header relevant.
 
 ### Kommentare
 
-Man kann in sein XML-Dokument auch Kommentare einfügen, die beim Einlesen dann ignoriert werden:
+Auche Kommentare sind in einem XML-Dokument möglich, diese werden beim Auslesen ignoriert:
 
 ```xml
 <!-- Ich bin ein XML-Kommentar -->
