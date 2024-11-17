@@ -55,14 +55,11 @@ muss die Laufzeitumgebung [Node.js](https://nodejs.org/en/) installiert sein.
 Dies geht unter Debian-basierten Distributionen mit `sudo apt install nodejs npm`.
 Unter Arch: `sudo pacman -S npm`
 
-Anschließend installiere die Abhängigkeiten mit 
-`npx hyperbook setup` oder `make -B setup`.
-
 ### Live-Preview
 Eine Vorschau lokaler Änderungen kann direkt mit dem Befehl `npx hyperbook dev` 
 aus dem Ordner `hyperbook` generiert werden.
 Dies startet einen Entwicklungsserver,
-dessen Ergebnisse unter `http://localhost:3000/` einsehbar sind.
+dessen Ergebnisse unter `http://localhost:8080/` einsehbar sind.
 
 ### Build
 Um das Hyperbook zu veröffentlichen,

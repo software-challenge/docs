@@ -3,7 +3,6 @@ root="$(dirname $0)/.."
 
 (
 cd "$root/hyperbook"
-npx hyperbook setup
 npx hyperbook build
 )
 

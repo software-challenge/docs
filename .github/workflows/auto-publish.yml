@@ -13,11 +13,6 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v4
 
-    - name: Setup Hyperbook
-      run: |
-        cd hyperbook
-        npx --yes --legacy-peer-deps hyperbook setup
-
     - name: Build documentation
       id: build
       run: |
