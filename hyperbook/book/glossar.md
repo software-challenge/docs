@@ -5,8 +5,4 @@ index: 2
 
 ## Spielinfrastruktur
 
-:t[Computerspieler]{#player}
-
-:t[Spielleiter]{#server}
-
-:t[Wettkampfsystem]{#contest}
+:pagelist{format="glossary" source="href(/glossary/.*)"}
