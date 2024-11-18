@@ -22,7 +22,7 @@ wobei das erste Feld (START) den index 0 erhält.
             <board>
                 <field>START</field>
                 <field>CARROTS</field>
-                <field>LETTUCE</field>
+                <field>SALAD</field>
                 <field>POSITION_1</field>
                 <field>POSITION_2</field>
                 <field>HEDGEHOG</field>
