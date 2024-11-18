@@ -1,26 +1,42 @@
-<!DOCTYPE html><html lang="de"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><title>tutorial - Software-Challenge Dokumentation</title><meta property="og:title" content="tutorial - Software-Challenge Dokumentation"/><meta name="description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."/><meta name="og:description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."/><meta name="next-head-count" content="6"/><link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous"/><link rel="preload" href="/_next/static/css/649256d2fa238bf3.css" as="style"/><link rel="stylesheet" href="/_next/static/css/649256d2fa238bf3.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"></script><script src="/_next/static/chunks/webpack-b5a2304ba354004c.js" defer=""></script><script src="/_next/static/chunks/framework-e50de212705b2753.js" defer=""></script><script src="/_next/static/chunks/main-7828853baa8ec358.js" defer=""></script><script src="/_next/static/chunks/pages/_app-d00dfffa14d61597.js" defer=""></script><script src="/_next/static/chunks/175675d1-2e047ab13362325d.js" defer=""></script><script src="/_next/static/chunks/57e613a8-d6d682cd2355b78e.js" defer=""></script><script src="/_next/static/chunks/8473-e800a3d94649bca7.js" defer=""></script><script src="/_next/static/chunks/2417-15e55ae1c3859fa0.js" defer=""></script><script src="/_next/static/chunks/pages/%5B%5B...page%5D%5D-d4ee226e847a34f3.js" defer=""></script><script src="/_next/static/b54E6iZc8Hvsty4u9TByx/_buildManifest.js" defer=""></script><script src="/_next/static/b54E6iZc8Hvsty4u9TByx/_ssgManifest.js" defer=""></script></head><body><div id="__next"><style>:root {
-            --color-brand: #3276AD;
-            --color-brand-dark: #3276AD;
-            --color-brand-text: white;
-          }</style><style>
+<!doctype html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>tutorial - Software-Challenge Dokumentation</title><meta property="og:title" value="tutorial - Software-Challenge Dokumentation"><meta name="description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta property="og:description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta name="keywords"><link rel="stylesheet" href="/__hyperbook_assets/normalize.css"><style>
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --color-brand: #3276AD;
+  --color-brand-dark: #3276AD;
+  --color-brand-text: white;
+}
 @font-face {
   font-family: hyperbook-body;
   src: url(/fonts/Inter-Regular.ttf);
   size-adjust: 100%;
 }
-</style><style>
+
 @font-face {
   font-family: hyperbook-heading;
   src: url(/fonts/Inter-Regular.ttf);
   size-adjust: 100%;
 }
-</style><style>
+
 @font-face {
   font-family: hyperbook-code;
   src: url(/fonts/SourceCodePro-Regular.ttf);
   size-adjust: 100%;
 }
-</style><style>
+
 :root {
   --color-background: white;
   --color-text: black;
@@ -31,7 +47,7 @@
   --color-author-color: #3c3c3c;
   --color-spacer: #a4a4a4;
 }
-        </style><style>
+
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: #1e1e1e;
@@ -46,335 +62,593 @@
   }
 
   header {
-    background: var(--color-nav);
+    background: var(--color-nav)!important;
   }
 
   .branding {
-    color: var(--color-brand);
+    color: var(--color-brand)!important;
   }
 
   .toggle .bar1,
   .toggle .bar2,
   .toggle .bar3 {
-    background-color: var(--color-brand);
+    background-color: var(--color-brand)!important;
   }
-}</style><div class="main-grid"><header><div class="mobile-nav"><button aria-label="Nav Toggle" class="toggle"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></button></div><a class="branding" href="/"><div class="logo"><img alt="Logo" src="/logo.svg"/></div><div class="name">Software-Challenge Dokumentation</div></a></header><div class="sidebar"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div class="virtual-section"><div class="links"><div class="section"><div class="name "><a class="label" href="/spiele/25_hase-und-igel">Hase und Igel</a><button class="toggle" id="react-collapsed-toggle-:R3apl6:" aria-controls="react-collapsed-panel-:R3apl6:" aria-expanded="true" type="button" role="button" tabindex="0" aria-label="Close">➖</button></div><div class="links" id="react-collapsed-panel-:R3apl6:" aria-hidden="false" aria-labelledby="react-collapsed-toggle-:R3apl6:" role="region" style="box-sizing:border-box"><ul class="pages"></ul></div></div></div></div><div class="section"><div class="name "><a class="label" href="/entwicklung">Entwicklung eines Computerspielers</a><button class="toggle" id="react-collapsed-toggle-:R19l6:" aria-controls="react-collapsed-panel-:R19l6:" aria-expanded="false" type="button" role="button" tabindex="0" aria-label="Open">➕</button></div><div class="links" id="react-collapsed-panel-:R19l6:" aria-hidden="true" aria-labelledby="react-collapsed-toggle-:R19l6:" role="region" style="box-sizing:border-box;display:none;height:0px;overflow:hidden"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul></div></div><div class="section"><div class="name empty " id="react-collapsed-toggle-:R1pl6:" aria-controls="react-collapsed-panel-:R1pl6:" aria-expanded="false" type="button" role="button" tabindex="0"><span class="label">Allgemeine XML-Dokumentation</span><button class="toggle" aria-label="Open">➕</button></div><div class="links" id="react-collapsed-panel-:R1pl6:" aria-hidden="true" aria-labelledby="react-collapsed-toggle-:R1pl6:" role="region" style="box-sizing:border-box;display:none;height:0px;overflow:hidden"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div><main><article><div class="hyperbook-markdown"><button class="toc-toggle" title="Table of Contents"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div></button><p><a href="/tutorial.pdf">PDF<wbr>-Version dieses Dokumentes</a></p>
-<h1><a class="heading" id="s" href="#s"><span>Start zum Schreiben einer KI</span></a><button class="bookmark" title="Bookmark">🔖</button></h1>
-<p>Am einfachsten ist es die KI auf Grundlage des Zufallsspielers zu
-schreiben:</p>
-<ul>
-<li>
-<p>Als erstes muss der Zufallsspieler heruntergeladen werden
-(<a href="http://www.software-challenge.de/downloads/">http:<wbr>//<wbr>www<wbr>.software<wbr>-challenge<wbr>.de<wbr>/downloads<wbr>/</a> bitte den
-Zufallsspieler als „Quellcode“ downloaden)</p>
-</li>
-<li>
-<p>Dieser muss nun in Eclips eingebunden werden:
-<a href="https://docs.software-challenge.de/#einrichtung-von-eclipse">https:<wbr>//<wbr>docs<wbr>.software<wbr>-challenge<wbr>.de<wbr>/<wbr>#einrichtung<wbr>-von<wbr>-eclipse</a></p>
-</li>
-</ul>
-<h2><a class="heading" id="w" href="#w"><span>Wo schreibe ich die KI?</span></a><button class="bookmark" title="Bookmark">🔖</button></h2>
-<p>Ist dies getan befindet sich im entsprechenden Projekt das Package
-„sc.player2018.logic“ mit einer Datei namens <strong>„RandomLogic.java“</strong>.
-Diese Datei müssen wir nun editieren.</p>
-<p>In der Datei gibt es eine Funktion mit der Bezeichnung <em>public void
+}
+
+body {
+  overscroll-behavior-x: none;
+  background-color: transparent;
+  color: var(--color-text);
+  font-family: hyperbook-body;
+  font-weight: normal;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+</style><link rel="stylesheet" href="/__hyperbook_assets/math/katex.min.css"><link rel="stylesheet" href="/__hyperbook_assets/shell.css"><link rel="stylesheet" href="/__hyperbook_assets/content.css"><link rel="stylesheet" href="/__hyperbook_assets/code.css"><script>
+HYPERBOOK_ASSETS = "/__hyperbook_assets/"
+</script><script type="module" src="/__hyperbook_assets/side-drawer.js" async></script><script src="/__hyperbook_assets/qrcode.js" async></script></head><body><div class="main-grid"><header><div class="mobile-nav"><button aria-label="Nav Toggle" class="toggle" onclick="hyperbook.navToggle()"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></button><side-drawer id="nav-drawer"><div class="nav-drawer-content"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div class="virtual-section"><div class="collapsible name  expanded"><a href="/spiele" class="label">Spiele</a></div><div class="collapsible-content links"><div class="section"><div class="collapsible name  expanded"><a href="/spiele/25_hase-und-igel" class="label">Hase und Igel</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/spiele/25_hase-und-igel/xml">XML-Dokumentation</a></li></ul></div></div></div></div><div class="section"><div class="collapsible name  "><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul></div></div><div class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div></side-drawer></div><a class="branding" href="/"><div class="logo"><img alt="logo" src="/logo.svg"></div><div class="name">Software-Challenge Dokumentation</div></a></header><div class="sidebar"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div class="virtual-section"><div class="collapsible name  expanded"><a href="/spiele" class="label">Spiele</a></div><div class="collapsible-content links"><div class="section"><div class="collapsible name  expanded"><a href="/spiele/25_hase-und-igel" class="label">Hase und Igel</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/spiele/25_hase-und-igel/xml">XML-Dokumentation</a></li></ul></div></div></div></div><div class="section"><div class="collapsible name  "><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul></div></div><div class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div><main><article>
+<div class="hyperbook-markdown"><button id="toc-toggle" onclick="hyperbook.tocToggle()" title="Table of Contents"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div></button>
+  <side-drawer id="toc-drawer" right>
+    <div class="toc-drawer-content">
+      <nav class="toc">
+        <ul>
+          <li class="level-1"><a href="#start-zum-schreiben-einer-ki">Start zum Schreiben einer KI</a></li>
+          <li class="level-2"><a href="#wo-schreibe-ich-die-ki">Wo schreibe ich die KI?</a></li>
+          <li class="level-2"><a href="#wichtige-membervariablen">Wichtige Membervariablen</a></li>
+          <li class="level-2"><a href="#aufgaben">Aufgaben</a></li>
+          <li class="level-1"><a href="#spielbrett-informationen">Spielbrett Informationen</a></li>
+          <li class="level-2"><a href="#die-klasse-fieldtype">Die Klasse „FieldType“</a></li>
+          <li class="level-2"><a href="#funktionen-der-klasse-board">Funktionen der Klasse „Board“</a></li>
+          <li class="level-3"><a href="#public-final-int-getnextfieldbytypefieldtype-typeint-pos">public final int getNextFieldByType(FieldType type,int pos)</a></li>
+          <li class="level-3"><a href="#public-final-int-getpreviousfieldbytypefieldtype-typeint-pos">public final int getPreviousFieldByType(FieldType type,int pos)</a></li>
+          <li class="level-3"><a href="#public-final-fieldtype-gettypeatint-pos">public final FieldType getTypeAt(int pos)</a></li>
+          <li class="level-2"><a href="#aufgaben">Aufgaben</a></li>
+          <li class="level-1"><a href="#die-klasse-player">Die Klasse Player</a></li>
+          <li class="level-2"><a href="#aufgabe">Aufgabe</a></li>
+          <li class="level-1"><a href="#gamerulelogic-hilfreiche-hilfsfunktionen">GameRuleLogic: Hilfreiche Hilfsfunktionen</a></li>
+          <li class="level-2"><a href="#simulation-des-gegners">Simulation des Gegners</a></li>
+          <li class="level-2"><a href="#einfhrende-beispiele">Einführende Beispiele</a></li>
+          <li class="level-2"><a href="#erweitertes-beispiel">Erweitertes Beispiel</a></li>
+          <li class="level-2"><a href="#aufgaben">Aufgaben</a></li>
+        </ul>
+      </nav>
+    </div>
+  </side-drawer>
+  <p><a href="tutorial.pdf">PDF-Version dieses Dokumentes</a></p>
+  <h1 id="start-zum-schreiben-einer-ki"><a href="#start-zum-schreiben-einer-ki" class="heading"><span>Start zum Schreiben einer KI</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#start-zum-schreiben-einer-ki&#x22;, &#x22;Start zum Schreiben einer KI&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#start-zum-schreiben-einer-ki">🔖</button></h1>
+  <p>
+    Am einfachsten ist es die KI auf Grundlage des Zufallsspielers zu
+    schreiben:
+  </p>
+  <ul>
+    <li>
+      <p>
+        Als erstes muss der Zufallsspieler heruntergeladen werden
+        (<a href="http://www.software-challenge.de/downloads/">http://www.software-challenge.de/downloads/</a> bitte den
+        Zufallsspieler als „Quellcode“ downloaden)
+      </p>
+    </li>
+    <li>
+      <p>
+        Dieser muss nun in Eclips eingebunden werden:
+        <a href="https://docs.software-challenge.de/#einrichtung-von-eclipse">https://docs.software-challenge.de/#einrichtung-von-eclipse</a>
+      </p>
+    </li>
+  </ul>
+  <h2 id="wo-schreibe-ich-die-ki"><a href="#wo-schreibe-ich-die-ki" class="heading"><span>Wo schreibe ich die KI?</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#wo-schreibe-ich-die-ki&#x22;, &#x22;Wo schreibe ich die KI?&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#wo-schreibe-ich-die-ki">🔖</button></h2>
+  <p>
+    Ist dies getan befindet sich im entsprechenden Projekt das Package
+    „sc.player2018.logic“ mit einer Datei namens <strong>„RandomLogic.java“</strong>.
+    Diese Datei müssen wir nun editieren.
+  </p>
+  <p>In der Datei gibt es eine Funktion mit der Bezeichnung <em>public void
 onRequestAction()</em>. Diese ist wie Folgt aufgebaut:</p>
-<pre><code class="hljs language-scss">public void <span class="hljs-built_in">onRequestAction</span>(){
-  <span class="hljs-comment">// optional: Laufzeitmessung</span>
-  long startTime = System<span class="hljs-selector-class">.nanoTime</span>();
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>public void onRequestAction(){</span></span>
+<span data-line=""><span>  // optional: Laufzeitmessung</span></span>
+<span data-line=""><span>  long startTime = System.nanoTime();</span></span>
+<span data-line=""> </span>
+<span data-line=""> </span>
+<span data-line=""><span>  // Quellcode der KI, welche eine Zug (move) erstellt</span></span>
+<span data-line=""> </span>
+<span data-line=""> </span>
+<span data-line=""><span>  long nowTime = System.nanoTime();</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>  // sende Move. Danach gibt es kein zurück mehr:</span></span>
+<span data-line=""><span>  sendAction(move);</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>  // optional: LOG-Eintrag mit Zeit:</span></span>
+<span data-line=""><span>  log.warn("Time needed for turn: {}", (nowTime - startTime) / 1000000);</span></span>
+<span data-line=""><span>}</span></span><button type="button" title="Copy code" aria-label="Copy code" data="public void onRequestAction(){
+  // optional: Laufzeitmessung
+  long startTime = System.nanoTime();
 
 
-  <span class="hljs-comment">// Quellcode der KI, welche eine Zug (move) erstellt</span>
+  // Quellcode der KI, welche eine Zug (move) erstellt
 
 
-  long nowTime = System<span class="hljs-selector-class">.nanoTime</span>();
+  long nowTime = System.nanoTime();
 
-  <span class="hljs-comment">// sende Move. Danach gibt es kein zurück mehr:</span>
-  <span class="hljs-built_in">sendAction</span>(move);
+  // sende Move. Danach gibt es kein zurück mehr:
+  sendAction(move);
 
-  <span class="hljs-comment">// optional: LOG-Eintrag mit Zeit:</span>
-  log<span class="hljs-selector-class">.warn</span>(&quot;Time needed for turn: {}&quot;, (nowTime - startTime) / <span class="hljs-number">1000000</span>);
+  // optional: LOG-Eintrag mit Zeit:
+  log.warn(&#x22;Time needed for turn: {}&#x22;, (nowTime - startTime) / 1000000);
+}" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Es ist sehr wichtig, dass alle Funktionen, welche die KI verwendet,
+    ihren ursprünglichen Aufruf in der Funktion onRequestAction haben.
+    Dadurch wird sichergestellt, dass alle Membervariablen aktuell sind.
+  </p>
+  <h2 id="wichtige-membervariablen"><a href="#wichtige-membervariablen" class="heading"><span>Wichtige Membervariablen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#wichtige-membervariablen&#x22;, &#x22;Wichtige Membervariablen&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#wichtige-membervariablen">🔖</button></h2>
+  <p>In der Klasse befinden sich auch drei sehr wichtige Membervariablen:</p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>private Starter client; // Intern für den Server wichtig. Bitte nicht modifizieren</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>private GameState gameState; // Gibt u.a Infos über mögliche Züge und das Spielbrett</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>private Player currentPlayer; // Infos über den aktuellen Spieler, welchen man steuert</span></span><button type="button" title="Copy code" aria-label="Copy code" data="private Starter client; // Intern für den Server wichtig. Bitte nicht modifizieren
+
+private GameState gameState; // Gibt u.a Infos über mögliche Züge und das Spielbrett
+
+private Player currentPlayer; // Infos über den aktuellen Spieler, welchen man steuert" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    In den Folgenden Dokumenten werden Grundlagen zum erstellen einer KI
+    gezeigt. Hierbei werden wir oft die Variablen <strong>gameState</strong> und
+    <strong>currentPlayer</strong> verwenden.
+  </p>
+  <p>
+    Die <strong>API-Dokumentation</strong> befindet sich im Ordner „doc“ im Verzeichnis
+    des Zufallsspielers.
+  </p>
+  <h2 id="aufgaben"><a href="#aufgaben" class="heading"><span>Aufgaben</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#aufgaben&#x22;, &#x22;Aufgaben&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#aufgaben">🔖</button></h2>
+  <ol>
+    <li>
+      <p>Arbeite alle anderen Dokumente durch.</p>
+    </li>
+    <li>
+      <p>Analysiere die Herangehensweise der Zufallsspieler-KI.</p>
+    </li>
+    <li>
+      <p>Schreibe eine KI.</p>
+    </li>
+  </ol>
+  <h1 id="spielbrett-informationen"><a href="#spielbrett-informationen" class="heading"><span>Spielbrett Informationen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#spielbrett-informationen&#x22;, &#x22;Spielbrett Informationen&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#spielbrett-informationen">🔖</button></h1>
+  <h2 id="die-klasse-fieldtype"><a href="#die-klasse-fieldtype" class="heading"><span>Die Klasse „FieldType“</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#die-klasse-fieldtype&#x22;, &#x22;Die Klasse „FieldType“&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#die-klasse-fieldtype">🔖</button></h2>
+  <p>
+    Bevor wir mit der Klasse Board also dem Spielbrett arbeiten können,
+    müssen wir das Enum „FieldType“ kennenlernen. Dieses Enum definiert die
+    einzelnen Felder des Bretts. Es gibt:
+  </p>
+  <p>
+    Die Dokumentation für FieldType ist in /doc/sc/plugin2018/FieldType.html
+    zu finden.
+  </p>
+  <h2 id="funktionen-der-klasse-board"><a href="#funktionen-der-klasse-board" class="heading"><span>Funktionen der Klasse „Board“</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#funktionen-der-klasse-board&#x22;, &#x22;Funktionen der Klasse „Board“&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#funktionen-der-klasse-board">🔖</button></h2>
+  <p>
+    Das Spielbrett kann man sich wie einer Art modifizieren „Array“ [1]
+    vorstellen. Mithilfe der FieldTypes können wir die Funktionen des Boards
+    verwenden. Zunächst stellt sich allerdings die Frage, wie wir überhaupt
+    das Spielbrett bekommen können. Das Spielbrett bekommen wir durch den
+    GameState. Mit Hilfe der Methode <em>gameState.getBoard()</em>.
+  </p>
+  <p>
+    Unsere Eigene Position können wir mithilfe von <strong>currentPlayer</strong> oder
+    <strong>gameState</strong> herausfinden:
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>// Es wird immer ein Integer zwischen 0 bis 64 zurückgegeben:</span></span>
+<span data-line=""><span>currentPlayer.getFieldIndex();</span></span>
+<span data-line=""><span>// dasselbe wie oben:</span></span>
+<span data-line=""><span>gameState.getCurrentPlayer().getFieldIndex();</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>if (currentPlayer.getFieldIndex() == gameState.getCurrentPlayer().getFieldIndex()) {</span></span>
+<span data-line=""><span>  //wird immer ausgeführt</span></span>
+<span data-line=""><span>}</span></span><button type="button" title="Copy code" aria-label="Copy code" data="// Es wird immer ein Integer zwischen 0 bis 64 zurückgegeben:
+currentPlayer.getFieldIndex();
+// dasselbe wie oben:
+gameState.getCurrentPlayer().getFieldIndex();
+
+if (currentPlayer.getFieldIndex() == gameState.getCurrentPlayer().getFieldIndex()) {
+  //wird immer ausgeführt
+}" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h3 id="public-final-int-getnextfieldbytypefieldtype-typeint-pos"><a href="#public-final-int-getnextfieldbytypefieldtype-typeint-pos" class="heading"><span>public final int getNextFieldByType(FieldType type,int pos)</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#public-final-int-getnextfieldbytypefieldtype-typeint-pos&#x22;, &#x22;public final int getNextFieldByType(FieldType type,int pos)&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#public-final-int-getnextfieldbytypefieldtype-typeint-pos">🔖</button></h3>
+  <p>
+    Dieser Funktion übergeben wir eine Position und ein FieldType. Es gibt
+    die Position des nächsten FieldType an, welches <strong>nach</strong> der angegeben
+    Position liegt. Hat das Feld mit der angegeben Position, den gleichen
+    FieldType, so wird dennoch die Position des nächsten Felds angegeben
+    (siehe zweites Beispiel). Gibt es diesen FieldType nicht mehr wird -1
+    zurückgegeben.
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>gameState.getBoard().getNextFieldByType(FieldType.GOAL,</span></span>
+<span data-line=""><span>                                        currentPlayer.getFieldIndex());</span></span><button type="button" title="Copy code" aria-label="Copy code" data="gameState.getBoard().getNextFieldByType(FieldType.GOAL,
+                                        currentPlayer.getFieldIndex());" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Dies würde in einem normalen Spiel immer 64 zurückgeben, außer man
+    befindet sich auf dem Ziel. Im diesem Fall wäre das Ergebnis -1.
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>// Damit man nicht immer gameState.getBoard() schreiben muss:</span></span>
+<span data-line=""><span>Board b = gameState.getBoard();</span></span>
+<span data-line=""><span>final int index = currentPlayer.getFieldIndex(); // Index des Spielers</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>if (index == b.getNextFieldByType(b.getTypeAt(index), index)) {</span></span>
+<span data-line=""><span>  System.out.println("Geht nicht");</span></span>
+<span data-line=""><span>}</span></span><button type="button" title="Copy code" aria-label="Copy code" data="// Damit man nicht immer gameState.getBoard() schreiben muss:
+Board b = gameState.getBoard();
+final int index = currentPlayer.getFieldIndex(); // Index des Spielers
+
+if (index == b.getNextFieldByType(b.getTypeAt(index), index)) {
+  System.out.println(&#x22;Geht nicht&#x22;);
+}" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Dies liegt daran, dass der verwendete Index nie der Rückgabewert von
+    <strong>getNextFieldByType</strong> sein kann.
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>int next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG,</span></span>
+<span data-line=""><span>                                         currentPlayer.getFieldIndex());</span></span>
+<span data-line=""><span>int next_next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG, next_hedgehog);</span></span><button type="button" title="Copy code" aria-label="Copy code" data="int next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG,
+                                         currentPlayer.getFieldIndex());
+int next_next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG, next_hedgehog);" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Dies würde die Postion des nächste und vom übernächste Igelfeld
+    bestimmen. Achtung es wird hierbei nicht überprüft, ob es so ein Feld
+    überhaupt gibt. Dies kann zu Fehlern führen. Steht man z.B auf dem
+    letzten Igelfeld, so hat <strong>next_next_hedgehog</strong> den Wert 11, anstelle
+    von -1 (Siehe Übung 2).
+  </p>
+  <h3 id="public-final-int-getpreviousfieldbytypefieldtype-typeint-pos"><a href="#public-final-int-getpreviousfieldbytypefieldtype-typeint-pos" class="heading"><span>public final int getPreviousFieldByType(FieldType type,int pos)</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#public-final-int-getpreviousfieldbytypefieldtype-typeint-pos&#x22;, &#x22;public final int getPreviousFieldByType(FieldType type,int pos)&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#public-final-int-getpreviousfieldbytypefieldtype-typeint-pos">🔖</button></h3>
+  <p>
+    Analog zu getNextFieldByType. Allerdings bezieht sich die Funktion auf
+    das vorherige Feld mit dem entsprechenden FieldType.
+  </p>
+  <h3 id="public-final-fieldtype-gettypeatint-pos"><a href="#public-final-fieldtype-gettypeatint-pos" class="heading"><span>public final FieldType getTypeAt(int pos)</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#public-final-fieldtype-gettypeatint-pos&#x22;, &#x22;public final FieldType getTypeAt(int pos)&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#public-final-fieldtype-gettypeatint-pos">🔖</button></h3>
+  <p>
+    Mit dieser Funktionen kann man den FieldType eines bestimmten Feldes
+    ermitteln.
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>FieldType my_field = gameState.getBoard().getTypeAt(currentPlayer.getFieldIndex());</span></span>
+<span data-line=""><span>FieldType field_42 = gameState.getBoard().getTypeAt(42);</span></span><button type="button" title="Copy code" aria-label="Copy code" data="FieldType my_field = gameState.getBoard().getTypeAt(currentPlayer.getFieldIndex());
+FieldType field_42 = gameState.getBoard().getTypeAt(42);" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Speichert den aktuelle FieldType auf welchen man steht und den FieldType
+    des Feldes 42.
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>if (gameState.getBoard().getTypeAt(-1) == FieldType.INVALID) {</span></span>
+<span data-line=""><span>  // Wird immer ausgeführt, da es das Feld an der Position -1 nicht gibt</span></span>
+<span data-line=""><span>}</span></span><button type="button" title="Copy code" aria-label="Copy code" data="if (gameState.getBoard().getTypeAt(-1) == FieldType.INVALID) {
+  // Wird immer ausgeführt, da es das Feld an der Position -1 nicht gibt
+}" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Dieses Beispiel zeigt auf, dass es durch getTypeAt nie zu einer
+    IndexOutOfBoundsException kommen kann. Es gibt nur Felder im Intervall
+    von 0 – 64. Sollte man nach einem Feld außerhalb diese Intervalls
+    fragen, so wird immer INVALID zurückgegeben.
+  </p>
+  <p>
+    Die komplette API-Dokumentation ist in /doc/sc/plugin2018/Board.html zu
+    finden.
+  </p>
+  <h2 id="aufgaben"><a href="#aufgaben" class="heading"><span>Aufgaben</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#aufgaben&#x22;, &#x22;Aufgaben&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#aufgaben">🔖</button></h2>
+  <ol>
+    <li>
+      <p>
+        Gib die Entfernung des Gegners zum Startfeld aus. Verwende dabei
+        keine Variablen oder Literale. Die Ausnahme ist der Rückgabewert.
+        Dieser darf eine Literale sein (z.B. return 127;). Tipp: Suche in
+        der API von GameState nach einer Funktion, welchen den anderen
+        Spieler zurückgibt oder lese das Dokument „Hase_Igel_Player“.
+      </p>
+    </li>
+    <li>
+      <p>
+        Erkläre warum <strong>next_next_hedgehog</strong> den Wert 11 hätte, wenn wir
+        auf den letzten Igelfeld stehen würden.
+      </p>
+      <figure data-rehype-pretty-code-figure="">
+        <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>int next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG,</span></span>
+<span data-line=""><span>                                         currentPlayer.getFieldIndex());</span></span>
+<span data-line=""><span>int next_next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG, next_hedgehog);</span></span><button type="button" title="Copy code" aria-label="Copy code" data="int next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG,
+                                         currentPlayer.getFieldIndex());
+int next_next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG, next_hedgehog);" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+      </figure>
+    </li>
+    <li>
+      <p>
+        Schreibe eine Funktion, welche das übernächste Igelfeld ausgibt.
+        Gibt es solch ein Feld nicht, so soll immer -1 zurückgegeben werden.
+      </p>
+    </li>
+  </ol>
+  <h1 id="die-klasse-player"><a href="#die-klasse-player" class="heading"><span>Die Klasse Player</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#die-klasse-player&#x22;, &#x22;Die Klasse Player&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#die-klasse-player">🔖</button></h1>
+  <p>
+    Die Klasse Player repräsentiert einen Spieler. Der eigene Spieler kann
+    in der RandomLogic durch die Variable <strong>currentPlayer</strong> oder mithilfe
+    der GameState Funktion <em>getCurrentPlayer()</em> abgefragt werden. Der
+    gegnerische Spieler kann ebenfalls mithilfe einer Methode von GameState
+    bestimmt werden (<em>gameState.getOtherPlayer()</em>).
+  </p>
+  <p>
+    Die Klasse Player besitzt viele Funktionen, welche einen Informationen
+    über den Spieler geben:
+  </p>
+  <p>Die Vollständige API ist in /doc/sc/plugin2018/Player.html zu finden.</p>
+  <p>
+    Die Meisten dieser Funktionen sind selbsterklärend. Dennoch sind hier
+    einige Beispiele angegeben:
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>System.out.print("Du hast noch folgende Karten: ");</span></span>
+<span data-line=""><span>for (CardType c : currentPlayer.getCards()) {</span></span>
+<span data-line=""><span>    System.out.print(c + " ");</span></span>
+<span data-line=""><span>}</span></span>
+<span data-line=""><span>System.out.println();</span></span><button type="button" title="Copy code" aria-label="Copy code" data="System.out.print(&#x22;Du hast noch folgende Karten: &#x22;);
+for (CardType c : currentPlayer.getCards()) {
+    System.out.print(c + &#x22; &#x22;);
 }
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-<p>Es ist sehr wichtig, dass alle Funktionen, welche die KI verwendet,
-ihren ursprünglichen Aufruf in der Funktion onRequestAction haben.
-Dadurch wird sichergestellt, dass alle Membervariablen aktuell sind.</p>
-<h2><a class="heading" id="w" href="#w"><span>Wichtige Membervariablen</span></a><button class="bookmark" title="Bookmark">🔖</button></h2>
-<p>In der Klasse befinden sich auch drei sehr wichtige Membervariablen:</p>
-<pre><code class="hljs language-arduino"><span class="hljs-keyword">private</span> Starter client; <span class="hljs-comment">// Intern für den Server wichtig. Bitte nicht modifizieren</span>
+System.out.println();" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>Dies würde alle Karten ausgeben, welche man noch hat.</p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>if (currentPlayer.inGoal() &#x26;&#x26; !currentPlayer.getCards().isEmpty()) {</span></span>
+<span data-line=""><span>    System.out.println("Was fuer eine Verschwendung.");</span></span>
+<span data-line=""><span>}</span></span><button type="button" title="Copy code" aria-label="Copy code" data="if (currentPlayer.inGoal() &#x26;&#x26; !currentPlayer.getCards().isEmpty()) {
+    System.out.println(&#x22;Was fuer eine Verschwendung.&#x22;);
+}" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Die If-Bedingung würde dann ausgeführt werden, wenn man im Ziel ist,
+    allerdings noch Karten hat.
+  </p>
+  <p>
+    Eine weitere wichtige Funktion ist <em>getFieldIndex</em>. Diese Funktion wird
+    häufig im Dokument „Hase_Igel_Spielbrett“ verwendet.
+  </p>
+  <p>
+    Neben diesen Funktionen existieren noch einige „Setter“. Diese sind
+    allerdings hauptsächlich für den Server notwendig und haben einen
+    geringen praktischen Nutzten für uns.
+  </p>
+  <h2 id="aufgabe"><a href="#aufgabe" class="heading"><span>Aufgabe</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#aufgabe&#x22;, &#x22;Aufgabe&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#aufgabe">🔖</button></h2>
+  <p>
+    Schreibe eine If-Bedingung, welche abfragt, ob beide Spieler auf dem
+    selben Feld sind. Da dies nur möglich ist, wenn man auf dem Start-
+    Zielfeld ist, soll zunächst abgefragt werden, ob der aktuelle Spieler
+    auf dem Start- Zielfeld ist. Tipp: Es gibt die Funktion getTypeAt der
+    Klasse Board. Weiter Informationen sind im Dokument
+    „Hase_Igel_Spielbrett“ zu finden.
+  </p>
+  <h1 id="gamerulelogic-hilfreiche-hilfsfunktionen"><a href="#gamerulelogic-hilfreiche-hilfsfunktionen" class="heading"><span>GameRuleLogic: Hilfreiche Hilfsfunktionen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#gamerulelogic-hilfreiche-hilfsfunktionen&#x22;, &#x22;GameRuleLogic: Hilfreiche Hilfsfunktionen&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#gamerulelogic-hilfreiche-hilfsfunktionen">🔖</button></h1>
+  <p>
+    Die Klasse GameRuleLogic hat viele Hilfsfunktionen, mit welchen man die
+    Regeln des Spieles überprüfen kann. Hierbei sind alle Funktionen static.
+    D.h., dass man sie ohne eine Instanz aufrufen kann.
+  </p>
+  <p>*Diese Funktionen werden im Kapitel „Erweiterte Beispiele“ besprochen.</p>
+  <p>
+    Die komplette API-Dokumentation ist in
+    doc/sc/plugin2018/util/GameRuleLogic.html zu finden.
+  </p>
+  <h2 id="simulation-des-gegners"><a href="#simulation-des-gegners" class="heading"><span>Simulation des Gegners</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#simulation-des-gegners&#x22;, &#x22;Simulation des Gegners&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#simulation-des-gegners">🔖</button></h2>
+  <p>
+    Natürlich kann man alle diese Funktionen auch auf den Gegenspieler
+    anwenden. Dafür müssen wir allerdings eine Kopie des GameState
+    erstellen:
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>try {</span></span>
+<span data-line=""><span>  GameState otherGame = gameState.clone(); // Deep-Copy</span></span>
+<span data-line=""><span>  // Rundenanzahl hochsetzten für switch Befehl:</span></span>
+<span data-line=""><span>  otherGame.setTurn(gameState.getTurn()+1);</span></span>
+<span data-line=""><span>  // Tausche currentPlayer (hängt von der Rundenanzahl ab):</span></span>
+<span data-line=""><span>  otherGame.switchCurrentPlayer();</span></span>
+<span data-line=""><span>  // Gib Informationen über den Gegner aus:</span></span>
+<span data-line=""><span>  System.out.println("CurrentPlayer von otherGame:" + otherGame.getCurrentPlayer());</span></span>
+<span data-line=""><span>} catch (CloneNotSupportedException e1) { // Fehlerbehandlung</span></span>
+<span data-line=""><span>  e1.printStackTrace();</span></span>
+<span data-line=""><span>}</span></span><button type="button" title="Copy code" aria-label="Copy code" data="try {
+  GameState otherGame = gameState.clone(); // Deep-Copy
+  // Rundenanzahl hochsetzten für switch Befehl:
+  otherGame.setTurn(gameState.getTurn()+1);
+  // Tausche currentPlayer (hängt von der Rundenanzahl ab):
+  otherGame.switchCurrentPlayer();
+  // Gib Informationen über den Gegner aus:
+  System.out.println(&#x22;CurrentPlayer von otherGame:&#x22; + otherGame.getCurrentPlayer());
+} catch (CloneNotSupportedException e1) { // Fehlerbehandlung
+  e1.printStackTrace();
+}" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Alle Funktionen von GameRuleLogic können wir nun, mithilfe der Variable
+    otherGame, auf den Gegner anwenden.
+  </p>
+  <h2 id="einfhrende-beispiele"><a href="#einfhrende-beispiele" class="heading"><span>Einführende Beispiele</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#einfhrende-beispiele&#x22;, &#x22;Einführende Beispiele&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#einfhrende-beispiele">🔖</button></h2>
+  <p>
+    Die meisten Funktionen dieser Klasse sind selbsterklärend. Dennoch
+    werden einige der häufig verwendeten Funktionen mit kleinen Beispielen
+    vorgestellt.
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>if (GameRuleLogic.isValidToEat(gameState) != GameRuleLogic.mustEatSalad(gameState)) {</span></span>
+<span data-line=""><span>  System.out.println("Unmöglich");</span></span>
+<span data-line=""><span>}</span></span><button type="button" title="Copy code" aria-label="Copy code" data="if (GameRuleLogic.isValidToEat(gameState) != GameRuleLogic.mustEatSalad(gameState)) {
+  System.out.println(&#x22;Unmöglich&#x22;);
+}" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Nach den Regeln muss man immer ein Salat essen, wenn man im vorherigen
+    Zug ein Salatfeld betreten hat. Außerdem ist dies die einzige
+    Möglichkeit die Aktion EatSalad auszuführen (nicht mit dem Spielen der
+    EAT_SALAD Karte verwechseln).
+  </p>
+  <p>
+    Dadurch wird auch die Unerfüllbarkeit des folgenden Ausdrucks
+    impliziert:
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>if (GameRuleLogic.isValidToEat(gameState) &#x26;&#x26;</span></span>
+<span data-line=""><span>    (GameRuleLogic.isValidToFallBack(gameState) || GameRuleLogic.canMove(gameState))) {</span></span>
+<span data-line=""><span>  System.out.println("Unmöglich");</span></span>
+<span data-line=""><span>}</span></span><button type="button" title="Copy code" aria-label="Copy code" data="if (GameRuleLogic.isValidToEat(gameState) &#x26;&#x26;
+    (GameRuleLogic.isValidToFallBack(gameState) || GameRuleLogic.canMove(gameState))) {
+  System.out.println(&#x22;Unmöglich&#x22;);
+}" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Eine weiter hilfreiche Funktion ist <em>isValidToAdvance</em>. Mit dieser
+    Funktion wird überprüft, ob ein Vorwärtszug mit der übergeben Distanz
+    überhaupt möglich ist:
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>// berechne die maximale Entfernung, welche man laufen darf</span></span>
+<span data-line=""><span>int max_move = GameRuleLogic.calculateMoveableFields(currentPlayer.getCarrots());</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>if (GameRuleLogic.isValidToAdvance(gameState, max_move +1)) {</span></span>
+<span data-line=""><span>  System.out.println("Unmöglich");</span></span>
+<span data-line=""><span>}</span></span><button type="button" title="Copy code" aria-label="Copy code" data="// berechne die maximale Entfernung, welche man laufen darf
+int max_move = GameRuleLogic.calculateMoveableFields(currentPlayer.getCarrots());
 
-<span class="hljs-keyword">private</span> GameState gameState; <span class="hljs-comment">// Gibt u.a Infos über mögliche Züge und das Spielbrett</span>
-
-<span class="hljs-keyword">private</span> Player currentPlayer; <span class="hljs-comment">// Infos über den aktuellen Spieler, welchen man steuert</span>
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-<p>In den Folgenden Dokumenten werden Grundlagen zum erstellen einer KI
-gezeigt. Hierbei werden wir oft die Variablen <strong>gameState</strong> und
-<strong>currentPlayer</strong> verwenden.</p>
-<p>Die <strong>API-Dokumentation</strong> befindet sich im Ordner „doc“ im Verzeichnis
-des Zufallsspielers.</p>
-<h2><a class="heading" id="a" href="#a"><span>Aufgaben</span></a><button class="bookmark" title="Bookmark">🔖</button></h2>
-<ol>
-<li>
-<p>Arbeite alle anderen Dokumente durch.</p>
-</li>
-<li>
-<p>Analysiere die Herangehensweise der Zufallsspieler-KI.</p>
-</li>
-<li>
-<p>Schreibe eine KI.</p>
-</li>
-</ol>
-<h1><a class="heading" id="s" href="#s"><span>Spielbrett Informationen</span></a><button class="bookmark" title="Bookmark">🔖</button></h1>
-<h2><a class="heading" id="d" href="#d"><span>Die Klasse „FieldType“</span></a><button class="bookmark" title="Bookmark">🔖</button></h2>
-<p>Bevor wir mit der Klasse Board also dem Spielbrett arbeiten können,
-müssen wir das Enum „FieldType“ kennenlernen. Dieses Enum definiert die
-einzelnen Felder des Bretts. Es gibt:</p>
-<p>Die Dokumentation für FieldType ist in /doc/sc/plugin2018/FieldType.html
-zu finden.</p>
-<h2><a class="heading" id="f" href="#f"><span>Funktionen der Klasse „Board“</span></a><button class="bookmark" title="Bookmark">🔖</button></h2>
-<p>Das Spielbrett kann man sich wie einer Art modifizieren „Array“ [1]
-vorstellen. Mithilfe der FieldTypes können wir die Funktionen des Boards
-verwenden. Zunächst stellt sich allerdings die Frage, wie wir überhaupt
-das Spielbrett bekommen können. Das Spielbrett bekommen wir durch den
-GameState. Mit Hilfe der Methode <em>gameState.getBoard()</em>.</p>
-<p>Unsere Eigene Position können wir mithilfe von <strong>currentPlayer</strong> oder
-<strong>gameState</strong> herausfinden:</p>
-<pre><code class="hljs language-scss"><span class="hljs-comment">// Es wird immer ein Integer zwischen 0 bis 64 zurückgegeben:</span>
-currentPlayer<span class="hljs-selector-class">.getFieldIndex</span>();
-<span class="hljs-comment">// dasselbe wie oben:</span>
-gameState<span class="hljs-selector-class">.getCurrentPlayer</span>()<span class="hljs-selector-class">.getFieldIndex</span>();
-
-if (currentPlayer.getFieldIndex() == gameState<span class="hljs-selector-class">.getCurrentPlayer</span>()<span class="hljs-selector-class">.getFieldIndex</span>()) {
-  <span class="hljs-comment">//wird immer ausgeführt</span>
-}
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-<h3><a class="heading" id="p" href="#p"><span>public final int getNextFieldByType(FieldType type,int pos)</span></a><button class="bookmark" title="Bookmark">🔖</button></h3>
-<p>Dieser Funktion übergeben wir eine Position und ein FieldType. Es gibt
-die Position des nächsten FieldType an, welches <strong>nach</strong> der angegeben
-Position liegt. Hat das Feld mit der angegeben Position, den gleichen
-FieldType, so wird dennoch die Position des nächsten Felds angegeben
-(siehe zweites Beispiel). Gibt es diesen FieldType nicht mehr wird -1
-zurückgegeben.</p>
-<pre><code class="hljs language-scss">gameState<span class="hljs-selector-class">.getBoard</span>()<span class="hljs-selector-class">.getNextFieldByType</span>(FieldType.GOAL,
-                                        currentPlayer.getFieldIndex());
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-<p>Dies würde in einem normalen Spiel immer 64 zurückgeben, außer man
-befindet sich auf dem Ziel. Im diesem Fall wäre das Ergebnis -1.</p>
-<pre><code class="hljs language-ini">// Damit man nicht immer gameState.getBoard() schreiben muss:
-Board <span class="hljs-attr">b</span> = gameState.getBoard()<span class="hljs-comment">;</span>
-final int <span class="hljs-attr">index</span> = currentPlayer.getFieldIndex()<span class="hljs-comment">; // Index des Spielers</span>
-
-if (<span class="hljs-attr">index</span> == b.getNextFieldByType(b.getTypeAt(index), index)) {
-  System.out.println(&quot;Geht nicht&quot;)<span class="hljs-comment">;</span>
-}
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-<p>Dies liegt daran, dass der verwendete Index nie der Rückgabewert von
-<strong>getNextFieldByType</strong> sein kann.</p>
-<pre><code class="hljs language-ini">int <span class="hljs-attr">next_hedgehog</span> = b.getNextFieldByType(FieldType.HEDGEHOG,
-                                         currentPlayer.getFieldIndex())<span class="hljs-comment">;</span>
-int <span class="hljs-attr">next_next_hedgehog</span> = b.getNextFieldByType(FieldType.HEDGEHOG, next_hedgehog)<span class="hljs-comment">;</span>
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-<p>Dies würde die Postion des nächste und vom übernächste Igelfeld
-bestimmen. Achtung es wird hierbei nicht überprüft, ob es so ein Feld
-überhaupt gibt. Dies kann zu Fehlern führen. Steht man z.B auf dem
-letzten Igelfeld, so hat <strong>next_next_hedgehog</strong> den Wert 11, anstelle
-von -1 (Siehe Übung 2).</p>
-<h3><a class="heading" id="p" href="#p"><span>public final int getPreviousFieldByType(FieldType type,int pos)</span></a><button class="bookmark" title="Bookmark">🔖</button></h3>
-<p>Analog zu getNextFieldByType. Allerdings bezieht sich die Funktion auf
-das vorherige Feld mit dem entsprechenden FieldType.</p>
-<h3><a class="heading" id="p" href="#p"><span>public final FieldType getTypeAt(int pos)</span></a><button class="bookmark" title="Bookmark">🔖</button></h3>
-<p>Mit dieser Funktionen kann man den FieldType eines bestimmten Feldes
-ermitteln.</p>
-<pre><code class="hljs language-ini">FieldType <span class="hljs-attr">my_field</span> = gameState.getBoard().getTypeAt(currentPlayer.getFieldIndex())<span class="hljs-comment">;</span>
-FieldType <span class="hljs-attr">field_42</span> = gameState.getBoard().getTypeAt(<span class="hljs-number">42</span>)<span class="hljs-comment">;</span>
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-<p>Speichert den aktuelle FieldType auf welchen man steht und den FieldType
-des Feldes 42.</p>
-<pre><code class="hljs language-less"><span class="hljs-selector-tag">if</span> (gameState.<span class="hljs-built_in">getBoard</span>().<span class="hljs-built_in">getTypeAt</span>(-<span class="hljs-number">1</span>) == FieldType.INVALID) {
-  <span class="hljs-comment">// Wird immer ausgeführt, da es das Feld an der Position -1 nicht gibt</span>
-}
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-<p>Dieses Beispiel zeigt auf, dass es durch getTypeAt nie zu einer
-IndexOutOfBoundsException kommen kann. Es gibt nur Felder im Intervall
-von 0 – 64. Sollte man nach einem Feld außerhalb diese Intervalls
-fragen, so wird immer INVALID zurückgegeben.</p>
-<p>Die komplette API-Dokumentation ist in /doc/sc/plugin2018/Board.html zu
-finden.</p>
-<h2><a class="heading" id="a" href="#a"><span>Aufgaben</span></a><button class="bookmark" title="Bookmark">🔖</button></h2>
-<ol>
-<li>
-<p>Gib die Entfernung des Gegners zum Startfeld aus. Verwende dabei
-keine Variablen oder Literale. Die Ausnahme ist der Rückgabewert.
-Dieser darf eine Literale sein (z.B. return 127;). Tipp: Suche in
-der API von GameState nach einer Funktion, welchen den anderen
-Spieler zurückgibt oder lese das Dokument „Hase_Igel_Player“.</p>
-</li>
-<li>
-<p>Erkläre warum <strong>next_next_hedgehog</strong> den Wert 11 hätte, wenn wir
-auf den letzten Igelfeld stehen würden.</p>
-<pre><code class="hljs language-ini">int <span class="hljs-attr">next_hedgehog</span> = b.getNextFieldByType(FieldType.HEDGEHOG,
-                                         currentPlayer.getFieldIndex())<span class="hljs-comment">;</span>
-int <span class="hljs-attr">next_next_hedgehog</span> = b.getNextFieldByType(FieldType.HEDGEHOG, next_hedgehog)<span class="hljs-comment">;</span>
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-</li>
-<li>
-<p>Schreibe eine Funktion, welche das übernächste Igelfeld ausgibt.
-Gibt es solch ein Feld nicht, so soll immer -1 zurückgegeben werden.</p>
-</li>
-</ol>
-<h1><a class="heading" id="d" href="#d"><span>Die Klasse Player</span></a><button class="bookmark" title="Bookmark">🔖</button></h1>
-<p>Die Klasse Player repräsentiert einen Spieler. Der eigene Spieler kann
-in der RandomLogic durch die Variable <strong>currentPlayer</strong> oder mithilfe
-der GameState Funktion <em>getCurrentPlayer()</em> abgefragt werden. Der
-gegnerische Spieler kann ebenfalls mithilfe einer Methode von GameState
-bestimmt werden (<em>gameState.getOtherPlayer()</em>).</p>
-<p>Die Klasse Player besitzt viele Funktionen, welche einen Informationen
-über den Spieler geben:</p>
-<p>Die Vollständige API ist in /doc/sc/plugin2018/Player.html zu finden.</p>
-<p>Die Meisten dieser Funktionen sind selbsterklärend. Dennoch sind hier
-einige Beispiele angegeben:</p>
-<pre><code class="hljs language-csharp">System.<span class="hljs-keyword">out</span>.print(<span class="hljs-string">&quot;Du hast noch folgende Karten: &quot;</span>);
-<span class="hljs-keyword">for</span> (CardType c : currentPlayer.getCards()) {
-    System.<span class="hljs-keyword">out</span>.print(c + <span class="hljs-string">&quot; &quot;</span>);
-}
-System.<span class="hljs-keyword">out</span>.println();
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-<p>Dies würde alle Karten ausgeben, welche man noch hat.</p>
-<pre><code class="hljs language-less"><span class="hljs-selector-tag">if</span> (currentPlayer.<span class="hljs-built_in">inGoal</span>() &amp;&amp; !currentPlayer.<span class="hljs-built_in">getCards</span>().<span class="hljs-built_in">isEmpty</span>()) {
-    <span class="hljs-selector-tag">System</span><span class="hljs-selector-class">.out</span><span class="hljs-selector-class">.println</span>(<span class="hljs-string">&quot;Was fuer eine Verschwendung.&quot;</span>);
-}
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-<p>Die If-Bedingung würde dann ausgeführt werden, wenn man im Ziel ist,
-allerdings noch Karten hat.</p>
-<p>Eine weitere wichtige Funktion ist <em>getFieldIndex</em>. Diese Funktion wird
-häufig im Dokument „Hase_Igel_Spielbrett“ verwendet.</p>
-<p>Neben diesen Funktionen existieren noch einige „Setter“. Diese sind
-allerdings hauptsächlich für den Server notwendig und haben einen
-geringen praktischen Nutzten für uns.</p>
-<h2><a class="heading" id="a" href="#a"><span>Aufgabe</span></a><button class="bookmark" title="Bookmark">🔖</button></h2>
-<p>Schreibe eine If-Bedingung, welche abfragt, ob beide Spieler auf dem
-selben Feld sind. Da dies nur möglich ist, wenn man auf dem Start-
-Zielfeld ist, soll zunächst abgefragt werden, ob der aktuelle Spieler
-auf dem Start- Zielfeld ist. Tipp: Es gibt die Funktion getTypeAt der
-Klasse Board. Weiter Informationen sind im Dokument
-„Hase_Igel_Spielbrett“ zu finden.</p>
-<h1><a class="heading" id="g" href="#g"><span>GameRuleLogic: Hilfreiche Hilfsfunktionen</span></a><button class="bookmark" title="Bookmark">🔖</button></h1>
-<p>Die Klasse GameRuleLogic hat viele Hilfsfunktionen, mit welchen man die
-Regeln des Spieles überprüfen kann. Hierbei sind alle Funktionen static.
-D.h., dass man sie ohne eine Instanz aufrufen kann.</p>
-<p>*Diese Funktionen werden im Kapitel „Erweiterte Beispiele“ besprochen.</p>
-<p>Die komplette API-Dokumentation ist in
-doc/sc/plugin2018/util/GameRuleLogic.html zu finden.</p>
-<h2><a class="heading" id="s" href="#s"><span>Simulation des Gegners</span></a><button class="bookmark" title="Bookmark">🔖</button></h2>
-<p>Natürlich kann man alle diese Funktionen auch auf den Gegenspieler
-anwenden. Dafür müssen wir allerdings eine Kopie des GameState
-erstellen:</p>
-<pre><code class="hljs language-scss">try {
-  GameState otherGame = gameState<span class="hljs-selector-class">.clone</span>(); <span class="hljs-comment">// Deep-Copy</span>
-  <span class="hljs-comment">// Rundenanzahl hochsetzten für switch Befehl:</span>
-  otherGame<span class="hljs-selector-class">.setTurn</span>(gameState.getTurn()+<span class="hljs-number">1</span>);
-  <span class="hljs-comment">// Tausche currentPlayer (hängt von der Rundenanzahl ab):</span>
-  otherGame<span class="hljs-selector-class">.switchCurrentPlayer</span>();
-  <span class="hljs-comment">// Gib Informationen über den Gegner aus:</span>
-  System<span class="hljs-selector-class">.out</span><span class="hljs-selector-class">.println</span>(&quot;CurrentPlayer von otherGame:&quot; + otherGame.getCurrentPlayer());
-} catch (CloneNotSupportedException e1) { <span class="hljs-comment">// Fehlerbehandlung</span>
-  e1<span class="hljs-selector-class">.printStackTrace</span>();
-}
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-<p>Alle Funktionen von GameRuleLogic können wir nun, mithilfe der Variable
-otherGame, auf den Gegner anwenden.</p>
-<h2><a class="heading" id="e" href="#e"><span>Einführende Beispiele</span></a><button class="bookmark" title="Bookmark">🔖</button></h2>
-<p>Die meisten Funktionen dieser Klasse sind selbsterklärend. Dennoch
-werden einige der häufig verwendeten Funktionen mit kleinen Beispielen
-vorgestellt.</p>
-<pre><code class="hljs language-less"><span class="hljs-selector-tag">if</span> (GameRuleLogic.<span class="hljs-built_in">isValidToEat</span>(gameState) != GameRuleLogic.<span class="hljs-built_in">mustEatSalad</span>(gameState)) {
-  <span class="hljs-selector-tag">System</span><span class="hljs-selector-class">.out</span><span class="hljs-selector-class">.println</span>(<span class="hljs-string">&quot;Unmöglich&quot;</span>);
-}
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-<p>Nach den Regeln muss man immer ein Salat essen, wenn man im vorherigen
-Zug ein Salatfeld betreten hat. Außerdem ist dies die einzige
-Möglichkeit die Aktion EatSalad auszuführen (nicht mit dem Spielen der
-EAT_SALAD Karte verwechseln).</p>
-<p>Dadurch wird auch die Unerfüllbarkeit des folgenden Ausdrucks
-impliziert:</p>
-<pre><code class="hljs language-less"><span class="hljs-selector-tag">if</span> (GameRuleLogic.<span class="hljs-built_in">isValidToEat</span>(gameState) &amp;&amp;
-    (GameRuleLogic.<span class="hljs-built_in">isValidToFallBack</span>(gameState) || GameRuleLogic.<span class="hljs-built_in">canMove</span>(gameState))) {
-  <span class="hljs-selector-tag">System</span><span class="hljs-selector-class">.out</span><span class="hljs-selector-class">.println</span>(<span class="hljs-string">&quot;Unmöglich&quot;</span>);
-}
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-<p>Eine weiter hilfreiche Funktion ist <em>isValidToAdvance</em>. Mit dieser
-Funktion wird überprüft, ob ein Vorwärtszug mit der übergeben Distanz
-überhaupt möglich ist:</p>
-<pre><code class="hljs language-csharp"><span class="hljs-comment">// berechne die maximale Entfernung, welche man laufen darf</span>
-<span class="hljs-built_in">int</span> max_move = GameRuleLogic.calculateMoveableFields(currentPlayer.getCarrots());
-
-<span class="hljs-keyword">if</span> (GameRuleLogic.isValidToAdvance(gameState, max_move +<span class="hljs-number">1</span>)) {
-  System.<span class="hljs-keyword">out</span>.println(<span class="hljs-string">&quot;Unmöglich&quot;</span>);
-}
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-<p>Die Funktion <em>calculateMoveableFields</em> gibt hierbei die maximale
-Entfernung zurück, welche man mit den übergebenen Karotten laufen darf.
-Diese maximale Entfernung wird immer um 1 erhöht, was dazu führt, dass
-der Zug immer unmöglich ist.</p>
-<h2><a class="heading" id="e" href="#e"><span>Erweitertes Beispiel</span></a><button class="bookmark" title="Bookmark">🔖</button></h2>
-<p>Alle Funktionen die mit einem * markiert wurden (s.o) haben eine
-Gemeinsamkeit. Sie beziehen sich auf das Spielen von Karten. Das Spielen
-von Karten ist allerdings nur erlaubt, wenn man das entsprechende
-Hasenfeld in der selben Zug betreten hat. Deshalb müssen wir GameState
-bearbeiten, damit diese Funktionen überhaupt Sinn haben. Das folgende
-Beispiel gibt eine Möglichkeit an, wie man diese Funktionen einsetzten
-kann:</p>
-<pre><code class="hljs language-scss">int nextHareFieldIndex = gameState<span class="hljs-selector-class">.getNextFieldByType</span>(FieldType.HARE,
+if (GameRuleLogic.isValidToAdvance(gameState, max_move +1)) {
+  System.out.println(&#x22;Unmöglich&#x22;);
+}" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Die Funktion <em>calculateMoveableFields</em> gibt hierbei die maximale
+    Entfernung zurück, welche man mit den übergebenen Karotten laufen darf.
+    Diese maximale Entfernung wird immer um 1 erhöht, was dazu führt, dass
+    der Zug immer unmöglich ist.
+  </p>
+  <h2 id="erweitertes-beispiel"><a href="#erweitertes-beispiel" class="heading"><span>Erweitertes Beispiel</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#erweitertes-beispiel&#x22;, &#x22;Erweitertes Beispiel&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#erweitertes-beispiel">🔖</button></h2>
+  <p>
+    Alle Funktionen die mit einem * markiert wurden (s.o) haben eine
+    Gemeinsamkeit. Sie beziehen sich auf das Spielen von Karten. Das Spielen
+    von Karten ist allerdings nur erlaubt, wenn man das entsprechende
+    Hasenfeld in der selben Zug betreten hat. Deshalb müssen wir GameState
+    bearbeiten, damit diese Funktionen überhaupt Sinn haben. Das folgende
+    Beispiel gibt eine Möglichkeit an, wie man diese Funktionen einsetzten
+    kann:
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>int nextHareFieldIndex = gameState.getNextFieldByType(FieldType.HARE,</span></span>
+<span data-line=""><span>                                                      currentPlayer.getFieldIndex())</span></span>
+<span data-line=""><span>// wenn es ein nächstes Hasenfeld gibt</span></span>
+<span data-line=""><span>if (nextHareFieldIndex > 0) {</span></span>
+<span data-line=""><span>  try {</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>    GameState gameHare = gameState.clone(); // erstelle Deep-Copy</span></span>
+<span data-line=""><span>    Player harePlayer = gameHare.getCurrentPlayer(); // erstelle Shallow-Copy</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>    //setzte den aktuellen Spieler auf ein Hasenfeld</span></span>
+<span data-line=""><span>    harePlayer.setFieldIndex(nextHareFieldIndex);</span></span>
+<span data-line=""><span>    System.out.println(gameHare.getCurrentPlayer().getCards()); // gib alle Karten aus</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>    // Welche Karten kann man spielen?</span></span>
+<span data-line=""><span>    System.out.println("Play EatSalad: " +</span></span>
+<span data-line=""><span>                       GameRuleLogic.isValidToPlayEatSalad(gameHare));</span></span>
+<span data-line=""><span>    System.out.println("Play TakeOrDropCarrots: " +</span></span>
+<span data-line=""><span>                       GameRuleLogic.isValidToPlayTakeOrDropCarrots(gameHare,20));</span></span>
+<span data-line=""><span>    System.out.println("Play HurryAhead: " +</span></span>
+<span data-line=""><span>                       GameRuleLogic.isValidToPlayHurryAhead(gameHare));</span></span>
+<span data-line=""><span>    System.out.println("Play FallBack: " +</span></span>
+<span data-line=""><span>                       GameRuleLogic.isValidToPlayFallBack(gameHare));</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>  } catch (CloneNotSupportedException e1) {</span></span>
+<span data-line=""><span>    e1.printStackTrace();</span></span>
+<span data-line=""><span>  }</span></span>
+<span data-line=""><span>}</span></span><button type="button" title="Copy code" aria-label="Copy code" data="int nextHareFieldIndex = gameState.getNextFieldByType(FieldType.HARE,
                                                       currentPlayer.getFieldIndex())
-<span class="hljs-comment">// wenn es ein nächstes Hasenfeld gibt</span>
-if (nextHareFieldIndex &gt; <span class="hljs-number">0</span>) {
+// wenn es ein nächstes Hasenfeld gibt
+if (nextHareFieldIndex > 0) {
   try {
 
-    GameState gameHare = gameState<span class="hljs-selector-class">.clone</span>(); <span class="hljs-comment">// erstelle Deep-Copy</span>
-    Player harePlayer = gameHare<span class="hljs-selector-class">.getCurrentPlayer</span>(); <span class="hljs-comment">// erstelle Shallow-Copy</span>
+    GameState gameHare = gameState.clone(); // erstelle Deep-Copy
+    Player harePlayer = gameHare.getCurrentPlayer(); // erstelle Shallow-Copy
 
-    <span class="hljs-comment">//setzte den aktuellen Spieler auf ein Hasenfeld</span>
-    harePlayer<span class="hljs-selector-class">.setFieldIndex</span>(nextHareFieldIndex);
-    System<span class="hljs-selector-class">.out</span><span class="hljs-selector-class">.println</span>(gameHare.getCurrentPlayer()<span class="hljs-selector-class">.getCards</span>()); <span class="hljs-comment">// gib alle Karten aus</span>
+    //setzte den aktuellen Spieler auf ein Hasenfeld
+    harePlayer.setFieldIndex(nextHareFieldIndex);
+    System.out.println(gameHare.getCurrentPlayer().getCards()); // gib alle Karten aus
 
-    <span class="hljs-comment">// Welche Karten kann man spielen?</span>
-    System<span class="hljs-selector-class">.out</span><span class="hljs-selector-class">.println</span>(&quot;Play EatSalad: &quot; +
+    // Welche Karten kann man spielen?
+    System.out.println(&#x22;Play EatSalad: &#x22; +
                        GameRuleLogic.isValidToPlayEatSalad(gameHare));
-    System<span class="hljs-selector-class">.out</span><span class="hljs-selector-class">.println</span>(&quot;Play TakeOrDropCarrots: &quot; +
-                       GameRuleLogic.isValidToPlayTakeOrDropCarrots(gameHare,<span class="hljs-number">20</span>));
-    System<span class="hljs-selector-class">.out</span><span class="hljs-selector-class">.println</span>(&quot;Play HurryAhead: &quot; +
+    System.out.println(&#x22;Play TakeOrDropCarrots: &#x22; +
+                       GameRuleLogic.isValidToPlayTakeOrDropCarrots(gameHare,20));
+    System.out.println(&#x22;Play HurryAhead: &#x22; +
                        GameRuleLogic.isValidToPlayHurryAhead(gameHare));
-    System<span class="hljs-selector-class">.out</span><span class="hljs-selector-class">.println</span>(&quot;Play FallBack: &quot; +
+    System.out.println(&#x22;Play FallBack: &#x22; +
                        GameRuleLogic.isValidToPlayFallBack(gameHare));
 
   } catch (CloneNotSupportedException e1) {
-    e1<span class="hljs-selector-class">.printStackTrace</span>();
+    e1.printStackTrace();
   }
-}
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-<p>Hierfür müssen wir den Spieler einfach nur auf das Hasenfeld setzten.
-Allerdings wird nicht überprüft, ob der Spieler überhaupt bis zum
-nächsten Hasenfeld laufen kann.</p>
-<h2><a class="heading" id="a" href="#a"><span>Aufgaben</span></a><button class="bookmark" title="Bookmark">🔖</button></h2>
-<ol>
-<li>Ist das Ausführen der inneren If-Bedingung wirklich unmöglich.
-Erkläre warum oder gib ein Gegenbeispiel an:</li>
-</ol>
-<pre><code class="hljs language-scss">int dif = gameState<span class="hljs-selector-class">.getOtherPlayer</span>()<span class="hljs-selector-class">.getFieldIndex</span>() - currentPlayer<span class="hljs-selector-class">.getFieldIndex</span>();
+}" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Hierfür müssen wir den Spieler einfach nur auf das Hasenfeld setzten.
+    Allerdings wird nicht überprüft, ob der Spieler überhaupt bis zum
+    nächsten Hasenfeld laufen kann.
+  </p>
+  <h2 id="aufgaben"><a href="#aufgaben" class="heading"><span>Aufgaben</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/tutorial/tutorial#aufgaben&#x22;, &#x22;Aufgaben&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/tutorial/tutorial#aufgaben">🔖</button></h2>
+  <ol>
+    <li>
+      Ist das Ausführen der inneren If-Bedingung wirklich unmöglich.
+      Erkläre warum oder gib ein Gegenbeispiel an:
+    </li>
+  </ol>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>int dif = gameState.getOtherPlayer().getFieldIndex() - currentPlayer.getFieldIndex();</span></span>
+<span data-line=""> </span>
+<span data-line=""><span>if (dif >= 0 &#x26;&#x26;</span></span>
+<span data-line=""><span>    dif &#x3C;= GameRuleLogic.calculateMoveableFields(currentPlayer.getCarrots())) {</span></span>
+<span data-line=""><span>  if (GameRuleLogic.isValidToAdvance(gameState, dif)) {</span></span>
+<span data-line=""><span>    System.out.println("Unmöglich");</span></span>
+<span data-line=""><span>  }</span></span>
+<span data-line=""><span>}</span></span><button type="button" title="Copy code" aria-label="Copy code" data="int dif = gameState.getOtherPlayer().getFieldIndex() - currentPlayer.getFieldIndex();
 
-if (dif &gt;= <span class="hljs-number">0</span> &amp;&amp;
-    dif &lt;= GameRuleLogic.calculateMoveableFields(currentPlayer.getCarrots())) {
+if (dif >= 0 &#x26;&#x26;
+    dif <= GameRuleLogic.calculateMoveableFields(currentPlayer.getCarrots())) {
   if (GameRuleLogic.isValidToAdvance(gameState, dif)) {
-    System<span class="hljs-selector-class">.out</span><span class="hljs-selector-class">.println</span>(&quot;Unmöglich&quot;);
+    System.out.println(&#x22;Unmöglich&#x22;);
   }
-}
-</code><button class="copy" aria-label="Copy Code"><svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor" fill="currentColor" stroke-width="0" height="1em" width="1em" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg></button></pre>
-<ol>
-<li>Erweiterte das Beispiel aus dem Kapitel „Erweitertes Beispiel“ so,
-dass sicher gestellt wird, dass der aktuelle Spieler auf ein
-Hasenfeld gesetzt wird, welches er wirklich erreichen kann.</li>
-</ol>
-<p>[1] Technisch gesehen hat die Klasse eine private Liste von Feldern.
-Allerdings ähnelt ein Aufruf der Funktion getTypeAt sehr den Aufruf
-eines Arrays. Auch wenn der Rückgabewert kein Feld sonder ein FieldType
-ist.</p></div></article><div class="jump-container"><a class="jump previous" href="/spiele/hase-und-igel/tutorial/start">start</a><a class="jump next" href="/spiele/hase-und-igel/xml-dokumentation/einleitung-xml">einleitung-xml</a></div><div class="meta"><a class="edit-github" href="https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/tutorial/tutorial.md">✎ GitHub</a><span class="copyright"><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0">Licensed under <!-- -->CC BY-NC-SA</a> by <a href="https://software-challenge.de">Software-Challenge Germany</a>.</span></div></main></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"locale":"de","markdown":"[PDF-Version dieses Dokumentes](tutorial.pdf)\n\n# Start zum Schreiben einer KI\n\nAm einfachsten ist es die KI auf Grundlage des Zufallsspielers zu\nschreiben:\n\n-   Als erstes muss der Zufallsspieler heruntergeladen werden\n    (\u003chttp://www.software-challenge.de/downloads/\u003e bitte den\n    Zufallsspieler als „Quellcode“ downloaden)\n\n-   Dieser muss nun in Eclips eingebunden werden:\n    \u003chttps://docs.software-challenge.de/#einrichtung-von-eclipse\u003e\n\n## Wo schreibe ich die KI?\n\nIst dies getan befindet sich im entsprechenden Projekt das Package\n„sc.player2018.logic“ mit einer Datei namens **„RandomLogic.java“**.\nDiese Datei müssen wir nun editieren.\n\nIn der Datei gibt es eine Funktion mit der Bezeichnung *public void\nonRequestAction()*. Diese ist wie Folgt aufgebaut:\n\n    public void onRequestAction(){\n      // optional: Laufzeitmessung\n      long startTime = System.nanoTime();\n\n\n      // Quellcode der KI, welche eine Zug (move) erstellt\n\n\n      long nowTime = System.nanoTime();\n\n      // sende Move. Danach gibt es kein zurück mehr:\n      sendAction(move);\n\n      // optional: LOG-Eintrag mit Zeit:\n      log.warn(\"Time needed for turn: {}\", (nowTime - startTime) / 1000000);\n    }\n\nEs ist sehr wichtig, dass alle Funktionen, welche die KI verwendet,\nihren ursprünglichen Aufruf in der Funktion onRequestAction haben.\nDadurch wird sichergestellt, dass alle Membervariablen aktuell sind.\n\n## Wichtige Membervariablen\n\nIn der Klasse befinden sich auch drei sehr wichtige Membervariablen:\n\n    private Starter client; // Intern für den Server wichtig. Bitte nicht modifizieren\n\n    private GameState gameState; // Gibt u.a Infos über mögliche Züge und das Spielbrett\n\n    private Player currentPlayer; // Infos über den aktuellen Spieler, welchen man steuert\n\nIn den Folgenden Dokumenten werden Grundlagen zum erstellen einer KI\ngezeigt. Hierbei werden wir oft die Variablen **gameState** und\n**currentPlayer** verwenden.\n\nDie **API-Dokumentation** befindet sich im Ordner „doc“ im Verzeichnis\ndes Zufallsspielers.\n\n## Aufgaben\n\n1.  Arbeite alle anderen Dokumente durch.\n\n2.  Analysiere die Herangehensweise der Zufallsspieler-KI.\n\n3.  Schreibe eine KI.\n\n# Spielbrett Informationen\n\n## Die Klasse „FieldType“\n\nBevor wir mit der Klasse Board also dem Spielbrett arbeiten können,\nmüssen wir das Enum „FieldType“ kennenlernen. Dieses Enum definiert die\neinzelnen Felder des Bretts. Es gibt:\n\n\u003ctable\u003e\n\u003ccolgroup\u003e\n\u003ccol style=\"width: 50%\" /\u003e\n\u003ccol style=\"width: 50%\" /\u003e\n\u003c/colgroup\u003e\n\u003ctbody\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eCARROT\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eKarottenfeld\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"even\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eGOAL\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eZielfeld\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eHARE\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eHasenfeld\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"even\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eHEDGEHOG\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eIgelfeld\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eSALAD\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eSalatfeld\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"even\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eSTART\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eStart\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003ePOSITION_1\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003ePositionsfelder\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"even\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003ePOSITION_2\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eINVALID\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eUngültig\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\nDie Dokumentation für FieldType ist in /doc/sc/plugin2018/FieldType.html\nzu finden.\n\n## Funktionen der Klasse „Board“\n\nDas Spielbrett kann man sich wie einer Art modifizieren „Array“ [1]\nvorstellen. Mithilfe der FieldTypes können wir die Funktionen des Boards\nverwenden. Zunächst stellt sich allerdings die Frage, wie wir überhaupt\ndas Spielbrett bekommen können. Das Spielbrett bekommen wir durch den\nGameState. Mit Hilfe der Methode *gameState.getBoard()*.\n\nUnsere Eigene Position können wir mithilfe von **currentPlayer** oder\n**gameState** herausfinden:\n\n    // Es wird immer ein Integer zwischen 0 bis 64 zurückgegeben:\n    currentPlayer.getFieldIndex();\n    // dasselbe wie oben:\n    gameState.getCurrentPlayer().getFieldIndex();\n\n    if (currentPlayer.getFieldIndex() == gameState.getCurrentPlayer().getFieldIndex()) {\n      //wird immer ausgeführt\n    }\n\n### public final int getNextFieldByType(FieldType type,int pos)\n\nDieser Funktion übergeben wir eine Position und ein FieldType. Es gibt\ndie Position des nächsten FieldType an, welches **nach** der angegeben\nPosition liegt. Hat das Feld mit der angegeben Position, den gleichen\nFieldType, so wird dennoch die Position des nächsten Felds angegeben\n(siehe zweites Beispiel). Gibt es diesen FieldType nicht mehr wird -1\nzurückgegeben.\n\n    gameState.getBoard().getNextFieldByType(FieldType.GOAL,\n                                            currentPlayer.getFieldIndex());\n\nDies würde in einem normalen Spiel immer 64 zurückgeben, außer man\nbefindet sich auf dem Ziel. Im diesem Fall wäre das Ergebnis -1.\n\n    // Damit man nicht immer gameState.getBoard() schreiben muss:\n    Board b = gameState.getBoard();\n    final int index = currentPlayer.getFieldIndex(); // Index des Spielers\n\n    if (index == b.getNextFieldByType(b.getTypeAt(index), index)) {\n      System.out.println(\"Geht nicht\");\n    }\n\nDies liegt daran, dass der verwendete Index nie der Rückgabewert von\n**getNextFieldByType** sein kann.\n\n    int next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG,\n                                             currentPlayer.getFieldIndex());\n    int next_next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG, next_hedgehog);\n\nDies würde die Postion des nächste und vom übernächste Igelfeld\nbestimmen. Achtung es wird hierbei nicht überprüft, ob es so ein Feld\nüberhaupt gibt. Dies kann zu Fehlern führen. Steht man z.B auf dem\nletzten Igelfeld, so hat **next\\_next\\_hedgehog** den Wert 11, anstelle\nvon -1 (Siehe Übung 2).\n\n### public final int getPreviousFieldByType(FieldType type,int pos)\n\nAnalog zu getNextFieldByType. Allerdings bezieht sich die Funktion auf\ndas vorherige Feld mit dem entsprechenden FieldType.\n\n### public final FieldType getTypeAt(int pos)\n\nMit dieser Funktionen kann man den FieldType eines bestimmten Feldes\nermitteln.\n\n    FieldType my_field = gameState.getBoard().getTypeAt(currentPlayer.getFieldIndex());\n    FieldType field_42 = gameState.getBoard().getTypeAt(42);\n\nSpeichert den aktuelle FieldType auf welchen man steht und den FieldType\ndes Feldes 42.\n\n    if (gameState.getBoard().getTypeAt(-1) == FieldType.INVALID) {\n      // Wird immer ausgeführt, da es das Feld an der Position -1 nicht gibt\n    }\n\nDieses Beispiel zeigt auf, dass es durch getTypeAt nie zu einer\nIndexOutOfBoundsException kommen kann. Es gibt nur Felder im Intervall\nvon 0 – 64. Sollte man nach einem Feld außerhalb diese Intervalls\nfragen, so wird immer INVALID zurückgegeben.\n\nDie komplette API-Dokumentation ist in /doc/sc/plugin2018/Board.html zu\nfinden.\n\n## Aufgaben\n\n1.  Gib die Entfernung des Gegners zum Startfeld aus. Verwende dabei\n    keine Variablen oder Literale. Die Ausnahme ist der Rückgabewert.\n    Dieser darf eine Literale sein (z.B. return 127;). Tipp: Suche in\n    der API von GameState nach einer Funktion, welchen den anderen\n    Spieler zurückgibt oder lese das Dokument „Hase\\_Igel\\_Player“.\n\n2.  Erkläre warum **next\\_next\\_hedgehog** den Wert 11 hätte, wenn wir\n    auf den letzten Igelfeld stehen würden.\n\n        int next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG,\n                                                 currentPlayer.getFieldIndex());\n        int next_next_hedgehog = b.getNextFieldByType(FieldType.HEDGEHOG, next_hedgehog);\n\n3.  Schreibe eine Funktion, welche das übernächste Igelfeld ausgibt.\n    Gibt es solch ein Feld nicht, so soll immer -1 zurückgegeben werden.\n\n# Die Klasse Player\n\nDie Klasse Player repräsentiert einen Spieler. Der eigene Spieler kann\nin der RandomLogic durch die Variable **currentPlayer** oder mithilfe\nder GameState Funktion *getCurrentPlayer()* abgefragt werden. Der\ngegnerische Spieler kann ebenfalls mithilfe einer Methode von GameState\nbestimmt werden (*gameState.getOtherPlayer()*).\n\nDie Klasse Player besitzt viele Funktionen, welche einen Informationen\nüber den Spieler geben:\n\n\u003ctable\u003e\n\u003ccolgroup\u003e\n\u003ccol style=\"width: 50%\" /\u003e\n\u003ccol style=\"width: 50%\" /\u003e\n\u003c/colgroup\u003e\n\u003ctbody\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003ejava.util.List\u0026lt;CardType\u0026gt;\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003egetCards()\u003c/em\u003e\u003cbr /\u003e\nGibt die für diesen Spieler verfügbaren Hasenkarten zurück.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"even\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003ejava.util.List\u0026lt;CardType\u0026gt;\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003egetCardsWithout(CardType\ntype)\u003c/em\u003e\u003cbr /\u003e\nGibt Karten ohne bestimmten Typ zurück.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eint\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003egetCarrots()\u003c/em\u003e\u003cbr /\u003e\nDie Anzahl an Karotten die der Spieler zur Zeit auf der Hand\nhat.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"even\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eint\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003egetFieldIndex()\u003c/em\u003e\u003cbr /\u003e\nDie aktuelle Position der Figur auf dem Spielfeld.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eAction\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003egetLastNonSkipAction\u003c/em\u003e\u003cbr /\u003e\nGibt letzte Aktion des Spielers zurück.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"even\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003esc.shared.PlayerColor\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003egetPlayerColor()\u003c/em\u003e\u003cbr /\u003e\nDie Farbe dieses Spielers auf dem Spielbrett\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eint\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003egetSalads()\u003c/em\u003e\u003cbr /\u003e\nDie Anzahl der Salate, die dieser Spieler noch verspeisen muss.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"even\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eboolean\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003einGoal()\u003c/em\u003e\u003cbr /\u003e\nÜberprüft, ob Spieler im Ziel.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003eboolean\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003eownsCardOfType(CardType\ntype)\u003c/em\u003e\u003cbr /\u003e\nÜberprüft ob Spieler bestimmte Karte noch besitzt\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\nDie Vollständige API ist in /doc/sc/plugin2018/Player.html zu finden.\n\nDie Meisten dieser Funktionen sind selbsterklärend. Dennoch sind hier\neinige Beispiele angegeben:\n\n    System.out.print(\"Du hast noch folgende Karten: \");\n    for (CardType c : currentPlayer.getCards()) {\n        System.out.print(c + \" \");\n    }\n    System.out.println();\n\nDies würde alle Karten ausgeben, welche man noch hat.\n\n    if (currentPlayer.inGoal() \u0026\u0026 !currentPlayer.getCards().isEmpty()) {\n        System.out.println(\"Was fuer eine Verschwendung.\");\n    }\n\nDie If-Bedingung würde dann ausgeführt werden, wenn man im Ziel ist,\nallerdings noch Karten hat.\n\nEine weitere wichtige Funktion ist *getFieldIndex*. Diese Funktion wird\nhäufig im Dokument „Hase\\_Igel\\_Spielbrett“ verwendet.\n\nNeben diesen Funktionen existieren noch einige „Setter“. Diese sind\nallerdings hauptsächlich für den Server notwendig und haben einen\ngeringen praktischen Nutzten für uns.\n\n## Aufgabe\n\nSchreibe eine If-Bedingung, welche abfragt, ob beide Spieler auf dem\nselben Feld sind. Da dies nur möglich ist, wenn man auf dem Start-\nZielfeld ist, soll zunächst abgefragt werden, ob der aktuelle Spieler\nauf dem Start- Zielfeld ist. Tipp: Es gibt die Funktion getTypeAt der\nKlasse Board. Weiter Informationen sind im Dokument\n„Hase\\_Igel\\_Spielbrett“ zu finden.\n\n# GameRuleLogic: Hilfreiche Hilfsfunktionen\n\nDie Klasse GameRuleLogic hat viele Hilfsfunktionen, mit welchen man die\nRegeln des Spieles überprüfen kann. Hierbei sind alle Funktionen static.\nD.h., dass man sie ohne eine Instanz aufrufen kann.\n\n\u003ctable\u003e\n\u003ccolgroup\u003e\n\u003ccol style=\"width: 50%\" /\u003e\n\u003ccol style=\"width: 50%\" /\u003e\n\u003c/colgroup\u003e\n\u003ctbody\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003estatic int\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003ecalculateCarrots(int\nmoveCount)\u003c/em\u003e\u003cbr /\u003e\nBerechnet wie viele Karotten für einen Zug der Länge moveCount benötigt\nwerden.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"even\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003estatic int\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003ecalculateMoveableFields(int\ncarrots)\u003c/em\u003e\u003cbr /\u003e\nBerechnet, wie weit man mit carrots Karotten gehen kann. Beispiel: Mit\n68 Karotten kann man 11 Felder weit gehen.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003estatic boolean\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003ecanPlayCard(GameState\nstate)*\u003c/em\u003e\u003cbr /\u003e\nGibt zurück, ob der derzeitige Spieler eine Karte spielen kann.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"even\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003estatic boolean\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003eisValidToAdvance(GameState state,\nint distance)\u003c/em\u003e\u003cbr /\u003e\nÜberprüft \u003cem\u003eAdvance\u003c/em\u003e Aktionen auf ihre Korrektheit.\n\u003cem\u003eDistance\u003c/em\u003e steht für die Distanz die man zurücklegen\nwill.Three\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003estatic boolean\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003eisValidToEat(GameState\nstate)\u003c/em\u003e\u003cbr /\u003e\nÜberprüft \u003cem\u003eEatSalad\u003c/em\u003e Züge auf Korrektheit. Diese Funktion bezieht\nsich \u003cstrong\u003enicht\u003c/strong\u003e auf die Karte\n\u003cem\u003eTAKE_OR_DROP_CARROTS\u003c/em\u003e\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"even\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003estatic boolean\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003eisValidToExchangeCarrots(GameState\nstate, int n)\u003c/em\u003e\u003cbr /\u003e\nÜberprüft ob der derzeitige Spieler 10 Karotten nehmen oder abgeben\nkann. „n“ kann entweder 10 oder -10 sein. Je nachdem ob man annehmen\noder abgeben will. Diese Funktion bezieht sich \u003cstrong\u003enicht\u003c/strong\u003e\nauf die Karte \u003cem\u003eEAT_SALAD\u003c/em\u003e.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003estatic boolean\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003eisValidToFallBack(GameState\nstate)\u003c/em\u003e\u003cbr /\u003e\nÜberprüft \u003cem\u003eFallBack\u003c/em\u003e Züge auf Korrektheit\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"even\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003estatic boolean\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003eisValidToPlayCard(GameState state,\nCardType c,int n)*\u003c/em\u003e\u003cbr /\u003e\nÜberprüft ob der derzeitige Spieler die Karte spielen kann. „n“ wird für\ndie \u003cem\u003eTAKE_OR_DROP_CARROTS\u003c/em\u003e Karte benötigt (s.u). „n“ kann die\nWert 0, 20 oder -20 annehmen.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003estatic boolean\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003eisValidToPlayEatSalad(GameState\nstate)*\u003c/em\u003e\u003cbr /\u003e\nÜberprüft ob der derzeitige Spieler die \u003cem\u003eEAT_SALAD\u003c/em\u003e Karte spielen\ndarf.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"even\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003estatic boolean\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003eisValidToPlayFallBack(GameState\nstate)*\u003c/em\u003e\u003cbr /\u003e\nÜberprüft ob der derzeitige Spieler die \u003cem\u003eFALL_BACK\u003c/em\u003e Karte spielen\ndarf.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003estatic boolean\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003eisValidToPlayHurryAhead(GameState\nstate) *\u003c/em\u003e\u003cbr /\u003e\nÜberprüft ob der derzeitige Spieler die \u003cem\u003eHURRY_AHEAD\u003c/em\u003e Karte\nspielen darf.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"even\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003estatic boolean\u003c/p\u003e\u003c/td\u003e\n\u003ctd\nstyle=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003eisValidToPlayTakeOrDropCarrots(GameState\nstate,int n)*\u003c/em\u003e\u003cbr /\u003e\nÜberprüft ob der derzeitige Spieler die \u003cem\u003eTAKE_OR_DROP_CARROTS\u003c/em\u003e\nKarte spielen darf. „n“ kann entweder 0, 20 oder -20 sein.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003estatic boolean\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003eisValidToSkip(GameState\nstate)\u003c/em\u003e\u003cbr /\u003e\nÜberprüft, ob der derzeitige Spieler aussetzen darf.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"even\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003estatic boolean\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003emustEatSalad(GameState\nstate)\u003c/em\u003e\u003cbr /\u003e\nÜberprüft ob man einen Salat fressen muss. Dies ist immer der Fall, wenn\nman in der vorherigen Runde ein Salatfeld betreten hat.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"odd\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003estatic boolean\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003emustPlayCard(GameState state)\n*\u003c/em\u003e\u003cbr /\u003e\nÜberprüft ob eine Karte gespielt werden muss.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr class=\"even\"\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003estatic boolean\u003c/p\u003e\u003c/td\u003e\n\u003ctd style=\"text-align: left;\"\u003e\u003cp\u003e\u003cem\u003eplayerMustAdvance(GameState\nstate)\u003c/em\u003e\u003cbr /\u003e\nÜberprüft ab der derzeitige Spieler im nächsten Zug einen Vorwärtszug\nmachen muss.\u003c/p\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\n\\*Diese Funktionen werden im Kapitel „Erweiterte Beispiele“ besprochen.\n\nDie komplette API-Dokumentation ist in\ndoc/sc/plugin2018/util/GameRuleLogic.html zu finden.\n\n## Simulation des Gegners\n\nNatürlich kann man alle diese Funktionen auch auf den Gegenspieler\nanwenden. Dafür müssen wir allerdings eine Kopie des GameState\nerstellen:\n\n    try {\n      GameState otherGame = gameState.clone(); // Deep-Copy\n      // Rundenanzahl hochsetzten für switch Befehl:\n      otherGame.setTurn(gameState.getTurn()+1);\n      // Tausche currentPlayer (hängt von der Rundenanzahl ab):\n      otherGame.switchCurrentPlayer();\n      // Gib Informationen über den Gegner aus:\n      System.out.println(\"CurrentPlayer von otherGame:\" + otherGame.getCurrentPlayer());\n    } catch (CloneNotSupportedException e1) { // Fehlerbehandlung\n      e1.printStackTrace();\n    }\n\nAlle Funktionen von GameRuleLogic können wir nun, mithilfe der Variable\notherGame, auf den Gegner anwenden.\n\n## Einführende Beispiele\n\nDie meisten Funktionen dieser Klasse sind selbsterklärend. Dennoch\nwerden einige der häufig verwendeten Funktionen mit kleinen Beispielen\nvorgestellt.\n\n    if (GameRuleLogic.isValidToEat(gameState) != GameRuleLogic.mustEatSalad(gameState)) {\n      System.out.println(\"Unmöglich\");\n    }\n\nNach den Regeln muss man immer ein Salat essen, wenn man im vorherigen\nZug ein Salatfeld betreten hat. Außerdem ist dies die einzige\nMöglichkeit die Aktion EatSalad auszuführen (nicht mit dem Spielen der\nEAT\\_SALAD Karte verwechseln).\n\nDadurch wird auch die Unerfüllbarkeit des folgenden Ausdrucks\nimpliziert:\n\n    if (GameRuleLogic.isValidToEat(gameState) \u0026\u0026\n        (GameRuleLogic.isValidToFallBack(gameState) || GameRuleLogic.canMove(gameState))) {\n      System.out.println(\"Unmöglich\");\n    }\n\nEine weiter hilfreiche Funktion ist *isValidToAdvance*. Mit dieser\nFunktion wird überprüft, ob ein Vorwärtszug mit der übergeben Distanz\nüberhaupt möglich ist:\n\n    // berechne die maximale Entfernung, welche man laufen darf\n    int max_move = GameRuleLogic.calculateMoveableFields(currentPlayer.getCarrots());\n\n    if (GameRuleLogic.isValidToAdvance(gameState, max_move +1)) {\n      System.out.println(\"Unmöglich\");\n    }\n\nDie Funktion *calculateMoveableFields* gibt hierbei die maximale\nEntfernung zurück, welche man mit den übergebenen Karotten laufen darf.\nDiese maximale Entfernung wird immer um 1 erhöht, was dazu führt, dass\nder Zug immer unmöglich ist.\n\n## Erweitertes Beispiel\n\nAlle Funktionen die mit einem \\* markiert wurden (s.o) haben eine\nGemeinsamkeit. Sie beziehen sich auf das Spielen von Karten. Das Spielen\nvon Karten ist allerdings nur erlaubt, wenn man das entsprechende\nHasenfeld in der selben Zug betreten hat. Deshalb müssen wir GameState\nbearbeiten, damit diese Funktionen überhaupt Sinn haben. Das folgende\nBeispiel gibt eine Möglichkeit an, wie man diese Funktionen einsetzten\nkann:\n\n    int nextHareFieldIndex = gameState.getNextFieldByType(FieldType.HARE,\n                                                          currentPlayer.getFieldIndex())\n    // wenn es ein nächstes Hasenfeld gibt\n    if (nextHareFieldIndex \u003e 0) {\n      try {\n\n        GameState gameHare = gameState.clone(); // erstelle Deep-Copy\n        Player harePlayer = gameHare.getCurrentPlayer(); // erstelle Shallow-Copy\n\n        //setzte den aktuellen Spieler auf ein Hasenfeld\n        harePlayer.setFieldIndex(nextHareFieldIndex);\n        System.out.println(gameHare.getCurrentPlayer().getCards()); // gib alle Karten aus\n\n        // Welche Karten kann man spielen?\n        System.out.println(\"Play EatSalad: \" +\n                           GameRuleLogic.isValidToPlayEatSalad(gameHare));\n        System.out.println(\"Play TakeOrDropCarrots: \" +\n                           GameRuleLogic.isValidToPlayTakeOrDropCarrots(gameHare,20));\n        System.out.println(\"Play HurryAhead: \" +\n                           GameRuleLogic.isValidToPlayHurryAhead(gameHare));\n        System.out.println(\"Play FallBack: \" +\n                           GameRuleLogic.isValidToPlayFallBack(gameHare));\n\n      } catch (CloneNotSupportedException e1) {\n        e1.printStackTrace();\n      }\n    }\n\nHierfür müssen wir den Spieler einfach nur auf das Hasenfeld setzten.\nAllerdings wird nicht überprüft, ob der Spieler überhaupt bis zum\nnächsten Hasenfeld laufen kann.\n\n## Aufgaben\n\n1.  Ist das Ausführen der inneren If-Bedingung wirklich unmöglich.\n    Erkläre warum oder gib ein Gegenbeispiel an:\n\n\u003c!-- --\u003e\n\n    int dif = gameState.getOtherPlayer().getFieldIndex() - currentPlayer.getFieldIndex();\n\n    if (dif \u003e= 0 \u0026\u0026\n        dif \u003c= GameRuleLogic.calculateMoveableFields(currentPlayer.getCarrots())) {\n      if (GameRuleLogic.isValidToAdvance(gameState, dif)) {\n        System.out.println(\"Unmöglich\");\n      }\n    }\n\n1.  Erweiterte das Beispiel aus dem Kapitel „Erweitertes Beispiel“ so,\n    dass sicher gestellt wird, dass der aktuelle Spieler auf ein\n    Hasenfeld gesetzt wird, welches er wirklich erreichen kann.\n\n[1] Technisch gesehen hat die Klasse eine private Liste von Feldern.\nAllerdings ähnelt ein Aufruf der Funktion getTypeAt sehr den Aufruf\neines Arrays. Auch wenn der Rückgabewert kein Feld sonder ein FieldType\nist.\n","data":{},"navigation":{"next":{"name":"einleitung-xml","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/xml-dokumentation/einleitung-xml.md","href":"/spiele/hase-und-igel/xml-dokumentation/einleitung-xml"},"current":{"name":"tutorial","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/tutorial/tutorial.md","href":"/spiele/hase-und-igel/tutorial/tutorial"},"previous":{"name":"start","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/tutorial/start.md","href":"/spiele/hase-und-igel/tutorial/start"},"sections":[{"name":"Spiele","index":1,"virtual":true,"isEmpty":true,"pages":[],"sections":[{"name":"Blokus","hide":true,"isEmpty":false,"pages":[],"sections":[{"name":"Spielregeln","hide":true,"isEmpty":true,"pages":[{"name":"content","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/blokus/spielregeln/content.md","href":"/spiele/blokus/spielregeln/content"},{"name":"regeln","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/blokus/spielregeln/regeln.md","href":"/spiele/blokus/spielregeln/regeln"}],"sections":[],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/blokus/spielregeln/index.md","href":"/spiele/blokus/spielregeln"},{"name":"XML-Dokumentation","hide":true,"isEmpty":true,"pages":[{"name":"einleitung-xml","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/blokus/xml-dokumentation/einleitung-xml.md","href":"/spiele/blokus/xml-dokumentation/einleitung-xml"},{"name":"spiel-betreten","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/blokus/xml-dokumentation/spiel-betreten.md","href":"/spiele/blokus/xml-dokumentation/spiel-betreten"},{"name":"spiel-verlassen","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/blokus/xml-dokumentation/spiel-verlassen.md","href":"/spiele/blokus/xml-dokumentation/spiel-verlassen"},{"name":"spielergebnis","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/blokus/xml-dokumentation/spielergebnis.md","href":"/spiele/blokus/xml-dokumentation/spielergebnis"},{"name":"spielstatus","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/blokus/xml-dokumentation/spielstatus.md","href":"/spiele/blokus/xml-dokumentation/spielstatus"},{"name":"spielsteine","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/blokus/xml-dokumentation/spielsteine.md","href":"/spiele/blokus/xml-dokumentation/spielsteine"},{"name":"spielverlauf","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/blokus/xml-dokumentation/spielverlauf.md","href":"/spiele/blokus/xml-dokumentation/spielverlauf"},{"name":"xml-dokumentation","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/blokus/xml-dokumentation/xml-dokumentation.md","href":"/spiele/blokus/xml-dokumentation/xml-dokumentation"},{"name":"zuege-senden","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/blokus/xml-dokumentation/zuege-senden.md","href":"/spiele/blokus/xml-dokumentation/zuege-senden"},{"name":"zug-anforderung","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/blokus/xml-dokumentation/zug-anforderung.md","href":"/spiele/blokus/xml-dokumentation/zug-anforderung"}],"sections":[],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/blokus/xml-dokumentation/index.md","href":"/spiele/blokus/xml-dokumentation"}],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/blokus/index.md","href":"/spiele/blokus"},{"name":"Hase und Igel","hide":true,"isEmpty":false,"pages":[],"sections":[{"name":"Spielregeln","hide":true,"isEmpty":true,"pages":[{"name":"beispiel","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/spielregeln/beispiel.md","href":"/spiele/hase-und-igel/spielregeln/beispiel"},{"name":"felder","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/spielregeln/felder.md","href":"/spiele/hase-und-igel/spielregeln/felder"},{"name":"regeln","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/spielregeln/regeln.md","href":"/spiele/hase-und-igel/spielregeln/regeln"},{"name":"spielbeginn","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/spielregeln/spielbeginn.md","href":"/spiele/hase-und-igel/spielregeln/spielbeginn"},{"name":"spielende","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/spielregeln/spielende.md","href":"/spiele/hase-und-igel/spielregeln/spielende"},{"name":"zuege","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/spielregeln/zuege.md","href":"/spiele/hase-und-igel/spielregeln/zuege"}],"sections":[],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/spielregeln/index.md","href":"/spiele/hase-und-igel/spielregeln"},{"name":"Tutorial","hide":true,"isEmpty":true,"pages":[{"name":"board","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/tutorial/board.md","href":"/spiele/hase-und-igel/tutorial/board"},{"name":"game-rule-logic","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/tutorial/game-rule-logic.md","href":"/spiele/hase-und-igel/tutorial/game-rule-logic"},{"name":"player","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/tutorial/player.md","href":"/spiele/hase-und-igel/tutorial/player"},{"name":"start","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/tutorial/start.md","href":"/spiele/hase-und-igel/tutorial/start"},{"name":"tutorial","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/tutorial/tutorial.md","href":"/spiele/hase-und-igel/tutorial/tutorial"}],"sections":[],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/tutorial/index.md","href":"/spiele/hase-und-igel/tutorial"},{"name":"XML-Dokumentation","hide":true,"isEmpty":true,"pages":[{"name":"einleitung-xml","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/xml-dokumentation/einleitung-xml.md","href":"/spiele/hase-und-igel/xml-dokumentation/einleitung-xml"},{"name":"fehler","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/xml-dokumentation/fehler.md","href":"/spiele/hase-und-igel/xml-dokumentation/fehler"},{"name":"spiel-betreten","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/xml-dokumentation/spiel-betreten.md","href":"/spiele/hase-und-igel/xml-dokumentation/spiel-betreten"},{"name":"spiel-verlassen","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/xml-dokumentation/spiel-verlassen.md","href":"/spiele/hase-und-igel/xml-dokumentation/spiel-verlassen"},{"name":"spielergebnis","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/xml-dokumentation/spielergebnis.md","href":"/spiele/hase-und-igel/xml-dokumentation/spielergebnis"},{"name":"spielstatus","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/xml-dokumentation/spielstatus.md","href":"/spiele/hase-und-igel/xml-dokumentation/spielstatus"},{"name":"spielverlauf","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/xml-dokumentation/spielverlauf.md","href":"/spiele/hase-und-igel/xml-dokumentation/spielverlauf"},{"name":"xml-dokumentation","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/xml-dokumentation/xml-dokumentation.md","href":"/spiele/hase-und-igel/xml-dokumentation/xml-dokumentation"},{"name":"zuege-senden","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/xml-dokumentation/zuege-senden.md","href":"/spiele/hase-und-igel/xml-dokumentation/zuege-senden"},{"name":"zug-anforderung","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/xml-dokumentation/zug-anforderung.md","href":"/spiele/hase-und-igel/xml-dokumentation/zug-anforderung"}],"sections":[],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/xml-dokumentation/index.md","href":"/spiele/hase-und-igel/xml-dokumentation"}],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/index.md","href":"/spiele/hase-und-igel"},{"name":"Hase und Igel","expanded":true,"isEmpty":false,"pages":[{"name":"XML-Dokumentation","hide":true,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/25_hase-und-igel/xml.md","href":"/spiele/25_hase-und-igel/xml"}],"sections":[{"name":"Tutorial","hide":true,"isEmpty":true,"pages":[{"name":"board","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/25_hase-und-igel/tutorial/board.md","href":"/spiele/25_hase-und-igel/tutorial/board"},{"name":"game-rule-logic","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/25_hase-und-igel/tutorial/game-rule-logic.md","href":"/spiele/25_hase-und-igel/tutorial/game-rule-logic"},{"name":"player","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/25_hase-und-igel/tutorial/player.md","href":"/spiele/25_hase-und-igel/tutorial/player"},{"name":"start","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/25_hase-und-igel/tutorial/start.md","href":"/spiele/25_hase-und-igel/tutorial/start"},{"name":"tutorial","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/25_hase-und-igel/tutorial/tutorial.md","href":"/spiele/25_hase-und-igel/tutorial/tutorial"}],"sections":[],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/25_hase-und-igel/tutorial/index.md","href":"/spiele/25_hase-und-igel/tutorial"}],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/25_hase-und-igel/index.md","href":"/spiele/25_hase-und-igel"},{"name":"Hey, Danke für den Fisch!","hide":true,"expanded":true,"isEmpty":false,"pages":[{"name":"Spielregeln","index":1,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/penguins/regeln.md","href":"/spiele/penguins/regeln"},{"name":"XML-Schnittstelle","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/penguins/xml.md","href":"/spiele/penguins/xml"}],"sections":[],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/penguins/index.md","href":"/spiele/penguins"},{"name":"Hive","hide":true,"isEmpty":false,"pages":[],"sections":[{"name":"Spielregeln","hide":true,"isEmpty":true,"pages":[{"name":"regeln","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hive/spielregeln/regeln.md","href":"/spiele/hive/spielregeln/regeln"}],"sections":[],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hive/spielregeln/index.md","href":"/spiele/hive/spielregeln"},{"name":"XML-Dokumention","hide":true,"isEmpty":true,"pages":[{"name":"einleitung-xml","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hive/xml-dokumentation/einleitung-xml.md","href":"/spiele/hive/xml-dokumentation/einleitung-xml"},{"name":"fehler","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hive/xml-dokumentation/fehler.md","href":"/spiele/hive/xml-dokumentation/fehler"},{"name":"spiel-betreten","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hive/xml-dokumentation/spiel-betreten.md","href":"/spiele/hive/xml-dokumentation/spiel-betreten"},{"name":"spiel-verlassen","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hive/xml-dokumentation/spiel-verlassen.md","href":"/spiele/hive/xml-dokumentation/spiel-verlassen"},{"name":"spielergebnis","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hive/xml-dokumentation/spielergebnis.md","href":"/spiele/hive/xml-dokumentation/spielergebnis"},{"name":"spielstatus","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hive/xml-dokumentation/spielstatus.md","href":"/spiele/hive/xml-dokumentation/spielstatus"},{"name":"spielverlauf","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hive/xml-dokumentation/spielverlauf.md","href":"/spiele/hive/xml-dokumentation/spielverlauf"},{"name":"xml-dokumentation","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hive/xml-dokumentation/xml-dokumentation.md","href":"/spiele/hive/xml-dokumentation/xml-dokumentation"},{"name":"zuege-senden","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hive/xml-dokumentation/zuege-senden.md","href":"/spiele/hive/xml-dokumentation/zuege-senden"},{"name":"zug-anforderung","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hive/xml-dokumentation/zug-anforderung.md","href":"/spiele/hive/xml-dokumentation/zug-anforderung"}],"sections":[],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hive/xml-dokumentation/index.md","href":"/spiele/hive/xml-dokumentation"}],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hive/index.md","href":"/spiele/hive"},{"name":"Mississippi Queen","hide":true,"isEmpty":false,"pages":[{"name":"Spielregeln","index":1,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/mississippi-queen/regeln.md","href":"/spiele/mississippi-queen/regeln"},{"name":"XML-Elemente","index":2,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/mississippi-queen/xml.md","href":"/spiele/mississippi-queen/xml"}],"sections":[],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/mississippi-queen/index.md","href":"/spiele/mississippi-queen"},{"name":"Ostseeschach","hide":true,"isEmpty":false,"pages":[{"name":"regeln","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/ostseeschach/regeln.md","href":"/spiele/ostseeschach/regeln"},{"name":"xml-dokumentation","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/ostseeschach/xml-dokumentation.md","href":"/spiele/ostseeschach/xml-dokumentation"}],"sections":[],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/ostseeschach/index.md","href":"/spiele/ostseeschach"},{"name":"Piranhas","hide":true,"isEmpty":false,"pages":[],"sections":[{"name":"Spielregeln","hide":true,"isEmpty":true,"pages":[{"name":"regeln","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/piranhas/spielregeln/regeln.md","href":"/spiele/piranhas/spielregeln/regeln"}],"sections":[],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/piranhas/spielregeln/index.md","href":"/spiele/piranhas/spielregeln"},{"name":"XML-Dokumentation","hide":true,"isEmpty":true,"pages":[{"name":"einleitung-xml","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/piranhas/xml-dokumentation/einleitung-xml.md","href":"/spiele/piranhas/xml-dokumentation/einleitung-xml"},{"name":"fehler","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/piranhas/xml-dokumentation/fehler.md","href":"/spiele/piranhas/xml-dokumentation/fehler"},{"name":"spiel-betreten","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/piranhas/xml-dokumentation/spiel-betreten.md","href":"/spiele/piranhas/xml-dokumentation/spiel-betreten"},{"name":"spiel-verlassen","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/piranhas/xml-dokumentation/spiel-verlassen.md","href":"/spiele/piranhas/xml-dokumentation/spiel-verlassen"},{"name":"spielergebnis","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/piranhas/xml-dokumentation/spielergebnis.md","href":"/spiele/piranhas/xml-dokumentation/spielergebnis"},{"name":"spielstatus","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/piranhas/xml-dokumentation/spielstatus.md","href":"/spiele/piranhas/xml-dokumentation/spielstatus"},{"name":"spielverlauf","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/piranhas/xml-dokumentation/spielverlauf.md","href":"/spiele/piranhas/xml-dokumentation/spielverlauf"},{"name":"xml-dokumentation","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/piranhas/xml-dokumentation/xml-dokumentation.md","href":"/spiele/piranhas/xml-dokumentation/xml-dokumentation"},{"name":"zuege-senden","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/piranhas/xml-dokumentation/zuege-senden.md","href":"/spiele/piranhas/xml-dokumentation/zuege-senden"},{"name":"zug-anforderung","repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/piranhas/xml-dokumentation/zug-anforderung.md","href":"/spiele/piranhas/xml-dokumentation/zug-anforderung"}],"sections":[],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/piranhas/xml-dokumentation/index.md","href":"/spiele/piranhas/xml-dokumentation"}],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/piranhas/index.md","href":"/spiele/piranhas"}],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/index.md","href":"/spiele"},{"name":"Entwicklung eines Computerspielers","index":2,"isEmpty":false,"pages":[{"name":"Das Spiel kennenlernen","index":1,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/entwicklung/kennenlernen.md","href":"/entwicklung/kennenlernen"},{"name":"Objektorientierte Programmierung","index":3,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/entwicklung/einfuehrung-oop.md","href":"/entwicklung/einfuehrung-oop"},{"name":"Sauberer Programmierstil","index":4,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/entwicklung/sauberer-programmierstil.md","href":"/entwicklung/sauberer-programmierstil"},{"name":"Installation von Java","index":5,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/entwicklung/installation-von-java.md","href":"/entwicklung/installation-von-java"},{"name":"Einrichtung der Entwicklungsumgebung","index":6,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/entwicklung/einrichtung-der-entwicklungsumgebung.md","href":"/entwicklung/einrichtung-der-entwicklungsumgebung"},{"name":"Bedienung von Eclipse","index":7,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/entwicklung/bedienung-von-eclipse.md","href":"/entwicklung/bedienung-von-eclipse"},{"name":"Spielervorlage erweitern","index":7,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/entwicklung/simpleclient-erweitern.md","href":"/entwicklung/simpleclient-erweitern"},{"name":"Idee implementieren","index":8,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/entwicklung/eine-idee-implementieren.md","href":"/entwicklung/eine-idee-implementieren"},{"name":"Computerspieler abgabefertig machen","index":9,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/entwicklung/abgabe.md","href":"/entwicklung/abgabe"}],"sections":[],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/entwicklung/index.md","href":"/entwicklung"},{"name":"Allgemeine XML-Dokumentation","index":4,"isEmpty":true,"pages":[{"name":"Einführung in XML","index":1,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/xml/intro.md","href":"/xml/intro"},{"name":"XML-Protokoll","index":2,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/xml/protokoll.md","href":"/xml/protokoll"},{"name":"Verwaltung von Spielen mittels authentifiziertem  Client","index":3,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/xml/administration.md","href":"/xml/administration"}],"sections":[],"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/xml/index.md","href":"/xml"}],"pages":[{"name":"Überblick","index":1,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/index.md","href":"/"},{"name":"Technische Grundlagen","index":2,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/glossar.md","href":"/glossar"},{"name":"Die Software-Challenge","index":3,"expanded":true,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/wettbewerb.md","href":"/wettbewerb"},{"name":"F.A.Q.","index":4,"repo":"https://github.com/software-challenge/docs/tree/main/hyperbook/book/faq.md","href":"/faq"}]}},"__N_SSG":true},"page":"/[[...page]]","query":{"page":["spiele","hase-und-igel","tutorial","tutorial"]},"buildId":"b54E6iZc8Hvsty4u9TByx","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
+}" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <ol>
+    <li>
+      Erweiterte das Beispiel aus dem Kapitel „Erweitertes Beispiel“ so,
+      dass sicher gestellt wird, dass der aktuelle Spieler auf ein
+      Hasenfeld gesetzt wird, welches er wirklich erreichen kann.
+    </li>
+  </ol>
+  <p>
+    [1] Technisch gesehen hat die Klasse eine private Liste von Feldern.
+    Allerdings ähnelt ein Aufruf der Funktion getTypeAt sehr den Aufruf
+    eines Arrays. Auch wenn der Rückgabewert kein Feld sonder ein FieldType
+    ist.
+  </p><button id="qrcode-open" onclick="hyperbook.qrcodeOpen()" title="QR-Code"><div class="qrcode-icon"></div></button>
+  <dialog id="qrcode-dialog">
+    <div class="container">
+      <div class="name">tutorial</div>
+      <div class="make-qrcode"></div>
+      <div class="url">
+        <div data-href="/spiele/hase-und-igel/tutorial/tutorial"></div>
+      </div>
+    </div><button class="close" onclick="hyperbook.qrcodeClose()"><div class="close-icon"></div></button>
+  </dialog>
+</div>
+</article><div class="jump-container"><a class="jump previous" href="/spiele/hase-und-igel/tutorial/start">start</a><a class="jump next" href="/spiele/hase-und-igel/xml-dokumentation/einleitung-xml">einleitung-xml</a></div><div class="meta"><a class="edit-github" href="https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/tutorial/tutorial.md">✎ GitHub</a><span class="copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a> by <a href="https://software-challenge.de">Software-Challenge Germany</a></span></div></main></div><script src="/__hyperbook_assets/client.js" defer></script></body></html>

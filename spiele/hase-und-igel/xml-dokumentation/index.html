@@ -1,0 +1,111 @@
+<!doctype html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>XML-Dokumentation - Software-Challenge Dokumentation</title><meta property="og:title" value="XML-Dokumentation - Software-Challenge Dokumentation"><meta name="description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta property="og:description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta name="keywords"><link rel="stylesheet" href="/__hyperbook_assets/normalize.css"><style>
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --color-brand: #3276AD;
+  --color-brand-dark: #3276AD;
+  --color-brand-text: white;
+}
+@font-face {
+  font-family: hyperbook-body;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: hyperbook-heading;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: hyperbook-code;
+  src: url(/fonts/SourceCodePro-Regular.ttf);
+  size-adjust: 100%;
+}
+
+:root {
+  --color-background: white;
+  --color-text: black;
+  --color-text-deactivated: #242428;
+  --color-nav: #f5f5f5;
+  --color-nav-border: #3c3c3c;
+  --color-author-background: #d6d6d6;
+  --color-author-color: #3c3c3c;
+  --color-spacer: #a4a4a4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #1e1e1e;
+    --color-text: #f5f5f5;
+    --color-text-deactivated: #d6d6d6;
+    --color-nav: #222222;
+    --color-nav-border: #464646;
+    --color-author-background: #2c2c2c;
+    --color-author-color: #d6d6d6;
+    --color-spacer: #3c3c3c;
+    --color-brand: var(--color-brand-dark);
+  }
+
+  header {
+    background: var(--color-nav)!important;
+  }
+
+  .branding {
+    color: var(--color-brand)!important;
+  }
+
+  .toggle .bar1,
+  .toggle .bar2,
+  .toggle .bar3 {
+    background-color: var(--color-brand)!important;
+  }
+}
+
+body {
+  overscroll-behavior-x: none;
+  background-color: transparent;
+  color: var(--color-text);
+  font-family: hyperbook-body;
+  font-weight: normal;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+</style><link rel="stylesheet" href="/__hyperbook_assets/math/katex.min.css"><link rel="stylesheet" href="/__hyperbook_assets/shell.css"><link rel="stylesheet" href="/__hyperbook_assets/content.css"><link rel="stylesheet" href="/__hyperbook_assets/code.css"><script>
+HYPERBOOK_ASSETS = "/__hyperbook_assets/"
+</script><script type="module" src="/__hyperbook_assets/side-drawer.js" async></script><script src="/__hyperbook_assets/qrcode.js" async></script></head><body><div class="main-grid"><header><div class="mobile-nav"><button aria-label="Nav Toggle" class="toggle" onclick="hyperbook.navToggle()"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></button><side-drawer id="nav-drawer"><div class="nav-drawer-content"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div class="virtual-section"><div class="collapsible name  expanded"><a href="/spiele" class="label">Spiele</a></div><div class="collapsible-content links"><div class="section"><div class="collapsible name  expanded"><a href="/spiele/25_hase-und-igel" class="label">Hase und Igel</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/spiele/25_hase-und-igel/xml">XML-Dokumentation</a></li></ul></div></div></div></div><div class="section"><div class="collapsible name  "><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul></div></div><div class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div></side-drawer></div><a class="branding" href="/"><div class="logo"><img alt="logo" src="/logo.svg"></div><div class="name">Software-Challenge Dokumentation</div></a></header><div class="sidebar"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div class="virtual-section"><div class="collapsible name  expanded"><a href="/spiele" class="label">Spiele</a></div><div class="collapsible-content links"><div class="section"><div class="collapsible name  expanded"><a href="/spiele/25_hase-und-igel" class="label">Hase und Igel</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/spiele/25_hase-und-igel/xml">XML-Dokumentation</a></li></ul></div></div></div></div><div class="section"><div class="collapsible name  "><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul></div></div><div class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div><main><article>
+<div class="hyperbook-markdown"><button id="toc-toggle" onclick="hyperbook.tocToggle()" title="Table of Contents"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div></button>
+  <side-drawer id="toc-drawer" right>
+    <div class="toc-drawer-content">
+      <nav class="toc">
+        <ul></ul>
+      </nav>
+    </div>
+  </side-drawer><button id="qrcode-open" onclick="hyperbook.qrcodeOpen()" title="QR-Code"><div class="qrcode-icon"></div></button>
+  <dialog id="qrcode-dialog">
+    <div class="container">
+      <div class="name">XML-Dokumentation</div>
+      <div class="make-qrcode"></div>
+      <div class="url">
+        <div data-href="/spiele/hase-und-igel/xml-dokumentation"></div>
+      </div>
+    </div><button class="close" onclick="hyperbook.qrcodeClose()"><div class="close-icon"></div></button>
+  </dialog>
+</div>
+</article><div class="jump-container"><a class="jump next" href="/">Überblick</a></div><div class="meta"><a class="edit-github" href="https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/xml-dokumentation/index.md">✎ GitHub</a><span class="copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a> by <a href="https://software-challenge.de">Software-Challenge Germany</a></span></div></main></div><script src="/__hyperbook_assets/client.js" defer></script></body></html>

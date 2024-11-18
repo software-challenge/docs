@@ -1,0 +1,367 @@
+<!doctype html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Hase und Igel - Software-Challenge Dokumentation</title><meta property="og:title" value="Hase und Igel - Software-Challenge Dokumentation"><meta name="description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta property="og:description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta name="keywords"><link rel="stylesheet" href="/__hyperbook_assets/normalize.css"><style>
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --color-brand: #3276AD;
+  --color-brand-dark: #3276AD;
+  --color-brand-text: white;
+}
+@font-face {
+  font-family: hyperbook-body;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: hyperbook-heading;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: hyperbook-code;
+  src: url(/fonts/SourceCodePro-Regular.ttf);
+  size-adjust: 100%;
+}
+
+:root {
+  --color-background: white;
+  --color-text: black;
+  --color-text-deactivated: #242428;
+  --color-nav: #f5f5f5;
+  --color-nav-border: #3c3c3c;
+  --color-author-background: #d6d6d6;
+  --color-author-color: #3c3c3c;
+  --color-spacer: #a4a4a4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #1e1e1e;
+    --color-text: #f5f5f5;
+    --color-text-deactivated: #d6d6d6;
+    --color-nav: #222222;
+    --color-nav-border: #464646;
+    --color-author-background: #2c2c2c;
+    --color-author-color: #d6d6d6;
+    --color-spacer: #3c3c3c;
+    --color-brand: var(--color-brand-dark);
+  }
+
+  header {
+    background: var(--color-nav)!important;
+  }
+
+  .branding {
+    color: var(--color-brand)!important;
+  }
+
+  .toggle .bar1,
+  .toggle .bar2,
+  .toggle .bar3 {
+    background-color: var(--color-brand)!important;
+  }
+}
+
+body {
+  overscroll-behavior-x: none;
+  background-color: transparent;
+  color: var(--color-text);
+  font-family: hyperbook-body;
+  font-weight: normal;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+</style><link rel="stylesheet" href="/__hyperbook_assets/math/katex.min.css"><link rel="stylesheet" href="/__hyperbook_assets/shell.css"><link rel="stylesheet" href="/__hyperbook_assets/content.css"><link rel="stylesheet" href="/__hyperbook_assets/code.css"><script>
+HYPERBOOK_ASSETS = "/__hyperbook_assets/"
+</script><script type="module" src="/__hyperbook_assets/side-drawer.js" async></script><script src="/__hyperbook_assets/qrcode.js" async></script></head><body><div class="main-grid"><header><div class="mobile-nav"><button aria-label="Nav Toggle" class="toggle" onclick="hyperbook.navToggle()"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></button><side-drawer id="nav-drawer"><div class="nav-drawer-content"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div class="virtual-section"><div class="collapsible name  expanded"><a href="/spiele" class="label">Spiele</a></div><div class="collapsible-content links"><div class="section"><div class="collapsible name active expanded"><a href="/spiele/25_hase-und-igel" class="label">Hase und Igel</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/spiele/25_hase-und-igel/xml">XML-Dokumentation</a></li></ul></div></div></div></div><div class="section"><div class="collapsible name  "><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul></div></div><div class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div></side-drawer></div><a class="branding" href="/"><div class="logo"><img alt="logo" src="/logo.svg"></div><div class="name">Software-Challenge Dokumentation</div></a></header><div class="sidebar"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div class="virtual-section"><div class="collapsible name  expanded"><a href="/spiele" class="label">Spiele</a></div><div class="collapsible-content links"><div class="section"><div class="collapsible name active expanded"><a href="/spiele/25_hase-und-igel" class="label">Hase und Igel</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/spiele/25_hase-und-igel/xml">XML-Dokumentation</a></li></ul></div></div></div></div><div class="section"><div class="collapsible name  "><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul></div></div><div class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div><main><article>
+<div class="hyperbook-markdown"><button id="toc-toggle" onclick="hyperbook.tocToggle()" title="Table of Contents"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div></button>
+  <side-drawer id="toc-drawer" right>
+    <div class="toc-drawer-content">
+      <nav class="toc">
+        <ul>
+          <li class="level-1"><a href="#modifizierte-spielregeln-hase-und-igel-fr-die-softwarechallenge-2025">Modifizierte Spielregeln "Hase und Igel" für die Software-Challenge 2025</a></li>
+          <li class="level-2"><a href="#spielbeginn">Spielbeginn</a></li>
+          <li class="level-2"><a href="#felder">Felder</a></li>
+          <li class="level-3"><a href="#startfeld">Startfeld</a></li>
+          <li class="level-3"><a href="#karottenfeld">Karottenfeld</a></li>
+          <li class="level-3"><a href="#hasenfeld">Hasenfeld</a></li>
+          <li class="level-3"><a href="#salatfeld">Salatfeld</a></li>
+          <li class="level-3"><a href="#marktfeld">Marktfeld</a></li>
+          <li class="level-3"><a href="#igelfeld">Igelfeld</a></li>
+          <li class="level-3"><a href="#position1feld">Position-1-Feld</a></li>
+          <li class="level-3"><a href="#position2feld">Position-2-Feld</a></li>
+          <li class="level-3"><a href="#zielfeld">Zielfeld</a></li>
+          <li class="level-2"><a href="#karten-ausspielen-auf-einem-hasenfeld">Karten ausspielen auf einem Hasenfeld</a></li>
+          <li class="level-3"><a href="#friss-sofort-einen-salat">Friss sofort einen Salat</a></li>
+          <li class="level-3"><a href="#rcke-eine-position-vor">Rücke eine Position vor</a></li>
+          <li class="level-3"><a href="#falle-eine-position-zurck">Falle eine Position zurück</a></li>
+          <li class="level-3"><a href="#karottenvorat-mit-dem-gegner-tauschen">Karottenvorat mit dem Gegner tauschen</a></li>
+          <li class="level-2"><a href="#zugmglichkeiten">Zugmöglichkeiten</a></li>
+          <li class="level-3"><a href="#vorwrtszug">Vorwärtszug</a></li>
+          <li class="level-3"><a href="#rckwrtszug">Rückwärtszug</a></li>
+          <li class="level-3"><a href="#karotten-tauschen">Karotten tauschen</a></li>
+          <li class="level-3"><a href="#salat-fressen">Salat fressen</a></li>
+          <li class="level-3"><a href="#aussetzen">Aussetzen</a></li>
+          <li class="level-3"><a href="#beispiel-wie-mehrere-hasenkarten-eingesetzt-werden-knnen">Beispiel, wie mehrere Hasenkarten eingesetzt werden können</a></li>
+          <li class="level-2"><a href="#spielende">Spielende</a></li>
+          <li class="level-2"><a href="#beispiel">Beispiel</a></li>
+        </ul>
+      </nav>
+    </div>
+  </side-drawer>
+  <h1 id="modifizierte-spielregeln-hase-und-igel-fr-die-softwarechallenge-2025"><a href="#modifizierte-spielregeln-hase-und-igel-fr-die-softwarechallenge-2025" class="heading"><span>Modifizierte Spielregeln "Hase und Igel" für die Software-Challenge 2025</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#modifizierte-spielregeln-hase-und-igel-fr-die-softwarechallenge-2025&#x22;, &#x22;Modifizierte Spielregeln &#x22;Hase und Igel&#x22; für die Software-Challenge 2025&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#modifizierte-spielregeln-hase-und-igel-fr-die-softwarechallenge-2025">🔖</button></h1>
+  <p>
+    Die Nutzung des Spielkonzeptes "Hase und Igel" (Name, Spielregeln und Grafik)
+    erfolgt mit freundlicher Genehmigung der Ravensburger Spieleverlag GmbH.
+    Das Spielfeld der Version 2008 vom Ravensburger Spieleverlag wird folgendermaßen modifiziert:
+  </p>
+  <ol>
+    <li>
+      Die Igel- und Salatfelder werden so angeordnet wie im Original.
+      Die Felder zwischen 2 Igelfeldern mit Ausnahme der Salatfelder werden zufällig permutiert.
+    </li>
+    <li>Das Zahlenfeld 1-5-6 wird durch das Zahlenfeld 1 ersetzt.</li>
+    <li>Das Zahlenfeld 3 wird durch das Karottenfeld ersetzt.</li>
+    <li>Das Zahlenfeld 4 wird durch das neu eingeführte Marktfeld ersetzt.</li>
+  </ol>
+  <h2 id="spielbeginn"><a href="#spielbeginn" class="heading"><span>Spielbeginn</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#spielbeginn&#x22;, &#x22;Spielbeginn&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#spielbeginn">🔖</button></h2>
+  <p>
+    Jeder Spieler erhält zu Beginn 68 Karotten und 5 Salate als Wegzehrung.
+    Im Laufe des Spiels können die Spieler mit Karotten Karten kaufen,
+    mit denen dann beim Betreten eines Hasenfeldes besondere Aktionen ausgeführt werden können.
+  </p>
+  <p>
+    Mit den Karotten bezahlt der Spieler auch das Vorrücken.
+    Die Anzahl der Karotten, die benötigt werden,
+    um eine bestimmte Anzahl von Zügen zu ziehen,
+    ist der folgenden Rennkarte zu entnehmen:
+  </p>
+  <figure src="/images/spiele/hase-und-igel/rennkarte.png" alt="Hase und Igel Rennkarte" class="normal">
+    <img src="/images/spiele/hase-und-igel/rennkarte.png" alt="Hase und Igel Rennkarte" onclick="hyperbook.toggleLightbox(this)">
+  </figure>
+  <p>
+    Das Spielfeld besteht aus 65 Feldern.
+    Ziel des Spiels ist,
+    das Zielfeld (Feld 65) mit weniger als zehn Karotten
+    und keinem Salat zu erreichen.
+  </p>
+  <h2 id="felder"><a href="#felder" class="heading"><span>Felder</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#felder&#x22;, &#x22;Felder&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#felder">🔖</button></h2>
+  <p>Es gibt neun verschiedene Spielfelder:</p>
+  <h3 id="startfeld"><a href="#startfeld" class="heading"><span>Startfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#startfeld&#x22;, &#x22;Startfeld&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#startfeld">🔖</button></h3>
+  <p>
+    Beide Spieler stehen anfänglich auf dem Startfeld.
+    Nur hier und auf dem Zielfeld dürfen beide Spieler gleichzeitig stehen.
+    Es ist nicht erlaubt, das Startfeld erneut zu betreten.
+  </p>
+  <h3 id="karottenfeld"><a href="#karottenfeld" class="heading"><span>Karottenfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#karottenfeld&#x22;, &#x22;Karottenfeld&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#karottenfeld">🔖</button></h3>
+  <p>
+    Ein Karottenfeld darf durch jede reguläre Bewegungsaktion (Vorwärtszug, Karten) betreten werden.
+    Nur auf ihm darf ein Zug "Karotten tauschen" stattfinden.
+  </p>
+  <h3 id="hasenfeld"><a href="#hasenfeld" class="heading"><span>Hasenfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#hasenfeld&#x22;, &#x22;Hasenfeld&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#hasenfeld">🔖</button></h3>
+  <p>Darf nur betreten werden, wenn eine Karte gespielt werden kann.</p>
+  <h3 id="salatfeld"><a href="#salatfeld" class="heading"><span>Salatfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#salatfeld&#x22;, &#x22;Salatfeld&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#salatfeld">🔖</button></h3>
+  <p>
+    Darf nur mit mindestens einem Salat betreten werden.
+    In der Runde nach dem Betreten muss der Spieler einen Salat fressen.
+    Abgesehen von der entsprechenden Karte
+    darf nur auf einem Salatfeld ein Salat gefressen werden.
+    In der darauffolgenden Runde muss das Salatfeld verlassen werden
+    (es ist innerhalb des Spiels trotzdem durch Rückwärtszüge oder Karten möglich,
+    auf demselben Salatfeld mehrere Salate zu fressen).
+  </p>
+  <h3 id="marktfeld"><a href="#marktfeld" class="heading"><span>Marktfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#marktfeld&#x22;, &#x22;Marktfeld&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#marktfeld">🔖</button></h3>
+  <p>
+    Darf nur mit mindestens 10 Karotten betreten werden.
+    Betritt ein Spieler ein Marktfeld,
+    zahlt er unmittelbar 10 Karotten
+    und erhält eine frei auswählbare Karte,
+    die er später beim Betreten eines Hasenfeldes nutzen kann.
+    Im Laufe des Spiels darf ein Spieler einen Kartenvorrat anlegen,
+    auch mit mehreren Karten desselben Typs.
+  </p>
+  <h3 id="igelfeld"><a href="#igelfeld" class="heading"><span>Igelfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#igelfeld&#x22;, &#x22;Igelfeld&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#igelfeld">🔖</button></h3>
+  <p>Darf nur durch einen Rückwärtszug betreten werden.</p>
+  <h3 id="position1feld"><a href="#position1feld" class="heading"><span>Position-1-Feld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#position1feld&#x22;, &#x22;Position-1-Feld&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#position1feld">🔖</button></h3>
+  <p>
+    Das Position-1-Feld darf uneingeschränkt betreten werden.
+    Sollte sich ein Spieler am Anfang seines Zuges auf diesem Feld befinden
+    und an erster Stelle stehen, so erhält er 10 Karotten.
+  </p>
+  <h3 id="position2feld"><a href="#position2feld" class="heading"><span>Position-2-Feld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#position2feld&#x22;, &#x22;Position-2-Feld&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#position2feld">🔖</button></h3>
+  <p>
+    Das Position-2-Feld darf uneingeschränkt betreten werden.
+    Sollte sich ein Spieler am Anfang seines Zuges auf diesem Feld befinden
+    und an zweiter Stelle stehen, so erhält er 30 Karotten.
+  </p>
+  <h3 id="zielfeld"><a href="#zielfeld" class="heading"><span>Zielfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#zielfeld&#x22;, &#x22;Zielfeld&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#zielfeld">🔖</button></h3>
+  <p>
+    Das Zielfeld darf nur betreten werden,
+    wenn der Spieler höchstens zehn Karotten und keinen Salat besitzt.
+  </p>
+  <h2 id="karten-ausspielen-auf-einem-hasenfeld"><a href="#karten-ausspielen-auf-einem-hasenfeld" class="heading"><span>Karten ausspielen auf einem Hasenfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#karten-ausspielen-auf-einem-hasenfeld&#x22;, &#x22;Karten ausspielen auf einem Hasenfeld&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#karten-ausspielen-auf-einem-hasenfeld">🔖</button></h2>
+  <p>
+    Beim Betreten eines Hasenfeldes muss eine Karte ausgespielt werden.
+    Eine Karte darf nur auf einem Hasenfeld ausgespielt werden.
+    Das Betreten eines Hasenfeldes ist entweder durch einen Vorwärtszug
+    oder das Ausspielen einer Karte möglich.
+    Sollte es nicht möglich sein, eine Karte auszuspielen,
+    ist das Betreten eines Hasenfeldes nicht erlaubt.
+    Das Ausspielen einer Karte ist also immer Teil eines Vorwärtszuges.
+    Sofern durch das Ausspielen einer Karte ein weiteres Hasenfeld betreten wird,
+    muss eine weitere Karte ausgespielt werden.
+    Sollte durch das Ausspielen einer Karte kein weiteres Hasenfeld betreten werden, endet der Zug.
+  </p>
+  <p>Folgende Karten gibt es:</p>
+  <h3 id="friss-sofort-einen-salat"><a href="#friss-sofort-einen-salat" class="heading"><span>Friss sofort einen Salat</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#friss-sofort-einen-salat&#x22;, &#x22;Friss sofort einen Salat&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#friss-sofort-einen-salat">🔖</button></h3>
+  <p>
+    Es wird ein Salat vom Spieler verbraucht.
+    Je nach der aktuellen Position des Spielers (Erster/Zweiter) erhält der Spieler Karotten (10/30).
+    Diese Karte darf nur eingesetzt werden, wenn der Spieler mindestens einen Salat hat.
+  </p>
+  <h3 id="rcke-eine-position-vor"><a href="#rcke-eine-position-vor" class="heading"><span>Rücke eine Position vor</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#rcke-eine-position-vor&#x22;, &#x22;Rücke eine Position vor&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#rcke-eine-position-vor">🔖</button></h3>
+  <p>
+    Kann nur ausgespielt werden, wenn der Spieler sich an zweiter Position befindet.
+    Der Spieler rückt auf das Feld unmittelbar vor dem gegnerischen Spieler vor.
+    Das Feld muss regelkonform betretbar sein.
+    Es kann so das Ziel erreicht werden, wenn die Siegbedingungen erfüllt sind.
+  </p>
+  <h3 id="falle-eine-position-zurck"><a href="#falle-eine-position-zurck" class="heading"><span>Falle eine Position zurück</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#falle-eine-position-zurck&#x22;, &#x22;Falle eine Position zurück&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#falle-eine-position-zurck">🔖</button></h3>
+  <p>
+    Kann nur ausgespielt werden, wenn der Spieler sich an erster Position befindet.
+    Der Spieler fällt auf das Feld unmittelbar hinter dem gegnerischen Spieler zurück.
+    Das Feld muss regelkonform betretbar sein.
+  </p>
+  <h3 id="karottenvorat-mit-dem-gegner-tauschen"><a href="#karottenvorat-mit-dem-gegner-tauschen" class="heading"><span>Karottenvorat mit dem Gegner tauschen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#karottenvorat-mit-dem-gegner-tauschen&#x22;, &#x22;Karottenvorat mit dem Gegner tauschen&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#karottenvorat-mit-dem-gegner-tauschen">🔖</button></h3>
+  <p>
+    Tausche Deinen Karottenvorrat mit dem des Gegners.
+    Diese Karte darf nur eingesetzt werden, solange beide Spieler noch vor dem letzten Salatfeld stehen
+    und nur, wenn die letzte gleichartige Tauschkarte nicht in einer der beiden letzten Züge eingesetzt wurde.
+  </p>
+  <h2 id="zugmglichkeiten"><a href="#zugmglichkeiten" class="heading"><span>Zugmöglichkeiten</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#zugmglichkeiten&#x22;, &#x22;Zugmöglichkeiten&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#zugmglichkeiten">🔖</button></h2>
+  <p>In jeder Runde führt jeder Spieler einen der folgenden Züge aus:</p>
+  <h3 id="vorwrtszug"><a href="#vorwrtszug" class="heading"><span>Vorwärtszug</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#vorwrtszug&#x22;, &#x22;Vorwärtszug&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#vorwrtszug">🔖</button></h3>
+  <p>
+    Durch einen Vorwärtszug bewegt sich der Spieler
+    um die entsprechende Zahl von Feldern nach vorne (mindestens 1).
+    Dabei werden Karotten entsprechend der Rennkarte verbraucht.
+    Ein Spieler darf nicht auf ein Feld ziehen,
+    das bereits durch den Gegner besetzt ist,
+    außer es handelt sich um das Zielfeld.
+    Durch einen Vorwärtszug dürfen alle Felder
+    außer dem Igelfeld direkt betreten werden.
+  </p>
+  <p>
+    Es ist nicht erlaubt,
+    das Zielfeld zu betreten,
+    wenn die Siegbedingungen (höchstens 10 Karotten und 0 Salate) nicht erfüllt sind.
+    Wenn durch einen Vorwärtszug ein Salatfeld betreten wird,
+    muss in der nächsten Runde ein Salat gefressen werden
+    (ohne Salat ist das Betreten nicht erlaubt).
+    Wenn durch einen Vorwärtszug ein Hasenfeld betreten wird,
+    muss unmittelbar danach (also im selben Zug)
+    eine Karte ausgespielt werden
+    (ohne spielbare Karte ist das Betreten nicht erlaubt).
+  </p>
+  <h3 id="rckwrtszug"><a href="#rckwrtszug" class="heading"><span>Rückwärtszug</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#rckwrtszug&#x22;, &#x22;Rückwärtszug&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#rckwrtszug">🔖</button></h3>
+  <p>
+    Durch einen Rückwärtszug zieht der Spieler zu dem nächsten Igelfeld mit kleinerem Index.
+    Gibt es kein solches Igelfeld oder ist es besetzt, darf kein Rückwärtszug gemacht werden.
+    Durch einen Rückwärtszug werden 10 mal so viele Karotten aufgenommen wie Felder zurückgezogen wurden.
+  </p>
+  <h3 id="karotten-tauschen"><a href="#karotten-tauschen" class="heading"><span>Karotten tauschen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#karotten-tauschen&#x22;, &#x22;Karotten tauschen&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#karotten-tauschen">🔖</button></h3>
+  <p>
+    Befindet sich ein Spieler auf einem Karottenfeld,
+    so kann dieser (aber muss nicht) die Aktion „Karotten tauschen“ durchführen.
+    Dabei muss der Spieler entweder 10 Karotten abgeben
+    (dafür muss der Spieler mindestens 10 Karotten besitzen) oder aufnehmen.
+    Die Aktion „Karotten tauschen“ kann auch in mehreren unmittelbar aufeinanderfolgenden Runden ausgeführt werden.
+  </p>
+  <h3 id="salat-fressen"><a href="#salat-fressen" class="heading"><span>Salat fressen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#salat-fressen&#x22;, &#x22;Salat fressen&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#salat-fressen">🔖</button></h3>
+  <p>
+    Wenn sich der Spieler auf einem Salatfeld befindet
+    und er in seinem letzten Zug keinen Salat gefressen hat,
+    muss er einen Salat fressen.
+    Der Spieler verbraucht einen Salat
+    (dies ist immer möglich, da ein Spieler nur mit mindestens einem Salat ein Salatfeld betreten kann)
+    und erhält je nach Position (Erster/Zweiter) Karotten (10/30).
+    Nach dieser Aktion endet der Zug.
+  </p>
+  <h3 id="aussetzen"><a href="#aussetzen" class="heading"><span>Aussetzen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#aussetzen&#x22;, &#x22;Aussetzen&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#aussetzen">🔖</button></h3>
+  <p>
+    Ein Spieler setzt aus, wenn kein anderer Zug möglich ist.
+    (Beispiel: Keine Karotten mehr und das vorherige Igelfeld ist vom anderen Spieler besetzt)
+  </p>
+  <h3 id="beispiel-wie-mehrere-hasenkarten-eingesetzt-werden-knnen"><a href="#beispiel-wie-mehrere-hasenkarten-eingesetzt-werden-knnen" class="heading"><span>Beispiel, wie mehrere Hasenkarten eingesetzt werden können</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#beispiel-wie-mehrere-hasenkarten-eingesetzt-werden-knnen&#x22;, &#x22;Beispiel, wie mehrere Hasenkarten eingesetzt werden können&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#beispiel-wie-mehrere-hasenkarten-eingesetzt-werden-knnen">🔖</button></h3>
+  <p>
+    Lotta steht auf Feld 36 und verfügt über die 3 Hasenkarten „Vorrücken“,
+    „Zurückfallen“ und „Salat fressen“.
+    Michel steht auf Feld 32 zwischen 2 Hasenfeldern.
+  </p>
+  <p>
+    Lotta kann nun durch den Einsatz von 6 Karotten auf das Hasenfeld 39 ziehen,
+    dort zunächst seine Hasenkarte „Zurückfallen“ einsetzen.
+    Dadurch kommt Lotta auf das Hasenfeld 31,
+    kann dort seine Hasenkarte „Vorrücken“ einsetzen und gelangt damit auf das Hasenfeld 33,
+    wo Lotta seine Hasenkarte „Salat fressen“ einsetzen kann und dafür 10 Karotten erhält.
+  </p>
+  <p>Insgesamt steigt der Karottenvorrat von 64 auf 64 - 6 + 10 = 68 Karotten.</p>
+  <figure src="/images/spiele/hase-und-igel/forwaerts-spielzug-spielbrett.png" alt="Hase und Igel Spielbrett" class="normal">
+    <img src="/images/spiele/hase-und-igel/forwaerts-spielzug-spielbrett.png" alt="Hase und Igel Spielbrett" onclick="hyperbook.toggleLightbox(this)">
+  </figure>
+  <h2 id="spielende"><a href="#spielende" class="heading"><span>Spielende</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#spielende&#x22;, &#x22;Spielende&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#spielende">🔖</button></h2>
+  <p>Das Spiel endet, wenn</p>
+  <ul>
+    <li>sich mindestens ein Spieler am Ende einer Runde im Ziel befindet (die Runde wird also immer zu Ende gespielt)</li>
+    <li>das Rundenlimit von 30 Runden erreicht ist</li>
+  </ul>
+  <p>
+    Es gewinnt der Spieler, der sich am nächsten am Ziel befindet.
+    Sollten beide Spieler sich im Ziel befinden, gewinnt der Spieler mit weniger Karotten;
+    bei gleicher Karottenzahl endet das Spiel unentschieden.
+  </p>
+  <h2 id="beispiel"><a href="#beispiel" class="heading"><span>Beispiel</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#beispiel&#x22;, &#x22;Beispiel&#x22;)" title="Bookmark" data-key="/spiele/25_hase-und-igel#beispiel">🔖</button></h2>
+  <p>
+    Lotta steht auf Feld 32,
+    unmittelbar vor einem Hasenfeld.
+    Michel steht auf Feld 24,
+    also hinter Lotta,
+    und hat nur noch die Karte „Rücke eine Position vor“.
+    Dann darf Michel weder auf ein Hasenfeld vor Lotta setzen (z. B. Feld 33),
+    denn dort darf er seine einzige Karte nicht einsetzen,
+    noch darf er auf ein Hasenfeld hinter Lotta setzen (z. B. Feld 26),
+    denn wenn er dort seine Karte „Rücke eine Position vor“ einsetzen würde,
+    käme er wieder auf ein Hasenfeld,
+    was aber nicht erlaubt ist,
+    weil er dafür dann keine Karte mehr hat.
+  </p>
+  <figure src="/images/spiele/hase-und-igel/spielbrett.png" alt="Hase und Igel Spielbrett" class="normal">
+    <img src="/images/spiele/hase-und-igel/spielbrett.png" alt="Hase und Igel Spielbrett" onclick="hyperbook.toggleLightbox(this)">
+  </figure><button id="qrcode-open" onclick="hyperbook.qrcodeOpen()" title="QR-Code"><div class="qrcode-icon"></div></button>
+  <dialog id="qrcode-dialog">
+    <div class="container">
+      <div class="name">Hase und Igel</div>
+      <div class="make-qrcode"></div>
+      <div class="url">
+        <div data-href="/spiele/25_hase-und-igel"></div>
+      </div>
+    </div><button class="close" onclick="hyperbook.qrcodeClose()"><div class="close-icon"></div></button>
+  </dialog>
+</div>
+</article><div class="jump-container"><a class="jump previous" href="/spiele/hase-und-igel/xml-dokumentation/zug-anforderung">zug-anforderung</a><a class="jump next" href="/spiele/25_hase-und-igel/xml">XML-Dokumentation</a></div><div class="meta"><a class="edit-github" href="https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/25_hase-und-igel/index.md">✎ GitHub</a><span class="copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a> by <a href="https://software-challenge.de">Software-Challenge Germany</a></span></div></main></div><script src="/__hyperbook_assets/client.js" defer></script></body></html>

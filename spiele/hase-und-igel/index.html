@@ -1,0 +1,1210 @@
+<!doctype html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Hase und Igel - Software-Challenge Dokumentation</title><meta property="og:title" value="Hase und Igel - Software-Challenge Dokumentation"><meta name="description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta property="og:description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta name="keywords"><link rel="stylesheet" href="/__hyperbook_assets/normalize.css"><style>
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --color-brand: #3276AD;
+  --color-brand-dark: #3276AD;
+  --color-brand-text: white;
+}
+@font-face {
+  font-family: hyperbook-body;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: hyperbook-heading;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: hyperbook-code;
+  src: url(/fonts/SourceCodePro-Regular.ttf);
+  size-adjust: 100%;
+}
+
+:root {
+  --color-background: white;
+  --color-text: black;
+  --color-text-deactivated: #242428;
+  --color-nav: #f5f5f5;
+  --color-nav-border: #3c3c3c;
+  --color-author-background: #d6d6d6;
+  --color-author-color: #3c3c3c;
+  --color-spacer: #a4a4a4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #1e1e1e;
+    --color-text: #f5f5f5;
+    --color-text-deactivated: #d6d6d6;
+    --color-nav: #222222;
+    --color-nav-border: #464646;
+    --color-author-background: #2c2c2c;
+    --color-author-color: #d6d6d6;
+    --color-spacer: #3c3c3c;
+    --color-brand: var(--color-brand-dark);
+  }
+
+  header {
+    background: var(--color-nav)!important;
+  }
+
+  .branding {
+    color: var(--color-brand)!important;
+  }
+
+  .toggle .bar1,
+  .toggle .bar2,
+  .toggle .bar3 {
+    background-color: var(--color-brand)!important;
+  }
+}
+
+body {
+  overscroll-behavior-x: none;
+  background-color: transparent;
+  color: var(--color-text);
+  font-family: hyperbook-body;
+  font-weight: normal;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+</style><link rel="stylesheet" href="/__hyperbook_assets/math/katex.min.css"><link rel="stylesheet" href="/__hyperbook_assets/shell.css"><link rel="stylesheet" href="/__hyperbook_assets/content.css"><link rel="stylesheet" href="/__hyperbook_assets/code.css"><script>
+HYPERBOOK_ASSETS = "/__hyperbook_assets/"
+</script><script type="module" src="/__hyperbook_assets/side-drawer.js" async></script><script src="/__hyperbook_assets/qrcode.js" async></script><link rel="stylesheet" href="/__hyperbook_assets/directive-term/style.css"></head><body><div class="main-grid"><header><div class="mobile-nav"><button aria-label="Nav Toggle" class="toggle" onclick="hyperbook.navToggle()"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></button><side-drawer id="nav-drawer"><div class="nav-drawer-content"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div class="virtual-section"><div class="collapsible name  expanded"><a href="/spiele" class="label">Spiele</a></div><div class="collapsible-content links"><div class="section"><div class="collapsible name  expanded"><a href="/spiele/25_hase-und-igel" class="label">Hase und Igel</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/spiele/25_hase-und-igel/xml">XML-Dokumentation</a></li></ul></div></div></div></div><div class="section"><div class="collapsible name  "><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul></div></div><div class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div></side-drawer></div><a class="branding" href="/"><div class="logo"><img alt="logo" src="/logo.svg"></div><div class="name">Software-Challenge Dokumentation</div></a></header><div class="sidebar"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div class="virtual-section"><div class="collapsible name  expanded"><a href="/spiele" class="label">Spiele</a></div><div class="collapsible-content links"><div class="section"><div class="collapsible name  expanded"><a href="/spiele/25_hase-und-igel" class="label">Hase und Igel</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/spiele/25_hase-und-igel/xml">XML-Dokumentation</a></li></ul></div></div></div></div><div class="section"><div class="collapsible name  "><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul></div></div><div class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div><main><article>
+<div class="hyperbook-markdown"><button id="toc-toggle" onclick="hyperbook.tocToggle()" title="Table of Contents"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div></button>
+  <side-drawer id="toc-drawer" right>
+    <div class="toc-drawer-content">
+      <nav class="toc">
+        <ul>
+          <li class="level-1"><a href="#modifizierte-spielregeln-hase-und-igel-softwarechallenge-2018">Modifizierte Spielregeln Hase und Igel Software-Challenge 2018</a></li>
+          <li class="level-2"><a href="#spielbeginn">Spielbeginn</a></li>
+          <li class="level-2"><a href="#felder">Felder</a></li>
+          <li class="level-3"><a href="#startfeld">Startfeld</a></li>
+          <li class="level-3"><a href="#karottenfeld">Karottenfeld</a></li>
+          <li class="level-3"><a href="#hasenfeld">Hasenfeld</a></li>
+          <li class="level-3"><a href="#salatfeld">Salatfeld</a></li>
+          <li class="level-3"><a href="#igelfeld">Igelfeld</a></li>
+          <li class="level-3"><a href="#position1-feld">Position-1 Feld</a></li>
+          <li class="level-3"><a href="#position2-feld">Position-2 Feld</a></li>
+          <li class="level-3"><a href="#zielfeld">Zielfeld</a></li>
+          <li class="level-2"><a href="#zugmglichkeiten">Zugmöglichkeiten</a></li>
+          <li class="level-3"><a href="#vorwrtszug">Vorwärtszug</a></li>
+          <li class="level-3"><a href="#rckwrtszug">Rückwärtszug</a></li>
+          <li class="level-3"><a href="#karte-ausspielen">Karte ausspielen</a></li>
+          <li class="level-4"><a href="#friss-sofort-einen-salat">Friss sofort einen Salat</a></li>
+          <li class="level-4"><a href="#karotten-nehmen-oder-abgeben">Karotten nehmen oder abgeben</a></li>
+          <li class="level-4"><a href="#rcke-eine-position-vor">Rücke eine Position vor</a></li>
+          <li class="level-4"><a href="#falle-eine-position-zurck">Falle eine Position zurück</a></li>
+          <li class="level-3"><a href="#karotten-tauschen">Karotten tauschen</a></li>
+          <li class="level-3"><a href="#salat-fressen">Salat fressen</a></li>
+          <li class="level-3"><a href="#aussetzen">Aussetzen</a></li>
+          <li class="level-3"><a href="#zusammenfassung">Zusammenfassung</a></li>
+          <li class="level-2"><a href="#spielende">Spielende</a></li>
+          <li class="level-2"><a href="#beispiel">Beispiel</a></li>
+          <li class="level-1"><a href="#softwarechallenge-xmldokumentation-hase-und-igel">Software-Challenge XML-Dokumentation Hase und Igel</a></li>
+          <li class="level-2"><a href="#einleitung">Einleitung</a></li>
+          <li class="level-3"><a href="#an-wen-richtet-sich-dieses-dokument">An wen richtet sich dieses Dokument?</a></li>
+          <li class="level-3"><a href="#hinweise">Hinweise</a></li>
+          <li class="level-2"><a href="#spiel-betreten">Spiel betreten</a></li>
+          <li class="level-3"><a href="#ohne-reservierungscode">Ohne Reservierungscode</a></li>
+          <li class="level-3"><a href="#mit-reservierungscode">Mit Reservierungscode</a></li>
+          <li class="level-4"><a href="#join-mit-rc">Join mit RC</a></li>
+          <li class="level-4"><a href="#welcome-message">Welcome Message</a></li>
+          <li class="level-2"><a href="#zge-senden">Züge senden</a></li>
+          <li class="level-3"><a href="#der-move">Der Move</a></li>
+          <li class="level-4"><a href="#moverequest">MoveRequest</a></li>
+          <li class="level-4"><a href="#senden">Senden</a></li>
+          <li class="level-3"><a href="#zug">ZUG</a></li>
+          <li class="level-3"><a href="#action">ACTION</a></li>
+          <li class="level-3"><a href="#debughints">Debughints</a></li>
+          <li class="level-2"><a href="#spielstatus">Spielstatus</a></li>
+          <li class="level-3"><a href="#memento">memento</a></li>
+          <li class="level-3"><a href="#status">Status</a></li>
+          <li class="level-3"><a href="#spieler">Spieler</a></li>
+          <li class="level-3"><a href="#spielbrett">Spielbrett</a></li>
+          <li class="level-3"><a href="#spielfeld">Spielfeld</a></li>
+          <li class="level-3"><a href="#letzter-zug">Letzter Zug</a></li>
+          <li class="level-2"><a href="#zuganforderung">Zug-Anforderung</a></li>
+          <li class="level-2"><a href="#fehler">Fehler</a></li>
+          <li class="level-2"><a href="#spiel-verlassen">Spiel verlassen</a></li>
+          <li class="level-2"><a href="#spielergebnis">Spielergebnis</a></li>
+          <li class="level-2"><a href="#spielverlauf">Spielverlauf</a></li>
+          <li class="level-3"><a href="#variante-1-adminclient-mit-reservierungscode">Variante 1 (AdminClient Mit Reservierungscode)</a></li>
+          <li class="level-3"><a href="#variante-2-eventuell-ohne-adminclient-ohne-reservierungscode">Variante 2 ((eventuell) ohne AdminClient Ohne Reservierungscode)</a></li>
+          <li class="level-3"><a href="#weiterer-spielverlauf">Weiterer Spielverlauf</a></li>
+        </ul>
+      </nav>
+    </div>
+  </side-drawer>
+  <p>
+    Die Nutzung des Spielkonzeptes "Hase und Igel" (Name, Spielregeln und
+    Grafik) erfolgt mit freundlicher Genehmigung der Ravensburger
+    Spieleverlag GmbH. Das Spielfeld der Version 2008 vom Ravensburger
+    Spieleverlag wird folgendermaßen modifiziert: 1. Die Igel- und
+    Salatfelder werden so angeordnet wie im Original. Die Felder zwischen 2
+    Igelfeldern mit Ausnahme der Salatfelder werden zufällig permutiert. 2.
+    Die Zahlenfelder 3 und 4 werden durch Karottenfelder ersetzt. 3. Das
+    Zahlenfeld 1/5/6 wird durch das Zahlenfeld 1 ersetzt.
+  </p>
+  <h1 id="modifizierte-spielregeln-hase-und-igel-softwarechallenge-2018"><a href="#modifizierte-spielregeln-hase-und-igel-softwarechallenge-2018" class="heading"><span>Modifizierte Spielregeln Hase und Igel Software-Challenge 2018</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#modifizierte-spielregeln-hase-und-igel-softwarechallenge-2018&#x22;, &#x22;Modifizierte Spielregeln Hase und Igel Software-Challenge 2018&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#modifizierte-spielregeln-hase-und-igel-softwarechallenge-2018">🔖</button></h1>
+  <p>Sören Domrös &#x3C;<a href="mailto:stu114053@mail.uni-kiel.de">stu114053@mail.uni-kiel.de</a>></p>
+  <p>
+    Ziel dieser Dokumentation ist es, die Spielregeln der Softwarechallenge
+    festzuhalten.
+  </p>
+  <p><a href="regeln.pdf">PDF-Version dieses Dokumentes</a></p>
+  <p>
+    Wir freuen uns über sämtliche Verbesserungsvorschläge. Die Dokumentation
+    kann <a href="https://github.com/software-challenge/docs">direkt auf GitHub
+editiert</a> werden, einzige
+    Voraussetzung ist eine kostenlose Registrierung bei GitHub. Ist man
+    angemeldet, kann man ein Dokument auswählen (ein guter Startpunkt ist
+    die Datei
+    <a href="https://github.com/software-challenge/docs/blob/master/index.md">index.md</a>
+    welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
+    auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
+    <a href="mailto:tech@software-challenge.de">tech@software-challenge.de</a>.
+  </p>
+  <h2 id="spielbeginn"><a href="#spielbeginn" class="heading"><span>Spielbeginn</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#spielbeginn&#x22;, &#x22;Spielbeginn&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#spielbeginn">🔖</button></h2>
+  <p>
+    Jeder Spieler erhält zu Beginn 68 Karotten und 5 Salate als Wegzehrung,
+    sowie je eine Karte „Rücke eine Position vor“, „Falle eine Position
+    zurück“, „Friss sofort einen Salat“ und „Karotten nehmen oder abgeben“.
+    Mit den Karotten bezahlt der Spieler das Vorrücken. Die Anzahl der
+    Karotten, die benötigt werden, um eine bestimmte Anzahl von Zügen zu
+    ziehen, ist dabei der folgenden Rennkarte zu entnehmen.
+  </p>
+  <figure src="/images/spiele/hase-und-igel/rennkarte.png" alt="Hase und Igel Rennkarte" class="normal">
+    <img src="/images/spiele/hase-und-igel/rennkarte.png" alt="Hase und Igel Rennkarte" onclick="hyperbook.toggleLightbox(this)">
+  </figure>
+  <p>
+    Das Spielfeld besteht aus 65 Feldern. Ziel des Spiels ist es das
+    Zielfeld (Feld 65) mit weniger als zehn Karotten und keinem Salat zu
+    erreichen.
+  </p>
+  <h2 id="felder"><a href="#felder" class="heading"><span>Felder</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#felder&#x22;, &#x22;Felder&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#felder">🔖</button></h2>
+  <p>Es gibt acht verschiedene Spielfelder:</p>
+  <h3 id="startfeld"><a href="#startfeld" class="heading"><span>Startfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#startfeld&#x22;, &#x22;Startfeld&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#startfeld">🔖</button></h3>
+  <p>
+    Das Startfeld darf nur verlassen werden. Es ist nicht erlaubt das
+    Startfeld erneut zu betreten, sollte es einmal verlassen werden. Auf ihm
+    starten beide Spieler
+  </p>
+  <h3 id="karottenfeld"><a href="#karottenfeld" class="heading"><span>Karottenfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#karottenfeld&#x22;, &#x22;Karottenfeld&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#karottenfeld">🔖</button></h3>
+  <p>
+    Ein Karottenfeld darf durch jede Bewegungsaktion (Vorwärtszug, Karten)
+    betreten werden. Nur auf ihm darf ein Karotten tauschen Zug stattfinden
+    (die Karotten tauschen Karte darf hier nicht benutzt werden).
+  </p>
+  <h3 id="hasenfeld"><a href="#hasenfeld" class="heading"><span>Hasenfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#hasenfeld&#x22;, &#x22;Hasenfeld&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#hasenfeld">🔖</button></h3>
+  <p>
+    Darf nur betreten werden, wenn eine Karte gespielt werden kann. Sollte
+    sich ein Spieler am Ende seines Zuges auf einem Hasenfeld befinden, muss
+    dieses im nächsten Zug (wenn möglich) verlassen werden (es ist erlaubt
+    das Hasenfeld zu verlassen und dann durch nutzen von Karten wieder zu
+    betreten).
+  </p>
+  <h3 id="salatfeld"><a href="#salatfeld" class="heading"><span>Salatfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#salatfeld&#x22;, &#x22;Salatfeld&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#salatfeld">🔖</button></h3>
+  <p>
+    Darf nur betreten werden, wenn der Spieler mindestens einen Salat
+    besitzt. In dem Zug nach dem Betreten muss ein Salat gefressen werden.
+    Nur auf einem Salatfeld darf ein Salat gefressen werden (außer natürlich
+    durch die Karte Salat fressen). Das Salatfeld muss verlassen werden
+    (wenn möglich) sobald ein Salat gegessen wurde (es ist innerhalb des
+    Spiels trotzdem durch Rückzüge oder Karten möglich auf demselben
+    Salatfeld mehrere Salate zu essen).
+  </p>
+  <h3 id="igelfeld"><a href="#igelfeld" class="heading"><span>Igelfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#igelfeld&#x22;, &#x22;Igelfeld&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#igelfeld">🔖</button></h3>
+  <p>
+    Darf nur durch einen Rückzug betreten werden. Muss (wenn möglich) im
+    nächsten Zug wieder verlassen werden.
+  </p>
+  <h3 id="position1-feld"><a href="#position1-feld" class="heading"><span>Position-1 Feld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#position1-feld&#x22;, &#x22;Position-1 Feld&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#position1-feld">🔖</button></h3>
+  <p>
+    Das Position 1 Feld darf uneingeschränkt betreten werden. Sollte sich
+    ein Spieler am Anfang seines Zuges auf diesem Feld befinden und an
+    erster Stelle stehen, so erhält er zehn Karotten.
+  </p>
+  <h3 id="position2-feld"><a href="#position2-feld" class="heading"><span>Position-2 Feld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#position2-feld&#x22;, &#x22;Position-2 Feld&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#position2-feld">🔖</button></h3>
+  <p>
+    Das Position 2 Feld darf uneingeschränkt betreten werden. Sollte sich
+    ein Spieler am Anfang seines Zuges auf diesem Feld befinden und an
+    zweiter Stelle stehen, so erhält er 30 Karotten.
+  </p>
+  <h3 id="zielfeld"><a href="#zielfeld" class="heading"><span>Zielfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#zielfeld&#x22;, &#x22;Zielfeld&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#zielfeld">🔖</button></h3>
+  <p>
+    Das Zielfeld darf nur betreten werden, wenn der Spieler höchstens zehn
+    Karotten und keine Salate besitzt.
+  </p>
+  <h2 id="zugmglichkeiten"><a href="#zugmglichkeiten" class="heading"><span>Zugmöglichkeiten</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#zugmglichkeiten&#x22;, &#x22;Zugmöglichkeiten&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#zugmglichkeiten">🔖</button></h2>
+  <p>Ein Spieler kann folgende Züge machen:</p>
+  <h3 id="vorwrtszug"><a href="#vorwrtszug" class="heading"><span>Vorwärtszug</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#vorwrtszug&#x22;, &#x22;Vorwärtszug&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#vorwrtszug">🔖</button></h3>
+  <p>
+    Durch einen Vorwärtszug bewegt sich der Spieler um die entsprechende
+    Zahl von Feldern nach vorne (mindestens 1). Dabei werden Karotten
+    entsprechend der Rennkarte verbraucht. Wenn ein Spieler sich auf dem
+    Startfeld befindet, muss ein Vorwärtszug gemacht werden. Wenn ein
+    Spieler sich auf einem Startfeld befindet oder die letzte Aktion, die
+    keine Aussetzaktion war, Salat fressen war, muss ein Bewegungszug
+    gemacht werden (Vorwärtszug oder Rückwärtszug). Ein Spieler darf nicht
+    auf ein Feld ziehen, dass bereits durch den Gegner besetzt ist, außer es
+    handelt sich um das Zielfeld. Durch einen Vorwärtszug dürfen alle Felder
+    außer das Igelfeld direkt betreten werden. Es ist nicht erlaubt das
+    Zielfeld zu betreten, wenn die Siegbedingungen (höchstens 10 Karotten
+    und 0 Salate) nicht erfüllt sind. Wenn durch einen Vorwärtszug ein
+    Salatfeld betreten wird, muss im nächsten Zug ein Salat gefressen werden
+    (sollte kein Salat vorhanden sein ist das Betreten nicht erlaubt). Wenn
+    durch einen Vorwärtszug ein Hasenfeld betreten wird, muss danach eine
+    Karte ausgespielt werden (wenn keine spielbare Karte vorhanden ist das
+    Betreten nicht erlaubt). Sollte durch einen Vorwärtszug kein Hasenfeld
+    betreten werden endet der Zug.
+  </p>
+  <h3 id="rckwrtszug"><a href="#rckwrtszug" class="heading"><span>Rückwärtszug</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#rckwrtszug&#x22;, &#x22;Rückwärtszug&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#rckwrtszug">🔖</button></h3>
+  <p>
+    Durch einen Rückwärtszug zieht der Spieler zu dem nächsten Igelfeld mit
+    kleinerem Index, sollte dies nicht besetzt sein. Ist das vorherige
+    Igelfeld besetzt, darf kein Rückzug gemacht werden. Durch einen Rückzug
+    werden 10 mal zurückgezogene Felder viele Karotten aufgenommen. Nach
+    einem Rückwärtszug endet der Zug.
+  </p>
+  <h3 id="karte-ausspielen"><a href="#karte-ausspielen" class="heading"><span>Karte ausspielen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#karte-ausspielen&#x22;, &#x22;Karte ausspielen&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#karte-ausspielen">🔖</button></h3>
+  <p>
+    Eine Karte muss ausgespielt werden, wenn ein Hasenfeld neu betreten wird
+    und darf auch nur auf einem Hasenfeld ausgespielt werden. Das Betreten
+    eines Hasenfeldes ist entweder durch einen Vorwärtszug oder das
+    Ausspielen einer Karte möglich. Sollte es nicht möglich sein eine Karte
+    aus zuspielen ist das Betreten eines Hasenfeldes nicht erlaubt. Sollte
+    durch das Ausspielen einer Karte kein Hasenfeld neu betreten werden Ende
+    der Zug. Ein Spieler hat zu Beginn folgende Karten:
+  </p>
+  <h4 id="friss-sofort-einen-salat"><a href="#friss-sofort-einen-salat" class="heading"><span>Friss sofort einen Salat</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#friss-sofort-einen-salat&#x22;, &#x22;Friss sofort einen Salat&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#friss-sofort-einen-salat">🔖</button></h4>
+  <p>
+    Es wird ein Salat vom Spieler entfernt, je nach Position des Spielers
+    (Erster/Zweiter) erhält der Spieler Karotten (10/30). Diese Karte darf
+    nur eingesetzt werden, wenn der Spieler mindestens einen Salat hat. In
+    dem nächsten Zug muss das betretene Hasenfeld verlassen werden.
+  </p>
+  <h4 id="karotten-nehmen-oder-abgeben"><a href="#karotten-nehmen-oder-abgeben" class="heading"><span>Karotten nehmen oder abgeben</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#karotten-nehmen-oder-abgeben&#x22;, &#x22;Karotten nehmen oder abgeben&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#karotten-nehmen-oder-abgeben">🔖</button></h4>
+  <p>
+    Der Spieler darf 20 Karotten abgeben oder aufnehmen oder nichts tun. Es
+    darf der Spieler nicht mehr Karotten abgeben als er besitzt. In dem
+    nächsten Zug muss das betretene Hasenfeld verlassen werden.
+  </p>
+  <h4 id="rcke-eine-position-vor"><a href="#rcke-eine-position-vor" class="heading"><span>Rücke eine Position vor</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#rcke-eine-position-vor&#x22;, &#x22;Rücke eine Position vor&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#rcke-eine-position-vor">🔖</button></h4>
+  <p>
+    Kann nur ausgespielt werden, wenn der Spieler sich an zweiter Position
+    befindet. Der Spieler rückt auf das Feld vor dem gegnerischen Spieler
+    vor. Dies ist nicht erlaubt, sollte es sich bei dem so betretenen Feld
+    um ein Igelfeld handeln oder sollte der gegnerische Spieler sich im Ziel
+    befinden. Es ist außerdem nicht erlaubt, so ein Salatfeld zu betreten,
+    ohne mindestens einen Salat zu besitzen. Es kann so das Ziel erreicht
+    werden, wenn die Siegbedingungen erfüllt sind.
+  </p>
+  <h4 id="falle-eine-position-zurck"><a href="#falle-eine-position-zurck" class="heading"><span>Falle eine Position zurück</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#falle-eine-position-zurck&#x22;, &#x22;Falle eine Position zurück&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#falle-eine-position-zurck">🔖</button></h4>
+  <p>
+    Kann nur ausgespielt werden, wenn der Spieler sich an erster Position
+    befindet. Der Spieler fällt auf das Feld hinter dem gegnerischen Spieler
+    zurück. Dies ist nicht erlaubt, sollte es sich bei dem so betretenen
+    Feld um ein Igelfeld handeln oder sollte der gegnerische Spieler sich
+    auf dem Startfeld befinden. Es ist außerdem nicht erlaubt, so ein
+    Salatfeld zu betreten, ohne mindestens einen Salat zu besitzen.
+  </p>
+  <h3 id="karotten-tauschen"><a href="#karotten-tauschen" class="heading"><span>Karotten tauschen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#karotten-tauschen&#x22;, &#x22;Karotten tauschen&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#karotten-tauschen">🔖</button></h3>
+  <p>
+    Kann nur ausgeführt werden, wenn sich der Spieler auf einem Karottenfeld
+    befindet. Es können entweder zehn Karotten abgegeben werden (dabei muss
+    der Spieler mindestens zehn Karotten besitzen) oder 10 Karotten
+    aufgenommen werden. Nach dieser Aktion endet der Zug.
+  </p>
+  <h3 id="salat-fressen"><a href="#salat-fressen" class="heading"><span>Salat fressen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#salat-fressen&#x22;, &#x22;Salat fressen&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#salat-fressen">🔖</button></h3>
+  <p>
+    Wenn sich der Spieler auf einem Salatfeld befindet und er in seiner
+    letzten Aktion, die kein Aussetzzug war, keinen Salat gefressen hat,
+    muss er einen Salat fressen. Der Spieler verliert einen Salat (dies ist
+    immer möglich, da ein Spieler nur mit mindestens einem Salat ein
+    Salatfeld betreten kann) und erhält je nach Position (Erster/Zweiter)
+    Karotten (10/30). Nach dieser Aktion endet der Zug.
+  </p>
+  <h3 id="aussetzen"><a href="#aussetzen" class="heading"><span>Aussetzen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#aussetzen&#x22;, &#x22;Aussetzen&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#aussetzen">🔖</button></h3>
+  <p>
+    Es Spieler darf nur Aussetzen, sollte sonst kein anderer Zug möglich
+    sein. Nach dieser Aktion endet der Zug.
+  </p>
+  <h3 id="zusammenfassung"><a href="#zusammenfassung" class="heading"><span>Zusammenfassung</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#zusammenfassung&#x22;, &#x22;Zusammenfassung&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#zusammenfassung">🔖</button></h3>
+  <p>
+    Enthält ein Zug einen der folgenden Aktionen, kann er nur aus einer
+    Aktion bestehen: Rückwärtszug, Karotten tauschen, Salat fressen oder
+    Aussetzen. Eine Karte kann nur nach einem Vorwärtszug oder einer anderen
+    Karte gespielt werden (wenn durch die vorherige Aktion ein Hasenfeld
+    betreten wird). Ein Vorwärtszug, der auf kein Hasenfeld führt, kann
+    ebenfalls nur die einzige Aktion eines Zuges sein. Die einzige
+    Möglichkeit mehr als eine Aktion pro Zug zu machen ist durch Karten
+    möglich. Dies kann folgendermaßen passieren:<br>Der Gegner befindet sich zwischen zwei Hasenfeldern. Der Spieler selbst
+    befindet sich hinter ihm. Der Spieler zieht mit einem Vorwärtszug auf
+    das Hasenfeld hinter dem Gegner. Daraufhin muss er eine Karte spielen.
+    Er spielt die Karte "Rücke eine Position vor". Dadurch steht er auf dem
+    Hasenfeld direkt vor dem Gegner und muss erneut eine Karte spielen. Er
+    spielt die Karte "Falle eine Position zurück". Dadurch steht er auf dem
+    Hasenfeld direkt hinter dem Gegner und muss erneut eine Karte spielen.
+    Er spielt "Friss sofort einen Salat". Es wird kein Hasenfeld neu
+    betreten, also endet der Zug. So ist es möglich maximal vier Aktionen in
+    einem Zug zu machen.
+  </p>
+  <h2 id="spielende"><a href="#spielende" class="heading"><span>Spielende</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#spielende&#x22;, &#x22;Spielende&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#spielende">🔖</button></h2>
+  <p>
+    Das Spiel endet, sobald das Rundenlimit von 30 Runden erreicht ist oder
+    sich mindestens eine Spieler am Ende einer Runde im Ziel befindet.
+    Sollte der erste Spieler im Ziel sein, hat der zweite Spieler einen
+    Nachzug. Der erste Spieler bekommt keinen Nachzug. Es gewinnt der
+    Spieler, der am nächsten am Ziel befindet. Sollte beide Spieler sich im
+    Ziel befinden, gewinnt der Spieler mit weniger Karotten. Sollten beide
+    Spieler gleich viele Karotten besitzen, gewinnt der Startspieler, da er
+    zuerst das Ziel erreicht hat.
+  </p>
+  <h2 id="beispiel"><a href="#beispiel" class="heading"><span>Beispiel</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#beispiel&#x22;, &#x22;Beispiel&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#beispiel">🔖</button></h2>
+  <p>
+    Jasper steht unmittelbar vor einem Hasenfeld (Feld 34). Johannes steht
+    weit hinter Jasper (Feld 22) und hat nur noch den Hasenjoker „Rücke eine
+    Position vor“. Dann darf Johannes weder auf ein Hasenfeld vor Jasper
+    setzen (z. B. Feld 35), denn dort darf er seinen einzigen Hasenjoker
+    nicht einsetzen, noch darf er auf ein Hasenfeld hinter Jasper setzen
+    (z. B. Feld 25), denn wenn er dort seinen Hasenjoker „Rücke eine
+    Position vor“ einsetzen würde, käme er wieder auf ein Hasenfeld, was
+    aber nicht erlaubt ist, weil er dafür dann keinen Hasenjoker mehr hat.
+  </p>
+  <figure src="/images/spiele/hase-und-igel/spielbrett.png" alt="Hase und Igel Spielbrett" class="normal">
+    <img src="/images/spiele/hase-und-igel/spielbrett.png" alt="Hase und Igel Spielbrett" onclick="hyperbook.toggleLightbox(this)">
+  </figure>
+  <h1 id="softwarechallenge-xmldokumentation-hase-und-igel"><a href="#softwarechallenge-xmldokumentation-hase-und-igel" class="heading"><span>Software-Challenge XML-Dokumentation Hase und Igel</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#softwarechallenge-xmldokumentation-hase-und-igel&#x22;, &#x22;Software-Challenge XML-Dokumentation Hase und Igel&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#softwarechallenge-xmldokumentation-hase-und-igel">🔖</button></h1>
+  <p>Sören Domrös &#x3C;<a href="mailto:stu114053@mail.uni-kiel.de">stu114053@mail.uni-kiel.de</a>></p>
+  <p>
+    Ziel dieser Dokumentation ist es, die XML-Schnittstelle der
+    Softwarechallenge festzuhalten.
+  </p>
+  <p><a href="xml-dokumentation.pdf">PDF-Version dieses Dokumentes</a></p>
+  <p>
+    Wir freuen uns über sämtliche Verbesserungsvorschläge. Die Dokumentation
+    kann <a href="https://github.com/software-challenge/docs">direkt auf GitHub
+editiert</a> werden, einzige
+    Voraussetzung ist eine kostenlose Registrierung bei GitHub. Ist man
+    angemeldet, kann man ein Dokument auswählen (ein guter Startpunkt ist
+    die Datei
+    <a href="https://github.com/software-challenge/docs/blob/master/index.md">index.md</a>
+    welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
+    auf den Stift oben rechts klicken. Alternativ auch gern eine E-Mail an
+    <a href="mailto:tech@software-challenge.de">tech@software-challenge.de</a>.
+  </p>
+  <h2 id="einleitung"><a href="#einleitung" class="heading"><span>Einleitung</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#einleitung&#x22;, &#x22;Einleitung&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#einleitung">🔖</button></h2>
+  <p>
+    Wie in den letzten Jahren wird zur Computerspieler-Server Kommunikation ein
+    XML-Protokoll genutzt. In diesem Dokument wird die
+    Kommunikationsschnittstelle definiert, sodass ein komplett eigener
+    <a href="/glossary/player">Computerspieler</a> geschrieben werden kann. Es wird hier nicht die vollständige
+    Kommunikation dokumentiert bzw. definiert, dennoch alles, womit ein
+    <a href="/glossary/player">Computerspieler</a> umgehen können muss, um spielfähig zu sein.
+  </p>
+  <h3 id="an-wen-richtet-sich-dieses-dokument"><a href="#an-wen-richtet-sich-dieses-dokument" class="heading"><span>An wen richtet sich dieses Dokument?</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#an-wen-richtet-sich-dieses-dokument&#x22;, &#x22;An wen richtet sich dieses Dokument?&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#an-wen-richtet-sich-dieses-dokument">🔖</button></h3>
+  <p>
+    Die Kommunikation mit dem Spielserver ist für diejenigen, die aufbauend
+    auf dem Zufallsspieler programmieren, unwichtig. Dort steht bereits ein
+    funktionierender <a href="/glossary/player">Computerspieler</a> bereit und es muss nur die Spiellogik entworfen
+    werden. \\ Nur wer einen komplett eigenen <a href="/glossary/player">Computerspieler</a> entwerfen will,
+    beispielsweise um die Programmiersprache frei wählen zu können, benötigt
+    die Definitionen.
+  </p>
+  <h3 id="hinweise"><a href="#hinweise" class="heading"><span>Hinweise</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#hinweise&#x22;, &#x22;Hinweise&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#hinweise">🔖</button></h3>
+  <p>
+    Falls Sie beabsichtigen sollten, diese Kommunikationsschnittstelle zu
+    realisieren, sei darauf hingewiesen, dass es im Verlauf des Wettbewerbes
+    möglich ist, dass weitere, hier noch nicht aufgeführte Elemente zur
+    Kommunikationsschnittstelle hinzugefügt werden. Um auch bei solchen
+    Änderungen sicher zu sein, dass ihr <a href="/glossary/player">Computerspieler</a> fehlerfrei mit dem Server
+    kommunizieren kann, empfehlen wir Ihnen, beim Auslesen des <a href="/glossary/xml">XML</a> jegliche
+    Daten zu verwerfen, die hier nicht weiter definiert sind. Die vom
+    Institut bereitgestellten Programme (Server, Zufallsspieler) nutzen eine
+    Bibliothek um Java-Objekte direkt in <a href="/glossary/xml">XML</a> zu konvertieren und umgekehrt.
+    Dabei werden XML-Nachrichten nicht mit einem newline abgeschlossen.
+  </p>
+  <h2 id="spiel-betreten"><a href="#spiel-betreten" class="heading"><span>Spiel betreten</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#spiel-betreten&#x22;, &#x22;Spiel betreten&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#spiel-betreten">🔖</button></h2>
+  <p>Wenn begonnen wird mit dem Server zu kommunizieren, muss zuallererst</p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;protocol></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<protocol>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>gesendet werden, um die Kommunikation zu beginnen.</p>
+  <h3 id="ohne-reservierungscode"><a href="#ohne-reservierungscode" class="heading"><span>Ohne Reservierungscode</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#ohne-reservierungscode&#x22;, &#x22;Ohne Reservierungscode&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#ohne-reservierungscode">🔖</button></h3>
+  <p>Betritt ein beliebiges offenes Spiel:</p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;join gameType="swc_2018_hase_und_igel"/></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<join gameType=&#x22;swc_2018_hase_und_igel&#x22;/>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Sollte kein Spiel offen sein, wird so ein neues erstellt. Je nachdem ob
+    paused in server.properties true oder false ist, wird das Spiel pausiert
+    gestartet oder nicht. Der Server antwortet darauf mit:
+  </p>
+  <ul>
+    <li>ROOM_ID Id des GameRooms</li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;joined roomId="ROOM_ID"/></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<joined roomId=&#x22;ROOM_ID&#x22;/>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Alle administrativen Clients werden ebenfalls darüber benachrichtigt und
+    erhalten folgende Nachricht:
+  </p>
+  <ul>
+    <li>ROOM_ID Id des GameRooms</li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;joinedGameRoom roomId="ROOM_ID" existing="false"/></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<joinedGameRoom roomId=&#x22;ROOM_ID&#x22; existing=&#x22;false&#x22;/>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>Falls bereits ein GameRoom offen war, ist dementsprechend existing true.</p>
+  <h3 id="mit-reservierungscode"><a href="#mit-reservierungscode" class="heading"><span>Mit Reservierungscode</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#mit-reservierungscode&#x22;, &#x22;Mit Reservierungscode&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#mit-reservierungscode">🔖</button></h3>
+  <p>
+    Ist ein Reservierungscode gegeben, so kann man den durch den Code
+    gegebenen Platz betreten.
+  </p>
+  <h4 id="join-mit-rc"><a href="#join-mit-rc" class="heading"><span>Join mit RC</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#join-mit-rc&#x22;, &#x22;Join mit RC&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#join-mit-rc">🔖</button></h4>
+  <ul>
+    <li>RC Reservierungscode</li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;joinPrepared reservationCode="RC"/></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<joinPrepared reservationCode=&#x22;RC&#x22;/>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h4 id="welcome-message"><a href="#welcome-message" class="heading"><span>Welcome Message</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#welcome-message&#x22;, &#x22;Welcome Message&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#welcome-message">🔖</button></h4>
+  <p>
+    Der Server antwortet darauf nur, wenn der zweite <a href="/glossary/player">Computerspieler</a> ebenfalls
+    verbunden ist:
+  </p>
+  <ul>
+    <li>
+      <p>ROOM_ID Id des GameRooms</p>
+    </li>
+    <li>
+      <p>COLOR Spielerfarbe also red oder blue</p>
+    </li>
+    <li>
+      <p>status GameState wie in <a href="#status">Status</a></p>
+    </li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;joined roomId="ROOM_ID"/></span></span>
+<span data-line=""><span>&#x3C;room roomId="ROOM_ID"></span></span>
+<span data-line=""><span>  &#x3C;data class="welcomeMessage" color="COLOR">&#x3C;/data></span></span>
+<span data-line=""><span>&#x3C;/room></span></span>
+<span data-line=""><span>&#x3C;room roomId="ROOM_ID"></span></span>
+<span data-line=""><span>  &#x3C;data class="memento"></span></span>
+<span data-line=""><span>    status</span></span>
+<span data-line=""><span>  &#x3C;/data></span></span>
+<span data-line=""><span>&#x3C;/room></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<joined roomId=&#x22;ROOM_ID&#x22;/>
+<room roomId=&#x22;ROOM_ID&#x22;>
+  <data class=&#x22;welcomeMessage&#x22; color=&#x22;COLOR&#x22;></data>
+</room>
+<room roomId=&#x22;ROOM_ID&#x22;>
+  <data class=&#x22;memento&#x22;>
+    status
+  </data>
+</room>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h2 id="zge-senden"><a href="#zge-senden" class="heading"><span>Züge senden</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#zge-senden&#x22;, &#x22;Züge senden&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#zge-senden">🔖</button></h2>
+  <h3 id="der-move"><a href="#der-move" class="heading"><span>Der Move</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#der-move&#x22;, &#x22;Der Move&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#der-move">🔖</button></h3>
+  <p>Der Move ist die Antwort auf den MoveRequest des Servers.</p>
+  <h4 id="moverequest"><a href="#moverequest" class="heading"><span>MoveRequest</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#moverequest&#x22;, &#x22;MoveRequest&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#moverequest">🔖</button></h4>
+  <ul>
+    <li>ROOM_ID Id des GameRooms</li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;room roomId="ROOM_ID"></span></span>
+<span data-line=""><span>  &#x3C;data class="sc.framework.plugins.protocol.MoveRequest"/></span></span>
+<span data-line=""><span>&#x3C;/room></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<room roomId=&#x22;ROOM_ID&#x22;>
+  <data class=&#x22;sc.framework.plugins.protocol.MoveRequest&#x22;/>
+</room>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h4 id="senden"><a href="#senden" class="heading"><span>Senden</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#senden&#x22;, &#x22;Senden&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#senden">🔖</button></h4>
+  <p>
+    Der Move ist der allgemeine Zug, der in verschiedenen Varianten gesendet
+    werden kann.
+  </p>
+  <ul>
+    <li>
+      <p>ROOM_ID Id des GameRooms</p>
+    </li>
+    <li>
+      <p>ZUG Zug wie in <a href="#zug">ZUG</a></p>
+    </li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;room roomId="ROOM_ID"></span></span>
+<span data-line=""><span>  ZUG</span></span>
+<span data-line=""><span>&#x3C;/room></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<room roomId=&#x22;ROOM_ID&#x22;>
+  ZUG
+</room>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h3 id="zug"><a href="#zug" class="heading"><span>ZUG</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#zug&#x22;, &#x22;ZUG&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#zug">🔖</button></h3>
+  <ul>
+    <li>ACTION Aktionen wie in <a href="#action">ACTION</a></li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;data class="move"></span></span>
+<span data-line=""><span>  ACTION</span></span>
+<span data-line=""><span>  ..</span></span>
+<span data-line=""><span>  ACTION</span></span>
+<span data-line=""><span>&#x3C;/move></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<data class=&#x22;move&#x22;>
+  ACTION
+  ..
+  ACTION
+</move>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h3 id="action"><a href="#action" class="heading"><span>ACTION</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#action&#x22;, &#x22;ACTION&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#action">🔖</button></h3>
+  <p>Mögliche Aktionen:</p>
+  <ul>
+    <li>
+      <p>I Index der Aktion beginnend mit 0</p>
+    </li>
+    <li>
+      <p>D Anzahl der Felder um die sich bewegt wird</p>
+    </li>
+    <li>
+      <p>W -10 oder 10</p>
+    </li>
+    <li>
+      <p>V 20,0,-20 falls type TAKE_OR_DROP_CARROTS, 0 sonst</p>
+    </li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;advance order="I" distance="D"/></span></span>
+<span data-line=""><span>&#x3C;card order="I" type="CARD_TYPE" value="V"/></span></span>
+<span data-line=""><span>&#x3C;exchangeCarrots order="I" value="W"/></span></span>
+<span data-line=""><span>&#x3C;eatSalad order="I"/></span></span>
+<span data-line=""><span>&#x3C;fallBack order="I"/></span></span>
+<span data-line=""><span>&#x3C;skip order="I"/></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<advance order=&#x22;I&#x22; distance=&#x22;D&#x22;/>
+<card order=&#x22;I&#x22; type=&#x22;CARD_TYPE&#x22; value=&#x22;V&#x22;/>
+<exchangeCarrots order=&#x22;I&#x22; value=&#x22;W&#x22;/>
+<eatSalad order=&#x22;I&#x22;/>
+<fallBack order=&#x22;I&#x22;/>
+<skip order=&#x22;I&#x22;/>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h3 id="debughints"><a href="#debughints" class="heading"><span>Debughints</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#debughints&#x22;, &#x22;Debughints&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#debughints">🔖</button></h3>
+  <p>Zügen können Debug-Informationen beigefügt werden:</p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;hint content="S"/></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<hint content=&#x22;S&#x22;/>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>Damit sieht beispielsweise ein Laufzug so aus:</p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;room roomId="ROOM_ID"></span></span>
+<span data-line=""><span>  &#x3C;data class="move"></span></span>
+<span data-line=""><span>    &#x3C;advance order="0" distance="1"/></span></span>
+<span data-line=""><span>    &#x3C;card order="1" type="EAT_SALAD" value="0"/></span></span>
+<span data-line=""><span>    &#x3C;hint content="Dies ist ein Hint."/></span></span>
+<span data-line=""><span>    &#x3C;hint content="noch ein Hint"/></span></span>
+<span data-line=""><span>  &#x3C;/data></span></span>
+<span data-line=""><span>&#x3C;/room></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<room roomId=&#x22;ROOM_ID&#x22;>
+  <data class=&#x22;move&#x22;>
+    <advance order=&#x22;0&#x22; distance=&#x22;1&#x22;/>
+    <card order=&#x22;1&#x22; type=&#x22;EAT_SALAD&#x22; value=&#x22;0&#x22;/>
+    <hint content=&#x22;Dies ist ein Hint.&#x22;/>
+    <hint content=&#x22;noch ein Hint&#x22;/>
+  </data>
+</room>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h2 id="spielstatus"><a href="#spielstatus" class="heading"><span>Spielstatus</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#spielstatus&#x22;, &#x22;Spielstatus&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#spielstatus">🔖</button></h2>
+  <p>
+    Es folgt die Beschreibung des Spielstatus, der vor jeder Zugaufforderung
+    an die Clients gesendet wird. Das Spielstatus-Tag ist dabei noch in
+    einem <em>data</em>-Tag der Klasse <em>memento</em> gewrappt:
+  </p>
+  <h3 id="memento"><a href="#memento" class="heading"><span>memento</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#memento&#x22;, &#x22;memento&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#memento">🔖</button></h3>
+  <ul>
+    <li>
+      <p>ROOM_ID Id des GameRooms</p>
+    </li>
+    <li>
+      <p>status Gamestate wie in <a href="#status">Status</a></p>
+    </li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;room roomId="ROOM_ID"></span></span>
+<span data-line=""><span>  &#x3C;data class="memento"></span></span>
+<span data-line=""><span>    status</span></span>
+<span data-line=""><span>  &#x3C;/data></span></span>
+<span data-line=""><span>&#x3C;/room></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<room roomId=&#x22;ROOM_ID&#x22;>
+  <data class=&#x22;memento&#x22;>
+    status
+  </data>
+</room>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h3 id="status"><a href="#status" class="heading"><span>Status</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#status&#x22;, &#x22;Status&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#status">🔖</button></h3>
+  <ul>
+    <li>
+      <p>Z aktuelle Zugzahl</p>
+    </li>
+    <li>
+      <p>S Spieler, der das Spiel gestartet hat (RED/BLUE)</p>
+    </li>
+    <li>
+      <p>C Spieler, der an der Reihe ist (RED/BLUE)</p>
+    </li>
+    <li>
+      <p>red, blue wie in <a href="#spieler">Spieler</a> definiert</p>
+    </li>
+    <li>
+      <p>board Das Spielbrett, wie in <a href="#spielbrett">Spielbrett</a> definiert</p>
+    </li>
+    <li>
+      <p>
+        lastMove Letzter getätigter Zug (nicht in der ersten Runde), wie in
+        <a href="#letzter-zug">Letzter Zug</a> definiert
+      </p>
+    </li>
+    <li>
+      <p>
+        condition Spielergebnis, wie in <a href="#spielende">Spielergebnis</a>
+        definiert; nur zum Spielende
+      </p>
+    </li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;state class="state" turn="Z" startPlayer="S" currentPlayer="C"></span></span>
+<span data-line=""><span>  red</span></span>
+<span data-line=""><span>  blue</span></span>
+<span data-line=""><span>  [board]</span></span>
+<span data-line=""><span>  [lastMove]</span></span>
+<span data-line=""><span>  [condition]</span></span>
+<span data-line=""><span>&#x3C;/state></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<state class=&#x22;state&#x22; turn=&#x22;Z&#x22; startPlayer=&#x22;S&#x22; currentPlayer=&#x22;C&#x22;>
+  red
+  blue
+  [board]
+  [lastMove]
+  [condition]
+</state>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h3 id="spieler"><a href="#spieler" class="heading"><span>Spieler</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#spieler&#x22;, &#x22;Spieler&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#spieler">🔖</button></h3>
+  <ul>
+    <li>
+      <p>C Farbe (red/blue)</p>
+    </li>
+    <li>
+      <p>N Anzeigename</p>
+    </li>
+    <li>
+      <p>I Feldindex des Spielers</p>
+    </li>
+    <li>
+      <p>S Anzahl Salate</p>
+    </li>
+    <li>
+      <p>K Anzahl der Karotten</p>
+    </li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;C displayName="N" color="C" index="I" carrots="K" salads="S"></span></span>
+<span data-line=""><span>  &#x3C;cards></span></span>
+<span data-line=""><span>    &#x3C;type>TAKE_OR_DROP_CARROTS&#x3C;/type></span></span>
+<span data-line=""><span>    &#x3C;type>EAT_SALAD&#x3C;/type></span></span>
+<span data-line=""><span>    &#x3C;type>HURRY_AHEAD&#x3C;/type></span></span>
+<span data-line=""><span>    &#x3C;type>FALL_BACK&#x3C;/type></span></span>
+<span data-line=""><span>  &#x3C;/cards></span></span>
+<span data-line=""><span>  &#x3C;lastNonSkipAction class="fallBack" order="0"/> // Beispiel für letzte Aktion</span></span>
+<span data-line=""><span>&#x3C;/C></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<C displayName=&#x22;N&#x22; color=&#x22;C&#x22; index=&#x22;I&#x22; carrots=&#x22;K&#x22; salads=&#x22;S&#x22;>
+  <cards>
+    <type>TAKE_OR_DROP_CARROTS</type>
+    <type>EAT_SALAD</type>
+    <type>HURRY_AHEAD</type>
+    <type>FALL_BACK</type>
+  </cards>
+  <lastNonSkipAction class=&#x22;fallBack&#x22; order=&#x22;0&#x22;/> // Beispiel für letzte Aktion
+</C>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h3 id="spielbrett"><a href="#spielbrett" class="heading"><span>Spielbrett</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#spielbrett&#x22;, &#x22;Spielbrett&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#spielbrett">🔖</button></h3>
+  <ul>
+    <li>FIELD Ein Spielfeld wie in <a href="#spielfeld">Spielfeld</a> definiert.</li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;board></span></span>
+<span data-line=""><span>  &#x3C;fields index="0" type="START"/></span></span>
+<span data-line=""><span>  ..</span></span>
+<span data-line=""><span>  FIELD</span></span>
+<span data-line=""><span>  ..</span></span>
+<span data-line=""><span>  &#x3C;fields index="64" type="GOAL"/></span></span>
+<span data-line=""><span>&#x3C;/board></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<board>
+  <fields index=&#x22;0&#x22; type=&#x22;START&#x22;/>
+  ..
+  FIELD
+  ..
+  <fields index=&#x22;64&#x22; type=&#x22;GOAL&#x22;/>
+</board>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h3 id="spielfeld"><a href="#spielfeld" class="heading"><span>Spielfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#spielfeld&#x22;, &#x22;Spielfeld&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#spielfeld">🔖</button></h3>
+  <ul>
+    <li>
+      <p>I Feldnummer</p>
+    </li>
+    <li>
+      <p>
+        TYPE Typ des Feldes
+        (START/CARROT/HARE/GOAL/POSITION_{X}/HEDGEHOG/SALAD). X ist 1 oder
+        2
+      </p>
+    </li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;fields index="I" type="TYPE"/></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<fields index=&#x22;I&#x22; type=&#x22;TYPE&#x22;/>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h3 id="letzter-zug"><a href="#letzter-zug" class="heading"><span>Letzter Zug</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#letzter-zug&#x22;, &#x22;Letzter Zug&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#letzter-zug">🔖</button></h3>
+  <p>Der letzte Zug ist ein Move (siehe hierzu <a href="#zug">ZUG</a>).</p>
+  <ul>
+    <li>ACTIONS Teilzüge des Zuges (siehe hierzu <a href="#action">ACTION</a>).</li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;lastMove></span></span>
+<span data-line=""><span>  ACTIONS</span></span>
+<span data-line=""><span>&#x3C;/lastMove></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<lastMove>
+  ACTIONS
+</lastMove>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h2 id="zuganforderung"><a href="#zuganforderung" class="heading"><span>Zug-Anforderung</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#zuganforderung&#x22;, &#x22;Zug-Anforderung&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#zuganforderung">🔖</button></h2>
+  <p>Eine einfache Nachricht fordert zum Zug auf:</p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;room roomId="RID"></span></span>
+<span data-line=""><span>  &#x3C;data class="sc.framework.plugins.protocol.MoveRequest"/></span></span>
+<span data-line=""><span>&#x3C;/room></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<room roomId=&#x22;RID&#x22;>
+  <data class=&#x22;sc.framework.plugins.protocol.MoveRequest&#x22;/>
+</room>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h2 id="fehler"><a href="#fehler" class="heading"><span>Fehler</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#fehler&#x22;, &#x22;Fehler&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#fehler">🔖</button></h2>
+  <p>
+    Ein “spielfähiger” <a href="/glossary/player">Computerspieler</a> muss nicht mit Fehlern umgehen können.
+    Fehlerhafte Züge beispielsweise resultieren in einem vorzeitigen Ende
+    des Spieles, das im nächsten gesendeten Gamestate erkannt werden kann
+    (siehe <a href="#spielende">Spielergebnis</a>).
+  </p>
+  <ul>
+    <li>MSG Fehlermeldung</li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;room roomId="RID"></span></span>
+<span data-line=""><span>  &#x3C;error message="MSG"></span></span>
+<span data-line=""><span>    &#x3C;originalRequest></span></span>
+<span data-line=""><span>    Request, der den Fehler verursacht hat</span></span>
+<span data-line=""><span>    &#x3C;/originalRequest></span></span>
+<span data-line=""><span>  &#x3C;/error></span></span>
+<span data-line=""><span>&#x3C;/room></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<room roomId=&#x22;RID&#x22;>
+  <error message=&#x22;MSG&#x22;>
+    <originalRequest>
+    Request, der den Fehler verursacht hat
+    </originalRequest>
+  </error>
+</room>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h2 id="spiel-verlassen"><a href="#spiel-verlassen" class="heading"><span>Spiel verlassen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#spiel-verlassen&#x22;, &#x22;Spiel verlassen&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#spiel-verlassen">🔖</button></h2>
+  <p>
+    Wenn ein <a href="/glossary/player">Computerspieler</a> den Raum verlässt, bekommen die anderen Clients eine
+    entsprechende Meldung vom Server.
+  </p>
+  <ul>
+    <li>ROOM_ID Id des GameRooms</li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;left roomId="ROOM_ID"/></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<left roomId=&#x22;ROOM_ID&#x22;/>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h2 id="spielergebnis"><a href="#spielergebnis" class="heading"><span>Spielergebnis</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#spielergebnis&#x22;, &#x22;Spielergebnis&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#spielergebnis">🔖</button></h2>
+  <p>Zum Spielende enthält der Spieler das Ergebnis:</p>
+  <ul>
+    <li>
+      <p>ROOM_ID Id des GameRooms</p>
+    </li>
+    <li>
+      <p>R1, R2 Text, der den Grund für das Spielende erklärt</p>
+    </li>
+    <li>
+      <p>
+        CAUSE1, CAUSE2 Grund des Spielendes
+        (REGULAR/LEFT/RULE_VIOLATION/SOFT_TIMEOUT/HARD_TIMEOUT)
+      </p>
+    </li>
+    <li>
+      <p>
+        WP1, WP2 Siegpunkte der jeweiligen Spieler, 0 verloren, 1
+        unentschieden, 2 gewonnen
+      </p>
+    </li>
+    <li>
+      <p>I1, I2 Index des Feldes auf dem der Spieler steht</p>
+    </li>
+    <li>
+      <p>C1, C2 Karotten des Spielers</p>
+    </li>
+    <li>
+      <p>NAME Anzeigename des Spielers</p>
+    </li>
+    <li>
+      <p>COLOR Farbe des Siegers</p>
+    </li>
+    <li>
+      <p>I3 I1 oder I2 je nachdem wer gewonnen hat</p>
+    </li>
+    <li>
+      <p>C3 C1 oder C2 je nachdem wer gewonnen hat</p>
+    </li>
+    <li>
+      <p>S Salate des Siegers</p>
+    </li>
+    <li>
+      <p>[cards] Karten des Siegers wie in <a href="#spieler">Spieler</a></p>
+    </li>
+    <li>
+      <p>
+        [lastNonSkipAction] Letztes Aktion des Siegers wie in
+        <a href="#spieler">Spieler</a>
+      </p>
+    </li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;room roomId="ROOM_ID"></span></span>
+<span data-line=""><span>  &#x3C;data class="result"></span></span>
+<span data-line=""><span>    &#x3C;definition></span></span>
+<span data-line=""><span>      &#x3C;fragment name="Gewinner"></span></span>
+<span data-line=""><span>        &#x3C;aggregation>SUM&#x3C;/aggregation></span></span>
+<span data-line=""><span>        &#x3C;relevantForRanking>true&#x3C;/relevantForRanking></span></span>
+<span data-line=""><span>      &#x3C;/fragment></span></span>
+<span data-line=""><span>      &#x3C;fragment name="Ø Feldnummer"></span></span>
+<span data-line=""><span>        &#x3C;aggregation>AVERAGE&#x3C;/aggregation></span></span>
+<span data-line=""><span>        &#x3C;relevantForRanking>true&#x3C;/relevantForRanking></span></span>
+<span data-line=""><span>      &#x3C;/fragment></span></span>
+<span data-line=""><span>      &#x3C;fragment name="Ø Karotten"></span></span>
+<span data-line=""><span>        &#x3C;aggregation>AVERAGE&#x3C;/aggregation></span></span>
+<span data-line=""><span>        &#x3C;relevantForRanking>true&#x3C;/relevantForRanking></span></span>
+<span data-line=""><span>      &#x3C;/fragment></span></span>
+<span data-line=""><span>    &#x3C;/definition></span></span>
+<span data-line=""><span>    &#x3C;score cause="CAUSE1" reason="R1"></span></span>
+<span data-line=""><span>      &#x3C;part>WP1&#x3C;/part></span></span>
+<span data-line=""><span>      &#x3C;part>I1&#x3C;/part></span></span>
+<span data-line=""><span>      &#x3C;part>C1&#x3C;/part></span></span>
+<span data-line=""><span>    &#x3C;/score></span></span>
+<span data-line=""><span>    &#x3C;score cause="CAUSE2" reason="R2"></span></span>
+<span data-line=""><span>      &#x3C;part>WP2&#x3C;/part></span></span>
+<span data-line=""><span>      &#x3C;part>I2&#x3C;/part></span></span>
+<span data-line=""><span>      &#x3C;part>C1&#x3C;/part></span></span>
+<span data-line=""><span>    &#x3C;/score></span></span>
+<span data-line=""><span>    &#x3C;winner class="player" displayName="NAME" color="COLOR" index="I3" carrots="C3" salads="S"></span></span>
+<span data-line=""><span>      [cards]</span></span>
+<span data-line=""><span>      [lastNonSkipAction]</span></span>
+<span data-line=""><span>    &#x3C;/winner></span></span>
+<span data-line=""><span>  &#x3C;/data></span></span>
+<span data-line=""><span>&#x3C;/room></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<room roomId=&#x22;ROOM_ID&#x22;>
+  <data class=&#x22;result&#x22;>
+    <definition>
+      <fragment name=&#x22;Gewinner&#x22;>
+        <aggregation>SUM</aggregation>
+        <relevantForRanking>true</relevantForRanking>
+      </fragment>
+      <fragment name=&#x22;Ø Feldnummer&#x22;>
+        <aggregation>AVERAGE</aggregation>
+        <relevantForRanking>true</relevantForRanking>
+      </fragment>
+      <fragment name=&#x22;Ø Karotten&#x22;>
+        <aggregation>AVERAGE</aggregation>
+        <relevantForRanking>true</relevantForRanking>
+      </fragment>
+    </definition>
+    <score cause=&#x22;CAUSE1&#x22; reason=&#x22;R1&#x22;>
+      <part>WP1</part>
+      <part>I1</part>
+      <part>C1</part>
+    </score>
+    <score cause=&#x22;CAUSE2&#x22; reason=&#x22;R2&#x22;>
+      <part>WP2</part>
+      <part>I2</part>
+      <part>C1</part>
+    </score>
+    <winner class=&#x22;player&#x22; displayName=&#x22;NAME&#x22; color=&#x22;COLOR&#x22; index=&#x22;I3&#x22; carrots=&#x22;C3&#x22; salads=&#x22;S&#x22;>
+      [cards]
+      [lastNonSkipAction]
+    </winner>
+  </data>
+</room>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h2 id="spielverlauf"><a href="#spielverlauf" class="heading"><span>Spielverlauf</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#spielverlauf&#x22;, &#x22;Spielverlauf&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#spielverlauf">🔖</button></h2>
+  <p>Der Server startet (StandardIp: localhost 13050).</p>
+  <p>
+    Nun gibt es zwei Varianten ein Spiel zu starten, eine durch einen
+    Administratorclient die andere durch hinzufügen der Spieler zu einen
+    Spieltyp:
+  </p>
+  <h3 id="variante-1-adminclient-mit-reservierungscode"><a href="#variante-1-adminclient-mit-reservierungscode" class="heading"><span>Variante 1 (AdminClient Mit Reservierungscode)</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#variante-1-adminclient-mit-reservierungscode&#x22;, &#x22;Variante 1 (AdminClient Mit Reservierungscode)&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#variante-1-adminclient-mit-reservierungscode">🔖</button></h3>
+  <p>
+    Ein <a href="/glossary/player">Computerspieler</a> registriert sich als Administrator mit dem in
+    server.properties festgelegten Passwort p:
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;protocol>&#x3C;authenticate passphrase="p"/></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<protocol><authenticate passphrase=&#x22;p&#x22;/>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>Dann kann ein Spiel angelegt werden:</p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;prepare gameType="swc_2018_hase_und_igel"></span></span>
+<span data-line=""><span>  &#x3C;slot displayName="p1" canTimeout="false" shouldBePaused="true"/></span></span>
+<span data-line=""><span>  &#x3C;slot displayName="p2" canTimeout="false" shouldBePaused="true"/></span></span>
+<span data-line=""><span>&#x3C;/prepare></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<prepare gameType=&#x22;swc_2018_hase_und_igel&#x22;>
+  <slot displayName=&#x22;p1&#x22; canTimeout=&#x22;false&#x22; shouldBePaused=&#x22;true&#x22;/>
+  <slot displayName=&#x22;p2&#x22; canTimeout=&#x22;false&#x22; shouldBePaused=&#x22;true&#x22;/>
+</prepare>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Der Server antwortet darauf mit einer Nachricht, die die ROOM_ID und
+    Reservierungscodes für die beiden Clients enthält:
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;protocol></span></span>
+<span data-line=""><span>  &#x3C;prepared roomId="871faccb-5190-4e44-82fc-6cdcbb493726"></span></span>
+<span data-line=""><span>    &#x3C;reservation>RC1&#x3C;/reservation></span></span>
+<span data-line=""><span>    &#x3C;reservation>RC2&#x3C;/reservation></span></span>
+<span data-line=""><span>  &#x3C;/prepared></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<protocol>
+  <prepared roomId=&#x22;871faccb-5190-4e44-82fc-6cdcbb493726&#x22;>
+    <reservation>RC1</reservation>
+    <reservation>RC2</reservation>
+  </prepared>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Der Administratorclient kann nur ebenfalls als Observer des Spiels
+    genutzt werden, indem ein entsprechender Request gesendet wird. Dadurch
+    wird das derzeitge Spielfeld (<a href="#memento">memento</a>) ebenfalls an den
+    Administratorclient gesendet.
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;observe roomId="871faccb-5190-4e44-82fc-6cdcbb493726"/></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<observe roomId=&#x22;871faccb-5190-4e44-82fc-6cdcbb493726&#x22;/>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Clients die auf dem Serverport (localhost 13050) gestartet werden können
+    so über diesen Code joinen.
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;protocol></span></span>
+<span data-line=""><span>  &#x3C;joinPrepared reservationCode="RC1"/></span></span>
+<span data-line=""> </span>
+<span data-line=""><span>&#x3C;protocol></span></span>
+<span data-line=""><span>  &#x3C;joinPrepared reservationCode="RC2"/></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<protocol>
+  <joinPrepared reservationCode=&#x22;RC1&#x22;/>
+
+<protocol>
+  <joinPrepared reservationCode=&#x22;RC2&#x22;/>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h3 id="variante-2-eventuell-ohne-adminclient-ohne-reservierungscode"><a href="#variante-2-eventuell-ohne-adminclient-ohne-reservierungscode" class="heading"><span>Variante 2 ((eventuell) ohne AdminClient Ohne Reservierungscode)</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#variante-2-eventuell-ohne-adminclient-ohne-reservierungscode&#x22;, &#x22;Variante 2 ((eventuell) ohne AdminClient Ohne Reservierungscode)&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#variante-2-eventuell-ohne-adminclient-ohne-reservierungscode">🔖</button></h3>
+  <p>
+    Die Clients wurden auf dem Serverport (Standard: localhost 13050)
+    gestartet.
+  </p>
+  <p>
+    Sie können sich mit folgender Anfrage einen bereits offenen Spiel
+    gleichen Typs beitreten oder, falls kein Spiel des Typs vorhanden selbst
+    eines starten:
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;protocol></span></span>
+<span data-line=""><span>  &#x3C;join gameType="swc_2018_hase_und_igel"/></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<protocol>
+  <join gameType=&#x22;swc_2018_hase_und_igel&#x22;/>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>Der Server antwortet mit:</p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;protocol></span></span>
+<span data-line=""><span>  &#x3C;joined roomId="871faccb-5190-4e44-82fc-6cdcbb493726"/></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<protocol>
+  <joined roomId=&#x22;871faccb-5190-4e44-82fc-6cdcbb493726&#x22;/>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h3 id="weiterer-spielverlauf"><a href="#weiterer-spielverlauf" class="heading"><span>Weiterer Spielverlauf</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel#weiterer-spielverlauf&#x22;, &#x22;Weiterer Spielverlauf&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel#weiterer-spielverlauf">🔖</button></h3>
+  <p>
+    Der Server antwortet jeweils mit der WelcomeMessage (<a href="#welcome-message">Welcome
+Message</a>) und dem ersten GameState
+    (<a href="#memento">memento</a>) sobald beide Spieler verbunden sind.
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;room roomId="871faccb-5190-4e44-82fc-6cdcbb493726"></span></span>
+<span data-line=""><span>  &#x3C;data class="welcomeMessage" color="red"/></span></span>
+<span data-line=""><span>&#x3C;/room></span></span>
+<span data-line=""><span>&#x3C;room roomId="871faccb-5190-4e44-82fc-6cdcbb493726"></span></span>
+<span data-line=""><span>  &#x3C;data class="memento"></span></span>
+<span data-line=""><span>    &#x3C;state class="state" turn="0" startPlayer="RED" currentPlayer="RED"></span></span>
+<span data-line=""><span>      &#x3C;red displayName="Unknown" color="RED" index="0" carrots="68" salads="5"></span></span>
+<span data-line=""><span>        &#x3C;cards></span></span>
+<span data-line=""><span>          &#x3C;type>TAKE_OR_DROP_CARROTS&#x3C;/type></span></span>
+<span data-line=""><span>          &#x3C;type>EAT_SALAD&#x3C;/type></span></span>
+<span data-line=""><span>          &#x3C;type>HURRY_AHEAD&#x3C;/type></span></span>
+<span data-line=""><span>          &#x3C;type>FALL_BACK&#x3C;/type></span></span>
+<span data-line=""><span>        &#x3C;/cards></span></span>
+<span data-line=""><span>      &#x3C;/red></span></span>
+<span data-line=""><span>      &#x3C;blue displayName="Unknown" color="BLUE" index="0" carrots="68" salads="5"></span></span>
+<span data-line=""><span>        &#x3C;cards></span></span>
+<span data-line=""><span>          &#x3C;type>TAKE_OR_DROP_CARROTS&#x3C;/type></span></span>
+<span data-line=""><span>          &#x3C;type>EAT_SALAD&#x3C;/type></span></span>
+<span data-line=""><span>          &#x3C;type>HURRY_AHEAD&#x3C;/type></span></span>
+<span data-line=""><span>          &#x3C;type>FALL_BACK&#x3C;/type></span></span>
+<span data-line=""><span>        &#x3C;/cards></span></span>
+<span data-line=""><span>      &#x3C;/blue></span></span>
+<span data-line=""><span>      &#x3C;board></span></span>
+<span data-line=""><span>        &#x3C;fields index="0" type="START"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="1" type="CARROT"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="2" type="HARE"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="3" type="HARE"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="4" type="POSITION_2"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="5" type="POSITION_1"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="6" type="CARROT"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="7" type="CARROT"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="8" type="HARE"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="9" type="CARROT"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="10" type="SALAD"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="11" type="HEDGEHOG"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="12" type="HARE"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="13" type="CARROT"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="14" type="CARROT"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="15" type="HEDGEHOG"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="16" type="POSITION_1"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="17" type="CARROT"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="18" type="POSITION_2"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="19" type="HEDGEHOG"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="20" type="CARROT"/></span></span>
+<span data-line=""><span>        ...</span></span>
+<span data-line=""><span>        &#x3C;fields index="57" type="SALAD"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="58" type="CARROT"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="59" type="POSITION_1"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="60" type="HARE"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="61" type="CARROT"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="62" type="HARE"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="63" type="CARROT"/></span></span>
+<span data-line=""><span>        &#x3C;fields index="64" type="GOAL"/></span></span>
+<span data-line=""><span>      &#x3C;/board></span></span>
+<span data-line=""><span>    &#x3C;/state></span></span>
+<span data-line=""><span>  &#x3C;/data></span></span>
+<span data-line=""><span>&#x3C;/room></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<room roomId=&#x22;871faccb-5190-4e44-82fc-6cdcbb493726&#x22;>
+  <data class=&#x22;welcomeMessage&#x22; color=&#x22;red&#x22;/>
+</room>
+<room roomId=&#x22;871faccb-5190-4e44-82fc-6cdcbb493726&#x22;>
+  <data class=&#x22;memento&#x22;>
+    <state class=&#x22;state&#x22; turn=&#x22;0&#x22; startPlayer=&#x22;RED&#x22; currentPlayer=&#x22;RED&#x22;>
+      <red displayName=&#x22;Unknown&#x22; color=&#x22;RED&#x22; index=&#x22;0&#x22; carrots=&#x22;68&#x22; salads=&#x22;5&#x22;>
+        <cards>
+          <type>TAKE_OR_DROP_CARROTS</type>
+          <type>EAT_SALAD</type>
+          <type>HURRY_AHEAD</type>
+          <type>FALL_BACK</type>
+        </cards>
+      </red>
+      <blue displayName=&#x22;Unknown&#x22; color=&#x22;BLUE&#x22; index=&#x22;0&#x22; carrots=&#x22;68&#x22; salads=&#x22;5&#x22;>
+        <cards>
+          <type>TAKE_OR_DROP_CARROTS</type>
+          <type>EAT_SALAD</type>
+          <type>HURRY_AHEAD</type>
+          <type>FALL_BACK</type>
+        </cards>
+      </blue>
+      <board>
+        <fields index=&#x22;0&#x22; type=&#x22;START&#x22;/>
+        <fields index=&#x22;1&#x22; type=&#x22;CARROT&#x22;/>
+        <fields index=&#x22;2&#x22; type=&#x22;HARE&#x22;/>
+        <fields index=&#x22;3&#x22; type=&#x22;HARE&#x22;/>
+        <fields index=&#x22;4&#x22; type=&#x22;POSITION_2&#x22;/>
+        <fields index=&#x22;5&#x22; type=&#x22;POSITION_1&#x22;/>
+        <fields index=&#x22;6&#x22; type=&#x22;CARROT&#x22;/>
+        <fields index=&#x22;7&#x22; type=&#x22;CARROT&#x22;/>
+        <fields index=&#x22;8&#x22; type=&#x22;HARE&#x22;/>
+        <fields index=&#x22;9&#x22; type=&#x22;CARROT&#x22;/>
+        <fields index=&#x22;10&#x22; type=&#x22;SALAD&#x22;/>
+        <fields index=&#x22;11&#x22; type=&#x22;HEDGEHOG&#x22;/>
+        <fields index=&#x22;12&#x22; type=&#x22;HARE&#x22;/>
+        <fields index=&#x22;13&#x22; type=&#x22;CARROT&#x22;/>
+        <fields index=&#x22;14&#x22; type=&#x22;CARROT&#x22;/>
+        <fields index=&#x22;15&#x22; type=&#x22;HEDGEHOG&#x22;/>
+        <fields index=&#x22;16&#x22; type=&#x22;POSITION_1&#x22;/>
+        <fields index=&#x22;17&#x22; type=&#x22;CARROT&#x22;/>
+        <fields index=&#x22;18&#x22; type=&#x22;POSITION_2&#x22;/>
+        <fields index=&#x22;19&#x22; type=&#x22;HEDGEHOG&#x22;/>
+        <fields index=&#x22;20&#x22; type=&#x22;CARROT&#x22;/>
+        ...
+        <fields index=&#x22;57&#x22; type=&#x22;SALAD&#x22;/>
+        <fields index=&#x22;58&#x22; type=&#x22;CARROT&#x22;/>
+        <fields index=&#x22;59&#x22; type=&#x22;POSITION_1&#x22;/>
+        <fields index=&#x22;60&#x22; type=&#x22;HARE&#x22;/>
+        <fields index=&#x22;61&#x22; type=&#x22;CARROT&#x22;/>
+        <fields index=&#x22;62&#x22; type=&#x22;HARE&#x22;/>
+        <fields index=&#x22;63&#x22; type=&#x22;CARROT&#x22;/>
+        <fields index=&#x22;64&#x22; type=&#x22;GOAL&#x22;/>
+      </board>
+    </state>
+  </data>
+</room>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Der erste Spieler erhält dann eine Zugaufforderung
+    (<a href="#move-request">MoveRequest</a>), falls in server.properties paused auf
+    false gesetzt wurde. Falls das Spiel pausiert ist, muss das Spiel durch
+    einen Administratorclient gestartet werden:
+  </p>
+  <p>
+    Verbinden des Administratorclients (falls es sich um die erste
+    Kontaktaufnahme zum Server handelt, ansonsten &#x3C;protocol>
+    weglassen).
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;protocol></span></span>
+<span data-line=""><span>  &#x3C;authenticate passphrase="examplepassword"/></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<protocol>
+  <authenticate passphrase=&#x22;examplepassword&#x22;/>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>Pausierung aufheben:</p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;pause roomId="871faccb-5190-4e44-82fc-6cdcbb493726" pause="false" /></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<pause roomId=&#x22;871faccb-5190-4e44-82fc-6cdcbb493726&#x22; pause=&#x22;false&#x22; />" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>Daraufhin wird der erste Spieler aufgefordert einen Zug zu senden:</p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;room roomId="871faccb-5190-4e44-82fc-6cdcbb493726"></span></span>
+<span data-line=""><span>  &#x3C;data class="sc.framework.plugins.protocol.MoveRequest"/></span></span>
+<span data-line=""><span>&#x3C;/room></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<room roomId=&#x22;871faccb-5190-4e44-82fc-6cdcbb493726&#x22;>
+  <data class=&#x22;sc.framework.plugins.protocol.MoveRequest&#x22;/>
+</room>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>Der <a href="/glossary/player">Computerspieler</a> des CurrentPlayer sendet nun einen Zug (<a href="#zug">ZUG</a>):</p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;room roomId="871faccb-5190-4e44-82fc-6cdcbb493726"></span></span>
+<span data-line=""><span>  &#x3C;data class="move"></span></span>
+<span data-line=""><span>    &#x3C;advance order="0" distance="6"></span></span>
+<span data-line=""><span>  &#x3C;/data></span></span>
+<span data-line=""><span>&#x3C;/room></span></span><button type="button" title="Copy code" aria-label="Copy code" data="<room roomId=&#x22;871faccb-5190-4e44-82fc-6cdcbb493726&#x22;>
+  <data class=&#x22;move&#x22;>
+    <advance order=&#x22;0&#x22; distance=&#x22;6&#x22;>
+  </data>
+</room>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    So geht es abwechselnd weiter, bis zum Spielende
+    (<a href="#spielende">Spielergebnis</a>). Die letzte Nachricht des Servers endet
+    mit:
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="plaintext" data-theme="github-dark github-light"><code data-language="plaintext" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span>&#x3C;/protocol></span></span><button type="button" title="Copy code" aria-label="Copy code" data="</protocol>" class="rehype-pretty-copy" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;backdrop-filter: blur(3px);& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>Danach wird die Verbindung geschlossen.</p><button id="qrcode-open" onclick="hyperbook.qrcodeOpen()" title="QR-Code"><div class="qrcode-icon"></div></button>
+  <dialog id="qrcode-dialog">
+    <div class="container">
+      <div class="name">Hase und Igel</div>
+      <div class="make-qrcode"></div>
+      <div class="url">
+        <div data-href="/spiele/hase-und-igel"></div>
+      </div>
+    </div><button class="close" onclick="hyperbook.qrcodeClose()"><div class="close-icon"></div></button>
+  </dialog>
+</div>
+</article><div class="jump-container"><a class="jump next" href="/">Überblick</a></div><div class="meta"><a class="edit-github" href="https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/index.md">✎ GitHub</a><span class="copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a> by <a href="https://software-challenge.de">Software-Challenge Germany</a></span></div></main></div><script src="/__hyperbook_assets/client.js" defer></script></body></html>

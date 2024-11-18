@@ -1,0 +1,334 @@
+<!doctype html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Hive - Software-Challenge Dokumentation</title><meta property="og:title" value="Hive - Software-Challenge Dokumentation"><meta name="description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta property="og:description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta name="keywords"><link rel="stylesheet" href="/__hyperbook_assets/normalize.css"><style>
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --color-brand: #3276AD;
+  --color-brand-dark: #3276AD;
+  --color-brand-text: white;
+}
+@font-face {
+  font-family: hyperbook-body;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: hyperbook-heading;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: hyperbook-code;
+  src: url(/fonts/SourceCodePro-Regular.ttf);
+  size-adjust: 100%;
+}
+
+:root {
+  --color-background: white;
+  --color-text: black;
+  --color-text-deactivated: #242428;
+  --color-nav: #f5f5f5;
+  --color-nav-border: #3c3c3c;
+  --color-author-background: #d6d6d6;
+  --color-author-color: #3c3c3c;
+  --color-spacer: #a4a4a4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #1e1e1e;
+    --color-text: #f5f5f5;
+    --color-text-deactivated: #d6d6d6;
+    --color-nav: #222222;
+    --color-nav-border: #464646;
+    --color-author-background: #2c2c2c;
+    --color-author-color: #d6d6d6;
+    --color-spacer: #3c3c3c;
+    --color-brand: var(--color-brand-dark);
+  }
+
+  header {
+    background: var(--color-nav)!important;
+  }
+
+  .branding {
+    color: var(--color-brand)!important;
+  }
+
+  .toggle .bar1,
+  .toggle .bar2,
+  .toggle .bar3 {
+    background-color: var(--color-brand)!important;
+  }
+}
+
+body {
+  overscroll-behavior-x: none;
+  background-color: transparent;
+  color: var(--color-text);
+  font-family: hyperbook-body;
+  font-weight: normal;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+</style><link rel="stylesheet" href="/__hyperbook_assets/math/katex.min.css"><link rel="stylesheet" href="/__hyperbook_assets/shell.css"><link rel="stylesheet" href="/__hyperbook_assets/content.css"><link rel="stylesheet" href="/__hyperbook_assets/code.css"><script>
+HYPERBOOK_ASSETS = "/__hyperbook_assets/"
+</script><script type="module" src="/__hyperbook_assets/side-drawer.js" async></script><script src="/__hyperbook_assets/qrcode.js" async></script></head><body><div class="main-grid"><header><div class="mobile-nav"><button aria-label="Nav Toggle" class="toggle" onclick="hyperbook.navToggle()"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></button><side-drawer id="nav-drawer"><div class="nav-drawer-content"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div class="virtual-section"><div class="collapsible name  expanded"><a href="/spiele" class="label">Spiele</a></div><div class="collapsible-content links"><div class="section"><div class="collapsible name  expanded"><a href="/spiele/25_hase-und-igel" class="label">Hase und Igel</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/spiele/25_hase-und-igel/xml">XML-Dokumentation</a></li></ul></div></div></div></div><div class="section"><div class="collapsible name  "><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul></div></div><div class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div></side-drawer></div><a class="branding" href="/"><div class="logo"><img alt="logo" src="/logo.svg"></div><div class="name">Software-Challenge Dokumentation</div></a></header><div class="sidebar"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div class="virtual-section"><div class="collapsible name  expanded"><a href="/spiele" class="label">Spiele</a></div><div class="collapsible-content links"><div class="section"><div class="collapsible name  expanded"><a href="/spiele/25_hase-und-igel" class="label">Hase und Igel</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/spiele/25_hase-und-igel/xml">XML-Dokumentation</a></li></ul></div></div></div></div><div class="section"><div class="collapsible name  "><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul></div></div><div class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div><main><article>
+<div class="hyperbook-markdown"><button id="toc-toggle" onclick="hyperbook.tocToggle()" title="Table of Contents"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div></button>
+  <side-drawer id="toc-drawer" right>
+    <div class="toc-drawer-content">
+      <nav class="toc">
+        <ul>
+          <li class="level-1"><a href="#spielregeln-hive-softwarechallenge-2020">Spielregeln Hive: Software-Challenge 2020</a></li>
+          <li class="level-2"><a href="#anfangsaufstellung">Anfangsaufstellung</a></li>
+          <li class="level-2"><a href="#ziel-des-spieles">Ziel des Spieles</a></li>
+          <li class="level-2"><a href="#zge">Züge</a></li>
+          <li class="level-3"><a href="#der-schwarm">Der Schwarm</a></li>
+          <li class="level-3"><a href="#blockierte-felder-brombeeren">Blockierte Felder (Brombeeren)</a></li>
+          <li class="level-3"><a href="#der-rand-des-spielfeldes">Der Rand des Spielfeldes</a></li>
+          <li class="level-3"><a href="#einen-neuen-spielstein-legen">Einen neuen Spielstein legen</a></li>
+          <li class="level-3"><a href="#einen-spielstein-auf-dem-spielfeld-bewegen">Einen Spielstein auf dem Spielfeld bewegen</a></li>
+          <li class="level-4"><a href="#voraussetzungen-fr-das-bewegen-eines-spielsteins">Voraussetzungen für das Bewegen eines Spielsteins</a></li>
+          <li class="level-4"><a href="#bienenknigin">Bienenkönigin</a></li>
+          <li class="level-4"><a href="#kfer">Käfer</a></li>
+          <li class="level-4"><a href="#grashpfer">Grashüpfer</a></li>
+          <li class="level-4"><a href="#spinne">Spinne</a></li>
+          <li class="level-4"><a href="#ameise">Ameise</a></li>
+          <li class="level-3"><a href="#spielende">Spielende</a></li>
+        </ul>
+      </nav>
+    </div>
+  </side-drawer>
+  <h1 id="spielregeln-hive-softwarechallenge-2020"><a href="#spielregeln-hive-softwarechallenge-2020" class="heading"><span>Spielregeln Hive: Software-Challenge 2020</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hive#spielregeln-hive-softwarechallenge-2020&#x22;, &#x22;Spielregeln Hive: Software-Challenge 2020&#x22;)" title="Bookmark" data-key="/spiele/hive#spielregeln-hive-softwarechallenge-2020">🔖</button></h1>
+  <h2 id="anfangsaufstellung"><a href="#anfangsaufstellung" class="heading"><span>Anfangsaufstellung</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hive#anfangsaufstellung&#x22;, &#x22;Anfangsaufstellung&#x22;)" title="Bookmark" data-key="/spiele/hive#anfangsaufstellung">🔖</button></h2>
+  <p>
+    Das Spielfeld ist ein Hexagon bestehend aus Hexagonen. Das Spielfeld hat
+    die Kantenlänge <em>n=6,</em> der Durchmesser beträgt 11. Es wird das kubische
+    Koordinatensystem genutzt
+    (<a href="https://www.redblobgames.com/grids/hexagons/">https://www.redblobgames.com/grids/hexagons/</a>).
+  </p>
+  <p>
+    Zu Anfang ist das Spielfeld leer bis auf 3 Felder, die von Brombeeren
+    blockiert sind.
+  </p>
+  <figure src="/images/spiele/hive/1200px-MagicHexagon-Order3-a-6500c7c7-bad3-454d-bcb9-926e20bba906.svg3.png" alt="" class="normal">
+    <img src="/images/spiele/hive/1200px-MagicHexagon-Order3-a-6500c7c7-bad3-454d-bcb9-926e20bba906.svg3.png" alt="" onclick="hyperbook.toggleLightbox(this)">
+  </figure>
+  <figure src="/images/spiele/hive/img-2019-09-16-110132-9c11473c-d9f2-4163-be28-f1dab692d018.png" alt="" class="normal">
+    <img src="/images/spiele/hive/img-2019-09-16-110132-9c11473c-d9f2-4163-be28-f1dab692d018.png" alt="" onclick="hyperbook.toggleLightbox(this)">
+  </figure>
+  <p>
+    Ein Spieler spielt die roten Insekten, ein anderer die blauen. Beide
+    Spieler bekommen jeweils 11 Spielsteine folgender Typen:
+  </p>
+  <ul>
+    <li>
+      <p>1 Bienenkönigin</p>
+    </li>
+    <li>
+      <p>2 Spinnen</p>
+    </li>
+    <li>
+      <p>2 Käfer</p>
+    </li>
+    <li>
+      <p>3 Grashüpfer</p>
+    </li>
+    <li>
+      <p>3 Ameisen</p>
+    </li>
+  </ul>
+  <h2 id="ziel-des-spieles"><a href="#ziel-des-spieles" class="heading"><span>Ziel des Spieles</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hive#ziel-des-spieles&#x22;, &#x22;Ziel des Spieles&#x22;)" title="Bookmark" data-key="/spiele/hive#ziel-des-spieles">🔖</button></h2>
+  <p>
+    Das Ziel des Spieles ist, die gegnerische Bienenkönigin von allen 6
+    Seiten durch Spielsteine (also Insekten), blockierte Felder oder den
+    Rand einzuschließen. Ob die Spielsteine rot oder blau sind, spielt dabei
+    keine Rolle. Man könnte sich also auch selbst einschließen, was aber
+    natürlich nicht sinnvoll ist, weil damit dem Gegner zum Sieg verholfen
+    wird.
+  </p>
+  <h2 id="zge"><a href="#zge" class="heading"><span>Züge</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hive#zge&#x22;, &#x22;Züge&#x22;)" title="Bookmark" data-key="/spiele/hive#zge">🔖</button></h2>
+  <p>
+    Es wird abwechselnd gezogen, wobei Rot beginnt. In jeder Runde darf der
+    Spieler, der gerade am Zug ist, entweder einen Spielstein bewegen, der
+    sich bereits auf dem Spielfeld befindet, oder einen Spielstein aus
+    seinem Vorrat legen. Zu Beginn des Spiels darf jeder Spieler in seinem
+    Zug nur jeweils einen Spielstein legen. Erst nachdem der Spieler seine
+    Königin gelegt hat, darf dieser Spieler in den folgenden Zügen jeweils
+    frei wählen, ob er entweder einen Spielstein bewegen will, der sich
+    bereits auf dem Spielfeld befindet, oder einen zusätzlichen Spielstein
+    legen will.
+  </p>
+  <h3 id="der-schwarm"><a href="#der-schwarm" class="heading"><span>Der Schwarm</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hive#der-schwarm&#x22;, &#x22;Der Schwarm&#x22;)" title="Bookmark" data-key="/spiele/hive#der-schwarm">🔖</button></h3>
+  <p>
+    Die aneinander grenzenden Spielsteine sind der namensgebende Schwarm von
+    Hive. Während eines Spiels darf es immer nur einen Schwarm auf dem
+    Spielfeld geben. Es dürfen also keine Spielsteine vom Schwarm getrennt
+    werden.
+  </p>
+  <h3 id="blockierte-felder-brombeeren"><a href="#blockierte-felder-brombeeren" class="heading"><span>Blockierte Felder (Brombeeren)</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hive#blockierte-felder-brombeeren&#x22;, &#x22;Blockierte Felder (Brombeeren)&#x22;)" title="Bookmark" data-key="/spiele/hive#blockierte-felder-brombeeren">🔖</button></h3>
+  <figure src="images/black-berry-dark-65d040fc-200a-4202-90d9-a9b71b208265.png" alt="image" class="normal">
+    <img src="images/black-berry-dark-65d040fc-200a-4202-90d9-a9b71b208265.png" alt="image" onclick="hyperbook.toggleLightbox(this)">
+  </figure>
+  <p>
+    Auf die blockierten Felder darf kein Stein gelegt oder bewegt werden.
+    Für eine Königin wird ein benachbartes blockiertes Feld wie ein von
+    einem Stein belegtes Feld gewertet. Befindet sich also eine Königin
+    neben einem blockierten Feld, kann sie einfacher eingeschlossen werden.
+  </p>
+  <h3 id="der-rand-des-spielfeldes"><a href="#der-rand-des-spielfeldes" class="heading"><span>Der Rand des Spielfeldes</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hive#der-rand-des-spielfeldes&#x22;, &#x22;Der Rand des Spielfeldes&#x22;)" title="Bookmark" data-key="/spiele/hive#der-rand-des-spielfeldes">🔖</button></h3>
+  <p>
+    Natürlich dürfen Spielsteine nur auf das Spielfeld gelegt werden und
+    auch während des Ziehens dürfen die Spielsteine nicht das Spielfeld
+    verlassen. Für eine Königin werden Felder außerhalb des Spielfeldes wie
+    belegte Felder gewertet. Befindet sich also eine Königin am Rand, kann
+    sie einfacher eingeschlossen werden.
+  </p>
+  <h3 id="einen-neuen-spielstein-legen"><a href="#einen-neuen-spielstein-legen" class="heading"><span>Einen neuen Spielstein legen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hive#einen-neuen-spielstein-legen&#x22;, &#x22;Einen neuen Spielstein legen&#x22;)" title="Bookmark" data-key="/spiele/hive#einen-neuen-spielstein-legen">🔖</button></h3>
+  <p>
+    Ein Spielstein darf nur auf ein freies Feld gelegt werden. Dieses freie
+    Feld muss mit mindestens einem Feld benachbart sein, auf dem ein
+    Spielstein der eigenen Farbe liegt. Es darf zu keinem Feld benachbart
+    sein, auf dem ein gegnerischer Spielstein zu oberst liegt. Einzige
+    Ausnahme bildet das Legen des ersten Spielsteines einer Farbe: Der erste
+    rote Spielstein darf auf ein beliebiges freies Feld gesetzt werden, der
+    erste blaue Spielstein muss direkt daran angelegt werden. Innerhalb der
+    ersten vier Runden müssen beide Spieler ihre Königin setzen.
+  </p>
+  <h3 id="einen-spielstein-auf-dem-spielfeld-bewegen"><a href="#einen-spielstein-auf-dem-spielfeld-bewegen" class="heading"><span>Einen Spielstein auf dem Spielfeld bewegen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hive#einen-spielstein-auf-dem-spielfeld-bewegen&#x22;, &#x22;Einen Spielstein auf dem Spielfeld bewegen&#x22;)" title="Bookmark" data-key="/spiele/hive#einen-spielstein-auf-dem-spielfeld-bewegen">🔖</button></h3>
+  <h4 id="voraussetzungen-fr-das-bewegen-eines-spielsteins"><a href="#voraussetzungen-fr-das-bewegen-eines-spielsteins" class="heading"><span>Voraussetzungen für das Bewegen eines Spielsteins</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hive#voraussetzungen-fr-das-bewegen-eines-spielsteins&#x22;, &#x22;Voraussetzungen für das Bewegen eines Spielsteins&#x22;)" title="Bookmark" data-key="/spiele/hive#voraussetzungen-fr-das-bewegen-eines-spielsteins">🔖</button></h4>
+  <p>
+    Insekten eines Spielers dürfen erst bewegt werden, nachdem der Spieler
+    seine Königin gesetzt hat.
+  </p>
+  <p>
+    Insekten dürfen nur bewegt werden, wenn dadurch der Schwarm nicht
+    unterbrochen wird! Alle Steine müssen also immer (auch während eines
+    Zuges) miteinander verbunden sein. Während ein Stein bewegt wird, zählt
+    dieser nicht als Verbindung des Schwarms. Der Schwarm muss also auch
+    verbunden sein, wenn man den Stein in Bewegung entfernt.
+  </p>
+  <p>
+    Ein Spielstein kann nur auf das nächste Feld gezogen werden, wenn dafür
+    keine Steine beiseite geschoben werden müssen. Sind also die Felder
+    rechts und oben links von unserem Stein (z.B. der Biene auf (-1,1) in
+    dem Bild unten) belegt, so dürften wir nicht auf das Feld oben rechts
+    (0,1) von unserem Stein ziehen. (Ausnahmen: Grashüpfer, Käfer). Steine
+    dürfen trotzdem auf eingeschlossene Felder gelegt werden.
+  </p>
+  <figure src="/images/spiele/hive/move.png" alt="image" class="normal">
+    <img src="/images/spiele/hive/move.png" alt="image" onclick="hyperbook.toggleLightbox(this)">
+  </figure>
+  <p>
+    In der vorstehenden Grafik sind alle für die rote Biene zulässigen
+    Felder gelb markiert.
+  </p>
+  <p>
+    Abgesehen vom Grashüpfer müssen sich die Steine immer am Rand des
+    Schwarms entlang bewegen. Der Käfer im unteren Bild darf sich also nicht
+    nach unten rechts bewegen. Zusätzlich dürfen sich Käfer über andere
+    Steine bewegen.
+  </p>
+  <figure src="/images/spiele/hive/connected.png" alt="image" class="normal">
+    <img src="/images/spiele/hive/connected.png" alt="image" onclick="hyperbook.toggleLightbox(this)">
+  </figure>
+  <p>
+    In der vorstehenden Grafik sind alle für den roten Käfer zulässigen
+    Felder gelb markiert.
+  </p>
+  <p>Kann ein Spieler nicht ziehen, so muss er die Runde aussetzen!</p>
+  <h4 id="bienenknigin"><a href="#bienenknigin" class="heading"><span>Bienenkönigin</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hive#bienenknigin&#x22;, &#x22;Bienenkönigin&#x22;)" title="Bookmark" data-key="/spiele/hive#bienenknigin">🔖</button></h4>
+  <p>
+    Die Königin darf - ähnlich dem König beim Schach - pro Zug nur ein Feld
+    weit bewegt werden.
+  </p>
+  <figure src="/images/spiele/hive/bee.png" alt="image" class="normal">
+    <img src="/images/spiele/hive/bee.png" alt="image" onclick="hyperbook.toggleLightbox(this)">
+  </figure>
+  <h4 id="kfer"><a href="#kfer" class="heading"><span>Käfer</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hive#kfer&#x22;, &#x22;Käfer&#x22;)" title="Bookmark" data-key="/spiele/hive#kfer">🔖</button></h4>
+  <p>
+    Der Käfer darf pro Zug auch nur ein Feld weit laufen. Allerdings ist der
+    Käfer das einzige Insekt, das auf andere Insekten draufziehen darf. Das
+    Insekt, auf dem der Käfer steht, ist blockiert und kann nicht verschoben
+    werden. Für das Legen neuer Steine zählt immer die Farbe des obersten
+    Steins. Käfer können also auf einen gegnerischen Stein klettern, was dem
+    Spieler ermöglicht, eigene Steine auf benachbarte, freie Felder zu
+    legen. Käfer können auch auf Käfer klettern, die auf anderen Steinen
+    stehen, es gibt keine Höhenbegrenzung.
+  </p>
+  <figure src="/images/spiele/hive/beetle.png" alt="image" class="normal">
+    <img src="/images/spiele/hive/beetle.png" alt="image" onclick="hyperbook.toggleLightbox(this)">
+  </figure>
+  <h4 id="grashpfer"><a href="#grashpfer" class="heading"><span>Grashüpfer</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hive#grashpfer&#x22;, &#x22;Grashüpfer&#x22;)" title="Bookmark" data-key="/spiele/hive#grashpfer">🔖</button></h4>
+  <p>
+    Der Grashüpfer springt von seinem Feld über eine gerade Reihe
+    miteinander verbundener Steine zum nächsten unbesetzten Feld. Er muss
+    immer über mindestens einen Stein springen.
+  </p>
+  <figure src="/images/spiele/hive/grasshopper.png" alt="image" class="normal">
+    <img src="/images/spiele/hive/grasshopper.png" alt="image" onclick="hyperbook.toggleLightbox(this)">
+  </figure>
+  <h4 id="spinne"><a href="#spinne" class="heading"><span>Spinne</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hive#spinne&#x22;, &#x22;Spinne&#x22;)" title="Bookmark" data-key="/spiele/hive#spinne">🔖</button></h4>
+  <p>
+    Die Spinne bewegt sich immer genau 3 Felder weit. Während des Zuges darf
+    sie allerdings nicht zweimal auf dasselbe Feld ziehen und sie muss in
+    Verbindung mit dem Schwarm bleiben.
+  </p>
+  <figure src="/images/spiele/hive/spider.png" alt="image" class="normal">
+    <img src="/images/spiele/hive/spider.png" alt="image" onclick="hyperbook.toggleLightbox(this)">
+  </figure>
+  <h4 id="ameise"><a href="#ameise" class="heading"><span>Ameise</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hive#ameise&#x22;, &#x22;Ameise&#x22;)" title="Bookmark" data-key="/spiele/hive#ameise">🔖</button></h4>
+  <p>
+    Die Ameise darf beliebig viele Felder am Rand des Schwarms entlang
+    gezogen werden. Sie darf sich jedoch nicht über Lücken oder blockierte
+    Felder hinweg bewegen.
+  </p>
+  <figure src="/images/spiele/hive/ant.png" alt="image" class="normal">
+    <img src="/images/spiele/hive/ant.png" alt="image" onclick="hyperbook.toggleLightbox(this)">
+  </figure>
+  <h3 id="spielende"><a href="#spielende" class="heading"><span>Spielende</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hive#spielende&#x22;, &#x22;Spielende&#x22;)" title="Bookmark" data-key="/spiele/hive#spielende">🔖</button></h3>
+  <p>
+    Wird die Bienenkönigin eines Spielers von allen Seiten von Insekten,
+    blockierten Feldern oder dem Rand eingeschlossen, so gewinnt der andere
+    Spieler. Allerdings darf Blau noch einen letzten Zug machen, nachdem die
+    blaue Bienenkönigin umstellt wurde.
+  </p>
+  <p>
+    Wird die 31. Runde erreicht, so gewinnt derjenige Spieler, dessen
+    Bienenkönigin die meisten freien angrenzende Felder hat, wobei
+    blockierte Felder oder Felder außerhalb des Spielfeldes nicht als freie
+    Felder zähen.
+  </p>
+  <p>
+    Sofern der Fall eintritt, dass beide Königinnen mit demselben Zug
+    eingeschlossen werden oder die 31. Runde erreicht wird und die Anzahl
+    der freien Nachbarfelder für beide Bienenköniginnen gleich ist, endet
+    das Spiel unentschieden.
+  </p><button id="qrcode-open" onclick="hyperbook.qrcodeOpen()" title="QR-Code"><div class="qrcode-icon"></div></button>
+  <dialog id="qrcode-dialog">
+    <div class="container">
+      <div class="name">Hive</div>
+      <div class="make-qrcode"></div>
+      <div class="url">
+        <div data-href="/spiele/hive"></div>
+      </div>
+    </div><button class="close" onclick="hyperbook.qrcodeClose()"><div class="close-icon"></div></button>
+  </dialog>
+</div>
+</article><div class="jump-container"><a class="jump next" href="/">Überblick</a></div><div class="meta"><a class="edit-github" href="https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hive/index.md">✎ GitHub</a><span class="copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a> by <a href="https://software-challenge.de">Software-Challenge Germany</a></span></div></main></div><script src="/__hyperbook_assets/client.js" defer></script></body></html>
