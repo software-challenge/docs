@@ -17,13 +17,16 @@ Dieser Abschnitt gibt einen Einstieg in die Struktur von XML.
 ### Tags
 
 Die Grundelemente von XML sind _Tags_.
-Ein Tag liefert Informationen über die Art der Daten, die verarbeitet werden sollen. In XML wird ein Tag gebildet, indem der Tagname zwischen spitze Klammern gesetzt wird. Dabei kennt XML drei verschiedene Tag-Arten:
+Ein Tag liefert Informationen über die Art der Daten, die verarbeitet werden sollen.
+In XML wird ein Tag gebildet, indem der Tagname zwischen spitze Klammern gesetzt wird.
+Dabei kennt XML drei verschiedene Tag-Arten:
 
 -   Öffnendes Tag: `<Tag>`
 -   Schließendes Tag: `</Tag>`
 -   Leeres Tag: `<Tag />`
 
-Der Schrägstrich bedeuted, dass das Tag geschlossen wird. Durch den Schrägstrich am Ende wird das soeben geöffnete Tag direkt wieder geschlossen.
+Der Schrägstrich bedeuted, dass das Tag geschlossen wird.
+Durch den Schrägstrich am Ende wird das soeben geöffnete Tag direkt wieder geschlossen.
 
 Zwischen dem öffnenden und schliessenden Tag steht die Information, die mitgeteilt werden soll.
 
@@ -31,7 +34,8 @@ Zwischen dem öffnenden und schliessenden Tag steht die Information, die mitgete
 
 #### Bildungsregeln
 
-Die Tags dürfen nicht beliebig in Dokumenten verwendet werden. Es gelten hier die folgenden Regeln:
+Die Tags dürfen nicht beliebig in Dokumenten verwendet werden.
+Es gelten hier die folgenden Regeln:
 
 -   Zu jedem öffnenden Tag muss ein schließendes Tag existieren.
 -   Tags dürfen ineinander verschachtelt werden, die einzelnen Tags dürfen sich jedoch nicht überkreuzen.
@@ -101,7 +105,9 @@ Auf diese Weise lässt sich das Beispiel mit den komplexen Zahlen etwas übersic
 
 ### Der Header
 
-Wichtig ist auch die erste Zeile in einem XML-Dokument. Aus ihr kann das Computerprogramm erfahren, wie es mit den Daten umzugehen hat (z.B. welcher Zeichensatz benutzt wird). Dieser Header sieht einem Tag sehr ähnlich:
+Wichtig ist auch die erste Zeile in einem XML-Dokument.
+Aus ihr kann das Computerprogramm erfahren, wie es mit den Daten umzugehen hat (z.B. welcher Zeichensatz benutzt wird).
+Dieser Header sieht einem Tag sehr ähnlich:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
@@ -109,7 +115,8 @@ Wichtig ist auch die erste Zeile in einem XML-Dokument. Aus ihr kann das Compute
 
 Man nennt so ein Tag auch _Verarbeitungsinformation_.
 
-Theoretisch darf es in einem XML-Dokument mehrere Verarbeitungsinformationen geben, für die Software-Challenge ist aber nur der Header relevant.
+Theoretisch darf es in einem XML-Dokument mehrere Verarbeitungsinformationen geben,
+für die Software-Challenge ist aber nur der Header relevant.
 
 ### Kommentare
 
