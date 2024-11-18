@@ -1,6 +1,5 @@
 ---
 name: XML-Dokumentation
-hide: true
 ---
 
 # XML-Elemente des Spiels Hase und Igel
@@ -10,7 +9,11 @@ für das Spiel Hase und Igel.
 
 ## Spielstatus
 
-Die folgende XML-Struktur beschreibt den regelmäßig mitgeteilten Spielstatus, der ein Spielfeld aus Feldern, die in einer Spirale angeordnet sind, sowie eine Liste der darauf verorteten Spieler beschreibt. Die Felder sind dabei durch ihre Indexnummer und ihren Typ charakterisiert.
+Die folgende XML-Struktur beschreibt den regelmäßig mitgeteilten Spielstatus,
+der ein Spielfeld aus Feldern, die in einer Spirale angeordnet sind,
+sowie die darauf verorteten Spieler enthält.
+Die Felder werden implizit nummeriert,
+wobei das erste Feld (START) den index 0 erhält.
 
 ```xml
 <room roomId="ROOM_ID">
@@ -50,29 +53,60 @@ Betritt ein beliebiges offenes Spiel:
 <join gameType="swc_2025_hase_und_igel"/>
 ```
 
-Sollte kein Spiel offen sein, wird so ein neues erstellt. Je nachdem ob
-paused in server.properties true oder false ist, wird das Spiel pausiert
-gestartet oder nicht.
+Sollte kein Spiel offen sein, wird so ein neues erstellt.
+Je nachdem ob `paused` in `server.properties` true oder false ist,
+wird das Spiel pausiert gestartet oder nicht.
 
 ## Spielzug
 
-Ein Zug kann wie folgt aussehen:
+Folgende Arten von Zügen sind möglich:
 
 ```xml
 <room roomId="ROOM_ID">
-    <data class="move">
-        <actions>
-            <advance distance="DISTANCE"/>
-            <exchangecarrots amount="AMOUNT"/>
-            <eatsalad/>
-            <fallback/>
-        </actions>
-    </data>
+  <data class="fallback"/>
 </room>
 ```
 
-Ein Zug besteht immer aus einer Liste aus Aktionen.
-Die Reihenfolge bestimmt, in welcher Reihenfolge die Aktionen ausgeführt werden.
+```xml
+<room roomId="ROOM_ID">
+  <data class="eatsalad"/>
+</room>
+```
+
+```xml
+<room roomId="abcd">
+  <data class="exchangecarrots" amount="-10"/>
+</room>
+```
+
+```xml
+<room roomId="abcd">
+  <data class="advance" distance="3"/>
+</room>
+```
+
+```xml
+<room roomId="ROOM_ID">
+  <advance distance="5">
+    <card>SWAP_CARROTS</card>
+  </advance>
+</room>
+```
+
+```xml
+<room roomId="ROOM_ID">
+  <advance distance="3">
+    <card>HURRY_AHEAD</card>
+    <card>FALL_BACK</card>
+    <card>EAT_SALAD</card>
+  </advance>
+</room>
+```
+
+Für einen Vorwärtszug können Karten angegeben werden, 
+die in der gegebenen Reihenfolge ausgespielt werden.
+Falls die einzige oder letzte Karte auf einem Marktfeld angegeben wird,
+wird diese Karte stattdessen gekauft.
 
 ## Spielergebnis
 
@@ -106,7 +140,7 @@ Die Reihenfolge bestimmt, in welcher Reihenfolge die Aktionen ausgeführt werden
                 <player name="Spieler 2" team="TWO"/>
                 <score>
                     <part>2</part>
-                    <part>0</part>
+                    <part>63</part>
                     <part>0</part>
                 </score>
             </entry>
