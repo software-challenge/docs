@@ -5,26 +5,24 @@ index: 5
 
 # Installation von Java
 
-Die meisten Programme, die vom Institut für Informatik zur Verfügung gestellt werden, sind in der Programmiersprache Java geschrieben.
+Die meisten Programme, die von der Software-Challenge zur Verfügung gestellt werden,
+sind für eine Java-Umgebung geschrieben.
 Diese Anleitung soll die Beschaffung und Installation von Java erleichtern.
 
 ## Grundsätzliches
 
 Java gibt es in zwei verschiedenen Paketen: Das *Java Runtime Environment (JRE)* und das *Java Development Kit (JDK)*.
-Möchte man lediglich Java-Programme starten, also nicht selber entwickeln, dann reicht das JRE vollkommen aus. Möchte man auch eigene Programme schreiben,
-muss das JDK auf jeden Fall installiert sein. Da im JDK auch das JRE integriert ist, kann man aber immer ohne Bedenken gleich zum JDK greifen.
+Zum Entwickeln eigener Programme wird das JDK benötigt, dass auch das JRE enthält.
 
 ## Installation
 
-Um Java 11 JDK auf einem Windows-System mit `winget` zu installieren, führen Sie den folgenden Befehl im Windows Terminal aus:
+Die Installation des JDK 17 auf einem Windows-System erfolgt mit folgendem `winget`-Befehl im Windows Terminal:
 
 ```bash
-winget install -e --id AdoptOpenJDK.OpenJDK.11
+winget install -e --id AdoptOpenJDK.OpenJDK.17
 ```
-
-Dieser Befehl sucht nach dem Paket mit der ID `AdoptOpenJDK.OpenJDK.11`, das das Java Development Kit (JDK) für Java 11 bereitstellt, und installiert es auf dem Computer.
 
 ### Installation über Paketquellen (Linux)
 
-Meistens ist das Java JDK in den Paketquellen der Linux-Distributionen enthalten, sodass man es einfach über den Paketmanager installieren kann.
+Meistens ist das JDK (`openjdk`) in den Paketquellen der Linux-Distributionen enthalten, sodass man es einfach über den Paketmanager installieren kann.
 Sofern möglich, wird diese Art der Installation empfohlen, da es oft noch Paketabhängigkeiten gibt, die dann automatisch mit installiert werden.
