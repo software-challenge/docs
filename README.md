@@ -25,7 +25,7 @@ und ein dazugehöriges Pull Request erstellt.
 Alternativ auch gerne per E-Mail an <tech@software-challenge.de> 
 oder als Nachricht im [Discord](https://discord.gg/jhyF7EU).
 
-### Konventionen
+### Konventionen fürs Editieren
 - Zeilenumbrüche jeweils am Ende von Sätzen bzw. semantischen Grenzen,
   orientiert an [Semantic Line Breaks](https://sembr.org).
 - Datei- und Verzeichnisnamen sollten nur die Zeichen `a` bis `z` 
@@ -33,8 +33,7 @@ oder als Nachricht im [Discord](https://discord.gg/jhyF7EU).
 - Sprache für Dateinamen, Verzeichnisnamen sowie Inhalt ist Deutsch.
   Sprache für Attribute und sonstige Interna ist Englisch.
 
-### Kollaborationsrichtlinien
-
+### Hinweise für Beiträge
 Commitnachrichten wird der Dateipfad der geänderten Datei oder des Ordners vorangestellt, 
 ggf. gekürzt um überflüssige Elemente (z.B. 'blokus/' statt 'spiele/blokus/').
 Um bei den Branches die Übersicht zu behalten,

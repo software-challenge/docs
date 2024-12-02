@@ -74,28 +74,20 @@ Folgende Arten von Zügen sind möglich:
 ```
 
 ```xml
-<room roomId="abcd">
+<room roomId="ROOM_ID">
   <data class="exchangecarrots" amount="-10"/>
 </room>
 ```
 
 ```xml
-<room roomId="abcd">
+<room roomId="ROOM_ID">
   <data class="advance" distance="3"/>
 </room>
 ```
 
 ```xml
 <room roomId="ROOM_ID">
-  <advance distance="5">
-    <card>SWAP_CARROTS</card>
-  </advance>
-</room>
-```
-
-```xml
-<room roomId="ROOM_ID">
-  <advance distance="3">
+  <data class="advance" distance="5">
     <card>HURRY_AHEAD</card>
     <card>FALL_BACK</card>
     <card>EAT_SALAD</card>
@@ -105,6 +97,7 @@ Folgende Arten von Zügen sind möglich:
 
 Für einen Vorwärtszug können Karten angegeben werden, 
 die in der gegebenen Reihenfolge ausgespielt werden.
+
 Falls die einzige oder letzte Karte auf einem Marktfeld angegeben wird,
 wird diese Karte stattdessen gekauft.
 
