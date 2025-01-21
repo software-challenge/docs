@@ -3,20 +3,20 @@
   "description": "Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen.",
   "qrcode": false,
   "search": true,
-  "license": "cc-by-nc-sa",
+  "language": "de",
+  "logo": "/logo.svg",
+  "colors": {
+    "brand": "#ECC94B"
+  },
   "author": {
     "name": "Software-Challenge Germany",
     "url": "https://software-challenge.de"
   },
-  "language": "de",
   "repo": "https://github.com/software-challenge/docs/tree/main/hyperbook",
-  "logo": "/logo.svg",
-  "colors": {
-    "brand": "#3276AD"
-  },
   "fonts": {
     "heading": "/fonts/Inter-Regular.ttf",
     "body": "/fonts/Inter-Regular.ttf",
     "code": "/fonts/SourceCodePro-Regular.ttf"
-  }
+  },
+  "license": "cc-by-nc-sa"
 }
