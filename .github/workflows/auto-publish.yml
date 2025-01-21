@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
+    - name: Checkout Repository
       uses: actions/checkout@v4
 
-    - name: Build documentation
+    - name: Build Documentation
       id: build
       run: |
         cd hyperbook

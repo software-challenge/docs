@@ -1,6 +1,7 @@
 ---
 name: Entwicklung eines Computerspielers
 index: 2
+expanded: true
 ---
 
 # Die Ersten (Programmier-)Schritte
