@@ -1,8 +1,10 @@
-<!doctype html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>zuege - Software-Challenge Dokumentation</title><meta property="og:title" value="zuege - Software-Challenge Dokumentation"><meta name="description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta property="og:description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta name="keywords"><link rel="stylesheet" href="/__hyperbook_assets/normalize.css"><style>
+<!doctype html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,, interactive-widget=resizes-content"><title>zuege - Software-Challenge Dokumentation</title><meta property="og:title" value="zuege - Software-Challenge Dokumentation"><meta name="description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta property="og:description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta name="keywords"><link rel="stylesheet" href="/__hyperbook_assets/normalize.css?version=0.48.4"><style>
 html,
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   margin: 0;
+  height: 100dvh;
+  width: 100dvw;
 }
 
 body {
@@ -37,45 +39,6 @@ body::-webkit-scrollbar {
   size-adjust: 100%;
 }
 
-:root {
-  --color-background: white;
-  --color-text: black;
-  --color-text-deactivated: #242428;
-  --color-nav: #f5f5f5;
-  --color-nav-border: #3c3c3c;
-  --color-author-background: #d6d6d6;
-  --color-author-color: #3c3c3c;
-  --color-spacer: #a4a4a4;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: #1e1e1e;
-    --color-text: #f5f5f5;
-    --color-text-deactivated: #d6d6d6;
-    --color-nav: #222222;
-    --color-nav-border: #464646;
-    --color-author-background: #2c2c2c;
-    --color-author-color: #d6d6d6;
-    --color-spacer: #3c3c3c;
-    --color-brand: var(--color-brand-dark);
-  }
-
-  header {
-    background: var(--color-nav)!important;
-  }
-
-  .branding {
-    color: var(--color-brand)!important;
-  }
-
-  .toggle .bar1,
-  .toggle .bar2,
-  .toggle .bar3 {
-    background-color: var(--color-brand)!important;
-  }
-}
-
 body {
   overscroll-behavior-x: none;
   background-color: transparent;
@@ -86,11 +49,12 @@ body {
   margin: 0;
   padding: 0;
 }
-
-</style><link rel="stylesheet" href="/__hyperbook_assets/math/katex.min.css"><link rel="stylesheet" href="/__hyperbook_assets/shell.css"><link rel="stylesheet" href="/__hyperbook_assets/content.css"><link rel="stylesheet" href="/__hyperbook_assets/code.css"><script>
+</style><noscript id="dark-mode-toggle-stylesheets"><link rel="stylesheet" href="/__hyperbook_assets/light.css?version=0.48.4" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="/__hyperbook_assets/dark.css?version=0.48.4" media="(prefers-color-scheme: dark)"></noscript><script src="/__hyperbook_assets/dark-mode-toggle-stylesheets-loader.js?version=0.48.4"></script><script type="module" src="/__hyperbook_assets/dark-mode-toggle.mjs?version=0.48.4"></script><script src="/__hyperbook_assets/i18n.js?version=0.48.4"></script><script src="/__hyperbook_assets/dexie.min.js?version=0.48.4"></script><script src="/__hyperbook_assets/dexie-export-import.js?version=0.48.4"></script><script src="/__hyperbook_assets/store.js?version=0.48.4"></script><script>
+window.Prism = window.Prism || {};
+window.Prism.manual = true;</script><script src="/__hyperbook_assets/prism/prism.js?version=0.48.4"></script><link rel="stylesheet" href="/__hyperbook_assets/prism/prism.css?version=0.48.4"><link rel="stylesheet" href="/__hyperbook_assets/prism/prism-theme-github-dark.css?version=0.48.4" media="(prefers-color-scheme: dark)"><link rel="stylesheet" href="/__hyperbook_assets/prism/prism-theme-github-light.css?version=0.48.4" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="/__hyperbook_assets/math/katex.min.css?version=0.48.4"><link rel="stylesheet" href="/__hyperbook_assets/shell.css?version=0.48.4"><link rel="stylesheet" href="/__hyperbook_assets/content.css?version=0.48.4"><link rel="stylesheet" href="/__hyperbook_assets/code.css?version=0.48.4"><script>
 HYPERBOOK_ASSETS = "/__hyperbook_assets/"
-</script><script type="module" src="/__hyperbook_assets/side-drawer.js" async></script><script src="/__hyperbook_assets/lunr.min.js" defer></script><script src="/__hyperbook_assets/lunr-languages/lunr.stemmer.support.min.js" defer></script><script src="/__hyperbook_assets/lunr-languages/lunr.de.min.js" defer></script><script src="/__hyperbook_assets/search.js" defer></script><script src="/__hyperbook_assets/qrcode.js" async></script></head><body><div class="main-grid"><header><div class="mobile-nav"><button aria-label="Nav Toggle" class="toggle" onclick="hyperbook.navToggle()"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></button><side-drawer id="nav-drawer"><div class="nav-drawer-content"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div class="section"><div class="collapsible name empty  expanded"><span class="label">Spiele</span></div><div class="collapsible-content links"><div class="section"><div class="collapsible name  expanded"><a href="/spiele/25_hase-und-igel" class="label">Hase und Igel</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/spiele/25_hase-und-igel/xml">XML-Dokumentation</a></li></ul></div></div></div></div><div class="section"><div class="collapsible name  "><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul></div></div><div class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div></side-drawer></div><a class="branding" href="/"><div class="logo"><img alt="logo" src="/logo.svg"></div><div class="name">Software-Challenge Dokumentation</div></a><button id="search-toggle" onclick="hyperbook.searchToggle()" title="Search"></button><side-drawer id="search-drawer" right><div class="search-drawer-content"><div class="search-input"><div class="search-icon"></div><input id="search-input" placerholder="..."><button class="search-button" onclick="hyperbook.search()"></button></div><div id="search-results"></div></div></side-drawer></header><div class="sidebar"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div class="section"><div class="collapsible name empty  expanded"><span class="label">Spiele</span></div><div class="collapsible-content links"><div class="section"><div class="collapsible name  expanded"><a href="/spiele/25_hase-und-igel" class="label">Hase und Igel</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/spiele/25_hase-und-igel/xml">XML-Dokumentation</a></li></ul></div></div></div></div><div class="section"><div class="collapsible name  "><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul></div></div><div class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div><main><article>
-<div class="hyperbook-markdown"><button id="toc-toggle" onclick="hyperbook.tocToggle()" title="Table of Contents"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div></button>
+</script><script type="module" src="/__hyperbook_assets/side-drawer.js?version=0.48.4" async></script><script src="/__hyperbook_assets/lunr.min.js?version=0.48.4" defer></script><script src="/__hyperbook_assets/lunr-languages/lunr.stemmer.support.min.js?version=0.48.4" defer></script><script src="/__hyperbook_assets/lunr-languages/lunr.de.min.js?version=0.48.4" defer></script><script src="/__hyperbook_assets/search.js?version=0.48.4" defer></script><script src="/__hyperbook_assets/qrcode.js?version=0.48.4" async></script></head><body><div class="main-grid"><header><div class="mobile-nav"><button aria-label="Nav Toggle" class="toggle" onclick="hyperbook.navToggle()"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></button><side-drawer id="nav-drawer"><div class="nav-drawer-content"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div data-id="_nav:/spiele" class="virtual-section"><div class="links"><div data-id="_nav:/spiele/25_hase-und-igel" class="section"><div class="collapsible name  expanded"><a href="/spiele/25_hase-und-igel" class="label">Hase und Igel</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/spiele/25_hase-und-igel/xml">XML-Dokumentation</a></li></ul></div></div></div></div><div data-id="_nav:/entwicklung" class="section"><div class="collapsible name  expanded"><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul></div></div><div data-id="_nav:/xml" class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div></side-drawer></div><a class="branding" href="/"><div class="logo"><img alt="logo" src="/logo.svg"></div><div class="name">Software-Challenge Dokumentation</div></a><button id="search-toggle" onclick="hyperbook.searchToggle()" title="Suche"></button><side-drawer id="search-drawer" right><div class="search-drawer-content"><div class="search-input"><div class="search-icon"></div><input id="search-input" placerholder="..."><button class="search-button" onclick="hyperbook.search()"></button></div><div id="search-results"></div></div></side-drawer><dark-mode-toggle id="dark-mode-toggle" appearence="switch" title="Zwischen Dunkel- und Hellmodus wechseln" permanent></dark-mode-toggle></header><div class="sidebar"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div data-id="_nav:/spiele" class="virtual-section"><div class="links"><div data-id="_nav:/spiele/25_hase-und-igel" class="section"><div class="collapsible name  expanded"><a href="/spiele/25_hase-und-igel" class="label">Hase und Igel</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/spiele/25_hase-und-igel/xml">XML-Dokumentation</a></li></ul></div></div></div></div><div data-id="_nav:/entwicklung" class="section"><div class="collapsible name  expanded"><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul></div></div><div data-id="_nav:/xml" class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div><main><article>
+<div class="hyperbook-markdown"><button id="toc-toggle" onclick="hyperbook.tocToggle()" title="Inhaltsverzeichnis"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div></button>
   <side-drawer id="toc-drawer" right>
     <div class="toc-drawer-content">
       <nav class="toc">
@@ -111,9 +75,9 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
       </nav>
     </div>
   </side-drawer>
-  <h1 id="zugmglichkeiten"><a href="#zugmglichkeiten" class="heading"><span>Zugmöglichkeiten</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#zugmglichkeiten&#x22;, &#x22;Zugmöglichkeiten&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/spielregeln/zuege#zugmglichkeiten">🔖</button></h1>
+  <h1 id="zugmglichkeiten"><a href="#zugmglichkeiten" class="heading"><span>Zugmöglichkeiten</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#zugmglichkeiten&#x22;, &#x22;Zugmöglichkeiten&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/hase-und-igel/spielregeln/zuege#zugmglichkeiten">🔖</button></h1>
   <p>Ein Spieler kann folgende Züge machen:</p>
-  <h2 id="vorwrtszug"><a href="#vorwrtszug" class="heading"><span>Vorwärtszug</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#vorwrtszug&#x22;, &#x22;Vorwärtszug&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/spielregeln/zuege#vorwrtszug">🔖</button></h2>
+  <h2 id="vorwrtszug"><a href="#vorwrtszug" class="heading"><span>Vorwärtszug</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#vorwrtszug&#x22;, &#x22;Vorwärtszug&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/hase-und-igel/spielregeln/zuege#vorwrtszug">🔖</button></h2>
   <p>
     Durch einen Vorwärtszug bewegt sich der Spieler um die entsprechende
     Zahl von Feldern nach vorne (mindestens 1). Dabei werden Karotten
@@ -134,7 +98,7 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
     Betreten nicht erlaubt). Sollte durch einen Vorwärtszug kein Hasenfeld
     betreten werden endet der Zug.
   </p>
-  <h2 id="rckwrtszug"><a href="#rckwrtszug" class="heading"><span>Rückwärtszug</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#rckwrtszug&#x22;, &#x22;Rückwärtszug&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/spielregeln/zuege#rckwrtszug">🔖</button></h2>
+  <h2 id="rckwrtszug"><a href="#rckwrtszug" class="heading"><span>Rückwärtszug</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#rckwrtszug&#x22;, &#x22;Rückwärtszug&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/hase-und-igel/spielregeln/zuege#rckwrtszug">🔖</button></h2>
   <p>
     Durch einen Rückwärtszug zieht der Spieler zu dem nächsten Igelfeld mit
     kleinerem Index, sollte dies nicht besetzt sein. Ist das vorherige
@@ -142,7 +106,7 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
     werden 10 mal zurückgezogene Felder viele Karotten aufgenommen. Nach
     einem Rückwärtszug endet der Zug.
   </p>
-  <h2 id="karte-ausspielen"><a href="#karte-ausspielen" class="heading"><span>Karte ausspielen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#karte-ausspielen&#x22;, &#x22;Karte ausspielen&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/spielregeln/zuege#karte-ausspielen">🔖</button></h2>
+  <h2 id="karte-ausspielen"><a href="#karte-ausspielen" class="heading"><span>Karte ausspielen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#karte-ausspielen&#x22;, &#x22;Karte ausspielen&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/hase-und-igel/spielregeln/zuege#karte-ausspielen">🔖</button></h2>
   <p>
     Eine Karte muss ausgespielt werden, wenn ein Hasenfeld neu betreten wird
     und darf auch nur auf einem Hasenfeld ausgespielt werden. Das Betreten
@@ -152,20 +116,20 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
     durch das Ausspielen einer Karte kein Hasenfeld neu betreten werden Ende
     der Zug. Ein Spieler hat zu Beginn folgende Karten:
   </p>
-  <h3 id="friss-sofort-einen-salat"><a href="#friss-sofort-einen-salat" class="heading"><span>Friss sofort einen Salat</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#friss-sofort-einen-salat&#x22;, &#x22;Friss sofort einen Salat&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/spielregeln/zuege#friss-sofort-einen-salat">🔖</button></h3>
+  <h3 id="friss-sofort-einen-salat"><a href="#friss-sofort-einen-salat" class="heading"><span>Friss sofort einen Salat</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#friss-sofort-einen-salat&#x22;, &#x22;Friss sofort einen Salat&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/hase-und-igel/spielregeln/zuege#friss-sofort-einen-salat">🔖</button></h3>
   <p>
     Es wird ein Salat vom Spieler entfernt, je nach Position des Spielers
     (Erster/Zweiter) erhält der Spieler Karotten (10/30). Diese Karte darf
     nur eingesetzt werden, wenn der Spieler mindestens einen Salat hat. In
     dem nächsten Zug muss das betretene Hasenfeld verlassen werden.
   </p>
-  <h3 id="karotten-nehmen-oder-abgeben"><a href="#karotten-nehmen-oder-abgeben" class="heading"><span>Karotten nehmen oder abgeben</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#karotten-nehmen-oder-abgeben&#x22;, &#x22;Karotten nehmen oder abgeben&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/spielregeln/zuege#karotten-nehmen-oder-abgeben">🔖</button></h3>
+  <h3 id="karotten-nehmen-oder-abgeben"><a href="#karotten-nehmen-oder-abgeben" class="heading"><span>Karotten nehmen oder abgeben</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#karotten-nehmen-oder-abgeben&#x22;, &#x22;Karotten nehmen oder abgeben&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/hase-und-igel/spielregeln/zuege#karotten-nehmen-oder-abgeben">🔖</button></h3>
   <p>
     Der Spieler darf 20 Karotten abgeben oder aufnehmen oder nichts tun. Es
     darf der Spieler nicht mehr Karotten abgeben als er besitzt. In dem
     nächsten Zug muss das betretene Hasenfeld verlassen werden.
   </p>
-  <h3 id="rcke-eine-position-vor"><a href="#rcke-eine-position-vor" class="heading"><span>Rücke eine Position vor</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#rcke-eine-position-vor&#x22;, &#x22;Rücke eine Position vor&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/spielregeln/zuege#rcke-eine-position-vor">🔖</button></h3>
+  <h3 id="rcke-eine-position-vor"><a href="#rcke-eine-position-vor" class="heading"><span>Rücke eine Position vor</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#rcke-eine-position-vor&#x22;, &#x22;Rücke eine Position vor&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/hase-und-igel/spielregeln/zuege#rcke-eine-position-vor">🔖</button></h3>
   <p>
     Kann nur ausgespielt werden, wenn der Spieler sich an zweiter Position
     befindet. Der Spieler rückt auf das Feld vor dem gegnerischen Spieler
@@ -175,7 +139,7 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
     ohne mindestens einen Salat zu besitzen. Es kann so das Ziel erreicht
     werden, wenn die Siegbedingungen erfüllt sind.
   </p>
-  <h3 id="falle-eine-position-zurck"><a href="#falle-eine-position-zurck" class="heading"><span>Falle eine Position zurück</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#falle-eine-position-zurck&#x22;, &#x22;Falle eine Position zurück&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/spielregeln/zuege#falle-eine-position-zurck">🔖</button></h3>
+  <h3 id="falle-eine-position-zurck"><a href="#falle-eine-position-zurck" class="heading"><span>Falle eine Position zurück</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#falle-eine-position-zurck&#x22;, &#x22;Falle eine Position zurück&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/hase-und-igel/spielregeln/zuege#falle-eine-position-zurck">🔖</button></h3>
   <p>
     Kann nur ausgespielt werden, wenn der Spieler sich an erster Position
     befindet. Der Spieler fällt auf das Feld hinter dem gegnerischen Spieler
@@ -184,14 +148,14 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
     auf dem Startfeld befinden. Es ist außerdem nicht erlaubt, so ein
     Salatfeld zu betreten, ohne mindestens einen Salat zu besitzen.
   </p>
-  <h2 id="karotten-tauschen"><a href="#karotten-tauschen" class="heading"><span>Karotten tauschen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#karotten-tauschen&#x22;, &#x22;Karotten tauschen&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/spielregeln/zuege#karotten-tauschen">🔖</button></h2>
+  <h2 id="karotten-tauschen"><a href="#karotten-tauschen" class="heading"><span>Karotten tauschen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#karotten-tauschen&#x22;, &#x22;Karotten tauschen&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/hase-und-igel/spielregeln/zuege#karotten-tauschen">🔖</button></h2>
   <p>
     Kann nur ausgeführt werden, wenn sich der Spieler auf einem Karottenfeld
     befindet. Es können entweder zehn Karotten abgegeben werden (dabei muss
     der Spieler mindestens zehn Karotten besitzen) oder 10 Karotten
     aufgenommen werden. Nach dieser Aktion endet der Zug.
   </p>
-  <h2 id="salat-fressen"><a href="#salat-fressen" class="heading"><span>Salat fressen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#salat-fressen&#x22;, &#x22;Salat fressen&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/spielregeln/zuege#salat-fressen">🔖</button></h2>
+  <h2 id="salat-fressen"><a href="#salat-fressen" class="heading"><span>Salat fressen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#salat-fressen&#x22;, &#x22;Salat fressen&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/hase-und-igel/spielregeln/zuege#salat-fressen">🔖</button></h2>
   <p>
     Wenn sich der Spieler auf einem Salatfeld befindet und er in seiner
     letzten Aktion, die kein Aussetzzug war, keinen Salat gefressen hat,
@@ -200,12 +164,12 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
     Salatfeld betreten kann) und erhält je nach Position (Erster/Zweiter)
     Karotten (10/30). Nach dieser Aktion endet der Zug.
   </p>
-  <h2 id="aussetzen"><a href="#aussetzen" class="heading"><span>Aussetzen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#aussetzen&#x22;, &#x22;Aussetzen&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/spielregeln/zuege#aussetzen">🔖</button></h2>
+  <h2 id="aussetzen"><a href="#aussetzen" class="heading"><span>Aussetzen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#aussetzen&#x22;, &#x22;Aussetzen&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/hase-und-igel/spielregeln/zuege#aussetzen">🔖</button></h2>
   <p>
     Es Spieler darf nur Aussetzen, sollte sonst kein anderer Zug möglich
     sein. Nach dieser Aktion endet der Zug.
   </p>
-  <h2 id="zusammenfassung"><a href="#zusammenfassung" class="heading"><span>Zusammenfassung</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#zusammenfassung&#x22;, &#x22;Zusammenfassung&#x22;)" title="Bookmark" data-key="/spiele/hase-und-igel/spielregeln/zuege#zusammenfassung">🔖</button></h2>
+  <h2 id="zusammenfassung"><a href="#zusammenfassung" class="heading"><span>Zusammenfassung</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/hase-und-igel/spielregeln/zuege#zusammenfassung&#x22;, &#x22;Zusammenfassung&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/hase-und-igel/spielregeln/zuege#zusammenfassung">🔖</button></h2>
   <p>
     Enthält ein Zug einen der folgenden Aktionen, kann er nur aus einer
     Aktion bestehen: Rückwärtszug, Karotten tauschen, Salat fressen oder
@@ -235,4 +199,4 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
     </div><button class="close" onclick="hyperbook.qrcodeClose()"><div class="close-icon"></div></button>
   </dialog>
 </div>
-</article><div class="jump-container"><a class="jump previous" href="/spiele/hase-und-igel/spielregeln/spielende">spielende</a><a class="jump next" href="/spiele/hase-und-igel/tutorial/board">board</a></div><div class="meta"><a class="edit-github" href="https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/spielregeln/zuege.md">✎ GitHub</a><span class="copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a> by <a href="https://software-challenge.de">Software-Challenge Germany</a></span></div></main></div><script src="/__hyperbook_assets/client.js" defer></script></body></html>
+</article><div class="jump-container"><a class="jump previous" href="/spiele/hase-und-igel/spielregeln/spielende">spielende</a><a class="jump next" href="/spiele/hase-und-igel/tutorial/board">board</a></div><div class="meta"><a class="edit-github" href="https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/hase-und-igel/spielregeln/zuege.md">✎ GitHub</a><a href="#" onclick="hyperbookReset()"><span class="reset-icon" title="Das Hyperbook zurücksetzen"></span></a><span class="copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a> by <a href="https://software-challenge.de">Software-Challenge Germany</a></span></div></main></div><script src="/__hyperbook_assets/client.js?version=0.48.4" defer></script></body></html>
