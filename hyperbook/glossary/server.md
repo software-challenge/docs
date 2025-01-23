@@ -182,35 +182,39 @@ Port 13051. So kannst du ihn nutzen:
 6.  Um weitere Testspiele zu spielen, starte die :t[Computerspieler]{#player} erneut.
     Der Testserver muss dabei nicht neu gestartet werden.
 
-Beachte, dass der Testserver keine Spielaufzeichnungen anlegt, wie es
-der Server mit grafischer Oberfläche tut. Die Auswertung der Spiele muss
-in einem der teilnehmenden :t[Computerspieler]{#player} geschehen (z.B. durch
-Log-Ausgaben).
+Beachte, dass der Testserver keine Spielaufzeichnungen anlegt,
+wie es der Server mit grafischer Oberfläche tut.
+Die Auswertung der Spiele muss in einem der teilnehmenden :t[Computerspieler]{#player} geschehen
+(z.B. durch Log-Ausgaben).
 
-Es ist ebenfalls möglich, statt eines zufällig generierten vollständigen
-Spielplanes eine Spielsituation zu laden und zu testen. Die
-Spielsituation muss vorher wie unter [Spielsituation
-nachstellen](#spielsituation-nachstellen) erzeugt werden. Dann kann die
-Datei mit dem Argument `--loadGameFile` geladen werden und optional mit
-`--turn` ein Zug spezifiziert werden.
+Es ist ebenfalls möglich, statt eines zufällig generierten vollständigen Spielplanes 
+eine Spielsituation zu laden und zu testen. 
+Die Spielsituation muss vorher wie unter [Spielsituation nachstellen](#spielsituation-nachstellen) erzeugt werden.
+Dann kann die Datei mit dem Argument `--loadGameFile` geladen werden 
+und optional mit `--turn` ein Zug spezifiziert werden.
 ```shell
       java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar softwarechallenge-server.jar --port 13051 --loadGameFile ./replay.xml --turn 10
 
 ```
+
 ### Unerwartete Zugzeitüberschreitungen (Soft-Timeout)
 
-Wenn Sie den Testserver einige Zeit laufen lassen, um eine größere
-Anzahl von Testspielen durchzuführen, kann es dazu kommen, dass
-:t[Computerspieler]{#player} wegen Zugzeitüberschreitungen vom Server disqualifiziert
-werden (Soft-Timeout). Dies passiert, obwohl der Zug innerhalb der
-erlaubten Zugzeit (abhängig vom Spiel, bisher aber immer zwei Sekunden)
-an den Server geschickt wurde. Der Garbage Collector der Java Virtual
-Machine löst dieses Verhalten aus. Er pausiert die Anwendung, um nicht
-mehr genutzten Speicher freizugeben. Wenn der Server dadurch zu einem
-ungünstigen Zeitpunkt angehalten wird, bemerkt er den Eingang des Zuges
-vom :t[Computerspieler]{#player} nicht rechtzeitig und disqualifiziert ihn daraufhin.
-Damit dieses Problem möglichst selten auftritt, haben sich die folgenden
-Parameter beim Starten des Servers bewährt:
+Mit der Option `--no-timeout` können Zeitüberschreitungen für alle Spieler deaktiviert werden.
+Alternativ können diese auch bei erstellten Reservierungen 
+über das XML-Protokoll individuell für jeden Spieler gesetzt werden.
+
+Wenn Sie den Testserver einige Zeit laufen lassen, 
+um eine größere Anzahl von Testspielen durchzuführen, kann es dazu kommen, 
+dass :t[Computerspieler]{#player} wegen Zugzeitüberschreitungen vom Server disqualifiziert werden (Soft-Timeout).
+Dies passiert, obwohl der Zug innerhalb der erlaubten Zugzeit 
+(abhängig vom Spiel, bisher aber immer zwei Sekunden)
+an den Server geschickt wurde.
+Der Garbage Collector der Java Virtual Machine löst dieses Verhalten aus.
+Er pausiert die Anwendung, um nicht mehr genutzten Speicher freizugeben.
+Wenn der Server dadurch zu einem ungünstigen Zeitpunkt angehalten wird,
+bemerkt er den Eingang des Zuges vom :t[Computerspieler]{#player} nicht rechtzeitig und disqualifiziert ihn daraufhin.
+Damit dieses Problem möglichst selten auftritt,
+haben sich die folgenden Parameter beim Starten des Servers bewährt:
 
 Unter Linux:
 ```shell
@@ -253,18 +257,23 @@ Dazu gehören erhöhter Resourcenverbrauch und Instabilität der Anwendung.
 Eine Auflistung möglicher nützlicher Parameter für :t[Computerspieler]{#player} findet sich unter
 https://stackoverflow.com/questions/48989515/java-garbage-collector-time-limit.
 
-### Massentests
+### Massentests mit dem TestClient
 
 Massentests mit dem eigenen :t[Computerspieler]{#player} können sehr nützlich sein,
-beispeilsweise um die Stärke gegenüber einer früheren Version zu Testen.
-Dafür wird in jeder Saison ab Version XX.1.0 ein TestClient
-bereitgestellt.
+beispielsweise um die Stärke gegenüber einer früheren Version zu Testen.
+Dafür wird in jeder Saison ab Version XX.1.0 ein TestClient bereitgestellt.
 
-Der TestClient muss vom Terminal mit den entsprechenden Argumenten
-aufgerufen werden. Diese werden unter den Beispielen näher erläutert.
+Der TestClient lässt für eine Anzahl an Spielen zwei Computerspieler gegeneinander antreten,
+wobei die Startreihenfolge abwechselt,
+sodass eine gerade Anzahl an Spielen sinnvoll ist.
+Dabei informiert er über den Fortschritt
+und wertet am Ende die erreichten Punktzahlen aus.
+
+Der TestClient muss vom Terminal mit den entsprechenden Argumenten aufgerufen werden.
+Diese werden unter den Beispielen näher erläutert.
 
 Unter Linux:
-```shell
+```sh
     java -jar -Dlogback.configurationFile=logback-tests.xml test-client.jar \
         --tests 4 \
         --name1 "displayName1" \
@@ -274,10 +283,10 @@ Unter Linux:
         --start-server \
         --port 13051
 ```
-Unter Windows (unterscheidet sich nur durch die Art, den langen Befehl
-auf mehrere Zeilen zu verteilen):
+Unter Windows
+(unterscheidet sich nur durch die Art, den langen Befehl auf mehrere Zeilen zu verteilen):
 
-```shell
+```cmd
     java -jar -Dlogback.configurationFile=logback-tests.xml test-client.jar ^
         --tests 4 ^
         --name1 "displayName1" ^
@@ -287,10 +296,9 @@ auf mehrere Zeilen zu verteilen):
         --start-server ^
         --port 13051
 ```
-Der TestClient kann sich auch mit einem bereits laufenden Server
-verbinden, bei Angabe des Arguments `--start-server` startet er jedoch
-einfach selbst einen. Wichtig ist, dass nicht versucht wird, zwei Server
-auf dem selben Port zu starten.
+Der TestClient kann sich auch mit einem bereits laufenden Server verbinden,
+bei Angabe des Arguments `--start-server` startet er jedoch einfach selbst einen.
+Wichtig ist, dass nicht versucht wird, zwei Server auf dem selben Port zu starten.
 
 #### Argumente des TestClients
 
