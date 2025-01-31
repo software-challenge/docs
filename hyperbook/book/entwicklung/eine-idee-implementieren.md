@@ -116,4 +116,5 @@ def sortiere(a: list[int], start: int):
 
 ## Weiterführende Links
 
-Wir haben hier den Sortieralgorithmus rekursiv [Selection Sort](https://de.wikipedia.org/wiki/Selectionsort) implementiert.
+Wir haben hier den Sortieralgorithmus [Selection Sort](https://de.wikipedia.org/wiki/Selectionsort)
+rekursiv implementiert.
