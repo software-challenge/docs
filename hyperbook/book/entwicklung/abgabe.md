@@ -9,7 +9,7 @@ Damit das :t[Wettkampfsystem]{#contest} mit dem :t[Computerspieler]{#player} arb
 muss er als ausführbares Programm in ein ZIP-Archiv verpackt werden.
 
 Je nach Programmiersprache, in der der Spieler entwickelt wurde,
-sind unterschiedliche Schritte notwendig.
+sind unterschiedliche Schritte notwendig. Für Java siehe [hier](Anleitung-Abgabe.md).
 
 :::alert{info}
 In der Regel enthält die Spielervorlage alle nötigen Instruktionen zum Packen.
