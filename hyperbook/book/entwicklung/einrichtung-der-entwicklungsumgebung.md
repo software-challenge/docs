@@ -120,7 +120,7 @@ Um IntelliJ zu installieren befilgt man folgende Schritte:
    2. Man geht auf "File" und wählt dort "Project Structure" aus
    3. Nun wählt man bei "SDK" (Software Devolopment Kit) die Version 15 aus und setzt das "Language Level" auf "SDK Default" ganz oben im Menü
    4. Nun geht man auf Apply und schließt das Menü
-   5. Wenn man alle Schritte befolgt hat geht man nun wieder auf das Hammersymbol unten links und klickt auf das Refresh-Symbol bzw. auf "Sync Gradle Project" wenn man mit der Maus auf dem Botton ist.
+   5. Wenn man alle Schritte befolgt hat geht man nun wieder auf das Hammersymbol unten links und klickt auf das Refresh-Symbol bzw. auf "Sync Gradle Project" wenn man mit der Maus auf dem Button ist.
 
 ## Weiterführende Links
 
