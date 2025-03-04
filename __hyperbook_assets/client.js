@@ -29,6 +29,10 @@ var hyperbook = (function () {
             }
           });
         }
+
+        setTimeout(() => {
+          window.dispatchEvent(new Event("resize")); // geogebra new this in order resize the applet
+        }, 100);
       });
     }
     updateCollapsibles(root);

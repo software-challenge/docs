@@ -2,6 +2,9 @@ var i18n = (function () {
   
   // GENERATED
   const locales = {
+    "footnote-label": "Fußnoten",
+    "footnote-back-label": "Hochspringen nach: {{index}}",
+    "footnote-back-label-many": "Hochspringen nach: {{from}}-{{to}}",
     "store-different-origin": "Die Hyperbook-Datei stammt aus einer anderen Quelle {{origin}}. Möchten Sie sie trotzdem importieren?",
     "store-import-successful": "Die Hyperbook-Datei wurde erfolgreich importiert.",
     "store-not-supported-file-version": "Die Hyperbook-Datei hat eine nicht unterstützte Version {{version}}.",
@@ -48,7 +51,8 @@ var i18n = (function () {
     "webide-reset-prompt": "Sind Sie sicher, dass Sie den Code zurücksetzen möchten?",
     "webide-copy": "Kopieren",
     "webide-download": "Herunterladen"
-};
+}
+;
 
 
   const get = (key, values) => {
