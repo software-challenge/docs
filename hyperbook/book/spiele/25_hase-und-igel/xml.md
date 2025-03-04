@@ -91,7 +91,7 @@ Folgende Arten von Zügen sind möglich:
     <card>HURRY_AHEAD</card>
     <card>FALL_BACK</card>
     <card>EAT_SALAD</card>
-  </advance>
+  </data>
 </room>
 ```
 
