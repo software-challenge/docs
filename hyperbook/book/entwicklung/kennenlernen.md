@@ -7,7 +7,7 @@ index: 1
 
 Um ein Computerprogramm zu schreiben, was ein Spiel spielen kann, muss
 man vorher das Spiel selbst verstehen und spielen können.  
-Dabei könnt ihr euch bereits Ideen und Strategien entwickeln,
+Dabei könnt ihr bereits Ideen und Strategien entwickeln,
 die ihr in euren :t[Computerspieler]{#player} nachher umsetzen wollt.
 
 Das Spiel selbst kann zu zweit oder allein gegen den [Zufallsspieler](glossary/client#der-simpleclient)

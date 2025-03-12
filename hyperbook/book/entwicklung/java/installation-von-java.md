@@ -1,6 +1,6 @@
 ---
 name: Installation von Java
-index: 5
+index: 1
 ---
 
 # Installation von Java
