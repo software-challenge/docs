@@ -16,10 +16,10 @@ Zum Entwickeln eigener Programme wird das JDK benötigt, dass auch das JRE enth�
 
 ## Installation
 
-Die Installation des JDK 17 auf einem Windows-System erfolgt mit folgendem `winget`-Befehl im Windows Terminal:
+Die Installation des JDK 15 auf einem Windows-System erfolgt mit folgendem `winget`-Befehl im Windows Terminal:
 
 ```bash
-winget install -e --id AdoptOpenJDK.OpenJDK.17
+winget install -e --id AdoptOpenJDK.OpenJDK.15
 ```
 
 ### Installation über Paketquellen (Linux)
