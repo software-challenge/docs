@@ -90,14 +90,14 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
     Anfängern wird allerdings davon abgeraten, einen komplett eigenen Computerspieler zu schreiben.
     Es ist deutlich einfacher, auf einer bereitgestellten Spielervorlage aufzubauen,
     da man sich dabei nur um die Strategie und nicht um die Kommunikation kümmern muss.
-    Außerdem wird vom Institut für Informatik die beste Unterstützung für Java/Kotlin geboten.
+    Außerdem wird vom Institut für Informatik die beste Unterstützung für Java/Kotlin sowie Python geboten.
   </p>
   <div class="directive-alert warn">
     <p>
       Im Verlauf des Wettbewerbes können Elemente zur Kommunikationsschnittstelle hinzugefügt werden,
       die in dieser Dokumentation nicht aufgeführt sind.
       Damit ein Computerspieler auch bei solchen Änderungen fehlerfrei mit dem Server kommunizieren kann,
-      sollten beim Auslesen des <a href="/glossary/xml">XML</a> jegliche Daten verworfen werden,
+      sollten beim Auslesen des XML jegliche Daten verworfen werden,
       die hier nicht weiter definiert sind.
     </p>
   </div>
@@ -105,18 +105,18 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
     <p>
       Die bereitgestellten Programme
       (Server, Java-Spieler) nutzen eine Bibliothek namens XStream,
-      um Java-Objekte direkt in <a href="/glossary/xml">XML</a> zu konvertieren und umgekehrt.
+      um Java-Objekte direkt in XML zu konvertieren und umgekehrt.
       Dabei werden XML-Nachrichten nicht unbedingt mit einem Zeilenumbruch abgeschlossen.
     </p>
   </div>
-  <p>Spielspezifische Elemente werden in der Dokumentation des jeweiligen Spiels dokumentiert.</p>
+  <p>Spielspezifische Elemente werden in der <a href="/@/xml">XML-Dokumentation des aktuellen Spiels</a> dokumentiert.</p>
   <h2 id="der-aufbau"><a href="#der-aufbau" class="heading"><span>Der Aufbau</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/xml/protokoll#der-aufbau&#x22;, &#x22;Der Aufbau&#x22;)" title="Lesezeichen umschalten" data-key="/xml/protokoll#der-aufbau">🔖</button></h2>
   <div class="directive-alert">
     <img src="https://kroki.io/plantuml/svg/eNqNkbEKgzAQQHe_4nB3MGOHons7uZRuwZwSSE9JLi6l_97TUhupg1vIvfcukCqw9hwfLqPBIOQN-gl9DjpAWI7wzASwnW5ZpqNF59DyBqnHMXt9_ZkQq1zmrbNIXP43xBu80z2m2F5HJYA61lGfzvo2KIpzsgJO0CAZZGhYcwwQyUBNnZcKgSW4XS-7sjoqJ7tm-9da5Xvst7A6BldyI3_1BppJlIE">
   </div>
   <p>
     Die Darstellung skizziert die Architektur unseres Spielsystems,
-    bestehend aus dem Server als <a href="/glossary/server">Spielleiter</a> und zwei Spielern.
+    bestehend aus dem Server als Spielleiter und zwei Spielern.
     Der Server verwaltet das Spielgeschehen
     und interagiert über das XML-Protokoll mit den beiden Spielern,
     die jeweils auf einer Spielervorlage aufbauen.
