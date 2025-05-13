@@ -1,6 +1,6 @@
 all: build
 
-dev: .hyperbook/node_modules
+dev:
 	npx --yes hyperbook dev
 
 prod: bin/test-production.sh
