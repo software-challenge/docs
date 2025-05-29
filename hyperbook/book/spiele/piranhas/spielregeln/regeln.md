@@ -1,18 +1,3 @@
-[PDF-Version dieses Dokumentes](regeln.pdf)
-
-Wir freuen uns über sämtliche Verbesserungsvorschläge.  
-Die Dokumentation kann [direkt auf
-GitHub](https://github.com/software-challenge/docs) editiert werden,
-einzige Voraussetzung ist eine kostenlose Registrierung bei GitHub. Ist
-man angemeldet, kann man ein Dokument auswählen (ein guter Startpunkt
-ist die Datei
-[index.md](https://github.com/software-challenge/docs/blob/main/index.md)
-welche Verweise auf alle Sektionen der Dokumentation enthält) und dann
-auf den Stift oben rechts klicken. Damit wird von GitHub automatisch ein
-Fork und ein Pull Request erstellt.  
-Alternativ auch gern eine E-Mail an <info@software-challenge.de> oder
-eine Nachricht im [Discord](https://discord.gg/jhyF7EU).
-
 Das Spielfeld ist ein Aquarium (10x10 Schachbrett mit Spalten A-J und
 Zeilen 0-9), ein Spieler spielt die roten, der andere die blauen Fische.
 
@@ -26,25 +11,27 @@ Zeilen 0-9), ein Spieler spielt die roten, der andere die blauen Fische.
 
 -   8 blaue Fische auf den Feldern B9-I9
 
-Auf dem Spielfeld gibt es im inneren 6x6-Bereich zwei zufällig
-generierte Kraken-Felder, die zwar durchschwommen werden können, auf
-denen jedoch kein Zug enden darf. Diese Felder behindern also die
-Schwarmbildung. Die beiden zufällig generierten Felder befinden sich
-weder in derselben Zeile noch in derselben Spalte, noch in derselben
-Diagonale.
+Auf dem Spielfeld gibt es im inneren 6x6-Bereich zwei zufällig generierte Kraken-Felder, 
+die zwar durchschwommen werden können, 
+auf denen jedoch kein Zug enden darf. 
+Diese Felder behindern also die Schwarmbildung. 
+Die beiden zufällig generierten Felder befinden sich weder in derselben Zeile, 
+noch in derselben Spalte, 
+noch in derselben Diagonale.
+Die Fische haben eine unterschiedliche Gewichtung, 
+die durch ihre Größe dargestellt wird.
 
 # Ziel des Spieles
 
 Alle Fische der eigenen Farbe sollen zu einem Schwarm verbunden werden,
-sie sollen also auf einem zusammenhängenden Gebiet auf dem Spielfeld
-stehen, wobei senkrecht, waagerecht und diagonal nebeneinanderliegende
-Felder als zusammenhängend gelten.
+sie sollen also auf einem zusammenhängenden Gebiet auf dem Spielfeld stehen, 
+wobei senkrecht, waagerecht und diagonal nebeneinanderliegende Felder als zusammenhängend gelten.
 
 # Züge
 
-Es wird abwechselnd gezogen, wobei Rot beginnt. Jede Runde macht jeder
-Spieler einen Zug. In jedem Zug muss man einen eigenen Fisch auf einer
-senkrechten, waagerechten oder diagonalen Linie genau so viele Felder in
+Es wird abwechselnd gezogen, wobei Rot beginnt. Jede Runde macht jeder Spieler einen Zug. 
+In jedem Zug muss man einen eigenen Fisch auf einer senkrechten, 
+waagerechten oder diagonalen Linie genau so viele Felder in
 eine Richtung bewegen, wie insgesamt Fische (beider Farben) auf dieser
 Linie sind.
 
@@ -80,8 +67,7 @@ anderenfalls derjenige Spieler mit dem größeren Schwarm. Falls nach den
 vorgenannten Kriterien kein Gewinner ermittelt werden kann, endet das
 Spiel unentschieden.
 
-Nachrangiges Kriterium für das Ranking im :t[Wettkampfsystem]{#contest}: Anzahl der
-Fische im größten Schwarm des Spielers.
+Nachrangiges Kriterium für das Ranking ist die Anzahl der Fische im größten Schwarm des Spielers.
 
 Beim Final Eight gibt es kein nachrangiges Kriterium. Beim Final Eight
 gewinnt derjenige Spieler eine Begegnung, der nach einer geraden Anzahl
