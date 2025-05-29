@@ -28,6 +28,7 @@ oder als Nachricht im [Discord](https://discord.gg/jhyF7EU).
 ### Konventionen fürs Editieren
 - Zeilenumbrüche jeweils am Ende von Sätzen bzw. semantischen Grenzen,
   orientiert an [Semantic Line Breaks](https://sembr.org).
+  Dabei kann https://waldyrious.net/semantic-linebreaker/ als Hilfe dienen.
 - Datei- und Verzeichnisnamen sollten nur die Zeichen `a` bis `z` 
   sowie Bindestriche (`-`) enthalten.
 - Sprache für Dateinamen, Verzeichnisnamen sowie Inhalt ist Deutsch.
@@ -35,7 +36,7 @@ oder als Nachricht im [Discord](https://discord.gg/jhyF7EU).
 
 ### Hinweise für Beiträge
 Commitnachrichten wird der Dateipfad der geänderten Datei oder des Ordners vorangestellt, 
-ggf. gekürzt um überflüssige Elemente (z.B. 'blokus/' statt 'spiele/blokus/').
+ggf. gekürzt um überflüssige Elemente (z.B. `blokus/` statt `spiele/blokus/`).
 Um bei den Branches die Übersicht zu behalten,
 sollten diese ebenfalls nach der Konvention benannt werden.
 Darüber hinaus guten Stil beachten: https://cbea.ms/git-commit/
