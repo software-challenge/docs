@@ -19,7 +19,7 @@ Die beiden zufällig generierten Felder befinden sich weder in derselben Zeile,
 noch in derselben Spalte, 
 noch in derselben Diagonale.
 Die Fische haben eine unterschiedliche Gewichtung, 
-die durch ihre Größe dargestellt wird.
+die durch ihre Größe dargestellt wird. 
 
 # Ziel des Spieles
 
