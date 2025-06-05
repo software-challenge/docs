@@ -103,7 +103,7 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
   <ol>
     <li>
       Die Igel- und Salatfelder werden so angeordnet wie im Original.
-      Die Felder zwischen 2 Igelfeldern mit Ausnahme der Salatfelder werden zufällig permutiert.
+      Die Felder zwischen 2 Igelfeldern mit Ausnahme der Salatfelder werden zufällig angeordnet.
     </li>
     <li>Das Zahlenfeld 1-5-6 wird durch das Zahlenfeld 1 ersetzt.</li>
     <li>Das Zahlenfeld 3 wird durch das Karottenfeld ersetzt.</li>
@@ -112,12 +112,12 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
   <h2 id="spielbeginn"><a href="#spielbeginn" class="heading"><span>Spielbeginn</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#spielbeginn&#x22;, &#x22;Spielbeginn&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/25_hase-und-igel#spielbeginn">🔖</button></h2>
   <p>
     Jeder Spieler erhält zu Beginn 68 Karotten und 5 Salate als Wegzehrung.
-    Im Laufe des Spiels können die Spieler mit Karotten Karten kaufen,
-    mit denen dann beim Betreten eines Hasenfeldes besondere Aktionen ausgeführt werden können.
+    Im Laufe des Spiels können die Spieler mit Karotten auf Marktfeldern Karten kaufen,
+    um beim Betreten eines Hasenfeldes besondere Aktionen auszuführen.
   </p>
   <p>
-    Mit den Karotten bezahlt der Spieler auch das Vorrücken.
-    Die Anzahl der Karotten, die benötigt werden,
+    Mit den Karotten bezahlen Spieler auch das Vorrücken.
+    Die nötige Anzahl der Karotten,
     um eine bestimmte Anzahl von Zügen zu ziehen,
     ist der folgenden Rennkarte zu entnehmen:
   </p>
@@ -129,7 +129,7 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
   <p>
     Das Spielfeld besteht aus 65 Feldern.
     Ziel des Spiels ist,
-    das Zielfeld (Feld 65) mit weniger als zehn Karotten
+    das Zielfeld (Feld 65) mit maximal zehn Karotten
     und keinem Salat zu erreichen.
   </p>
   <h2 id="felder"><a href="#felder" class="heading"><span>Felder</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#felder&#x22;, &#x22;Felder&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/25_hase-und-igel#felder">🔖</button></h2>
@@ -146,7 +146,11 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
     Nur auf ihm darf ein Zug "Karotten tauschen" stattfinden.
   </p>
   <h3 id="hasenfeld"><a href="#hasenfeld" class="heading"><span>Hasenfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#hasenfeld&#x22;, &#x22;Hasenfeld&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/25_hase-und-igel#hasenfeld">🔖</button></h3>
-  <p>Darf nur betreten werden, wenn eine Karte gespielt werden kann.</p>
+  <p>
+    Darf nur betreten werden,
+    um eine Karte zu spielen.
+    Siehe weiter unten.
+  </p>
   <h3 id="salatfeld"><a href="#salatfeld" class="heading"><span>Salatfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#salatfeld&#x22;, &#x22;Salatfeld&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/25_hase-und-igel#salatfeld">🔖</button></h3>
   <p>
     Darf nur mit mindestens einem Salat betreten werden.
@@ -168,12 +172,15 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
     auch mit mehreren Karten desselben Typs.
   </p>
   <h3 id="igelfeld"><a href="#igelfeld" class="heading"><span>Igelfeld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#igelfeld&#x22;, &#x22;Igelfeld&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/25_hase-und-igel#igelfeld">🔖</button></h3>
-  <p>Darf nur durch einen Rückwärtszug betreten werden.</p>
+  <p>
+    Darf nur durch einen Rückwärtszug betreten werden.
+    Siehe weiter unten.
+  </p>
   <h3 id="position1feld"><a href="#position1feld" class="heading"><span>Position-1-Feld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#position1feld&#x22;, &#x22;Position-1-Feld&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/25_hase-und-igel#position1feld">🔖</button></h3>
   <p>
     Das Position-1-Feld darf uneingeschränkt betreten werden.
-    Sollte sich ein Spieler am Anfang seines Zuges auf diesem Feld befinden
-    und an erster Stelle stehen, so erhält er 10 Karotten.
+    Wenn ein Spieler am Anfang seines Zuges auf diesem Feld steht
+    und dem Gegner voraus ist, erhält er 10 Karotten.
   </p>
   <h3 id="position2feld"><a href="#position2feld" class="heading"><span>Position-2-Feld</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#position2feld&#x22;, &#x22;Position-2-Feld&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/25_hase-und-igel#position2feld">🔖</button></h3>
   <p>
@@ -301,13 +308,16 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
   <h2 id="spielende"><a href="#spielende" class="heading"><span>Spielende</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#spielende&#x22;, &#x22;Spielende&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/25_hase-und-igel#spielende">🔖</button></h2>
   <p>Das Spiel endet, wenn</p>
   <ul>
-    <li>sich mindestens ein Spieler am Ende einer Runde im Ziel befindet (die Runde wird also immer zu Ende gespielt)</li>
+    <li>
+      sich mindestens ein Spieler am Ende einer Runde im Ziel befindet
+      (die Runde wird also immer zu Ende gespielt)
+    </li>
     <li>das Rundenlimit von 30 Runden erreicht ist</li>
   </ul>
   <p>
     Es gewinnt der Spieler, der sich am nächsten am Ziel befindet.
-    Sollten beide Spieler sich im Ziel befinden, gewinnt der Spieler mit weniger Karotten;
-    bei gleicher Karottenzahl endet das Spiel unentschieden.
+    Sollten beide Spieler sich im Ziel befinden, gewinnt der Spieler mit weniger Karotten.
+    Bei gleicher Karottenzahl endet das Spiel unentschieden.
   </p>
   <h2 id="beispiel"><a href="#beispiel" class="heading"><span>Beispiel</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/25_hase-und-igel#beispiel&#x22;, &#x22;Beispiel&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/25_hase-und-igel#beispiel">🔖</button></h2>
   <p>
