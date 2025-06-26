@@ -81,9 +81,21 @@ Dafür wird für jeden Schwarm jeweils die Summe der Gewichte aller Fische
 in dem Schwarm gebildet. Ist der schwerste Schwarm von Rot genauso schwer,
 wie der schwerste Schwarm von Blau, gewinnt der Spieler, der während des
 Spiels zuerst einen Schwarm (kein Teilschwarm) gebildet hat, unabhängig davon,
-ob es ein eigener oder der des Gegners ist.
+ob es ein eigener oder der des Gegners ist. Falls dies auch nicht der der Fall ist,
+gibt es ein Unentschieden.
 
 Als Beispiel für diese Regel:
+
+-   Der 1. Spieler (rot) vereint alle seine Fische zu einem Schwarm. 
+    Dieser Schwarm wird von dem 2. Spieler (blau) in seinem Zug wieder geteilt.
+    Die Runde ist also nicht beendet (außer es war Runde 30) und bei einem Gleichstand,
+    würde rot gewinnen, da durch ihn in einer Runde ein Schwarm entstanden ist.
+
+-   Rot schlägt einen blauen Fisch und somit sind alle blauen Fische in einem Schwarm.
+    Blau muss jedoch noch einen Zug machen und dadurch wird sein Schwarm wieder geteielt.
+    Die Runde ist also nicht beendet (außer es war Runde 30) und bei einem Gleichstand,
+    würde rot gewinnen, da durch ihn in einer Runde ein Schwarm entstanden ist.
+    (Egal ob es ein Schwarm seiner Farbe oder der des Gegners ist)
 
 
 Beim Final Eight gibt es kein nachrangiges Kriterium. Beim Final Eight
