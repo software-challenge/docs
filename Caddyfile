@@ -8,7 +8,7 @@ redir /spiele/ /spiele
 redir /spiele /spiele/aktuell
 
 @game path_regexp game ^\/spiele\/aktuell(.*)$
-rewrite @game /spiele/25_hase-und-igel{re.game.1}
+rewrite @game /spiele/26_piranhas{re.game.1}
 @trail path_regexp trail ^(.*)/$
 rewrite @trail {re.trail.1}
 

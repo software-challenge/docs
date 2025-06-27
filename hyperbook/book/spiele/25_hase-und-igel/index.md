@@ -1,6 +1,7 @@
 ---
 name: Hase und Igel
 expanded: true
+hide: true
 ---
 
 # Modifizierte Spielregeln "Hase und Igel" für die Software-Challenge 2025
