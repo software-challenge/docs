@@ -13,21 +13,20 @@ zum anderen sorgt der Spielleiter dafür,
 dass sich die Kontrahenten an die Spielregeln halten.
 
 Der Spielleiter ist direkt im [Wettkampfsystem](wettkampfsystem) integriert,
-so dass alle Turnierspiele regelkonform gespielt werden.
-Zum Testen des eigenen Computerspielers gibt es eine spezielle Version des Spielleiters,
-die im [Downloadbereich der Website](https://software-challenge.de/dokumentation-und-material) heruntergeladen werden kann.
-Diese Download-Version enthält eine grafische Oberfläche,
-durch die man das Spiel gut verfolgen
-und sogar als Mensch mitspielen kann.
+sodass alle Turnierspiele regelkonform gespielt werden.
+Zum Testen des eigenen Computerspielers gibt es eine Version des Spielleiters mit grafischer Oberfläche,
+erhältlich im [Downloadbereich der Website](https://software-challenge.de/dokumentation-und-material).
+Dadurch kann man das Spiel gut verfolgen
+und sogar als Mensch mitspielen.
 
 ## System vorbereiten und Spielleiter starten
 
-Die einzige Vorraussetzung ist,
+Die einzige Voraussetzung ist 
+die [Installation einer Java-Laufzeitumgebung](/entwicklung/installation-von-java).
 dass auf dem Rechner mindestens die Laufzeitumgebung für Java 11 installiert ist.
-Siehe [Installation von Java](/entwicklung/installation-von-java).
 
-Nach der erfolgreichen Installation kann man den grafischen Server
-durch einen Doppelklick auf die Datei "software-challenge-gui" starten.
+Nach der erfolgreichen Installation kann man den grafischen Server 
+durch einen Doppelklick auf die Datei `software-challenge-gui` starten.
 
 ## Die Programmoberfläche
 
@@ -89,11 +88,16 @@ die man sich beliebig oft wieder ansehen kann,
 um beispielsweise einen Fehler des eigenen Spielers zu analysieren
 oder eine Strategie zu verbessern.
 
-Aktuell werden Replay-Dateien automatisch im Unterordner "./replays" abgespeichert.
+Aktuell werden Replay-Dateien automatisch im Unterordner "replays" 
+des aktuellen Verzeichnisses beim Programmstart abgespeichert.
+
+<!-- 
 Die im Folgenden genannten Anpassungsmöglichkeiten beim Speichern werden noch implementiert.
 
-~Um das aktuelle Spiel als Spielwiederholung zu speichern, klickt man auf das Icon ganz rechts unten im Spielbereich.
+~Um das aktuelle Spiel als Spielwiederholung zu speichern,
+klick auf das Icon ganz rechts unten im Spielbereich.
 Dann kann man einen Dateinamen und Speicherort festlegen.~
+-->
 
 Um eine gespeicherte Spielwiederholung zu laden, verwendet man den
 Eintrag "Replay laden" im linken Punkt der Menüleiste Nachdem man eine
@@ -182,7 +186,7 @@ und optional mit `--turn` ein Zug spezifiziert werden.
 
 ### Replay speichern
 
-Wenn der Server ohne die graphische Oberfläche gestartet wird,
+Wenn der Server ohne grafische Oberfläche gestartet wird,
 kann `--saveReplay` mitgegeben werden,
 damit am Ende jedes Spiels ein Replay unter "./replays" gespeichert wird.
 
