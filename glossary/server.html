@@ -91,22 +91,21 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
   </p>
   <p>
     Der Spielleiter ist direkt im <a href="wettkampfsystem">Wettkampfsystem</a> integriert,
-    so dass alle Turnierspiele regelkonform gespielt werden.
-    Zum Testen des eigenen Computerspielers gibt es eine spezielle Version des Spielleiters,
-    die im <a href="https://software-challenge.de/dokumentation-und-material">Downloadbereich der Website</a> heruntergeladen werden kann.
-    Diese Download-Version enthält eine grafische Oberfläche,
-    durch die man das Spiel gut verfolgen
-    und sogar als Mensch mitspielen kann.
+    sodass alle Turnierspiele regelkonform gespielt werden.
+    Zum Testen des eigenen Computerspielers gibt es eine Version des Spielleiters mit grafischer Oberfläche,
+    erhältlich im <a href="https://software-challenge.de/dokumentation-und-material">Downloadbereich der Website</a>.
+    Dadurch kann man das Spiel gut verfolgen
+    und sogar als Mensch mitspielen.
   </p>
   <h2 id="system-vorbereiten-und-spielleiter-starten"><a href="#system-vorbereiten-und-spielleiter-starten" class="heading"><span>System vorbereiten und Spielleiter starten</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;#system-vorbereiten-und-spielleiter-starten&#x22;, &#x22;System vorbereiten und Spielleiter starten&#x22;)" title="Lesezeichen umschalten" data-key="#system-vorbereiten-und-spielleiter-starten">🔖</button></h2>
   <p>
-    Die einzige Vorraussetzung ist,
+    Die einzige Voraussetzung ist
+    die <a href="/entwicklung/installation-von-java">Installation einer Java-Laufzeitumgebung</a>.
     dass auf dem Rechner mindestens die Laufzeitumgebung für Java 11 installiert ist.
-    Siehe <a href="/entwicklung/installation-von-java">Installation von Java</a>.
   </p>
   <p>
     Nach der erfolgreichen Installation kann man den grafischen Server
-    durch einen Doppelklick auf die Datei "software-challenge-gui" starten.
+    durch einen Doppelklick auf die Datei <span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>software-challenge-gui</span></span><button type="button" data="software-challenge-gui" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span> starten.
   </p>
   <h2 id="die-programmoberflche"><a href="#die-programmoberflche" class="heading"><span>Die Programmoberfläche</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;#die-programmoberflche&#x22;, &#x22;Die Programmoberfläche&#x22;)" title="Lesezeichen umschalten" data-key="#die-programmoberflche">🔖</button></h2>
   <p>
@@ -195,12 +194,7 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
     um beispielsweise einen Fehler des eigenen Spielers zu analysieren
     oder eine Strategie zu verbessern.
   </p>
-  <p>
-    Aktuell werden Replay-Dateien automatisch im Unterordner "./replays" abgespeichert.
-    Die im Folgenden genannten Anpassungsmöglichkeiten beim Speichern werden noch implementiert.
-  </p>
-  <p><del>Um das aktuelle Spiel als Spielwiederholung zu speichern, klickt man auf das Icon ganz rechts unten im Spielbereich.
-Dann kann man einen Dateinamen und Speicherort festlegen.</del></p>
+  <p>Aktuell werden Replay-Dateien automatisch im Unterordner "./replays" abgespeichert.</p>
   <p>
     Um eine gespeicherte Spielwiederholung zu laden, verwendet man den
     Eintrag "Replay laden" im linken Punkt der Menüleiste Nachdem man eine
@@ -325,7 +319,7 @@ Dann kann man einen Dateinamen und Speicherort festlegen.</del></p>
   </figure>
   <h3 id="replay-speichern"><a href="#replay-speichern" class="heading"><span>Replay speichern</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;#replay-speichern&#x22;, &#x22;Replay speichern&#x22;)" title="Lesezeichen umschalten" data-key="#replay-speichern">🔖</button></h3>
   <p>
-    Wenn der Server ohne die graphische Oberfläche gestartet wird,
+    Wenn der Server ohne grafische Oberfläche gestartet wird,
     kann <span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>--saveReplay</span></span><button type="button" data="--saveReplay" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span> mitgegeben werden,
     damit am Ende jedes Spiels ein Replay unter "./replays" gespeichert wird.
   </p>

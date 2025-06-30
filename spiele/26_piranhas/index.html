@@ -155,9 +155,16 @@ HYPERBOOK_ASSETS = "/__hyperbook_assets/"
     Falls dies auch nicht der Fall ist, gibt es ein Unentschieden.
   </p>
   <p>
-    2 Beispiele für den Fall, dass das Gewichtskriterium am Ende des Spiels keinen Gewinner liefert:
-    a) Durch einen Zug von Rot (1. Spieler) entsteht erstmals eine Situation, in der alle Fische eines Spielers (egal ob Rot oder Blau) zu einem einzigen Schwarm verbunden sind. Dieser Schwarm wird von Blau (2. Spieler) in seinem Zug wieder geteilt. Das Spiel ist also nicht beendet (außer es war Runde 30). Liefert am Ende des Spiels das Gewichtskriterium keinen Gewinner, gewinnt Rot, da Rot erstmals eine Situation herbeigeführt hat, in der alle Fische eines Spielers zu einem Schwarm verbunden sind.
-    b) Rot (1. Spieler) schlägt einen blauen Fisch, so dass dadurch erstmals eine Situation entsteht, in dem alle Fische eines Spielers zu einem Schwarm verbunden sind. Blau muss jedoch noch einen Zug machen und dadurch wird sein Schwarm wieder geteilt. Das Spiel ist also nicht beendet (außer es war Runde 30). Liefert am Ende des Spiels das Gewichtskriterium keinen Gewinner, gewinnt Rot, da Rot erstmals eine Situation herbeigeführt hat, in der alle Fische eines Spielers zu einem Schwarm verbunden sind.
+    Ein Beispiel:
+    Durch einen Zug von Rot (Spieler 1) entsteht erstmals eine Situation,
+    in der alle Fische eines Spielers (egal ob Rot oder Blau) zu einem einzigen Schwarm verbunden sind
+    (indem Rot alle eigenen Fische vereint oder einen abseits befindlichen blauen Fisch frisst).
+    Blau (Spieler 2) muss jedoch noch einen Zug machen und teilt den Schwarm dadurch wieder
+    (weil es einen Fisch aus dem eigenen Schwarm entfernen muss oder einen roten Fisch aus der Mitte des Schwarms frisst).
+    Das Spiel ist also nicht beendet (außer es war Runde 30).
+    Liefert am Ende des Spiels das Gewichtskriterium keinen Gewinner,
+    gewinnt Rot, da Rot erstmals eine Situation herbeigeführt hat,
+    in der alle Fische eines Spielers zu einem Schwarm verbunden sind.
   </p>
   <p>
     Während der Meisterschaft und der Champions League geht für beide Spieler das Gewicht des jeweils schwersten Schwarms als nachrangiges Kriterium in die Rangliste ein.
