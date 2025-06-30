@@ -79,8 +79,21 @@ unabhängig davon, ob es ein eigener oder der des Gegners ist.
 Falls dies auch nicht der Fall ist, gibt es ein Unentschieden.
 
 2 Beispiele für den Fall, dass das Gewichtskriterium am Ende des Spiels keinen Gewinner liefert:
-a)	Durch einen Zug von Rot (1. Spieler) entsteht erstmals eine Situation, in der alle Fische eines Spielers (egal ob Rot oder Blau) zu einem einzigen Schwarm verbunden sind. Dieser Schwarm wird von Blau (2. Spieler) in seinem Zug wieder geteilt. Das Spiel ist also nicht beendet (außer es war Runde 30). Liefert am Ende des Spiels das Gewichtskriterium keinen Gewinner, gewinnt Rot, da Rot erstmals eine Situation herbeigeführt hat, in der alle Fische eines Spielers zu einem Schwarm verbunden sind.
-b)	Rot (1. Spieler) schlägt einen blauen Fisch, so dass dadurch erstmals eine Situation entsteht, in dem alle Fische eines Spielers zu einem Schwarm verbunden sind. Blau muss jedoch noch einen Zug machen und dadurch wird sein Schwarm wieder geteilt. Das Spiel ist also nicht beendet (außer es war Runde 30). Liefert am Ende des Spiels das Gewichtskriterium keinen Gewinner, gewinnt Rot, da Rot erstmals eine Situation herbeigeführt hat, in der alle Fische eines Spielers zu einem Schwarm verbunden sind.
+- Durch einen Zug von Rot (Spieler 1) entsteht erstmals eine Situation,
+  in der alle Fische eines Spielers (egal ob Rot oder Blau) zu einem einzigen Schwarm verbunden sind.
+  Dieser Schwarm wird von Blau (Spieler 2) in seinem Zug wieder geteilt.
+  Das Spiel ist also nicht beendet (außer es war Runde 30).
+  Liefert am Ende des Spiels das Gewichtskriterium keinen Gewinner,
+  gewinnt Rot, da Rot erstmals eine Situation herbeigeführt hat,
+  in der alle Fische eines Spielers zu einem Schwarm verbunden sind.
+- Rot (Spieler 1) schlägt einen blauen Fisch,
+  so dass dadurch erstmals eine Situation entsteht,
+  in dem alle Fische eines Spielers zu einem Schwarm verbunden sind.
+  Blau muss jedoch noch einen Zug machen und dadurch wird sein Schwarm wieder geteilt.
+  Das Spiel ist also nicht beendet (außer es war Runde 30).
+  Liefert am Ende des Spiels das Gewichtskriterium keinen Gewinner,
+  gewinnt Rot, da Rot erstmals eine Situation herbeigeführt hat,
+  in der alle Fische eines Spielers zu einem Schwarm verbunden sind.
 
 Während der Meisterschaft und der Champions League geht für beide Spieler das Gewicht des jeweils schwersten Schwarms als nachrangiges Kriterium in die Rangliste ein.
 Beim Final Eight gibt es dieses nachrangige Kriterium für die Rangliste nicht.
