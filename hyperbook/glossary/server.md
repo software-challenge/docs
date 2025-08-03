@@ -5,14 +5,14 @@ index: 2
 
 # Der Spielleiter (Server)
 
-Die beiden [Computerspieler](player) kommunizieren nicht direkt miteinander,
+Die beiden :t[Computerspieler]{#player} kommunizieren nicht direkt miteinander,
 sondern spielen über einen Mittelsmann: den Spielleiter.
 Dadurch ist zum einen sichergestellt,
 dass man seinen Gegner nicht mit invaliden Nachrichten belästigen kann,
 zum anderen sorgt der Spielleiter dafür,
 dass sich die Kontrahenten an die Spielregeln halten.
 
-Der Spielleiter ist direkt im [Wettkampfsystem](wettkampfsystem) integriert,
+Der Spielleiter ist direkt im :t[Wettkampfsystem]{#contest} integriert,
 sodass alle Turnierspiele regelkonform gespielt werden.
 Zum Testen des eigenen Computerspielers gibt es eine Version des Spielleiters mit grafischer Oberfläche,
 erhältlich im [Downloadbereich der Website](https://software-challenge.de/dokumentation-und-material).
@@ -21,11 +21,11 @@ und sogar als Mensch mitspielen.
 
 ## System vorbereiten und Spielleiter starten
 
-Die einzige Voraussetzung ist 
+Die einzige Voraussetzung ist
 die [Installation einer Java-Laufzeitumgebung](/entwicklung/installation-von-java).
 dass auf dem Rechner mindestens die Laufzeitumgebung für Java 11 installiert ist.
 
-Nach der erfolgreichen Installation kann man den grafischen Server 
+Nach der erfolgreichen Installation kann man den grafischen Server
 durch einen Doppelklick auf die Datei `software-challenge-gui` starten.
 
 ## Die Programmoberfläche
@@ -88,10 +88,10 @@ die man sich beliebig oft wieder ansehen kann,
 um beispielsweise einen Fehler des eigenen Spielers zu analysieren
 oder eine Strategie zu verbessern.
 
-Aktuell werden Replay-Dateien automatisch im Unterordner "replays" 
+Aktuell werden Replay-Dateien automatisch im Unterordner "replays"
 des aktuellen Verzeichnisses beim Programmstart abgespeichert.
 
-<!-- 
+<!--
 Die im Folgenden genannten Anpassungsmöglichkeiten beim Speichern werden noch implementiert.
 
 ~Um das aktuelle Spiel als Spielwiederholung zu speichern,
@@ -117,7 +117,7 @@ diese Situation erneut nachzuspielen um den Computerspieler gezielt zu verbesser
 Dies ist zur Zeit nur auf etwas kompliziertem Wege möglich.
 Es folgt eine Schritt-für-Schritt Anleitung:
 
-1.  Lade das betreffende Replay aus dem :t[Wettkampfsystem]{#contest} herunter (.xml.gz Datei).
+1.  Lade das betreffende Replay aus dem Wettkampfsystem herunter (.xml.gz Datei).
 
 2.  Entpacke das Replay, um eine .xml-Datei zu erhalten.
 
@@ -162,11 +162,11 @@ So nutzt du ihn
     (Terminal; auf Windows cmd oder Powershell)
     im Verzeichnis des entpackten Archives.
 
-4.  Starte den Testserver auf Port 13051 mit dem beiliegenden `./start.sh` (Linux/Mac) bzw. `.\start.bat` Skript oder dem entsprechenden Befehl:
+4.  Starte den Testserver auf Port 13051 mit dem beiliegenden `./start.sh` (Linux/macOS) bzw. `.\start.bat` Skript oder dem entsprechenden Befehl:
 
         java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar server.jar --port 13051
 
-5.  Starte die :t[Computerspieler]{#player} in weiteren Kommandozeilenumgebungen auf Port 13051
+5.  Starte die Computerspieler in weiteren Kommandozeilenumgebungen auf Port 13051
     (standardmäßig die Option `--port 13051`).
     Die Computerspieler verbinden sich automatisch zum Testserver und spielen ein Spiel.
     Danach sollten sich die Computerspieler automatisch beenden.
@@ -179,9 +179,8 @@ eine Spielsituation zu laden und zu testen.
 Die Spielsituation muss vorher wie unter [Spielsituation nachstellen](#spielsituation-nachstellen) erzeugt werden.
 Dann kann die Datei mit dem Argument `--loadGameFile` geladen werden
 und optional mit `--turn` ein Zug spezifiziert werden.
-```shell
-      java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar server.jar --port 13051 --loadGameFile ./replay.xml --turn 10
-
+```sh
+java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar server.jar --port 13051 --loadGameFile ./replay.xml --turn 10
 ```
 
 ### Replay speichern
@@ -212,43 +211,43 @@ bemerkt er den Eingang des Zuges vom Computerspieler nicht rechtzeitig und disqu
 Damit dieses Problem möglichst selten auftritt,
 haben sich die folgenden Parameter beim Starten des Servers bewährt:
 
-Unter Linux:
-```shell
-    java -Dfile.encoding=UTF-8 \
-         -Dlogback.configurationFile=logback.xml \
-         -server \
-         -XX:MaxGCPauseMillis=100 \
-         -XX:GCPauseIntervalMillis=2050 \
-         -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled \
-         -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=70 \
-         -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark \
-         -jar server.jar --port 13051
+Unter Linux und macOS:
+```sh
+java -Dfile.encoding=UTF-8 \
+     -Dlogback.configurationFile=logback.xml \
+     -server \
+     -XX:MaxGCPauseMillis=100 \
+     -XX:GCPauseIntervalMillis=2050 \
+     -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled \
+     -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=70 \
+     -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark \
+     -jar server.jar --port 13051
 ```
-Unter Windows (unterscheidet sich nur durch die Art, den langen Befehl
-auf mehrere Zeilen zu verteilen):
-```shell
-    java -Dfile.encoding=UTF-8 ^
-         -Dlogback.configurationFile=logback.xml ^
-         -server ^
-         -XX:MaxGCPauseMillis=100 ^
-         -XX:GCPauseIntervalMillis=2050 ^
-         -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled ^
-         -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=70 ^
-         -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark ^
-         -jar server.jar --port 13051
+
+Unter Windows
+(unterscheidet sich nur durch die Art, den langen Befehl auf mehrere Zeilen zu verteilen):
+```sh
+java -Dfile.encoding=UTF-8 ^
+     -Dlogback.configurationFile=logback.xml ^
+     -server ^
+     -XX:MaxGCPauseMillis=100 ^
+     -XX:GCPauseIntervalMillis=2050 ^
+     -XX:+UseConcMarkSweepGC -XX:+CMSParallelRemarkEnabled ^
+     -XX:+UseCMSInitiatingOccupancyOnly -XX:CMSInitiatingOccupancyFraction=70 ^
+     -XX:+ScavengeBeforeFullGC -XX:+CMSScavengeBeforeRemark ^
+     -jar server.jar --port 13051
 ```
-Um das Verhalten des Garbage Collectors noch weiter zu verbessern, kann
-man auch noch mittels der Optionen
-```shell
-    -XX:+PrintGCDateStamps -XX:+PrintGC -XX:+PrintGCDetails -Xloggc:"pfad_zum_gc.log"
-```
-eine Logdatei über die Aktivitäten des Garbage Collectors anlegen. Darin
-sieht man genau, wann er wie lange lief. Man kann dann die Einstellungen
-verändern und testen, ob sich das Verhalten verbessert.
+
+Um das Verhalten des Garbage Collectors noch weiter zu verbessern,
+kann man auch noch mittels der Optionen
+`-XX:+PrintGCDateStamps -XX:+PrintGC -XX:+PrintGCDetails -Xloggc:"pfad_zum_gc.log"`
+eine Logdatei über die Aktivitäten des Garbage Collectors anlegen.
+Darin sieht man genau, wann er wie lange lief.
+Man kann dann die Einstellungen verändern und testen, ob sich das Verhalten verbessert.
 
 Die Konfiguration des Garbage Collectors ist kein Allheilmittel
 und kann zu neuen Problemen führen, auf die man gefasst sein sollte.
-Dazu gehören erhöhter Resourcenverbrauch und Instabilität der Anwendung.
+Dazu gehören erhöhter Ressourcenverbrauch und Instabilität der Anwendung.
 
 Eine Auflistung möglicher nützlicher Parameter für Computerspieler findet sich unter
 https://stackoverflow.com/questions/48989515/java-garbage-collector-time-limit.
@@ -268,7 +267,7 @@ und wertet am Ende die erreichten Punktzahlen aus.
 Der TestClient muss vom Terminal mit den entsprechenden Argumenten aufgerufen werden.
 Diese werden unter den Beispielen näher erläutert.
 
-Unter Linux:
+Unter Linux und macOS:
 ```sh
     java -jar -Dlogback.configurationFile=logback-tests.xml test-client.jar \
         --tests 4 \
@@ -279,6 +278,7 @@ Unter Linux:
         --start-server \
         --port 13051
 ```
+
 Unter Windows
 (unterscheidet sich nur durch die Art, den langen Befehl auf mehrere Zeilen zu verteilen):
 
