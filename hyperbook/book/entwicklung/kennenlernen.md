@@ -13,3 +13,5 @@ die ihr in euren :t[Computerspieler]{#player} nachher umsetzen wollt.
 Das Spiel selbst kann zu zweit oder allein gegen den [Zufallsspieler](glossary/client#der-simpleclient)
 mit dem [Spielleiter](glossary/server#der-spielleiter-server) gespielt werden.
 Es empfiehlt sich, dies einige Male zu tun, bevor man mit der Programmierung beginnt.
+
+Die Spielregeln findet ihr [hier](../spiele/26_piranhas/index).
