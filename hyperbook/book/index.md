@@ -23,8 +23,8 @@ oder als Nachricht im [Discord](https://discord.gg/jhyF7EU).
 
 # Lesezeichen
 
-Du kannst dir an jeder beliebigen Überschrift ein Lesezeichen setzen,
-welches du dann direkt hier auf wiederfindest.
+Du kanns Überschriften als Lesezeichen markieren,
+diese findest du dann hier wieder:
 
 :::alert
 ::bookmarks
