@@ -12,24 +12,24 @@ Die :t[Computerspieler]{#player} müssen lediglich das Kommunikationsprotokoll e
 Anfängern wird allerdings davon abgeraten, einen komplett eigenen Computerspieler zu schreiben.
 Es ist deutlich einfacher, auf einer bereitgestellten Spielervorlage aufzubauen,
 da man sich dabei nur um die Strategie und nicht um die Kommunikation kümmern muss.
-Außerdem wird vom Institut für Informatik die beste Unterstützung für Java/Kotlin geboten.
+Außerdem wird vom Institut für Informatik die beste Unterstützung für Java/Kotlin sowie Python geboten.
 
 :::alert{warn}
 Im Verlauf des Wettbewerbes können Elemente zur Kommunikationsschnittstelle hinzugefügt werden,
 die in dieser Dokumentation nicht aufgeführt sind.
 Damit ein Computerspieler auch bei solchen Änderungen fehlerfrei mit dem Server kommunizieren kann,
-sollten beim Auslesen des :t[XML]{#xml} jegliche Daten verworfen werden,
+sollten beim Auslesen des XML jegliche Daten verworfen werden,
 die hier nicht weiter definiert sind.
 :::
 
 :::alert{info}
 Die bereitgestellten Programme
 (Server, Java-Spieler) nutzen eine Bibliothek namens XStream,
-um Java-Objekte direkt in :t[XML]{#xml} zu konvertieren und umgekehrt.
+um Java-Objekte direkt in XML zu konvertieren und umgekehrt.
 Dabei werden XML-Nachrichten nicht unbedingt mit einem Zeilenumbruch abgeschlossen.
 :::
 
-Spielspezifische Elemente werden in der Dokumentation des jeweiligen Spiels dokumentiert.
+Spielspezifische Elemente werden in der [XML-Dokumentation des aktuellen Spiels](/@/xml) dokumentiert.
 
 ## Der Aufbau
 
@@ -52,7 +52,7 @@ client2App --> serverApp : Sendet Zug in XML
 :::
 
 Die Darstellung skizziert die Architektur unseres Spielsystems,
-bestehend aus dem Server als :t[Spielleiter]{#server} und zwei Spielern.
+bestehend aus dem Server als Spielleiter und zwei Spielern.
 Der Server verwaltet das Spielgeschehen
 und interagiert über das XML-Protokoll mit den beiden Spielern,
 die jeweils auf einer Spielervorlage aufbauen.

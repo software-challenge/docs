@@ -10,6 +10,9 @@ man vorher das Spiel selbst verstehen und spielen können.
 Dabei könnt ihr bereits Ideen und Strategien entwickeln,
 die ihr in euren :t[Computerspieler]{#player} nachher umsetzen wollt.
 
-Das Spiel selbst kann zu zweit oder allein gegen den [Zufallsspieler](glossary/client#der-simpleclient)
-mit dem [Spielleiter](glossary/server#der-spielleiter-server) gespielt werden.
-Es empfiehlt sich, dies einige Male zu tun, bevor man mit der Programmierung beginnt.
+Das Spiel selbst kann zu zweit oder allein gegen den :t[Zufallsspieler]{#player}
+mit dem :t[Spielleiter]{#server} gespielt werden.
+Es ist empfehlenswert, dies vor dem Beginn der Programmierung einige Male zu tun,
+um ein Gefühl für das Spiel zu bekommen.
+
+Die Spielregeln findet ihr [hier](../spiele/aktuell).

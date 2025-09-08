@@ -1,6 +1,7 @@
 ---
 name: Hase und Igel
 expanded: true
+hide: true
 ---
 
 # Modifizierte Spielregeln "Hase und Igel" für die Software-Challenge 2025
@@ -9,7 +10,7 @@ Die Nutzung des Spielkonzeptes "Hase und Igel" (Name, Spielregeln und Grafik)
 erfolgt mit freundlicher Genehmigung der Ravensburger Spieleverlag GmbH.
 Das Spielfeld der Version 2008 vom Ravensburger Spieleverlag wird folgendermaßen modifiziert:
 1. Die Igel- und Salatfelder werden so angeordnet wie im Original.
-   Die Felder zwischen 2 Igelfeldern mit Ausnahme der Salatfelder werden zufällig permutiert.
+   Die Felder zwischen 2 Igelfeldern mit Ausnahme der Salatfelder werden zufällig angeordnet.
 2. Das Zahlenfeld 1-5-6 wird durch das Zahlenfeld 1 ersetzt.
 3. Das Zahlenfeld 3 wird durch das Karottenfeld ersetzt.
 4. Das Zahlenfeld 4 wird durch das neu eingeführte Marktfeld ersetzt.
@@ -17,11 +18,11 @@ Das Spielfeld der Version 2008 vom Ravensburger Spieleverlag wird folgendermaße
 ## Spielbeginn
 
 Jeder Spieler erhält zu Beginn 68 Karotten und 5 Salate als Wegzehrung.
-Im Laufe des Spiels können die Spieler mit Karotten Karten kaufen,
-mit denen dann beim Betreten eines Hasenfeldes besondere Aktionen ausgeführt werden können.
+Im Laufe des Spiels können die Spieler mit Karotten auf Marktfeldern Karten kaufen,
+um beim Betreten eines Hasenfeldes besondere Aktionen auszuführen.
 
-Mit den Karotten bezahlt der Spieler auch das Vorrücken.
-Die Anzahl der Karotten, die benötigt werden,
+Mit den Karotten bezahlen Spieler auch das Vorrücken.
+Die nötige Anzahl der Karotten,
 um eine bestimmte Anzahl von Zügen zu ziehen,
 ist der folgenden Rennkarte zu entnehmen:
 
@@ -29,7 +30,7 @@ ist der folgenden Rennkarte zu entnehmen:
 
 Das Spielfeld besteht aus 65 Feldern.
 Ziel des Spiels ist,
-das Zielfeld (Feld 65) mit weniger als zehn Karotten
+das Zielfeld (Feld 65) mit maximal zehn Karotten
 und keinem Salat zu erreichen.
 
 ## Felder
@@ -49,7 +50,9 @@ Nur auf ihm darf ein Zug "Karotten tauschen" stattfinden.
 
 ### Hasenfeld
 
-Darf nur betreten werden, wenn eine Karte gespielt werden kann.
+Darf nur betreten werden,
+um eine Karte zu spielen.
+Siehe weiter unten.
 
 ### Salatfeld
 
@@ -74,12 +77,13 @@ auch mit mehreren Karten desselben Typs.
 ### Igelfeld
 
 Darf nur durch einen Rückwärtszug betreten werden.
+Siehe weiter unten.
 
 ### Position-1-Feld
 
 Das Position-1-Feld darf uneingeschränkt betreten werden.
-Sollte sich ein Spieler am Anfang seines Zuges auf diesem Feld befinden
-und an erster Stelle stehen, so erhält er 10 Karotten.
+Wenn ein Spieler am Anfang seines Zuges auf diesem Feld steht
+und dem Gegner voraus ist, erhält er 10 Karotten.
 
 ### Position-2-Feld
 
@@ -206,12 +210,13 @@ Insgesamt steigt der Karottenvorrat von 64 auf 64 - 6 + 10 = 68 Karotten.
 ## Spielende
 
 Das Spiel endet, wenn
-- sich mindestens ein Spieler am Ende einer Runde im Ziel befindet (die Runde wird also immer zu Ende gespielt)
+- sich mindestens ein Spieler am Ende einer Runde im Ziel befindet 
+  (die Runde wird also immer zu Ende gespielt)
 - das Rundenlimit von 30 Runden erreicht ist
 
 Es gewinnt der Spieler, der sich am nächsten am Ziel befindet.
-Sollten beide Spieler sich im Ziel befinden, gewinnt der Spieler mit weniger Karotten;
-bei gleicher Karottenzahl endet das Spiel unentschieden.
+Sollten beide Spieler sich im Ziel befinden, gewinnt der Spieler mit weniger Karotten.
+Bei gleicher Karottenzahl endet das Spiel unentschieden.
 
 ## Beispiel
 

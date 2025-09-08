@@ -18,7 +18,7 @@ trap onkill SIGTERM
 ssh -S /tmp/ssh-ctrl-socket -O check $server || exit 1
 docker login localhost:5000 || exit 1
 
-docker build -t docs-server --build-arg GITHUB_SECRET="$GITHUB_SECRET" .
+docker build --no-cache -t docs-server --build-arg GITHUB_SECRET="$GITHUB_SECRET" .
 docker tag docs-server localhost:5000/docs-server
 docker push localhost:5000/docs-server
 ssh -S /tmp/ssh-ctrl-socket -O exit $server

@@ -14,7 +14,7 @@ COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 
 COPY Caddyfile /etc/caddy/Caddyfile
 #COPY hyperbook/.hyperbook/out /srv
-RUN git clone https://github.com/software-challenge/docs.git -b live --depth 1 /srv
+RUN git clone https://github.com/software-challenge/docs.git -b live --depth 1 /srv && echo $(date) > /srv/timestamp
 
 COPY bin/update-content.sh /
 
