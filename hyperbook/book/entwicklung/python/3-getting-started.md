@@ -15,7 +15,7 @@ Aktuell gibt diese Vorlage jedoch nur zufällige Züge an den [Spielserver](/glo
 Alles beginnt mit einem Ordner auf dem Computer, der komplett nach eigenen Wünschen benannt
 werden kann. In diesen Ordner werden ab sofort alle Dateien für den Computerspieler abgelegt.
 
-Die Spielervorlage kann komplett aus dem
+Eine Spielervorlage kann komplett aus dem
 [Github-Repository](https://github.com/software-challenge/player_python/blob/master/logic.py)
 des socha-Pakets in den eben erstellten Ordner heruntergeladen werden.
 

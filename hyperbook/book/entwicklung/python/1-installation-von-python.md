@@ -69,5 +69,5 @@ Falls nicht die aktuelleste Version installiert wurde, kann man den Befehl auch 
 um eine spezielle Version auszuwählen (natürlich Version entsprechend anpassen):
 
 ```bash
-pip install socha==3.6.2
+pip install socha==4.1.0
 ```
