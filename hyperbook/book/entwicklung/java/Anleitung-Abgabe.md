@@ -1,6 +1,6 @@
 ---
 name: Anleitung für Abgabe
-index: 10
+index: 9
 ---
 
 # Computerspieler abgabefertig machen (Anleitung für Export aus der IDE für Java)
