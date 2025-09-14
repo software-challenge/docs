@@ -37,8 +37,7 @@ müssen auswählt werden. Dabei lassen sich alle Optionen empfehlen.
 
 ### Python in VS Code
 
-Um die angespochenen Unterstützungen für Python nutzen zu können, 
-muss man in VS Code eine Erweiterung installieren:
+Für Python-Unterstützung dann in VS Code die Erweiterung installieren:
 
 1.  Im linken Menü auf "Extensions" gehen
 2.  Nach "Python" suchen
