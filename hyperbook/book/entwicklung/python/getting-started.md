@@ -8,7 +8,7 @@ index: 3
 Damit man nicht bei null starten muss, wird eine grundlegende Code-Basis bereitgestellt.
 Diese importiert die wichtigsten Funktionen des installierten socha-Pakets und nutzt diese,
 um eine simple, aber trotzdem schon spielfähige Logik zu implementieren.
-Aktuell gibt diese Vorlage jedoch nur zufällige Züge an den [Spielserver](/glossary/server) zurück.
+Aktuell gibt diese Vorlage jedoch nur zufällige Züge an den :t[Spielserver]{#server} zurück.
 
 ## Projekt erstellen
 

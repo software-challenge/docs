@@ -62,7 +62,7 @@ da dieser Prozess dort noch beschrieben ist.
 ## Spieler hochladen
 
 Nun kann der fertige Computerspieler im Wettkampfsystem hochgeladen werden.
-Den allgemeinen Prozess haben wir bereits [hier](/glossary/contest#computerspieler)
+Den allgemeinen Prozess haben wir bereits :t[hier]{#contest.computerspieler}
 ausführlich beschrieben und muss deshalb in diesem Abschnitt
 nicht mehr weiter erläutert werden.
 
