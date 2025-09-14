@@ -5,10 +5,10 @@ index: 1
 
 # Das Spiel kennenlernen
 
-Um ein Computerprogramm zu schreiben, das ein Spiel spielen kann,
-sollte man vorher das Spiel selbst verstehen und spielen können.
+Um ein Computerprogramm zu schreiben, was ein Spiel spielen kann, muss
+man vorher das Spiel selbst verstehen und spielen können.  
 Dabei könnt ihr bereits Ideen und Strategien entwickeln,
-die ihr in eurem :t[Computerspieler]{#player} nachher umsetzen wollt.
+die ihr in euren :t[Computerspieler]{#player} nachher umsetzen wollt.
 
 Das Spiel selbst kann zu zweit oder allein gegen den :t[Zufallsspieler]{#player}
 mit dem :t[Spielleiter]{#server} gespielt werden.

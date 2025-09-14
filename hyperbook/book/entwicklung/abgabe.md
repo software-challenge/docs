@@ -1,6 +1,6 @@
 ---
 name: Computerspieler abgabefertig machen
-index: 9
+index: 3
 ---
 
 # Computerspieler abgabefertig machen
@@ -9,23 +9,34 @@ Damit das :t[Wettkampfsystem]{#contest} mit dem :t[Computerspieler]{#player} arb
 muss er als ausführbares Programm in ein ZIP-Archiv verpackt werden.
 
 Je nach Programmiersprache, in der der Spieler entwickelt wurde,
-sind unterschiedliche Schritte notwendig. </br> 
-Für Java siehe [hier](Anleitung-Abgabe.md).
+sind unterschiedliche Schritte notwendig.
 
 :::alert{info}
 In der Regel enthält die Spielervorlage alle nötigen Instruktionen zum Packen.
 :::
 
 ### Offizielle Spielervorlagen
-- [Java](https://github.com/software-challenge/backend/blob/main/player/configuration/README.md)
-- [Ruby](https://github.com/software-challenge/client-ruby/blob/main/README.md)
+
+#### Java
+Anleitungen finden sich in der
+[Readme](https://github.com/software-challenge/backend/blob/main/player/configuration/README.md)
+des Repositories, und ergänzend dazu: [Hier](java/Anleitung-Abgabe.md) in der Dokumentation.
+
+#### Python
+Eine Anleitungen dafür gibt es in der [Dokumentation](python/7-spieler-abgeben.md).
 
 ### Inoffizielle Spielervorlagen
+<!--
 - [C#](https://github.com/jnccd/socha-client-csharp/blob/master/README.md)
 - [C++](https://github.com/Estugon/sc-penguins-cpp/blob/main/README.md)
 - [Python](https://github.com/FalconsSky/socha-python-client/blob/master/README.md)
 - [Rust](https://github.com/fwcd/socha-client-rust-2023/blob/main/README.md)
 - [Swift](https://github.com/matthesjh/sc23-swift-client/blob/main/README.md)
+- [Ruby](https://github.com/software-challenge/client-ruby/blob/main/README.md)
+-->
+Für die aktuelle Saison gibt es bisher keine inoffiziellen Spielervorlagen.
+
+## Generelles zum Upload
 
 Das Hochladen des Spielers im Wettkampfsystem wird detailliert 
 unter :t[Wettkampfsystem->Computerspieler]{#contest.computerspieler} beschrieben.
