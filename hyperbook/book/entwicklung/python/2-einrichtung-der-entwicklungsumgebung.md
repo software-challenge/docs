@@ -28,14 +28,10 @@ Nachdem man den die Installer Datei heruntergeladen hat,
 gelangt man im Browser auf eine [Seite](https://code.visualstudio.com/docs/),
 die das Aufsetzen sehr detailliert erklärt.
 
-Die wichtigsten Schritte bzgl. der Software-Challenge werden hier noch erklärt:
+Die wichtigsten Schritte für die Software-Challenge erklären wir hier:
 
-#### Installer
-
-Der Installer wird ausgeführt und alle Features, die installiert werden sollen,
-müssen auswählt werden. Dabei lassen sich alle Optionen empfehlen.
-
-### Python in VS Code
+Bei der Installation empfehlen wir,
+alle Zusatzfeatures mitzuinstallieren.
 
 Für Python-Unterstützung dann in VS Code die Erweiterung installieren:
 
