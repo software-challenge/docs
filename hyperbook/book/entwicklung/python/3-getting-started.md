@@ -47,11 +47,12 @@ Ordners angezeigt. Mit einem Rechtsklick auf eine Datei/ einen Ordner öffnet si
 ausführliches Dropdownmenü mit Funktionen wie Umbenennen und Kopieren, wie man es vom
 System Explorer kennt.
 
-Um den Ordner des Computerspielers zu öffnen, hat man zwei einfache Möglichkeiten:
+Um den Ordner des Computerspielers zu öffnen, gibt es zwei einfache Möglichkeiten:
 
 1.  Oben auf "File" klicken und dann bei "Open Folder" den entsprechenden Ordner auswählen.
 2.  Im System Dateiexplorer den Ordner rechtsklicken und "Mit Code öffnen" auswählen.
-(Das geht nur wenn man diese Option bei der VS Code Installation ausgewählt hat)
+
+(Das geht nur wenn diese Option bei der VS Code-Installation ausgewählt wurde)
 
 ### Registerkarten
 
