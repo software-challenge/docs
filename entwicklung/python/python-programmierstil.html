@@ -1,0 +1,412 @@
+<!doctype html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,, interactive-widget=resizes-content"><title>Sauberer Programmierstil in Python - Software-Challenge Dokumentation</title><meta property="og:title" value="Sauberer Programmierstil in Python - Software-Challenge Dokumentation"><meta name="description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta property="og:description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta name="keywords"><link rel="stylesheet" href="/__hyperbook_assets/normalize.css?version=0.57.3"><style>
+html,
+body {
+  overflow: hidden;
+  margin: 0;
+  height: 100dvh;
+  width: 100dvw;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --color-brand: #ECC94B;
+  --color-brand-dark: #ECC94B;
+  --color-brand-text: white;
+  --main-width: 980px;
+  --header-height: 60px;
+  --nav-width: minmax(300px, 0.33fr);
+  --nav-font-size: 0.9rem;
+  --body-font-size: 14px;
+}
+@font-face {
+  font-family: hyperbook-body;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: hyperbook-heading;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: hyperbook-code;
+  src: url(/fonts/SourceCodePro-Regular.ttf);
+  size-adjust: 100%;
+}
+
+body {
+  overscroll-behavior-x: none;
+  background-color: transparent;
+  color: var(--color-text);
+  font-family: hyperbook-body;
+  font-weight: normal;
+  font-size: var(--body-font-size);
+  margin: 0;
+  padding: 0;
+}
+</style><noscript id="dark-mode-toggle-stylesheets"><link rel="stylesheet" href="/__hyperbook_assets/light.css?version=0.57.3" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="/__hyperbook_assets/dark.css?version=0.57.3" media="(prefers-color-scheme: dark)"></noscript><script src="/__hyperbook_assets/dark-mode-toggle-stylesheets-loader.js?version=0.57.3"></script><script type="module" src="/__hyperbook_assets/dark-mode-toggle.js?version=0.57.3"></script><script src="/__hyperbook_assets/i18n.js?version=0.57.3"></script><script src="/__hyperbook_assets/dexie.min.js?version=0.57.3"></script><script src="/__hyperbook_assets/dexie-export-import.js?version=0.57.3"></script><script src="/__hyperbook_assets/store.js?version=0.57.3"></script><script>
+window.Prism = window.Prism || {};
+window.Prism.manual = true;</script><script src="/__hyperbook_assets/prism/prism.js?version=0.57.3"></script><link rel="stylesheet" href="/__hyperbook_assets/prism/prism.css?version=0.57.3"><link rel="stylesheet" href="/__hyperbook_assets/prism/prism-theme-github-dark.css?version=0.57.3" media="(prefers-color-scheme: dark)"><link rel="stylesheet" href="/__hyperbook_assets/prism/prism-theme-github-light.css?version=0.57.3" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="/__hyperbook_assets/math/katex.min.css?version=0.57.3"><link rel="stylesheet" href="/__hyperbook_assets/shell.css?version=0.57.3"><link rel="stylesheet" href="/__hyperbook_assets/content.css?version=0.57.3"><link rel="stylesheet" href="/__hyperbook_assets/code.css?version=0.57.3"><script>
+HYPERBOOK_ASSETS = "/__hyperbook_assets/"
+</script><script type="module" src="/__hyperbook_assets/side-drawer.js?version=0.57.3" async></script><script src="/__hyperbook_assets/lunr.min.js?version=0.57.3" defer></script><script src="/__hyperbook_assets/lunr-languages/lunr.stemmer.support.min.js?version=0.57.3" defer></script><script src="/__hyperbook_assets/lunr-languages/lunr.de.min.js?version=0.57.3" defer></script><script src="/__hyperbook_assets/search.js?version=0.57.3" defer></script><script src="/__hyperbook_assets/qrcode.js?version=0.57.3" async></script></head><body><div class="main-grid"><header><div class="mobile-nav"><button aria-label="Nav Toggle" class="toggle" onclick="hyperbook.navToggle()"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></button><side-drawer id="nav-drawer"><div class="nav-drawer-content"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div data-id="_nav:/spiele" class="virtual-section"><div class="links"><div data-id="_nav:/spiele/26_piranhas" class="section"><div class="collapsible name  expanded"><a href="/spiele/26_piranhas" class="label">Piranhas</a></div><div class="collapsible-content links"></div></div></div></div><div data-id="_nav:/entwicklung" class="section"><div class="collapsible name  expanded"><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul><div data-id="_nav:/entwicklung/java" class="section"><div class="collapsible name empty  "><span class="label">Java</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/java/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/java/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/java/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/java/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/java/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/java/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/java/Anleitung-Abgabe">Anleitung für Abgabe</a></li></ul></div></div><div data-id="_nav:/entwicklung/python" class="section"><div class="collapsible name empty  expanded"><span class="label">Python</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/python/installation-von-python">Installation von Python</a></li><li><a class="page" href="/entwicklung/python/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/python/getting-started">Getting Started</a></li><li><a class="page active" href="/entwicklung/python/python-programmierstil">Sauberer Programmierstil in Python</a></li><li><a class="page" href="/entwicklung/python/oop-in-python">Objektorientierte Programmierung in Python</a></li><li><a class="page" href="/entwicklung/python/vorlage-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/python/spieler-abgeben">Spieler für den Wettbewerb abgeben</a></li></ul></div></div></div></div><div data-id="_nav:/xml" class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div></side-drawer></div><a class="branding" href="/"><div class="logo"><img alt="logo" src="/logo.svg"></div><div class="name">Software-Challenge Dokumentation</div></a><button id="search-toggle" onclick="hyperbook.searchToggle()" title="Suche"></button><side-drawer id="search-drawer" right><div class="search-drawer-content"><div class="search-input"><div class="search-icon"></div><input id="search-input" placerholder="..."><button class="search-button" onclick="hyperbook.search()"></button></div><div id="search-results"></div></div></side-drawer><dark-mode-toggle id="dark-mode-toggle" appearence="switch" title="Zwischen Dunkel- und Hellmodus wechseln" permanent></dark-mode-toggle></header><div class="sidebar"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div data-id="_nav:/spiele" class="virtual-section"><div class="links"><div data-id="_nav:/spiele/26_piranhas" class="section"><div class="collapsible name  expanded"><a href="/spiele/26_piranhas" class="label">Piranhas</a></div><div class="collapsible-content links"></div></div></div></div><div data-id="_nav:/entwicklung" class="section"><div class="collapsible name  expanded"><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul><div data-id="_nav:/entwicklung/java" class="section"><div class="collapsible name empty  "><span class="label">Java</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/java/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/java/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/java/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/java/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/java/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/java/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/java/Anleitung-Abgabe">Anleitung für Abgabe</a></li></ul></div></div><div data-id="_nav:/entwicklung/python" class="section"><div class="collapsible name empty  expanded"><span class="label">Python</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/python/installation-von-python">Installation von Python</a></li><li><a class="page" href="/entwicklung/python/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/python/getting-started">Getting Started</a></li><li><a class="page active" href="/entwicklung/python/python-programmierstil">Sauberer Programmierstil in Python</a></li><li><a class="page" href="/entwicklung/python/oop-in-python">Objektorientierte Programmierung in Python</a></li><li><a class="page" href="/entwicklung/python/vorlage-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/python/spieler-abgeben">Spieler für den Wettbewerb abgeben</a></li></ul></div></div></div></div><div data-id="_nav:/xml" class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div><main><article>
+<div class="hyperbook-markdown"><button id="toc-toggle" onclick="hyperbook.tocToggle()" title="Inhaltsverzeichnis"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div></button>
+  <side-drawer id="toc-drawer" right>
+    <div class="toc-drawer-content">
+      <nav class="toc">
+        <ul>
+          <li class="level-1"><a href="#sauberer-programmierstil-in-python">Sauberer Programmierstil in Python</a></li>
+          <li class="level-2"><a href="#allgemeine-regeln">Allgemeine Regeln</a></li>
+          <li class="level-3"><a href="#einrckungen">Einrückungen</a></li>
+          <li class="level-3"><a href="#whitespace">Whitespace</a></li>
+          <li class="level-4"><a href="#leerzeichen">Leerzeichen</a></li>
+          <li class="level-4"><a href="#leere-zeilen">Leere Zeilen</a></li>
+          <li class="level-3"><a href="#zeilenlnge">Zeilenlänge</a></li>
+          <li class="level-3"><a href="#bezeichner">Bezeichner</a></li>
+          <li class="level-3"><a href="#kommentare">Kommentare</a></li>
+        </ul>
+      </nav>
+    </div>
+  </side-drawer>
+  <h1 id="sauberer-programmierstil-in-python"><a href="#sauberer-programmierstil-in-python" class="heading"><span>Sauberer Programmierstil in Python</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/python/python-programmierstil#sauberer-programmierstil-in-python&#x22;, &#x22;Sauberer Programmierstil in Python&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/python/python-programmierstil#sauberer-programmierstil-in-python">🔖</button></h1>
+  <p>
+    Wenn man längere Zeit an einem Projekt programmiert, ist es besonders wichtig,
+    eine gute Struktur beizubehalten. Der/m einen oder anderen ist es womöglich
+    schon passiert, dass man fremden Programmcode gelesen hat, den man gar nicht
+    versteht. Häufiger liegt es dabei nicht daran, dass dieser unfassbar schwer ist,
+    sondern einfach umständlich zu lesen ist. Ein sehr ähnliches Phänomen kann
+    auch gut und gerne mal auftreten wenn man das eigene Programm betrachtet, wenn
+    dieses durcheinander geschrieben ist.
+  </p>
+  <p>
+    Dafür gibt es in den aller meisten Programmiersprache so genannte <em>Style Guides</em>,
+    in welchen Regeln für den Aufbau des Programmtextes verfasst sind.
+  </p>
+  <p>
+    Für Python ist dies der <a href="https://peps.python.org/pep-0008/">PEP8 Style Guide</a>, welcher
+    äußerst lesenswert ist, aber dennoch genauso ausführlich ist,
+    so dass hier im Folgenden die wichtigsten Punkte benannt werden:
+  </p>
+  <h2 id="allgemeine-regeln"><a href="#allgemeine-regeln" class="heading"><span>Allgemeine Regeln</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/python/python-programmierstil#allgemeine-regeln&#x22;, &#x22;Allgemeine Regeln&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/python/python-programmierstil#allgemeine-regeln">🔖</button></h2>
+  <p>
+    Es wird womöglich auffallen, dass es für einige der Regeln immer noch mehrere
+    Möglichkeiten gibt, etwas umzusetzen. Dabei kann man sich das aussuchen,
+    was am ansprechendsten ist.
+    Wichtig ist dann nur, konsistent zu bleiben und sich ggf. mit Mitprogrammiern
+    abzusprechen.
+  </p>
+  <h3 id="einrckungen"><a href="#einrckungen" class="heading"><span>Einrückungen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/python/python-programmierstil#einrckungen&#x22;, &#x22;Einrückungen&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/python/python-programmierstil#einrckungen">🔖</button></h3>
+  <p>
+    Für Einrückungen im Programmtext sollten 4 Leerzeichen verwendet werden.<br>Zeilen, die einen Umbruch nutzen, wenn z.B. viele Funktionsparamater
+    benutzt werden, sollten klar durch Einrückung vom restlichen Code getrennt
+    werden. Dafür können die Argumente entweder aufgeteilt werden und diese,
+    welche sich in einer neuen Zeile finden, sind auf die entsprechende Höhe
+    des ersten Arguments eingerückt.<br>Anderenfalls kann man auch alle Argumente in die nächsten Zeilen schreiben,
+    wobei diese dann um die übliche Tiefe oder sogar mehr eingerückt sind.
+    Die schließende Klammer ist dabei wie gewöhnlich am Ende oder in einer
+    neuen Zeile, aber dann auf der selben Höhe wie das erste Zeichen der Zeile:
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="python" data-theme="github-dark github-light"><code data-language="python" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">def</span><span style="--shiki-dark:#B392F0;--shiki-light:#6F42C1"> eine_funktion</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">(arg_one, arg_two, arg_three, </span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">                    arg_four):</span></span>
+<span data-line=""><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">    return</span><span style="--shiki-dark:#9ECBFF;--shiki-light:#032F62"> "Software-Challenge"</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">ergebnis </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> eine_funktion(</span></span>
+<span data-line=""><span style="--shiki-dark:#9ECBFF;--shiki-light:#032F62">    "Hallo"</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">, </span><span style="--shiki-dark:#9ECBFF;--shiki-light:#032F62">"Welt"</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">, </span></span>
+<span data-line=""><span style="--shiki-dark:#9ECBFF;--shiki-light:#032F62">    "Wettbewerb"</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">, </span><span style="--shiki-dark:#9ECBFF;--shiki-light:#032F62">"Test123"</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">)</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">test </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> eine_funktion(</span></span>
+<span data-line=""><span style="--shiki-dark:#9ECBFF;--shiki-light:#032F62">    "String1"</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">, </span><span style="--shiki-dark:#9ECBFF;--shiki-light:#032F62">"String2"</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">,</span></span>
+<span data-line=""><span style="--shiki-dark:#9ECBFF;--shiki-light:#032F62">    "String3"</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">, </span><span style="--shiki-dark:#9ECBFF;--shiki-light:#032F62">"String4"</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">)</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">liste </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> [</span></span>
+<span data-line=""><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">    1</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">, </span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">2</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">, </span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">3</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">,</span></span>
+<span data-line=""><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">    4</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">, </span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">5</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">, </span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">6</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">]</span></span><button type="button" data="def eine_funktion(arg_one, arg_two, arg_three, 
+                    arg_four):
+    return &#x22;Software-Challenge&#x22;
+
+ergebnis = eine_funktion(
+    &#x22;Hallo&#x22;, &#x22;Welt&#x22;, 
+    &#x22;Wettbewerb&#x22;, &#x22;Test123&#x22;)
+
+test = eine_funktion(
+    &#x22;String1&#x22;, &#x22;String2&#x22;,
+    &#x22;String3&#x22;, &#x22;String4&#x22;
+)
+
+liste = [
+    1, 2, 3,
+    4, 5, 6
+]" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <p>
+    Es gäbe auch die Möglichkeit <em>Tab</em> für Einrückungen zu nutzen, wobei Leerzeichen
+    bevorzugt werden sollen.
+  </p>
+  <h3 id="whitespace"><a href="#whitespace" class="heading"><span>Whitespace</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/python/python-programmierstil#whitespace&#x22;, &#x22;Whitespace&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/python/python-programmierstil#whitespace">🔖</button></h3>
+  <p>
+    Als "Whitespace" werden z.B. Leerzeichen, Tab und leere Zeilen bezeichnet, also
+    Textteile in denen nichts steht.
+    Damit das Programm lesbarer wird, sollten diese unbedingt verwendet werden, aber
+    nur an den richtigen Stellen.
+  </p>
+  <h4 id="leerzeichen"><a href="#leerzeichen" class="heading"><span>Leerzeichen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/python/python-programmierstil#leerzeichen&#x22;, &#x22;Leerzeichen&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/python/python-programmierstil#leerzeichen">🔖</button></h4>
+  <p>
+    Leerzeichen werden in Ausdrücken verwendet, so wie es auch von der deutschen
+    Sprache bekannt ist. Das heißt, vor allem nach Kommas oder anderen "Satzzeichen" und
+    zwischen Operanden von Vergleichsoperationen und Rechenzeichen.<br>Ausdrücklich <strong>kein</strong> extra Whitespace soll in diesen Situation verwendet werden:
+  </p>
+  <ul>
+    <li>Innerhalb Klammern, um den Inhalt von den Klammern zu trennen:</li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="python" data-theme="github-dark github-light"><code data-language="python" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># Richtig:</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">test(liste[</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">1</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">], {eintrag: </span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">2</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">})</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># Falsch:</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">test( liste [ </span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">1</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> ], { eintrag: </span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">2</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> } )</span></span><button type="button" data="# Richtig:
+test(liste[1], {eintrag: 2})
+
+# Falsch:
+test( liste [ 1 ], { eintrag: 2 } )" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <ul>
+    <li><em>Vor</em> Kommas, Doppelpunkten und Semikolons:</li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="python" data-theme="github-dark github-light"><code data-language="python" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># Richtig:</span></span>
+<span data-line=""><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">if</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> x </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">==</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5"> 4</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">: </span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">print</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">(x, y); x, y </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> y, x</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># Falsch:</span></span>
+<span data-line=""><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">if</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> x </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">==</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5"> 4</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> : </span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">print</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">(x , y) ; x , y </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> y , x</span></span><button type="button" data="# Richtig:
+if x == 4: print(x, y); x, y = y, x
+
+# Falsch:
+if x == 4 : print(x , y) ; x , y = y , x" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <ul>
+    <li>Direkt vor Klammern eines Funktionsaufruf oder einem Listen-Indexing:</li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="python" data-theme="github-dark github-light"><code data-language="python" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># Richtig:</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">test(</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">1</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">)</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">buch[</span><span style="--shiki-dark:#9ECBFF;--shiki-light:#032F62">"string"</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">] </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> liste[</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">0</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">]</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># Falsch:</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">test (</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">1</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">)</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">buch [</span><span style="--shiki-dark:#9ECBFF;--shiki-light:#032F62">"string"</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">] </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> liste [</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">0</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">]</span></span><button type="button" data="# Richtig:
+test(1)
+buch[&#x22;string&#x22;] = liste[0]
+
+# Falsch:
+test (1)
+buch [&#x22;string&#x22;] = liste [0]" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <ul>
+    <li>Viel Whitespace vor Variablenzuweisungen, um diese auf die selbe Höhe zu bringen:</li>
+  </ul>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="python" data-theme="github-dark github-light"><code data-language="python" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># Richtig:</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">x </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5"> 0</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">y </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5"> 1</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">lange_variable </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5"> 2</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># Falsch:</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">x              </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5"> 0</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">y              </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5"> 1</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">lange_variable </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5"> 2</span></span><button type="button" data="# Richtig:
+x = 0
+y = 1
+lange_variable = 2
+
+# Falsch:
+x              = 0
+y              = 1
+lange_variable = 2" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h4 id="leere-zeilen"><a href="#leere-zeilen" class="heading"><span>Leere Zeilen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/python/python-programmierstil#leere-zeilen&#x22;, &#x22;Leere Zeilen&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/python/python-programmierstil#leere-zeilen">🔖</button></h4>
+  <p>
+    Auch leere Zeilen können zur Übersicht beitragen, indem man wie in einem Fließtext gewisse
+    Teile von anderen inhaltlich trennt.
+  </p>
+  <p>
+    Funktionen und Klassen, die global definiert sind,
+    können gerne von zwei leeren Zeilen umgeben sein, um sie klar vom Rest zu trennen.
+    Methoden, die in einer Klasse definiert sind, werden jedoch nur von einer Zeile getrennt.
+  </p>
+  <p>
+    Extra leere Zeilen können manchmal auch noch genutzt werden,
+    um Gruppen an zusammen gehörenden Funktionen besser von einander zu trennen.
+    Wenn eine Reihe von Ein-Zeilern zusammengehört, können leere Zeile hier gerne komplett
+    weggelassen werden.
+    Innerhalb von Funktionen können durch vereinzelte leere Zeilen ebenfalls logisch zusammenhängende
+    Abschnitte gekennzeichnet werden.
+  </p>
+  <h3 id="zeilenlnge"><a href="#zeilenlnge" class="heading"><span>Zeilenlänge</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/python/python-programmierstil#zeilenlnge&#x22;, &#x22;Zeilenlänge&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/python/python-programmierstil#zeilenlnge">🔖</button></h3>
+  <p>
+    Keine Zeile im Programm sollte eine Länge von 80 Zeichen überschreiten.
+    Das trägt auch zur Lesbarkeit bei. Früher war die Bildschirmbreite häufig
+    ein limitierender Faktor, heute kann man dafür in der Regel zwei verschiedene
+    Programmdateien nebeneinander offen haben, wobei natürlich keine Zeile
+    die Breite des Editors überschreiten sollte.
+  </p>
+  <h3 id="bezeichner"><a href="#bezeichner" class="heading"><span>Bezeichner</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/python/python-programmierstil#bezeichner&#x22;, &#x22;Bezeichner&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/python/python-programmierstil#bezeichner">🔖</button></h3>
+  <p>
+    Bezeichner sind sozusagen Namen für Variablen, Funktionen, Klassen und vieles Weitere.
+    Um diesen Dingen Namen zu geben, gibt es viele verschiedene Styles und hier sind einmal
+    die wichtigsten aufgelistet:
+  </p>
+  <ul>
+    <li>
+      <p><span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>b</span></span><button type="button" data="b" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span> (einzelne Kleinbuchstaben)</p>
+    </li>
+    <li>
+      <p><span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>B</span></span><button type="button" data="B" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span> (einzelne Großbuchstaben)</p>
+    </li>
+    <li>
+      <p><span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>klein</span></span><button type="button" data="klein" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span> (Worte aus Kleinbuchstaben)</p>
+    </li>
+    <li>
+      <p><span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>klein_mit_unterstrichen</span></span><button type="button" data="klein_mit_unterstrichen" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span> (mehrere kleine Worte mit Unterstrichen getrennt - auch <em>snake_case</em> genannt)</p>
+    </li>
+    <li>
+      <p><span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>GROSS</span></span><button type="button" data="GROSS" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span> (Worte aus Großbuchstaben)</p>
+    </li>
+    <li>
+      <p><span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>GROSS_MIT_UNTERSTRICHEN</span></span><button type="button" data="GROSS_MIT_UNTERSTRICHEN" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span> (mehrere große Worte mit Unterstrichen getrennt)</p>
+    </li>
+    <li>
+      <p><span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>GrosseAnfangsbuchstaben</span></span><button type="button" data="GrosseAnfangsbuchstaben" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span> (mehrere Worte mit großen Anfangsbuchstaben - auch <em>CamelCase</em> genannt)</p>
+    </li>
+  </ul>
+  <p>
+    Gewisse Buchstaben wie l (kleines el), I (großes Ih) oder O (großes Oh) sollten aus Gründen der
+    Verwechslungsgefahr nicht verwendet werden. Außerdem sind nur Zeichen aus dem
+    <a href="https://de.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange">ASCII Format</a>
+    vorgesehen, das bedeutet insb. keine Umlaute und auch kein ß.
+  </p>
+  <p>Wenn man das nun alles weiß, werden verschiedene Arten von Bezeichnern so benannt:</p>
+  <ul>
+    <li>Funktionen und Variablen im snake_case Format</li>
+    <li>Klassen hingegen, überlicherweise im CamelCase</li>
+    <li>Konstanten, die man sich definiert, komplett groß geschrieben mit Unterstrichen</li>
+  </ul>
+  <p>
+    Außerdem ist es sehr sinnvoll den eigenen Bezeichnern richtige Namen zu geben,
+    die nicht, wie in der Mathematik üblich, nur aus einem Buchstaben bestehen,
+    sondern die Bedeutung des Objektes kurz erklären. Einzelne Buchstaben können jedoch
+    als Variable für Iteratoren verwendet werden:
+  </p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="python" data-theme="github-dark github-light"><code data-language="python" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># Richtig:</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">liste_woerter </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> [</span><span style="--shiki-dark:#9ECBFF;--shiki-light:#032F62">"Software-Challenge"</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">, </span><span style="--shiki-dark:#9ECBFF;--shiki-light:#032F62">"Test"</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">]</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">anzahl_buchstaben </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5"> 22</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">for</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> w </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">in</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> liste_woerter:</span></span>
+<span data-line=""><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">    print</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">(w)</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># Falsch:</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">x </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> [</span><span style="--shiki-dark:#9ECBFF;--shiki-light:#032F62">"Software-Challenge"</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">, </span><span style="--shiki-dark:#9ECBFF;--shiki-light:#032F62">"Test"</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">]</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">y </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5"> 22</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">for</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> z </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">in</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> x:</span></span>
+<span data-line=""><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">    print</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">(z)</span></span><button type="button" data="# Richtig:
+liste_woerter = [&#x22;Software-Challenge&#x22;, &#x22;Test&#x22;]
+anzahl_buchstaben = 22
+
+for w in liste_woerter:
+    print(w)
+
+# Falsch:
+x = [&#x22;Software-Challenge&#x22;, &#x22;Test&#x22;]
+y = 22
+
+for z in x:
+    print(z)" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <h3 id="kommentare"><a href="#kommentare" class="heading"><span>Kommentare</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/python/python-programmierstil#kommentare&#x22;, &#x22;Kommentare&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/python/python-programmierstil#kommentare">🔖</button></h3>
+  <p>
+    Zu guter Letzt sind Kommentare bei sauberer Programmierarbeit womöglich das wichtigste, um Code
+    verständlicher zu machen. Gleichzeitig bringen sie aber nur etwas, wenn diese auch korrekt verfasst sind:
+  </p>
+  <ul>
+    <li>
+      <p>
+        Alle Kommentare beschreiben auch tatsächlich das, was passiert. Eine falsche Beschreibung ist
+        noch schlimmer als gar keine. Bei Updates am Code sollten also auch die Kommentare angepasst werden.
+      </p>
+    </li>
+    <li>
+      <p>
+        Ein Kommentar besteht aus einem oder mehreren vollständigen Sätzen.
+        Dazu gehört wie üblich vor allem Groß- &#x26; Kleinschreibung, das Benutzen von Satzzeichen
+        und speziell in der Programmierung, dass Bezeichner <strong>genau</strong> so geschrieben sind, wie im Code.
+      </p>
+    </li>
+    <li>
+      <p>
+        Kommentare werden in der Regel als <em>Block-Kommentar</em> verfasst. Diese beziehen sich auf den folgenden
+        Abschnitt des Codes und sind auf die selbe Höhe wie dieser eingerückt.
+      </p>
+    </li>
+    <li>
+      <p>
+        Kommentare können auch mit genug Abstand in die selbe Zeile hinter den Code geschrieben werden,
+        auch wenn diese dort häufiger eher ablenkend und unnötig sind.
+      </p>
+    </li>
+    <li>
+      <p>
+        Um einen Kommentar zu beginnen, wird in Python das Zeichen <span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>#</span></span><button type="button" data="#" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span> verwendet. Darauf folgt dann ein Leerzeichen
+        und danach der Text, den man schreiben will.
+      </p>
+    </li>
+    <li>
+      <p>
+        Wenn man einen Kommentar schreibt ist außerdem darauf zu achten, dass nicht einfach das nacherzählt wird,
+        was offensichtlich im Code passiert, sondern was der Teil des Progammes bewirkt.
+      </p>
+    </li>
+  </ul>
+  <p>Ein paar Beispiele zu Kommentaren:</p>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="python" data-theme="github-dark github-light"><code data-language="python" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># Richtig:</span></span>
+<span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># Lege eine 4x4 2-Dimensionale Liste an, die an jeder Stelle das Element 0 enthält.</span></span>
+<span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># Diese stellt eine Karte des Spieles da.</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">karte </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> [[</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">0</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">] </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">*</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5"> 4</span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49"> for</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> i </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">in</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5"> range</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">(</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">4</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">)]</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># Falsch:</span></span>
+<span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># mache eine Liste</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">karte </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">=</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> [[</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">0</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">] </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">*</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5"> 4</span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49"> for</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E"> i </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">in</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5"> range</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">(</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5">4</span><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">)]</span></span><button type="button" data="# Richtig:
+# Lege eine 4x4 2-Dimensionale Liste an, die an jeder Stelle das Element 0 enthält.
+# Diese stellt eine Karte des Spieles da.
+karte = [[0] * 4 for i in range(4)]
+
+# Falsch:
+# mache eine Liste
+karte = [[0] * 4 for i in range(4)]" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+  <figure data-rehype-pretty-code-figure="">
+    <pre style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff" tabindex="0" data-language="python" data-theme="github-dark github-light"><code data-language="python" data-theme="github-dark github-light" style="display: grid;"><span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># Richtig:</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">x </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">+=</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5"> 100</span><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D">        # Nutze eine höhere Gewichtung.</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D"># Falsch:</span></span>
+<span data-line=""><span style="--shiki-dark:#E1E4E8;--shiki-light:#24292E">x </span><span style="--shiki-dark:#F97583;--shiki-light:#D73A49">+=</span><span style="--shiki-dark:#79B8FF;--shiki-light:#005CC5"> 100</span><span style="--shiki-dark:#6A737D;--shiki-light:#6A737D">        # erhöhe x</span></span><button type="button" data="# Richtig:
+x += 100        # Nutze eine höhere Gewichtung.
+
+# Falsch:
+x += 100        # erhöhe x" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></pre>
+  </figure>
+</div>
+</article><div class="jump-container"><a class="jump previous" href="/entwicklung/python/getting-started">Getting Started</a><a class="jump next" href="/entwicklung/python/oop-in-python">Objektorientierte Programmierung in Python</a></div><div class="meta"><a class="edit-github" href="https://github.com/software-challenge/docs/tree/main/hyperbook/book/entwicklung/python/python-programmierstil.md">✎ GitHub</a><a href="#" onclick="hyperbookReset()"><span class="reset-icon" title="Das Hyperbook zurücksetzen"></span></a><span class="copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a> by <a href="https://software-challenge.de">Software-Challenge Germany</a></span></div></main></div><script src="/__hyperbook_assets/client.js?version=0.57.3" defer></script></body></html>

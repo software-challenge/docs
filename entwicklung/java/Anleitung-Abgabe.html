@@ -1,0 +1,183 @@
+<!doctype html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,, interactive-widget=resizes-content"><title>Anleitung für Abgabe - Software-Challenge Dokumentation</title><meta property="og:title" value="Anleitung für Abgabe - Software-Challenge Dokumentation"><meta name="description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta property="og:description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta name="keywords"><link rel="stylesheet" href="/__hyperbook_assets/normalize.css?version=0.57.3"><style>
+html,
+body {
+  overflow: hidden;
+  margin: 0;
+  height: 100dvh;
+  width: 100dvw;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --color-brand: #ECC94B;
+  --color-brand-dark: #ECC94B;
+  --color-brand-text: white;
+  --main-width: 980px;
+  --header-height: 60px;
+  --nav-width: minmax(300px, 0.33fr);
+  --nav-font-size: 0.9rem;
+  --body-font-size: 14px;
+}
+@font-face {
+  font-family: hyperbook-body;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: hyperbook-heading;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: hyperbook-code;
+  src: url(/fonts/SourceCodePro-Regular.ttf);
+  size-adjust: 100%;
+}
+
+body {
+  overscroll-behavior-x: none;
+  background-color: transparent;
+  color: var(--color-text);
+  font-family: hyperbook-body;
+  font-weight: normal;
+  font-size: var(--body-font-size);
+  margin: 0;
+  padding: 0;
+}
+</style><noscript id="dark-mode-toggle-stylesheets"><link rel="stylesheet" href="/__hyperbook_assets/light.css?version=0.57.3" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="/__hyperbook_assets/dark.css?version=0.57.3" media="(prefers-color-scheme: dark)"></noscript><script src="/__hyperbook_assets/dark-mode-toggle-stylesheets-loader.js?version=0.57.3"></script><script type="module" src="/__hyperbook_assets/dark-mode-toggle.js?version=0.57.3"></script><script src="/__hyperbook_assets/i18n.js?version=0.57.3"></script><script src="/__hyperbook_assets/dexie.min.js?version=0.57.3"></script><script src="/__hyperbook_assets/dexie-export-import.js?version=0.57.3"></script><script src="/__hyperbook_assets/store.js?version=0.57.3"></script><script>
+window.Prism = window.Prism || {};
+window.Prism.manual = true;</script><script src="/__hyperbook_assets/prism/prism.js?version=0.57.3"></script><link rel="stylesheet" href="/__hyperbook_assets/prism/prism.css?version=0.57.3"><link rel="stylesheet" href="/__hyperbook_assets/prism/prism-theme-github-dark.css?version=0.57.3" media="(prefers-color-scheme: dark)"><link rel="stylesheet" href="/__hyperbook_assets/prism/prism-theme-github-light.css?version=0.57.3" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="/__hyperbook_assets/math/katex.min.css?version=0.57.3"><link rel="stylesheet" href="/__hyperbook_assets/shell.css?version=0.57.3"><link rel="stylesheet" href="/__hyperbook_assets/content.css?version=0.57.3"><link rel="stylesheet" href="/__hyperbook_assets/code.css?version=0.57.3"><script>
+HYPERBOOK_ASSETS = "/__hyperbook_assets/"
+</script><script type="module" src="/__hyperbook_assets/side-drawer.js?version=0.57.3" async></script><script src="/__hyperbook_assets/lunr.min.js?version=0.57.3" defer></script><script src="/__hyperbook_assets/lunr-languages/lunr.stemmer.support.min.js?version=0.57.3" defer></script><script src="/__hyperbook_assets/lunr-languages/lunr.de.min.js?version=0.57.3" defer></script><script src="/__hyperbook_assets/search.js?version=0.57.3" defer></script><script src="/__hyperbook_assets/qrcode.js?version=0.57.3" async></script></head><body><div class="main-grid"><header><div class="mobile-nav"><button aria-label="Nav Toggle" class="toggle" onclick="hyperbook.navToggle()"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></button><side-drawer id="nav-drawer"><div class="nav-drawer-content"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div data-id="_nav:/spiele" class="virtual-section"><div class="links"><div data-id="_nav:/spiele/26_piranhas" class="section"><div class="collapsible name  expanded"><a href="/spiele/26_piranhas" class="label">Piranhas</a></div><div class="collapsible-content links"></div></div></div></div><div data-id="_nav:/entwicklung" class="section"><div class="collapsible name  expanded"><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul><div data-id="_nav:/entwicklung/java" class="section"><div class="collapsible name empty  expanded"><span class="label">Java</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/java/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/java/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/java/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/java/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/java/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/java/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page active" href="/entwicklung/java/Anleitung-Abgabe">Anleitung für Abgabe</a></li></ul></div></div><div data-id="_nav:/entwicklung/python" class="section"><div class="collapsible name empty  "><span class="label">Python</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/python/installation-von-python">Installation von Python</a></li><li><a class="page" href="/entwicklung/python/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/python/getting-started">Getting Started</a></li><li><a class="page" href="/entwicklung/python/python-programmierstil">Sauberer Programmierstil in Python</a></li><li><a class="page" href="/entwicklung/python/oop-in-python">Objektorientierte Programmierung in Python</a></li><li><a class="page" href="/entwicklung/python/vorlage-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/python/spieler-abgeben">Spieler für den Wettbewerb abgeben</a></li></ul></div></div></div></div><div data-id="_nav:/xml" class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div></side-drawer></div><a class="branding" href="/"><div class="logo"><img alt="logo" src="/logo.svg"></div><div class="name">Software-Challenge Dokumentation</div></a><button id="search-toggle" onclick="hyperbook.searchToggle()" title="Suche"></button><side-drawer id="search-drawer" right><div class="search-drawer-content"><div class="search-input"><div class="search-icon"></div><input id="search-input" placerholder="..."><button class="search-button" onclick="hyperbook.search()"></button></div><div id="search-results"></div></div></side-drawer><dark-mode-toggle id="dark-mode-toggle" appearence="switch" title="Zwischen Dunkel- und Hellmodus wechseln" permanent></dark-mode-toggle></header><div class="sidebar"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/glossar">Technische Grundlagen</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div data-id="_nav:/spiele" class="virtual-section"><div class="links"><div data-id="_nav:/spiele/26_piranhas" class="section"><div class="collapsible name  expanded"><a href="/spiele/26_piranhas" class="label">Piranhas</a></div><div class="collapsible-content links"></div></div></div></div><div data-id="_nav:/entwicklung" class="section"><div class="collapsible name  expanded"><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul><div data-id="_nav:/entwicklung/java" class="section"><div class="collapsible name empty  expanded"><span class="label">Java</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/java/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/java/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/java/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/java/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/java/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/java/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page active" href="/entwicklung/java/Anleitung-Abgabe">Anleitung für Abgabe</a></li></ul></div></div><div data-id="_nav:/entwicklung/python" class="section"><div class="collapsible name empty  "><span class="label">Python</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/python/installation-von-python">Installation von Python</a></li><li><a class="page" href="/entwicklung/python/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/python/getting-started">Getting Started</a></li><li><a class="page" href="/entwicklung/python/python-programmierstil">Sauberer Programmierstil in Python</a></li><li><a class="page" href="/entwicklung/python/oop-in-python">Objektorientierte Programmierung in Python</a></li><li><a class="page" href="/entwicklung/python/vorlage-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/python/spieler-abgeben">Spieler für den Wettbewerb abgeben</a></li></ul></div></div></div></div><div data-id="_nav:/xml" class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div><main><article>
+<div class="hyperbook-markdown"><button id="toc-toggle" onclick="hyperbook.tocToggle()" title="Inhaltsverzeichnis"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div></button>
+  <side-drawer id="toc-drawer" right>
+    <div class="toc-drawer-content">
+      <nav class="toc">
+        <ul>
+          <li class="level-1"><a href="#computerspieler-abgabefertig-machen-anleitung-fr-export-aus-der-ide-fr-java">Computerspieler abgabefertig machen (Anleitung für Export aus der IDE für Java)</a></li>
+          <li class="level-2"><a href="#grundstzliches">Grundsätzliches</a></li>
+          <li class="level-2"><a href="#eclipse">Eclipse</a></li>
+          <li class="level-2"><a href="#intellij">IntelliJ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </side-drawer>
+  <h1 id="computerspieler-abgabefertig-machen-anleitung-fr-export-aus-der-ide-fr-java"><a href="#computerspieler-abgabefertig-machen-anleitung-fr-export-aus-der-ide-fr-java" class="heading"><span>Computerspieler abgabefertig machen (Anleitung für Export aus der IDE für Java)</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/java/Anleitung-Abgabe#computerspieler-abgabefertig-machen-anleitung-fr-export-aus-der-ide-fr-java&#x22;, &#x22;Computerspieler abgabefertig machen (Anleitung für Export aus der IDE für Java)&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/java/Anleitung-Abgabe#computerspieler-abgabefertig-machen-anleitung-fr-export-aus-der-ide-fr-java">🔖</button></h1>
+  <p>
+    Im folgenden findet ihr eine Anleitung,
+    für den Export eures Computerspielers aus der Entwicklungsumgebung,
+    um ihn i Wettkampfsystem hochzuladen.
+  </p>
+  <h2 id="grundstzliches"><a href="#grundstzliches" class="heading"><span>Grundsätzliches</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/java/Anleitung-Abgabe#grundstzliches&#x22;, &#x22;Grundsätzliches&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/java/Anleitung-Abgabe#grundstzliches">🔖</button></h2>
+  <p>
+    Der Export des Projektes funktioniert für Java bei unserem Projekt über Gradle.
+    Hierbei wird die Gradle Task "shadowJar" verwendet. Wie genau das aussieht wird für Eclipse und IntelliJ im Folgenden beschrieben.
+  </p>
+  <h2 id="eclipse"><a href="#eclipse" class="heading"><span>Eclipse</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/java/Anleitung-Abgabe#eclipse&#x22;, &#x22;Eclipse&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/java/Anleitung-Abgabe#eclipse">🔖</button></h2>
+  <p>
+    Um den Export in Eclipse durchzuführen,
+    muss man die Übersicht der Gradle Tasks öffnen.
+    Um dies zu tun gibt es zwei Wege:
+  </p>
+  <ol>
+    <li>
+      <p>
+        Der erste Weg, die Übersicht zu Öffnen,
+        ist das Gradle-Symbol (Elephant) am linken Rand.
+        Es kann sein, dass das Symbol im dunklen Modus schwer zu erkennen ist.
+      </p>
+    </li>
+    <li>
+      <p>
+        Ist das Symbol nicht auffindbar,
+        kann die Übersicht auch geöffnet werden,
+        in dem man oben auf Window/Show view/Other.../Gradle/Gradle Tasks geht
+        und dann einen Doppelklick darauf macht oder es auswählt und unten auf "open" klickt.
+      </p>
+    </li>
+  </ol>
+  <p>Wenn die Gradle Tasks geöffnet sind, müssen folgende Schritte ausgeführt werden:</p>
+  <ol>
+    <li>
+      <p>
+        Öffne den Ordner mit dem Namen des Projekts.
+        Dieser ist standardmäßig "player-<em>Spielkürzel</em>-src"
+      </p>
+      <blockquote>
+        <p>
+          Falls dort ein X an dem Ordner ist, müssen die Gradle Tasks einmal
+          neugeladen werden. Dies geschieht durch den Button "Refresh Tasks for
+          all Projects" (Rechts oben am Fensterrand)
+        </p>
+      </blockquote>
+    </li>
+    <li>
+      <p>Öffne den Ordner mit dem Namen "shadow"</p>
+    </li>
+    <li>
+      <p>
+        In dem Ordner "shadow" befindet sich eine Task, die shadowJar heißt.
+        Durch einen Doppelklick wird der Export gestartet.
+      </p>
+    </li>
+  </ol>
+  <p>
+    Der Export wird in dem Ordner des Projektes gespeichert.
+    Der Name dieser Jar ist standardmäßig auf "Spielkürzel_Jahreszahl_client" kann
+    aber nach dem Export beliebig geändert werden.
+    Man kann den Namen auch vor dem Export anpassen,
+    wenn man in dem Projekt "build.gradle.kts" öffnet
+    und unter "tasks.shadowJar" den "archiveBaseName" ändert.
+  </p>
+  <h2 id="intellij"><a href="#intellij" class="heading"><span>IntelliJ</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/java/Anleitung-Abgabe#intellij&#x22;, &#x22;IntelliJ&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/java/Anleitung-Abgabe#intellij">🔖</button></h2>
+  <p>
+    Um den Export in IntelliJ durchzuführen,
+    muss man die Übersicht der Gradle Tasks öffnen.
+    Dies geschieht, in dem man auf das Gradle-Symbol (Elephant) am rechten Rand klickt.
+    Nun kann die Gradle Task unterschiedlich ausgeführt werden.
+    Im folgenden werden beide Varianten erläutert:
+  </p>
+  <ol>
+    <li>
+      <p>Die kurze Variante über die Konsole:</p>
+      <ol>
+        <li>Klick auf das Konsolen-Symbol (Execute Gradle Task)</li>
+        <li>In der offenen Konsole gibt man nun "shadowJar" ein</li>
+        <li>Man drückt auf Enter</li>
+      </ol>
+    </li>
+    <li>
+      <p>Die lange Variante</p>
+      <ol>
+        <li>
+          Man geht auf dem Ordner mit dem Namen des Projekts.
+          Dieser ist standardmäßig "player-Spielkürzel-src"
+        </li>
+        <li>Unter dem nun angezeigten Inhalt öffnet man den Ordner "shadow".</li>
+        <li>
+          In dem Ordner "shadow" befindet sich eine Task, die shadowJar heißt.
+          Durch einen Doppelklick wird der Export gestartet.
+        </li>
+      </ol>
+    </li>
+  </ol>
+  <p>
+    Der Export wird in dem Ordner des Projektes gespeichert.
+    Der Name dieser Jar ist standardmäßig auf "Spielkürzel_Jahreszahl_client",
+    kann aber nach dem Export beliebig geändert werden.
+    Der Namen kann auch vor dem Export anpassen,
+    wenn man in dem Projekt "build.gradle.kts" öffnet
+    und unter "tasks.shadowJar" den "archiveBaseName" ändert.
+  </p>
+</div>
+</article><div class="jump-container"><a class="jump previous" href="/entwicklung/java/simpleclient-erweitern">Spielervorlage erweitern</a><a class="jump next" href="/entwicklung/python/installation-von-python">Installation von Python</a></div><div class="meta"><a class="edit-github" href="https://github.com/software-challenge/docs/tree/main/hyperbook/book/entwicklung/java/Anleitung-Abgabe.md">✎ GitHub</a><a href="#" onclick="hyperbookReset()"><span class="reset-icon" title="Das Hyperbook zurücksetzen"></span></a><span class="copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a> by <a href="https://software-challenge.de">Software-Challenge Germany</a></span></div></main></div><script src="/__hyperbook_assets/client.js?version=0.57.3" defer></script></body></html>
