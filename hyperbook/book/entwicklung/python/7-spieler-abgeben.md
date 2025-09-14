@@ -11,7 +11,7 @@ müssen ein paar Vorbereitungen getroffen werden, die hier erklärt werden.
 
 ## Computerspieler packen
 
-Wie [hier](\entwicklung\abgabe.md) erklärt ist, wird jeder Spieler in einem
+Wie [hier](/entwicklung/abgabe.md) erklärt ist, wird jeder Spieler in einem
 Docker Container ausgeführt, weshalb er keinen Zugriff zum Internet hat.
 Das bedeutet speziell für einen Python Spieler, dass alle benutzten
 Module und Pakete heruntergeladen und zusammen mit dem Quellcode

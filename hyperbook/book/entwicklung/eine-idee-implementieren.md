@@ -8,7 +8,7 @@ index: 2
 Man hat einige Spiele absolviert und sich eine gute Strategie
 ausgedacht. Damit hat man zwar schon einen wichtigen Teil der Arbeit
 geleistet, aber irgendwie muss dem
-[Computerspieler](/glossary/player) noch beigebracht werden, nach
+:t[Computerspieler]{#player} noch beigebracht werden, nach
 dieser Strategie zu spielen.
 
 Anhand einer kleinen Aufgabe soll gezeigt werden, wie man eine Idee

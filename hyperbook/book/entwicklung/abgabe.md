@@ -18,12 +18,12 @@ In der Regel enthält die Spielervorlage alle nötigen Instruktionen zum Packen.
 ### Offizielle Spielervorlagen
 
 #### Java
-Anleitung in der [Readme](https://github.com/software-challenge/backend/blob/main/player/configuration/README.md)
-des Repositories, oder [hier](java/Anleitung-Abgabe.md) in der Dokumentation.
+Anleitungen finden sich in der
+[Readme](https://github.com/software-challenge/backend/blob/main/player/configuration/README.md)
+des Repositories, und ergänzend dazu: [Hier](java/Anleitung-Abgabe.md) in der Dokumentation.
 
 #### Python
-Anleitung in der [Readme](https://github.com/software-challenge/player_python/blob/master/README.md)
-des Repositories, oder [hier](python/7-spieler-abgeben.md) in der Dokumentation.
+Eine Anleitungen dafür gibt es in der [Dokumentation](python/7-spieler-abgeben.md).
 
 ### Inoffizielle Spielervorlagen
 <!--
