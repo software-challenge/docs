@@ -16,7 +16,7 @@ und in Zukunft die eigene Taktik implementieren zu können.
 
 Wie man die Vorlage zu der diesjährigen Saison findet und
 auf den eigenen Comuter herunterladen kann, haben wir bereits
-[hier](/entwicklung/python/3-getting-started#projekt-erstellen)
+[hier](/entwicklung/python/getting-started#projekt-erstellen)
 in der Dokumentation erklärt.
 
 ## Spielervorlage verstehen
