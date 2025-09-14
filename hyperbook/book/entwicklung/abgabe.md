@@ -34,7 +34,7 @@ Eine Anleitungen dafür gibt es in der [Dokumentation](python/7-spieler-abgeben.
 - [Swift](https://github.com/matthesjh/sc23-swift-client/blob/main/README.md)
 - [Ruby](https://github.com/software-challenge/client-ruby/blob/main/README.md)
 -->
-Für die aktuelle Saison sind leider keine inoffiziellen Vorlagen verfügbar.
+Für die aktuelle Saison gibt es bisher keine inoffiziellen Spielervorlagen.
 
 ## Generelles zum Upload
 
