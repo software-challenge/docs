@@ -1,6 +1,7 @@
 ---
 name: F.A.Q.
 index: 4
+next: /@/currentgame
 ---
 
 # Häufig gestellte Fragen (F.A.Q.)
