@@ -1,8 +1,8 @@
 ---
 name: Spielregeln
 index: 1
-permaid: currentgame
-prev: /faq
+permaid: current_game_start
+prev: /grundlagen/contest
 next: /entwicklung
 ---
 

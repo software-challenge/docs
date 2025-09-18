@@ -2,7 +2,7 @@
 name: Entwicklung eines Computerspielers
 index: 6
 expanded: true
-prev: /@/currentgame
+prev: /@/current_game_start
 ---
 
 # Die Ersten (Programmier-)Schritte

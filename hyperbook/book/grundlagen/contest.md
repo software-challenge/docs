@@ -1,6 +1,7 @@
 ---
 name: Wettkampfsystem
 index: 3
+next: /@/current_game_start
 ---
 
 # Das Wettkampfsystem
