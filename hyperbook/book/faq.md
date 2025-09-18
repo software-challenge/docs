@@ -1,13 +1,13 @@
 ---
 name: F.A.Q.
-index: 4
+index: 3
 next: /@/currentgame
 ---
 
 # Häufig gestellte Fragen (F.A.Q.)
-Hier sammeln wir einige häufig gestellten Fragen, 
+Hier sammeln wir einige häufig gestellte Fragen, 
 die uns erreichen.
-Wir versuchen diese stets auktuell
+Wir versuchen diese stets aktuell
 und ausführlich zu halten.
 
 Wenn du dennoch nicht fündig wirst,
@@ -58,7 +58,7 @@ Dies kann ebenfalls hervorragende Ergebnisse erzielen.
 :::
 
 #### Garbage Collector
-Die oben genannten [Möglichkeiten](#allgemein) können euren Spieler bereits erheblich schneller und auch besser machen, 
+Die oben genannten [Möglichkeiten](/faq#allgemein) können euren Spieler bereits erheblich schneller und auch besser machen, 
 wenn es darum geht, gute Züge in kurzer Zeit zu finden. 
 Allerdings kann selbst dies nicht zu dem gewünschten Ziel führen, 
 unter den zwei Sekunden zu bleiben. 

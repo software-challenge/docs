@@ -6,7 +6,8 @@ index: 3
 # Das Wettkampfsystem
 
 Das Wettkampfsystem ist die Plattform,
-auf der die [Computerspieler](glossary/player) der einzelnen Schulen gegeneinander antreten.
+auf der die [Computerspieler](/grundlagen/player)
+der einzelnen Schulen gegeneinander antreten.
 Die Teams können sich dabei nicht nur im Wettkampf,
 sondern auch in Freundschaftsspielen mit ihren Gegnern messen.
 Außerdem liefert es alle Informationen rund um den Wettkampf,
@@ -94,7 +95,7 @@ Schülerinnen und Schüler haben in dieser Hinsicht keinerlei Rechte.
 
 **Hinweis:** Es muss nicht jede Schülerin und jeder Schüler eingetragen werden und über
 Zugangsdaten erhalten. Es reicht, wenn sich die Teammitglieder am Server
-anmelden können, die den :t[Computerspieler]{#player} hochladen.
+anmelden können, die den Computerspieler hochladen.
 
 Wenn man eine neue Person ins Team aufnehmen will, kann man eine im System
 bekannte Person einladen.
@@ -114,7 +115,7 @@ Optionen:
 -   Ein Spieltag wurde gespielt
 
 -   In einem Ihrer Teams gibt es noch keinen spielbereiten
-    :t[Computerspieler]{#player} für den nahenden Spieltag
+    Computerspieler für den nahenden Spieltag
 
 -   Es gibt Neuigkeiten zum Wettbewerb
 
@@ -122,7 +123,7 @@ Optionen:
 
 ### Computerspieler
 
-In dieser Rubrik kann man die :t[Computerspieler]{#player} hochladen und verwalten.
+In dieser Rubrik kann man die Computerspieler hochladen und verwalten.
 Bevor man einen Computerspieler hochlädt, muss [er abgabefertig gemacht werden](/entwicklung/abgabe).
 
 ![Übersicht der eingesendeten Computerspieler](/images/wettkampfsystem_neu_hochladen.png)

@@ -7,7 +7,7 @@ index: 9
 
 Im folgenden findet ihr eine Anleitung, 
 für den Export eures Computerspielers aus der Entwicklungsumgebung,
-um ihn i Wettkampfsystem hochzuladen.
+um ihn im Wettkampfsystem hochzuladen.
 
 ## Grundsätzliches
 Der Export des Projektes funktioniert für Java bei unserem Projekt über Gradle. 
@@ -20,7 +20,7 @@ muss man die Übersicht der Gradle Tasks öffnen.
 Um dies zu tun gibt es zwei Wege:
 
 1. Der erste Weg, die Übersicht zu Öffnen, 
-   ist das Gradle-Symbol (Elephant) am linken Rand. 
+   ist das Gradle-Symbol (Elefant) am linken Rand. 
    Es kann sein, dass das Symbol im dunklen Modus schwer zu erkennen ist.
 
 2. Ist das Symbol nicht auffindbar, 
@@ -54,7 +54,7 @@ und unter "tasks.shadowJar" den "archiveBaseName" ändert.
 ## IntelliJ
 Um den Export in IntelliJ durchzuführen, 
 muss man die Übersicht der Gradle Tasks öffnen. 
-Dies geschieht, in dem man auf das Gradle-Symbol (Elephant) am rechten Rand klickt. 
+Dies geschieht, in dem man auf das Gradle-Symbol (Elefant) am rechten Rand klickt. 
 Nun kann die Gradle Task unterschiedlich ausgeführt werden. 
 Im folgenden werden beide Varianten erläutert:
 

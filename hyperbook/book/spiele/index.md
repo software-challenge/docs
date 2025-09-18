@@ -1,5 +1,5 @@
 ---
 name: Spiele
-index: 1
+index: 5
 virtual: true
 ---
