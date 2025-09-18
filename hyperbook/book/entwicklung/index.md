@@ -1,6 +1,6 @@
 ---
 name: Entwicklung eines Computerspielers
-index: 2
+index: 6
 expanded: true
 prev: /@/currentgame
 ---
@@ -33,8 +33,8 @@ Auf ähnliche Weise können natürlich auch
 und [der C# Quellcode](https://github.com/niklasCarstensen/socha-client-csharp) helfen.
 
 Am besten sprecht ihr die Verwendung einer anderen Programmiersprache frühzeitig mit eurem Tutor ab,
-damit sichergestellt ist, dass der :t[Computerspieler]{#player} auch am Wettkampf teilnehmen kann.
-Wir stellen gerne eine passende Laufzeitumgebung auf dem :t[Wettkampfsystem]{#contest}
+damit sichergestellt ist, dass der [Computerspieler](/grundlagen/player) auch am Wettkampf teilnehmen kann.
+Wir stellen gerne eine passende Laufzeitumgebung auf dem [Wettkampfsystem](/grundlagen/contest)
 für die Programmiersprache zur Verfügung.
 
 ## Weiterführende Literatur

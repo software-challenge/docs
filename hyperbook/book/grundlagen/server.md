@@ -5,14 +5,14 @@ index: 2
 
 # Der Spielleiter (Server)
 
-Die beiden :t[Computerspieler]{#player} kommunizieren nicht direkt miteinander,
+Die beiden [Computerspieler](/grundlagen/player) kommunizieren nicht direkt miteinander,
 sondern spielen über einen Mittelsmann: den Spielleiter.
 Dadurch ist zum einen sichergestellt,
 dass man seinen Gegner nicht mit invaliden Nachrichten belästigen kann,
 zum anderen sorgt der Spielleiter dafür,
 dass sich die Kontrahenten an die Spielregeln halten.
 
-Der Spielleiter ist direkt im :t[Wettkampfsystem]{#contest} integriert,
+Der Spielleiter ist direkt im [Wettkampfsystem](/grundlagen/contest) integriert,
 sodass alle Turnierspiele regelkonform gespielt werden.
 Zum Testen des eigenen Computerspielers gibt es eine Version des Spielleiters mit grafischer Oberfläche,
 erhältlich im [Downloadbereich der Website](https://software-challenge.de/dokumentation-und-material).

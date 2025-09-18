@@ -9,7 +9,7 @@ Das ist die offizielle Dokumentation des Programmierwettbewerbs
 
 In den verschiedenen Abschnitten findest du:
 - Erläuterungen zum Wettkampf
-- technische Grundlagen
+- Technische Grundlagen
 - Dokumentation des aktuellen Spiels
 - Erklärungen zur Entwicklung eines eigenen Computerspielers
 
