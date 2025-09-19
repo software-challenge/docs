@@ -1,6 +1,5 @@
 ---
 name: XML-Dokumentation
-permaid: xml
 ---
 
 # XML-Elemente des Spiels Hase und Igel
