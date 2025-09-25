@@ -74,11 +74,12 @@ Der zuletzt im Spiel gespielte Zug `lastMove` ist wie ein gewöhnlicher
 
 Die Felder werden wie folgt codiert:
 
-- leeres Feld: `EMPTY`
+- Leeres Feld: `EMPTY`
 - Krakenfeld: `SQUID`
 - Fischfeld: `TEAM_GRÖßE`
   - wobei TEAM `ONE` oder `TWO` ist
   - und GRÖßE `S`, `M` oder `L` ist, der Größe des Fisches
+  - d.h. zum Beispiel `ONE_S` für den kleinen Fisch des Spielers 1
 
 ## Spiel betreten ohne Reservierungscode
 
