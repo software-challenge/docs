@@ -169,7 +169,7 @@ dann die am Ende des Spiel errreichte Schwarmgröße.
 
 In diesem Beispiel sieht man, dass Spieler 2 mit einer Schwarmgröße von 5 diese Runde gewonnen hat.
 
-Bei einem unendschieden erhalten beide Spieler jeweils einen Siegpunkt und der `winner`-Tag führt kein Team:
+Bei einem Unentschieden erhalten beide Spieler jeweils einen Siegpunkt und der `winner`-Tag führt kein Team:
 
 ```xml
 <winner regular="true" reason="Beide Spieler sind gleichauf"/>
