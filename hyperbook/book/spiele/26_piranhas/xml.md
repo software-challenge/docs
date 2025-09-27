@@ -167,7 +167,7 @@ Unter `scores` werden jeweils die beiden Spieler mit den erreichten Punkten aufg
 Was genau die Werte in `part` bedeuten, steht in der `definition`.
 Für Piranhas ist das die Anzahl der Siegpunkte,
 die im Wettkampfsystem angerechnet werden
-und die am Ende des Spiel errreichte Schwarmgröße.
+und die am Ende des Spiel erreichte Schwarmgröße.
 
 In diesem Beispiel sieht man, dass Spieler 2 mit einer Schwarmgröße von 5 diese Runde gewonnen hat.
 
