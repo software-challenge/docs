@@ -164,9 +164,10 @@ Wenn das Spiel vorbei ist, erhalten die Clients das Ergebnis der Partie:
 ```
 
 Unter `scores` werden jeweils die beiden Spieler mit den erreichten Punkten aufgezählt.
-Was genau die Werte in `part` werde bedeuten, wird vorher definiert.
-Für Piranhas ist das zuerst die Anzahl der Siegpunkte, die im Wettkampfsystem angerechnet werden und
-dann die am Ende des Spiel errreichte Schwarmgröße.
+Was genau die Werte in `part` bedeuten, steht in der `definition`.
+Für Piranhas ist das die Anzahl der Siegpunkte,
+die im Wettkampfsystem angerechnet werden
+und die am Ende des Spiel errreichte Schwarmgröße.
 
 In diesem Beispiel sieht man, dass Spieler 2 mit einer Schwarmgröße von 5 diese Runde gewonnen hat.
 
