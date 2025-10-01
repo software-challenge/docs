@@ -1,0 +1,334 @@
+<!doctype html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,, interactive-widget=resizes-content"><title>Wettkampfsystem - Software-Challenge Dokumentation</title><meta property="og:title" value="Wettkampfsystem - Software-Challenge Dokumentation"><meta name="description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta property="og:description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta name="keywords"><link rel="stylesheet" href="/__hyperbook_assets/normalize.css?version=0.57.3"><style>
+html,
+body {
+  overflow: hidden;
+  margin: 0;
+  height: 100dvh;
+  width: 100dvw;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --color-brand: #ECC94B;
+  --color-brand-dark: #ECC94B;
+  --color-brand-text: white;
+  --main-width: 980px;
+  --header-height: 60px;
+  --nav-width: minmax(300px, 0.33fr);
+  --nav-font-size: 0.9rem;
+  --body-font-size: 14px;
+}
+@font-face {
+  font-family: hyperbook-body;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: hyperbook-heading;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: hyperbook-code;
+  src: url(/fonts/SourceCodePro-Regular.ttf);
+  size-adjust: 100%;
+}
+
+body {
+  overscroll-behavior-x: none;
+  background-color: transparent;
+  color: var(--color-text);
+  font-family: hyperbook-body;
+  font-weight: normal;
+  font-size: var(--body-font-size);
+  margin: 0;
+  padding: 0;
+}
+</style><noscript id="dark-mode-toggle-stylesheets"><link rel="stylesheet" href="/__hyperbook_assets/light.css?version=0.57.3" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="/__hyperbook_assets/dark.css?version=0.57.3" media="(prefers-color-scheme: dark)"></noscript><script src="/__hyperbook_assets/dark-mode-toggle-stylesheets-loader.js?version=0.57.3"></script><script type="module" src="/__hyperbook_assets/dark-mode-toggle.js?version=0.57.3"></script><script src="/__hyperbook_assets/i18n.js?version=0.57.3"></script><script src="/__hyperbook_assets/dexie.min.js?version=0.57.3"></script><script src="/__hyperbook_assets/dexie-export-import.js?version=0.57.3"></script><script src="/__hyperbook_assets/store.js?version=0.57.3"></script><script>
+window.Prism = window.Prism || {};
+window.Prism.manual = true;</script><script src="/__hyperbook_assets/prism/prism.js?version=0.57.3"></script><link rel="stylesheet" href="/__hyperbook_assets/prism/prism.css?version=0.57.3"><link rel="stylesheet" href="/__hyperbook_assets/prism/prism-theme-github-dark.css?version=0.57.3" media="(prefers-color-scheme: dark)"><link rel="stylesheet" href="/__hyperbook_assets/prism/prism-theme-github-light.css?version=0.57.3" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="/__hyperbook_assets/math/katex.min.css?version=0.57.3"><link rel="stylesheet" href="/__hyperbook_assets/shell.css?version=0.57.3"><link rel="stylesheet" href="/__hyperbook_assets/content.css?version=0.57.3"><link rel="stylesheet" href="/__hyperbook_assets/code.css?version=0.57.3"><script>
+HYPERBOOK_ASSETS = "/__hyperbook_assets/"
+</script><script type="module" src="/__hyperbook_assets/side-drawer.js?version=0.57.3" async></script><script src="/__hyperbook_assets/lunr.min.js?version=0.57.3" defer></script><script src="/__hyperbook_assets/lunr-languages/lunr.stemmer.support.min.js?version=0.57.3" defer></script><script src="/__hyperbook_assets/lunr-languages/lunr.de.min.js?version=0.57.3" defer></script><script src="/__hyperbook_assets/search.js?version=0.57.3" defer></script><script src="/__hyperbook_assets/qrcode.js?version=0.57.3" async></script></head><body><div class="main-grid"><header><div class="mobile-nav"><button aria-label="Nav Toggle" class="toggle" onclick="hyperbook.navToggle()"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></button><side-drawer id="nav-drawer"><div class="nav-drawer-content"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div data-id="_nav:/grundlagen" class="section"><div class="collapsible name empty  expanded"><span class="label">Technische Grundlagen</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/grundlagen/player">Computerspieler</a></li><li><a class="page" href="/grundlagen/server">Spielleiter</a></li><li><a class="page active" href="/grundlagen/contest">Wettkampfsystem</a></li></ul></div></div><div data-id="_nav:/spiele" class="virtual-section"><div class="links"><div data-id="_nav:/spiele/26_piranhas" class="section"><div class="collapsible name empty  expanded"><span class="label">Piranhas 2026</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/spiele/26_piranhas/regeln">Spielregeln</a></li><li><a class="page" href="/spiele/26_piranhas/xml">XML Dokumentation</a></li></ul></div></div></div></div><div data-id="_nav:/entwicklung" class="section"><div class="collapsible name  expanded"><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul><div data-id="_nav:/entwicklung/java" class="section"><div class="collapsible name empty  "><span class="label">Java</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/java/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/java/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/java/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/java/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/java/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/java/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/java/Anleitung-Abgabe">Anleitung für Abgabe</a></li></ul></div></div><div data-id="_nav:/entwicklung/python" class="section"><div class="collapsible name empty  "><span class="label">Python</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/python/installation-von-python">Installation von Python</a></li><li><a class="page" href="/entwicklung/python/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/python/getting-started">Getting Started</a></li><li><a class="page" href="/entwicklung/python/python-programmierstil">Sauberer Programmierstil in Python</a></li><li><a class="page" href="/entwicklung/python/oop-in-python">Objektorientierte Programmierung in Python</a></li><li><a class="page" href="/entwicklung/python/vorlage-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/python/spieler-abgeben">Spieler für den Wettbewerb abgeben</a></li></ul></div></div></div></div><div data-id="_nav:/xml" class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div></side-drawer></div><a class="branding" href="/"><div class="logo"><img alt="logo" src="/logo.svg"></div><div class="name">Software-Challenge Dokumentation</div></a><button id="search-toggle" onclick="hyperbook.searchToggle()" title="Suche"></button><side-drawer id="search-drawer" right><div class="search-drawer-content"><div class="search-input"><div class="search-icon"></div><input id="search-input" placerholder="..."><button class="search-button" onclick="hyperbook.search()"></button></div><div id="search-results"></div></div></side-drawer><dark-mode-toggle id="dark-mode-toggle" appearence="switch" title="Zwischen Dunkel- und Hellmodus wechseln" permanent></dark-mode-toggle></header><div class="sidebar"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div data-id="_nav:/grundlagen" class="section"><div class="collapsible name empty  expanded"><span class="label">Technische Grundlagen</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/grundlagen/player">Computerspieler</a></li><li><a class="page" href="/grundlagen/server">Spielleiter</a></li><li><a class="page active" href="/grundlagen/contest">Wettkampfsystem</a></li></ul></div></div><div data-id="_nav:/spiele" class="virtual-section"><div class="links"><div data-id="_nav:/spiele/26_piranhas" class="section"><div class="collapsible name empty  expanded"><span class="label">Piranhas 2026</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/spiele/26_piranhas/regeln">Spielregeln</a></li><li><a class="page" href="/spiele/26_piranhas/xml">XML Dokumentation</a></li></ul></div></div></div></div><div data-id="_nav:/entwicklung" class="section"><div class="collapsible name  expanded"><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul><div data-id="_nav:/entwicklung/java" class="section"><div class="collapsible name empty  "><span class="label">Java</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/java/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/java/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/java/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/java/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/java/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/java/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/java/Anleitung-Abgabe">Anleitung für Abgabe</a></li></ul></div></div><div data-id="_nav:/entwicklung/python" class="section"><div class="collapsible name empty  "><span class="label">Python</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/python/installation-von-python">Installation von Python</a></li><li><a class="page" href="/entwicklung/python/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/python/getting-started">Getting Started</a></li><li><a class="page" href="/entwicklung/python/python-programmierstil">Sauberer Programmierstil in Python</a></li><li><a class="page" href="/entwicklung/python/oop-in-python">Objektorientierte Programmierung in Python</a></li><li><a class="page" href="/entwicklung/python/vorlage-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/python/spieler-abgeben">Spieler für den Wettbewerb abgeben</a></li></ul></div></div></div></div><div data-id="_nav:/xml" class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div><main><article>
+<div class="hyperbook-markdown"><button id="toc-toggle" onclick="hyperbook.tocToggle()" title="Inhaltsverzeichnis"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div></button>
+  <side-drawer id="toc-drawer" right>
+    <div class="toc-drawer-content">
+      <nav class="toc">
+        <ul>
+          <li class="level-1"><a href="#das-wettkampfsystem">Das Wettkampfsystem</a></li>
+          <li class="level-2"><a href="#die-weboberflche">Die Weboberfläche</a></li>
+          <li class="level-3"><a href="#auswahl">Auswahl</a></li>
+          <li class="level-3"><a href="#teams">Teams</a></li>
+          <li class="level-4"><a href="#alle-teams">Alle Teams</a></li>
+          <li class="level-4"><a href="#meine-teams">Meine Teams</a></li>
+          <li class="level-2"><a href="#frei-verfgbare-informationen">Frei verfügbare Informationen</a></li>
+          <li class="level-3"><a href="#news">News</a></li>
+          <li class="level-3"><a href="#gruppen">Gruppen</a></li>
+          <li class="level-3"><a href="#spieltag">Spieltag</a></li>
+          <li class="level-3"><a href="#finale">Finale</a></li>
+          <li class="level-2"><a href="#nur-mit-anmeldung-verfgbar">Nur mit Anmeldung verfügbar</a></li>
+          <li class="level-3"><a href="#mitglieder">Mitglieder</a></li>
+          <li class="level-4"><a href="#mitglieder-hinzufgen">Mitglieder hinzufügen</a></li>
+          <li class="level-5"><a href="#benachrichtigungen">Benachrichtigungen</a></li>
+          <li class="level-3"><a href="#computerspieler">Computerspieler</a></li>
+          <li class="level-2"><a href="#freundschaftsspiele">Freundschaftsspiele</a></li>
+          <li class="level-2"><a href="#verfgbare-schnittstellen">Verfügbare Schnittstellen</a></li>
+          <li class="level-3"><a href="#replays">Replays</a></li>
+        </ul>
+      </nav>
+    </div>
+  </side-drawer>
+  <h1 id="das-wettkampfsystem"><a href="#das-wettkampfsystem" class="heading"><span>Das Wettkampfsystem</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#das-wettkampfsystem&#x22;, &#x22;Das Wettkampfsystem&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#das-wettkampfsystem">🔖</button></h1>
+  <p>
+    Das Wettkampfsystem ist die Plattform,
+    auf der die <a href="/grundlagen/player">Computerspieler</a>
+    der einzelnen Schulen gegeneinander antreten.
+    Die Teams können sich dabei nicht nur im Wettkampf,
+    sondern auch in Freundschaftsspielen mit ihren Gegnern messen.
+    Außerdem liefert es alle Informationen rund um den Wettkampf,
+    wie z.B. die Ergebnisse der einzelnen Spieltage
+    oder die Anzahl der Mitglieder in den einzelnen Teams.
+  </p>
+  <h2 id="die-weboberflche"><a href="#die-weboberflche" class="heading"><span>Die Weboberfläche</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#die-weboberflche&#x22;, &#x22;Die Weboberfläche&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#die-weboberflche">🔖</button></h2>
+  <p>
+    <figure src="/images/wettkampfsystem_neu_startseite.png" alt="Die Startseite der Weboberfläche" class="normal undefined">
+      <img src="/images/wettkampfsystem_neu_startseite.png" alt="Die Startseite der Weboberfläche" onclick="hyperbook.toggleLightbox(this)">
+    </figure>
+  </p>
+  <p>
+    Die Weboberfläche ist unter der URL <a href="http://contest.software-challenge.de">http://contest.software-challenge.de</a> erreichbar.
+    Alle Informationen, die den Ablauf des Wettkampfs betreffen
+    (z.B. Terminplan, News oder Rangliste) sind auch ohne Anmeldung verfügbar.
+    Man muss sich nur am System anmelden, wenn man auf seinen Kurs,
+    bzw. auf seinen Computerspieler zugreifen möchte.
+    Im Wettkampfsystem findet die gesamte Wettkampfverwaltung statt.
+    Hier können die Clients abgegeben, getestet und aktiviert werden
+    und es kann der aktuelle Wettkampfstand abgerufen werden (Rangliste, Spieltage, etc.).
+  </p>
+  <h3 id="auswahl"><a href="#auswahl" class="heading"><span>Auswahl</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#auswahl&#x22;, &#x22;Auswahl&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#auswahl">🔖</button></h3>
+  <p>
+    Standardmäßig ist die aktuellste Saison im System aktiv. Über den
+    Button in der oberen Leiste bekommt man alle verfügbaren
+    Saisons angezeigt und, wenn man eine ausgewählt hat, sieht man auch die
+    Gruppen dazu. Anschließend kann man die Informationen einsehen.
+  </p>
+  <h3 id="teams"><a href="#teams" class="heading"><span>Teams</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#teams&#x22;, &#x22;Teams&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#teams">🔖</button></h3>
+  <h4 id="alle-teams"><a href="#alle-teams" class="heading"><span>Alle Teams</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#alle-teams&#x22;, &#x22;Alle Teams&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#alle-teams">🔖</button></h4>
+  <p>
+    <figure src="/images/wettkampfsystem_neu_teams.png" alt="Die Teamtabelle" class="normal undefined">
+      <img src="/images/wettkampfsystem_neu_teams.png" alt="Die Teamtabelle" onclick="hyperbook.toggleLightbox(this)">
+    </figure>
+  </p>
+  <p>
+    Hier werden die teilnehmenden Teams mit ihren Ansprechpartnern und
+    Tutoren tabellarisch aufgelistet.
+  </p>
+  <h4 id="meine-teams"><a href="#meine-teams" class="heading"><span>Meine Teams</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#meine-teams&#x22;, &#x22;Meine Teams&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#meine-teams">🔖</button></h4>
+  <p>
+    Angemeldete Benutzer können hier eine Übersicht über Teams der aktuellen Saison
+    finden mit denen sie zu tun haben.
+  </p>
+  <h2 id="frei-verfgbare-informationen"><a href="#frei-verfgbare-informationen" class="heading"><span>Frei verfügbare Informationen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#frei-verfgbare-informationen&#x22;, &#x22;Frei verfügbare Informationen&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#frei-verfgbare-informationen">🔖</button></h2>
+  <h3 id="news"><a href="#news" class="heading"><span>News</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#news&#x22;, &#x22;News&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#news">🔖</button></h3>
+  <p>
+    Hier sind alle News zum Wettkampf einsehbar. Alles Wichtige zum Wettkampf
+    erscheint hier.
+  </p>
+  <h3 id="gruppen"><a href="#gruppen" class="heading"><span>Gruppen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#gruppen&#x22;, &#x22;Gruppen&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#gruppen">🔖</button></h3>
+  <p>
+    <figure src="/images/wettkampfsystem_neu_gruppe.png" alt="Screenshot der Gruppen" class="normal undefined">
+      <img src="/images/wettkampfsystem_neu_gruppe.png" alt="Screenshot der Gruppen" onclick="hyperbook.toggleLightbox(this)">
+    </figure>
+  </p>
+  <p>
+    Die Teams jeder Wettkampfsaison sind in der ersten Meisterschaftsphase in Gruppen
+    aufgeteilt. Auf der Seite einer Gruppe kann man auf die einzelnen Spieltage zugreifen
+    und die aktuelle Rangliste sehen.
+  </p>
+  <h3 id="spieltag"><a href="#spieltag" class="heading"><span>Spieltag</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#spieltag&#x22;, &#x22;Spieltag&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#spieltag">🔖</button></h3>
+  <p>
+    <figure src="/images/wettkampfsystem_neu_spieltag.png" alt="Screenshot der Spieltagsuebersicht" class="normal undefined">
+      <img src="/images/wettkampfsystem_neu_spieltag.png" alt="Screenshot der Spieltagsuebersicht" onclick="hyperbook.toggleLightbox(this)">
+    </figure>
+  </p>
+  <p>
+    Auf dieser Seite kann man sehen, welche Schulen an dem Spieltag
+    aufeinander treffen. Wurde der Spieltag schon ausgetragen,
+    kann man sich die Ergebnisse und den Verlauf der einzelnen Spiele
+    anschauen.
+  </p>
+  <h3 id="finale"><a href="#finale" class="heading"><span>Finale</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#finale&#x22;, &#x22;Finale&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#finale">🔖</button></h3>
+  <p>
+    Hier findet sich die Übersicht über die Finalteilnehmer. Diese ist erst
+    verfügbar, wenn die Teilnehmer feststehen.
+  </p>
+  <h2 id="nur-mit-anmeldung-verfgbar"><a href="#nur-mit-anmeldung-verfgbar" class="heading"><span>Nur mit Anmeldung verfügbar</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#nur-mit-anmeldung-verfgbar&#x22;, &#x22;Nur mit Anmeldung verfügbar&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#nur-mit-anmeldung-verfgbar">🔖</button></h2>
+  <h3 id="mitglieder"><a href="#mitglieder" class="heading"><span>Mitglieder</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#mitglieder&#x22;, &#x22;Mitglieder&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#mitglieder">🔖</button></h3>
+  <p>
+    <figure src="/images/wettkampfsystem_neu_mitglieder.png" alt="Dialog" class="normal undefined">
+      <img src="/images/wettkampfsystem_neu_mitglieder.png" alt="Dialog" onclick="hyperbook.toggleLightbox(this)">
+    </figure>
+  </p>
+  <p>
+    Hier werden alle Mitglieder des Teams aufgelistet. Mit den Buttons rechts neben den
+    Teammitgliedern kann man sie aus dem Team werfen.
+  </p>
+  <h4 id="mitglieder-hinzufgen"><a href="#mitglieder-hinzufgen" class="heading"><span>Mitglieder hinzufügen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#mitglieder-hinzufgen&#x22;, &#x22;Mitglieder hinzufügen&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#mitglieder-hinzufgen">🔖</button></h4>
+  <p>
+    Neue Mitglieder kann man über die Schaltfläche "Bestehenden Benutzer einladen" unten einladen.
+    Dabei können Tutoren sowohl Lehrkräfte, als auch Schülerinnen und
+    Schüler hinzufügen, während Lehrkräfte nur Schülerinnen und Schüler hinzufügen dürfen.
+    Schülerinnen und Schüler haben in dieser Hinsicht keinerlei Rechte.
+  </p>
+  <p>
+    <strong>Hinweis:</strong> Es muss nicht jede Schülerin und jeder Schüler eingetragen werden und über
+    Zugangsdaten erhalten. Es reicht, wenn sich die Teammitglieder am Server
+    anmelden können, die den Computerspieler hochladen.
+  </p>
+  <p>
+    Wenn man eine neue Person ins Team aufnehmen will, kann man eine im System
+    bekannte Person einladen.
+  </p>
+  <p>
+    Darüber kann man die Schülerinnen- und Schüler-Anzahl des Teams
+    eintragen. Hierzu zählen auch Schülerinnen und Schüler, die keine eigenen Zugangsdaten
+    für das Wettkampfsystem haben. Diese Zahl wird sowohl für die Presse als
+    auch für statistische Zwecke gebraucht und sollte in jedem Fall stimmen.
+  </p>
+  <h5 id="benachrichtigungen"><a href="#benachrichtigungen" class="heading"><span>Benachrichtigungen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#benachrichtigungen&#x22;, &#x22;Benachrichtigungen&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#benachrichtigungen">🔖</button></h5>
+  <p>
+    Für Personen mit Zugangsdaten kann neben den Personendetails eingestellt
+    werden, unter welchen Umständen diese Personen eine e-Mail mit einer
+    entsprechenden Benachrichtigung erhalten sollen. Dabei gibt es folgende
+    Optionen:
+  </p>
+  <ul>
+    <li>
+      <p>Ein Spieltag wurde gespielt</p>
+    </li>
+    <li>
+      <p>
+        In einem Ihrer Teams gibt es noch keinen spielbereiten
+        Computerspieler für den nahenden Spieltag
+      </p>
+    </li>
+    <li>
+      <p>Es gibt Neuigkeiten zum Wettbewerb</p>
+    </li>
+    <li>
+      <p>Eines ihrer Tickets wurde geändert</p>
+    </li>
+  </ul>
+  <h3 id="computerspieler"><a href="#computerspieler" class="heading"><span>Computerspieler</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#computerspieler&#x22;, &#x22;Computerspieler&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#computerspieler">🔖</button></h3>
+  <p>
+    In dieser Rubrik kann man die Computerspieler hochladen und verwalten.
+    Bevor man einen Computerspieler hochlädt, muss <a href="/entwicklung/abgabe">er abgabefertig gemacht werden</a>.
+  </p>
+  <p>
+    <figure src="/images/wettkampfsystem_neu_hochladen.png" alt="Übersicht der eingesendeten Computerspieler" class="normal undefined">
+      <img src="/images/wettkampfsystem_neu_hochladen.png" alt="Übersicht der eingesendeten Computerspieler" onclick="hyperbook.toggleLightbox(this)">
+    </figure>
+  </p>
+  <p>
+    Oben am rechten Rand befindet sich die Schaltfläche,
+    um neue Computerspieler hinzuzufügen.
+    Diese führt zu einem Formular,
+    mit dem man das ZIP-Archiv des Computerspielers hochladen kann.
+  </p>
+  <p>
+    Man kann dem Spieler einen <strong>Namen</strong> geben, damit man ihn in der Liste
+    der hochgeladenen Spieler später besser erkennt. Man kann auch noch
+    zusätzliche <strong>Parameter</strong> festlegen, die dem Computerspieler beim Start
+    übergeben werden. Dies ist nützlich, wenn der Computerspieler
+    verschiedene Spielstrategien unterstützt und man diese per Parameter
+    auswählen kann. Dann muss man den Computerspieler nur einmal hochladen
+    (die Parameter kann man auch später verändern). Die Angabe eines Namens
+    und von Parametern ist optional.
+  </p>
+  <p>
+    Als letztes muss noch die Umgebung (das <strong>Docker Image</strong>) gewählt
+    werden, in der der Computerspieler auf dem Wettkampfsystem ausgeführt
+    werden soll. Verwendet der Computerspieler eine der beiden offiziell
+    unterstützten Programmiersprachen Java und Ruby, kann hier einfach das
+    entsprechende ausgewählt werden. Ansonsten hängt es von der gewählten
+    Programmiersprache ab, ob eine passende Umgebung angeboten wird. Sollte
+    sich nichts finden, installieren wir gern etwas passendes nach.
+  </p>
+  <p>
+    Wurde ein Spieler erfolgreich hochgeladen, befindet er sich in der Liste
+    aller Spieler des Teams. Hier kann man mit dem Link "Testen" seine
+    Turnierfähigkeit prüfen. Der Spieler spielt dann zweimal gegen den
+    Zufallsspieler. Ein Haken in einem grünen Kreis symbolisiert einen
+    erfolgreichen Test. Das Logbuch über den Testlauf kann mit dem Link
+    "Logs" aufgerufen werden. Unter Umständen muss noch die richtige
+    Startdatei eingestellt werden. Dafür kann man rechts in der Spalte
+    "Hauptdatei" auf den entsprechenden Link klicken und im folgenden
+    Dateimenü die richtige Startdatei auswählen.
+  </p>
+  <p>
+    Mit dem '+' kann man einen Kommentar an den Computerspieler heften,
+    so dass man ihn besser von den anderen unterscheiden kann.
+  </p>
+  <p>
+    Mit dem Link "Aktivieren" markiert man den Spieler als denjenigen, der
+    das nächste Spiel auf dem Wettkampfsystem spielen soll. Dies kann ein
+    Freundschaftsspiel oder ein Spiel des Wettkampfes sein.
+  </p>
+  <p>
+    <strong>Hinweis:</strong> Es nimmt der jeweils aktive Computerspieler am Spieltag
+    teil. Die Frist für das Aktivieren eines Clients, der an einem Spieltag
+    teilnehmen soll, endet am Spieltag um 0 Uhr. Bei späterer Aktivierung
+    kann nicht garantiert werden, dass der neue statt des bisherigen Clients
+    am Spieltag teilnimmt. Ist an einem Spieltag kein Computerspieler
+    aktiviert, nimmt das Team nicht an der Begegnung dieses Spieltages teil
+    und die betreffenden Spiele zählen als verloren.
+  </p>
+  <h2 id="freundschaftsspiele"><a href="#freundschaftsspiele" class="heading"><span>Freundschaftsspiele</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#freundschaftsspiele&#x22;, &#x22;Freundschaftsspiele&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#freundschaftsspiele">🔖</button></h2>
+  <p>
+    Um sich schon vor dem Wettkampf einen Eindruck von der Stärke des
+    eigenen Teams zu machen, kann man mit seinen Gegnern Freundschaftsspiele
+    absolvieren.
+  </p>
+  <p>
+    Um ein Freundschaftsspiel zu spielen gibt es zwei Möglichkeiten: Man
+    fordert einen (oder alle) Gegner heraus oder man nimmt eine
+    Herausforderung an.
+  </p>
+  <p>
+    Durch einen Klick auf das Ergebnis eines gespielten Freundschaftsspiels
+    kann man es sich im Detail anschauen.
+  </p>
+  <h2 id="verfgbare-schnittstellen"><a href="#verfgbare-schnittstellen" class="heading"><span>Verfügbare Schnittstellen</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#verfgbare-schnittstellen&#x22;, &#x22;Verfügbare Schnittstellen&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#verfgbare-schnittstellen">🔖</button></h2>
+  <p>
+    Im folgenden können Schnittstellen gefunden werden mit denen man mit dem
+    Wettkampfsystem interagieren kann.
+  </p>
+  <h3 id="replays"><a href="#replays" class="heading"><span>Replays</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/grundlagen/contest#replays&#x22;, &#x22;Replays&#x22;)" title="Lesezeichen umschalten" data-key="/grundlagen/contest#replays">🔖</button></h3>
+  <p>
+    Man kann direkt auf unter "Replay herunterladen" auf der jeweiligen
+    Match-Seite einen Link finden, der z.B. wie folgt aussieht:
+    <span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>…​/wettbewerb/2010/spieltage/XXXX/matches/XXXX/rounds/XXXX</span></span><button type="button" data="…​/wettbewerb/2010/spieltage/XXXX/matches/XXXX/rounds/XXXX" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span> bei einem
+    normalen GET-Request erhält man das Replay-Archiv (also ein GZip
+    Archiv). Um die Replays z.B. in einer eigenen Anwendung zu verwenden,
+    kann man sich auch vom Server bereits entpackte und an das Format des
+    Replay-Viewers angepasste XML-Files zurückgeben lassen. Dies kann zum
+    Einen durch einen XML-Header des Requests geschehen oder zum Anderen
+    einfach durch das Anhängen der Endung <span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>.xml</span></span><button type="button" data=".xml" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span> an den oben genannten Link.
+  </p>
+  <p>
+    Wenn größere Mengen Replays benötigt werden, empfehlen wir die
+    Standard-Archive vorzuziehen und dann lokal zu entpacken, da diese schon
+    fertig gepackt auf dem Server vorliegen und somit schneller und mit
+    weniger Last für das System zur Verfügung gestellt werden können.
+  </p>
+</div>
+</article><div class="jump-container"><a class="jump previous" href="/grundlagen/server">Spielleiter</a><a class="jump next" href="/spiele/26_piranhas/regeln">Spielregeln</a></div><div class="meta"><a class="edit-github" href="https://github.com/software-challenge/docs/tree/main/hyperbook/book/grundlagen/contest.md">✎ GitHub</a><a href="#" onclick="hyperbookReset()"><span class="reset-icon" title="Das Hyperbook zurücksetzen"></span></a><span class="copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a> by <a href="https://software-challenge.de">Software-Challenge Germany</a></span></div></main></div><script src="/__hyperbook_assets/client.js?version=0.57.3" defer></script></body></html>

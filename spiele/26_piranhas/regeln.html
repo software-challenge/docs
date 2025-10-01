@@ -1,0 +1,177 @@
+<!doctype html><html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,, interactive-widget=resizes-content"><title>Spielregeln - Software-Challenge Dokumentation</title><meta property="og:title" value="Spielregeln - Software-Challenge Dokumentation"><meta name="description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta property="og:description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta name="keywords"><link rel="stylesheet" href="/__hyperbook_assets/normalize.css?version=0.57.3"><style>
+html,
+body {
+  overflow: hidden;
+  margin: 0;
+  height: 100dvh;
+  width: 100dvw;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --color-brand: #ECC94B;
+  --color-brand-dark: #ECC94B;
+  --color-brand-text: white;
+  --main-width: 980px;
+  --header-height: 60px;
+  --nav-width: minmax(300px, 0.33fr);
+  --nav-font-size: 0.9rem;
+  --body-font-size: 14px;
+}
+@font-face {
+  font-family: hyperbook-body;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: hyperbook-heading;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: hyperbook-code;
+  src: url(/fonts/SourceCodePro-Regular.ttf);
+  size-adjust: 100%;
+}
+
+body {
+  overscroll-behavior-x: none;
+  background-color: transparent;
+  color: var(--color-text);
+  font-family: hyperbook-body;
+  font-weight: normal;
+  font-size: var(--body-font-size);
+  margin: 0;
+  padding: 0;
+}
+</style><noscript id="dark-mode-toggle-stylesheets"><link rel="stylesheet" href="/__hyperbook_assets/light.css?version=0.57.3" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="/__hyperbook_assets/dark.css?version=0.57.3" media="(prefers-color-scheme: dark)"></noscript><script src="/__hyperbook_assets/dark-mode-toggle-stylesheets-loader.js?version=0.57.3"></script><script type="module" src="/__hyperbook_assets/dark-mode-toggle.js?version=0.57.3"></script><script src="/__hyperbook_assets/i18n.js?version=0.57.3"></script><script src="/__hyperbook_assets/dexie.min.js?version=0.57.3"></script><script src="/__hyperbook_assets/dexie-export-import.js?version=0.57.3"></script><script src="/__hyperbook_assets/store.js?version=0.57.3"></script><script>
+window.Prism = window.Prism || {};
+window.Prism.manual = true;</script><script src="/__hyperbook_assets/prism/prism.js?version=0.57.3"></script><link rel="stylesheet" href="/__hyperbook_assets/prism/prism.css?version=0.57.3"><link rel="stylesheet" href="/__hyperbook_assets/prism/prism-theme-github-dark.css?version=0.57.3" media="(prefers-color-scheme: dark)"><link rel="stylesheet" href="/__hyperbook_assets/prism/prism-theme-github-light.css?version=0.57.3" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="/__hyperbook_assets/math/katex.min.css?version=0.57.3"><link rel="stylesheet" href="/__hyperbook_assets/shell.css?version=0.57.3"><link rel="stylesheet" href="/__hyperbook_assets/content.css?version=0.57.3"><link rel="stylesheet" href="/__hyperbook_assets/code.css?version=0.57.3"><script>
+HYPERBOOK_ASSETS = "/__hyperbook_assets/"
+</script><script type="module" src="/__hyperbook_assets/side-drawer.js?version=0.57.3" async></script><script src="/__hyperbook_assets/lunr.min.js?version=0.57.3" defer></script><script src="/__hyperbook_assets/lunr-languages/lunr.stemmer.support.min.js?version=0.57.3" defer></script><script src="/__hyperbook_assets/lunr-languages/lunr.de.min.js?version=0.57.3" defer></script><script src="/__hyperbook_assets/search.js?version=0.57.3" defer></script><script src="/__hyperbook_assets/qrcode.js?version=0.57.3" async></script></head><body><div class="main-grid"><header><div class="mobile-nav"><button aria-label="Nav Toggle" class="toggle" onclick="hyperbook.navToggle()"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></button><side-drawer id="nav-drawer"><div class="nav-drawer-content"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div data-id="_nav:/grundlagen" class="section"><div class="collapsible name empty  "><span class="label">Technische Grundlagen</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/grundlagen/player">Computerspieler</a></li><li><a class="page" href="/grundlagen/server">Spielleiter</a></li><li><a class="page" href="/grundlagen/contest">Wettkampfsystem</a></li></ul></div></div><div data-id="_nav:/spiele" class="virtual-section"><div class="links"><div data-id="_nav:/spiele/26_piranhas" class="section"><div class="collapsible name empty  expanded"><span class="label">Piranhas 2026</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page active" href="/spiele/26_piranhas/regeln">Spielregeln</a></li><li><a class="page" href="/spiele/26_piranhas/xml">XML Dokumentation</a></li></ul></div></div></div></div><div data-id="_nav:/entwicklung" class="section"><div class="collapsible name  expanded"><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul><div data-id="_nav:/entwicklung/java" class="section"><div class="collapsible name empty  "><span class="label">Java</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/java/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/java/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/java/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/java/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/java/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/java/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/java/Anleitung-Abgabe">Anleitung für Abgabe</a></li></ul></div></div><div data-id="_nav:/entwicklung/python" class="section"><div class="collapsible name empty  "><span class="label">Python</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/python/installation-von-python">Installation von Python</a></li><li><a class="page" href="/entwicklung/python/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/python/getting-started">Getting Started</a></li><li><a class="page" href="/entwicklung/python/python-programmierstil">Sauberer Programmierstil in Python</a></li><li><a class="page" href="/entwicklung/python/oop-in-python">Objektorientierte Programmierung in Python</a></li><li><a class="page" href="/entwicklung/python/vorlage-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/python/spieler-abgeben">Spieler für den Wettbewerb abgeben</a></li></ul></div></div></div></div><div data-id="_nav:/xml" class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div></side-drawer></div><a class="branding" href="/"><div class="logo"><img alt="logo" src="/logo.svg"></div><div class="name">Software-Challenge Dokumentation</div></a><button id="search-toggle" onclick="hyperbook.searchToggle()" title="Suche"></button><side-drawer id="search-drawer" right><div class="search-drawer-content"><div class="search-input"><div class="search-icon"></div><input id="search-input" placerholder="..."><button class="search-button" onclick="hyperbook.search()"></button></div><div id="search-results"></div></div></side-drawer><dark-mode-toggle id="dark-mode-toggle" appearence="switch" title="Zwischen Dunkel- und Hellmodus wechseln" permanent></dark-mode-toggle></header><div class="sidebar"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><div data-id="_nav:/grundlagen" class="section"><div class="collapsible name empty  "><span class="label">Technische Grundlagen</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/grundlagen/player">Computerspieler</a></li><li><a class="page" href="/grundlagen/server">Spielleiter</a></li><li><a class="page" href="/grundlagen/contest">Wettkampfsystem</a></li></ul></div></div><div data-id="_nav:/spiele" class="virtual-section"><div class="links"><div data-id="_nav:/spiele/26_piranhas" class="section"><div class="collapsible name empty  expanded"><span class="label">Piranhas 2026</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page active" href="/spiele/26_piranhas/regeln">Spielregeln</a></li><li><a class="page" href="/spiele/26_piranhas/xml">XML Dokumentation</a></li></ul></div></div></div></div><div data-id="_nav:/entwicklung" class="section"><div class="collapsible name  expanded"><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul><div data-id="_nav:/entwicklung/java" class="section"><div class="collapsible name empty  "><span class="label">Java</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/java/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/java/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/java/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/java/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/java/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/java/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/java/Anleitung-Abgabe">Anleitung für Abgabe</a></li></ul></div></div><div data-id="_nav:/entwicklung/python" class="section"><div class="collapsible name empty  "><span class="label">Python</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/entwicklung/python/installation-von-python">Installation von Python</a></li><li><a class="page" href="/entwicklung/python/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/python/getting-started">Getting Started</a></li><li><a class="page" href="/entwicklung/python/python-programmierstil">Sauberer Programmierstil in Python</a></li><li><a class="page" href="/entwicklung/python/oop-in-python">Objektorientierte Programmierung in Python</a></li><li><a class="page" href="/entwicklung/python/vorlage-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/python/spieler-abgeben">Spieler für den Wettbewerb abgeben</a></li></ul></div></div></div></div><div data-id="_nav:/xml" class="section"><div class="collapsible name empty  "><span class="label">Allgemeine XML-Dokumentation</span></div><div class="collapsible-content links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></div></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div><main><article>
+<div class="hyperbook-markdown"><button id="toc-toggle" onclick="hyperbook.tocToggle()" title="Inhaltsverzeichnis"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div></button>
+  <side-drawer id="toc-drawer" right>
+    <div class="toc-drawer-content">
+      <nav class="toc">
+        <ul>
+          <li class="level-1"><a href="#spielregeln-piranhas-fr-die-softwarechallenge-2026">Spielregeln "Piranhas" für die Software-Challenge 2026</a></li>
+          <li class="level-1"><a href="#ziel-des-spieles">Ziel des Spieles</a></li>
+          <li class="level-1"><a href="#anfangsaufstellung">Anfangsaufstellung</a></li>
+          <li class="level-1"><a href="#zge">Züge</a></li>
+          <li class="level-1"><a href="#spielende">Spielende</a></li>
+          <li class="level-1"><a href="#gewinner">Gewinner</a></li>
+        </ul>
+      </nav>
+    </div>
+  </side-drawer>
+  <h1 id="spielregeln-piranhas-fr-die-softwarechallenge-2026"><a href="#spielregeln-piranhas-fr-die-softwarechallenge-2026" class="heading"><span>Spielregeln "Piranhas" für die Software-Challenge 2026</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/26_piranhas/regeln#spielregeln-piranhas-fr-die-softwarechallenge-2026&#x22;, &#x22;Spielregeln &#x22;Piranhas&#x22; für die Software-Challenge 2026&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/26_piranhas/regeln#spielregeln-piranhas-fr-die-softwarechallenge-2026">🔖</button></h1>
+  <p>
+    Das Spielfeld ist ein Aquarium,
+    ein 10x10 Schachbrett mit den Spalten A-J und Zeilen 0-9.
+    Ein Spieler spielt die roten, der andere die blauen Fische.
+  </p>
+  <h1 id="ziel-des-spieles"><a href="#ziel-des-spieles" class="heading"><span>Ziel des Spieles</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/26_piranhas/regeln#ziel-des-spieles&#x22;, &#x22;Ziel des Spieles&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/26_piranhas/regeln#ziel-des-spieles">🔖</button></h1>
+  <p>
+    Alle Fische der eigenen Farbe sollen zu einem Schwarm verbunden werden,
+    sich also auf einem zusammenhängenden Gebiet im Aquarium befinden.
+    Dabei gelten senkrecht, waagerecht und diagonal nebeneinanderliegende Felder als zusammenhängend.
+  </p>
+  <h1 id="anfangsaufstellung"><a href="#anfangsaufstellung" class="heading"><span>Anfangsaufstellung</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/26_piranhas/regeln#anfangsaufstellung&#x22;, &#x22;Anfangsaufstellung&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/26_piranhas/regeln#anfangsaufstellung">🔖</button></h1>
+  <p>
+    Die Fische des roten Spielers beginnen links und rechts,
+    die des blauen oben und unten, genauer gesagt:
+  </p>
+  <ul>
+    <li>8 rote Fische auf den Feldern A1-A8</li>
+    <li>8 rote Fische auf den Feldern J1-J8</li>
+    <li>8 blaue Fische auf den Feldern B0-I0</li>
+    <li>8 blaue Fische auf den Feldern B9-I9</li>
+  </ul>
+  <p>
+    Beide Spieler starten mit einer symmetrischen Fischaufstellung
+    aus Fischen der Wertigkeit 1-3,
+    wobei es tendenziell mehr kleine als große Fische gibt.
+  </p>
+  <p>
+    Im inneren 6x6-Bereich befinden sich zwei zufällig generierte Kraken-Felder,
+    die zwar durchschwommen werden können, auf denen jedoch kein Zug enden darf.
+    Diese Felder behindern also die Schwarmbildung.
+    Die beiden Kraken teilen keine Zeile, Spalte oder Diagonale miteinander.
+  </p>
+  <h1 id="zge"><a href="#zge" class="heading"><span>Züge</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/26_piranhas/regeln#zge&#x22;, &#x22;Züge&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/26_piranhas/regeln#zge">🔖</button></h1>
+  <p>
+    Es wird abwechselnd gezogen, wobei Rot beginnt.
+    Jede Runde macht jeder Spieler einen Zug.
+    In jedem Zug bewegt man einen eigenen Fisch
+    auf einer senkrechten, waagerechten oder diagonalen Linie
+    genauso viele Felder in eine Richtung,
+    wie insgesamt Fische (beider Farben) auf dieser Linie sind.
+  </p>
+  <p>
+    Dabei muss man auf einem leeren Feld oder auf einem vom Gegner besetzten Feld landen.
+    Beim Zug darf man Felder mit eigenen Fischen sowie Kraken überspringen,
+    nicht aber Felder mit gegnerischen Fischen.
+    Sollte ein gegnerischer Fisch im Weg sein, ist der entsprechende Zug ungültig.
+    Bei der Anzahl der zu ziehenden Felder werden übersprungene Felder mitgezählt.
+    Wenn man auf einem Feld ankommt, auf dem ein gegnerischer Fisch schwimmt,
+    wird dieser gefressen (ersatzlos vom Spielfeld entfernt).
+  </p>
+  <p>
+    Zum Beispiel kann Rot im 1. Zug einen beliebigen roten Fisch zwei Felder
+    in Richtung der Spielfeldmitte bewegen, z.B. von A4 nach C4.
+    Eine andere Möglichkeit für den 1. Zug wäre, einen Fisch von A1 nach A9 zu ziehen.
+    Man könnte auch mit dem Fisch auf A2 den gegnerischen Fisch auf C0 fressen.
+  </p>
+  <h1 id="spielende"><a href="#spielende" class="heading"><span>Spielende</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/26_piranhas/regeln#spielende&#x22;, &#x22;Spielende&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/26_piranhas/regeln#spielende">🔖</button></h1>
+  <p>
+    Das Spiel endet, wenn am Ende einer Runde
+    (Blau könnte also einen roten Schwarm noch in der 2. Hälfte einer Runde wieder zerstören)
+    alle auf dem Spielfeld verbliebenen Fische einer Farbe
+    zu einem einzigen zusammenhängenden Schwarm verbunden sind,
+    spätestens jedoch nach 30 Runden.
+    Das Spiel endet ebenfalls, wenn einer der Spieler keinen regulären Zug machen kann.
+    In diesem Fall hat dieser Spieler verloren.
+  </p>
+  <h1 id="gewinner"><a href="#gewinner" class="heading"><span>Gewinner</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/spiele/26_piranhas/regeln#gewinner&#x22;, &#x22;Gewinner&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/26_piranhas/regeln#gewinner">🔖</button></h1>
+  <p>
+    Der Spieler gewinnt,
+    der am Ende des Spiels den schwersten zusammenhängenden Schwarm besitzt,
+    wobei es sich auch um einen Teilschwarm handeln kann (Gewichtskriterium).
+    Dafür wird für jeden Schwarm jeweils die Summe der Gewichte aller Fische in dem Schwarm gebildet.
+    Ist der schwerste Schwarm von Rot genauso schwer,
+    wie der schwerste Schwarm von Blau,
+    gewinnt der Spieler, der während des Spiels zuerst einen Schwarm (kein Teilschwarm) gebildet hat,
+    unabhängig davon, ob es ein eigener oder der des Gegners ist.
+    Falls dies auch nicht der Fall ist, gibt es ein Unentschieden.
+  </p>
+  <p>
+    Ein Beispiel:
+    Durch einen Zug von Rot (Spieler 1) entsteht erstmals eine Situation,
+    in der alle Fische eines Spielers (egal ob Rot oder Blau) zu einem einzigen Schwarm verbunden sind
+    (indem Rot alle eigenen Fische vereint oder einen abseits befindlichen blauen Fisch frisst).
+    Blau (Spieler 2) muss jedoch noch einen Zug machen und teilt den Schwarm dadurch wieder
+    (weil es einen Fisch aus dem eigenen Schwarm entfernen muss oder einen roten Fisch aus der Mitte des Schwarms frisst).
+    Das Spiel ist also nicht beendet (außer es war Runde 30).
+    Liefert am Ende des Spiels das Gewichtskriterium keinen Gewinner,
+    gewinnt Rot, da Rot erstmals eine Situation herbeigeführt hat,
+    in der alle Fische eines Spielers zu einem Schwarm verbunden sind.
+  </p>
+  <p>
+    Während der Meisterschaft und der Champions League geht für beide Spieler das Gewicht des jeweils schwersten Schwarms als nachrangiges Kriterium in die Rangliste ein.
+    Beim Final Eight gibt es dieses nachrangige Kriterium für die Rangliste nicht.
+    Beim Final Eight gewinnt derjenige Spieler eine Begegnung,
+    der nach einer geraden Anzahl von Spielen (mindestens 6)
+    mehr Spiele als der Gegner gewonnen hat.
+  </p>
+</div>
+</article><div class="jump-container"><a class="jump previous" href="/grundlagen/contest">Wettkampfsystem</a><a class="jump next" href="/entwicklung">Entwicklung eines Computerspielers</a></div><div class="meta"><a class="edit-github" href="https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/26_piranhas/regeln.md">✎ GitHub</a><a href="#" onclick="hyperbookReset()"><span class="reset-icon" title="Das Hyperbook zurücksetzen"></span></a><span class="copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a> by <a href="https://software-challenge.de">Software-Challenge Germany</a></span></div></main></div><script src="/__hyperbook_assets/client.js?version=0.57.3" defer></script></body></html>
