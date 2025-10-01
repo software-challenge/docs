@@ -5,7 +5,7 @@ index: 3
 
 # Computerspieler abgabefertig machen
 
-Damit das :t[Wettkampfsystem]{#contest} mit dem :t[Computerspieler]{#player} arbeiten kann,
+Damit das [Wettkampfsystem](/grundlagen/contest) mit dem [Computerspieler](/grundlagen/player) arbeiten kann,
 muss er als ausführbares Programm in ein ZIP-Archiv verpackt werden.
 
 Je nach Programmiersprache, in der der Spieler entwickelt wurde,
@@ -39,7 +39,7 @@ Für die aktuelle Saison gibt es bisher keine inoffiziellen Spielervorlagen.
 ## Generelles zum Upload
 
 Das Hochladen des Spielers im Wettkampfsystem wird detailliert 
-unter :t[Wettkampfsystem->Computerspieler]{#contest.computerspieler} beschrieben.
+unter [Wettkampfsystem->Computerspieler](grundlagen/contest#computerspieler) beschrieben.
 
 Der Computerspieler wird in einem Docker container ausgeführt,
 welcher die verfügbaren Bibliotheken und Programme bestimmt.
@@ -97,15 +97,15 @@ Andere Kodierungen führen zu Fehlern bei der Ausführung auf dem Server.
 In Notepad++ kann die Kodierung einfach in dem Tab `Kodierung` angepasst werden,
 die Zeilenenden in `Bearbeiten > Format Zeilenende`.
 
-Bei kompilierten Sprachen müssen die :t[Computerspieler]{#player} für 64bit Linux kompiliert werden,
-bei interpretierten Sprachen muss ein passender Interpreter auf dem :t[Wettkampfsystem]{#contest} vorhanden sein.
+Bei kompilierten Sprachen müssen die Computerspieler für 64bit Linux kompiliert werden,
+bei interpretierten Sprachen muss ein passender Interpreter auf dem Wettkampfsystem vorhanden sein.
 Weiterhin müssen Abhängigkeiten wie z.B. genutzte Bibliotheken vorhanden sein
 oder mitgeliefert werden.
 
 ## Technische Daten für die Ausführung der Computerspieler
 
-Bei allen im :t[Wettkampfsystem]{#contest} ausgetragenen Spielen
-laufen die :t[Computerspieler]{#player} auf den Servern des Wettkampfsystems.
+Bei allen im Wettkampfsystem ausgetragenen Spielen
+laufen die Computerspieler auf den Servern des Wettkampfsystems.
 
 |                  |                                                   |
 |------------------|---------------------------------------------------|
@@ -120,7 +120,7 @@ wobei das Recht des ersten Zuges abwechselt.
 
 Die Zugzeit ist für jeden Zug auf zwei Sekunden begrenzt.
 Dabei gilt für die Rechenzeit die im Institut verwendete Hardware als Referenz.
-Jeder :t[Computerspieler]{#player} wird dabei auf einer eigenen virtuellen Maschine
+Jeder Computerspieler wird dabei auf einer eigenen virtuellen Maschine
 mit unten stehenden Spezifikationen ausgeführt.
 
 Sollte ein Spieler einen ungültigen Zug setzen oder die maximale Zugzeit überschreiten,

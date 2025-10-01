@@ -90,7 +90,7 @@ Application" auswählt.
 
 :::alert{info}
 Damit die Spielervorlage erfolgreich startet, muss der
-:t[Spielleiter]{#server} laufen und auf eine Verbindung warten.
+[Spielleiter](/grundlagen/server) laufen und auf eine Verbindung warten.
 :::
 
 ## Einrichtung von IntelliJ

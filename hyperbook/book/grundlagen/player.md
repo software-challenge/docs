@@ -6,7 +6,7 @@ index: 1
 # Der Computerspieler
 
 Der Computerspieler ist ein Programm,
-das sich mit dem :t[Spielleiter]{#server} verbindet
+das sich mit dem [Spielleiter](/grundlagen/server) verbindet
 und die gestellte Aufgabe selbstständig löst.
 Die Aufgabe der Schülerinnen und Schüler ist es,
 sich eine Strategie zu überlegen und zu implementieren,
@@ -18,7 +18,7 @@ im [Downloadbereich der Software-Challenge Website](https://software-challenge.d
 die für Neulinge sehr zu empfehlen sind,
 da so die XML-Schnittstelle nicht beachtet werden muss.
 
-**Hinweis:** Das :t[Spielleiter-Programm]{#server} benötigt :t[Java]{#java}.
+**Hinweis:** Das Spielleiter-Programm benötigt Java.
 Deshalb muss auf den ausführenden Rechnern
 auch das [Java SDK installiert](/entwicklung/installation-von-java) sein.
 
