@@ -63,6 +63,13 @@ Man könnte auch mit dem Fisch auf A2 den gegnerischen Fisch auf C0 fressen.
 
 ![Zugweite](/images/spiele/piranha/Piranha_Zugweite.png)
 
+Hier noch einmal eine mögliche Spielsituation.
+Für die Übersicht behandelt das Bild nur die eingezeichneten Achsen.
+Grüne Pfeile symbolisieren mögliche Züge und rote jene,
+die aufgrund der Regeln nicht erlaubt sind.
+
+![kompliziertere Zugweiten](/images/spiele/piranha/Piranha_Zugweite.png)
+
 # Spielende
 
 Das Spiel endet, wenn am Ende einer Runde
