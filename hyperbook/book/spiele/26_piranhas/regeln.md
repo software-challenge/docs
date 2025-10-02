@@ -37,6 +37,8 @@ die zwar durchschwommen werden können, auf denen jedoch kein Zug enden darf.
 Diese Felder behindern also die Schwarmbildung.
 Die beiden Kraken teilen keine Zeile, Spalte oder Diagonale miteinander.
 
+![Spielfeld](/images/spiele/piranha/Piranha_Spielfeld.jpg)
+
 # Züge
 
 Es wird abwechselnd gezogen, wobei Rot beginnt. 
@@ -59,6 +61,8 @@ in Richtung der Spielfeldmitte bewegen, z.B. von A4 nach C4.
 Eine andere Möglichkeit für den 1. Zug wäre, einen Fisch von A1 nach A9 zu ziehen.
 Man könnte auch mit dem Fisch auf A2 den gegnerischen Fisch auf C0 fressen.
 
+![Zugweite](/images/spiele/piranha/Piranha_Zugweite.jpg)
+
 # Spielende
 
 Das Spiel endet, wenn am Ende einer Runde
@@ -68,6 +72,8 @@ zu einem einzigen zusammenhängenden Schwarm verbunden sind,
 spätestens jedoch nach 30 Runden.
 Das Spiel endet ebenfalls, wenn einer der Spieler keinen regulären Zug machen kann.
 In diesem Fall hat dieser Spieler verloren.
+
+![Spielende](/images/spiele/piranha/Piranha_Ende_Schwarm.jpg)
 
 # Gewinner
 
