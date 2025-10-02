@@ -80,7 +80,7 @@ spätestens jedoch nach 30 Runden.
 Das Spiel endet ebenfalls, wenn einer der Spieler keinen regulären Zug machen kann.
 In diesem Fall hat dieser Spieler verloren.
 
-![Spielende](/images/spiele/piranha/Piranha_Ende_Schwarm.png)
+![Spielende](/images/spiele/piranha/Piranha_Züge_Kompliziertrer.png)
 
 # Gewinner
 
