@@ -67,7 +67,7 @@ Für die Übersicht behandelt das Bild nur die eingezeichneten Achsen.
 Grüne Pfeile symbolisieren mögliche Züge und rote jene,
 die aufgrund der Regeln nicht erlaubt sind.
 
-![Zugweite komplizierter](/images/spiele/piranha/Piranha_Züge_Kompliziertrer.png)
+![kompliziertere Zugweite](/images/spiele/piranha/Piranha_Züge_Kompliziertrer.png)
 
 # Spielende
 
