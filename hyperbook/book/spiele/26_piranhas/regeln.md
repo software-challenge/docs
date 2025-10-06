@@ -3,7 +3,6 @@ name: Spielregeln
 index: 1
 permaid: current_game_start
 prev: /grundlagen/contest
-next: /entwicklung
 ---
 
 # Spielregeln "Piranhas" für die Software-Challenge 2026
