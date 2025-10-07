@@ -67,7 +67,7 @@ Für die Übersicht behandelt das Bild nur die eingezeichneten Achsen.
 Grüne Pfeile symbolisieren mögliche Züge und rote jene,
 die aufgrund der Regeln nicht erlaubt sind.
 
-![kompliziertere Zugweiten](/images/spiele/piranha/Piranha_Zugweite.png)
+![kompliziertere Zugweite](/images/spiele/piranha/Piranha_kompliziertere_Zuege.png)
 
 # Spielende
 
@@ -79,7 +79,7 @@ spätestens jedoch nach 30 Runden.
 Das Spiel endet ebenfalls, wenn einer der Spieler keinen regulären Zug machen kann.
 In diesem Fall hat dieser Spieler verloren.
 
-![Spielende](/images/spiele/piranha/Piranha_Züge_Kompliziertrer.png)
+![Spielende](/images/spiele/piranha/Piranha_Ende_Schwarm.png)
 
 # Gewinner
 
