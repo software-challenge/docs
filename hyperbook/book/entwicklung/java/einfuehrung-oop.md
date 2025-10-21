@@ -188,7 +188,7 @@ nehmen und entsprechend erweitern:
 
          public PremiumKonto() {
              super();
-             zinsbetrag = 2.5d; // 2.5% Zinsen
+             zinsbetrag = 2.5; // 2.5% Zinsen
          }
 
          public void zinsenGutschreiben() {
@@ -260,7 +260,7 @@ sein, kann man diesen als statisch deklarieren:
 
 ```java
     public class PremiumKonto extends Konto {
-         private static double zinsbetrag = 2.5d; // 2.5% Zinsen
+         private static double zinsbetrag = 2.5; // 2.5% Zinsen
 
          ...
 
@@ -279,10 +279,10 @@ Von außen kommt man an den Zinsbetrag über die Methode
 den Klassennamen aufrufen darf.
 
 ```java
-    PremiumKonto.setZinsbetrag(3d); // Zinsen auf 3% erhöhen
+    PremiumKonto.setZinsbetrag(3); // Zinsen auf 3% erhöhen
 
     PremiumKonto premium3 = new PremiumKonto();
-    premium3.setZinsbetrag(3d);
+    premium3.setZinsbetrag(3);
 ```
 
 **Tipp:** Damit man besser erkennen kann, dass es sich um statische
