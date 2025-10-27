@@ -22,7 +22,7 @@ und sogar als Mensch mitspielen.
 ## System vorbereiten und Spielleiter starten
 
 Die einzige Voraussetzung ist
-die [Installation einer Java-Laufzeitumgebung](/entwicklung/installation-von-java).
+die [Installation einer Java-Laufzeitumgebung](/entwicklung/java/installation-von-java).
 dass auf dem Rechner mindestens die Laufzeitumgebung für Java 11 installiert ist.
 
 Nach der erfolgreichen Installation kann man den grafischen Server
