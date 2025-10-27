@@ -19,7 +19,7 @@ oder die Anzahl der Mitglieder in den einzelnen Teams.
 
 ![Die Startseite der Weboberfläche](/images/wettkampfsystem_neu_startseite.png)
 
-Die Weboberfläche ist unter der URL <http://contest.software-challenge.de> erreichbar.
+Die Weboberfläche ist unter der URL <https://contest.software-challenge.de> erreichbar.
 Alle Informationen, die den Ablauf des Wettkampfs betreffen
 (z.B. Terminplan, News oder Rangliste) sind auch ohne Anmeldung verfügbar.
 Man muss sich nur am System anmelden, wenn man auf seinen Kurs,
@@ -109,7 +109,7 @@ auch für statistische Zwecke gebraucht und sollte in jedem Fall stimmen.
 ##### Benachrichtigungen
 
 Für Personen mit Zugangsdaten kann neben den Personendetails eingestellt
-werden, unter welchen Umständen diese Personen eine e-Mail mit einer
+werden, unter welchen Umständen diese Personen eine E-Mail mit einer
 entsprechenden Benachrichtigung erhalten sollen. Dabei gibt es folgende
 Optionen:
 
@@ -134,79 +134,79 @@ um neue Computerspieler hinzuzufügen.
 Diese führt zu einem Formular,
 mit dem man das ZIP-Archiv des Computerspielers hochladen kann.
 
-Man kann dem Spieler einen **Namen** geben, damit man ihn in der Liste
-der hochgeladenen Spieler später besser erkennt. Man kann auch noch
-zusätzliche **Parameter** festlegen, die dem Computerspieler beim Start
-übergeben werden. Dies ist nützlich, wenn der Computerspieler
-verschiedene Spielstrategien unterstützt und man diese per Parameter
-auswählen kann. Dann muss man den Computerspieler nur einmal hochladen
-(die Parameter kann man auch später verändern). Die Angabe eines Namens
-und von Parametern ist optional.
+Man kann dem Spieler einen **Namen** geben,
+damit man ihn in der Liste der hochgeladenen Spieler später besser erkennt.
+Man kann auch noch zusätzliche **Parameter** festlegen,
+die dem Computerspieler beim Start übergeben werden.
+Dies ist nützlich,
+wenn der Computerspieler verschiedene Spielstrategien unterstützt
+und man diese per Parameter auswählen kann.
+Dann muss man den Computerspieler nur einmal hochladen (die Parameter kann man auch später verändern).
+Die Angabe eines Namens und von Parametern ist optional.
 
-Als letztes muss noch die Umgebung (das **Docker Image**) gewählt
-werden, in der der Computerspieler auf dem Wettkampfsystem ausgeführt
-werden soll. Verwendet der Computerspieler eine der beiden offiziell
-unterstützten Programmiersprachen Java und Ruby, kann hier einfach das
-entsprechende ausgewählt werden. Ansonsten hängt es von der gewählten
-Programmiersprache ab, ob eine passende Umgebung angeboten wird. Sollte
-sich nichts finden, installieren wir gern etwas passendes nach.
+Als letztes muss noch die Umgebung (das **Docker Image**) gewählt werden,
+in der der Computerspieler auf dem Wettkampfsystem ausgeführt werden soll.
+Verwendet der Computerspieler eine der beiden offiziell unterstützten Programmiersprachen Java und Ruby,
+kann hier einfach das entsprechende ausgewählt werden.
+Ansonsten hängt es von der gewählten Programmiersprache ab,
+ob eine passende Umgebung angeboten wird.
+Sollte sich nichts finden,
+kontaktieren Sie bitte [den technischen Support](mailto:tech@software-challenge.de).
 
-Wurde ein Spieler erfolgreich hochgeladen, befindet er sich in der Liste
-aller Spieler des Teams. Hier kann man mit dem Link "Testen" seine
-Turnierfähigkeit prüfen. Der Spieler spielt dann zweimal gegen den
-Zufallsspieler. Ein Haken in einem grünen Kreis symbolisiert einen
-erfolgreichen Test. Das Logbuch über den Testlauf kann mit dem Link
-"Logs" aufgerufen werden. Unter Umständen muss noch die richtige
-Startdatei eingestellt werden. Dafür kann man rechts in der Spalte
-"Hauptdatei" auf den entsprechenden Link klicken und im folgenden
-Dateimenü die richtige Startdatei auswählen.
+Wurde ein Spieler erfolgreich hochgeladen,
+befindet er sich in der Liste aller Spieler des Teams.
+Hier kann man mit dem Link "Testen" seine Turnierfähigkeit prüfen.
+Der Spieler spielt dann zweimal gegen den Zufallsspieler.
+Ein Haken in einem grünen Kreis symbolisiert einen erfolgreichen Test.
+Das Logbuch über den Testlauf kann mit dem Link "Logs" aufgerufen werden.
+Unter Umständen muss noch die richtige Startdatei eingestellt werden.
+Dafür kann man rechts in der Spalte "Hauptdatei" auf den entsprechenden Link klicken
+und im folgenden Dateimenü die richtige Startdatei auswählen.
 
 Mit dem '+' kann man einen Kommentar an den Computerspieler heften,
 so dass man ihn besser von den anderen unterscheiden kann.
 
-Mit dem Link "Aktivieren" markiert man den Spieler als denjenigen, der
-das nächste Spiel auf dem Wettkampfsystem spielen soll. Dies kann ein
-Freundschaftsspiel oder ein Spiel des Wettkampfes sein.
+Mit dem Link "Aktivieren" markiert man den Spieler als denjenigen
+der das nächste Spiel auf dem Wettkampfsystem spielen soll.
+Dies kann ein Freundschaftsspiel oder ein Spiel des Wettkampfes sein.
 
 **Hinweis:** Es nimmt der jeweils aktive Computerspieler am Spieltag
-teil. Die Frist für das Aktivieren eines Clients, der an einem Spieltag
-teilnehmen soll, endet am Spieltag um 0 Uhr. Bei späterer Aktivierung
-kann nicht garantiert werden, dass der neue statt des bisherigen Clients
-am Spieltag teilnimmt. Ist an einem Spieltag kein Computerspieler
-aktiviert, nimmt das Team nicht an der Begegnung dieses Spieltages teil
+teil.
+Die Frist für das Aktivieren eines Clients,
+der an einem Spieltag teilnehmen soll,
+endet am Spieltag um 0 Uhr.
+Bei späterer Aktivierung kann nicht garantiert werden,
+dass der neue Client am Spieltag teilnimmt.
+Ist an einem Spieltag kein Computerspieler aktiviert,
+nimmt das Team nicht an der Begegnung dieses Spieltages teil
 und die betreffenden Spiele zählen als verloren.
 
 ## Freundschaftsspiele
 
-Um sich schon vor dem Wettkampf einen Eindruck von der Stärke des
-eigenen Teams zu machen, kann man mit seinen Gegnern Freundschaftsspiele
-absolvieren.
+Um sich schon vor dem Wettkampf einen Eindruck von der Stärke des eigenen Teams zu machen,
+kann man mit seinen Gegnern Freundschaftsspiele absolvieren.
 
-Um ein Freundschaftsspiel zu spielen gibt es zwei Möglichkeiten: Man
-fordert einen (oder alle) Gegner heraus oder man nimmt eine
-Herausforderung an.
+Um ein Freundschaftsspiel zu spielen gibt es zwei Möglichkeiten:
+Man fordert einen (oder alle) Gegner heraus oder man nimmt eine Herausforderung an.
 
-Durch einen Klick auf das Ergebnis eines gespielten Freundschaftsspiels
-kann man es sich im Detail anschauen.
+Durch einen Klick auf das Ergebnis eines gespielten Freundschaftsspiels kann man es sich im Detail anschauen.
 
 ## Verfügbare Schnittstellen
 
-Im folgenden können Schnittstellen gefunden werden mit denen man mit dem
-Wettkampfsystem interagieren kann.
+Im folgenden können Schnittstellen gefunden werden mit denen man mit dem Wettkampfsystem interagieren kann.
 
 ### Replays
 
-Man kann direkt auf unter "Replay herunterladen" auf der jeweiligen
-Match-Seite einen Link finden, der z.B. wie folgt aussieht:
-`…​/wettbewerb/2010/spieltage/XXXX/matches/XXXX/rounds/XXXX` bei einem
-normalen GET-Request erhält man das Replay-Archiv (also ein GZip
-Archiv). Um die Replays z.B. in einer eigenen Anwendung zu verwenden,
-kann man sich auch vom Server bereits entpackte und an das Format des
-Replay-Viewers angepasste XML-Files zurückgeben lassen. Dies kann zum
-Einen durch einen XML-Header des Requests geschehen oder zum Anderen
-einfach durch das Anhängen der Endung `.xml` an den oben genannten Link.
+Man kann direkt auf unter "Replay herunterladen" auf der jeweiligen Match-Seite einen Link finden,
+der z.B. wie folgt aussieht:
+`…​/wettbewerb/2010/spieltage/XXXX/matches/XXXX/rounds/XXXX`
+Bei einem normalen GET-Request erhält man das Replay-Archiv (also ein GZip Archiv).
+Um die Replays z.B. in einer eigenen Anwendung zu verwenden,
+kann man sich auch vom Server bereits entpackte und an das Format des Replay-Viewers angepasste XML-Files zurückgeben lassen.
+Dies kann zum Einen durch einen XML-Header des Requests geschehen
+oder zum Anderen einfach durch das Anhängen der Endung `.xml` an den oben genannten Link.
 
-Wenn größere Mengen Replays benötigt werden, empfehlen wir die
-Standard-Archive vorzuziehen und dann lokal zu entpacken, da diese schon
-fertig gepackt auf dem Server vorliegen und somit schneller und mit
-weniger Last für das System zur Verfügung gestellt werden können.
+Wenn größere Mengen Replays benötigt werden,
+empfehlen wir die Standard-Archive vorzuziehen und dann lokal zu entpacken,
+da diese schon fertig gepackt auf dem Server vorliegen
+und somit schneller und mit weniger Last für das System zur Verfügung gestellt werden können.
