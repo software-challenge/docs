@@ -26,15 +26,16 @@ des Repositories, und ergänzend dazu: [Hier](java/Anleitung-Abgabe.md) in der D
 Eine Anleitungen dafür gibt es in der [Dokumentation](python/7-spieler-abgeben.md).
 
 ### Inoffizielle Spielervorlagen
+
+- [Rust Client](https://github.com/simoncreates/socha) als [Cargo Crate](https://crates.io/crates/socha)
 <!--
 - [C#](https://github.com/jnccd/socha-client-csharp/blob/master/README.md)
 - [C++](https://github.com/Estugon/sc-penguins-cpp/blob/main/README.md)
 - [Python](https://github.com/FalconsSky/socha-python-client/blob/master/README.md)
-- [Rust](https://github.com/fwcd/socha-client-rust-2023/blob/main/README.md)
 - [Swift](https://github.com/matthesjh/sc23-swift-client/blob/main/README.md)
 - [Ruby](https://github.com/software-challenge/client-ruby/blob/main/README.md)
 -->
-Für die aktuelle Saison gibt es bisher keine inoffiziellen Spielervorlagen.
+<!-- Für die aktuelle Saison gibt es bisher keine inoffiziellen Spielervorlagen. -->
 
 ## Generelles zum Upload
 
