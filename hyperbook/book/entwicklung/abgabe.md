@@ -18,12 +18,12 @@ In der Regel enthält die Spielervorlage alle nötigen Instruktionen zum Packen.
 ### Offizielle Spielervorlagen
 
 #### Java
-Anleitungen finden sich in der
+Anleitungen zum packen des Computerspielers findet sich in der
 [Readme](https://github.com/software-challenge/backend/blob/main/player/configuration/README.md)
-des Repositories, und ergänzend dazu: [Hier](java/Anleitung-Abgabe.md) in der Dokumentation.
+des Repositories, und ergänzend dazu findet sich eine [Anleitung zur Abgabe des Computerspielers](java/Anleitung-Abgabe.md) in der Dokumentation.
 
 #### Python
-Eine Anleitungen dafür gibt es in der [Dokumentation](python/7-spieler-abgeben.md).
+Eine Anleitungen dafür gibt es in der [Dokumentation](python/spieler-abgeben.md).
 
 ### Inoffizielle Spielervorlagen
 
@@ -48,7 +48,7 @@ Die verfügbaren Container-Vorlagen sind im Spielerhochladeformular im Wettkampf
 und bieten unter anderem Java, Python, Ruby, Node.js, Swift, .NET,
 oft in mehreren Versionen.
 
-## Andere Programmiersprache
+## Andere Programmiersprachen
 
 Bei Computerspielern in einer anderen Programmiersprache 
 muss das ZIP-Archiv ein Shell-Script 
@@ -90,7 +90,7 @@ Ein `start.sh` Script sieht also in etwa so aus:
     ./hauptprogramm_dateiname "$@"
 
 -   Script soll von `/bin/sh` interpretiert werden, es ist also ein einfaches Shell-Script.
--   Die Binärdatei wird ausführbar gemacht (das ist nötig, da in einem ZIP-Archiv das Ausführbar-Attribut nicht gespeichert wird).
+-   Mit `chmod + x` wird die Binärdatei wird ausführbar gemacht (das ist nötig, da in einem ZIP-Archiv das Ausführbar-Attribut nicht gespeichert wird).
 -   Die Binärdatei wird aufgerufen und alle Parameter, die das Script bekommen hat, werden weitergereicht (`"$@"`).
 
 Die `start.sh` muss in UTF-8 und mit UNIX(LF) Zeilenenden kodiert sein.
@@ -120,7 +120,7 @@ Jede Begegnung besteht aus jeweils sechs Spielen,
 wobei das Recht des ersten Zuges abwechselt.
 
 Die Zugzeit ist für jeden Zug auf zwei Sekunden begrenzt.
-Dabei gilt für die Rechenzeit die im Institut verwendete Hardware als Referenz.
+Dabei gilt für die Rechenzeit die obige Hardware als Referenz.
 Jeder Computerspieler wird dabei auf einer eigenen virtuellen Maschine
 mit unten stehenden Spezifikationen ausgeführt.
 
