@@ -76,7 +76,7 @@ Die Felder werden wie folgt codiert:
 
 - Leeres Feld: `EMPTY`
 - Krakenfeld: `SQUID`
-- Feld mit Fisch: `TEAM_GRÖßE` (z.B. `ONE_S` für den kleinen Fisch des Spielers 1, meist Rot)
+- Feld mit Fisch: `<TEAM>_<GRÖßE>` (z.B. `ONE_S` für den kleinen Fisch des Spielers 1, meist Rot)
   - wobei TEAM `ONE` oder `TWO` ist
   - und GRÖßE `S`, `M` oder `L` ist, der Größe des Fisches
 
