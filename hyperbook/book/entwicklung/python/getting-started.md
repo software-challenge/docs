@@ -19,14 +19,8 @@ Eine Spielervorlage kann komplett aus dem
 [Github-Repository](https://github.com/software-challenge/player_python/blob/master/logic.py)
 des socha-Pakets in den eben erstellten Ordner heruntergeladen werden.
 
-Standardmäßig heißt diese Datei `logic.py`, doch die tatsächliche Bezeichnung ist ebenfalls
-einem selbst überlassen. Für die Zukunft ist nur zu beachten, dass alle Befehle mit
-
-```bash
-python logic.py ...
-```
-
-an den gewählten Dateinamen angepasst werden.
+Standardmäßig heißt diese Datei `logic.py`, und sollte auch genau so genannt werden für den eigenen Bot.
+Grund dafür ist unsere Konfiguration des Wettkampfsystems, die keine anderen Dateinamen beim Ausführen anerkennt.
 
 ## Visual Studio Code Oberfläche
 

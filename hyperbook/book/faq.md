@@ -50,7 +50,8 @@ Diese sollen lediglich als Einstiegspunkt dienen,
 um sich weiter zu informieren. 
 
 Darüber hinaus ist zu beachten, 
-dass diese Themen durchaus sehr komplex sein Können und es ist vollkommen in Ordnung, 
+dass diese Themen durchaus sehr komplex sein können.
+Es ist vollkommen in Ordnung, 
 sich seine eigenen Algorithmen auszudenken, 
 welche die ausgedachten Strategien umsetzen. 
 Dies kann ebenfalls hervorragende Ergebnisse erzielen.

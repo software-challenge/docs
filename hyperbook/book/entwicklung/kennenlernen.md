@@ -14,5 +14,3 @@ Das Spiel selbst kann zu zweit oder allein gegen den [Zufallsspieler](/grundlage
 mit dem [Spielleiter](/grundlagen/server) gespielt werden.
 Es ist empfehlenswert, dies vor dem Beginn der Programmierung einige Male zu tun,
 um ein Gefühl für das Spiel zu bekommen.
-
-Die Spielregeln findet ihr [hier](../spiele/aktuell).
