@@ -131,7 +131,7 @@ Um IntelliJ zu installieren befilgt man folgende Schritte:
 
    1. Man geht oben links auf Optionen (Das Symbol mit den 4 Strichen)
    2. Klickt auf "File" und wählt dort "Project Structure" aus
-   3. Nun wählt man bei "SDK" (Software Devolopment Kit) die Version 15 
+   3. Nun wählt man bei "SDK" (Software Devolopment Kit) die Version 11 
       aus und setzt das "Language Level"  auf "SDK Default" ganz oben im Menü
    4. Nun geht man auf Apply und schließt das Menü
    5. Wenn man alle Schritte befolgt hat geht man nun wieder auf das Hammersymbol 
