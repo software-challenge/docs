@@ -72,9 +72,9 @@ Mit dieser Anleitung an der Hand wünschen wir nun
 ganz viel Erfolg beim Entwickeln eines Comuterspielers in Python 
 für die Software-Challenge Germany.
 
-Wenn trotzdem noch Probleme oder Unklarheiten bestehen, kann man sich jederzeit
-beim zugeordneten Tutor melden,
-auf unserem [Discord](https://discord.gg/jhyF7EU) fragen
-oder ein Issue auf Github im Repository
+Wenn trotzdem noch Probleme oder Unklarheiten bestehen,
+melde dich jederzeit bei deinem Tutor,
+frag auf unserem [Discord](https://discord.gg/jhyF7EU)
+oder erstell ein Issue auf Github im Repository
 der [Schnittstelle](https://github.com/software-challenge/player_python)
-oder dieser [Dokumentation](https://github.com/software-challenge/docs) erstellen.
+oder [dieser Dokumentation](https://github.com/software-challenge/docs).

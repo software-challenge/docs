@@ -1,11 +1,11 @@
 ---
-name: Anleitung für Abgabe
+name: Spieler für Abgabe Exportieren
 index: 9
 ---
 
 # Computerspieler abgabefertig machen (Anleitung für Export aus der IDE für Java)
 
-Im folgenden findet ihr eine Anleitung, 
+Im folgenden findet ihr eine Anleitung
 für den Export eures Computerspielers aus der Entwicklungsumgebung,
 um ihn im Wettkampfsystem hochzuladen.
 
@@ -27,9 +27,9 @@ Um dies zu tun gibt es zwei Wege:
    kann die Übersicht auch geöffnet werden, 
    in dem man oben auf Window/Show view/Other.../Gradle/Gradle Tasks geht 
    und dann einen Doppelklick darauf macht oder es auswählt und unten auf "open" klickt.
-   </br></br>
    
 Wenn die Gradle Tasks geöffnet sind, müssen folgende Schritte ausgeführt werden:
+
 1. Öffne den Ordner mit dem Namen des Projekts.
    Dieser ist standardmäßig "player-*Spielkürzel*-src"
 

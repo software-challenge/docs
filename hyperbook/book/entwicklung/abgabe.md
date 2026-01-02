@@ -18,17 +18,15 @@ In der Regel enthält die Spielervorlage alle nötigen Instruktionen zum Packen.
 ### Offizielle Spielervorlagen
 
 #### Java
-Anleitungen zum packen des Computerspielers findet sich in der
+Instruktionen zum Packen des Computerspielers sind in der
 [Readme](https://github.com/software-challenge/backend/blob/main/player/configuration/README.md)
-des Repositories, und ergänzend dazu findet sich eine [Anleitung zur Abgabe des Computerspielers](java/Anleitung-Abgabe.md) in der Dokumentation.
+der Spielervorlage, und ergänzend dazu findet sich eine [Anleitung zur Abgabe des Computerspielers](java/Anleitung-Abgabe) in der Dokumentation.
 
 #### Python
 Eine Anleitungen dafür gibt es in der [Dokumentation](python/spieler-abgeben.md).
 
-### Inoffizielle Spielervorlagen
-
-- [Rust Client](https://github.com/simoncreates/socha) als [Cargo Crate](https://crates.io/crates/socha)
 <!--
+- [Rust Client](https://github.com/simoncreates/socha) als [Cargo Crate](https://crates.io/crates/socha)
 - [C#](https://github.com/jnccd/socha-client-csharp/blob/master/README.md)
 - [C++](https://github.com/Estugon/sc-penguins-cpp/blob/main/README.md)
 - [Python](https://github.com/FalconsSky/socha-python-client/blob/master/README.md)
