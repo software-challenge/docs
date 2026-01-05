@@ -335,4 +335,10 @@ neu zu starten oder andere Spielernamen zu verwenden.
 
 TODO: Is this still right?
 Dieses Verhalten wird wahrscheinlich bald verändert,
-wobei dann jeder TestClient unabhängig vom Server die Punkte zählt.
+Die Ergebnisse der Spiele werden für den jeweiligen Spielernamen vom Server zusammengezählt,
+auch über mehrere Starts des TestClients.
+Die Ergebnisse werden erst zurückgesetzt,
+wenn der Server neu gestartet wird.
+Achte also nach einer Veränderung der Spieler darauf,
+den Serverneu zu starten oder andere Spielernamen zu verwenden.
+Perspektivisch soll der TestClient zukünftig unabhängig vom Server die Punkte zählen.
