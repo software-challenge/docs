@@ -183,9 +183,6 @@ und optional mit `--turn` ein Zug spezifiziert werden.
 java -Dfile.encoding=UTF-8 -Dlogback.configurationFile=logback.xml -jar server.jar --port 13051 --loadGameFile ./replay.xml --turn 10
 ```
 
-TODO:
-Tabelle cli Optionen wie bei TestClient?
-
 ### Replay speichern
 
 Wenn der Server ohne grafische Oberfläche gestartet wird,
