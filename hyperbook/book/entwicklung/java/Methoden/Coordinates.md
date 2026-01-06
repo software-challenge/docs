@@ -1,15 +1,13 @@
-# Methodendokumentation - Coordinates
+# Methodendokumentation - Coordinates <!-- omit in toc -->
 
-## Inhaltsverzeichnis
-- [Methodendokumentation - Coordinates](#methodendokumentation---coordinates)
-  - [Inhaltsverzeichnis](#inhaltsverzeichnis)
-  - [Coordinates-Methoden](#coordinates-methoden)
-    - [**getX()**](#getx)
-    - [**getY()**](#gety)
-    - [**getNeighbors()**](#getneighbors)
-    - [**plus(Vector)**](#plusvector)
-    - [**minus(Vector)**](#minusvector)
-    - [**equals(Object)** (Coordinates)](#equalsobject-coordinates)
+## Inhaltsverzeichnis <!-- omit in toc -->
+- [Coordinates-Methoden](#coordinates-methoden)
+  - [**getX()**](#getx)
+  - [**getY()**](#gety)
+  - [**getNeighbors()**](#getneighbors)
+  - [**plus(Vector)**](#plusvector)
+  - [**minus(Vector)**](#minusvector)
+  - [**equals(Object)** (Coordinates)](#equalsobject-coordinates)
 
 
 ## Coordinates-Methoden

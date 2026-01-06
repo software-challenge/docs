@@ -1,25 +1,23 @@
 
-# Methodendokumentation - GameState und Board
+# Methodendokumentation - GameState und Board <!-- omit in toc -->
 
-## Inhaltsverzeichnis
-- [Methodendokumentation - GameState und Board](#methodendokumentation---gamestate-und-board)
-  - [Inhaltsverzeichnis](#inhaltsverzeichnis)
-  - [GameState (Spielstand)](#gamestate-spielstand)
-    - [**getLastMove()**](#getlastmove)
-    - [**getCurrentTeam()**](#getcurrentteam)
-    - [**getOtherTeam()**](#getotherteam)
-    - [**getTurn()**](#getturn)
-    - [**getPointsForTeam(Team)**](#getpointsforteamteam)
-    - [**getSensibleMoves()**](#getsensiblemoves)
-    - [**clone()**](#clone)
-    - [**performMove(Move)**](#performmovemove)
-    - [**performMoveDirectly(Move)**](#performmovedirectlymove)
-  - [Board-Methoden (über getBoard() erreichbar)](#board-methoden-über-getboard-erreichbar)
-    - [**getBoard()**](#getboard)
-    - [**getTeam(Coordinates)**](#getteamcoordinates)
-    - [**get(x, y) / get(Coordinates) / get(Object Key)**](#getx-y--getcoordinates--getobject-key)
-    - [**clone()** (für Board)](#clone-für-board)
-    - [**fieldsForTeam(Team)**](#fieldsforteamteam)
+## Inhaltsverzeichnis <!-- omit in toc -->
+- [GameState (Spielstand)](#gamestate-spielstand)
+  - [**getLastMove()**](#getlastmove)
+  - [**getCurrentTeam()**](#getcurrentteam)
+  - [**getOtherTeam()**](#getotherteam)
+  - [**getTurn()**](#getturn)
+  - [**getPointsForTeam(Team)**](#getpointsforteamteam)
+  - [**getSensibleMoves()**](#getsensiblemoves)
+  - [**clone()**](#clone)
+  - [**performMove(Move)**](#performmovemove)
+  - [**performMoveDirectly(Move)**](#performmovedirectlymove)
+- [Board-Methoden (über getBoard() erreichbar)](#board-methoden-über-getboard-erreichbar)
+  - [**getBoard()**](#getboard)
+  - [**getTeam(Coordinates)**](#getteamcoordinates)
+  - [**get(x, y) / get(Coordinates) / get(Object Key)**](#getx-y--getcoordinates--getobject-key)
+  - [**clone()** (für Board)](#clone-für-board)
+  - [**fieldsForTeam(Team)**](#fieldsforteamteam)
 
 
 

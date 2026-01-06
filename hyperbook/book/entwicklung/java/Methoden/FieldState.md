@@ -1,12 +1,10 @@
-# Methodendokumentation - FieldState
+# Methodendokumentation - FieldState <!-- omit in toc -->
 
-## Inhaltsverzeichnis
-- [Methodendokumentation - FieldState](#methodendokumentation---fieldstate)
-  - [Inhaltsverzeichnis](#inhaltsverzeichnis)
-  - [FieldState-Methoden](#fieldstate-methoden)
-    - [**getSize()**](#getsize)
-    - [**getTeam()**](#getteam)
-    - [**isEmpty()**](#isempty)
+## Inhaltsverzeichnis <!-- omit in toc -->
+- [FieldState-Methoden](#fieldstate-methoden)
+  - [**getSize()**](#getsize)
+  - [**getTeam()**](#getteam)
+  - [**isEmpty()**](#isempty)
 
 ## FieldState-Methoden
 Der `FieldState` beschreibt den Zustand eines Feldes im Spiel. Es handelt sich um ein Enum, das verschiedene Zustände wie Fische unterschiedlicher Größe und Teams oder leere Felder repräsentiert.

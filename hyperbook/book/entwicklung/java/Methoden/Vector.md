@@ -1,12 +1,10 @@
-# Methodendokumentation - Vector
+# Methodendokumentation - Vector <!-- omit in toc -->
 
-## Inhaltsverzeichnis
-- [Methodendokumentation - Vector](#methodendokumentation---vector)
-  - [Inhaltsverzeichnis](#inhaltsverzeichnis)
-  - [Vector-Methoden](#vector-methoden)
-    - [**getDx()**](#getdx)
-    - [**getDy()**](#getdy)
-    - [**equals(Object)**](#equalsobject)
+## Inhaltsverzeichnis <!-- omit in toc -->
+- [Vector-Methoden](#vector-methoden)
+  - [**getDx()**](#getdx)
+  - [**getDy()**](#getdy)
+  - [**equals(Object)**](#equalsobject)
 
 ---
 

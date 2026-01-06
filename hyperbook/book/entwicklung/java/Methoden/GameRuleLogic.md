@@ -1,15 +1,13 @@
-# Methodendokumentation
+# Methodendokumentation <!-- omit in toc -->
 
-## Inhaltsverzeichnis
-- [Methodendokumentation](#methodendokumentation)
-  - [Inhaltsverzeichnis](#inhaltsverzeichnis)
-  - [GameRuleLogic-Methoden](#gamerulelogic-methoden)
-    - [**targetCoordinates(Board, Move)**](#targetcoordinatesboard-move)
-    - [**greatestSwarmSize(Board, Team)**](#greatestswarmsizeboard-team)
-    - [**greatestSwarmSize(Map\<Coordinates, Integer\>)**](#greatestswarmsizemapcoordinates-integer)
-    - [**greatestSwarm(Map\<Coordinates, Integer\>)**](#greatestswarmmapcoordinates-integer)
-    - [**isSwarmConnected(Board, Team)**](#isswarmconnectedboard-team)
-    - [**possibleMovesFor(Board, Coordinates)**](#possiblemovesforboard-coordinates)
+## Inhaltsverzeichnis <!-- omit in toc -->
+- [GameRuleLogic-Methoden](#gamerulelogic-methoden)
+  - [**targetCoordinates(Board, Move)**](#targetcoordinatesboard-move)
+  - [**greatestSwarmSize(Board, Team)**](#greatestswarmsizeboard-team)
+  - [**greatestSwarmSize(Map\<Coordinates, Integer\>)**](#greatestswarmsizemapcoordinates-integer)
+  - [**greatestSwarm(Map\<Coordinates, Integer\>)**](#greatestswarmmapcoordinates-integer)
+  - [**isSwarmConnected(Board, Team)**](#isswarmconnectedboard-team)
+  - [**possibleMovesFor(Board, Coordinates)**](#possiblemovesforboard-coordinates)
 
 
 ## GameRuleLogic-Methoden

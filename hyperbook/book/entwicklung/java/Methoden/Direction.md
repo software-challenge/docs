@@ -1,13 +1,11 @@
-# Methodendokumentation - Direction
+# Methodendokumentation - Direction <!-- omit in toc -->
 
-## Inhaltsverzeichnis
-- [Methodendokumentation - Direction](#methodendokumentation---direction)
-  - [Inhaltsverzeichnis](#inhaltsverzeichnis)
-  - [Direction-Methoden](#direction-methoden)
-    - [**getDx()** (Direction)](#getdx-direction)
-    - [**getDy()** (Direction)](#getdy-direction)
-    - [**getVector()**](#getvector)
-    - [**equals(Object)** (Direction)](#equalsobject-direction)
+## Inhaltsverzeichnis <!-- omit in toc -->
+- [Direction-Methoden](#direction-methoden)
+  - [**getDx()** (Direction)](#getdx-direction)
+  - [**getDy()** (Direction)](#getdy-direction)
+  - [**getVector()**](#getvector)
+  - [**equals(Object)** (Direction)](#equalsobject-direction)
 
 
 ## Direction-Methoden
