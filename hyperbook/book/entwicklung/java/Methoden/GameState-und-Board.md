@@ -1,3 +1,7 @@
+---
+name: GameState und Board Methoden
+index: 3
+---
 
 # Methodendokumentation - GameState und Board <!-- omit in toc -->
 

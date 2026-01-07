@@ -1,3 +1,8 @@
+---
+name: GameRuleLogic Methoden
+index: 4
+---
+
 # Methodendokumentation <!-- omit in toc -->
 
 ## Inhaltsverzeichnis <!-- omit in toc -->

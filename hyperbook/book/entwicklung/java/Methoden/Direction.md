@@ -1,3 +1,8 @@
+---
+name: Direction Methoden
+index: 6
+---
+
 # Methodendokumentation - Direction <!-- omit in toc -->
 
 ## Inhaltsverzeichnis <!-- omit in toc -->

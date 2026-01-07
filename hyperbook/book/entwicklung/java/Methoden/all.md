@@ -1,3 +1,7 @@
+---
+name: Alle Methoden
+index: 2
+---
 
 # Methodendokumentation - Alle wichtigen Java Methoden für Piranhas <!-- omit in toc -->
 
