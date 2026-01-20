@@ -19,41 +19,30 @@ Entwicklungsumgebung Eclipse vor.~~
 ![Überblick über die wichtigsten Fenster in
 IntelliJ](/images/intellij_important.png)
 
-### Package Explorer
+### Project Tool Window
 
-Der Package Explorer befindet sich am linken Rand. Er verwaltet alle
-importierten Projekte. Wenn man im Package Exlorer einen Doppelklick auf
-eine Datei macht, wird diese im Editor angezeigt. Mit einem Rechtsklick
-auf eine Datei oder ein Verzeichnis bekommt man viele Optionen, mit
-denen sich das ausgewählte Objekt bearbeiten lässt.
+Das Project Tool Window befindet sich standartgemäß ab linken Rand. 
+In ihm sieht man die Ordnerstruktur und alle im Projektenhaltenen 
+Dateien. Wenn man eine Datei doppelclickt, wird diese Datei im Editor 
+geöffnet. Mit einem Rechtsklick auf eine Datei oder ein Verzeichnis 
+bekommt man viele Optionen, mit denen sich das ausgewählte Objekt 
+bearbeiten lässt.
 
 ### Editor
 
 Der Editor ist die große Fläche in der Mitte des Eclipse-Fensters. Am
 oberen Rand befindet sich die Tab-Leiste, die alle geöffneten Dateien
 beinhaltet.
-
-### Outline
-
-Am rechten Bildschirmrand befindet sich die Outine. Sie zeigt alle
-Variablen und Methoden der Klasse an, die gerade im Editor geöffnet ist.
-Mit einem Doppelklick auf einen Eintrag springt der Cursor im Editor an
-die entsprechende Stelle im Code.
-
-### Problems
-
-Der Tab Problems befindet sich im Fenster, das am unteren Bildschirmrand
-zu sehen ist. Hier werden sowohl Programmierfehler als auch Warnungen
-angezeigt. Mit einem Doppelklick auf einen Eintrag springt der Cursor im
-Editor an die entsprechende Codezeile.
+ie entsprechende Codezeile.
 
 ### Console
 
-Die Console ist nicht sofort sichtbar, sondern erscheint erst, nachdem
+**Fehlt noch im Bild**
+~~Die Console ist nicht sofort sichtbar, sondern erscheint erst, nachdem
 das erste Programm ausgeführt worden ist. In der Console werden alle
 Systemausgaben angezeigt. Falls ein Fehler (Exception) geworfen wird,
 kann man durch einen Klick darauf an die entsprechende Zeile im
-Programmcode gelangen.
+Programmcode gelangen.~~
 
 ## Programme starten
 
