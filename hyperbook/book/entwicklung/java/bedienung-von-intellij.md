@@ -56,11 +56,34 @@ Fehlermeldung an die entsprechende Zeile im  Programmcode gelangen.
 
 ## Programme starten
 
-Zuerst muss im Run/Debug Widget auf die aktuelle Buildeinstellung geclickt werden (standard "Current File") und in dem Dropdown was sich dann öffnet auf "Edit Configurations"
-![intellij run configurations](/images/java/build1.png)
-![intellij run configurations](/images/java/build2.png)
-![intellij run configurations](/images/java/build3.png)
+Um eine Start-Konfiguration zum starten von der Spielervorlage zu 
+erstellen, musst du zuerst im Run/Debug Widget auf die aktuelle 
+Buildeinstellung klicken (standard "Current File") und in dem 
+Dropdown welches sich dann öffnet auf "Edit Configurations" klicken.
 
+![intellij run configurations](/images/java/build1.png)
+
+Anschließend musst du entweder auf das + oben links oder auf den Text 
+"Add new...", falls noch keine Start-Konfigurationen existieren, im 
+sich dann geöffneten Fenster clicken.
+
+Dort öffnet sich dann eine Auswahl, in der du das Build Tool auswählen 
+kannst. Hier musst du Gradle auswählen.
+
+Dann öffnet sich ein Fenster, in dem du die Konfiguration einstellen 
+kannst. Hier musst du, vorrausgesetzt, dass das Projekt richtig 
+gelesen wurde, nur noch unter der Überschrift "Run" im Eingabefeld 
+"run" schreiben.
+
+Dann kannst du auf "Apply" und "OK" drücken.
+
+![intellij run configurations](/images/java/build2.png)
+
+Dannach sollte dann automatisch im Run/Debug Widget die neu erstelle 
+Konfiguration ausgewählt sein. Den Spieler kannst du dann mit einem 
+Klick auf das Startsymbol (grünes Dreieck) starten.
+
+![intellij run configurations](/images/java/build3.png)
 
 ## Tastaturkürzel
 
