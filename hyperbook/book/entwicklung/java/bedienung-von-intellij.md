@@ -65,22 +65,19 @@ noch Optionen angeben.
 
 ## Tastaturkürzel
 
-Eclipse kennt viele Tastenkombinationen, mit Hilfe derer einige
-Eclipse-Funktionen schneller aufgerufen werden können. Die wichtigsten
-Shortcuts kann man der folgenden Tabelle entnehmen:
+IntelliJ IDEA bietet ebenfalls zahlreiche Tastenkombinationen, mit denen sich Funktionen schneller aufrufen lassen. Die wichtigsten äquivalenten Shortcuts sind in der folgenden Tabelle aufgeführt:
 
-| Aktion                                                              | Effekt                                                                                                                                       |
-| ------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Strg+Shift+F11                                                      | Führt die zuletzt ausgeführte Java-Datei erneut aus                                                                                          |
-| Cursor auf Variablen-, Klassen- oder Methodennamen, dann Alt+Strg+R | Benennt alle Vorkommen des Namens im ganzen Projekt um                                                                                      |
-| Strg+F1                                                             | Wenn man diese Tastenkombination über einen Fehler oder eine Warnung eingibt, kriegt man von Eclipse Verbesserungs-, bzw. Reparaturvorschläge |
-| Strg+I                                                              | Rückt den markierten Text sauber ein                                                                                                         |
-| Strg+F7                                                             | Kommentiert die markierten Zeilen ein, bzw. aus                                                                                              |
-| Cursor auf Variablen-, Methoden- oder Klassennamen, dann F3         | Der Cursor springt zu der Stelle, wo die Variable oder Klasse definiert wurde                                                               |
-| Variablen- oder Klassenname teilweise eingegeben, dann Strg+Space   | Eclipse liefert Vorschläge zur Vervollständigung                                                                                             |
-| Eingabe von `syso`, dann Strg+Space                                   | Erzeugt `System.out.println`                                                                                                                   |
-| Eingabe von `for`, dann Strg+Space                                    | Eclipse liefert eine Auswahl an beliebigen `for`-Schleifen                                                                                     |
-| Eingabe von `if`, dann Strg+Space                                     | Liefert eine Auswahl an `if`-Dialogen                                                                                                          |
+| Aktion | Effekt |
+| ------- | ------- |
+| Shift+F10 | Führt die zuletzt ausgeführte Datei erneut aus |
+| Cursor auf Variablen-, Klassen- oder Methodennamen, dann Shift+F6 | Benennt alle Vorkommen des Namens im ganzen Projekt um |
+| Alt+Enter | Zeigt Verbesserungs- bzw. Reparaturvorschläge an, wenn der Cursor auf einem Fehler oder einer Warnung steht |
+| Ctrl+Alt+I | Rückt den markierten Text sauber ein |
+| Ctrl+/ | Kommentiert die markierten Zeilen ein, bzw. aus |
+| Cursor auf Variablen-, Methoden- oder Klassennamen, dann Ctrl+B | Springt zu der Definition der Variable, Methode oder Klasse |
+| Variablen- oder Klassenname teilweise eingegeben, dann Ctrl+Space | IntelliJ liefert Vorschläge zur Vervollständigung |
+| Eingabe von `sout`, dann Tab oder Enter | Erzeugt `System.out.println` |
+| Eingabe von `fori`, dann Tab oder Enter | Erzeugt die folgende `for`-Schleife: ```for (int i = 0; i < ; i++) {}``` |
+| Eingabe von `ifn`, dann Tab oder Enter | IntelliJ erzeugt eine `if`-Struktur |
 
-**Hinweis:** Bei Mac OS X wird statt der Strg-Taste meistens die
-Apple-Taste benutzt.
+**Hinweis:** Unter macOS wird statt der **Strg**-Taste die **Command (⌘)**-Taste verwendet.
