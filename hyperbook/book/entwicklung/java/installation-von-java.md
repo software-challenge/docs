@@ -55,3 +55,12 @@ sudo pacman -S jdk11-openjdk
 ```bash
 sudo zypper install java-11-openjdk-devel
 ```
+
+### macOS
+
+Auf macOS kann das JDK 11 am einfachsten mit dem Paketmanager Homebrew installiert werden.
+Voraussetzung: Homebrew ist installiert (siehe https://brew.sh).
+
+```bash
+brew install --cask temurin@11
+```
