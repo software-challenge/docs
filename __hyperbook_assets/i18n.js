@@ -15,6 +15,8 @@ var i18n = (function () {
     "shell-reset-hyperbook": "Das Hyperbook zurücksetzen",
     "shell-import-hyperbook": "Das Hyperbook aus einer Datei importieren",
     "shell-export-hyperbook": "Das Hyperbook in eine Datei exportieren",
+    "breadcrumb-navigation": "Brotkrümelnavigation",
+    "breadcrumb-home": "Startseite",
     "qr-code": "QR-Code",
     "p5-update": "Aktualisieren",
     "p5-code-preview": "Code-Vorschau",
@@ -56,7 +58,27 @@ var i18n = (function () {
     "webide-reset": "Zurücksetzen",
     "webide-reset-prompt": "Sind Sie sicher, dass Sie den Code zurücksetzen möchten?",
     "webide-copy": "Kopieren",
-    "webide-download": "Herunterladen"
+    "webide-download": "Herunterladen",
+    "typst-code": "Typst",
+    "typst-reset": "Zurücksetzen",
+    "typst-reset-prompt": "Sind Sie sicher, dass Sie den Code zurücksetzen möchten?",
+    "typst-download-pdf": "PDF herunterladen",
+    "typst-pdf-error": "Fehler beim PDF-Export",
+    "typst-download-project": "Projekt herunterladen",
+    "typst-loading": "Typst wird geladen...",
+    "typst-add-source-file": "Quelldatei hinzufügen",
+    "typst-add-binary-file": "Binärdatei hinzufügen",
+    "typst-source": "Quelle",
+    "typst-binary": "Binär",
+    "typst-add": "Hinzufügen",
+    "typst-delete-file": "Datei löschen",
+    "typst-delete-confirm": "Löschen",
+    "typst-filename-prompt": "Dateiname eingeben (z.B. helper.typ):",
+    "typst-filename-error": "Dateiname muss auf .typ oder .typst enden",
+    "typst-filename-exists": "Datei existiert bereits",
+    "typst-file-replace": "Existierende Datei ersetzen?",
+    "typst-binary-files": "Binärdateien",
+    "typst-no-binary-files": "Keine Binärdateien"
 }
 ;
 
