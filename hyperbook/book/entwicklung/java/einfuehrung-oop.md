@@ -1,6 +1,6 @@
 ---
 name: Objektorientierte Programmierung
-index: 3
+index: 2
 ---
 
 # Einführung in die objektorientierte Programmierung

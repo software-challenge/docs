@@ -1,6 +1,6 @@
 ---
 name: Sauberer Programmierstil
-index: 4
+index: 3
 ---
 
 # Der saubere Programmierstil

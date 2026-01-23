@@ -1,6 +1,6 @@
 ---
 name: Einrichtung der Entwicklungsumgebung
-index: 6
+index: 4
 ---
 
 # Einrichtung der (Java-)Entwicklungsumgebung
