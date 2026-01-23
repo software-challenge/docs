@@ -17,7 +17,7 @@ Entwicklungsumgebung Eclipse vor.~~
 ## Die Oberfläche
 
 ![Überblick über die wichtigsten Fenster in
-IntelliJ](/images/intellij_important.png)
+IntelliJ](/images/java/intellij_important.png)
 
 ### Project Tool Window
 
