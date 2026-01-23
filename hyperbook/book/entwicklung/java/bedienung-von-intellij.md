@@ -55,16 +55,11 @@ kann man durch einen Klick auf den unterstrichenen blauen Teil der Fehlermeldung
 
 ## Programme starten
 
-**Dialog um die Starteinstellungen des Programms zu ändern**
+Zuerst muss im Run/Debug Widget auf die aktuelle Buildeinstellung geclickt werden (standard "Current File") und in dem Dropdown was sich dann öffnet auf "Edit Configurations"
+![intellij run configurations](/images/java/build1.png)
+![intellij run configurations](/images/java/build2.png)
+![intellij run configurations](/images/java/build3.png)
 
-![eclipse run configurations](/images/eclipse_run-configurations.jpg)
-
-Ein Programm lässt sich starten, indem man im Package Explorer einen
-Rechtsklick auf die Datei mit der Main-Methode macht und dann "Run As" →
-"Java Application" ausführt.
-
-Im Menü kann man unter "Run" → "Run Configurations" im Tab "Arguments"
-noch Optionen angeben.  
 
 ## Tastaturkürzel
 
