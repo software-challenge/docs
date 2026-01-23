@@ -10,7 +10,10 @@ hat, mag der Anblick erschreckend unübersichtlich sein. Sobald man sich
 jedoch etwas intensiver damit beschäftigt hat, möchte man den
 Bedienkomfort eines solchen Entwicklertools gar nicht mehr missen.
 Dieser Artikel stellt die wichtigsten Komponenten der
-Entwicklungsumgebung IntelliJ vor.
+Entwicklungsumgebung IntelliJ vor. 
+
+IntelliJ ist im vergleich zu Eclipse die modernere IDE mit mehr Features,
+weshalb wir diese für neu beginnende empfelen würden. 
 
 ## Die Oberfläche
 
