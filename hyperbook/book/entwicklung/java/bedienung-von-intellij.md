@@ -3,16 +3,14 @@ name: Bedienung von IntelliJ
 index: 6
 ---
 
-# Bedienung von Eclipse
+# Bedienung von IntelliJ
 
-~~Wenn man bisher noch nicht mit einer Entwicklungsumgebung gearbeitet
+Wenn man bisher noch nicht mit einer Entwicklungsumgebung gearbeitet
 hat, mag der Anblick erschreckend unübersichtlich sein. Sobald man sich
 jedoch etwas intensiver damit beschäftigt hat, möchte man den
 Bedienkomfort eines solchen Entwicklertools gar nicht mehr missen.
 Dieser Artikel stellt die wichtigsten Komponenten der
-Entwicklungsumgebung Eclipse vor.~~
-
-
+Entwicklungsumgebung IntelliJ vor.
 
 ## Die Oberfläche
 
