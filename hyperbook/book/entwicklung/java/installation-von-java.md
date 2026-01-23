@@ -26,7 +26,32 @@ mit folgendem `winget`-Befehl im Windows Terminal installiert werden:
 winget install -e --id EclipseAdoptium.Temurin.11.JDK
 ```
 
-### Installation über Paketquellen (Linux)
+### Linux
 
-Meistens ist das JDK (`openjdk`) direkt von den Paketquellen der Linux-Distribution installierbar.
-Sofern möglich, wird diese Art der Installation empfohlen, da es oft noch Paketabhängigkeiten gibt, die dann automatisch mit installiert werden.
+Meistens ist das JDK (`openjdk`) direkt von den Paketquellen der Linux-Distribution 
+installierbar. Sofern möglich, wird diese Art der Installation empfohlen, da es oft 
+noch Paketabhängigkeiten gibt, die dann automatisch mit installiert werden.
+
+Hier sind ein paar Befehle zum Installieren von Java für die gängigsten 
+Distributionen:
+
+#### Debian, Ubuntu, Linux Mint, Kali Linux
+```bash
+sudo apt update
+sudo apt install openjdk-11-jdk
+```
+
+#### Fedora, Red Hat, CentOS, AlmaLinux
+```bash
+sudo dnf install java-11-openjdk-devel
+```
+
+#### Arch Linux, Manjaro, EndeavourOS
+```bash
+sudo pacman -S jdk11-openjdk
+```
+
+#### openSUSE (Leap & Tumbleweed)
+```bash
+sudo zypper install java-11-openjdk-devel
+```
