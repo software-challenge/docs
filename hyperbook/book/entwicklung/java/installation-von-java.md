@@ -26,6 +26,9 @@ mit folgendem `winget`-Befehl im Windows Terminal installiert werden:
 winget install -e --id EclipseAdoptium.Temurin.11.JDK
 ```
 
+Alternativ kann das JDK auch mit UI mit einem Installer installiert werden:
+[https://www.oracle.com/java/technologies/downloads/#java11-windows](https://www.oracle.com/java/technologies/downloads/#java11-windows)
+
 ### Linux
 
 Meistens ist das JDK (`openjdk`) direkt von den Paketquellen der Linux-Distribution 
