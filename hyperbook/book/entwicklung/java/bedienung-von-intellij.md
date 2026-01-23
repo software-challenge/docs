@@ -30,19 +30,27 @@ bearbeiten lässt.
 
 ### Editor
 
-Der Editor ist die große Fläche in der Mitte des Eclipse-Fensters. Am
+Der Editor ist die große Fläche in der Mitte des IntelliJ-Fensters. Am
 oberen Rand befindet sich die Tab-Leiste, die alle geöffneten Dateien
 beinhaltet.
-ie entsprechende Codezeile.
+
+### Problems
+
+Das Problems Fenster ist standardgemäß nicht auf. Um es zu öffnen muss 
+man unten links in der Tool Window Bar den Knopf dafür (Kreis mit ! in 
+der Mitte) drücken. Hier werden sowohl Programmierfehler als auch 
+Warnungen angezeigt. Mit einem Doppelklick auf einen Eintrag springt 
+der Cursor im Editor an die entsprechende Codezeile.
 
 ### Console
 
 **Fehlt noch im Bild**
-~~Die Console ist nicht sofort sichtbar, sondern erscheint erst, nachdem
-das erste Programm ausgeführt worden ist. In der Console werden alle
+Die Console ist nicht sofort sichtbar, sondern erscheint erst, nachdem
+das erste Programm ausgeführt worden ist. Alternativ kann man die 
+Console auch unten links in der Tool Window Bar (**Farbe einfügen und 
+zum Bild hinzufügen**) öffnen. In der Console werden alle 
 Systemausgaben angezeigt. Falls ein Fehler (Exception) geworfen wird,
-kann man durch einen Klick darauf an die entsprechende Zeile im
-Programmcode gelangen.~~
+kann man durch einen Klick auf den unterstrichenen blauen Teil der Fehlermeldung an die entsprechende Zeile im  Programmcode gelangen.
 
 ## Programme starten
 
