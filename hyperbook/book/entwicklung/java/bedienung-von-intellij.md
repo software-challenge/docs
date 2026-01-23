@@ -1,6 +1,6 @@
 ---
 name: Bedienung von IntelliJ
-index: 6
+index: 5
 ---
 
 # Bedienung von IntelliJ

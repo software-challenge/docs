@@ -1,6 +1,6 @@
 ---
 name: Bedienung von Eclipse
-index: 5
+index: 6
 ---
 
 # Bedienung von Eclipse
