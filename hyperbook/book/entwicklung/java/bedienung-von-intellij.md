@@ -45,14 +45,13 @@ der Cursor im Editor an die entsprechende Codezeile.
 
 ### Console
 
-**Fehlt noch im Bild**
 Die Console ist nicht sofort sichtbar, sondern erscheint erst, nachdem
 das erste Programm ausgeführt worden ist. Alternativ kann man die 
-Console auch unten links in der Tool Window Bar (**Farbe einfügen und 
-zum Bild hinzufügen**) öffnen. In der Console werden alle 
-Systemausgaben angezeigt. Falls ein Fehler (Exception) geworfen wird,
-kann man durch einen Klick auf den unterstrichenen blauen Teil der 
-Fehlermeldung an die entsprechende Zeile im  Programmcode gelangen.
+Console auch unten links in der Tool Window Bar öffnen. In der Console 
+werden alle Systemausgaben angezeigt. Falls ein Fehler (Exception) 
+geworfen wird,kann man durch einen Klick auf den unterstrichenen 
+blauen Teil der Fehlermeldung an die entsprechende Zeile im 
+Programmcode gelangen.
 
 ## Programme starten
 
