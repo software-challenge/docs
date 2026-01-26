@@ -22,12 +22,12 @@ IntelliJ](/images/java/intellij_important.png)
 
 ### Project Tool Window
 
-Das Project Tool Window befindet sich standartgemäß ab linken Rand. 
-In ihm sieht man die Ordnerstruktur und alle im Projektenhaltenen 
-Dateien. Wenn man eine Datei doppelclickt, wird diese Datei im Editor 
-geöffnet. Mit einem Rechtsklick auf eine Datei oder ein Verzeichnis 
-bekommt man viele Optionen, mit denen sich das ausgewählte Objekt 
-bearbeiten lässt.
+Das Project Tool Window befindet sich standartgemäß am linken Rand.
+In ihm sieht man die Ordnerstruktur und alle im Projekt enthaltenen Dateien.
+Wenn man eine Datei doppelklickt,
+wird diese Datei im Editor geöffnet.
+Mit einem Rechtsklick auf eine Datei oder ein Verzeichnis bekommt man viele Optionen,
+mit denen sich das ausgewählte Objekt bearbeiten lässt.
 
 ### Editor
 
