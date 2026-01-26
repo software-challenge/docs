@@ -82,7 +82,9 @@ Klick auf das Startsymbol (grünes Dreieck) starten.
 
 ## Tastaturkürzel
 
-IntelliJ IDEA bietet ebenfalls zahlreiche Tastenkombinationen, mit denen sich Funktionen schneller aufrufen lassen. Die wichtigsten äquivalenten Shortcuts sind in der folgenden Tabelle aufgeführt:
+IntelliJ IDEA bietet ebenfalls zahlreiche Tastenkombinationen,
+mit denen sich Funktionen schneller aufrufen lassen.
+Die wichtigsten Shortcuts sind in der folgenden Tabelle aufgeführt:
 
 | Aktion | Effekt |
 | ------- | ------- |
