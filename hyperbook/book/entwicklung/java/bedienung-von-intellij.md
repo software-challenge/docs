@@ -55,10 +55,9 @@ kann man durch einen Klick auf den blauen unterstrichenen Teil der Fehlermeldung
 
 ## Programme starten
 
-Um eine Start-Konfiguration zum starten von der Spielervorlage zu 
-erstellen, musst du zuerst im Run/Debug Widget auf die aktuelle 
-Buildeinstellung klicken (standard "Current File") und in dem 
-Dropdown welches sich dann öffnet auf "Edit Configurations" klicken.
+Um eine Start-Konfiguration zum Starten der Spielervorlage zu erstellen,
+musst man zuerst im Run/Debug Widget auf die aktuelle Buildeinstellung klicken (standard "Current File")
+und in dem Dropdown Menü, welches sich dann öffnet, auf "Edit Configurations" klicken.
 
 ![intellij run configurations](/images/java/build1.png)
 
