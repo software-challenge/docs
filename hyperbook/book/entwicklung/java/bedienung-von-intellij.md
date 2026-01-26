@@ -31,9 +31,8 @@ mit denen sich das ausgewählte Objekt bearbeiten lässt.
 
 ### Editor
 
-Der Editor ist die große Fläche in der Mitte des IntelliJ-Fensters. Am
-oberen Rand befindet sich die Tab-Leiste, die alle geöffneten Dateien
-beinhaltet.
+Der Editor ist die große Fläche in der Mitte des IntelliJ-Fensters.
+Am oberen Rand befindet sich die Tab-Leiste, die alle geöffneten Dateien beinhaltet.
 
 ### Problems
 
