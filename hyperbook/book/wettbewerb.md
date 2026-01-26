@@ -7,7 +7,7 @@ expanded: true
 # Die Software-Challenge
 
 Die Software-Challenge ist ein Schulprojekt, das durch das Institut für Informatik der CAU Kiel veranstaltet wird und
-das durch zahlreiche Unternehmen und die Prof. Dr. Werner Petersen-Stiftung.
+das durch zahlreiche Unternehmen und die Prof. Dr. Werner Petersen-Stiftung finanziert wird.
 In Zusammenarbeit mit den Gymnasien und Gesamtschulen, dem Institut für Informatik sowie den Firmen soll in diesem Projekt der Informatik-Unterricht in praxisbezogener Weise mitgestaltet und dadurch aufgewertet werden.
 Gegenstand der Software-Challenge ist ein Programmierwettbewerb,
 der während des gesamten Schuljahres läuft,
@@ -47,5 +47,5 @@ Im letzteren Fall werden wir durch die Spiel-Verlage unterstützt,
 indem diese uns die Genehmigung erteilen und Grafiken zur Verfügung stellen.
 Bei der Entwicklung bzw. Modifizierung der Spiele versuchen wir zu erreichen,
 dass die Spiele interessant, abwechslungsreich und nicht zu kompliziert sind und dass die Glückskomponente nicht dominiert.
-Ein sehr guter :t[Computerspieler]{/grundlagen/player} soll sich also langfristig gegen schwächere durchsetzen,
+Ein sehr guter :t[Computerspieler]{/grundlagen/player} soll sich also langfristig gegen schwächere Spieler durchsetzen,
 wobei es durchaus vorkommen darf, dass er bei viel Pech auch mal verliert.
