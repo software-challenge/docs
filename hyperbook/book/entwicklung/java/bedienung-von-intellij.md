@@ -61,9 +61,9 @@ und in dem Dropdown Menü, welches sich dann öffnet, auf "Edit Configurations" 
 
 ![intellij run configurations](/images/java/build1.png)
 
-Anschließend musst du entweder auf das + oben links oder auf den Text 
-"Add new...", falls noch keine Start-Konfigurationen existieren, im 
-sich dann geöffneten Fenster clicken.
+Wenn noch keine Start-Konfiguration existiert,
+kann man sie entweder durch klicken auf das "+" oben links
+oder durch klicken auf "Add new ..." im sich öffnenden Fenster erstellen.
 
 Dort öffnet sich dann eine Auswahl, in der du das Build Tool auswählen 
 kannst. Hier musst du Gradle auswählen.
