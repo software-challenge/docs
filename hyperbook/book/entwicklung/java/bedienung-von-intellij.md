@@ -12,8 +12,8 @@ Bedienkomfort eines solchen Entwicklertools gar nicht mehr missen.
 Dieser Artikel stellt die wichtigsten Komponenten der
 Entwicklungsumgebung IntelliJ vor. 
 
-IntelliJ ist im vergleich zu Eclipse die modernere IDE mit mehr Features,
-weshalb wir diese für neu beginnende empfelen würden. 
+IntelliJ ist im Vergleich zu Eclipse die modernere IDE mit mehr Features,
+weshalb wir diese für neu Beginnende empfehlen würden. 
 
 ## Die Oberfläche
 
