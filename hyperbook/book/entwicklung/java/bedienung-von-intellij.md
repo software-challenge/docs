@@ -65,15 +65,12 @@ Wenn noch keine Start-Konfiguration existiert,
 kann man sie entweder durch klicken auf das "+" oben links
 oder durch klicken auf "Add new ..." im sich öffnenden Fenster erstellen.
 
-Dort öffnet sich dann eine Auswahl, in der du das Build Tool auswählen 
-kannst. Hier musst du Gradle auswählen.
+Im sich öffnenden Fenster müssen folgende Einstellungen vorgenommen werden, um die Software-Challenge GUI aus IntelliJ heraus starten zu können.
 
-Dann öffnet sich ein Fenster, in dem du die Konfiguration einstellen 
-kannst. Hier musst du, vorrausgesetzt, dass das Projekt richtig 
-gelesen wurde, nur noch unter der Überschrift "Run" im Eingabefeld 
-"run" schreiben.
-
-Dann kannst du auf "Apply" und "OK" drücken.
+1. Das Build Tool muss auf Gradle gestellt werden.
+2. Im nächsten Fenster musst überprüft werden, ob das Projekt richtig "eingelesen" wurde.
+3. Unter der Überschrift "Run" muss "run" ins Eingabefeld geschrieben werden.
+4. "Apply" oder "Ok" speichert die Eingaben.
 
 ![intellij run configurations](/images/java/build2.png)
 
