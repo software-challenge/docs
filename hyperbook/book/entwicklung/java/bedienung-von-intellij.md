@@ -5,12 +5,12 @@ index: 5
 
 # Bedienung von IntelliJ
 
-Wenn man bisher noch nicht mit einer Entwicklungsumgebung gearbeitet
-hat, mag der Anblick erschreckend unübersichtlich sein. Sobald man sich
-jedoch etwas intensiver damit beschäftigt hat, möchte man den
-Bedienkomfort eines solchen Entwicklertools gar nicht mehr missen.
-Dieser Artikel stellt die wichtigsten Komponenten der
-Entwicklungsumgebung IntelliJ vor. 
+Wenn man bisher noch nicht mit einer Entwicklungsumgebung gearbeitet hat,
+mag der Anblick erschreckend unübersichtlich sein.
+Sobald man sich jedoch etwas intensiver damit beschäftigt hat,
+möchte man den Bedienkomfort eines solchen Entwicklertools gar nicht mehr missen.
+
+Dieser Artikel stellt die wichtigsten Komponenten der Entwicklungsumgebung IntelliJ vor. 
 
 IntelliJ ist im Vergleich zu Eclipse die modernere IDE mit mehr Features,
 weshalb wir diese für neu Beginnende empfehlen würden. 
