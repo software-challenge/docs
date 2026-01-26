@@ -74,9 +74,8 @@ Im sich öffnenden Fenster müssen folgende Einstellungen vorgenommen werden, um
 
 ![intellij run configurations](/images/java/build2.png)
 
-Dannach sollte dann automatisch im Run/Debug Widget die neu erstelle 
-Konfiguration ausgewählt sein. Den Spieler kannst du dann mit einem 
-Klick auf das Startsymbol (grünes Dreieck) starten.
+Danach ist im Run/Debug Widget die neu erstellte Konfiguration ausgewählt
+und du kannst den Spieler durch klicken auf das Startsymbol (grünes Dreieck) starten.
 
 ![intellij run configurations](/images/java/build3.png)
 
