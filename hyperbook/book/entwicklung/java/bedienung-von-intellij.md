@@ -36,11 +36,12 @@ Am oberen Rand befindet sich die Tab-Leiste, die alle geöffneten Dateien beinha
 
 ### Problems
 
-Das Problems Fenster ist standardgemäß nicht auf. Um es zu öffnen muss 
-man unten links in der Tool Window Bar den Knopf dafür (Kreis mit ! in 
-der Mitte) drücken. Hier werden sowohl Programmierfehler als auch 
-Warnungen angezeigt. Mit einem Doppelklick auf einen Eintrag springt 
-der Cursor im Editor an die entsprechende Codezeile.
+Das Problems Fenster ist standardgemäß nicht auf.
+Um es zu öffnen,
+muss man unten links in der Tool Window Bar den Knopf dafür (Kreis mit ! in der Mitte) drücken.
+Hier werden sowohl Programmierfehler als auch  Warnungen angezeigt.
+
+Mit einem Doppelklick auf einen Eintrag springt der Cursor im Editor an die entsprechende Codezeile die den Fehler oder die Warnung enthält.
 
 ### Console
 
