@@ -67,27 +67,28 @@ Hier sind einige wichtige Funktionen:
 
 ## Programme starten
 
-Um eine Start-Konfiguration zum Starten der Spielervorlage zu erstellen,
-musst man zuerst im Run/Debug Widget auf die aktuelle Buildeinstellung klicken (standard "Current File")
-und in dem Dropdown Menü, welches sich dann öffnet, auf "Edit Configurations" klicken.
+1. Um eine Start-Konfiguration zum Starten der Spielervorlage zu erstellen,
+   musst man zuerst im Run/Debug Widget auf die aktuelle Buildeinstellung klicken (standard "Current File")
+   und in dem Dropdown Menü, welches sich dann öffnet, auf "Edit Configurations" klicken.
 
 ![intellij run configurations](/images/java/build1.png)
 
-Wenn noch keine Start-Konfiguration existiert,
-kann man sie entweder durch klicken auf das "+" oben links
-oder durch klicken auf "Add new ..." im sich öffnenden Fenster erstellen.
+2. Wenn noch keine Start-Konfiguration existiert,
+   kann man sie entweder durch klicken auf das "+" oben links
+   oder durch klicken auf "Add new ..." im sich öffnenden Fenster erstellen.
 
-Im sich öffnenden Fenster müssen folgende Einstellungen vorgenommen werden, um die Software-Challenge GUI aus IntelliJ heraus starten zu können.
+   Im sich öffnenden Fenster müssen folgende Einstellungen vorgenommen werden, 
+   um die Software-Challenge GUI aus IntelliJ heraus starten zu können.
 
-1. Das Build Tool muss auf Gradle gestellt werden.
-2. Im nächsten Fenster musst überprüft werden, ob das Projekt richtig "eingelesen" wurde.
-3. Unter der Überschrift "Run" muss "run" ins Eingabefeld geschrieben werden.
-4. "Apply" oder "Ok" speichert die Eingaben.
+    1. Das Build Tool muss auf Gradle gestellt werden.
+    2. Im nächsten Fenster musst überprüft werden, ob das Projekt richtig "eingelesen" wurde.
+    3. Unter der Überschrift "Run" muss "run" ins Eingabefeld geschrieben werden.
+    4. "Apply" oder "Ok" speichert die Eingaben.
 
 ![intellij run configurations](/images/java/build2.png)
 
-Danach ist im Run/Debug Widget die neu erstellte Konfiguration ausgewählt
-und du kannst den Spieler durch klicken auf das Startsymbol (grünes Dreieck) starten.
+3. Danach ist im Run/Debug Widget die neu erstellte Konfiguration ausgewählt
+   und du kannst den Spieler durch klicken auf das Startsymbol (grünes Dreieck) starten.
 
 ![intellij run configurations](/images/java/build3.png)
 
