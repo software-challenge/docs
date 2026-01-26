@@ -53,6 +53,18 @@ In der Console werden alle Systemausgaben angezeigt.
 Falls ein Fehler (Exception) geworfen wird,
 kann man durch einen Klick auf den blauen unterstrichenen Teil der Fehlermeldung an die entsprechende Zeile im Programmcode gelangen.
 
+### Gradle Tool Window
+
+Das Gradle Tool Window kann geöffnet werden, 
+durch einen Klick auf das Elefantensymbol am rechten Rand.
+In ihm finden sich Informationen zu dem Gradle Projekt und außerdem unter dem Reiter "Tasks" verschiedene Gradle Befehle.
+Mit einem Doppelklick auf einen Befehl oder mit Rechtsklick und dann Linksklick auf "Run" kann ein Befehl ausgeführt werden.
+Hier sind einige wichtige Funktionen:
+- Unter "build" befindet sich der build-Befehl, mit dem man aus dem Projekt eine Jar erstellen kann,
+  die dann im Contest System hochgeladen werden kann.
+- Unter "application" befindet sich der run Befehl,
+  welcher eine weitere Möglichkeit ist um den Spieler zu starten.
+
 ## Programme starten
 
 Um eine Start-Konfiguration zum Starten der Spielervorlage zu erstellen,
