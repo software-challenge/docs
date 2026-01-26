@@ -45,13 +45,13 @@ Mit einem Doppelklick auf einen Eintrag springt der Cursor im Editor an die ents
 
 ### Console
 
-Die Console ist nicht sofort sichtbar, sondern erscheint erst, nachdem
-das erste Programm ausgeführt worden ist. Alternativ kann man die 
-Console auch unten links in der Tool Window Bar öffnen. In der Console 
-werden alle Systemausgaben angezeigt. Falls ein Fehler (Exception) 
-geworfen wird,kann man durch einen Klick auf den unterstrichenen 
-blauen Teil der Fehlermeldung an die entsprechende Zeile im 
-Programmcode gelangen.
+Die Console ist nicht sofort sichtbar, sondern erscheint erst,
+nachdem das erste Programm ausgeführt worden ist.
+Alternativ kann man die Console auch unten links in der Tool Window Bar öffnen.
+
+In der Console werden alle Systemausgaben angezeigt.
+Falls ein Fehler (Exception) geworfen wird,
+kann man durch einen Klick auf den blauen unterstrichenen Teil der Fehlermeldung an die entsprechende Zeile im Programmcode gelangen.
 
 ## Programme starten
 
