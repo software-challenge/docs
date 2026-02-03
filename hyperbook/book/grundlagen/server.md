@@ -330,8 +330,6 @@ Ergebnisse werden erst zurückgesetzt, wenn der Server neu gestartet
 wird. Achte also nach einer Veränderung der Spieler darauf, den Server
 neu zu starten oder andere Spielernamen zu verwenden.
 
-TODO: Is this still right?
-Dieses Verhalten wird wahrscheinlich bald verändert,
 Die Ergebnisse der Spiele werden für den jeweiligen Spielernamen vom Server zusammengezählt,
 auch über mehrere Starts des TestClients.
 Die Ergebnisse werden erst zurückgesetzt,
