@@ -1,0 +1,271 @@
+<!doctype html><html lang="de" class="no-js"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,, interactive-widget=resizes-content"><title>Bedienung von IntelliJ - Software-Challenge Dokumentation</title><meta property="og:title" value="Bedienung von IntelliJ - Software-Challenge Dokumentation"><meta name="description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta property="og:description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta name="keywords"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/__hyperbook_assets/favicons/apple-touch-icon.png?version=0.81.1"><link rel="manifest" href="/__hyperbook_assets/favicons/manifest.webmanifest?version=0.81.1"><link rel="stylesheet" href="/__hyperbook_assets/normalize.css?version=0.81.1"><style>
+html,
+body {
+  overflow: hidden;
+  margin: 0;
+  height: 100dvh;
+  width: 100dvw;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --color-brand: #ECC94B;
+  --color-brand-dark: #ECC94B;
+  --color-brand-text: white;
+  --main-width: 980px;
+  --header-height: 3.75rem;
+  --nav-width: minmax(300px, 0.33fr);
+  --nav-font-size: 0.9rem;
+  --element-gap: 1.5rem;
+}
+@font-face {
+  font-family: hyperbook-body;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: hyperbook-heading;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: hyperbook-code;
+  src: url(/fonts/SourceCodePro-Regular.ttf);
+  size-adjust: 100%;
+  font-display: swap;
+}
+
+body {
+  overscroll-behavior-x: none;
+  background-color: transparent;
+  color: var(--color-text);
+  font-family: hyperbook-body;
+  font-weight: normal;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+</style><noscript id="dark-mode-toggle-stylesheets"><link rel="stylesheet" href="/__hyperbook_assets/light.css?version=0.81.1" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="/__hyperbook_assets/dark.css?version=0.81.1" media="(prefers-color-scheme: dark)"></noscript><script>
+// Remove no-js class as soon as JavaScript is available
+document.documentElement.classList.remove('no-js');</script><script src="/__hyperbook_assets/dark-mode-toggle-stylesheets-loader.js?version=0.81.1"></script><script type="module" src="/__hyperbook_assets/dark-mode-toggle.js?version=0.81.1"></script><script src="/__hyperbook_assets/i18n.js?version=0.81.1" defer></script><script src="/__hyperbook_assets/dexie.min.js?version=0.81.1" defer></script><script src="/__hyperbook_assets/dexie-export-import.js?version=0.81.1" defer></script><script src="/__hyperbook_assets/store.js?version=0.81.1" defer></script><script>
+window.Prism = window.Prism || {};
+window.Prism.manual = true;</script><script src="/__hyperbook_assets/prism/prism.js?version=0.81.1" defer></script><script src="/__hyperbook_assets/prism/prism-typst.js?version=0.81.1" defer></script><link rel="stylesheet" href="/__hyperbook_assets/prism/prism.css?version=0.81.1"><link rel="stylesheet" href="/__hyperbook_assets/prism/prism-theme-github-dark.css?version=0.81.1" media="(prefers-color-scheme: dark)"><link rel="stylesheet" href="/__hyperbook_assets/prism/prism-theme-github-light.css?version=0.81.1" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="/__hyperbook_assets/math/katex.min.css?version=0.81.1"><link rel="stylesheet" href="/__hyperbook_assets/shell.css?version=0.81.1"><link rel="stylesheet" href="/__hyperbook_assets/content.css?version=0.81.1"><link rel="stylesheet" href="/__hyperbook_assets/code.css?version=0.81.1"><script>
+HYPERBOOK_ASSETS = "/__hyperbook_assets/"
+</script><script type="module" src="/__hyperbook_assets/side-drawer.js?version=0.81.1" async></script><script src="/__hyperbook_assets/lunr.min.js?version=0.81.1" defer></script><script src="/__hyperbook_assets/lunr-languages/lunr.stemmer.support.min.js?version=0.81.1" defer></script><script src="/__hyperbook_assets/lunr-languages/lunr.de.min.js?version=0.81.1" defer></script><script src="/__hyperbook_assets/search.js?version=0.81.1" defer></script><script src="/__hyperbook_assets/qrcode.js?version=0.81.1" async></script></head><body><div class="main-grid"><header><div class="mobile-nav"><button aria-label="Nav Toggle" class="toggle" onclick="hyperbook.navToggle()"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></button><side-drawer id="nav-drawer"><div class="nav-drawer-content"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><details data-id="_nav:/grundlagen" class="section  empty"><summary class="name"><span class="label">Technische Grundlagen</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/grundlagen/player">Computerspieler</a></li><li><a class="page" href="/grundlagen/server">Spielleiter</a></li><li><a class="page" href="/grundlagen/contest">Wettkampfsystem</a></li></ul></div></details><div class="virtual-section"><div class="links"><details data-id="_nav:/spiele/26_piranhas" class="section  empty" open><summary class="name"><span class="label">Piranhas 2026</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/spiele/26_piranhas/regeln">Spielregeln</a></li><li><a class="page" href="/spiele/26_piranhas/xml">XML Dokumentation</a></li></ul></div></details></div></div><details data-id="_nav:/entwicklung" class="section  " open><summary class="name"><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></summary><div class="links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul><details data-id="_nav:/entwicklung/java" class="section  empty" open><summary class="name"><span class="label">Java</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/entwicklung/java/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/java/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/java/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/java/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page active" href="/entwicklung/java/bedienung-von-intellij">Bedienung von IntelliJ</a></li><li><a class="page" href="/entwicklung/java/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/java/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/java/Anleitung-Abgabe">Spieler für Abgabe Exportieren</a></li></ul><details data-id="_nav:/entwicklung/java/Methoden" class="section  empty"><summary class="name"><span class="label">Methoden</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/entwicklung/java/Methoden/all">Alle Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/GameState-und-Board">GameState und Board Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/GameRuleLogic">GameRuleLogic Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/FieldState">FieldState Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/Direction">Direction Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/Coordinates">Koordinaten Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/Vector">FieldState Methoden</a></li></ul></div></details></div></details><details data-id="_nav:/entwicklung/python" class="section  empty"><summary class="name"><span class="label">Python</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/entwicklung/python/installation-von-python">Installation von Python</a></li><li><a class="page" href="/entwicklung/python/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/python/getting-started">Getting Started</a></li><li><a class="page" href="/entwicklung/python/python-programmierstil">Sauberer Programmierstil in Python</a></li><li><a class="page" href="/entwicklung/python/oop-in-python">Objektorientierte Programmierung in Python</a></li><li><a class="page" href="/entwicklung/python/vorlage-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/python/spieler-abgeben">Spieler für den Wettbewerb abgeben</a></li></ul></div></details></div></details><details data-id="_nav:/xml" class="section  empty"><summary class="name"><span class="label">Allgemeine XML-Dokumentation</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></details></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div></side-drawer></div><a class="branding" href="/"><div class="logo"><img alt="logo" src="/logo.svg" height="40"></div><div class="name">Software-Challenge Dokumentation</div></a><button id="search-toggle" onclick="hyperbook.searchToggle()" title="Suche"></button><side-drawer id="search-drawer" right><div class="search-drawer-content"><div class="search-input"><div class="search-icon"></div><input id="search-input" placerholder="..."><button class="search-button" onclick="hyperbook.search()"></button></div><div id="search-results"></div></div></side-drawer><button id="share-button" class="icon-button" title="Teilen" onclick="hyperbook.shareOpen()"><div class="share-icon"></div></button><dark-mode-toggle id="dark-mode-toggle" appearence="switch" title="Zwischen Dunkel- und Hellmodus wechseln" permanent></dark-mode-toggle></header><div class="sidebar"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><details data-id="_nav:/grundlagen" class="section  empty"><summary class="name"><span class="label">Technische Grundlagen</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/grundlagen/player">Computerspieler</a></li><li><a class="page" href="/grundlagen/server">Spielleiter</a></li><li><a class="page" href="/grundlagen/contest">Wettkampfsystem</a></li></ul></div></details><div class="virtual-section"><div class="links"><details data-id="_nav:/spiele/26_piranhas" class="section  empty" open><summary class="name"><span class="label">Piranhas 2026</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/spiele/26_piranhas/regeln">Spielregeln</a></li><li><a class="page" href="/spiele/26_piranhas/xml">XML Dokumentation</a></li></ul></div></details></div></div><details data-id="_nav:/entwicklung" class="section  " open><summary class="name"><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></summary><div class="links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul><details data-id="_nav:/entwicklung/java" class="section  empty" open><summary class="name"><span class="label">Java</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/entwicklung/java/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/java/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/java/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/java/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page active" href="/entwicklung/java/bedienung-von-intellij">Bedienung von IntelliJ</a></li><li><a class="page" href="/entwicklung/java/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/java/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/java/Anleitung-Abgabe">Spieler für Abgabe Exportieren</a></li></ul><details data-id="_nav:/entwicklung/java/Methoden" class="section  empty"><summary class="name"><span class="label">Methoden</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/entwicklung/java/Methoden/all">Alle Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/GameState-und-Board">GameState und Board Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/GameRuleLogic">GameRuleLogic Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/FieldState">FieldState Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/Direction">Direction Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/Coordinates">Koordinaten Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/Vector">FieldState Methoden</a></li></ul></div></details></div></details><details data-id="_nav:/entwicklung/python" class="section  empty"><summary class="name"><span class="label">Python</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/entwicklung/python/installation-von-python">Installation von Python</a></li><li><a class="page" href="/entwicklung/python/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/python/getting-started">Getting Started</a></li><li><a class="page" href="/entwicklung/python/python-programmierstil">Sauberer Programmierstil in Python</a></li><li><a class="page" href="/entwicklung/python/oop-in-python">Objektorientierte Programmierung in Python</a></li><li><a class="page" href="/entwicklung/python/vorlage-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/python/spieler-abgeben">Spieler für den Wettbewerb abgeben</a></li></ul></div></details></div></details><details data-id="_nav:/xml" class="section  empty"><summary class="name"><span class="label">Allgemeine XML-Dokumentation</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></details></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div><main><article>
+<div class="hyperbook-markdown">
+  <div class="floating-buttons-container" id="floating-buttons-container"><button id="toc-toggle" onclick="hyperbook.tocToggle()" title="Inhaltsverzeichnis"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div></button></div>
+  <side-drawer id="toc-drawer" right>
+    <div class="toc-drawer-content">
+      <nav class="toc">
+        <ul>
+          <li class="level-1"><a href="#bedienung-von-intellij">Bedienung von IntelliJ</a></li>
+          <li class="level-2"><a href="#die-oberflche">Die Oberfläche</a></li>
+          <li class="level-3"><a href="#project-tool-window">Project Tool Window</a></li>
+          <li class="level-3"><a href="#editor">Editor</a></li>
+          <li class="level-3"><a href="#problems">Problems</a></li>
+          <li class="level-3"><a href="#console">Console</a></li>
+          <li class="level-3"><a href="#gradle-tool-window">Gradle Tool Window</a></li>
+          <li class="level-2"><a href="#programme-starten">Programme starten</a></li>
+          <li class="level-2"><a href="#tastaturkrzel">Tastaturkürzel</a></li>
+        </ul>
+      </nav>
+    </div>
+  </side-drawer>
+  <h1 id="bedienung-von-intellij"><a href="#bedienung-von-intellij" class="heading"><span>Bedienung von IntelliJ</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/java/bedienung-von-intellij#bedienung-von-intellij&#x22;, &#x22;Bedienung von IntelliJ&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/java/bedienung-von-intellij#bedienung-von-intellij">🔖</button></h1>
+  <p>
+    Wenn man bisher noch nicht mit einer Entwicklungsumgebung gearbeitet hat,
+    mag der Anblick erschreckend unübersichtlich sein.
+    Sobald man sich jedoch etwas intensiver damit beschäftigt hat,
+    möchte man den Bedienkomfort eines solchen Entwicklertools gar nicht mehr missen.
+  </p>
+  <p>Dieser Artikel stellt die wichtigsten Komponenten der Entwicklungsumgebung IntelliJ vor.</p>
+  <p>
+    IntelliJ ist im Vergleich zu Eclipse die modernere IDE mit mehr Features,
+    weshalb wir diese für neu Beginnende empfehlen würden.
+  </p>
+  <h2 id="die-oberflche"><a href="#die-oberflche" class="heading"><span>Die Oberfläche</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/java/bedienung-von-intellij#die-oberflche&#x22;, &#x22;Die Oberfläche&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/java/bedienung-von-intellij#die-oberflche">🔖</button></h2>
+  <p>
+    <figure src="/images/java/intellij_important.png" alt="Überblick über die wichtigsten Fenster in
+IntelliJ" class="normal undefined">
+      <img src="/images/java/intellij_important.png" alt="Überblick über die wichtigsten Fenster in
+IntelliJ" onclick="hyperbook.toggleLightbox(this)">
+    </figure>
+  </p>
+  <h3 id="project-tool-window"><a href="#project-tool-window" class="heading"><span>Project Tool Window</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/java/bedienung-von-intellij#project-tool-window&#x22;, &#x22;Project Tool Window&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/java/bedienung-von-intellij#project-tool-window">🔖</button></h3>
+  <p>
+    Das Project Tool Window befindet sich standartgemäß am linken Rand.
+    In ihm sieht man die Ordnerstruktur und alle im Projekt enthaltenen Dateien.
+    Wenn man eine Datei doppelklickt,
+    wird diese Datei im Editor geöffnet.
+    Mit einem Rechtsklick auf eine Datei oder ein Verzeichnis bekommt man viele Optionen,
+    mit denen sich das ausgewählte Objekt bearbeiten lässt.
+  </p>
+  <h3 id="editor"><a href="#editor" class="heading"><span>Editor</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/java/bedienung-von-intellij#editor&#x22;, &#x22;Editor&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/java/bedienung-von-intellij#editor">🔖</button></h3>
+  <p>
+    Der Editor ist die große Fläche in der Mitte des IntelliJ-Fensters.
+    Am oberen Rand befindet sich die Tab-Leiste, die alle geöffneten Dateien beinhaltet.
+  </p>
+  <h3 id="problems"><a href="#problems" class="heading"><span>Problems</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/java/bedienung-von-intellij#problems&#x22;, &#x22;Problems&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/java/bedienung-von-intellij#problems">🔖</button></h3>
+  <p>
+    Das Problems Fenster ist standardgemäß nicht auf.
+    Um es zu öffnen,
+    muss man unten links in der Tool Window Bar den Knopf dafür (Kreis mit ! in der Mitte) drücken.
+    Hier werden sowohl Programmierfehler als auch Warnungen angezeigt.
+  </p>
+  <p>Mit einem Doppelklick auf einen Eintrag springt der Cursor im Editor an die entsprechende Codezeile die den Fehler oder die Warnung enthält.</p>
+  <h3 id="console"><a href="#console" class="heading"><span>Console</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/java/bedienung-von-intellij#console&#x22;, &#x22;Console&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/java/bedienung-von-intellij#console">🔖</button></h3>
+  <p>
+    Die Console ist nicht sofort sichtbar, sondern erscheint erst,
+    nachdem das erste Programm ausgeführt worden ist.
+    Alternativ kann man die Console auch unten links in der Tool Window Bar öffnen.
+  </p>
+  <p>
+    In der Console werden alle Systemausgaben angezeigt.
+    Falls ein Fehler (Exception) geworfen wird,
+    kann man durch einen Klick auf den blauen unterstrichenen Teil der Fehlermeldung an die entsprechende Zeile im Programmcode gelangen.
+  </p>
+  <h3 id="gradle-tool-window"><a href="#gradle-tool-window" class="heading"><span>Gradle Tool Window</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/java/bedienung-von-intellij#gradle-tool-window&#x22;, &#x22;Gradle Tool Window&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/java/bedienung-von-intellij#gradle-tool-window">🔖</button></h3>
+  <p>
+    Das Gradle Tool Window kann geöffnet werden,
+    durch einen Klick auf das Elefantensymbol am rechten Rand.
+    In ihm finden sich Informationen zu dem Gradle Projekt und außerdem unter dem Reiter "Tasks" verschiedene Gradle Befehle.
+    Mit einem Doppelklick auf einen Befehl oder mit Rechtsklick und dann Linksklick auf "Run" kann ein Befehl ausgeführt werden.
+    Hier sind einige wichtige Funktionen:
+  </p>
+  <ul>
+    <li>
+      Unter "build" befindet sich der build-Befehl, mit dem man aus dem Projekt eine Jar erstellen kann,
+      die dann im Contest System hochgeladen werden kann.
+    </li>
+    <li>
+      Unter "application" befindet sich der run Befehl,
+      welcher eine weitere Möglichkeit ist um den Spieler zu starten.
+    </li>
+  </ul>
+  <h2 id="programme-starten"><a href="#programme-starten" class="heading"><span>Programme starten</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/java/bedienung-von-intellij#programme-starten&#x22;, &#x22;Programme starten&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/java/bedienung-von-intellij#programme-starten">🔖</button></h2>
+  <ol>
+    <li>
+      Um eine Start-Konfiguration zum Starten der Spielervorlage zu erstellen,
+      musst man zuerst im Run/Debug Widget auf die aktuelle Buildeinstellung klicken (standard "Current File")
+      und in dem Dropdown Menü, welches sich dann öffnet, auf "Edit Configurations" klicken.
+    </li>
+  </ol>
+  <p>
+    <figure src="/images/java/build1.png" alt="intellij run configurations" class="normal undefined">
+      <img src="/images/java/build1.png" alt="intellij run configurations" onclick="hyperbook.toggleLightbox(this)">
+    </figure>
+  </p>
+  <ol start="2">
+    <li>
+      <p>
+        Wenn noch keine Start-Konfiguration existiert,
+        kann man sie entweder durch klicken auf das "+" oben links
+        oder durch klicken auf "Add new ..." im sich öffnenden Fenster erstellen.
+      </p>
+      <p>
+        Im sich öffnenden Fenster müssen folgende Einstellungen vorgenommen werden,
+        um die Software-Challenge GUI aus IntelliJ heraus starten zu können.
+      </p>
+      <ol>
+        <li>Das Build Tool muss auf Gradle gestellt werden.</li>
+        <li>Im nächsten Fenster musst überprüft werden, ob das Projekt richtig "eingelesen" wurde.</li>
+        <li>Unter der Überschrift "Run" muss "run" ins Eingabefeld geschrieben werden.</li>
+        <li>"Apply" oder "Ok" speichert die Eingaben.</li>
+      </ol>
+    </li>
+  </ol>
+  <p>
+    <figure src="/images/java/build2.png" alt="intellij run configurations" class="normal undefined">
+      <img src="/images/java/build2.png" alt="intellij run configurations" onclick="hyperbook.toggleLightbox(this)">
+    </figure>
+  </p>
+  <ol start="3">
+    <li>
+      Danach ist im Run/Debug Widget die neu erstellte Konfiguration ausgewählt
+      und du kannst den Spieler durch klicken auf das Startsymbol (grünes Dreieck) starten.
+    </li>
+  </ol>
+  <p>
+    <figure src="/images/java/build3.png" alt="intellij run configurations" class="normal undefined">
+      <img src="/images/java/build3.png" alt="intellij run configurations" onclick="hyperbook.toggleLightbox(this)">
+    </figure>
+  </p>
+  <h2 id="tastaturkrzel"><a href="#tastaturkrzel" class="heading"><span>Tastaturkürzel</span></a><button class="bookmark" onclick="hyperbook.toggleBookmark(&#x22;/entwicklung/java/bedienung-von-intellij#tastaturkrzel&#x22;, &#x22;Tastaturkürzel&#x22;)" title="Lesezeichen umschalten" data-key="/entwicklung/java/bedienung-von-intellij#tastaturkrzel">🔖</button></h2>
+  <p>
+    IntelliJ IDEA bietet ebenfalls zahlreiche Tastenkombinationen,
+    mit denen sich Funktionen schneller aufrufen lassen.
+    Die wichtigsten Shortcuts sind in der folgenden Tabelle aufgeführt:
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Aktion</th>
+        <th>Effekt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Shift+F10</td>
+        <td>Führt die zuletzt ausgeführte Datei erneut aus</td>
+      </tr>
+      <tr>
+        <td>Cursor auf Variablen-, Klassen- oder Methodennamen, dann Shift+F6</td>
+        <td>Benennt alle Vorkommen des Namens im ganzen Projekt um</td>
+      </tr>
+      <tr>
+        <td>Alt+Enter</td>
+        <td>Zeigt Verbesserungs- bzw. Reparaturvorschläge an, wenn der Cursor auf einem Fehler oder einer Warnung steht</td>
+      </tr>
+      <tr>
+        <td>Ctrl+Alt+I</td>
+        <td>Rückt den markierten Text sauber ein</td>
+      </tr>
+      <tr>
+        <td>Ctrl+/</td>
+        <td>Kommentiert die markierten Zeilen ein, bzw. aus</td>
+      </tr>
+      <tr>
+        <td>Cursor auf Variablen-, Methoden- oder Klassennamen, dann Ctrl+B</td>
+        <td>Springt zu der Definition der Variable, Methode oder Klasse</td>
+      </tr>
+      <tr>
+        <td>Variablen- oder Klassenname teilweise eingegeben, dann Ctrl+Space</td>
+        <td>IntelliJ liefert Vorschläge zur Vervollständigung</td>
+      </tr>
+      <tr>
+        <td>Eingabe von <span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>sout</span></span><button type="button" data="sout" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span>, dann Tab oder Enter</td>
+        <td>Erzeugt <span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>System.out.println</span></span><button type="button" data="System.out.println" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span></td>
+      </tr>
+      <tr>
+        <td>Eingabe von <span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>fori</span></span><button type="button" data="fori" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span>, dann Tab oder Enter</td>
+        <td>Erzeugt die folgende <span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>for</span></span><button type="button" data="for" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span>-Schleife: <span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>for (int i = 0; i &#x3C; ; i++) {}</span></span><button type="button" data="for (int i = 0; i < ; i++) {}" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span></td>
+      </tr>
+      <tr>
+        <td>Eingabe von <span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>ifn</span></span><button type="button" data="ifn" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span>, dann Tab oder Enter</td>
+        <td>IntelliJ erzeugt eine <span data-rehype-pretty-code-figure=""><code data-language="plaintext" data-theme="github-dark github-light" style="--shiki-dark:#e1e4e8;--shiki-light:#24292e;--shiki-dark-bg:#24292e;--shiki-light-bg:#fff"><span data-line=""><span>if</span></span><button type="button" data="if" title="Copy code" aria-label="Copy code" class="rehype-pretty-copy" data-name="rehype-pretty-copy-button" onclick="navigator.clipboard.writeText(this.attributes.data.value);this.classList.add('rehype-pretty-copied');window.setTimeout(() => this.classList.remove('rehype-pretty-copied'), 3000);"><span class="ready"></span><span class="success"></span></button><style>:root {--copy-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23adadad' d='M16.187 9.5H12.25a1.75 1.75 0 0 0-1.75 1.75v28.5c0 .967.784 1.75 1.75 1.75h23.5a1.75 1.75 0 0 0 1.75-1.75v-28.5a1.75 1.75 0 0 0-1.75-1.75h-3.937a4.25 4.25 0 0 1-4.063 3h-7.5a4.25 4.25 0 0 1-4.063-3M31.813 7h3.937A4.25 4.25 0 0 1 40 11.25v28.5A4.25 4.25 0 0 1 35.75 44h-23.5A4.25 4.25 0 0 1 8 39.75v-28.5A4.25 4.25 0 0 1 12.25 7h3.937a4.25 4.25 0 0 1 4.063-3h7.5a4.25 4.25 0 0 1 4.063 3M18.5 8.25c0 .966.784 1.75 1.75 1.75h7.5a1.75 1.75 0 1 0 0-3.5h-7.5a1.75 1.75 0 0 0-1.75 1.75'/%3E%3C/svg%3E");--success-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2366ff85' d='M9 16.17L5.53 12.7a.996.996 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.29 7.71a.996.996 0 1 0-1.41-1.41z'/%3E%3C/svg%3E");}pre:has(code) {position: relative;}button[data='<span>'] {width: 0;height: 0;display: none;visibility: hidden;}pre button.rehype-pretty-copy {right: 1px;padding: 0;width: 24px;height: 24px;display: flex;margin-top: 2px;margin-right: 8px;position: absolute;border-radius: 25%;& span {width: 100%;aspect-ratio: 1 / 1;}& .ready {background-image: var(--copy-icon);}& .success {display: none; background-image: var(--success-icon);}}&.rehype-pretty-copied {& .success {display: block;} & .ready {display: none;}}pre button.rehype-pretty-copy.rehype-pretty-copied {opacity: 1;& .ready { display: none; }& .success { display: block; }}</style></code></span>-Struktur</td>
+      </tr>
+    </tbody>
+  </table>
+  <p><strong>Hinweis:</strong> Unter macOS wird statt der <strong>Strg</strong>-Taste die <strong>Command (⌘)</strong>-Taste verwendet.</p>
+</div>
+<dialog id="share-dialog">
+  <div class="container">
+    <h2 class="title">Teilbare URL erstellen</h2><label class="standalone-option"><input type="checkbox" id="share-standalone-checkbox" onchange="hyperbook.shareUpdatePreview()"> Standalone-Modus</label>
+    <h3 class="sections-title">Abschnitte auswählen</h3>
+    <div class="sections-list"><label class="heading-item level-1"><input type="checkbox" value="bedienung-von-intellij" data-anchor="bedienung-von-intellij" onchange="hyperbook.shareUpdatePreview()"> Bedienung von IntelliJ</label><label class="heading-item level-2"><input type="checkbox" value="die-oberflche" data-anchor="die-oberflche" onchange="hyperbook.shareUpdatePreview()"> Die Oberfläche</label><label class="heading-item level-3"><input type="checkbox" value="project-tool-window" data-anchor="project-tool-window" onchange="hyperbook.shareUpdatePreview()"> Project Tool Window</label><label class="heading-item level-3"><input type="checkbox" value="editor" data-anchor="editor" onchange="hyperbook.shareUpdatePreview()"> Editor</label><label class="heading-item level-3"><input type="checkbox" value="problems" data-anchor="problems" onchange="hyperbook.shareUpdatePreview()"> Problems</label><label class="heading-item level-3"><input type="checkbox" value="console" data-anchor="console" onchange="hyperbook.shareUpdatePreview()"> Console</label><label class="heading-item level-3"><input type="checkbox" value="gradle-tool-window" data-anchor="gradle-tool-window" onchange="hyperbook.shareUpdatePreview()"> Gradle Tool Window</label><label class="heading-item level-2"><input type="checkbox" value="programme-starten" data-anchor="programme-starten" onchange="hyperbook.shareUpdatePreview()"> Programme starten</label><label class="heading-item level-2"><input type="checkbox" value="tastaturkrzel" data-anchor="tastaturkrzel" onchange="hyperbook.shareUpdatePreview()"> Tastaturkürzel</label></div>
+    <div class="url-preview" id="share-url-preview"></div><button class="copy-button" onclick="hyperbook.shareCopyUrl()">Teilbare URL kopieren</button>
+  </div><button class="close" onclick="hyperbook.shareClose()"><div class="close-icon"></div></button>
+</dialog>
+</article><div class="jump-container"><a class="jump previous" href="/entwicklung/java/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a><a class="jump next" href="/entwicklung/java/bedienung-von-eclipse">Bedienung von Eclipse</a></div><div class="meta"><a class="edit-github" href="https://github.com/software-challenge/docs/tree/main/hyperbook/book/entwicklung/java/bedienung-von-intellij.md">✎ GitHub</a><a href="#" onclick="hyperbookReset()"><span class="reset-icon" title="Das Hyperbook zurücksetzen"></span></a><span class="copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a> by <a href="https://software-challenge.de">Software-Challenge Germany</a></span></div></main></div><script src="/__hyperbook_assets/client.js?version=0.81.1" defer></script></body></html>
