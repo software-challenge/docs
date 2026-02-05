@@ -1,6 +1,6 @@
 ---
 name: Spieler für Abgabe Exportieren
-index: 9
+index: 8
 ---
 
 # Computerspieler abgabefertig machen (Anleitung für Export aus der IDE für Java)
