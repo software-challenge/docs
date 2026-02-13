@@ -22,7 +22,7 @@ und sogar als Mensch mitspielen.
 ## System vorbereiten und Spielleiter starten
 
 Die einzige Voraussetzung ist
-die [Installation einer Java-Laufzeitumgebung](/entwicklung/installation-von-java).
+die [Installation einer Java-Laufzeitumgebung](/entwicklung/java/installation-von-java).
 dass auf dem Rechner mindestens die Laufzeitumgebung für Java 11 installiert ist.
 
 Nach der erfolgreichen Installation kann man den grafischen Server
@@ -176,7 +176,7 @@ So nutzt du ihn
 
 Es ist möglich, statt eines zufällig generierten vollständigen Spielplanes
 eine Spielsituation zu laden und zu testen.
-Die Spielsituation muss vorher wie unter [Spielsituation nachstellen](#spielsituation-nachstellen) erzeugt werden.
+Die Spielsituation muss vorher wie unter [Spielsituation nachstellen](grundlagen/server#spielsituation-nachstellen) erzeugt werden.
 Dann kann die Datei mit dem Argument `--loadGameFile` geladen werden
 und optional mit `--turn` ein Zug spezifiziert werden.
 ```sh
@@ -204,7 +204,7 @@ dass Computerspieler wegen Zugzeitüberschreitungen vom Server disqualifiziert w
 Dies passiert, obwohl der Zug innerhalb der erlaubten Zugzeit
 (abhängig vom Spiel, bisher aber immer zwei Sekunden)
 an den Server geschickt wurde.
-Der Garbage Collector der Java Virtual Machine löst dieses Verhalten aus.
+Der [Garbage Collector](/faq#garbage-collector) der Java Virtual Machine kann dieses Verhalten auslösen.
 Er pausiert die Anwendung, um nicht mehr genutzten Speicher freizugeben.
 Wenn der Server dadurch zu einem ungünstigen Zeitpunkt angehalten wird,
 bemerkt er den Eingang des Zuges vom Computerspieler nicht rechtzeitig und disqualifiziert ihn daraufhin.
@@ -294,7 +294,11 @@ Unter Windows
 ```
 Der TestClient kann sich auch mit einem bereits laufenden Server verbinden,
 bei Angabe des Arguments `--start-server` startet er jedoch einfach selbst einen.
-Wichtig ist, dass nicht versucht wird, zwei Server auf dem selben Port zu starten.
+Bei folgender Fehlermeldung wurde der Server auf einem bereits belegten Port gestartet:
+```
+    Could not start server on port 13050
+    java.net.BindException: Address already in use
+```
 
 #### Argumente des TestClients
 
@@ -326,5 +330,10 @@ Ergebnisse werden erst zurückgesetzt, wenn der Server neu gestartet
 wird. Achte also nach einer Veränderung der Spieler darauf, den Server
 neu zu starten oder andere Spielernamen zu verwenden.
 
-Dieses Verhalten wird wahrscheinlich bald verändert,
-wobei dann jeder TestClient unabhängig vom Server die Punkte zählt.
+Die Ergebnisse der Spiele werden für den jeweiligen Spielernamen vom Server zusammengezählt,
+auch über mehrere Starts des TestClients.
+Die Ergebnisse werden erst zurückgesetzt,
+wenn der Server neu gestartet wird.
+Achte also nach einer Veränderung der Spieler darauf,
+den Serverneu zu starten oder andere Spielernamen zu verwenden.
+Perspektivisch soll der TestClient zukünftig unabhängig vom Server die Punkte zählen.
