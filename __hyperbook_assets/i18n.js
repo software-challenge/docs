@@ -1,4 +1,12 @@
-var i18n = (function () {
+/// <reference path="./hyperbook.types.js" />
+window.hyperbook = window.hyperbook || {};
+
+/**
+ * Internationalization module providing translation lookups.
+ * @type {HyperbookI18n}
+ * @memberof hyperbook
+ */
+hyperbook.i18n = (function () {
   
   // GENERATED
   const locales = {
@@ -78,11 +86,45 @@ var i18n = (function () {
     "typst-filename-exists": "Datei existiert bereits",
     "typst-file-replace": "Existierende Datei ersetzen?",
     "typst-binary-files": "Binärdateien",
-    "typst-no-binary-files": "Keine Binärdateien"
+    "typst-no-binary-files": "Keine Binärdateien",
+    "user-login-title": "Anmelden",
+    "user-username": "Benutzername",
+    "user-password": "Passwort",
+    "user-login": "Anmelden",
+    "user-info-title": "Benutzer Info",
+    "user-status": "Status",
+    "user-saved": "Gespeichert",
+    "user-saving": "Speichere...",
+    "user-save-error": "Fehler beim Speichern",
+    "user-unsaved": "Ungespeicherte Änderungen",
+    "user-offline": "Offline",
+    "user-offline-queued": "Lokal gespeichert",
+    "user-save": "Jetzt speichern",
+    "user-logout": "Abmelden",
+    "user-login-required": "Benutzername und Passwort erforderlich",
+    "user-login-failed": "Anmeldung fehlgeschlagen",
+    "user-logout-confirm": "Möchten Sie sich wirklich abmelden?",
+    "user-readonly": "Nur-Lesen-Modus",
+    "user-impersonating": "Angemeldet als",
+    "user-exit-impersonation": "Identitätswechsel beenden",
+    "consent-youtube-text": "Bei einem Klick auf den Play-Button wird ein YouTube-Video über YouTube-NoCookie geladen. Dennoch findet der Verbindungsaufbau statt und die dafür notwendigen Daten werden übertragen.",
+    "consent-youtube-nocookie": "Wir verwenden YouTube-NoCookie, um Ihre Privatsphäre zu schützen.",
+    "consent-youtube-always": "YouTube-Videos immer zulassen",
+    "consent-youtube-accept": "Akzeptieren und abspielen",
+    "consent-embed-text": "Hier sollen Inhalte einer externen Internetseite geladen werden.",
+    "consent-embed-personal-data": "Die externe Internetseite kann möglicherweise personenbezogene Daten erheben.",
+    "consent-embed-always": "Inhalte von {{domain}} immer zulassen",
+    "consent-embed-accept": "Inhalte laden"
 }
 ;
 
 
+  /**
+   * Get a translated string by key, with optional placeholder substitution.
+   * @param {string} key - The translation key.
+   * @param {Record<string, string>} [values] - Placeholder values to substitute.
+   * @returns {string} The translated string, or the key itself if not found.
+   */
   const get = (key, values) => {
     if (!locales[key]) {
       console.warn(
