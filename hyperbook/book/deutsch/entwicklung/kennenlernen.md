@@ -10,6 +10,8 @@ man vorher das Spiel selbst verstehen und spielen können.
 Dabei könnt ihr bereits Ideen und Strategien entwickeln,
 die ihr in euren [Computerspieler](/grundlagen/player) nachher umsetzen wollt.
 
+Die Spielregeln findest du [hier](/spiele/26_piranhas/regeln.md).
+
 Das Spiel selbst kann zu zweit oder allein gegen den [Zufallsspieler](/grundlagen/player#der-zufallsspieler)
 mit dem [Spielleiter](/grundlagen/server) gespielt werden.
 Es ist empfehlenswert, dies vor dem Beginn der Programmierung einige Male zu tun,

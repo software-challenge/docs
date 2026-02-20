@@ -1,5 +1,5 @@
 ---
 name: Technische Grundlagen
-index: 4
+index: 1
 expanded: false
 ---
