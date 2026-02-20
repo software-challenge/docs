@@ -3,10 +3,12 @@ name: Landing
 index: 1
 ---
 
-# Hi
+# Herzlich Willkommen in der Dokumentation der Software-Challenge Germany
 
-Im Menü auf der linken Seite findest du die allgemeine Dokumentation.
+Links findest du die gesamte Dokumentation, mit allem was du brauchst um durchstarten zu können.
 
 ---
 
-In the menu on the left side, you can find the dokumentation.
+# A warm welcome to the documentation of the Software-Challenge Germany
+
+On the left, you will find everything you will need, to have a good start in this project.

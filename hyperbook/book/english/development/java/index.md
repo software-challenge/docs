@@ -1,5 +1,5 @@
 ---
-name: Technische Grundlagen
+name: Java
 index: 1
 expanded: false
 ---
