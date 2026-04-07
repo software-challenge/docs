@@ -71,14 +71,24 @@ aktualisieren.
 
 ## Die Aufgabe
 
-Die Software-Challenge basiert jedes Jahr auf einem Brettspiel, für das
-ein :t[Computerspieler]{#player} geschrieben werden soll und das entweder selbst
-entwickelt oder auf Basis eines existierenden Brettspiels modifiziert
-wird. Im letzteren Fall werden wir durch die Spiel-Verlage unterstützt,
-indem diese uns die Genehmigung erteilen und Grafiken zur Verfügung
-stellen. Bei der Entwicklung bzw. Modifizierung der Spiele versuchen wir
-zu erreichen, dass die Spiele interessant, abwechslungsreich und nicht
-zu kompliziert sind und dass die Glückskomponente nicht dominiert. Ein
-sehr guter :t[Computerspieler]{#player} soll sich also langfristig gegen schwächere
-durchsetzen, wobei es durchaus vorkommen darf, dass er bei viel Pech
-auch mal verliert.
+Die Software-Challenge basiert jedes Jahr auf einem Brettspiel,
+für das ein [Computerspieler](/grundlagen/player) geschrieben werden soll
+und das entweder selbst entwickelt oder auf Basis eines existierenden Brettspiels modifiziert wird.
+Im letzteren Fall werden wir durch die Spiel-Verlage unterstützt,
+indem diese uns die Genehmigung erteilen und Grafiken zur Verfügung stellen.
+Bei der Entwicklung bzw. Modifizierung der Spiele versuchen wir zu erreichen,
+dass die Spiele interessant, abwechslungsreich und nicht zu kompliziert sind und dass die Glückskomponente nicht dominiert.
+Ein sehr guter [Computerspieler](/grundlagen/player) soll sich also langfristig gegen schwächere Spieler durchsetzen,
+wobei es durchaus vorkommen darf, dass er bei viel Pech auch mal verliert.
+
+## Nutzung von KI
+
+Generell soll die Nutzung von KI-Tools zur Unterstützung beim Programmieren des Computerspielers weiterhin erlaubt sein.
+
+Für die Teilnahme an der Software-Challenge ziehen wir aber eine klare Grenze:
+Der so generierte Quellcode soll weiterhin verstanden werden.
+
+Für die Saison 2026 bedeutet das Folgendes:
+
+- nach dem Ablauf der Champions League überprüfen wir in Interviews den Umfang der KI-Nutzung,
+- nur Teams, welche verstehen, was für Quellcode sie abgegeben haben, können sich für das Final Eight qualifizieren.
