@@ -1,5 +1,5 @@
 /// <reference path="./hyperbook.types.js" />
-window.hyperbook = window.hyperbook || {};
+var hyperbook = window.hyperbook = window.hyperbook || {};
 
 /**
  * Persistent store backed by Dexie (IndexedDB).
@@ -192,11 +192,10 @@ hyperbook.store = (function () {
     input.click();
   }
 
-  // Expose the Dexie db instance properties and public API
-  return Object.assign(db, {
+  return {
     db,
     export: hyperbookExport,
     reset: hyperbookReset,
     import: hyperbookImport,
-  });
+  };
 })();
