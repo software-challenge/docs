@@ -283,14 +283,7 @@ Unter Windows
 (unterscheidet sich nur durch die Art, den langen Befehl auf mehrere Zeilen zu verteilen):
 
 ```cmd
-    java -jar -Dlogback.configurationFile=logback-tests.xml test-client.jar ^
-        --tests 4 ^
-        --name1 "displayName1" ^
-        --player1 "./player1.jar" ^
-        --name2 "displayName2" ^
-        --player2 "./player2.jar" ^
-        --start-server ^
-        --port 13051
+    java "-Dlogback.configurationFile=logback-tests.xml" -jar test-client.jar --tests 100 --name1 "Spieler1" --player1 "./defaultplayer.jar" --name2 "Spieler2" --player2 "./defaultplayer.jar" --start-server --port 13051
 ```
 Der TestClient kann sich auch mit einem bereits laufenden Server verbinden,
 bei Angabe des Arguments `--start-server` startet er jedoch einfach selbst einen.
