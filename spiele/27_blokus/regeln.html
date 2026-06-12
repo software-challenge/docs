@@ -1,0 +1,218 @@
+<!doctype html><html lang="de" class="no-js"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1,, interactive-widget=resizes-content"><title>Spielregeln - Software-Challenge Dokumentation</title><meta property="og:title" value="Spielregeln - Software-Challenge Dokumentation"><meta name="description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta property="og:description" content="Dokumentation der Software-Challenge Germany. Alle Informationen zu dem Ablauf, den technischen Grundlagen und Hilfestellungen."><meta name="keywords"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/__hyperbook_assets/favicons/apple-touch-icon.png?v=0.97.0"><link rel="manifest" href="/__hyperbook_assets/favicons/manifest.webmanifest?v=0.97.0"><link rel="stylesheet" href="/__hyperbook_assets/normalize.css?v=0.97.0"><style>
+html,
+body {
+  overflow: hidden;
+  margin: 0;
+  height: 100dvh;
+  width: 100dvw;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --color-brand: #ECC94B;
+  --color-brand-dark: #ECC94B;
+  --color-brand-text: white;
+  --main-width: 980px;
+  --header-height: 3.75rem;
+  --nav-width: minmax(300px, 0.33fr);
+  --nav-font-size: 0.9rem;
+  --element-gap: 1.5rem;
+}
+@font-face {
+  font-family: hyperbook-body;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: hyperbook-heading;
+  src: url(/fonts/Inter-Regular.ttf);
+  size-adjust: 100%;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: hyperbook-code;
+  src: url(/fonts/SourceCodePro-Regular.ttf);
+  size-adjust: 100%;
+  font-display: swap;
+}
+
+body {
+  overscroll-behavior-x: none;
+  background-color: transparent;
+  color: var(--color-text);
+  font-family: hyperbook-body;
+  font-weight: normal;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+</style><noscript id="dark-mode-toggle-stylesheets"><link rel="stylesheet" href="/__hyperbook_assets/light.css?v=0.97.0" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="/__hyperbook_assets/dark.css?v=0.97.0" media="(prefers-color-scheme: dark)"></noscript><script>
+// Remove no-js class as soon as JavaScript is available
+document.documentElement.classList.remove('no-js');</script><script src="/__hyperbook_assets/dark-mode-toggle-stylesheets-loader.js?v=0.97.0"></script><script type="module" src="/__hyperbook_assets/dark-mode-toggle.js?v=0.97.0"></script><script src="/__hyperbook_assets/i18n.js?v=0.97.0" defer></script><script src="/__hyperbook_assets/dexie.min.js?v=0.97.0" defer></script><script src="/__hyperbook_assets/dexie-export-import.js?v=0.97.0" defer></script><script src="/__hyperbook_assets/store.js?v=0.97.0" defer></script><script>
+window.Prism = window.Prism || {};
+window.Prism.manual = true;</script><script src="/__hyperbook_assets/prism/prism.js?v=0.97.0" defer></script><script src="/__hyperbook_assets/prism/prism-typst.js?v=0.97.0" defer></script><link rel="stylesheet" href="/__hyperbook_assets/prism/prism.css?v=0.97.0"><link rel="stylesheet" href="/__hyperbook_assets/prism/prism-theme-github-dark.css?v=0.97.0" media="(prefers-color-scheme: dark)"><link rel="stylesheet" href="/__hyperbook_assets/prism/prism-theme-github-light.css?v=0.97.0" media="(prefers-color-scheme: light)"><link rel="stylesheet" href="/__hyperbook_assets/math/katex.min.css?v=0.97.0"><link rel="stylesheet" href="/__hyperbook_assets/shell.css?v=0.97.0"><link rel="stylesheet" href="/__hyperbook_assets/content.css?v=0.97.0"><link rel="stylesheet" href="/__hyperbook_assets/code.css?v=0.97.0"><script>
+HYPERBOOK_ASSETS = "/__hyperbook_assets/"
+
+</script><script>
+console.log(
+  "%c" +
+  "Hyperbook v0.97.0",
+  "font-family: monospace; font-size: 16px;"
+);</script><script type="module" src="/__hyperbook_assets/side-drawer.js?v=0.97.0" async></script><script src="/__hyperbook_assets/lunr.min.js?v=0.97.0" defer></script><script src="/__hyperbook_assets/lunr-languages/lunr.stemmer.support.min.js?v=0.97.0" defer></script><script src="/__hyperbook_assets/lunr-languages/lunr.de.min.js?v=0.97.0" defer></script><script src="/__hyperbook_assets/search.js?v=0.97.0" defer></script><script src="/__hyperbook_assets/qrcode.js?v=0.97.0" async></script></head><body><div class="main-grid"><header><div class="mobile-nav"><button aria-label="Nav Toggle" class="toggle" onclick="hyperbook.ui.navToggle()"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div></button><side-drawer id="nav-drawer"><div class="nav-drawer-content"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><details data-id="_nav:/grundlagen" class="section  empty"><summary class="name"><span class="label">Technische Grundlagen</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/grundlagen/player">Computerspieler</a></li><li><a class="page" href="/grundlagen/server">Spielleiter</a></li><li><a class="page" href="/grundlagen/contest">Wettkampfsystem</a></li></ul></div></details><div class="virtual-section"><div class="links"><details data-id="_nav:/spiele/27_blokus" class="section  empty" open><summary class="name"><span class="label">Blokus 2027</span></summary><div class="links"><ul class="pages"><li><a class="page active" href="/spiele/27_blokus/regeln">Spielregeln</a></li><li><a class="page" href="/spiele/27_blokus/xml">xml</a></li></ul></div></details></div></div><details data-id="_nav:/entwicklung" class="section  " open><summary class="name"><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></summary><div class="links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul><details data-id="_nav:/entwicklung/java" class="section  empty"><summary class="name"><span class="label">Java</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/entwicklung/java/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/java/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/java/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/java/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/java/bedienung-von-intellij">Bedienung von IntelliJ</a></li><li><a class="page" href="/entwicklung/java/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/java/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/java/Anleitung-Abgabe">Spieler für Abgabe Exportieren</a></li></ul><details data-id="_nav:/entwicklung/java/Methoden" class="section  empty"><summary class="name"><span class="label">Methoden</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/entwicklung/java/Methoden/all">Alle Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/GameState-und-Board">GameState und Board Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/GameRuleLogic">GameRuleLogic Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/FieldState">FieldState Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/Direction">Direction Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/Coordinates">Koordinaten Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/Vector">FieldState Methoden</a></li></ul></div></details></div></details><details data-id="_nav:/entwicklung/python" class="section  empty"><summary class="name"><span class="label">Python</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/entwicklung/python/installation-von-python">Installation von Python</a></li><li><a class="page" href="/entwicklung/python/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/python/getting-started">Getting Started</a></li><li><a class="page" href="/entwicklung/python/python-programmierstil">Sauberer Programmierstil in Python</a></li><li><a class="page" href="/entwicklung/python/oop-in-python">Objektorientierte Programmierung in Python</a></li><li><a class="page" href="/entwicklung/python/vorlage-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/python/spieler-abgeben">Spieler für den Wettbewerb abgeben</a></li></ul></div></details></div></details><details data-id="_nav:/xml" class="section  empty"><summary class="name"><span class="label">Allgemeine XML-Dokumentation</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></details></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div></side-drawer></div><a class="branding" href="/"><div class="logo"><img alt="logo" src="/logo.svg" height="40"></div><div class="name">Software-Challenge Dokumentation</div></a><button id="search-toggle" onclick="hyperbook.ui.searchToggle()" title="Suche"></button><side-drawer id="search-drawer" right><div class="search-drawer-content"><div class="search-input"><div class="search-icon"></div><input id="search-input" placerholder="..."><button class="search-button" onclick="hyperbook.ui.search()"></button></div><div id="search-results"></div></div></side-drawer><button id="share-button" class="icon-button" title="Teilen" onclick="hyperbook.share.open()"><div class="share-icon"></div></button><dark-mode-toggle id="dark-mode-toggle" appearence="switch" title="Zwischen Dunkel- und Hellmodus wechseln" permanent></dark-mode-toggle></header><div class="sidebar"><nav><ul><li><a class="page" href="/">Überblick</a></li><li><a class="page" href="/wettbewerb">Die Software-Challenge</a></li><li><a class="page" href="/faq">F.A.Q.</a></li></ul><details data-id="_nav:/grundlagen" class="section  empty"><summary class="name"><span class="label">Technische Grundlagen</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/grundlagen/player">Computerspieler</a></li><li><a class="page" href="/grundlagen/server">Spielleiter</a></li><li><a class="page" href="/grundlagen/contest">Wettkampfsystem</a></li></ul></div></details><div class="virtual-section"><div class="links"><details data-id="_nav:/spiele/27_blokus" class="section  empty" open><summary class="name"><span class="label">Blokus 2027</span></summary><div class="links"><ul class="pages"><li><a class="page active" href="/spiele/27_blokus/regeln">Spielregeln</a></li><li><a class="page" href="/spiele/27_blokus/xml">xml</a></li></ul></div></details></div></div><details data-id="_nav:/entwicklung" class="section  " open><summary class="name"><a href="/entwicklung" class="label">Entwicklung eines Computerspielers</a></summary><div class="links"><ul class="pages"><li><a class="page" href="/entwicklung/kennenlernen">Das Spiel kennenlernen</a></li><li><a class="page" href="/entwicklung/eine-idee-implementieren">Idee implementieren</a></li><li><a class="page" href="/entwicklung/abgabe">Computerspieler abgabefertig machen</a></li></ul><details data-id="_nav:/entwicklung/java" class="section  empty"><summary class="name"><span class="label">Java</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/entwicklung/java/installation-von-java">Installation von Java</a></li><li><a class="page" href="/entwicklung/java/einfuehrung-oop">Objektorientierte Programmierung</a></li><li><a class="page" href="/entwicklung/java/sauberer-programmierstil">Sauberer Programmierstil</a></li><li><a class="page" href="/entwicklung/java/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/java/bedienung-von-intellij">Bedienung von IntelliJ</a></li><li><a class="page" href="/entwicklung/java/bedienung-von-eclipse">Bedienung von Eclipse</a></li><li><a class="page" href="/entwicklung/java/simpleclient-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/java/Anleitung-Abgabe">Spieler für Abgabe Exportieren</a></li></ul><details data-id="_nav:/entwicklung/java/Methoden" class="section  empty"><summary class="name"><span class="label">Methoden</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/entwicklung/java/Methoden/all">Alle Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/GameState-und-Board">GameState und Board Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/GameRuleLogic">GameRuleLogic Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/FieldState">FieldState Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/Direction">Direction Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/Coordinates">Koordinaten Methoden</a></li><li><a class="page" href="/entwicklung/java/Methoden/Vector">FieldState Methoden</a></li></ul></div></details></div></details><details data-id="_nav:/entwicklung/python" class="section  empty"><summary class="name"><span class="label">Python</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/entwicklung/python/installation-von-python">Installation von Python</a></li><li><a class="page" href="/entwicklung/python/einrichtung-der-entwicklungsumgebung">Einrichtung der Entwicklungsumgebung</a></li><li><a class="page" href="/entwicklung/python/getting-started">Getting Started</a></li><li><a class="page" href="/entwicklung/python/python-programmierstil">Sauberer Programmierstil in Python</a></li><li><a class="page" href="/entwicklung/python/oop-in-python">Objektorientierte Programmierung in Python</a></li><li><a class="page" href="/entwicklung/python/vorlage-erweitern">Spielervorlage erweitern</a></li><li><a class="page" href="/entwicklung/python/spieler-abgeben">Spieler für den Wettbewerb abgeben</a></li></ul></div></details></div></details><details data-id="_nav:/xml" class="section  empty"><summary class="name"><span class="label">Allgemeine XML-Dokumentation</span></summary><div class="links"><ul class="pages"><li><a class="page" href="/xml/intro">Einführung in XML</a></li><li><a class="page" href="/xml/protokoll">XML-Protokoll</a></li><li><a class="page" href="/xml/administration">Verwaltung von Spielen mittels authentifiziertem  Client</a></li></ul></div></details></nav><a class="author" href="https://hyperbook.openpatch.org">Powered by <b>Hyperbook</b></a></div><main><article>
+<div class="hyperbook-markdown">
+  <div class="floating-buttons-container" id="floating-buttons-container"><button id="toc-toggle" onclick="hyperbook.ui.tocToggle()" title="Inhaltsverzeichnis"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div></button></div>
+  <side-drawer id="toc-drawer" right>
+    <div class="toc-drawer-content">
+      <nav class="toc">
+        <ul>
+          <li class="level-1"><a href="#spielmaterial">Spielmaterial</a></li>
+          <li class="level-1"><a href="#spielablauf">Spielablauf</a></li>
+          <li class="level-1"><a href="#wertung">Wertung</a></li>
+        </ul>
+      </nav>
+    </div>
+  </side-drawer>
+  <h1 id="spielmaterial"><a href="#spielmaterial" class="heading"><span>Spielmaterial</span></a><button class="bookmark" onclick="hyperbook.ui.toggleBookmark(&#x22;/spiele/27_blokus/regeln#spielmaterial&#x22;, &#x22;Spielmaterial&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/27_blokus/regeln#spielmaterial">🔖</button></h1>
+  <p>
+    Jeder Spieler verfügt über zwei Sätze von 21 Spielsteinen (<a href="https://de.wikipedia.org/wiki/Polyomino" target="_blank" rel="noopener noreferrer">Polyominos</a>),
+    die sich aus kleinen Quadraten zusammensetzen.
+    Der eine Spieler hat blaue und rote Steine,
+    der andere gelbe und grüne.
+    Dabei kommt jede Form,
+    die aus 1–5 Quadraten besteht,
+    in jeder Farbe genau einmal vor:
+    also 1 Monomino,
+    1 Domino,
+    2 Triominos,
+    5 Tetrominos und
+    12 Pentominos.
+  </p>
+  <p>
+    <figure src="/images/spiele/blokus/Anleitung_Steinuebersicht.png" alt="Anleitung Steinuebersicht" class="normal undefined">
+      <img src="/images/spiele/blokus/Anleitung_Steinuebersicht.png" alt="Anleitung Steinuebersicht" onclick="hyperbook.ui.toggleLightbox(this)">
+    </figure>
+  </p>
+  <p>
+    Das Brett besteht aus 20 × 20 quadratischen Feldern,
+    welche dieselbe Größe wie die Quadrate der Spielsteine haben.
+  </p>
+  <p>
+    Die Koordinaten der Felder des Bretts beginnen in der linken oberen Ecke bei x=0, y=0
+    und folgen den Regeln des “normalen” kartesischen Koordinatensystems,
+    wobei die positive x-Achse nach rechts
+    und die positive y-Achse nach unten verläuft.
+  </p>
+  <p>
+    <figure src="/images/spiele/blokus/anleitung_beispielfeld.png" alt="anleitung beispielfeld" class="normal undefined">
+      <img src="/images/spiele/blokus/anleitung_beispielfeld.png" alt="anleitung beispielfeld" onclick="hyperbook.ui.toggleLightbox(this)">
+    </figure>
+  </p>
+  <h1 id="spielablauf"><a href="#spielablauf" class="heading"><span>Spielablauf</span></a><button class="bookmark" onclick="hyperbook.ui.toggleBookmark(&#x22;/spiele/27_blokus/regeln#spielablauf&#x22;, &#x22;Spielablauf&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/27_blokus/regeln#spielablauf">🔖</button></h1>
+  <p>
+    Die Spielsteine werden abwechselnd reihum gelegt.
+    Die Reihenfolge ist: Blau – Gelb – Rot – Grün.
+  </p>
+  <p>
+    Für den ersten Stein jeder Farbe gelten allerdings besondere Regeln:
+    Er muss so gesetzt werden,
+    dass mindestens ein Randfeld des Spielbretts (also mindestens eines der Felder von (0,0) bis (0,19), (0,19) bis (19,19), (19,19) bis (19,0) oder (19,0) bis (0,0)) besetzt wird.
+    Die Form des ersten Steins wird vom Server vorgegeben.
+    Sie wird zufällig aus allen verfügbaren Formen ausgewählt,
+    die aus 5 Quadraten bestehen (Pentomino).
+    Aber es kann für jede Farbe in einem Spiel einen unterschiedlichen ersten Stein geben.
+  </p>
+  <p>
+    <figure src="/images/spiele/blokus/anleitung_beispielfeld_rand_steine.png" alt="anleitung erste Züge" class="normal undefined">
+      <img src="/images/spiele/blokus/anleitung_beispielfeld_rand_steine.png" alt="anleitung erste Züge" onclick="hyperbook.ui.toggleLightbox(this)">
+    </figure>
+  </p>
+  <p>
+    Für die Platzierung aller weiteren Steine gilt:
+    Zwei Steine derselben Farbe dürfen sich nur an den Ecken berühren.
+    Wird ein neuer Stein gelegt,
+    muss dieser mindestens einen Stein derselben Farbe an mindestens einer Ecke berühren.
+    Dabei ist es egal,
+    wie Steine anderer Farben berührt werden,
+    solange diese nicht überdeckt werden.
+  </p>
+  <p>
+    <figure src="/images/spiele/blokus/anleitung_beruehrungen.png" alt="anleitung beruehrungen" class="normal undefined">
+      <img src="/images/spiele/blokus/anleitung_beruehrungen.png" alt="anleitung beruehrungen" onclick="hyperbook.ui.toggleLightbox(this)">
+    </figure>
+  </p>
+  <p>
+    Die Steine dürfen umgedreht werden (die Oberseite nach unten)
+    und sind frei rotierbar (in 90° Schritten).
+    Die Steine müssen vollständig auf dem Feld liegen
+    und dürfen sich nicht mit anderen Steinen überlappen.
+    Gelegte Steine dürfen nicht mehr bewegt werden.
+  </p>
+  <p>
+    Ziel ist es,
+    möglichst viele Felder auf dem Brett mit den eigenen Farben zu belegen.
+  </p>
+  <p>
+    Es wird so lange gezogen,
+    bis keine Steine mehr gesetzt werden können.
+    Wenn Steine einer Farbe nicht mehr gelegt werden können,
+    wird diese Farbe im weiteren Verlauf des Spiels übersprungen (die gelegten Steine zählen aber mit in die Wertung).
+    Kann kein Stein irgendeiner Farbe mehr gelegt werden,
+    endet das Spiel.
+  </p>
+  <p>Der Computerspieler hat für das Legen eines Spielsteines zwei Sekunden Zeit.</p>
+  <p>
+    Der Spielleiter ruft den Computerspieler nur dann zu einem Zug einer Farbe auf,
+    wenn es auch noch mindestens einen möglichen Zug gibt.
+    Trotzdem hat der Computerspieler immer die Möglichkeit,
+    mit einem "Passen"-Zug zu antworten.
+    Dadurch wird die aktuelle Farbe in der aktuellen Runde ausgelassen.
+  </p>
+  <p>
+    Eine Runde besteht aus vier Zügen.
+    Pro Zug kann eine Farbe einen Stein setzen oder passen.
+    Das Spiel endet,
+    sobald alle Steine einer Farbe auf das Spielfeld gelegt wurden,
+    spätestens aber nach 25 Runden.
+    In jedem Fall wird die aktuelle Runde noch zu Ende gespielt.
+  </p>
+  <h1 id="wertung"><a href="#wertung" class="heading"><span>Wertung</span></a><button class="bookmark" onclick="hyperbook.ui.toggleBookmark(&#x22;/spiele/27_blokus/regeln#wertung&#x22;, &#x22;Wertung&#x22;)" title="Lesezeichen umschalten" data-key="/spiele/27_blokus/regeln#wertung">🔖</button></h1>
+  <p>
+    Jeder gelegte Stein zählt so viele Punkte,
+    wie er Quadrate hat (ein gelegtes Pentomino zählt z.B. fünf Punkte).
+    Wurden alle Steine einer Farbe gelegt,
+    gibt es 15 zusätzliche Punkte.
+    Wurden alle Steine einer Farbe gelegt
+    und war zusätzlich der letzte gelegte Stein der Monomino,
+    gibt es nochmal fünf zusätzliche Punkte (insgesamt also 20).
+    Die Punkte der jeweiligen zwei Farben,
+    die ein Spieler kontrolliert,
+    werden zusammengezählt
+    und sind die Gesamtpunkte des Spielers.
+    Der Spieler mit den meisten Punkten gewinnt das Spiel.
+  </p>
+  <p>
+    In der Meisterschaftsphase ist die durchschnittliche Punktzahl nachrangiges Kriterium.
+    D.h. haben zwei Teams gleich viele Siege,
+    bekommt das Team mit der höheren durchschnittlichen Punktzahl den besseren Tabellenplatz.
+  </p>
+</div>
+<dialog id="share-dialog">
+  <div class="container">
+    <h2 class="title">Teilbare URL erstellen</h2><label class="standalone-option"><input type="checkbox" id="share-standalone-checkbox" onchange="hyperbook.share.updatePreview()"> Standalone-Modus</label>
+    <h3 class="sections-title">Abschnitte auswählen</h3>
+    <div class="sections-list"><label class="heading-item level-1"><input type="checkbox" value="spielmaterial" data-anchor="spielmaterial" onchange="hyperbook.share.updatePreview()"> Spielmaterial</label><label class="heading-item level-1"><input type="checkbox" value="spielablauf" data-anchor="spielablauf" onchange="hyperbook.share.updatePreview()"> Spielablauf</label><label class="heading-item level-1"><input type="checkbox" value="wertung" data-anchor="wertung" onchange="hyperbook.share.updatePreview()"> Wertung</label></div>
+    <div class="url-preview" id="share-url-preview"></div><button class="copy-button" onclick="hyperbook.share.copyUrl()">Teilbare URL kopieren</button>
+  </div><button class="close" onclick="hyperbook.share.close()"><div class="close-icon"></div></button>
+</dialog>
+</article><div class="jump-container"><a class="jump previous" href="/grundlagen/contest">Wettkampfsystem</a></div><div class="meta"><a class="edit-github" href="https://github.com/software-challenge/docs/tree/main/hyperbook/book/spiele/27_blokus/regeln.md">✎ GitHub</a><a href="#" onclick="hyperbook.store.reset()"><span class="reset-icon" title="Das Hyperbook zurücksetzen"></span></a><span class="copyright"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA</a> by <a href="https://software-challenge.de">Software-Challenge Germany</a></span></div></main></div><script src="/__hyperbook_assets/bootstrap.js?v=0.97.0" defer></script><script src="/__hyperbook_assets/ui.js?v=0.97.0" defer></script></body></html>
