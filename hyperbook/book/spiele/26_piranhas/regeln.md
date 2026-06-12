@@ -1,6 +1,7 @@
 ---
 name: Spielregeln
 index: 1
+hide: true
 permaid: current_game_start
 prev: /grundlagen/contest
 ---

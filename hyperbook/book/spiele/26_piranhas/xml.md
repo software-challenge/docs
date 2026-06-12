@@ -1,5 +1,6 @@
 ---
 name: XML Dokumentation
+hide: true
 permaid: xml
 ---
 
