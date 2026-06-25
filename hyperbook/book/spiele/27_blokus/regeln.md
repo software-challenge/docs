@@ -43,7 +43,7 @@ dass mindestens ein Randfeld des Spielbretts (also mindestens eines der Felder v
 Die Form des ersten Steins wird vom Server vorgegeben.
 Sie wird zufällig aus allen verfügbaren Formen ausgewählt,
 die aus 5 Quadraten bestehen (Pentomino).
-Aber es kann für jede Farbe in einem Spiel einen unterschiedlichen ersten Stein geben.
+Alle Farben starten mit dem gleichen zufälligen Stein.
 
 ![anleitung erste Züge](/images/spiele/blokus/anleitung_beispielfeld_rand_steine.png)
 
