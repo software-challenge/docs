@@ -183,11 +183,10 @@ Aufforderung, dass der Server einen Zug erwartet:
 ### Zug senden
 
 :::alert
-Aussetzen?
-Rotierung
+Aussetzen
 :::
 
-Ein Zug im Spiel Blokus besteht immer aus einem Stein (`kind`), einer Farbe (`color), ob und wie der Stein rotiert ist (`rotation`), ob der Stein gespiegelt ist (`isFlipped`) und Koordinaten an die der Stein plaziert werden soll (`position`):
+Ein Zug im Spiel Blokus besteht immer aus einem Stein (`kind`), einer Farbe (`color`), ob und wie der Stein rotiert ist (`rotation`), ob der Stein gespiegelt ist (`isFlipped`) und Koordinaten an die der Stein plaziert werden soll (`position`):
 
 ```xml
 <room roomId="ROOM_ID">
@@ -202,6 +201,12 @@ Ein Zug im Spiel Blokus besteht immer aus einem Stein (`kind`), einer Farbe (`co
 
 Die Koordinaten geben hierbei die Ecke oben-links vom Stein an. An der Koordinate muss nicht zwingend ein Stück des Steins liegen ([Beispiel: Pento-X](/spiele/27_blokus/regeln#spielmaterial)).
 Die Farbe muss nach den Regeln angegeben sein. Wenn Spieler 1 anfängt muss er im ersten Zug also `BLUE`angeben, dann Spieler 2 im zweiten Zug `YELLOW`, dann Spieler 1 im dritten Zug `RED` und dann Spieler 2 im vierten Zug `GREEN`.
+Die Rotation kann mit folgenden Werten angegeben werden:
+- `RIGHT`
+- `MIRROR`
+- `LEFT`
+- `NONE`
+Und die Spiegelung ist auf der vertikalen-Achse und wird mit `true` oder `false` angegeben.
 Die Steine haben die gleichen Namen wie in der Anleitung, müssen aber wie folgt geschrieben sein:
 - `MONO`
 - `DOMINO`
