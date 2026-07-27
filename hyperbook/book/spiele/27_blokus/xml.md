@@ -182,9 +182,24 @@ Aufforderung, dass der Server einen Zug erwartet:
 
 ### Zug senden
 
-:::alert
-Aussetzen
-:::
+Beim ersten Zug muss ein Stein platziert werden.
+Dannach gibt es immer die Option zu passen.
+
+#### Passen
+
+Ein Passen-Zug sieht wie folgt aus:
+```xml
+<room roomId="ROOM_ID">
+  <data class="sc.plugin2027.SkipMove">
+    <color>TEAM_FARBE</color>
+  </data>
+</room>
+```
+
+Die Teamfarbe muss angegeben werden wie im Memento angegeben in validColors, also ``BLUE``, ``YELLOW``, ``RED`` oder ``GREEN``.
+Hier muss die Farbe eingetragen werden, die eigenltich drann wäre, aber passt.  
+
+#### Setzen
 
 Ein Zug im Spiel Blokus besteht immer aus einem Stein (`kind`), einer Farbe (`color`), ob und wie der Stein rotiert ist (`rotation`), ob der Stein gespiegelt ist (`isFlipped`) und Koordinaten an die der Stein plaziert werden soll (`position`):
 
