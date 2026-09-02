@@ -153,10 +153,6 @@ Das Element ``<lastMove>...</lastMove>`` ist nur enthalten wenn bereits ein Zug 
 
 ## Spiel betreten ohne Reservierungscode
 
-:::alert
-Nicht getestet
-:::
-
 Betritt ein beliebiges offenes Spiel:
 
 ```xml
@@ -247,53 +243,48 @@ Die Steine haben die gleichen Namen wie in der Anleitung, müssen aber wie folgt
 
 ## Spielergebnis
 
-:::alert
-Noch nicht erneuert
-:::
-
 Wenn das Spiel vorbei ist, erhalten die Clients das Ergebnis der Partie:
 
 ```xml
 <room roomId="ROOM_ID">
-    <data class="result">
-        <definition>
-            <fragment name="Siegpunkte">
-                <aggregation>SUM</aggregation>
-                <relevantForRanking>true</relevantForRanking>
-            </fragment>
-            <fragment name="Schwarmgr..e">
-                <aggregation>AVERAGE</aggregation>
-                <relevantForRanking>true</relevantForRanking>
-            </fragment>
-        </definition>
+  <data class="result">
+    <definition>
+      <fragment name="Siegpunkte">
+        <aggregation>SUM</aggregation>
+        <relevantForRanking>true</relevantForRanking>
+      </fragment>
+      <fragment name="Punkte">
+        <aggregation>AVERAGE</aggregation>
+        <relevantForRanking>true</relevantForRanking>
+      </fragment>
+    </definition>
     <scores>
-        <entry>
-            <player name="Spieler 1" team="ONE"/>
-            <score>
-                <part>0</part>
-                <part>2</part>
-            </score>
-        </entry>
-        <entry>
-            <player name="Spieler 2" team="TWO"/>
-            <score>
-                <part>2</part>
-                <part>5</part>
-            </score>
-        </entry>
+      <entry>
+        <player name="Spieler 1" team="ONE"/>
+        <score>
+          <part>2</part>
+          <part>137</part>
+        </score>
+      </entry>
+      <entry>
+        <player name="Spieler 2" team="TWO"/>
+        <score>
+          <part>0</part>
+          <part>74</part>
+        </score>
+      </entry>
     </scores>
-    <winner team="TWO" regular="true" reason="Spieler 2 hat den groesseren zusammenhaengenden Schwarm"/>
-    </data>
+    <winner team="ONE" regular="true" reason="Spieler 1 hat am meisten Punkte erzielt."/>
+  </data>
 </room>
 ```
 
 Unter `scores` werden jeweils die beiden Spieler mit den erreichten Punkten aufgezählt.
 Was genau die Werte in `part` bedeuten, steht in der `definition`.
-Für Piranhas ist das die Anzahl der Siegpunkte,
-die im Wettkampfsystem angerechnet werden
-und die am Ende des Spiel erreichte Schwarmgröße.
+Für Blokus ist das die Anzahl der Siegpunkte, die im Wettkampfsystem angerechnet werden 
+und die am Ende des Spiel belegten Felder plus extra Punkte wie in der [Wertung](/spiele/27_blokus/regeln#wertung) beschrieben.
 
-In diesem Beispiel sieht man, dass Spieler 2 mit einer Schwarmgröße von 5 diese Runde gewonnen hat.
+In diesem Beispiel sieht man, dass Spieler 1 mit 137 Punkten dieses Spiel gewonnen hat.
 
 Bei einem Unentschieden erhalten beide Spieler jeweils einen Siegpunkt und der `winner`-Tag führt kein Team:
 
