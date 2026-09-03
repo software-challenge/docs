@@ -21,12 +21,10 @@ und sogar als Mensch mitspielen.
 
 ## System vorbereiten und Spielleiter starten
 
-Die einzige Voraussetzung ist
-die [Installation einer Java-Laufzeitumgebung](/entwicklung/java/installation-von-java).
-dass auf dem Rechner mindestens die Laufzeitumgebung für Java 11 installiert ist.
+Die einzige Voraussetzung ist,
+dass auf dem Rechner mindestens die Laufzeitumgebung für Java 11 installiert ist (siehe [Installation einer Java-Laufzeitumgebung](/entwicklung/java/installation-von-java)).
 
-Nach der erfolgreichen Installation kann man den grafischen Server
-durch einen Doppelklick auf die Datei `software-challenge-gui` starten.
+Nach der erfolgreichen Installation kann man den grafischen Server durch einen Doppelklick auf die Datei `software-challenge-gui` starten.
 
 ## Die Programmoberfläche
 
@@ -77,7 +75,7 @@ die Züge und weitere für das Spiel wichtige Informationen dargestellt.
 Hier setzt der menschliche Spieler auch seine Züge.
 
 Die Steuerelemente unterscheiden sich je nach Spiel und Spielsituation.
-Durch die Steuerleiste unten lässt sich der Spielfluss beinflussen.
+Durch die Steuerleiste unten lässt sich der Spielfluss beeinflussen.
 
 ## Spielwiederholungen (Replays)
 
@@ -114,7 +112,7 @@ nur in einer bestimmten Situation in einem Spiel auftritt,
 kann es oft wünschenswert sein,
 diese Situation erneut nachzuspielen um den Computerspieler gezielt zu verbessern.
 
-Dies ist zur Zeit nur auf etwas kompliziertem Wege möglich.
+Dies ist zurzeit nur auf etwas kompliziertem Wege möglich.
 Es folgt eine Schritt-für-Schritt Anleitung:
 
 1.  Lade das betreffende Replay aus dem Wettkampfsystem herunter (.xml.gz Datei).
@@ -123,7 +121,7 @@ Es folgt eine Schritt-für-Schritt Anleitung:
 
 3.  Starte den Server und erstelle ein neues Spiel.
     Wähle den Computerspieler, der für diese Spielsituation getestet werden soll.
-    Dieser Spieler muss als Spieler 1 gestartet werden und ist dann direkt als erstes dran.
+    Dieser Spieler muss als Spieler 1 gestartet werden und ist dann direkt als Erstes dran.
     Der Gegenspieler kann dann ein beliebiger Computerspieler oder auch ein Mensch sein.
 
 4.  Setze einen Haken bei "Spiel aus Datei laden".
@@ -144,13 +142,13 @@ Es folgt eine Schritt-für-Schritt Anleitung:
 
 ## Automatische Spiele: Der Testserver
 
-Wenn man einen grundsätzlich funkionierenden Computerspieler programmiert hat,
+Wenn man einen grundsätzlich funktionierenden Computerspieler programmiert hat,
 ist es sinnvoll, diesen mit vielen verschiedenen Spielsituationen zu konfrontieren.
 Dadurch lassen sich Fehler entdecken und die Spielstärke des Computerspielers beurteilen.
 Für solche Testdurchläufe wird ein Testserver und TestClient zur Verfügung gestellt.
 
 Der Testserver hat keine grafische Oberfläche und läuft,
-im Gegensatz zum Server mit graphischer Oberfläche (Port 13050),
+im Gegensatz zum Server mit grafischer Oberfläche (Port 13050),
 standardmäßig auf Port 13051.
 So nutzt du ihn
 
@@ -160,7 +158,7 @@ So nutzt du ihn
 
 3.  Öffne eine Kommandozeilenumgebung
     (Terminal; auf Windows cmd oder Powershell)
-    im Verzeichnis des entpackten Archives.
+    im Verzeichnis des entpackten Archivs.
 
 4.  Starte den Testserver auf Port 13051 mit dem beiliegenden `./start.sh` (Linux/macOS) bzw. `.\start.bat` Skript oder dem entsprechenden Befehl:
 
@@ -328,5 +326,5 @@ auch über mehrere Starts des TestClients.
 Die Ergebnisse werden erst zurückgesetzt,
 wenn der Server neu gestartet wird.
 Achte also nach einer Veränderung der Spieler darauf,
-den Serverneu zu starten oder andere Spielernamen zu verwenden.
+den Server neu zu starten oder andere Spielernamen zu verwenden.
 Perspektivisch soll der TestClient zukünftig unabhängig vom Server die Punkte zählen.

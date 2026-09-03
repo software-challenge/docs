@@ -5,21 +5,23 @@ index: 7
 
 # Die Spielervorlage erweitern
 
-In der Version der Java-Spielervorlage von der Software-Challenge
-Homepage ist bereits eine Strategie implementiert, die RandomLogic. Man
-kann jedoch auch noch beliebig viele eigene Strategien hinzufügen.
-Alle Methoden, die dafür benötigt werden findest du [hier](Methoden\all.md).
+In der Version der Java-Spielervorlage von der Software-Challenge Homepage ist bereits eine Strategie implementiert,
+die RandomLogic.
+Man kann jedoch auch noch beliebig viele eigene Strategien hinzufügen.
+Alle Methoden,
+die dafür benötigt werden,
+findest du [hier](Methoden\all.md).
 
 ## Erstellen einer neuen Strategie
 
-Die einfachste Möglichkeit ist, die Klasse `Logic` der Spielervorlage zu verändern. 
+Die einfachste Möglichkeit ist,
+die Klasse `Logic` der Spielervorlage zu verändern.
 Weiter kann man diese alternativ auch kopieren 
-und umbenennen (alle Vorkommen von `Logic` durch den neuen
-Klassennamen ersetzen). Der Vollständigkeit halber hier noch das
-Vorgehen bei einer komplett neuen Klasse:
+und umbenennen (alle Vorkommen von `Logic` durch den neuen Klassennamen ersetzen).
+Der Vollständigkeit halber hier noch das Vorgehen bei einer komplett neuen Klasse:
 
--   Erstellt eine neue Klasse (z.B. `MyLogic`), die das Interface
-    `IGameHandler` implementiert:
+-   Erstellt eine neue Klasse (z.B. `MyLogic`),
+    die das Interface `IGameHandler` implementiert:
 
 
 ```java
@@ -55,5 +57,4 @@ Vorgehen bei einer komplett neuen Klasse:
         return move;
     }
 ```
-Nun kann die Strategie in der Methode `calculateMove` (oder in eigenen
-Klassen, die dort verwendet werden) implementiert werden.
+Nun kann die Strategie in der Methode `calculateMove` (oder in eigenen Klassen, die dort verwendet werden) implementiert werden.

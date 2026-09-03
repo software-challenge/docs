@@ -45,7 +45,7 @@ Sie wird zufällig aus allen verfügbaren Formen ausgewählt,
 die aus 5 Quadraten bestehen (Pentomino).
 Alle Farben starten mit dem gleichen zufälligen Stein.
 
-![anleitung erste Züge](/images/spiele/blokus/anleitung_beispielfeld_rand_steine.png)
+![Anleitung erste Züge](/images/spiele/blokus/anleitung_beispielfeld_rand_steine.png)
 
 Für die Platzierung aller weiteren Steine gilt:
 Zwei Steine derselben Farbe dürfen sich nur an den Ecken berühren.
@@ -55,7 +55,7 @@ Dabei ist es egal,
 wie Steine anderer Farben berührt werden,
 solange diese nicht überdeckt werden.
 
-![anleitung beruehrungen](/images/spiele/blokus/anleitung_beruehrungen.png)
+![Anleitung Beruehrungen](/images/spiele/blokus/anleitung_beruehrungen.png)
 
 Die Steine dürfen umgedreht werden (die Oberseite nach unten)
  und sind frei rotierbar (in 90° Schritten).

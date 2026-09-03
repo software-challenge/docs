@@ -22,7 +22,7 @@ IntelliJ](/images/java/intellij_important.png)
 
 ### Project Tool Window
 
-Das Project Tool Window befindet sich standartgemäß am linken Rand.
+Das Project Tool Window befindet sich standardmäßig am linken Rand.
 In ihm sieht man die Ordnerstruktur und alle im Projekt enthaltenen Dateien.
 Wenn man eine Datei doppelklickt,
 wird diese Datei im Editor geöffnet.
@@ -36,10 +36,10 @@ Am oberen Rand befindet sich die Tab-Leiste, die alle geöffneten Dateien beinha
 
 ### Problems
 
-Das Problems Fenster ist standardgemäß nicht auf.
+Das Problems-Fenster ist standardgemäß nicht geöffnet.
 Um es zu öffnen,
 muss man unten links in der Tool Window Bar den Knopf dafür (Kreis mit ! in der Mitte) drücken.
-Hier werden sowohl Programmierfehler als auch  Warnungen angezeigt.
+Hier werden sowohl Programmierfehler als auch Warnungen angezeigt.
 
 Mit einem Doppelklick auf einen Eintrag springt der Cursor im Editor an die entsprechende Codezeile die den Fehler oder die Warnung enthält.
 
@@ -74,21 +74,21 @@ Hier sind einige wichtige Funktionen:
 ![intellij run configurations](/images/java/build1.png)
 
 2. Wenn noch keine Start-Konfiguration existiert,
-   kann man sie entweder durch klicken auf das "+" oben links
-   oder durch klicken auf "Add new ..." im sich öffnenden Fenster erstellen.
+   kann man sie entweder durch Klicken auf das "+" oben links
+   oder durch Klicken auf "Add new ..." im sich öffnenden Fenster erstellen.
 
    Im sich öffnenden Fenster müssen folgende Einstellungen vorgenommen werden, 
    um die Software-Challenge GUI aus IntelliJ heraus starten zu können.
 
     1. Das Build Tool muss auf Gradle gestellt werden.
-    2. Im nächsten Fenster musst überprüft werden, ob das Projekt richtig "eingelesen" wurde.
+    2. Im nächsten Fenster muss überprüft werden, ob das Projekt richtig "eingelesen" wurde.
     3. Unter der Überschrift "Run" muss "run" ins Eingabefeld geschrieben werden.
     4. "Apply" oder "Ok" speichert die Eingaben.
 
 ![intellij run configurations](/images/java/build2.png)
 
 3. Danach ist im Run/Debug Widget die neu erstellte Konfiguration ausgewählt
-   und du kannst den Spieler durch klicken auf das Startsymbol (grünes Dreieck) starten.
+   und du kannst den Spieler durch Klicken auf das Startsymbol (grünes Dreieck) starten.
 
 ![intellij run configurations](/images/java/build3.png)
 
