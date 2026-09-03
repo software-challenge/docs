@@ -68,7 +68,7 @@ noch Optionen angeben.
 
 ## Tastaturkürzel
 
-Eclipse kennt viele Tastenkombinationen, mit Hilfe derer einige
+Eclipse kennt viele Tastenkombinationen, mithilfe derer einige
 Eclipse-Funktionen schneller aufgerufen werden können. Die wichtigsten
 Shortcuts kann man der folgenden Tabelle entnehmen:
 
