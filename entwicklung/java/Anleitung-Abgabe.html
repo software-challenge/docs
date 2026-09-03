@@ -120,25 +120,25 @@ console.log(
   </side-drawer>
   <h1 id="computerspieler-abgabefertig-machen-anleitung-fr-export-aus-der-ide-fr-java"><a href="#computerspieler-abgabefertig-machen-anleitung-fr-export-aus-der-ide-fr-java" class="heading"><span>Computerspieler abgabefertig machen (Anleitung für Export aus der IDE für Java)</span></a><button type="button" class="bookmark" title="Lesezeichen umschalten" aria-label="Lesezeichen umschalten" aria-pressed="false" data-key="/entwicklung/java/Anleitung-Abgabe#computerspieler-abgabefertig-machen-anleitung-fr-export-aus-der-ide-fr-java" data-label="Computerspieler abgabefertig machen (Anleitung für Export aus der IDE für Java)"></button></h1>
   <p>
-    Im folgenden findet ihr eine Anleitung
+    Im Folgenden findet ihr eine Anleitung
     für den Export eures Computerspielers aus der Entwicklungsumgebung,
     um ihn im Wettkampfsystem hochzuladen.
   </p>
   <h2 id="grundstzliches"><a href="#grundstzliches" class="heading"><span>Grundsätzliches</span></a><button type="button" class="bookmark" title="Lesezeichen umschalten" aria-label="Lesezeichen umschalten" aria-pressed="false" data-key="/entwicklung/java/Anleitung-Abgabe#grundstzliches" data-label="Grundsätzliches"></button></h2>
   <p>
     Der Export des Projektes funktioniert für Java bei unserem Projekt über Gradle.
-    Hierbei wird die Gradle Task "shadowJar" verwendet. Wie genau das aussieht wird für Eclipse und IntelliJ im Folgenden beschrieben.
+    Hierbei wird die Gradle Task "shadowJar" verwendet. Wie genau das aussieht, wird für Eclipse und IntelliJ im Folgenden beschrieben.
   </p>
   <h2 id="eclipse"><a href="#eclipse" class="heading"><span>Eclipse</span></a><button type="button" class="bookmark" title="Lesezeichen umschalten" aria-label="Lesezeichen umschalten" aria-pressed="false" data-key="/entwicklung/java/Anleitung-Abgabe#eclipse" data-label="Eclipse"></button></h2>
   <p>
     Um den Export in Eclipse durchzuführen,
     muss man die Übersicht der Gradle Tasks öffnen.
-    Um dies zu tun gibt es zwei Wege:
+    Um dies zu tun, gibt es zwei Wege:
   </p>
   <ol>
     <li>
       <p>
-        Der erste Weg, die Übersicht zu Öffnen,
+        Der erste Weg, die Übersicht zu öffnen,
         ist das Gradle-Symbol (Elefant) am linken Rand.
         Es kann sein, dass das Symbol im dunklen Modus schwer zu erkennen ist.
       </p>
@@ -162,7 +162,7 @@ console.log(
       <blockquote>
         <p>
           Falls dort ein X an dem Ordner ist, müssen die Gradle Tasks einmal
-          neugeladen werden. Dies geschieht durch den Button "Refresh Tasks for
+          neu geladen werden. Dies geschieht durch den Button "Refresh Tasks for
           all Projects" (Rechts oben am Fensterrand)
         </p>
       </blockquote>
@@ -179,7 +179,7 @@ console.log(
   </ol>
   <p>
     Der Export wird in dem Ordner des Projektes gespeichert.
-    Der Name dieser Jar ist standardmäßig auf "Spielkürzel_Jahreszahl_client" kann
+    Der Name dieser JAR ist standardmäßig auf "Spielkürzel_Jahreszahl_client" kann
     aber nach dem Export beliebig geändert werden.
     Man kann den Namen auch vor dem Export anpassen,
     wenn man in dem Projekt "build.gradle.kts" öffnet
@@ -191,7 +191,7 @@ console.log(
     muss man die Übersicht der Gradle Tasks öffnen.
     Dies geschieht, in dem man auf das Gradle-Symbol (Elefant) am rechten Rand klickt.
     Nun kann die Gradle Task unterschiedlich ausgeführt werden.
-    Im folgenden werden beide Varianten erläutert:
+    Im Folgenden werden beide Varianten erläutert:
   </p>
   <ol>
     <li>
@@ -206,7 +206,7 @@ console.log(
       <p>Die lange Variante</p>
       <ol>
         <li>
-          Man geht auf dem Ordner mit dem Namen des Projekts.
+          Gehe auf dem Ordner mit dem Namen des Projekts.
           Dieser ist standardmäßig "player-Spielkürzel-src"
         </li>
         <li>Unter dem nun angezeigten Inhalt öffnet man den Ordner "shadow".</li>
@@ -221,7 +221,7 @@ console.log(
     Der Export wird in dem Ordner des Projektes gespeichert.
     Der Name dieser Jar ist standardmäßig auf "Spielkürzel_Jahreszahl_client",
     kann aber nach dem Export beliebig geändert werden.
-    Der Namen kann auch vor dem Export anpassen,
+    Der Name kann auch vor dem Export angepasst werden,
     wenn man in dem Projekt "build.gradle.kts" öffnet
     und unter "tasks.shadowJar" den "archiveBaseName" ändert.
   </p>
