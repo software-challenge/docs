@@ -5,7 +5,8 @@ index: 1
 
 # Installation von Java
 
-Die meisten Programme, die von der Software-Challenge zur Verfügung gestellt werden,
+Die meisten Programme,
+die von der Software-Challenge zur Verfügung gestellt werden,
 sind für eine Java-Umgebung geschrieben.
 Diese Anleitung soll die Beschaffung und Installation von Java erleichtern.
 
@@ -13,7 +14,8 @@ Diese Anleitung soll die Beschaffung und Installation von Java erleichtern.
 
 Java gibt es in zwei verschiedenen Paketen: 
 Das *Java Runtime Environment (JRE)* und das *Java Development Kit (JDK)*.
-Zum Entwickeln eigener Programme wird das JDK benötigt, dass auch das JRE enthält.
+Zum Entwickeln eigener Programme wird das JDK benötigt,
+dass auch das JRE enthält.
 
 ## Installation
 
@@ -31,9 +33,11 @@ Alternativ kann das JDK auch mit UI mit einem Installer installiert werden:
 
 ### Linux
 
-Meistens ist das JDK (`openjdk`) direkt von den Paketquellen der Linux-Distribution 
-installierbar. Sofern möglich, wird diese Art der Installation empfohlen, da es oft 
-noch Paketabhängigkeiten gibt, die dann automatisch mit installiert werden.
+Meistens ist das JDK (`openjdk`) direkt von den Paketquellen der Linux-Distribution installierbar.
+Sofern möglich,
+wird diese Art der Installation empfohlen,
+da es oft noch Paketabhängigkeiten gibt,
+die dann automatisch mit installiert werden.
 
 Hier sind ein paar Befehle zum Installieren von Java für die gängigsten 
 Distributionen:

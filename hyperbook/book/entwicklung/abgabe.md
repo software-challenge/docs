@@ -42,7 +42,7 @@ unter [Wettkampfsystem->Computerspieler](grundlagen/contest#computerspieler) bes
 
 Der Computerspieler wird in einem Docker container ausgeführt,
 welcher die verfügbaren Bibliotheken und Programme bestimmt.
-Die verfügbaren Container-Vorlagen sind im Spielerhochladeformular im Wettkampfsystem einsehbar,
+Die verfügbaren Container-Vorlagen sind im Spielerhochladeformular im Wettkampfsystem einsehbar
 und bieten unter anderem Java, Python, Ruby, Node.js, Swift, .NET,
 oft in mehreren Versionen.
 
@@ -51,8 +51,7 @@ oft in mehreren Versionen.
 Bei Computerspielern in einer anderen Programmiersprache 
 muss das ZIP-Archiv ein Shell-Script 
 mit genauen Instruktionen zum Start des Computerspielers enthalten.
-Dieses muss nach dem Hochladen im Wettkampfystem 
-als Hauptdatei ausgewählt werden.
+Dieses muss nach dem Hochladen im Wettkampfystem als Hauptdatei ausgewählt werden.
 
 Beachten Sie hierbei, dass diesem Script vom Wettkampfsystem Parameter übergeben werden,
 die an Ihr Programm weitergegeben werden müssen.

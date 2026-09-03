@@ -5,15 +5,16 @@ index: 2
 
 # Eine Idee implementieren
 
-Man hat einige Spiele absolviert und sich eine gute Strategie
-ausgedacht. Damit hat man zwar schon einen wichtigen Teil der Arbeit
-geleistet, aber irgendwie muss dem
-:t[Computerspieler]{#player} noch beigebracht werden, nach
-dieser Strategie zu spielen.
+Man hat einige Spiele absolviert und sich eine gute Strategie ausgedacht.
+Damit hat man zwar schon einen wichtigen Teil der Arbeit geleistet,
+aber irgendwie muss dem :t[Computerspieler]{#player} noch beigebracht werden,
+nach dieser Strategie zu spielen.
 
-Anhand einer kleinen Aufgabe soll gezeigt werden, wie man eine Idee
-formal beschreiben und in ein Programm überführen kann. Dabei nehmen wir
-an, dass wir einen Stapel mit Karten haben, der sortiert werden soll.
+Anhand einer kleinen Aufgabe soll gezeigt werden,
+wie man eine Idee formal beschreiben und in ein Programm überführen kann.
+Dabei nehmen wir an,
+dass wir einen Stapel mit Karten haben,
+der sortiert werden soll.
 
 ## Voraussetzungen
 
@@ -23,24 +24,24 @@ an, dass wir einen Stapel mit Karten haben, der sortiert werden soll.
 
 ### Idee formalisieren
 
-Als Erstes muss die Idee formal beschrieben werden. Oftmals kann man
-zunächst beschreiben, wie man als Mensch vorgehen würde.
+Als Erstes muss die Idee formal beschrieben werden.
+Oftmals kann man zunächst beschreiben,
+wie man als Mensch vorgehen würde.
 
-1.  Gehe den Stapel durch und merke die Position, an der sich die
-    kleinste Karte befindet.
+1.  Gehe den Stapel durch und merke die Position,
+    an der sich die kleinste Karte befindet.
 
 2.  Tausche die Position der kleinsten Karte mit der untersten Karte im
     Stapel.
 
 3.  Die kleinste Karte ist jetzt an der richtigen Position.
 
-4.  Führe die Schritte immer wieder für den Reststapel (ohne die sortierten
-    Karten) aus.
+4.  Führe die Schritte immer wieder für den Reststapel (ohne die sortierten Karten) aus.
 
 ### Idee implementieren
 
-Nachdem man seine Idee formal niedergeschrieben hat, kann sie ganz
-leicht in ein Programm überführt werden:
+Nachdem man seine Idee formal niedergeschrieben hat,
+kann sie ganz leicht in ein Programm überführt werden:
 
 #### Java
 
@@ -116,5 +117,4 @@ def sortiere(a: list[int], start: int):
 
 ## Weiterführende Links
 
-Wir haben hier den Sortieralgorithmus [Selection Sort](https://de.wikipedia.org/wiki/Selectionsort)
-rekursiv implementiert.
+Wir haben hier den Sortieralgorithmus [Selection Sort](https://de.wikipedia.org/wiki/Selectionsort) rekursiv implementiert.

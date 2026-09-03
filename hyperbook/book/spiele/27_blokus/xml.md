@@ -6,29 +6,31 @@ permaid: xml
 
 # XML-Elemente des Spiels Blokus
 
-Diese Dokumentation beschreibt die spielspezifischen Elemente des [XML-Protokolls](/xml/protokoll)
-für das Spiel Blokus.
+Diese Dokumentation beschreibt die spielspezifischen Elemente des [XML-Protokolls](/xml/protokoll) für das Spiel Blokus.
 
 ## Spielstatus
 
 Die folgende XML-Struktur beschreibt den regelmäßig mitgeteilten Spielstatus.
-Gesendet wird diese Nachricht immer dann, wenn sich etwas am Spielfeld ändert. Er wird außerdem vor der ersten Zugauforderung gesendet.
+Gesendet wird diese Nachricht immer dann,
+wenn sich etwas am Spielfeld ändert.
+Er wird außerdem vor der ersten Zugaufforderung gesendet.
 
 In dem Status sind folgende Informationen enthalten:
-- Das Team, welches als erstes [zum Zug aufgefordert wird](/spiele/27_blokus/xml#aufforderung)
+- Das Team, welches als Erstes [zum Zug aufgefordert wird](/spiele/27_blokus/xml#aufforderung)
 - Wie viele Züge gemacht wurden
 - Welcher Stein im ersten Zug gelegt werden muss
-- Die wie vielte Runde es ist
+- Die wievielte Runde es ist
 - Das aktuelle Spielfeld
-- Welche Steine welche Farbe noch zur verfügung hat
+- Welche Steine welche Farbe noch zur Verfügung hat
 
 Das Spielfeld enthält für jede Koordinaten, die belegt ist, ein ``field``-Element mit den Koordinaten und der Farbe die an der Stelle ist. 
-Der Koordinatenursprung ``(0,0)`` liegt oben-links
-Der zuletzt im Spiel gespielte Zug `lastMove` ist wie ein gewöhnlicher 
-[Zug](/spiele/27_blokus/xml#zug-senden) aufgebaut.
+Der Koordinatenursprung ``(0,0)`` liegt oben-links.
+Der zuletzt im Spiel gespielte Zug `lastMove` ist wie ein gewöhnlicher [Zug](/spiele/27_blokus/xml#zug-senden) aufgebaut.
 
 :::alert
-Das Element ``<lastMove>...</lastMove>`` ist nur enthalten wenn bereits ein Zug gemacht wurde. Der erste Spielstatus enthält es garantiert nicht.
+Das Element ``<lastMove>...</lastMove>`` ist nur enthalten,
+wenn bereits ein Zug gemacht wurde.
+Der erste Spielstatus enthält es garantiert nicht.
 :::
 
 ```xml
@@ -179,7 +181,7 @@ Aufforderung, dass der Server einen Zug erwartet:
 ### Zug senden
 
 Beim ersten Zug muss ein Stein platziert werden.
-Dannach gibt es immer die Option zu passen.
+Danach gibt es immer die Option zu passen.
 
 #### Passen
 
@@ -192,12 +194,19 @@ Ein Passen-Zug sieht wie folgt aus:
 </room>
 ```
 
-Die Teamfarbe muss angegeben werden wie im Memento angegeben in validColors, also ``BLUE``, ``YELLOW``, ``RED`` oder ``GREEN``.
-Hier muss die Farbe eingetragen werden, die eigenltich drann wäre, aber passt.  
+Die Teamfarbe muss angegeben werden wie im Memento angegeben in validColors,
+also ``BLUE``, ``YELLOW``, ``RED`` oder ``GREEN``.
+Hier muss die Farbe eingetragen werden,
+die eigentlich dran wäre,
+aber passt.  
 
 #### Setzen
 
-Ein Zug im Spiel Blokus besteht immer aus einem Stein (`kind`), einer Farbe (`color`), ob und wie der Stein rotiert ist (`rotation`), ob der Stein gespiegelt ist (`isFlipped`) und Koordinaten an die der Stein plaziert werden soll (`position`):
+Ein Zug im Spiel Blokus besteht immer aus einem Stein (`kind`),
+einer Farbe (`color`),
+ob und wie der Stein rotiert ist (`rotation`),
+ob der Stein gespiegelt ist (`isFlipped`)
+und Koordinaten an die der Stein platziert werden soll (`position`):
 
 ```xml
 <room roomId="ROOM_ID">
@@ -210,15 +219,22 @@ Ein Zug im Spiel Blokus besteht immer aus einem Stein (`kind`), einer Farbe (`co
             
 ```
 
-Die Koordinaten geben hierbei die Ecke oben-links vom Stein an. An der Koordinate muss nicht zwingend ein Stück des Steins liegen ([Beispiel: Pento-X](/spiele/27_blokus/regeln#spielmaterial)).
-Die Farbe muss nach den Regeln angegeben sein. Wenn Spieler 1 anfängt muss er im ersten Zug also `BLUE`angeben, dann Spieler 2 im zweiten Zug `YELLOW`, dann Spieler 1 im dritten Zug `RED` und dann Spieler 2 im vierten Zug `GREEN`.
+Die Koordinaten geben hierbei die Ecke oben-links vom Stein an.
+An der Koordinate muss nicht zwingend ein Stück des Steins liegen ([Beispiel: Pento-X](/spiele/27_blokus/regeln#spielmaterial)).
+Die Farbe muss nach den Regeln angegeben sein.
+Wenn Spieler 1 anfängt,
+muss er im ersten Zug also `BLUE`angeben,
+dann Spieler 2 im zweiten Zug `YELLOW`,
+dann Spieler 1 im dritten Zug `RED`
+und dann Spieler 2 im vierten Zug `GREEN`.
 Die Rotation kann mit folgenden Werten angegeben werden:
 - `RIGHT`
 - `MIRROR`
 - `LEFT`
 - `NONE`
-Und die Spiegelung ist auf der vertikalen-Achse und wird mit `true` oder `false` angegeben.
-Die Steine haben die gleichen Namen wie in der Anleitung, müssen aber wie folgt geschrieben sein:
+Die Spiegelung ist auf der vertikalen-Achse und wird mit `true` oder `false` angegeben.
+Die Steine haben die gleichen Namen wie in der Anleitung,
+müssen aber wie folgt geschrieben sein:
 - `MONO`
 - `DOMINO`
 - `TRIO_L`
@@ -243,7 +259,8 @@ Die Steine haben die gleichen Namen wie in der Anleitung, müssen aber wie folgt
 
 ## Spielergebnis
 
-Wenn das Spiel vorbei ist, erhalten die Clients das Ergebnis der Partie:
+Wenn das Spiel vorbei ist,
+erhalten die Clients das Ergebnis der Partie:
 
 ```xml
 <room roomId="ROOM_ID">
@@ -280,11 +297,14 @@ Wenn das Spiel vorbei ist, erhalten die Clients das Ergebnis der Partie:
 ```
 
 Unter `scores` werden jeweils die beiden Spieler mit den erreichten Punkten aufgezählt.
-Was genau die Werte in `part` bedeuten, steht in der `definition`.
-Für Blokus ist das die Anzahl der Siegpunkte, die im Wettkampfsystem angerechnet werden 
-und die am Ende des Spiel belegten Felder plus extra Punkte wie in der [Wertung](/spiele/27_blokus/regeln#wertung) beschrieben.
+Was genau die Werte in `part` bedeuten,
+steht in der `definition`.
+Für Blokus ist das die Anzahl der Siegpunkte,
+die im Wettkampfsystem angerechnet werden 
+und die am Ende des Spiels belegten Felder plus extra Punkte, wie in der [Wertung](/spiele/27_blokus/regeln#wertung) beschrieben.
 
-In diesem Beispiel sieht man, dass Spieler 1 mit 137 Punkten dieses Spiel gewonnen hat.
+In diesem Beispiel sieht man,
+dass Spieler 1 mit 137 Punkten dieses Spiel gewonnen hat.
 
 Bei einem Unentschieden erhalten beide Spieler jeweils einen Siegpunkt und der `winner`-Tag führt kein Team:
 
