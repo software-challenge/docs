@@ -19,7 +19,7 @@ kümmert, muss unbedingt [Java installiert](installation-von-java) sein.
 Die Spielervorlage ist schon ein fertiger Computerspieler. Den Quellcode kann man verwenden, 
 um seinen eigenen Spieler zu programmieren. 
 Die Spielervorlage bekommt man im 
-[Downloadbereich der Software-Challenge](https://software-challenge.de/dokumentation-und-material).
+[Downloadbereich der Software-Challenge](https://software-challenge.de/dokumentation-und-material/material-downloads).
 Man braucht die Version
 *als Quellcode*.
 
@@ -49,7 +49,7 @@ $ sudo snap install eclipse --classic
 
 ![Spielervorlage in Eclipse importieren](/images/eclipse_import_project.jpg)
 
-1.  Spielervorlage herunterladen (von unserer Website unter allgemeine Dokumatation)
+1.  [Spielervorlage herunterladen](https://software-challenge.de/dokumentation-und-material/material-downloads)
 
 2.  Die heruntergeladene Zip extrahieren
 
@@ -70,16 +70,16 @@ $ sudo snap install eclipse --classic
 5.  Nun wählt man unter "Project root directory" die extrahierte Datei der Spielervorlage aus und klickt auf "next>"
 
 6.  Hier muss man einige Dinge beachten:
-    1.  Oben links bei "Overide workspace settings" ein Häckchen setzen
+    1.  Oben links bei "Override workspace settings" ein Häckchen setzen
     2.  Unter "Gradle distribution" Specific Gradle version auswählen und die Version 6.9.1 angeben
-    3.  Unter "Advanced Options" bei "Java home" nachsehen, ob dort der Ordner des 
+    3.  Unter "Advanced Options" bei "Java Home" nachsehen, ob dort der Ordner des 
         JDK (Java Develobment Kit) angegeben ist und dabei beachten das man nur 
         JDK´s der Versionen 11-15 benutzen kann.
     4.  Unten wieder auf "Next>" klicken
 
 7. Dieser Schritt kann einen Moment dauern. Wenn alles erfolgreich war,
     steht unten in der Konsole "CONFIGURE SUCCESFUL". Falls es funktioniert 
-    hat geht man auf "Finish". Falls nicht überprüft man im Schritt davor 
+    hat, geht man auf "Finish". Falls nicht, überprüft man im Schritt davor 
     die Gradle Version und die Version des JDK, dass angegeben ist
 
 ### Spielervorlage aus Eclipse starten
@@ -95,10 +95,10 @@ Damit die Spielervorlage erfolgreich startet, muss der
 
 ## Einrichtung von IntelliJ
 
-Um IntelliJ zu installieren befilgt man folgende Schritte:
+Um IntelliJ zu installieren, befolgt man folgende Schritte:
 
 1. Man geht auf die [IntelliJ-Website](https://www.jetbrains.com/idea/download/?section=windows) 
-    und läd sich IntelliJ Community herunter (Ist unten auf der Website zu finden)
+    und lädt sich IntelliJ Community herunter (Ist unten auf der Website zu finden)
 
 2. Wenn dies geschehen ist führt man die heruntergeladene .exe Datei
    aus und es öffnet sich ein Installer
@@ -111,12 +111,12 @@ Um IntelliJ zu installieren befilgt man folgende Schritte:
    
 4. Im nächsten Menü wählt man Install aus
 
-5. Wenn der Instalationsprozess fertig ist geht man auf Finish
+5. Wenn der Installationsprozess fertig ist, geht man auf Finish
 
 
 ### Spielervorlage in IntelliJ einbinden
 
-1. Spielervorlage herunterladen (von unserer Website unter allgemeine Dokumatation)
+1. [Spielervorlage herunterladen](https://software-challenge.de/dokumentation-und-material/material-downloads)
 
 2. Die heruntergeladene Zip extrahieren
 
@@ -127,7 +127,7 @@ Um IntelliJ zu installieren befilgt man folgende Schritte:
 
 5. Nach dem Import wählt man unten links das Hammersymbol aus und wenn 
    alles funktioniert hat steht in der Konsole "BUILD SUCCESSFUL". Falls 
-   das nicht der Fall sein sollte tut man folgendes:
+   das nicht der Fall sein sollte, tut man Folgendes:
 
    1. Man geht oben links auf Optionen (Das Symbol mit den 4 Strichen)
    2. Klickt auf "File" und wählt dort "Project Structure" aus
