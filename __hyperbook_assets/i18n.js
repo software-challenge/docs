@@ -19,6 +19,10 @@ hyperbook.i18n = (function () {
     "store-reset-successful": "Das Hyperbook wurde erfolgreich zurückgesetzt.",
     "store-reset-confirm": "Sind Sie sicher, dass Sie das Hyperbook zurücksetzen möchten? Dadurch werden alle Ihre Daten entfernt.",
     "shell-search": "Suche",
+    "shell-search-placeholder": "Das Buch durchsuchen ...",
+    "shell-search-loading": "Suche wird geladen ...",
+    "shell-search-no-results": "Keine Ergebnisse für „{{query}}“.",
+    "shell-search-failed": "Die Suche konnte nicht geladen werden.",
     "shell-toggle-dark-mode": "Zwischen Dunkel- und Hellmodus wechseln",
     "shell-reset-hyperbook": "Das Hyperbook zurücksetzen",
     "shell-import-hyperbook": "Das Hyperbook aus einer Datei importieren",
@@ -58,6 +62,7 @@ hyperbook.i18n = (function () {
     "pyide-canvas": "Canvas",
     "pyide-input": "Eingabe",
     "pyide-input-prompt": "Eingabe erforderlich:",
+    "pyide-input-submit": "Senden",
     "pyide-reset": "Zurücksetzen",
     "pyide-copy": "Kopieren",
     "pyide-download": "Herunterladen",
@@ -79,6 +84,8 @@ hyperbook.i18n = (function () {
     "webide-reset-prompt": "Sind Sie sicher, dass Sie den Code zurücksetzen möchten?",
     "webide-copy": "Kopieren",
     "webide-download": "Herunterladen",
+    "jmp-reset": "Zurücksetzen",
+    "jmp-reset-prompt": "Sind Sie sicher, dass Sie das Diagramm zurücksetzen möchten? Ihre Änderungen gehen verloren.",
     "typst-code": "Typst",
     "typst-reset": "Zurücksetzen",
     "typst-reset-prompt": "Sind Sie sicher, dass Sie den Code zurücksetzen möchten?",
@@ -133,6 +140,15 @@ hyperbook.i18n = (function () {
     "user-unsaved": "Ungespeicherte Änderungen",
     "user-offline": "Offline",
     "user-offline-queued": "Lokal gespeichert",
+    "user-saved-just-now": "gerade eben",
+    "user-saved-minutes-ago": "vor {{minutes}} Min.",
+    "user-saved-hours-ago": "vor {{hours}} Std.",
+    "user-queued-count": "{{count}} warten auf Synchronisierung",
+    "user-notice-error": "Speichern in der Cloud fehlgeschlagen. Deine Änderungen sind weiterhin auf diesem Gerät.",
+    "user-notice-retry": "Erneut versuchen",
+    "user-notice-offline": "Offline. Änderungen bleiben auf diesem Gerät und werden synchronisiert, sobald du wieder verbunden bist.",
+    "user-notice-merged": "Mit Änderungen aus einer anderen Sitzung zusammengeführt. Wird neu geladen...",
+    "user-notice-reload": "Jetzt neu laden",
     "user-save": "Jetzt speichern",
     "user-logout": "Abmelden",
     "user-login-required": "Benutzername und Passwort erforderlich",
@@ -148,7 +164,18 @@ hyperbook.i18n = (function () {
     "consent-embed-text": "Hier sollen Inhalte einer externen Internetseite geladen werden.",
     "consent-embed-personal-data": "Die externe Internetseite kann möglicherweise personenbezogene Daten erheben.",
     "consent-embed-always": "Inhalte von {{domain}} immer zulassen",
-    "consent-embed-accept": "Inhalte laden"
+    "consent-embed-accept": "Inhalte laden",
+    "protect-unlock": "Entsperren",
+    "protect-unlocking": "Wird entsperrt ...",
+    "protect-wrong-password": "Falsches Passwort.",
+    "protect-failed": "Der geschützte Inhalt konnte nicht geöffnet werden.",
+    "protect-insecure-context": "Geschützte Inhalte benötigen eine sichere Verbindung (https). Öffne die Seite über https oder localhost.",
+    "protect-page-description": "Diese Seite ist geschützt. Gib das Passwort ein, um sie zu lesen.",
+    "protect-navigation-label": "Passwortgeschützt",
+    "passwordlist-empty": "Keine Passwörter.",
+    "passwordlist-password": "Passwort",
+    "passwordlist-where": "Wo",
+    "passwordlist-description": "Beschreibung"
 }
 ;
 
@@ -157,17 +184,24 @@ hyperbook.i18n = (function () {
    * Get a translated string by key, with optional placeholder substitution.
    * @param {string} key - The translation key.
    * @param {Record<string, string>} [values] - Placeholder values to substitute.
-   * @returns {string} The translated string, or the key itself if not found.
+   * @param {string} [fallback] - Used when the key has no translation. Without
+   *   it the key itself is rendered, which surfaces raw ids like
+   *   "user-save-conflict" in the UI.
+   * @returns {string} The translated string, the fallback, or the key.
    */
-  const get = (key, values) => {
+  const get = (key, values, fallback) => {
     if (!locales[key]) {
       console.warn(
         `Missing translation for key '${key}'`
       );
-      return key;
+      if (fallback === undefined) return key;
+      return substitute(fallback, values);
     }
 
-    let translation = locales[key];
+    return substitute(locales[key], values);
+  };
+
+  const substitute = (translation, values) => {
     if (values) {
       for (const [key, value] of Object.entries(values)) {
         translation = translation.replace(`{{${key}}}`, value);

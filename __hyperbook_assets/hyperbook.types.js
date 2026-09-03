@@ -56,8 +56,29 @@
  */
 
 /**
+ * One piece of a bookmark label. `text` is what the heading reads, `emoji` is
+ * the id of a Twemoji image, so the label can be rendered without storing
+ * markup or a URL.
+ * @typedef {{ text: string, emoji?: string }} HyperbookBookmarkLabelPart
+ */
+
+/**
+ * A bookmark label, built from parts. A plain string comes from a bookmark
+ * that was stored before labels became parts.
+ * @typedef {HyperbookBookmarkLabelPart[]} HyperbookBookmarkLabel
+ */
+
+/**
  * @typedef {Object} HyperbookBookmarks
  * @property {(root?: Document) => void} update - Refresh the bookmarks list in the DOM.
+ */
+
+/**
+ * Emoji rendering of the hyperbook. Only set when the emojis are rendered as
+ * images.
+ * @typedef {Object} HyperbookEmoji
+ * @property {"twemoji"} style - How emojis are rendered.
+ * @property {string} base - URL of the folder that holds the emoji images.
  */
 
 /**
@@ -81,6 +102,11 @@
  */
 
 /**
+ * @typedef {Object} HyperbookJmp
+ * @property {(root: HTMLElement) => void} init - Initialize Java Memory Playground elements.
+ */
+
+/**
  * @typedef {Object} HyperbookLearningmap
  * @property {(root: HTMLElement) => void} init - Initialize learning map elements.
  */
@@ -88,11 +114,6 @@
 /**
  * @typedef {Object} HyperbookMermaid
  * @property {() => void} init - Initialize mermaid diagrams.
- */
-
-/**
- * @typedef {Object} HyperbookOnlineide
- * @property {(el: HTMLElement) => void} openFullscreen - Open the online IDE in fullscreen.
  */
 
 /**
@@ -150,7 +171,7 @@
  *   store: HyperbookStore,
  *   cloud?: HyperbookCloud,
  *   toggleLightbox: (el: HTMLElement) => void,
- *   toggleBookmark: (key: string, label: string) => void,
+ *   toggleBookmark: (key: string) => void,
  *   navToggle: () => void,
  *   tocToggle: () => void,
  *   searchToggle: () => void,
@@ -166,13 +187,14 @@
  *   archive?: HyperbookArchive,
  *   audio?: HyperbookAudio,
  *   bookmarks?: HyperbookBookmarks,
+ *   emoji?: HyperbookEmoji,
  *   download?: HyperbookDownload,
  *   excalidraw?: HyperbookExcalidraw,
  *   geogebra?: HyperbookGeogebra,
  *   h5p?: HyperbookH5p,
+ *   jmp?: HyperbookJmp,
  *   learningmap?: HyperbookLearningmap,
  *   mermaid?: HyperbookMermaid,
- *   onlineide?: HyperbookOnlineide,
  *   p5?: HyperbookP5,
  *   protect?: HyperbookProtect,
  *   python?: HyperbookPython,
