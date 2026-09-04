@@ -73,9 +73,9 @@ $ sudo snap install eclipse --classic
 
 6.  Hier muss man einige Dinge beachten:
     1.  Oben links bei "Override workspace settings" ein Häckchen setzen
-    2.  Unter "Gradle distribution" Specific Gradle version auswählen und die Version 6.9.1 angeben
+    2.  Unter "Gradle distribution" Specific Gradle version auswählen und die Version 8.14.3 angeben
     3.  Unter "Advanced Options" bei "Java Home" nachsehen,
-        ob dort der Ordner des JDK (Java Develobment Kit) angegeben ist und dabei beachten das man nur JDK´s ab Version 11 benutzen kann.
+        ob dort der Ordner des JDK (Java Develobment Kit) angegeben ist und dabei beachten das man nur JDK´s ab Version 11 benutzen kann. TODO Java 25 is too high
     4.  Unten wieder auf "Next>" klicken.
 
 7. Dieser Schritt kann einen Moment dauern.
