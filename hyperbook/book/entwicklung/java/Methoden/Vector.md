@@ -1,24 +1,46 @@
 ---
-name: FieldState Methoden
-index: 8
+name: Vector Methoden
+index: 7
 ---
 
 # Methodendokumentation - Vector <!-- omit in toc -->
 
-## Inhaltsverzeichnis <!-- omit in toc -->
-- [Vector-Methoden](#vector-methoden)
-  - [**getDx()**](#getdx)
-  - [**getDy()**](#getdy)
-  - [**equals(Object)**](#equalsobject)
-
----
-
-## Vector-Methoden
 `Vector` repräsentiert eine zweidimensionale Bewegung mit X- und Y-Komponenten.
 
+## Inhaltsverzeichnis <!-- omit in toc -->
+
+- [**equals(Object)**](#equalsobject)
+- [**getDx()**](#getdx)
+- [**getDy()**](#getdy)
+- [**times(int)**](#timesint)
+
 ---
 
-### **getDx()** 
+### **equals(Object)**
+
+Vergleicht den Vektor mit einem anderen Objekt (normalerweise einem anderen Vektor).
+- **Rückgabetyp:** `boolean`
+
+```java
+.equals(other)
+```
+
+Das ganze Konstrukt:
+
+```java
+vector.equals(otherVector)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+boolean areEqual = vector.equals(new Vector(1, 0));
+```
+
+---
+
+### **getDx()**
+
 Gibt den Wert für die X-Dimension des Vektors zurück.
 - **Rückgabetyp:** `int`
 
@@ -40,7 +62,8 @@ int dx = vector.getDx();
 
 ---
 
-### **getDy()** 
+### **getDy()**
+
 Gibt den Wert für die Y-Dimension des Vektors zurück.
 - **Rückgabetyp:** `int`
 
@@ -62,22 +85,23 @@ int dy = vector.getDy();
 
 ---
 
-### **equals(Object)** 
-Vergleicht den Vektor mit einem anderen Objekt (normalerweise einem anderen Vektor).
-- **Rückgabetyp:** `boolean`
+### **times(int)**
+
+Multipliziert den Vektor mit einem Skalar und gibt einen neuen Vektor zurück.
+- **Rückgabetyp:** `Vector`
 
 ```java
-.equals(object)
+.times(int scalar)
 ```
 
 Das ganze Konstrukt:
 
 ```java
-vector.equals(otherVector)
+vector.times(scalar)
 ```
 
 Hier ein Code-Beispiel:
 
 ```java
-boolean areEqual = vector.equals(new Vector(1, 0));
+Vector scaledVector = vector.times(3);
 ```

@@ -3,146 +3,201 @@ name: GameRuleLogic Methoden
 index: 4
 ---
 
-# Methodendokumentation <!-- omit in toc -->
+# Methodendokumentation - GameRuleLogic <!-- omit in toc -->
+
+Die `GameRuleLogic`-Methoden sind statische Hilfsmethoden, die Spiellogik für Blockus bereitstellen.
 
 ## Inhaltsverzeichnis <!-- omit in toc -->
-- [GameRuleLogic-Methoden](#gamerulelogic-methoden)
-  - [**targetCoordinates(Board, Move)**](#targetcoordinatesboard-move)
-  - [**greatestSwarmSize(Board, Team)**](#greatestswarmsizeboard-team)
-  - [**greatestSwarmSize(Map\<Coordinates, Integer\>)**](#greatestswarmsizemapcoordinates-integer)
-  - [**greatestSwarm(Map\<Coordinates, Integer\>)**](#greatestswarmmapcoordinates-integer)
-  - [**isSwarmConnected(Board, Team)**](#isswarmconnectedboard-team)
-  - [**possibleMovesFor(Board, Coordinates)**](#possiblemovesforboard-coordinates)
 
-
-## GameRuleLogic-Methoden
-
-### **targetCoordinates(Board, Move)**
-Gibt die Zielkoordinaten eines Zuges zurück.
-- **Rückgabetyp:** `Coordinates`
-
-```java
-.targetCoordinates(Board board, Move move)
-```
-
-Das ganze Konstrukt:
-
-```java
-GameRuleLogic.targetCoordinates(board, move)
-```
-
-Hier ein Code-Beispiel:
-
-```java
-Coordinates target = GameRuleLogic.targetCoordinates(currentBoard, move);
-```
+- [**bordersOnColor(Board, Field)**](#bordersoncolorboard-field)
+- [**cornersOnColor(Board, Field)**](#cornersoncolorboard-field)
+- [**getColoredFields(GameState)**](#getcoloredfieldsgamestate)
+- [**getPossibleMoves(GameState)**](#getpossiblemovesgamestate)
+- [**getPossibleMovesForShape**](#getpossiblemovesforshape)
+- [**getRandomStartPentomino()**](#getrandomstartpentomino)
+- [**getValidFields(Board, Color)**](#getvalidfieldsboard-color)
+- [**isOnBorder(Coordinates)**](#isonbordercoordinates)
 
 ---
 
-### **greatestSwarmSize(Board, Team)**
-Gibt die Größe des größten Teilschwarms des angegebenen Teams zurück.
-- **Rückgabetyp:** `int`
+### **bordersOnColor(Board, Field)**
 
-```java
-.greatestSwarmSize(Board board, Team team)
-```
-
-Das ganze Konstrukt:
-
-```java
-GameRuleLogic.greatestSwarmSize(board, team)
-```
-
-Hier ein Code-Beispiel:
-
-```java
-int largestSwarmSize = GameRuleLogic.greatestSwarmSize(board, blueTeam);
-```
-
----
-
-### **greatestSwarmSize(Map<Coordinates, Integer>)**
-Gibt die Größe des größten Teilschwarms basierend auf einer Map von Koordinaten und Werten zurück.
-- **Rückgabetyp:** `int`
-
-```java
-.greatestSwarmSize(Map<Coordinates, Integer> swarmMap)
-```
-
-Das ganze Konstrukt:
-
-```java
-GameRuleLogic.greatestSwarmSize(swarmMap)
-```
-
-Hier ein Code-Beispiel:
-
-```java
-int swarmSize = GameRuleLogic.greatestSwarmSize(fishMap);
-```
-
----
-
-### **greatestSwarm(Map<Coordinates, Integer>)**
-Gibt den größten Teilschwarm als Map zurück.
-- **Rückgabetyp:** `Map<Coordinates, Integer>`
-
-```java
-.greatestSwarm(Map<Coordinates, Integer> swarmMap)
-```
-
-Das ganze Konstrukt:
-
-```java
-GameRuleLogic.greatestSwarm(swarmMap)
-```
-
-Hier ein Code-Beispiel:
-
-```java
-Map<Coordinates, Integer> largestSwarm = GameRuleLogic.greatestSwarm(fishMap);
-```
-
----
-
-### **isSwarmConnected(Board, Team)**
-Überprüft, ob der Schwarm eines Teams vollständig verbunden ist.
+Überprüft, ob ein Feld an eine bestimmte Farbe angrenzt.
 - **Rückgabetyp:** `boolean`
 
 ```java
-.isSwarmConnected(Board board, Team team)
+.bordersOnColor(Board board, Field field)
 ```
 
 Das ganze Konstrukt:
 
 ```java
-GameRuleLogic.isSwarmConnected(board, team)
+GameRuleLogic.bordersOnColor(board, field)
 ```
 
 Hier ein Code-Beispiel:
 
 ```java
-boolean isConnected = GameRuleLogic.isSwarmConnected(board, redTeam);
+boolean borders = GameRuleLogic.bordersOnColor(currentBoard, field);
 ```
 
 ---
 
-### **possibleMovesFor(Board, Coordinates)**
-Gibt eine Sammlung möglicher Züge für eine gegebene Position zurück.
-- **Rückgabetyp:** `Collection<Move>`
+### **cornersOnColor(Board, Field)**
+
+Überprüft, ob ein Feld an eine bestimmte Farbe in den Ecken angrenzt.
+- **Rückgabetyp:** `boolean`
 
 ```java
-.possibleMovesFor(Board board, Coordinates coords)
+.cornersOnColor(Board board, Field field)
 ```
 
 Das ganze Konstrukt:
 
 ```java
-GameRuleLogic.possibleMovesFor(board, coords)
+GameRuleLogic.cornersOnColor(board, field)
 ```
 
 Hier ein Code-Beispiel:
 
 ```java
-Collection<Move> moves = GameRuleLogic.possibleMovesFor(board, position);
+boolean corners = GameRuleLogic.cornersOnColor(currentBoard, field);
+```
+
+---
+
+### **getColoredFields(GameState)**
+
+Gibt eine Liste von SetMoves für alle gefärbten Felder zurück.
+- **Rückgabetyp:** `List<SetMove>`
+
+```java
+.getColoredFields(GameState gameState)
+```
+
+Das ganze Konstrukt:
+
+```java
+GameRuleLogic.getColoredFields(gameState)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+List<SetMove> coloredFields = GameRuleLogic.getColoredFields(currentState);
+```
+
+---
+
+### **getPossibleMoves(GameState)**
+
+Gibt eine Liste aller möglichen Züge für den aktuellen Spielstand zurück.
+- **Rückgabetyp:** `List<SetMove>`
+
+```java
+.getPossibleMoves(GameState gameState)
+```
+
+Das ganze Konstrukt:
+
+```java
+GameRuleLogic.getPossibleMoves(gameState)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+List<SetMove> moves = GameRuleLogic.getPossibleMoves(currentState);
+```
+
+---
+
+### **getPossibleMovesForShape**
+
+Gibt die möglichen Züge für eine bestimmte PieceShape zurück.
+- **Rückgabetyp:** `Set<SetMove>`
+
+```java
+.getPossibleMovesForShape(GameState gameState, PieceShape shape, Set<Coordinates> validFields)
+```
+
+Das ganze Konstrukt:
+
+```java
+GameRuleLogic.getPossibleMovesForShape(gameState, shape, fields)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Set<SetMove> shapeMoves = GameRuleLogic.getPossibleMovesForShape(gameState, shape, fields);
+```
+
+---
+
+### **getRandomStartPentomino()**
+
+Gibt das zufällige Start-Pentomino (PieceShape) zurück.
+- **Rückgabetyp:** `PieceShape`
+
+```java
+.getRandomStartPentomino()
+```
+
+Das ganze Konstrukt:
+
+```java
+GameRuleLogic.getRandomStartPentomino()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+PieceShape startPentomino = GameRuleLogic.getRandomStartPentomino();
+```
+
+---
+
+### **getValidFields(Board, Color)**
+
+Gibt die Menge aller gültigen Felder für eine bestimmte Farbe zurück.
+- **Rückgabetyp:** `Set<Coordinates>`
+
+```java
+.getValidFields(Board board, Color color)
+```
+
+Das ganze Konstrukt:
+
+```java
+GameRuleLogic.getValidFields(board, color)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Set<Coordinates> validFields = GameRuleLogic.getValidFields(currentBoard, redColor);
+```
+
+---
+
+### **isOnBorder(Coordinates)**
+
+Überprüft, ob die angegebenen Koordinaten auf dem Spielfeldrand liegen.
+- **Rückgabetyp:** `boolean`
+
+```java
+.isOnBorder(Coordinates position)
+```
+
+Das ganze Konstrukt:
+
+```java
+GameRuleLogic.isOnBorder(position)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+boolean onBorder = GameRuleLogic.isOnBorder(coordinates);
 ```
