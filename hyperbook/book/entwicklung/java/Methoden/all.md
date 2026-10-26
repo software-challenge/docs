@@ -1,199 +1,88 @@
 ---
 name: Alle Methoden
-index: 2
+index: 1
 ---
 
-# Methodendokumentation - Alle wichtigen Java Methoden für Piranhas <!-- omit in toc -->
+# Methodendokumentation - Alle wichtigen Java Methoden für Blockus <!-- omit in toc -->
 
-Hier findest du alle Methoden,
- die von uns für das aktuelle Spiel zur Verfügung gestellt werden.
+Hier findest du alle wichtigen Methoden, die von uns für das aktuelle Spiel zur Verfügung gestellt werden.
+
 ## Inhaltsverzeichnis <!-- omit in toc -->
 
 - [GameState (Spielstand)](#gamestate-spielstand)
-  - [**getLastMove()**](#getlastmove)
-  - [**getCurrentTeam()**](#getcurrentteam)
-  - [**getOtherTeam()**](#getotherteam)
-  - [**getTurn()**](#getturn)
-  - [**getPointsForTeam(Team)**](#getpointsforteamteam)
-  - [**getSensibleMoves()**](#getsensiblemoves)
   - [**clone()**](#clone)
+  - [**equals(Object)**](#equalsobject)
+  - [**getBoard()**](#getboard)
+  - [**getCurrentColor()**](#getcurrentcolor)
+  - [**getCurrentTeam()**](#getcurrentteam)
+  - [**getLastMove()**](#getlastmove)
+  - [**getLastMoveMono()**](#getlastmovemono)
+  - [**getOrderedColors()**](#getorderedcolors)
+  - [**getOtherTeam()**](#getotherteam)
+  - [**getPointsForTeam(ITeam)**](#getpointsforteamiteam)
+  - [**getRound()**](#getround)
+  - [**getSensibleMoves()**](#getsensiblemoves)
+  - [**getStartPiece()**](#getstartpiece)
+  - [**getStartTeam()**](#getstartteam)
+  - [**getTurn()**](#getturn)
+  - [**getWinCondition()**](#getwincondition)
+  - [**hasValidColors()**](#hasvalidcolors)
+  - [**isOver()**](#isover)
+  - [**isValidColor(Color)**](#isvalidcolorcolor)
   - [**performMove(Move)**](#performmovemove)
   - [**performMoveDirectly(Move)**](#performmovedirectlymove)
+  - [**roundFromTurn(int)**](#roundfromturnint)
+  - [**setLastMove(Move)**](#setlastmovemove)
+  - [**setTurn(int)**](#setturnint)
+  - [**setTurnAndRound(int)**](#setturnandroundint)
+  - [**teamStats()**](#teamstats)
+  - [**undeployedPieceShapes()**](#undeployedpieceshapes)
 - [Board-Methoden (über getBoard() erreichbar)](#board-methoden-über-getboard-erreichbar)
-  - [**getBoard()**](#getboard)
-  - [**getTeam(Coordinates)**](#getteamcoordinates)
-  - [**get(x, y) / get(Coordinates) / get(Object Key)**](#getx-y--getcoordinates--getobject-key)
   - [**clone()** (für Board)](#clone-für-board)
-  - [**fieldsForTeam(Team)**](#fieldsforteamteam)
+  - [**get(int x, int y)**](#getint-x-int-y)
+  - [**getTeam(Coordinates)**](#getteamcoordinates)
+  - [**isObstructed(Coordinates)**](#isobstructedcoordinates)
 - [GameRuleLogic-Methoden](#gamerulelogic-methoden)
-  - [**targetCoordinates(Board, Move)**](#targetcoordinatesboard-move)
-  - [**greatestSwarmSize(Board, Team)**](#greatestswarmsizeboard-team)
-  - [**greatestSwarmSize(Map\<Coordinates, Integer\>)**](#greatestswarmsizemapcoordinates-integer)
-  - [**greatestSwarm(Map\<Coordinates, Integer\>)**](#greatestswarmmapcoordinates-integer)
-  - [**isSwarmConnected(Board, Team)**](#isswarmconnectedboard-team)
-  - [**possibleMovesFor(Board, Coordinates)**](#possiblemovesforboard-coordinates)
-- [FieldState-Methoden](#fieldstate-methoden)
-  - [**getSize()**](#getsize)
-  - [**getTeam()**](#getteam)
-  - [**isEmpty()**](#isempty)
-- [Direction-Methoden](#direction-methoden)
-  - [**getDx()** (Direction)](#getdx-direction)
-  - [**getDy()** (Direction)](#getdy-direction)
-  - [**getVector()**](#getvector)
-  - [**equals(Object)** (Direction)](#equalsobject-direction)
+  - [**bordersOnColor(Board, Field)**](#bordersoncolorboard-field)
+  - [**cornersOnColor(Board, Field)**](#cornersoncolorboard-field)
+  - [**getColoredFields(GameState)**](#getcoloredfieldsgamestate)
+  - [**getPossibleMoves(GameState)**](#getpossiblemovesgamestate)
+  - [**getPossibleMovesForShape**](#getpossiblemovesforshape)
+  - [**getRandomStartPentomino()**](#getrandomstartpentomino)
+  - [**getValidFields(Board, Color)**](#getvalidfieldsboard-color)
+  - [**isOnBorder(Coordinates)**](#isonbordercoordinates)
+- [Field-Methoden](#field-methoden)
+  - [**clone()** (für Field)](#clone-für-field)
+  - [**equals(Object)** (Field)](#equalsobject-field)
+  - [**getContent()**](#getcontent)
+  - [**getCoordinates()**](#getcoordinates)
 - [Coordinates-Methoden](#coordinates-methoden)
+  - [**equals(Object)** (Coordinates)](#equalsobject-coordinates)
+  - [**getDiagonalNeighbors()**](#getdiagonalneighbors)
+  - [**getNeighbors()**](#getneighbors)
   - [**getX()**](#getx)
   - [**getY()**](#gety)
-  - [**getNeighbors()**](#getneighbors)
-  - [**plus(Vector)**](#plusvector)
-  - [**minus(Vector)**](#minusvector)
-  - [**equals(Object)** (Coordinates)](#equalsobject-coordinates)
+  - [**minus(IVector)**](#minusivector)
+  - [**minus(Coordinates)**](#minuscoordinates)
+  - [**plus(IVector)**](#plusivector)
 - [Vector-Methoden](#vector-methoden)
-  - [**getDx()** (Vector)](#getdx-vector)
-  - [**getDy()** (Vector)](#getdy-vector)
   - [**equals(Object)** (Vector)](#equalsobject-vector)
+  - [**getDx()**](#getdx)
+  - [**getDy()**](#getdy)
+  - [**times(int)**](#timesint)
 
-
+---
 
 ## GameState (Spielstand)
+
 Der `gameState` enthält alle wichtigen Parameter, die für Berechnungen benötigt werden. Auf ihm können verschiedene Methoden aufgerufen werden, um diese Parameter abzurufen.
 
 ---
 
-### **getLastMove()**
-Gibt den letzten Zug des Gegners zurück.
-- **Rückgabetyp:** `Move`
-
-```java
-.getLastMove()
-```
-
-Das ganze Konstrukt:
-
-```java
-gameState.getLastMove()
-```
-
-Hier ein Code-Beispiel:
-
-```java
-Move lastMove = gameState.getLastMove();
-```
-
----
-
-### **getCurrentTeam()**
-Gibt das Team zurück, das gerade am Zug ist.
-- **Rückgabetyp:** `Team`
-
-```java
-.getCurrentTeam()
-```
-
-Das ganze Konstrukt:
-
-```java
-gameState.getCurrentTeam()
-```
-
-Hier ein Code-Beispiel:
-
-```java
-Team currentTeam = gameState.getCurrentTeam();
-```
-
----
-
-### **getOtherTeam()**
-Gibt das Team zurück, das gerade nicht am Zug ist.
-- **Rückgabetyp:** `Team`
-
-```java
-.getOtherTeam()
-```
-
-Das ganze Konstrukt:
-
-```java
-gameState.getOtherTeam()
-```
-
-Hier ein Code-Beispiel:
-
-```java
-Team otherTeam = gameState.getOtherTeam();
-```
-
----
-
-### **getTurn()**
-Gibt die aktuelle Runde zurück.
-- **Rückgabetyp:** `int`
-
-```java
-.getTurn()
-```
-
-Das ganze Konstrukt:
-
-```java
-gameState.getTurn()
-```
-
-Hier ein Code-Beispiel:
-
-```java
-int currentTurn = gameState.getTurn();
-```
-
----
-
-### **getPointsForTeam(Team)**
-Gibt die Punkte für das angegebene Team zurück.
-- **Rückgabetyp:** `int`
-
-```java
-.getPointsForTeam(Team team)
-```
-
-Das ganze Konstrukt:
-
-```java
-gameState.getPointsForTeam(team)
-```
-
-Hier ein Code-Beispiel:
-
-```java
-int teamPoints = gameState.getPointsForTeam(blueTeam);
-```
-
----
-
-### **getSensibleMoves()**
-Gibt alle möglichen Züge für das aktuelle Team zurück.
-- **Rückgabetyp:** `List<Move>`
-
-```java
-.getSensibleMoves()
-```
-
-Das ganze Konstrukt:
-
-```java
-gameState.getSensibleMoves()
-```
-
-Hier ein Code-Beispiel:
-
-```java
-List<Move> possibleMoves = gameState.getSensibleMoves();
-```
-
----
-
 ### **clone()**
+
 Erstellt eine tiefe Kopie des Spielstands.
+
 - **Rückgabetyp:** `GameState`
 
 ```java
@@ -214,8 +103,442 @@ GameState copiedState = gameState.clone();
 
 ---
 
+### **equals(Object)**
+
+Vergleicht den Spielstand mit einem anderen Objekt.
+
+- **Rückgabetyp:** `Boolean`
+
+```java
+.equals(object)
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.equals(otherState)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+boolean areEqual = gameState.equals(otherState);
+```
+
+---
+
+### **getBoard()**
+
+Gibt das Spielfeld aus dem Spielstand zurück.
+
+- **Rückgabetyp:** `Board`
+
+```java
+.getBoard()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.getBoard()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Board currentBoard = gameState.getBoard();
+```
+
+---
+
+### **getCurrentColor()**
+
+Gibt die Farbe zurück, die gerade am Zug ist.
+
+- **Rückgabetyp:** `Color`
+
+```java
+.getCurrentColor()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.getCurrentColor()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Color currentColor = gameState.getCurrentColor();
+```
+
+---
+
+### **getCurrentTeam()**
+
+Gibt das Team zurück, das gerade am Zug ist.
+
+- **Rückgabetyp:** `Team`
+
+```java
+.getCurrentTeam()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.getCurrentTeam()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Team currentTeam = gameState.getCurrentTeam();
+```
+
+---
+
+### **getLastMove()**
+
+Gibt den letzten Zug des Gegners zurück.
+
+- **Rückgabetyp:** `Move`
+
+```java
+.getLastMove()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.getLastMove()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Move lastMove = gameState.getLastMove();
+```
+
+---
+
+### **getLastMoveMono()**
+
+Gibt eine Map zurück, die für jede Farbe angibt, ob sie den letzten Zug ausgeführt hat (Monochrom-Information).
+
+- **Rückgabetyp:** `HashMap<Color, Boolean>`
+
+```java
+.getLastMoveMono()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.getLastMoveMono()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+HashMap<Color, Boolean> lastMoveMono = gameState.getLastMoveMono();
+```
+
+---
+
+### **getOrderedColors()**
+
+Gibt die Farben in ihrer Zugreihenfolge zurück.
+
+- **Rückgabetyp:** `List<Color>`
+
+```java
+.getOrderedColors()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.getOrderedColors()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+List<Color> orderedColors = gameState.getOrderedColors();
+```
+
+---
+
+### **getOtherTeam()**
+
+Gibt das Team zurück, das gerade nicht am Zug ist.
+
+- **Rückgabetyp:** `Team`
+
+```java
+.getOtherTeam()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.getOtherTeam()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Team otherTeam = gameState.getOtherTeam();
+```
+
+---
+
+### **getPointsForTeam(ITeam)**
+
+Gibt die Punkte für das angegebene Team zurück.
+
+- **Rückgabetyp:** `int`
+
+```java
+.getPointsForTeam(ITeam team)
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.getPointsForTeam(team)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+int teamPoints = gameState.getPointsForTeam(blueTeam);
+```
+
+---
+
+### **getRound()**
+
+Gibt die aktuelle Runde zurück.
+
+- **Rückgabetyp:** `int`
+
+```java
+.getRound()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.getRound()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+int currentRound = gameState.getRound();
+```
+
+---
+
+### **getSensibleMoves()**
+
+Gibt alle möglichen Züge für das aktuelle Team zurück.
+
+- **Rückgabetyp:** `List<Move>`
+
+```java
+.getSensibleMoves()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.getSensibleMoves()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+List<Move> possibleMoves = gameState.getSensibleMoves();
+```
+
+---
+
+### **getStartPiece()**
+
+Gibt die Start-PieceShape (Start-Spielstein) zurück.
+
+- **Rückgabetyp:** `PieceShape`
+
+```java
+.getStartPiece()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.getStartPiece()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+PieceShape startPiece = gameState.getStartPiece();
+```
+
+---
+
+### **getStartTeam()**
+
+Gibt das Team zurück, das das Spiel beginnt.
+
+- **Rückgabetyp:** `Team`
+
+```java
+.getStartTeam()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.getStartTeam()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Team startTeam = gameState.getStartTeam();
+```
+
+---
+
+### **getTurn()**
+
+Gibt die aktuelle Runde zurück.
+
+- **Rückgabetyp:** `int`
+
+```java
+.getTurn()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.getTurn()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+int currentTurn = gameState.getTurn();
+```
+
+---
+
+### **getWinCondition()**
+
+Gibt die Gewinnbedingung des Spiels zurück.
+
+- **Rückgabetyp:** `WinCondition`
+
+```java
+.getWinCondition()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.getWinCondition()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+WinCondition winCondition = gameState.getWinCondition();
+```
+
+---
+
+### **hasValidColors()**
+
+Überprüft, ob alle Farben im Spiel gültig sind.
+
+- **Rückgabetyp:** `boolean`
+
+```java
+.hasValidColors()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.hasValidColors()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+boolean valid = gameState.hasValidColors();
+```
+
+---
+
+### **isOver()**
+
+Überprüft, ob das Spiel beendet ist.
+
+- **Rückgabetyp:** `boolean`
+
+```java
+.isOver()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.isOver()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+boolean gameOver = gameState.isOver();
+```
+
+---
+
+### **isValidColor(Color)**
+
+Überprüft, ob eine gegebene Farbe im Spiel gültig ist.
+
+- **Rückgabetyp:** `boolean`
+
+```java
+.isValidColor(Color color)
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.isValidColor(color)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+boolean isValid = gameState.isValidColor(redColor);
+```
+
+---
+
 ### **performMove(Move)**
+
 Führt einen ausgewählten Zug aus und gibt einen neuen Spielstand zurück.
+
 - **Rückgabetyp:** `GameState`
 
 ```java
@@ -237,7 +560,9 @@ GameState newState = gameState.performMove(selectedMove);
 ---
 
 ### **performMoveDirectly(Move)**
+
 Führt einen ausgewählten Zug aus und verändert dabei den aktuellen Spielstand.
+
 - **Rückgabetyp:** `void`
 
 ```java
@@ -258,80 +583,156 @@ gameState.performMoveDirectly(selectedMove);
 
 ---
 
+### **roundFromTurn(int)**
+
+Berechnet die Runde aus einer gegebenen Zugnummer.
+
+- **Rückgabetyp:** `int`
+
+```java
+.roundFromTurn(int turn)
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.roundFromTurn(turn)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+int round = gameState.roundFromTurn(42);
+```
+
+---
+
+### **setLastMove(Move)**
+
+Setzt den letzten Zug.
+
+- **Rückgabetyp:** `void`
+
+```java
+.setLastMove(Move move)
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.setLastMove(move)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+gameState.setLastMove(newMove);
+```
+
+---
+
+### **setTurn(int)**
+
+Setzt die aktuelle Zugnummer.
+
+- **Rückgabetyp:** `void`
+
+```java
+.setTurn(int turn)
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.setTurn(turn)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+gameState.setTurn(5);
+```
+
+---
+
+### **setTurnAndRound(int)**
+
+Setzt Zugnummer und Runde.
+
+- **Rückgabetyp:** `void`
+
+```java
+.setTurnAndRound(int turn)
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.setTurnAndRound(turn)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+gameState.setTurnAndRound(10);
+```
+
+---
+
+### **teamStats()**
+
+Gibt eine Liste von Statistiken für alle Teams zurück.
+
+- **Rückgabetyp:** `List<Stat>`
+
+```java
+.teamStats()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.teamStats()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+List<Stat> stats = gameState.teamStats();
+```
+
+---
+
+### **undeployedPieceShapes()**
+
+Gibt eine Sammlung der noch nicht eingesetzten PieceShapes zurück.
+
+- **Rückgabetyp:** `Collection<PieceShape>`
+
+```java
+.undeployedPieceShapes()
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.undeployedPieceShapes()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Collection<PieceShape> remainingPieces = gameState.undeployedPieceShapes();
+```
+
+---
+
 ## Board-Methoden (über getBoard() erreichbar)
 
-### **getBoard()**
-Gibt das Spielfeld aus dem Spielstand zurück.
-- **Rückgabetyp:** `Board`
-
-```java
-.getBoard()
-```
-
-Das ganze Konstrukt:
-
-```java
-gameState.getBoard()
-```
-
-Hier ein Code-Beispiel:
-
-```java
-Board currentBoard = gameState.getBoard();
-```
-
----
-
-### **getTeam(Coordinates)**
-Gibt das Team zurück, zu dem der Fisch an den gegebenen Koordinaten gehört.
-- **Rückgabetyp:** `Team`
-
-```java
-.getTeam(Coordinates coords)
-```
-
-Das ganze Konstrukt:
-
-```java
-gameState.getBoard().getTeam(coords)
-```
-
-Hier ein Code-Beispiel:
-
-```java
-Team fishTeam = gameState.getBoard().getTeam(coordinates);
-```
-
----
-
-### **get(x, y) / get(Coordinates) / get(Object Key)**
-Gibt den Status des Feldes an der angegebenen Position zurück (z.B. leer, Blue3 usw.).
-- **Rückgabetyp:** `FieldState`
-
-```java
-.get(int x, int y)
-.get(Coordinates coords)
-.get(Object key)
-```
-
-Das ganze Konstrukt:
-
-```java
-gameState.getBoard().get(x, y)
-gameState.getBoard().get(coords)
-gameState.getBoard().get(key)
-```
-
-Hier ein Code-Beispiel:
-
-```java
-FieldState fieldStatus = gameState.getBoard().get(2, 3);
-```
-
----
-
 ### **clone()** (für Board)
+
 Erstellt eine Kopie des Boards.
+
 - **Rückgabetyp:** `Board`
 
 ```java
@@ -352,306 +753,304 @@ Board copiedBoard = gameState.getBoard().clone();
 
 ---
 
-### **fieldsForTeam(Team)**
-Gibt eine Map mit den Koordinaten der Fische des angegebenen Teams und deren Punktwerten zurück.
-- **Rückgabetyp:** `Map<Coordinates, Integer>`
+### **get(int x, int y)**
+
+Gibt das Feld an der angegebenen Position zurück.
+
+- **Rückgabetyp:** `Field`
 
 ```java
-.fieldsForTeam(Team team)
+.get(int x, int y)
 ```
 
 Das ganze Konstrukt:
 
 ```java
-gameState.getBoard().fieldsForTeam(team)
+gameState.getBoard().get(x, y)
 ```
 
 Hier ein Code-Beispiel:
 
 ```java
-Map<Coordinates, Integer> teamFields = gameState.getBoard().fieldsForTeam(redTeam);
+Field field = gameState.getBoard().get(2, 3);
+```
+
+---
+
+### **getTeam(Coordinates)**
+
+Gibt das Team zurück, zu dem der Spielstein an den gegebenen Koordinaten gehört.
+
+- **Rückgabetyp:** `Team`
+
+```java
+.getTeam(Coordinates position)
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.getBoard().getTeam(position)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Team pieceTeam = gameState.getBoard().getTeam(coordinates);
+```
+
+---
+
+### **isObstructed(Coordinates)**
+
+Überprüft, ob das Feld an den gegebenen Koordinaten blockiert ist.
+
+- **Rückgabetyp:** `Boolean`
+
+```java
+.isObstructed(Coordinates position)
+```
+
+Das ganze Konstrukt:
+
+```java
+gameState.getBoard().isObstructed(position)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+boolean obstructed = gameState.getBoard().isObstructed(coordinates);
 ```
 
 ---
 
 ## GameRuleLogic-Methoden
 
-### **targetCoordinates(Board, Move)**
-Gibt die Zielkoordinaten eines Zuges zurück.
-- **Rückgabetyp:** `Coordinates`
+### **bordersOnColor(Board, Field)**
 
-```java
-.targetCoordinates(Board board, Move move)
-```
+Überprüft, ob ein Feld an eine bestimmte Farbe angrenzt.
 
-Das ganze Konstrukt:
-
-```java
-GameRuleLogic.targetCoordinates(board, move)
-```
-
-Hier ein Code-Beispiel:
-
-```java
-Coordinates target = GameRuleLogic.targetCoordinates(currentBoard, move);
-```
-
----
-
-### **greatestSwarmSize(Board, Team)**
-Gibt die Größe des größten Teilschwarms des angegebenen Teams zurück.
-- **Rückgabetyp:** `int`
-
-```java
-.greatestSwarmSize(Board board, Team team)
-```
-
-Das ganze Konstrukt:
-
-```java
-GameRuleLogic.greatestSwarmSize(board, team)
-```
-
-Hier ein Code-Beispiel:
-
-```java
-int largestSwarmSize = GameRuleLogic.greatestSwarmSize(board, blueTeam);
-```
-
----
-
-### **greatestSwarmSize(Map<Coordinates, Integer>)**
-Gibt die Größe des größten Teilschwarms basierend auf einer Map von Koordinaten und Werten zurück.
-- **Rückgabetyp:** `int`
-
-```java
-.greatestSwarmSize(Map<Coordinates, Integer> swarmMap)
-```
-
-Das ganze Konstrukt:
-
-```java
-GameRuleLogic.greatestSwarmSize(swarmMap)
-```
-
-Hier ein Code-Beispiel:
-
-```java
-int swarmSize = GameRuleLogic.greatestSwarmSize(fishMap);
-```
-
----
-
-### **greatestSwarm(Map<Coordinates, Integer>)**
-Gibt den größten Teilschwarm als Map zurück.
-- **Rückgabetyp:** `Map<Coordinates, Integer>`
-
-```java
-.greatestSwarm(Map<Coordinates, Integer> swarmMap)
-```
-
-Das ganze Konstrukt:
-
-```java
-GameRuleLogic.greatestSwarm(swarmMap)
-```
-
-Hier ein Code-Beispiel:
-
-```java
-Map<Coordinates, Integer> largestSwarm = GameRuleLogic.greatestSwarm(fishMap);
-```
-
----
-
-### **isSwarmConnected(Board, Team)**
-Überprüft, ob der Schwarm eines Teams vollständig verbunden ist.
 - **Rückgabetyp:** `boolean`
 
 ```java
-.isSwarmConnected(Board board, Team team)
+.bordersOnColor(Board board, Field field)
 ```
 
 Das ganze Konstrukt:
 
 ```java
-GameRuleLogic.isSwarmConnected(board, team)
+GameRuleLogic.bordersOnColor(board, field)
 ```
 
 Hier ein Code-Beispiel:
 
 ```java
-boolean isConnected = GameRuleLogic.isSwarmConnected(board, redTeam);
+boolean borders = GameRuleLogic.bordersOnColor(currentBoard, field);
 ```
 
 ---
 
-### **possibleMovesFor(Board, Coordinates)**
-Gibt eine Sammlung möglicher Züge für eine gegebene Position zurück.
-- **Rückgabetyp:** `Collection<Move>`
+### **cornersOnColor(Board, Field)**
 
-```java
-.possibleMovesFor(Board board, Coordinates coords)
-```
+Überprüft, ob ein Feld an eine bestimmte Farbe in den Ecken angrenzt.
 
-Das ganze Konstrukt:
-
-```java
-GameRuleLogic.possibleMovesFor(board, coords)
-```
-
-Hier ein Code-Beispiel:
-
-```java
-Collection<Move> moves = GameRuleLogic.possibleMovesFor(board, position);
-```
-
----
-
-## FieldState-Methoden
-Der `FieldState` beschreibt den Zustand eines Feldes im Spiel. Es handelt sich um ein Enum, das verschiedene Zustände wie Fische unterschiedlicher Größe und Teams oder leere Felder repräsentiert.
-
----
-
-### **getSize()**
-Gibt die Größe eines Fisches auf dem Feld zurück. Bei leeren Feldern oder der Krake kann die Rückgabe speziell behandelt werden (z.B. -1 oder 0).
-- **Rückgabetyp:** `int`
-
-```java
-.getSize()
-```
-
-Das ganze Konstrukt:
-
-```java
-fieldState.getSize()
-```
-
-Hier ein Code-Beispiel:
-
-```java
-int fishSize = fieldState.getSize();
-```
-
----
-
-### **getTeam()**
-Gibt die Teamzugehörigkeit eines Fisches auf dem Feld zurück. Bei leeren Feldern oder der Krake wird möglicherweise `null` oder ein spezieller Wert zurückgegeben.
-- **Rückgabetyp:** `Team`
-
-```java
-.getTeam()
-```
-
-Das ganze Konstrukt:
-
-```java
-fieldState.getTeam()
-```
-
-Hier ein Code-Beispiel:
-
-```java
-Team fishTeam = fieldState.getTeam();
-```
-
----
-
-### **isEmpty()**
-Überprüft, ob das Feld leer ist.
 - **Rückgabetyp:** `boolean`
 
 ```java
-.isEmpty()
+.cornersOnColor(Board board, Field field)
 ```
 
 Das ganze Konstrukt:
 
 ```java
-fieldState.isEmpty()
+GameRuleLogic.cornersOnColor(board, field)
 ```
 
 Hier ein Code-Beispiel:
 
 ```java
-boolean isEmpty = fieldState.isEmpty();
+boolean corners = GameRuleLogic.cornersOnColor(currentBoard, field);
 ```
 
 ---
 
-## Direction-Methoden
-`Direction` ist ein Enum, das die möglichen Bewegungsrichtungen im Spiel definiert.
+### **getColoredFields(GameState)**
 
----
+Gibt eine Liste von SetMoves für alle gefärbten Felder zurück.
 
-### **getDx()** (Direction)
-Gibt den Wert für die X-Dimension der Bewegungsrichtung zurück (z.B. -1, 0 oder 1).
-- **Rückgabetyp:** `int`
+- **Rückgabetyp:** `List<SetMove>`
 
 ```java
-.getDx()
+.getColoredFields(GameState gameState)
 ```
 
 Das ganze Konstrukt:
 
 ```java
-direction.getDx()
+GameRuleLogic.getColoredFields(gameState)
 ```
 
 Hier ein Code-Beispiel:
 
 ```java
-int dx = direction.getDx();
+List<SetMove> coloredFields = GameRuleLogic.getColoredFields(currentState);
 ```
 
 ---
 
-### **getDy()** (Direction)
-Gibt den Wert für die Y-Dimension der Bewegungsrichtung zurück (z.B. -1, 0 oder 1).
-- **Rückgabetyp:** `int`
+### **getPossibleMoves(GameState)**
+
+Gibt eine Liste aller möglichen Züge für den aktuellen Spielstand zurück.
+
+- **Rückgabetyp:** `List<SetMove>`
 
 ```java
-.getDy()
+.getPossibleMoves(GameState gameState)
 ```
 
 Das ganze Konstrukt:
 
 ```java
-direction.getDy()
+GameRuleLogic.getPossibleMoves(gameState)
 ```
 
 Hier ein Code-Beispiel:
 
 ```java
-int dy = direction.getDy();
+List<SetMove> moves = GameRuleLogic.getPossibleMoves(currentState);
 ```
 
 ---
 
-### **getVector()**
-Gibt den Vektor für eine Richtung zurück.
-- **Rückgabetyp:** `Vector`
+### **getPossibleMovesForShape**
+
+Gibt die möglichen Züge für eine bestimmte PieceShape zurück.
 
 ```java
-.getVector()
+.getPossibleMovesForShape(GameState gameState, PieceShape shape, Set<Coordinates> validFields)
 ```
 
 Das ganze Konstrukt:
 
 ```java
-direction.getVector()
+GameRuleLogic.getPossibleMovesForShape(gameState, shape, fields)
 ```
 
 Hier ein Code-Beispiel:
 
 ```java
-Vector moveVector = direction.getVector();
+Set<SetMove> shapeMoves = GameRuleLogic.getPossibleMovesForShape(gameState, shape, fields);
 ```
 
 ---
 
-### **equals(Object)** (Direction)
-Vergleicht die Bewegungsrichtung mit einem anderen Objekt (normalerweise einer anderen Richtung).
+### **getRandomStartPentomino()**
+
+Gibt das zufällige Start-Pentomino (PieceShape) zurück.
+
+- **Rückgabetyp:** `PieceShape`
+
+```java
+.getRandomStartPentomino()
+```
+
+Das ganze Konstrukt:
+
+```java
+GameRuleLogic.getRandomStartPentomino()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+PieceShape startPentomino = GameRuleLogic.getRandomStartPentomino();
+```
+
+---
+
+### **getValidFields(Board, Color)**
+
+Gibt die Menge aller gültigen Felder für eine bestimmte Farbe zurück.
+
+- **Rückgabetyp:** `Set<Coordinates>`
+
+```java
+.getValidFields(Board board, Color color)
+```
+
+Das ganze Konstrukt:
+
+```java
+GameRuleLogic.getValidFields(board, color)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Set<Coordinates> validFields = GameRuleLogic.getValidFields(currentBoard, redColor);
+```
+
+---
+
+### **isOnBorder(Coordinates)**
+
+Überprüft, ob die angegebenen Koordinaten auf dem Spielfeldrand liegen.
+
+- **Rückgabetyp:** `boolean`
+
+```java
+.isOnBorder(Coordinates position)
+```
+
+Das ganze Konstrukt:
+
+```java
+GameRuleLogic.isOnBorder(position)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+boolean onBorder = GameRuleLogic.isOnBorder(coordinates);
+```
+
+---
+
+## Field-Methoden
+
+Das `Field` repräsentiert ein einzelnes Feld auf dem Spielfeld.
+
+---
+
+### **clone()** (für Field)
+
+Erstellt eine Kopie des Feldes.
+
+- **Rückgabetyp:** `Field`
+
+```java
+.clone()
+```
+
+Das ganze Konstrukt:
+
+```java
+field.clone()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Field copiedField = field.clone();
+```
+
+---
+
+### **equals(Object)** (Field)
+
+Vergleicht das Feld mit einem anderen Objekt.
+
 - **Rückgabetyp:** `boolean`
 
 ```java
@@ -661,24 +1060,147 @@ Vergleicht die Bewegungsrichtung mit einem anderen Objekt (normalerweise einer a
 Das ganze Konstrukt:
 
 ```java
-direction.equals(otherDirection)
+field.equals(otherField)
 ```
 
 Hier ein Code-Beispiel:
 
 ```java
-boolean areEqual = direction.equals(Direction.UP);
+boolean areEqual = field.equals(otherField);
+```
+
+---
+
+### **getContent()**
+
+Gibt den Inhalt des Feldes zurück (z.B. Farbe, Spielstein).
+
+- **Rückgabetyp:** `FieldContent`
+
+```java
+.getContent()
+```
+
+Das ganze Konstrukt:
+
+```java
+field.getContent()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+FieldContent content = field.getContent();
+```
+
+---
+
+### **getCoordinates()**
+
+Gibt die Koordinaten des Feldes zurück.
+
+- **Rückgabetyp:** `Coordinates`
+
+```java
+.getCoordinates()
+```
+
+Das ganze Konstrukt:
+
+```java
+field.getCoordinates()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Coordinates position = field.getCoordinates();
 ```
 
 ---
 
 ## Coordinates-Methoden
+
 `Coordinates` repräsentiert zweidimensionale Koordinaten auf dem Spielfeld.
 
 ---
 
+### **equals(Object)** (Coordinates)
+
+Vergleicht die Koordinaten mit einem anderen Objekt (normalerweise anderen Koordinaten).
+
+- **Rückgabetyp:** `boolean`
+
+```java
+.equals(other)
+```
+
+Das ganze Konstrukt:
+
+```java
+coordinates.equals(otherCoordinates)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+boolean areEqual = coordinates.equals(new Coordinates(2, 3));
+```
+
+---
+
+### **getDiagonalNeighbors()**
+
+Gibt die Koordinaten aller diagonalen Nachbarfelder zurück.
+
+- **Rückgabetyp:** `Collection<Coordinates>`
+
+```java
+.getDiagonalNeighbors()
+```
+
+Das ganze Konstrukt:
+
+```java
+coordinates.getDiagonalNeighbors()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Collection<Coordinates> diagonalNeighbors = coordinates.getDiagonalNeighbors();
+```
+
+---
+
+### **getNeighbors()**
+
+Gibt die Koordinaten aller orthogonalen Nachbarfelder zurück.
+
+- **Rückgabetyp:** `Collection<Coordinates>`
+
+```java
+.getNeighbors()
+```
+
+Das ganze Konstrukt:
+
+```java
+coordinates.getNeighbors()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Collection<Coordinates> neighbors = coordinates.getNeighbors();
+```
+
+---
+
 ### **getX()**
+
 Gibt den Wert der X-Koordinate zurück.
+
 - **Rückgabetyp:** `int`
 
 ```java
@@ -700,7 +1222,9 @@ int x = coordinates.getX();
 ---
 
 ### **getY()**
+
 Gibt den Wert der Y-Koordinate zurück.
+
 - **Rückgabetyp:** `int`
 
 ```java
@@ -721,56 +1245,14 @@ int y = coordinates.getY();
 
 ---
 
-### **getNeighbors()**
-Gibt die Koordinaten aller Nachbarfelder zurück (in einer Collection).
-- **Rückgabetyp:** `Collection<Coordinates>`
+### **minus(IVector)**
 
-```java
-.getNeighbors()
-```
-
-Das ganze Konstrukt:
-
-```java
-coordinates.getNeighbors()
-```
-
-Hier ein Code-Beispiel:
-
-```java
-Collection<Coordinates> neighbors = coordinates.getNeighbors();
-```
-
----
-
-### **plus(Vector)**
-Addiert einen Vektor zu den Koordinaten und gibt das Ergebnis als neue Koordinaten zurück.
-- **Rückgabetyp:** `Coordinates`
-
-```java
-.plus(vector)
-```
-
-Das ganze Konstrukt:
-
-```java
-coordinates.plus(vector)
-```
-
-Hier ein Code-Beispiel:
-
-```java
-Coordinates newCoordinates = coordinates.plus(moveVector);
-```
-
----
-
-### **minus(Vector)**
 Subtrahiert einen Vektor von den Koordinaten und gibt das Ergebnis als neue Koordinaten zurück.
+
 - **Rückgabetyp:** `Coordinates`
 
 ```java
-.minus(vector)
+.minus(IVector vector)
 ```
 
 Das ganze Konstrukt:
@@ -787,35 +1269,88 @@ Coordinates newCoordinates = coordinates.minus(moveVector);
 
 ---
 
-### **equals(Object)** (Coordinates)
-Vergleicht die Koordinaten mit einem anderen Objekt (normalerweise anderen Koordinaten).
-- **Rückgabetyp:** `boolean`
+### **minus(Coordinates)**
+
+Berechnet den Vektor zwischen zwei Koordinaten (Differenz).
+
+- **Rückgabetyp:** `Vector`
 
 ```java
-.equals(object)
+.minus(Coordinates other)
 ```
 
 Das ganze Konstrukt:
 
 ```java
-coordinates.equals(otherCoordinates)
+coordinates.minus(otherCoordinates)
 ```
 
 Hier ein Code-Beispiel:
 
 ```java
-boolean areEqual = coordinates.equals(new Coordinates(2, 3));
+Vector difference = coordinates.minus(otherCoordinates);
+```
+
+---
+
+### **plus(IVector)**
+
+Addiert einen Vektor zu den Koordinaten und gibt das Ergebnis als neue Koordinaten zurück.
+
+- **Rückgabetyp:** `Coordinates`
+
+```java
+.plus(IVector vector)
+```
+
+Das ganze Konstrukt:
+
+```java
+coordinates.plus(vector)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Coordinates newCoordinates = coordinates.plus(moveVector);
 ```
 
 ---
 
 ## Vector-Methoden
+
 `Vector` repräsentiert eine zweidimensionale Bewegung mit X- und Y-Komponenten.
 
 ---
 
-### **getDx()** (Vector)
+### **equals(Object)** (Vector)
+
+Vergleicht den Vektor mit einem anderen Objekt (normalerweise einem anderen Vektor).
+
+- **Rückgabetyp:** `boolean`
+
+```java
+.equals(other)
+```
+
+Das ganze Konstrukt:
+
+```java
+vector.equals(otherVector)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+boolean areEqual = vector.equals(new Vector(1, 0));
+```
+
+---
+
+### **getDx()**
+
 Gibt den Wert für die X-Dimension des Vektors zurück.
+
 - **Rückgabetyp:** `int`
 
 ```java
@@ -836,8 +1371,10 @@ int dx = vector.getDx();
 
 ---
 
-### **getDy()** (Vector)
+### **getDy()**
+
 Gibt den Wert für die Y-Dimension des Vektors zurück.
+
 - **Rückgabetyp:** `int`
 
 ```java
@@ -858,22 +1395,24 @@ int dy = vector.getDy();
 
 ---
 
-### **equals(Object)** (Vector)
-Vergleicht den Vektor mit einem anderen Objekt (normalerweise einem anderen Vektor).
-- **Rückgabetyp:** `boolean`
+### **times(int)**
+
+Multipliziert den Vektor mit einem Skalar und gibt einen neuen Vektor zurück.
+
+- **Rückgabetyp:** `Vector`
 
 ```java
-.equals(object)
+.times(int scalar)
 ```
 
 Das ganze Konstrukt:
 
 ```java
-vector.equals(otherVector)
+vector.times(scalar)
 ```
 
 Hier ein Code-Beispiel:
 
 ```java
-boolean areEqual = vector.equals(new Vector(1, 0));
+Vector scaledVector = vector.times(3);
 ```

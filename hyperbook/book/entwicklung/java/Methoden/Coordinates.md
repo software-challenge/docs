@@ -1,26 +1,96 @@
 ---
-name: Koordinaten Methoden
-index: 7
+name: Coordinates Methoden
+index: 6
 ---
 
 # Methodendokumentation - Coordinates <!-- omit in toc -->
 
-## Inhaltsverzeichnis <!-- omit in toc -->
-- [Coordinates-Methoden](#coordinates-methoden)
-  - [**getX()**](#getx)
-  - [**getY()**](#gety)
-  - [**getNeighbors()**](#getneighbors)
-  - [**plus(Vector)**](#plusvector)
-  - [**minus(Vector)**](#minusvector)
-  - [**equals(Object)** (Coordinates)](#equalsobject-coordinates)
-
-
-## Coordinates-Methoden
 `Coordinates` repräsentiert zweidimensionale Koordinaten auf dem Spielfeld.
+
+## Inhaltsverzeichnis <!-- omit in toc -->
+
+- [**equals(Object)**](#equalsobject)
+- [**getDiagonalNeighbors()**](#getdiagonalneighbors)
+- [**getNeighbors()**](#getneighbors)
+- [**getX()**](#getx)
+- [**getY()**](#gety)
+- [**minus(IVector)**](#minusivector)
+- [**minus(Coordinates)**](#minuscoordinates)
+- [**plus(IVector)**](#plusivector)
+
+---
+
+### **equals(Object)**
+
+Vergleicht die Koordinaten mit einem anderen Objekt (normalerweise anderen Koordinaten).
+- **Rückgabetyp:** `boolean`
+
+```java
+.equals(other)
+```
+
+Das ganze Konstrukt:
+
+```java
+coordinates.equals(otherCoordinates)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+boolean areEqual = coordinates.equals(new Coordinates(2, 3));
+```
+
+---
+
+### **getDiagonalNeighbors()**
+
+Gibt die Koordinaten aller diagonalen Nachbarfelder zurück.
+- **Rückgabetyp:** `Collection<Coordinates>`
+
+```java
+.getDiagonalNeighbors()
+```
+
+Das ganze Konstrukt:
+
+```java
+coordinates.getDiagonalNeighbors()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Collection<Coordinates> diagonalNeighbors = coordinates.getDiagonalNeighbors();
+```
+
+---
+
+### **getNeighbors()**
+
+Gibt die Koordinaten aller orthogonalen Nachbarfelder zurück.
+- **Rückgabetyp:** `Collection<Coordinates>`
+
+```java
+.getNeighbors()
+```
+
+Das ganze Konstrukt:
+
+```java
+coordinates.getNeighbors()
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Collection<Coordinates> neighbors = coordinates.getNeighbors();
+```
 
 ---
 
 ### **getX()**
+
 Gibt den Wert der X-Koordinate zurück.
 - **Rückgabetyp:** `int`
 
@@ -43,6 +113,7 @@ int x = coordinates.getX();
 ---
 
 ### **getY()**
+
 Gibt den Wert der Y-Koordinate zurück.
 - **Rückgabetyp:** `int`
 
@@ -64,56 +135,13 @@ int y = coordinates.getY();
 
 ---
 
-### **getNeighbors()**
-Gibt die Koordinaten aller Nachbarfelder zurück (in einer Collection).
-- **Rückgabetyp:** `Collection<Coordinates>`
+### **minus(IVector)**
 
-```java
-.getNeighbors()
-```
-
-Das ganze Konstrukt:
-
-```java
-coordinates.getNeighbors()
-```
-
-Hier ein Code-Beispiel:
-
-```java
-Collection<Coordinates> neighbors = coordinates.getNeighbors();
-```
-
----
-
-### **plus(Vector)**
-Addiert einen Vektor zu den Koordinaten und gibt das Ergebnis als neue Koordinaten zurück.
-- **Rückgabetyp:** `Coordinates`
-
-```java
-.plus(vector)
-```
-
-Das ganze Konstrukt:
-
-```java
-coordinates.plus(vector)
-```
-
-Hier ein Code-Beispiel:
-
-```java
-Coordinates newCoordinates = coordinates.plus(moveVector);
-```
-
----
-
-### **minus(Vector)**
 Subtrahiert einen Vektor von den Koordinaten und gibt das Ergebnis als neue Koordinaten zurück.
 - **Rückgabetyp:** `Coordinates`
 
 ```java
-.minus(vector)
+.minus(IVector vector)
 ```
 
 Das ganze Konstrukt:
@@ -130,22 +158,46 @@ Coordinates newCoordinates = coordinates.minus(moveVector);
 
 ---
 
-### **equals(Object)** (Coordinates)
-Vergleicht die Koordinaten mit einem anderen Objekt (normalerweise anderen Koordinaten).
-- **Rückgabetyp:** `boolean`
+### **minus(Coordinates)**
+
+Berechnet den Vektor zwischen zwei Koordinaten (Differenz).
+- **Rückgabetyp:** `Vector`
 
 ```java
-.equals(object)
+.minus(Coordinates other)
 ```
 
 Das ganze Konstrukt:
 
 ```java
-coordinates.equals(otherCoordinates)
+coordinates.minus(otherCoordinates)
 ```
 
 Hier ein Code-Beispiel:
 
 ```java
-boolean areEqual = coordinates.equals(new Coordinates(2, 3));
+Vector difference = coordinates.minus(otherCoordinates);
+```
+
+---
+
+### **plus(IVector)**
+
+Addiert einen Vektor zu den Koordinaten und gibt das Ergebnis als neue Koordinaten zurück.
+- **Rückgabetyp:** `Coordinates`
+
+```java
+.plus(IVector vector)
+```
+
+Das ganze Konstrukt:
+
+```java
+coordinates.plus(vector)
+```
+
+Hier ein Code-Beispiel:
+
+```java
+Coordinates newCoordinates = coordinates.plus(moveVector);
 ```
