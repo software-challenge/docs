@@ -86,6 +86,70 @@ hyperbook.store = (function () {
     jmp: `id`,
   });
 
+  // A bitflow attempt. The snapshot is content, not a key — nothing queries
+  // into it, and the flow it belongs to validates it on the way back in.
+  db.version(9).stores({
+    bitflow: `id`,
+  });
+
+  // Interactive GitHub-Flavoured Markdown task-list items. The id combines
+  // the page path and the item's content-derived id; checked is content, not
+  // something callers query by.
+  db.version(10).stores({
+    checklist: `id`,
+  });
+
+  // The IDEs share one table holding a workspace of files. The old IDE
+  // tables stay as empty inboxes: an export from before this version still
+  // names them, and importing one would otherwise drop those rows. The webide
+  // table was never used by a book and goes without a migration.
+  db.version(11)
+    .stores({
+      ide: `id`,
+      webide: null,
+    })
+    .upgrade((tx) =>
+      hyperbook.storeIdeMigration.moveLegacyIdeRows((name) => tx.table(name)),
+    );
+
+  /**
+   * Re-applies the data migrations from v6, v7 and v11 to rows that were imported
+   * from an older export. Dexie's `.upgrade()` callbacks only run during a
+   * live IndexedDB version upgrade, not during `db.import()`, so imported
+   * rows from a v5–v6 era export keep their old field shapes unless we fix
+   * them here.
+   * @returns {Promise<void>}
+   */
+  async function migrateImportedData() {
+    try {
+      await db.transaction("rw", db.tables, async () => {
+        // v6: bookmark label string → [{text: label}]
+        await db.bookmarks
+          .toCollection()
+          .modify((bookmark) => {
+            if (typeof bookmark.label === "string") {
+              bookmark.label = [{ text: bookmark.label }];
+            }
+          });
+        // v7: passwordHash → password
+        await db.protect
+          .toCollection()
+          .modify((entry) => {
+            if (entry.passwordHash !== undefined) {
+              entry.password = entry.passwordHash;
+              delete entry.passwordHash;
+            }
+          });
+        // v11: single-file IDE rows → ide
+        await hyperbook.storeIdeMigration.moveLegacyIdeRows((name) =>
+          db.table(name),
+        );
+      });
+    } catch (e) {
+      console.warn("Could not migrate imported data:", e);
+    }
+  }
+
   /**
    * Adopts data saved under a directive's previous id.
    *
@@ -295,7 +359,13 @@ hyperbook.store = (function () {
           type: "application/json",
         });
 
-        await db.import(hyperbookBlob, { clearTablesBeforeImport: true });
+        await db.import(hyperbookBlob, {
+          clearTablesBeforeImport: true,
+          acceptVersionDiff: true,
+          acceptMissingTables: true,
+        });
+
+        await migrateImportedData();
 
         // Send full snapshot to cloud after import
         if (hyperbook.cloud) {
