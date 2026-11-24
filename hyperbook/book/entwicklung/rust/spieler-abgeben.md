@@ -16,10 +16,6 @@ Bis auf Punkt 4 kann dieser Vorgang automatisiert durchgeführt werden.
 
 ## Computerspieler kompilieren und packen
 
-### Automatisch
-
-TBD
-
 ### Manuell packen
 
 #### Kompilieren
